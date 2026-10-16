@@ -1,0 +1,104 @@
+# VISI ENLESWEB
+**Versi:** 1.4  
+**Terakhir diperbarui:** 16 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.6), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 017), dan sesi `/grill-me` 16 Oktober 2026.  
+**Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
+
+## 1. Pernyataan Visi
+[KEPUTUSAN] **"Build the website system once, then configure and compose it repeatedly."**
+
+ENLESWEB berangkat dari jasa pembuatan website untuk UMKM dan bisnis kecil-menengah di seluruh Indonesia, lalu bergerak menuju sistem produksi internal berbasis blueprint JSON. Tujuannya agar tiap website baru dikonfigurasi dan dirakit dari sistem yang sudah dibangun, bukan dikerjakan dari nol.
+
+## 2. Titik Awal (Kondisi per 16 Oktober 2026)
+- [FAKTA] Solo founder dibantu AI assistant (langganan dikunci Rp100.000/bulan sampai 5 klien lunas atau 2 proyek Growth/Custom simultan, Decision 014). Belum ada tim internal.
+- [KEPUTUSAN] Komunikasi promosi dan publik menggunakan persona "kami" dan "tim" layaknya studio/agensi (Decision 001), dipadukan dengan transparansi Nama Lengkap Pendiri sebagai Penanggung Jawab Resmi Studio ENLESWEB di dokumen PDF Bukti Pemesanan (Decision 017).
+- [FAKTA] Launch-ready, belum go-live komersial. Homepage berjalan di staging Cloudflare `workers.dev`.
+- [FAKTA] 6 website konsep live di Vercel (Seruput Kopi, ripeir, tuntas, Jerseay, dipotongin, berflower).
+- [FAKTA] Aset reusable: 6 template konsep, `carousel-generator/`, SOP chat WhatsApp (`sop.md` v1.2 **CLOSED**).
+- [FAKTA] Klien: 0. Prospek: 0. Pendapatan: Rp0.
+- [KEPUTUSAN] Runway operasional awal: 30 hari (1 bulan) konsisten aktif menguji kampanye.
+- [KEPUTUSAN] Kapasitas proyek paralel solo founder tanpa builder: 2 - 3 klien simultan (dengan mekanisme *On-Hold* 60 hari untuk membebaskan slot jika klien terlambat mengirim materi lewat dari 7 hari kalender, Decision 017).
+- [KEPUTUSAN/FAKTA] Modal kerja siap pakai yang dialokasikan: sekitar Rp1.000.000 – Rp1.500.000 (mencakup iklan, domain bisnis, AI tools, dan dana talangan).
+
+## 3. Komitmen Visi
+- [KEPUTUSAN] **Yang dikomitmenkan: Internal Production System**, yaitu sistem untuk mempercepat dan menstandarkan produksi website ENLESWEB sendiri.
+- [KEPUTUSAN] **Productized System adalah fokus horizon jangka panjang utama bisnis.** Ambisi jangka panjang difokuskan untuk mencapai tahap *Productized System* terlebih dahulu.
+- [KEPUTUSAN] **SaaS mandiri dideferensiasi dan ditunda.** SaaS bukan fokus aktif saat ini dan baru akan ditinjau jauh setelah Productized System berhasil dioperasikan secara matang dan stabil.
+
+## 4. Roadmap Fase
+Definisi di bawah diturunkan dari nama dan logika roadmap. Rincian teknis blueprint JSON ditunda ke dokumen builder terpisah.
+
+| Fase | Sifat | Definisi singkat [HIPOTESIS] | Status |
+|---|---|---|---|
+| 1. Internal Generator | Komitmen Utama | Alat internal yang menghasilkan website dari konfigurasi (blueprint JSON) untuk mengurangi kerja manual per klien. | Belum dimulai (mulai dirancang setelah klien ke-10 go live) |
+| 2. Internal Production System | Komitmen Utama | Alur produksi end-to-end ENLESWEB (brief, konfigurasi, preview, revisi, serah terima) yang berjalan di atas generator. | Belum dimulai |
+| 3. Productized System | Fokus Horizon Jangka Panjang [KEPUTUSAN] | Jasa website berbasis sistem dengan paket dan proses terstandarisasi penuh, bukan agensi pengerjaan manual kustom. | Target arah jangka panjang |
+| 4. SaaS Mandiri | Dideferensiasi / Ditunda [KEPUTUSAN] | Sistem dibuka sebagai produk mandiri yang dipakai pihak lain secara swalayan (*self-service*). | Ditunda (baru ditinjau pasca-Productized System stabil) |
+
+## 5. Gerbang Perpindahan Fase
+[KEPUTUSAN] Gerbang berbasis **bukti operasional**, bukan kalender atau angka omzet.
+
+**Definisi "10 klien pertama" (dua definisi berbeda):**
+- **Target 90 hari:** 10 klien yang **DP-nya sudah masuk**, dihitung dalam 90 hari setelah iklan Meta Ads tayang.
+- **Gerbang perancangan blueprint JSON dan pembangunan Website Builder:** Persis **setelah klien ke-10 go live** (yaitu website tayang, serah terima tuntas, pelunasan 100% diterima, dan jam kerja tercatat di register).
+
+| Gerbang | Syarat | Status |
+|---|---|---|
+| Sebelum fase 1 | Klien ke-10 go live (selesai, tayang, lunas), seluruh waktu pengerjaan aktual tercatat di register, dan pola komponen/alur kerja yang berulang terbukti nyata dari data 10 klien tersebut. | Belum terpenuhi |
+| Fase 1 ke fase 2 | Generator internal terbukti memangkas waktu produksi minimal 50% pada proyek uji coba internal. | [BELUM DIKETAHUI] |
+| Fase 2 ke fase 3 | Alur produksi internal stabil melayani pesanan rutin tanpa hambatan operasional (*Productized System* operasional). | [BELUM DIKETAHUI] |
+| Fase 3 ke fase 4 | Ditinjau hanya jika *Productized System* sudah berjalan mapan dan ada kebutuhan komersial membuka platform ke pihak eksternal (SaaS mandiri). | Ditunda |
+
+[HIPOTESIS] Pola pekerjaan klien akan cukup berulang untuk dijadikan blueprint. Belum ada klien yang bisa membuktikannya.
+
+## 6. Gambaran Sukses 12 Bulan
+[KEPUTUSAN] Target pendapatan 12 bulan ditetapkan sebesar **Rp4.500.000** (target konservatif berbasis 10 klien Starter pertama @ Rp450.000) dengan gambaran struktural:
+
+1. 10 klien pertama tercapai (target 90 hari pertama), dari kombinasi tes Meta Ads, konten organik IG, dan eksperimen Micro-Warm Outreach manual via DM IG `@enlesweb` (2–3 usaha/hari, Rp0, Decision 013).
+2. Waktu pengerjaan aktual terukur dan sesuai SLA 3/7/14 hari kerja (Starter/Business/Growth) dengan kapasitas 2 - 3 klien simultan.
+3. Harga dievaluasi berdasarkan data riil 10 klien, bukan asumsi.
+4. Website Builder internal fase 1 dan 2 mulai dirancang dan dibangun persis setelah klien ke-10 go live (selesai, tayang, dan lunas), setelah gerbang pada bagian 5 terpenuhi.
+5. Kanal outbound berbayar (misalnya Apollo.io, ~Rp400-500rb/bln) baru dijajaki setelah 10 klien selesai, termasuk kajian UU PDP.
+
+## 7. Prinsip yang Tidak Boleh Dilanggar
+Batas tetap selama bisnis bertumbuh. Perubahan hanya lewat keputusan baru yang dicatat dengan tanggal dan alasannya.
+
+1. **Tanpa bukti palsu:** tidak memakai testimoni, rating bintang, jumlah klien, atau urgensi palsu.
+2. **Klaim hanya yang terbukti:** diferensiasi hanya dari artefak nyata (demo live berlabel tier paket), bukan janji.
+3. **Harga transparan & purnajual jelas:** domain dan hosting 1 tahun serta kuota gratis update konten ringan tahunan (2x/4x/6x) termasuk di paket inti.
+4. **Tanpa vendor lock-in:** di tahun pertama akun registrar dan nama domain dikelola atas nama ENLESWEB demi kemudahan proses; saat perpanjangan tahun kedua tiba, domain bisa ditransfer lewat EPP code dan arsip build statis bisa diminta klien jika tidak ingin renewal terkelola. Master source code dan generator ENLESWEB tetap tidak diserahkan.
+5. **Kualitas teknis:** aksesibilitas WCAG AA dan situs statis yang cepat.
+6. **Akuisisi berdisiplin (Tanpa Tools Scraping Berbayar & Tanpa Cold WA Spam):** tidak ada penggunaan tools scraping/outbound berbayar (seperti Apollo.io) sebelum 10 klien pertama selesai; eksperimen Micro-Warm Outreach dibatasi maksimal 2–3 pemilik usaha/hari secara manual dengan sapaan awal hanya via DM Instagram `@enlesweb` (Decision 013).
+7. **Builder menunggu bukti:** tidak membangun Website Builder atau SaaS sebelum klien ke-10 go live.
+
+## 8. Asumsi dan Risiko Visi
+| Asumsi | Bukti saat ini | Cara validasi |
+|---|---|---|
+| Ada permintaan nyata dari UMKM untuk website berpaket lewat iklan Meta / Micro-Warm DM IG dan WhatsApp | Tidak ada. Belum ada lead | Tes Meta Ads minggu pertama & Micro-Warm DM IG (prioritas #1 `tuntas`, #2 `Jerseay`, #3 `ripeir`), pantau minimal 2-3 chat WA iklan dan 1 klien berbayar |
+| Pekerjaan antar klien cukup berulang untuk dijadikan blueprint | Tidak ada. 6 demo dibangun sendiri | Catat waktu dan jenis pekerjaan tiap klien di register |
+| Solo founder dengan AI (Rp100rb/bln di awal) sanggup mengerjakan 10 klien sesuai SLA (kapasitas 2-3 paralel) | Tidak ada klien komersial; 6 demo dibangun sendiri | Catat waktu aktual klien pertama di register (patokan estimasi 5-12 jam untuk Starter) |
+| Produk atau jasa berbasis sistem bisa melampaui model jasa (fase 3) | Tidak ada | [BELUM DIKETAHUI], ditentukan setelah fase 2 |
+
+## 9. Yang Bukan Bagian Visi Saat Ini
+- Membangun Website Builder atau menyusun spesifikasi teknis blueprint JSON sebelum klien ke-10 go live.
+- Merancang atau mengembangkan produk SaaS mandiri pada tahap saat ini (fokus jangka panjang dikunci pada *Productized System* terlebih dahulu).
+- Menggunakan tools scraping/outbound berbayar (Apollo.io dkk.) sebelum 10 klien selesai.
+- Menaikkan langganan AI tools di atas Rp100.000/bulan sebelum 5 klien selesai dan lunas (atau 2 proyek Growth/Custom simultan).
+- Mempromosikan paket Custom secara aktif.
+- Menambah fitur di paket Starter dan Business.
+- Melayani segmen non-target (korporat tender, garansi ranking SEO/omzet, klien luar negeri).
+- Menetapkan rincian teknis pembukaan SaaS sebelum Productized System terbukti dan stabil.
+
+## 10. Pertanyaan Terbuka
+- [BELUM DIKETAHUI] Pola komponen website dan konfigurasi tata letak apa yang paling sering berulang dari realisasi 10 klien pertama untuk dijadikan skema blueprint JSON pertama? (Menunggu data register 10 klien selesai).
+- [BELUM DIKETAHUI] Berapa penghematan jam kerja riil yang dihasilkan oleh Website Builder internal fase 1 dibanding durasi awal 5–12 jam pengerjaan manual per Starter? (Divalidasi saat Fase 1 rampung).
+
+## 11. Riwayat Perubahan
+| Tanggal | Perubahan | Sumber |
+|---|---|---|
+| 14 Oktober 2026 | Draf v1.0 dibuat | `summary.md` dan wawancara grill-me |
+| 14 Oktober 2026 | Versi 1.1: Sinkronisasi target pendapatan 12 bulan (Rp4,5jt), runway 30 hari, kapasitas 2-3 klien simultan, persona "kami/tim" (Decision 001), dan implementasi prinsip tanpa vendor lock-in dengan registrasi domain tahun pertama atas nama EnlesWeb + transfer EPP saat renewal (Decision 002). | Arahan pemilik |
+| 14 Oktober 2026 | Versi 1.2: Modal kerja siap pakai dikonfirmasi (Rp1-1,5jt) dan sinkronisasi dengan `model-bisnis.md`. | Wawancara grill-me |
+| 14 Oktober 2026 | Versi 1.3: (1) Penegasan jadwal perancangan spesifikasi blueprint JSON internal dimulai persis setelah klien ke-10 go live (selesai, tayang, lunas), (2) Penguncian ambisi sistem jangka panjang pada Productized System terlebih dahulu, dan menunda/mendiferensiasi SaaS mandiri hingga Productized System terbukti matang. | Arahan pemilik |
+| 16 Oktober 2026 | Versi 1.4: Sinkronisasi Decision 013 - 017: pembukaan Micro-Warm Outreach manual Rp0 via DM IG (2-3/hari) dengan tetap melarang tools scraping berbayar sebelum 10 klien selesai, penundaan kenaikan biaya AI tools hingga 5 klien lunas, kuota gratis update konten ringan tahunan (2x/4x/6x), aturan On-Hold 60 hari, dan status SOP WhatsApp `sop.md` v1.2 CLOSED. | Sesi `/grill-me` 16 Okt 2026 |
+
