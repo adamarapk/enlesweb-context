@@ -1,14 +1,20 @@
 # ENLESWEB DOKUMENTASI UTAMA V3 (ENLESWEB-DOCS-V3)
 
-Versi: 1.4 (Sinkronisasi SOP Operasional v1.2 CLOSED, Decision 013–017, & Klausul Update Konten Ringan)
-Tanggal Pembaruan: 16 Oktober 2026
+Versi: 1.5 (Pencatatan Pembelian Domain Resmi enlesweb.com CLOSED, Decision 018)
+Tanggal Pembaruan: 17 Oktober 2026
 Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md
-Status Sistem: Production & Launch-Ready Implementation V3 (Tersinkronisasi Penuh Decision 001–017 & SOP v1.2 CLOSED)
-Ringkasan Pembaruan: Sinkronisasi status SOP operasional WhatsApp menjadi CLOSED (terkunci di `Delivery & Operations/sop.md` v1.2), pencatatan kebijakan kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset saat perpanjangan terkelola), aturan waktu pembelian domain pasca-DP + materi lengkap, aturan tunda proyek (*On-Hold*) 60 hari kalender, serta penyisaan 3 tugas eksekusi murni Minggu 0.
+Status Sistem: Production & Launch-Ready Implementation V3 (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)
+Ringkasan Pembaruan: Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (CLOSED / SELESAI, Decision 018), migrasi target produksi Cloudflare Workers, dan pemutakhiran sisa tugas Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan template PDF Bukti Pemesanan).
 
 ---
 
 ## RINGKASAN PEMBARUAN V3 (CHANGELOG V3)
+
+### Pembaruan Versi 1.5 (17 Oktober 2026 - Pembelian Domain Resmi enlesweb.com CLOSED & Decision 018)
+1. **Pembelian Domain Resmi `enlesweb.com` Telah Terealisasi (CLOSED)**:
+   - Domain kanonikal `enlesweb.com` telah resmi dibeli di registrar Domainesia (pendaftaran tahun pertama Rp152.070, Decision 018). Nameserver dan konfigurasi DNS diarahkan ke Cloudflare Workers sebagai domain produksi utama, menggantikan staging sementara `workers.dev`.
+2. **Penyelarasan Sisa Tugas Eksekusi Murni Minggu 0**:
+   - Menyisakan 2 tugas eksekusi murni pra-iklan: (1) pembuatan materi kreatif iklan Carousel 4 slide berlabel tier & harga + *problem-aware hook*, dan (2) penguncian draf template PDF Bukti Pemesanan.
 
 ### Pembaruan Versi 1.4 (16 Oktober 2026 - Sinkronisasi SOP Operasional v1.2 CLOSED & Decision 013–017)
 1. **Penutupan Status SOP Operasional WhatsApp (CLOSED di `Delivery & Operations/sop.md` v1.2)**:
@@ -355,7 +361,7 @@ Urutan penilaian:
 | OG image aktif di `public/og-image.png` | LOCKED |
 | Halaman Kebijakan Privasi di `/kebijakan-privasi` dan tautan footer | LOCKED |
 | Kebijakan perpanjangan tahun kedua: flat all package Rp400rb/thn (.com/.id) atau Rp300rb/thn (lainnya) / Opsi Mandiri (transfer EPP + dist zip); akun provider & registrant thn 1 atas nama ENLESWEB (Decision 002) | LOCKED |
-| Domain produksi final `enlesweb.com` | OPEN |
+| Domain produksi final `enlesweb.com` | CLOSED (Sudah dibeli & dihubungkan ke Cloudflare Workers) |
 
 === BATAS AWAL FILE: CONTENT.md ===
 
@@ -1017,7 +1023,7 @@ Mobile (< 1024px):
 ### 7.2 Visual dan Tombol Proyek
 
 - Visual: Tangkapan layar website berkualitas tinggi dioptimalkan melalui `astro:assets` (format WebP/PNG di `src/assets/projects/{id}.*` dengan `object-fit: cover`).
-- Favicon identitas: setiap kartu minimized dilengkapi logo/favicon SVG unik dari masing-masing konsep proyek di `src/assets/projects/{id}-favicon.svg`.
+- Favicon identitas: setiap kartu minimized dilengkapi logo/favicon SVG unik dari masing-masing konsep proyek di `src/assets/projects/favicon-{id}.svg`.
 - Label konsep dinamis: setiap kartu proyek secara eksplisit menampilkan label sesuai tingkatannya:
   - Starter: `Konsep buatan kami sendiri. Contoh tingkat Starter.`
   - Business: `Konsep buatan kami sendiri. Contoh tingkat Business.`
@@ -1517,14 +1523,14 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
    - Build command: `npm run build`
    - Build output directory: `dist`
 3. Pipeline otomatis telah terpasang via `.github/workflows/deploy.yml` dan `wrangler.json`.
-4. Staging aktif di subdomain Cloudflare Workers (`workers.dev`).
-5. Sebelum memasang iklan berbayar: beli domain final `enlesweb.com` dan hubungkan nameserver ke Cloudflare.
+4. Domain produksi final `enlesweb.com` telah resmi dibeli (Decision 018) dan nameserver diarahkan ke Cloudflare Workers menggantikan staging sementara `workers.dev`.
+5. Seluruh tautan kanonikal, Meta Pixel (`ViewContent`, `AddToCart`), link WhatsApp, OG image, dan robots/sitemap aktif mengarah ke kanonikal `https://enlesweb.com`.
 
 ---
 
-## 13. Catatan OPEN Tersisa (3 Tugas Eksekusi Murni Minggu 0)
+## 13. Catatan OPEN Tersisa (Sisa 2 Tugas Eksekusi Murni Minggu 0)
 
-1. `domain enlesweb.com`: belum dibeli (pemilik bisnis membeli domain dan mengarahkan DNS ke Cloudflare Workers). Nilai kanonikal disiapkan `siteUrl: 'https://enlesweb.com'`.
+1. `domain enlesweb.com`: **CLOSED** (Domain resmi telah dibeli oleh pemilik bisnis di Domainesia dan diarahkan DNS ke Cloudflare Workers, nilai kanonikal `siteUrl: 'https://enlesweb.com'` aktif, Decision 018).
 2. `materi iklan Meta`: render iklan Carousel 4 slide berlabel tier & harga (`tuntas: Paket Business Rp750.000`, `Jerseay: Paket Growth Rp1.200.000`, `ripeir: Paket Starter Rp450.000`) + *problem-aware hook* via tooling internal `carousel-generator/` (Decision 016).
 3. `draf template PDF Bukti Pemesanan`: menyiapkan 1 halaman template PDF Bukti Pemesanan ber-TTD digital yang mencantumkan Nama Lengkap Pendiri (sama persis dengan rekening bank penerima) sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota update konten ringan tahunan (2x/4x/6x), waktu pembelian domain pasca-DP + materi lengkap, dan aturan *On-Hold* 60 hari kalender (Decision 017).
 *(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1645267283847928, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, serta SOP operasional chat WhatsApp & aturan transaksi klien di `Delivery & Operations/sop.md` v1.2 telah RESOLVED / CLOSED).*

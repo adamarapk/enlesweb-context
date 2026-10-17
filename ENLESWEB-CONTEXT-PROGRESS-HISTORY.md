@@ -1,16 +1,16 @@
 # ENLESWEB --- HISTORI KONTEKS, PERKEMBANGAN, DAN PROGRESS DELTA
 
-Versi Dokumen: 3.4 (Sinkronisasi SOP Operasional v1.2 CLOSED & Decision 013–017 - 16 Oktober 2026)
-Tanggal Pembaruan Terakhir: 16 Oktober 2026
-Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V3 (Tersinkronisasi Penuh Decision 001–017 & SOP v1.2 CLOSED)
+Versi Dokumen: 3.5 (Pencatatan Pembelian Domain Resmi enlesweb.com CLOSED & Decision 018 - 17 Oktober 2026)
+Tanggal Pembaruan Terakhir: 17 Oktober 2026
+Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V3 (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)
 Fungsi: Sumber Referensi Tunggal untuk Konteks Bisnis, Evolusi Konsep, Progress Delta, dan Gap Register ENLESWEB.
-Ringkasan Pembaruan: Sinkronisasi penutupan status SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED) dan Decision 013–017 (Micro-Warm Outreach IG DM manual Rp0, penundaan biaya AI tools Rp100rb/bln & default framing `.com`, kuota gratis update konten ringan tahunan 2x/4x/6x + reset saat perpanjangan terkelola, struktur Carousel 4 slide berlabel tier & harga + problem-aware hook, serta transparansi Nama Lengkap Pendiri di PDF Bukti Pemesanan, pembelian domain pasca-DP + materi lengkap, dan aturan On-Hold 60 hari kalender).
+Ringkasan Pembaruan: Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (CLOSED / SELESAI, Decision 018), pengalihan status produksi ke Cloudflare Workers custom domain, dan pemutakhiran sisa tugas Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan draf template PDF Bukti Pemesanan).
 
 ---
 
 ## ATURAN HIRARKI KEPUTUSAN (SOURCE OF TRUTH HIERARCHY)
 Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan hirarki prioritas berikut:
-1. KEPUTUSAN TERBARU (16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
+1. KEPUTUSAN TERBARU (17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, SISA 2 TUGAS MURNI MINGGU 0, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
 2. ENLESWEB-DOCS-V3.md (PRD / CONTENT / DESIGN / SPEC) & `Delivery & Operations/sop.md` v1.2 > Menang untuk spesifikasi teknis, salinan copy baseline, dan SOP operasional.
 3. CONTEXT-DETAIL-V3.md > Menang atas V2 untuk transisi Ship Mode dan Launch-Ready state.
 4. CONTEXT-DETAIL-V2.md > Konteks historis fondasi bisnis & Website Builder system.
@@ -19,7 +19,7 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
 
 ## TABLE OF CONTENTS (DAFTAR ISI)
 
-1. BERKAS 1: ENLESWEB-CONTEXT-GAPS.md (Gap Register & Decision Register Terkini - 16 Oktober 2026)
+1. BERKAS 1: ENLESWEB-CONTEXT-GAPS.md (Gap Register & Decision Register Terkini - 17 Oktober 2026)
    - 0. Source yang Dibandingkan
    - 1. Status Homepage V3: Selesai Diimplementasikan & Lulus QA Penuh (0 Error, 0 Warning)
    - 2. Desain Hero & Navbar: Ambient Wash Menembus Navbar Transparan (Hero Bleed)
@@ -28,16 +28,16 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
    - 5. Showcase Portofolio: 6 Proyek Konsep Lengkap Mencakup Ketiga Tingkatan Paket
    - 6. Standar Minimum Proyek Demo (Semua Live Publik di Vercel dengan Aset Lokal)
    - 7. Strategi Hosting Terpisah: Homepage (Cloudflare Workers) & Proyek Demo (Vercel)
-   - 8. Status Variabel Bisnis & Register Item CLOSED (WhatsApp, Pixel, Instagram, OG Image, Staging, SOP v1.2)
+   - 8. Status Variabel Bisnis & Register Item CLOSED (WhatsApp, Pixel, Instagram, OG Image, Staging, SOP v1.2, Domain enlesweb.com)
    - 9. Posisi Etis Showcase: Contoh Kemampuan Jujur, Bukan Klien Nyata / Testimoni Palsu
-   - 10. Status Terkini: Homepage Selesai & Terdeploy di Staging Cloudflare workers.dev
+   - 10. Status Terkini: Homepage Selesai & Domain Resmi enlesweb.com Sudah Dibeli (Siap Produksi Cloudflare Workers)
    - 11. REGISTER ITEM OPEN & REKOMENDASI TINDAK LANJUT (ACTION ITEMS REGISTER)
    - 12. Prinsip Inferensi & Integritas Dokumen
    - 13. Website Builder & Tooling Internal (Carousel Generator)
    - 14. Context Handoff Rule (Urutan Baca Terkini)
    - 15. Current North Star (Fokus Langkah Menuju Launch)
 
-2. BERKAS 2: ENLESWEB-PROGRESS-DELTA.md (Progress Delta & Handoff Continuity - 16 Oktober 2026)
+2. BERKAS 2: ENLESWEB-PROGRESS-DELTA.md (Progress Delta & Handoff Continuity - 17 Oktober 2026)
    - 0. Cara Membaca Dokumen Ini
    - 1. Baseline
    - 2. Perkembangan yang Terjadi Setelah Baseline
@@ -93,8 +93,8 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
 
 ### ENLESWEB --- CONTEXT GAPS & DECISION REGISTER
 Status implementasi aktual, item terselesaikan, dan register item open terkini
-Tanggal: 16 Oktober 2026 (Diperbarui dari 15 Oktober 2026)
-Status: Handoff / gap register & launch readiness V3 (Tersinkronisasi Penuh Decision 001–017 & SOP v1.2 CLOSED)
+Tanggal: 17 Oktober 2026 (Diperbarui dari 16 Oktober 2026)
+Status: Handoff / gap register & launch readiness V3 (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)
 Fungsi: Menangkap seluruh keputusan, status implementasi kode aktual di repositori, memvalidasi item yang telah selesai, dan merumuskan daftar item OPEN yang wajib ditindaklanjuti.
 
 --------------------------------------------------------------------------------
@@ -181,6 +181,7 @@ Berdasarkan audit repositori dan konfirmasi wawancara /grill-me (14–16 Oktober
 - **Meta Pixel ID**: `1645267283847928` (CLOSED - Terkonfirmasi Pixel ID riil aktif milik bisnis ENLESWEB).
 - **Akun Instagram Resmi**: `https://www.instagram.com/enlesweb/` (CLOSED - Terpasang di footer & JSON-LD).
 - **Staging Deployment**: Aktif di Cloudflare `workers.dev` (CLOSED - Terkonfirmasi sudah dideploy untuk pengujian internal).
+- **Domain Kanonikal & Produksi Deployment**: Domain kanonikal resmi `enlesweb.com` telah dibeli di registrar Domainesia (Rp152.070) dan nameserver/DNS diarahkan ke Cloudflare Workers sebagai domain produksi utama (CLOSED, Decision 018).
 - **Pengujian Nyata di HP Fisik & Meta Pixel**: Verifikasi klik tombol WhatsApp dan event di smartphone fisik telah berhasil dilakukan oleh pemilik bisnis (CLOSED).
 - **Halaman Kebijakan Privasi**: Selesai dibangun di `src/pages/kebijakan-privasi.astro` dan ditautkan di `footer-bottom` (CLOSED).
 - **Open Graph Image**: Berkas fisik `public/og-image.png` (1200x630, 129KB) telah terpasang dan diverifikasi (CLOSED).
@@ -201,7 +202,7 @@ Status ringkas sistem:
 - Homepage: Selesai, teruji, 0 errors, 0 warnings.
 - Halaman Utilitas: `/kebijakan-privasi` aktif dan memenuhi standar kepatuhan iklan Meta.
 - Portofolio: 6 demo live di Vercel, aset WebP dan favicon terintegrasi.
-- Staging: Aktif di Cloudflare Workers subdomain (`.workers.dev`).
+- Produksi / Domain Kanonikal: Domain resmi `enlesweb.com` telah dibeli di Domainesia dan nameserver/DNS diarahkan ke Cloudflare Workers menggantikan staging sementara `workers.dev` (Decision 018).
 - Pelacakan Event Meta Pixel:
   * `PageView` otomatis pada load halaman.
   * Klik WhatsApp (9 lokasi) dipetakan ke event standar resmi **`AddToCart`** lengkap dengan parameter nilai paket (`value: 450000`, `currency: 'IDR'`).
@@ -211,11 +212,11 @@ Status ringkas sistem:
 --------------------------------------------------------------------------------
 
 11. REGISTER ITEM OPEN & REKOMENDASI TINDAK LANJUT (ACTION ITEMS REGISTER)
-Berikut adalah daftar 3 tugas eksekusi murni Minggu 0 yang secara faktual **MASIH OPEN** sebelum kampanye iklan berbayar Meta Ads dijalankan:
+Berikut adalah daftar 2 tugas eksekusi murni Minggu 0 yang secara faktual **MASIH OPEN** sebelum kampanye iklan berbayar Meta Ads dijalankan:
 
 | No | Item | Kategori | Status Saat Ini | Tindak Lanjut & Rekomendasi |
 |---|---|---|---|---|
-| 1 | **Pembelian Domain enlesweb.com** | Infrastruktur / Bisnis | **OPEN** (Domain belum dibeli) | Pemilik bisnis membeli domain `enlesweb.com`, menghubungkan nameserver ke Cloudflare, dan mengaktifkan custom domain di Workers. Nilai `siteUrl: 'https://enlesweb.com'` di `src/config/site.ts` sudah siap sebagai target kanonikal. |
+| 1 | **Pembelian Domain enlesweb.com** | Infrastruktur / Bisnis | **CLOSED** (Domain sudah dibeli) | Domain kanonikal `enlesweb.com` resmi dibeli di Domainesia dan nameserver/DNS diarahkan ke Cloudflare Workers (Decision 018). Target kanonikal `siteUrl: 'https://enlesweb.com'` aktif. |
 | 2 | **Kesiapan Materi Iklan Meta (Carousel 4 Slide)** | Pemasaran / Konten | **OPEN** (Belum dirender) | Gunakan tooling internal `carousel-generator/` untuk merender iklan Carousel 4 slide dengan label tingkatan paket & harga eksplisit serta *problem-aware hook* (Slide 1: `tuntas: Paket Business Rp750.000`, Slide 2: `Jerseay: Paket Growth Rp1.200.000`, Slide 3: `ripeir: Paket Starter Rp450.000`, Slide 4: Ringkasan Paket & CTA WA; bebas em dash `—`, Decision 016). |
 | 3 | **Draf Template PDF Bukti Pemesanan** | Operasional Bisnis | **OPEN** (Siap dibuat dari klausul SOP v1.2) | Menyusun 1 halaman template PDF Bukti Pemesanan ber-TTD digital yang memuat Nama Lengkap Pendiri (sama persis dengan rekening bank penerima) sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota update konten ringan tahunan (2x/4x/6x), waktu pembelian domain pasca-DP + materi lengkap, dan aturan On-Hold 60 hari (Decision 017). *(Catatan: SOP chat WhatsApp sudah **CLOSED** di `Delivery & Operations/sop.md` v1.2).* |
 
@@ -243,7 +244,7 @@ Jika sesi pengembangan dilanjutkan oleh Agent atau sesi baru, urutan membaca waj
 
 15. CURRENT NORTH STAR
 Urutan langkah konkret menuju peluncuran komersial penuh (Minggu 0):
-1. Beli domain resmi `enlesweb.com` dan hubungkan ke Cloudflare Workers (menggantikan staging workers.dev).
+1. [CLOSED] Domain resmi `enlesweb.com` telah dibeli di Domainesia dan nameserver diarahkan ke Cloudflare Workers (Decision 018).
 2. Siapkan materi kreatif iklan Meta Carousel 4 slide (label tier & harga + *problem-aware hook*) via `carousel-generator/` dan kunci draf template PDF Bukti Pemesanan (mengacu pada SOP v1.2 yang telah CLOSED).
 3. Jalankan tes iklan berbayar Meta Ads Minggu 1 (Rp100.000 selama 7 hari) dan eksperimen Micro-Warm Outreach manual via DM Instagram `@enlesweb` (maksimal 2–3 pemilik usaha/hari, dicatat terpisah).
 
@@ -255,8 +256,8 @@ Urutan langkah konkret menuju peluncuran komersial penuh (Minggu 0):
 
 ### ENLESWEB --- PROGRESS DELTA
 Dari Baseline awal hingga Status Launch-Ready V3
-Tanggal: 16 Oktober 2026 (Diperbarui dari 15 Oktober 2026)
-Status: Handoff / continuity document & launch-ready validation V3 (Tersinkronisasi Penuh Decision 001–017 & SOP v1.2 CLOSED)
+Tanggal: 17 Oktober 2026 (Diperbarui dari 16 Oktober 2026)
+Status: Handoff / continuity document & launch-ready validation V3 (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)
 Fungsi: Mendokumentasikan seluruh lompatan evolusi dan perkembangan aktual yang telah diimplementasikan dalam kode riil repositori dan tata kelola operasional.
 
 --------------------------------------------------------------------------------
@@ -280,7 +281,7 @@ Baseline awal mendefinisikan homepage satu halaman: target audiens UMKM/bisnis l
 --------------------------------------------------------------------------------
 
 3. HOMEPAGE V2 KE V3 (DELTA KEPUTUSAN UTAMA)
-Evolusi penting yang diterapkan pada V3 (14–16 Oktober 2026):
+Evolusi penting yang diterapkan pada V3 (14–17 Oktober 2026):
 1. **Showcase 6 Proyek Portofolio Konsep Lengkap**: Dari yang sebelumnya hanya 3 proyek (Jerseay, berflower, ripeir), kini diperluas menjadi 6 proyek (Jerseay, dipotongin, tuntas, Seruput Kopi, ripeir, berflower). Menjawab langsung kekhawatiran jurang ekspektasi (*expectation gap*) dengan menyediakan contoh konkret untuk Starter, Business, dan Growth. Ripeir resmi disesuaikan menjadi tingkat Starter.
 2. **Navbar Transparan & Ambient Bleed Hero**: Navbar dibuat transparan pada kondisi scroll 0px, memungkinkan sapuan pendaran aksen (*ambient gradient sweep*) dari Hero mengalir menembus navbar secara mulus. Navbar bertransisi otomatis ke solid kanvas (`--canvas`) saat di-scroll > 8px atau saat menu drawer dibuka.
 3. **Engineered Tactile Button Affordance**: Mengganti bayangan 3D 4px blur yang dirasakan kurang rapi (*slop*) dengan sistem tactile presisi: shelf 3px solid `#A3C400`, inset specular highlight 1px (`rgba(255, 255, 255, 0.6)`), clean ink inversion pada hover/fokus, dan depresi fisik 2px saat ditekan.
@@ -288,6 +289,7 @@ Evolusi penting yang diterapkan pada V3 (14–16 Oktober 2026):
 5. **Konsolidasi Dokumentasi V3**: Pembaruan menyeluruh pada PRD.md, CONTENT.md, DESIGN.md, SPEC.md, serta pembentukan berkas master `ENLESWEB-DOCS-V3.md` menggantikan `ENLESWEB-DOCS-V2.md`.
 6. **Sinkronisasi Keputusan Domain Registrant & Skema Renewal (15 Oktober 2026 - Decision 002)**: Penyelarasan menyeluruh klausul domain registrant tahun pertama atas nama ENLESWEB demi menghilangkan friksi administrasi awal, skema perpanjangan tahun kedua flat Rp400rb/thn (.com/.id) atau Rp300rb/thn (ekstensi lainnya), opsi mandiri cuma-cuma tanpa vendor lock-in (transfer EPP + arsip build dist.zip), serta reorientasi klaim positioning utama ke "Kepastian dan Kemudahan".
 7. **Penguncian SOP Operasional v1.2 CLOSED & Decision 013–017 (16 Oktober 2026)**: Penutupan status SOP chat WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED), penambahan kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset saat perpanjangan terkelola), penundaan kenaikan biaya AI tools di Rp100rb/bln hingga 5 klien lunas & *default framing* `.com`, jalur eksperimen Micro-Warm Outreach manual via DM IG `@enlesweb` (Rp0, 2–3 usaha/hari), struktur iklan Carousel 4 slide berlabel tier & harga + *problem-aware hook*, serta perlindungan arus kas pembelian domain pasca-DP + materi lengkap dan aturan *On-Hold* 60 hari kalender.
+8. **Pencatatan Pembelian Domain Resmi enlesweb.com CLOSED & Decision 018 (17 Oktober 2026)**: Pencatatan resmi pembelian domain kanonikal `enlesweb.com` di Domainesia (Rp152.070, CLOSED), penutupan Tugas 1 Minggu 0 menjadi CLOSED / SELESAI, migrasi target rilis dari staging Cloudflare `workers.dev` ke domain produksi `enlesweb.com`, dan pembaruan sisa fokus Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan draf template PDF Bukti Pemesanan).
 
 --------------------------------------------------------------------------------
 
@@ -350,7 +352,7 @@ Hasil: Tombol toggle dropdown dan tombol CTA sejajar presisi secara horizontal.
 13. Final responsive QA homepage (360px - 1440px): SELESAI.
 14. Final technical/conversion QA: SELESAI (0 error, 0 warning).
 15. Lengkapi konfigurasi variabel riil & kepatuhan (Nomor WA, Pixel ID, Instagram, OG image, halaman Kebijakan Privasi, staging Cloudflare workers.dev, verifikasi fisik HP, serta SOP operasional WhatsApp v1.2 CLOSED): SELESAI.
-16. Launch produksi (Beli domain enlesweb.com & hubungkan ke Cloudflare Workers): IN PROGRESS / PENDING DOMAIN PURCHASE.
+16. Launch produksi (Beli domain enlesweb.com & hubungkan ke Cloudflare Workers): SELESAI / CLOSED (Domain kanonikal enlesweb.com telah dibeli di Domainesia, Decision 018).
 
 --------------------------------------------------------------------------------
 
@@ -360,8 +362,8 @@ Keputusan inti tetap LOCKED: satu halaman homepage, WhatsApp sebagai jalur konve
 --------------------------------------------------------------------------------
 
 11. CURRENT NORTH STAR
-Homepage, keenam aset demo proyek, dan SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED) telah selesai dan aktif.
-North Star Minggu 0: **Beli domain enlesweb.com & deploy produksi (Cloudflare Workers) -> Render materi iklan Meta Carousel 4 slide (via carousel-generator/) & kunci draf template PDF Bukti Pemesanan -> Jalankan kampanye iklan berbayar Meta Ads Minggu 1 + Micro-Warm Outreach DM IG manual.**
+Homepage, keenam aset demo proyek, domain kanonikal resmi enlesweb.com (CLOSED), dan SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED) telah selesai dan aktif.
+North Star Minggu 0: **Domain enlesweb.com aktif di Cloudflare Workers (CLOSED) -> Render materi iklan Meta Carousel 4 slide (via carousel-generator/) & kunci draf template PDF Bukti Pemesanan -> Jalankan kampanye iklan berbayar Meta Ads Minggu 1 + Micro-Warm Outreach DM IG manual.**
 
 === BATAS AKHIR FILE: ENLESWEB-PROGRESS-DELTA.md ===
 
@@ -371,20 +373,20 @@ North Star Minggu 0: **Beli domain enlesweb.com & deploy produksi (Cloudflare Wo
 
 ### CONTEXT-DETAIL-V3.md
 Handoff context untuk session berikutnya.
-Status: Launch-Ready Mode V3 (Tersinkronisasi Penuh Decision 001–017 & SOP v1.2 CLOSED - 16 Oktober 2026)
+Status: Launch-Ready Mode V3 (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED - 17 Oktober 2026)
 Penting: Dokumen ini adalah delta dari CONTEXT-DETAIL-V2.md, bukan pengganti isi V2.
 
 --------------------------------------------------------------------------------
 
 1. CURRENT PROJECT STATUS
 ENLESWEB berada dalam **Launch-Ready Mode V3**.
-- Seluruh kode homepage telah teruji dan terdeploy di staging Cloudflare workers.dev.
+- Seluruh kode homepage telah teruji dan domain resmi `enlesweb.com` telah dibeli di Domainesia dan nameserver/DNS diarahkan ke Cloudflare Workers (Decision 018).
 - Seluruh 6 proyek demo live di Vercel.
 - Nomor WhatsApp dan Meta Pixel ID telah dikonfirmasi riil dan aktif.
 - Halaman Kebijakan Privasi (`/kebijakan-privasi`) telah selesai dibangun dan ditautkan di bar bawah footer (CLOSED).
 - Pengujian nyata klik tombol WhatsApp dan event Meta Pixel di HP fisik telah berhasil diverifikasi (CLOSED).
 - SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.2) telah resmi dikunci (**CLOSED**, Decision 013–017).
-- Menunggu eksekusi 3 tugas murni Minggu 0: (1) pembelian domain resmi `enlesweb.com`, (2) penyiapan materi iklan Meta Carousel 4 slide berlabel tier & harga + *problem-aware hook*, dan (3) penguncian draf template PDF Bukti Pemesanan sebelum go-live komersial.
+- Domain resmi `enlesweb.com` telah resmi dibeli (**CLOSED**, Decision 018), menyisakan 2 tugas murni Minggu 0: (1) penyiapan materi iklan Meta Carousel 4 slide berlabel tier & harga + *problem-aware hook*, dan (2) penguncian draf template PDF Bukti Pemesanan sebelum go-live komersial.
 
 --------------------------------------------------------------------------------
 
@@ -392,7 +394,7 @@ ENLESWEB berada dalam **Launch-Ready Mode V3**.
 - **ENLESWEB-DOCS-V3.md** adalah sumber kebenaran tunggal untuk spesifikasi teknis, desain, dan salinan teks pelanggan.
 - **src/content/copy.ts** adalah sumber salinan teks di kode.
 - **src/config/site.ts** adalah pusat konfigurasi variabel bisnis.
-- **Delivery & Operations/sop.md (v1.2)** & **Business Memory/decision-log.md (Decision 001–017)** adalah sumber kebenaran operasional dan keputusan bisnis.
+- **Delivery & Operations/sop.md (v1.2)** & **Business Memory/decision-log.md (Decision 001–018)** adalah sumber kebenaran operasional dan keputusan bisnis.
 
 --------------------------------------------------------------------------------
 
@@ -410,6 +412,7 @@ ENLESWEB berada dalam **Launch-Ready Mode V3**.
   * Kuota gratis putaran update konten ringan tahunan di tahun pertama (Starter 2x, Business 4x, Growth 6x; selebihnya Rp50.000/putaran, SLA 1–2 hari kerja) yang otomatis di-reset setiap tahun saat klien memilih Perpanjangan Terkelola.
   * Struktur iklan Carousel 4 slide wajib mencantumkan label tingkatan paket & harga eksplisit serta *problem-aware hook* di kalimat pertama iklan/DM (tanpa mengubah copy homepage).
   * Transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF (sama persis dengan rekening bank penerima), pembelian domain dilakukan setelah DP 50% + materi dasar lengkap, dan keterlambatan materi >7 hari dialihkan ke status *On-Hold* hingga 60 hari kalender sejak tanggal DP.
+- Domain Resmi & Infrastruktur Produksi (Decision 018): Domain kanonikal `enlesweb.com` telah resmi dibeli di Domainesia (Rp152.070, Tugas 1 Minggu 0 CLOSED / SELESAI) dan nameserver/DNS diarahkan ke Cloudflare Workers sebagai domain produksi kanonikal (`siteUrl: 'https://enlesweb.com'`) menggantikan staging sementara `workers.dev`.
 
 --------------------------------------------------------------------------------
 
@@ -461,7 +464,7 @@ Halaman statis minimal `/kebijakan-privasi` telah selesai dibangun dan ditautkan
 --------------------------------------------------------------------------------
 
 10. SINGLE NORTH STAR FOR THE NEXT STEP
-**Langkah berikutnya (Minggu 0)**: Beli domain resmi `enlesweb.com` dan hubungkan ke Cloudflare Workers, render materi kreatif iklan Meta Carousel 4 slide (berlabel tier & harga + *problem-aware hook*) menggunakan `carousel-generator/`, kunci draf template PDF Bukti Pemesanan, lalu jalankan kampanye iklan berbayar Meta Ads Minggu 1 dan eksperimen Micro-Warm Outreach DM IG manual.
+**Langkah berikutnya (Minggu 0)**: Domain resmi `enlesweb.com` telah dibeli (**CLOSED**, Decision 018); selanjutnya render materi kreatif iklan Meta Carousel 4 slide (berlabel tier & harga + *problem-aware hook*) menggunakan `carousel-generator/`, kunci draf template PDF Bukti Pemesanan, lalu jalankan kampanye iklan berbayar Meta Ads Minggu 1 dan eksperimen Micro-Warm Outreach DM IG manual.
 
 === BATAS AKHIR FILE: CONTEXT-DETAIL-V3.md ===
 
@@ -611,6 +614,7 @@ Pisahkan empat entitas ini secara jelas dalam komunikasi operasional, materi pro
 16. HAL YANG BELUM FINAL (HISTORI V2 -> TELAH FINAL DI V3)
 - Renewal domain/hosting tahun kedua: TELAH FINAL (LOCKED - Decision 002). Tahun pertama registrant atas nama ENLESWEB; tahun kedua klien bebas memilih perpanjangan terkelola flat all package (Rp400rb/tahun .com/.id atau Rp300rb/tahun ekstensi lainnya) atau opsi mandiri transfer EPP + dist zip.
 - SOP operasional, SLA pengerjaan, kuota update konten ringan pasca-tayang, dan ketentuan pembayaran tertulis: TELAH FINAL (LOCKED / CLOSED di `Delivery & Operations/sop.md` v1.2, Decision 003, 004, 013–017).
+- Domain resmi bisnis `enlesweb.com`: TELAH FINAL / SUDAH DIBELI (CLOSED di registrar Domainesia & Cloudflare Workers, Decision 018).
 
 --------------------------------------------------------------------------------
 

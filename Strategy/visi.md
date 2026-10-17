@@ -1,7 +1,7 @@
 # VISI ENLESWEB
-**Versi:** 1.4  
-**Terakhir diperbarui:** 16 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.6), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 017), dan sesi `/grill-me` 16 Oktober 2026.  
+**Versi:** 1.5  
+**Terakhir diperbarui:** 17 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan konfirmasi pembelian domain `enlesweb.com` 17 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Pernyataan Visi
@@ -9,16 +9,16 @@
 
 ENLESWEB berangkat dari jasa pembuatan website untuk UMKM dan bisnis kecil-menengah di seluruh Indonesia, lalu bergerak menuju sistem produksi internal berbasis blueprint JSON. Tujuannya agar tiap website baru dikonfigurasi dan dirakit dari sistem yang sudah dibangun, bukan dikerjakan dari nol.
 
-## 2. Titik Awal (Kondisi per 16 Oktober 2026)
+## 2. Titik Awal (Kondisi per 17 Oktober 2026)
 - [FAKTA] Solo founder dibantu AI assistant (langganan dikunci Rp100.000/bulan sampai 5 klien lunas atau 2 proyek Growth/Custom simultan, Decision 014). Belum ada tim internal.
 - [KEPUTUSAN] Komunikasi promosi dan publik menggunakan persona "kami" dan "tim" layaknya studio/agensi (Decision 001), dipadukan dengan transparansi Nama Lengkap Pendiri sebagai Penanggung Jawab Resmi Studio ENLESWEB di dokumen PDF Bukti Pemesanan (Decision 017).
-- [FAKTA] Launch-ready, belum go-live komersial. Homepage berjalan di staging Cloudflare `workers.dev`.
+- [FAKTA] Launch-ready, siap go-live komersial. Domain kanonikal resmi `enlesweb.com` telah dibeli (Decision 018) dan dihubungkan ke Cloudflare Workers.
 - [FAKTA] 6 website konsep live di Vercel (Seruput Kopi, ripeir, tuntas, Jerseay, dipotongin, berflower).
 - [FAKTA] Aset reusable: 6 template konsep, `carousel-generator/`, SOP chat WhatsApp (`sop.md` v1.2 **CLOSED**).
 - [FAKTA] Klien: 0. Prospek: 0. Pendapatan: Rp0.
 - [KEPUTUSAN] Runway operasional awal: 30 hari (1 bulan) konsisten aktif menguji kampanye.
 - [KEPUTUSAN] Kapasitas proyek paralel solo founder tanpa builder: 2 - 3 klien simultan (dengan mekanisme *On-Hold* 60 hari untuk membebaskan slot jika klien terlambat mengirim materi lewat dari 7 hari kalender, Decision 017).
-- [KEPUTUSAN/FAKTA] Modal kerja siap pakai yang dialokasikan: sekitar Rp1.000.000 – Rp1.500.000 (mencakup iklan, domain bisnis, AI tools, dan dana talangan).
+- [KEPUTUSAN/FAKTA] Modal kerja siap pakai yang dialokasikan: sekitar Rp1.000.000 – Rp1.500.000 (mencakup domain bisnis `enlesweb.com` Rp152.070 yang telah terealisasi dibeli, iklan, AI tools, dan dana talangan).
 
 ## 3. Komitmen Visi
 - [KEPUTUSAN] **Yang dikomitmenkan: Internal Production System**, yaitu sistem untuk mempercepat dan menstandarkan produksi website ENLESWEB sendiri.
@@ -101,4 +101,5 @@ Batas tetap selama bisnis bertumbuh. Perubahan hanya lewat keputusan baru yang d
 | 14 Oktober 2026 | Versi 1.2: Modal kerja siap pakai dikonfirmasi (Rp1-1,5jt) dan sinkronisasi dengan `model-bisnis.md`. | Wawancara grill-me |
 | 14 Oktober 2026 | Versi 1.3: (1) Penegasan jadwal perancangan spesifikasi blueprint JSON internal dimulai persis setelah klien ke-10 go live (selesai, tayang, lunas), (2) Penguncian ambisi sistem jangka panjang pada Productized System terlebih dahulu, dan menunda/mendiferensiasi SaaS mandiri hingga Productized System terbukti matang. | Arahan pemilik |
 | 16 Oktober 2026 | Versi 1.4: Sinkronisasi Decision 013 - 017: pembukaan Micro-Warm Outreach manual Rp0 via DM IG (2-3/hari) dengan tetap melarang tools scraping berbayar sebelum 10 klien selesai, penundaan kenaikan biaya AI tools hingga 5 klien lunas, kuota gratis update konten ringan tahunan (2x/4x/6x), aturan On-Hold 60 hari, dan status SOP WhatsApp `sop.md` v1.2 CLOSED. | Sesi `/grill-me` 16 Okt 2026 |
+| 17 Oktober 2026 | Versi 1.5: Sinkronisasi pembelian domain kanonikal resmi `enlesweb.com` (Decision 018) dan pembaruan kesiapan peluncuran produksi pada Cloudflare Workers. | Konfirmasi pembelian domain 17 Okt 2026 (Decision 018) |
 

@@ -340,3 +340,22 @@ Pembayaran ditransfer ke rekening bank pribadi pendiri sehingga memerlukan trans
 
 ### 3. Alasan
 Menghilangkan keraguan transfer ke rekening pribadi, melindungi slot kapasitas produksi solo founder sekaligus tetap adil bagi UMKM, serta melindungi modal kerja dari risiko pengeluaran domain prematur.
+
+---
+
+## Decision 018
+- **Tanggal:** 17 Oktober 2026
+- **Topik:** Pembelian Domain Resmi enlesweb.com, Penutupan Tugas 1 Minggu 0, dan Migrasi Status Produksi
+- **Status:** Diputuskan & Terealisasi
+
+### 1. Masalah yang ingin diselesaikan
+Menuntaskan prasyarat infrastruktur kanonikal studio ENLESWEB sebelum penayangan kampanye iklan Meta Ads berbayar dan peluncuran komersial, serta mengalihkan target publik dari staging sementara (`workers.dev`) ke domain resmi `enlesweb.com`.
+
+### 2. Keputusan
+1. **Pembelian Domain Bisnis Resmi:** Domain kanonikal `enlesweb.com` telah resmi dibeli (pendaftaran registrar Domainesia tahun pertama terealisasi sebesar Rp152.070).
+2. **Penutupan Tugas 1 Minggu 0:** Item 1 pada register tugas eksekusi murni Minggu 0 resmi dinyatakan **CLOSED (SELESAI)**.
+3. **Penyisaan 2 Tugas Eksekusi Murni:** Menyisakan 2 tugas eksekusi murni pra-peluncuran di Minggu 0 sebelum iklan Meta Ads tayang: (1) pembuatan materi kreatif iklan Meta Carousel 4 slide berlabel tier & harga + *problem-aware hook* via `carousel-generator/`, dan (2) penguncian draf template PDF Bukti Pemesanan formal ber-TTD digital dengan Nama Lengkap Pendiri.
+4. **Migrasi Status Produksi:** Mengarahkan DNS/nameserver Cloudflare ke domain `enlesweb.com` sebagai target kanonikal produksi utama (`siteUrl: 'https://enlesweb.com'`), mengakhiri ketergantungan pada subdomain staging `workers.dev`.
+
+### 3. Alasan
+Memberikan kepastian identitas resmi dan meningkatkan kredibilitas studio bagi calon klien UMKM, serta memvalidasi kesiapan teknis pelacakan Meta Pixel (`ViewContent`, `AddToCart`), link WhatsApp, OG image, dan sitemap pada domain produksi kanonikal sebelum modal iklan dialirkan.

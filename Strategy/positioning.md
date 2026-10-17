@@ -1,7 +1,7 @@
 # POSITIONING ENLESWEB
-**Versi:** 1.5  
-**Terakhir diperbarui:** 16 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.6), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 017), dan sesi `/grill-me` 16 Oktober 2026.  
+**Versi:** 1.6  
+**Terakhir diperbarui:** 17 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan sesi `/grill-me` 16 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Positioning
@@ -138,4 +138,5 @@ Catatan transaksi:
 | 14 Oktober 2026 | Versi 1.3: Sinkronisasi kebijakan domain klien bebas pilih `.com`/`.id` (Decision 010) dan integrasi dengan `Strategy/model-bisnis.md`. | Arahan pemilik |
 | 14 Oktober 2026 | Versi 1.4: Penetapan hipotesis target konversi Bukti Pemesanan PDF ke DP sebesar 80% dan penegasan pertanyaan terbuka sebagai data empiris [BELUM DIKETAHUI]. | Arahan pemilik |
 | 16 Oktober 2026 | Versi 1.5: Sinkronisasi Decision 013 - 017: (1) pembagian peran Problem-Aware Hook di iklan/DM vs Solution-Aware di homepage, (2) urutan prioritas 3 demo (`tuntas`, `Jerseay`, `ripeir`) & pembukaan Micro-Warm Outreach DM IG manual, (3) label tier & harga eksplisit di Carousel 4 slide + jembatan ekspektasi di SOP Template 5.2, (4) kuota gratis update konten ringan tahunan (2x/4x/6x + reset saat renewal terkelola), serta (5) transparansi Nama Lengkap Pendiri di PDF dan aturan On-Hold 60 hari. | Sesi `/grill-me` 16 Okt 2026 |
+| 17 Oktober 2026 | Versi 1.6: Sinkronisasi pembelian domain resmi `enlesweb.com` (Decision 018), pemutakhiran sisa tugas Minggu 0, dan penyelarasan sumber kebenaran dengan `summary.md` v1.7. | Decision 018 & `summary.md` v1.7 |
 

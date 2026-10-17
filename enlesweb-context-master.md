@@ -1,10 +1,10 @@
 # ENLESWEB CONTEXT MASTER: DOKUMENTASI TERPADU PLATFORM & 6 TEMPLATE KONSEP
 
-**Versi:** 3.4 (Sinkronisasi SOP Operasional v1.2 CLOSED, Decision 013–017, & Kuota Update Konten Ringan Tahunan)  
-**Tanggal Rilis:** 16 Oktober 2026  
-**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–017 & SOP v1.2 CLOSED)  
+**Versi:** 3.5 (Pencatatan Pembelian Domain Resmi enlesweb.com CLOSED & Decision 018)  
+**Tanggal Rilis:** 17 Oktober 2026  
+**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)  
 **Target Pengguna Dokumen:** Dokumentasi Teknis Standar, Panduan Arsitektur Sistem, dan Wiki Pengembang  
-**Ringkasan Pembaruan:** Sinkronisasi menyeluruh klausul skema perpanjangan tahun kedua dan kepemilikan registrant domain tahun pertama (Decision 002), serta penguncian SOP operasional WhatsApp v1.2 (**CLOSED**, Decision 013–017) yang mencakup kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset setiap tahun saat memilih Perpanjangan Terkelola), waktu pembelian domain pasca-DP 50% + materi lengkap, aturan tunda proyek (*On-Hold*) 60 hari kalender, dan transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF.  
+**Ringkasan Pembaruan:** Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (CLOSED / SELESAI, Decision 018), pengalihan status rilis ke Cloudflare Workers custom domain, dan pemutakhiran sisa tugas Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan template PDF Bukti Pemesanan).  
 
 ---
 
@@ -707,7 +707,7 @@ enlesweb-master/
 3. Tambahkan environment variable produksi di Cloudflare Dashboard jika diperlukan:
    - `PUBLIC_WHATSAPP_NUMBER`: Nomor resmi WhatsApp agensi.
    - `PUBLIC_META_PIXEL_ID`: ID Meta Pixel untuk tracking kampanye iklan berbayar (event `AddToCart`).
-4. Hubungkan domain kanonikal utama (`enlesweb.com`) melalui menu DNS Cloudflare dengan status *Proxied*.
+4. Hubungkan domain kanonikal utama (`enlesweb.com`) yang telah resmi dibeli (Decision 018) melalui menu DNS Cloudflare dengan status *Proxied*.
 
 #### Pipeline Vercel (Showcase Portofolio Konsep):
 1. Import repositori template konsep ke tim/akun Vercel.

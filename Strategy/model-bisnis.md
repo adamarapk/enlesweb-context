@@ -1,7 +1,7 @@
 # MODEL BISNIS ENLESWEB
-**Versi:** 1.2  
-**Terakhir diperbarui:** 16 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.6), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 017), dan sesi `/grill-me` 16 Oktober 2026.  
+**Versi:** 1.3  
+**Terakhir diperbarui:** 17 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan konfirmasi pembelian domain `enlesweb.com` 17 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan terukur, [HIPOTESIS] asumsi belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ---
@@ -42,7 +42,7 @@ Biaya operasional dibagi secara tegas menjadi biaya tunai tetap, biaya tunai var
   - [KEPUTUSAN] Alat pembuatan Bukti Pemesanan PDF & TTD digital: **Rp0** (Google Docs/Canva + TTD gambar, Decision 007).
   - [KEPUTUSAN] Eksperimen Micro-Warm Outreach DM Instagram (2–3 pemilik usaha/hari): **Rp0** (manual tanpa tools scraping berbayar, Decision 013).
 - **Domain Internal Bisnis:**
-  - [FAKTA] `enlesweb.com`: **Rp152.070** (tahun pertama, pendaftaran registrar Domainesia).
+  - [FAKTA] `enlesweb.com`: **Rp152.070** (tahun pertama, pendaftaran registrar Domainesia — **TEREALISASI / SUDAH DIBELI**, Decision 018).
 
 ### B. Biaya Tunai Variabel Langsung per Klien (COGS / Direct Costs)
 Biaya langsung yang timbul saat proyek klien mulai dikerjakan (setelah DP 50% diterima DAN materi dasar klien dinyatakan lengkap, Decision 017):
@@ -210,7 +210,7 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 ## 10. Kondisi Modal Awal
 - [KEPUTUSAN] **Modal kerja siap pakai dialokasikan sekitar Rp1.000.000 – Rp1.500.000**.
 - Alokasi peruntukan modal:
-  1. Pembelian domain bisnis `enlesweb.com`: ~Rp152.070.
+  1. Pembelian domain bisnis `enlesweb.com`: Rp152.070 (terealisasi / sudah dibeli per 17 Okt 2026, Decision 018).
   2. Anggaran tes awal iklan Meta Ads (Minggu 1): Rp100.000.
   3. Cadangan kelanjutan iklan: Rp400.000 (bagian dari plafon dasar Rp500.000 yang tersedia langsung).
   4. Langganan AI tools fase awal (dikunci Rp100.000/bulan sampai 5 klien lunas, Decision 014): Rp100.000 – Rp200.000.
@@ -253,4 +253,5 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | 14 Oktober 2026 | 1.0 | Draf awal model bisnis komprehensif: unit economics, struktur biaya tunai vs jam kerja pendiri, kebijakan domain .com/.id bebas pilih (Decision 010), batas CAC maksimum dan implisit, resolusi ketegangan target Rp4,5jt sebagai batas bawah konservatif, matriks sensitivitas campuran paket, model perpanjangan tahun ke-2 terpisah, ambang kelayakan model (margin blended 60%, CAC 25%), dan batas kapasitas solo founder. | Wawancara grill-me pemilik, sinkronisasi strategi. |
 | 14 Oktober 2026 | 1.1 | Pembaruan keputusan & parameter model: (1) Konfirmasi pembukaan sisa plafon iklan Rp500k-Rp1jt boleh menggunakan tambahan modal pemilik pasca-1 DP, (2) Penetapan estimasi jam kerja Starter pada 5–12 jam kerja nyata serta kalkulasi rate Rp/jam kerja pendiri, (3) Penegasan arahan strategis kepemilikan portofolio domain klien yang ingin porsi .com lebih besar guna menjaga blended gross margin > 60%, dan (4) Mempertahankan rasio konversi chat-ke-DP dan pilihan domain riil sebagai data empiris terbuka [BELUM DIKETAHUI]. | Arahan pemilik |
 | 16 Oktober 2026 | 1.2 | Sinkronisasi Decision 013 - 017: (1) penundaan kenaikan biaya AI tools (tetap Rp100rb/bln sampai 5 klien lunas atau 2 Growth/Custom simultan) dan pembaruan tabel proyeksi 12 bulan (Konservatif Rp2,7jt, Dasar Rp3,2jt, Optimis Rp4,2jt), (2) operasionalisasi default framing `.com` di SOP Template 5.2 dan perbandingan sensitivitas 70% `.com`, (3) penambahan kuota gratis putaran update konten ringan tahunan (2x/4x/6x), tarif kelebihan kuota Rp50.000/putaran, dan reset kuota saat Perpanjangan Terkelola, serta (4) proteksi kas pembelian domain setelah DP + materi lengkap dan pembebasan slot kapasitas lewat status On-Hold 60 hari. | Sesi `/grill-me` 16 Okt 2026 |
+| 17 Oktober 2026 | 1.3 | Pencatatan realisasi pengeluaran kas pembelian domain bisnis kanonikal enlesweb.com sebesar Rp152.070 (Decision 018). | Konfirmasi pembelian domain 17 Okt 2026 (Decision 018) |
 

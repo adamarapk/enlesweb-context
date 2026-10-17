@@ -11,7 +11,7 @@ Seluruh rincian teks bersumber dari CONTENT.md, desain visual dari DESIGN.md, da
 tuntas adalah konsep website untuk bimbingan belajar (bimbel) kelompok kecil dan les privat jenjang SD, SMP, dan SMA. Dibuat oleh ENLESWEB sebagai contoh paket Business. tuntas bukan klien komersial nyata, bukan bimbel yang sedang beroperasi secara fisik, dan tidak digunakan sebagai bukti sosial palsu.
 
 ### Fungsi bagi ENLESWEB:
-- **Showcase Paket Business:** Berfungsi sebagai demo resmi paket Business pada galeri proyek homepage ENLESWEB, mendampingi demo Starter dan Growth (seperti Jerseay, berflower, dan ripeir).
+- **Showcase Paket Business:** Berfungsi sebagai demo resmi paket Business pada galeri proyek homepage ENLESWEB, mendampingi demo Starter (Seruput Kopi, ripeir) dan demo Growth (Jerseay, dipotongin, berflower).
 - **Pembuktian Kapabilitas:** Memperlihatkan bahwa paket Business menghasilkan website multi-halaman lengkap yang terstruktur rapi, berkarakter unik, ramah aksesibilitas, dilengkapi optimasi SEO dasar, serta memiliki alur konversi WhatsApp yang matang tanpa memerlukan modul interaktif kompleks tingkat Growth.
 - **Fondasi Arketipe Desain:** Menjadi referensi implementasi arketipe "H4 Index/Table Hero" dengan metafora fisik lembar buku tulis bergaris SiDU dan ledger administrasi pendidikan.
 

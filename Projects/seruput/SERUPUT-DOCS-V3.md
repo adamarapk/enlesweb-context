@@ -27,7 +27,7 @@ Dokumen ini menetapkan tujuan, scope, dan batasan produk Seruput Kopi sesuai kon
 `Seruput Kopi` adalah konsep website satu halaman untuk kedai kopi mandiri di tepi kanal Venice, Italia. Dibuat oleh ENLESWEB sebagai contoh paket Starter (Layout A) sekaligus template siap-pakai untuk calon klien kedai kopi. `Seruput Kopi` adalah konsep website demonstrasi dan bukan bisnis yang sedang beroperasi secara komersial. Seluruh informasi racikan menu, jam buka, alamat, biji kopi, ulasan, dan kontak adalah data contoh.
 
 Fungsi bagi ENLESWEB:
-- Menjadi representasi nyata paket Starter di bagian portofolio ENLESWEB, berdampingan dengan demo Growth (Jerseay, berflower, ripeir) dan Starter lainnya (klimis).
+- Menjadi representasi nyata paket Starter di bagian portofolio ENLESWEB, berdampingan dengan demo Starter lainnya (ripeir) dan demo Growth (Jerseay, dipotongin, berflower).
 - Menunjukkan bahwa paket Starter mampu menyajikan informasi bisnis esensial yang langsung dibutuhkan calon pelanggan: daftar menu racikan, jam buka operasional, lokasi presisi dengan peta, etalase biji kopi sangrai, ulasan pengunjung, dan jalur kontak WhatsApp langsung.
 - Menunjukkan fleksibilitas pemilihan desain paket Starter: `Seruput Kopi` mengimplementasikan Layout A (satu kolom naratif editorial dengan arketipe Menu-as-Hero).
 - Kemudahan pemeliharaan (*maintenance-friendly*) tanpa CMS: situs sengaja tidak menampilkan angka nominal harga individual di halaman agar tidak mudah usang saat terjadi fluktuasi harga atau rotasi biji kopi, melainkan mengarahkan ke WhatsApp untuk pembaruan harga dan stok harian.

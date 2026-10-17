@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.3  
-**Terakhir diperbarui:** 16 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.6), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 017), dan sesi `/grill-me` 16 Oktober 2026.  
+**Versi:** 1.4  
+**Terakhir diperbarui:** 17 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan konfirmasi pembelian domain `enlesweb.com` 17 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -12,7 +12,7 @@
 ## 2. Ringkasan Garis Waktu
 | Tahap | Patokan tanggal | Hasil yang harus ada |
 |---|---|---|
-| Minggu 0: Persiapan (Sisa 3 Tugas Murni) | 14 - 20 Okt 2026 | (1) Domain `enlesweb.com` aktif, (2) Materi iklan Carousel 4 slide siap, (3) Draf template PDF Bukti Pemesanan terkunci *(SOP WhatsApp telah CLOSED di `sop.md` v1.2)* |
+| Minggu 0: Persiapan (Sisa 2 Tugas Murni) | 14 - 20 Okt 2026 | (1) Domain `enlesweb.com` aktif (**CLOSED/SUDAH DIBELI**), (2) Materi iklan Carousel 4 slide siap, (3) Draf template PDF Bukti Pemesanan terkunci *(SOP WhatsApp telah CLOSED di `sop.md` v1.2)* |
 | Minggu 1: Tes Meta Ads Rp100.000 + Micro-Warm DM IG | 21 - 27 Okt 2026 | Data iklan 7 hari (terpisah dari data Micro-Warm DM IG), lalu kampanye iklan dijeda untuk evaluasi |
 | Keputusan akhir minggu 1 | 28 Okt 2026 | Jalur A, B, atau C (bagian 5) |
 | Checkpoint hari ke-30 | sekitar 19 Nov 2026 | Hard stop jika 0 DP (bagian 6) |
@@ -20,15 +20,15 @@
 | Evaluasi hari ke-90 | sekitar 18 Jan 2027 | Hitung DP final vs target 10 |
 
 ## 3. Minggu 0: Persiapan (14 - 20 Oktober 2026)
-[KEPUTUSAN] Karena SOP operasional WhatsApp telah resmi **CLOSED** (`Delivery & Operations/sop.md` v1.2, Decision 017), Minggu 0 menyisakan **3 tugas eksekusi murni** (domain, materi iklan Carousel, dan draf PDF Bukti Pemesanan) ditambah pengiriman kampanye ke review Meta:
+[KEPUTUSAN] Karena SOP operasional WhatsApp telah resmi **CLOSED** (`Delivery & Operations/sop.md` v1.2, Decision 017) dan domain `enlesweb.com` telah resmi **DIBELI** (Decision 018), Minggu 0 menyisakan **2 tugas eksekusi murni** (materi iklan Carousel dan draf PDF Bukti Pemesanan) ditambah penyiapan kampanye ke review Meta:
 
 | Hari | Pekerjaan | Selesai jika |
 |---|---|---|
-| 1-2 (14-16 Okt) | **Tugas 1:** Beli `enlesweb.com`, hubungkan ke Cloudflare Workers menggantikan `workers.dev`. Uji ulang WhatsApp link, Meta Pixel (`ViewContent`, `AddToCart`), OG image, sitemap di domain baru. | Homepage terbuka di `enlesweb.com`, event Pixel terbaca |
+| 1-2 (14-16 Okt) | **Tugas 1 (CLOSED / SELESAI):** Beli `enlesweb.com` (telah dibeli di Domainesia) dan hubungkan DNS ke Cloudflare Workers menggantikan `workers.dev`. Uji ulang WhatsApp link, Meta Pixel (`ViewContent`, `AddToCart`), OG image, sitemap di domain kanonikal `enlesweb.com`. | Homepage live di `enlesweb.com`, event Pixel terbaca |
 | 2-4 (16-17 Okt) | **Tugas 2:** Buat materi iklan memakai `carousel-generator/`. **Carousel 4 slide** dengan *problem-aware hook* ("mengapa IG/WA saja tidak cukup") di pembuka dan label tier/harga eksplisit: Slide 1 `tuntas: Paket Business Rp750.000`, Slide 2 `Jerseay: Paket Growth Rp1.200.000`, Slide 3 `ripeir: Paket Starter Rp450.000`, Slide 4 Ringkasan Paket & CTA WA (Decision 013 & 016). | Carousel 4 slide final, berlabel tier & harga, bebas em dash, tanpa testimoni/klaim hasil/urgensi palsu |
 | 5 (18 Okt) | **Tugas 3:** Kunci alat PDF dan TTD digital (bagian 4). Susun draf template Bukti Pemesanan yang mencantumkan **Nama Lengkap Pendiri** (sesuai rekening bank pribadi) sebagai **Penanggung Jawab Resmi Studio ENLESWEB**, kuota update ringan tahunan (2x/4x/6x), dan aturan *On-Hold* 60 hari (Decision 015 & 017). | Template PDF terisi contoh lengkap dengan Nama Lengkap Pendiri dan terbaca rapi |
 | 6 (19 Okt) | *(SOP chat WhatsApp telah CLOSED di `sop.md` v1.2).* Siapkan kampanye di Meta Ads Manager (caption diawali *problem-aware hook*) dan kirim ke review. | Iklan berstatus menunggu/disetujui |
-| 7 (20 Okt) | Pemeriksaan akhir: link, pixel, jam balas chat, draf PDF siap dikirim, dan daftar akun target awal Micro-Warm DM IG siap. | Daftar periksa tanpa temuan terbuka |
+| 7 (20 Okt) | Pemeriksaan akhir: link, pixel di `enlesweb.com`, jam balas chat, draf PDF siap dikirim, dan daftar akun target awal Micro-Warm DM IG siap. | Daftar periksa tanpa temuan terbuka |
 
 - [KEPUTUSAN] PDF Bukti Pemesanan **tidak harus** selesai sebelum iklan tayang, tetapi **wajib siap sebelum DP pertama diminta**.
 - [HIPOTESIS] Review iklan Meta bisa memakan waktu hingga 1 hari atau lebih. Hari 6 sengaja memberi jeda sebelum tayang.
@@ -138,4 +138,5 @@ Dihitung sejak iklan tayang.
 | 14 Oktober 2026 | Versi 1.1: Sinkronisasi modal siap pakai terkonfirmasi (Rp1-1,5jt) dan integrasi dengan `Strategy/model-bisnis.md` serta Decision 010. | Arahan pemilik |
 | 14 Oktober 2026 | Versi 1.2: Konfirmasi keputusan mekanisme plafon iklan, penegasan aturan mode jeda hard stop mutlak 30 hari 0 DP, arahan preferensi domain lebih besar `.com`, dan sinkronisasi hipotesis target konversi Bukti Pemesanan PDF ke DP sebesar 80%. | Arahan pemilik |
 | 16 Oktober 2026 | Versi 1.3: Sinkronisasi Decision 013 - 017: (1) pembukaan Micro-Warm Outreach manual Rp0 via DM IG (2-3/hari, tercatat terpisah dari metrik iklan, jeda saat 3 slot penuh) & urutan prioritas 3 demo (`tuntas`, `Jerseay`, `ripeir`), (2) penundaan kenaikan biaya AI tools hingga 5 klien lunas atau 2 Growth/Custom simultan, (3) aturan On-Hold 60 hari setelah 7 hari tanpa materi agar slot kapasitas 3 proyek aktif bebas, (4) pencantuman Nama Lengkap Pendiri di PDF Bukti Pemesanan, serta (5) penguncian status SOP WhatsApp menjadi CLOSED (`sop.md` v1.2) sehingga menyisakan 3 tugas eksekusi murni di Minggu 0. | Sesi `/grill-me` 16 Okt 2026 |
+| 17 Oktober 2026 | Versi 1.4: Sinkronisasi pembelian domain resmi `enlesweb.com` (Tugas 1 Minggu 0 CLOSED / SELESAI, Decision 018), menyisakan 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan draf template PDF Bukti Pemesanan) sebelum penayangan kampanye Meta Ads Minggu 1. | Konfirmasi pembelian domain oleh pemilik 17 Okt 2026 (Decision 018) |
 

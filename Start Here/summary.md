@@ -1,17 +1,17 @@
 # BUSINESS CONTEXT
-**Versi:** 1.6  
-**Terakhir diperbarui:** 16 Oktober 2026  
-**Sumber:** `enlesweb-context-master.md`, `ENLESWEB-DOCS-V3.md`, `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Strategy/positioning.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Business Memory/decision-log.md` (Decision 001 - 017), dan sesi `/grill-me` 16 Oktober 2026.  
-**Ringkasan Pembaruan:** Sinkronisasi menyeluruh 6 keputusan strategis & operasional baru (Decision 013 s/d 017): (1) pembukaan Micro-Warm Outreach manual Rp0 via DM IG `@enlesweb` (2-3 usaha/hari) & urutan prioritas 3 demo (`tuntas`, `Jerseay`, `ripeir`), (2) penundaan kenaikan biaya AI tools (tetap Rp100rb/bln sampai 5 klien lunas atau 2 Growth/Custom simultan) & default framing `.com` di SOP WhatsApp, (3) jatah gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x, kelebihan kuota Rp50rb/putaran, di-reset saat renewal terkelola), (4) label tier & harga di iklan Carousel 4 slide + jembatan ekspektasi demo di SOP, (5) transparansi Nama Lengkap Pendiri di PDF Bukti Pemesanan, pembelian domain setelah DP + materi lengkap, dan aturan On-Hold 60 hari, serta (6) aturan Problem-Aware Hook di iklan/DM & penutupan status SOP WhatsApp (`sop.md` v1.2 CLOSED).  
+**Versi:** 1.7  
+**Terakhir diperbarui:** 17 Oktober 2026  
+**Sumber:** `enlesweb-context-master.md`, `ENLESWEB-DOCS-V3.md`, `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Strategy/positioning.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Business Memory/decision-log.md` (Decision 001 - 018), dan konfirmasi pembelian domain `enlesweb.com` 17 Oktober 2026.  
+**Ringkasan Pembaruan:** Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (Tugas 1 Minggu 0 CLOSED / SELESAI, Decision 018), pengalihan status produksi dari staging sementara ke custom domain produksi Cloudflare Workers, dan pemutakhiran sisa tugas Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan draf template PDF Bukti Pemesanan).  
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] sudah dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Bisnis
-- Nama bisnis: ENLESWEB (`enlesweb.com`, domain belum dibeli)
+- Nama bisnis: ENLESWEB (`enlesweb.com`, domain resmi sudah dibeli)
 - Tahap bisnis: Awal / mencari product-market fit
 - Jenis bisnis: Jasa pembuatan website
 - Lokasi dan pasar target: [KEPUTUSAN] Seluruh Indonesia secara remote, tanpa batasan kota. Konversi lewat Meta Ads (dan Micro-Warm Outreach DM IG manual) ke homepage/WhatsApp.
 - Status saat ini:
-  - [FAKTA] Launch-ready, belum go-live komersial. Homepage selesai (0 error, 0 warning) dan berjalan di staging Cloudflare `workers.dev`.
+  - [FAKTA] Launch-ready, siap go-live komersial. Domain resmi `enlesweb.com` telah dibeli (pendaftaran registrar Domainesia terealisasi Rp152.070, Decision 018). Homepage selesai (0 error, 0 warning) dan disiapkan untuk penayangan produksi Cloudflare Workers pada domain kanonikal `enlesweb.com`.
   - [FAKTA] 6 website konsep live di Vercel: Seruput Kopi, ripeir (Starter), tuntas (Business), Jerseay, dipotongin, berflower (Growth).
   - [FAKTA] WhatsApp `6285156801570`, Meta Pixel `1645267283847928`, Instagram `@enlesweb`, halaman `/kebijakan-privasi`, OG image, sitemap, CI/CD, dan SOP operasional WhatsApp (`sop.md` v1.2) sudah terpasang dan berstatus **CLOSED**.
   - [FAKTA] Belum ada klien, prospek, atau pendapatan.
@@ -21,7 +21,7 @@
 - Visi jangka panjang: [KEPUTUSAN] "Build the website system once, then configure and compose it repeatedly." Dari jasa website menuju sistem produksi internal (Website Builder berbasis blueprint JSON). Roadmap: Internal Generator, Internal Production System, Productized System (fokus jangka panjang utama), dan SaaS mandiri (ditunda/opsional pasca-Productized System).
 - Target 12 bulan: [KEPUTUSAN] Target pendapatan Rp4.500.000 (konservatif berbasis 10 klien Starter pertama @ Rp450.000). Dari 10 klien pertama menuju pipeline yang stabil, evaluasi harga setelah 10 klien, mulai merancang blueprint JSON dan membangun Website Builder internal (fase 1 sampai 2) persis setelah klien ke-10 go live (selesai, tayang, dan lunas), dan menjajaki kanal outbound leads berbayar (tools seperti Apollo.io dkk. ~Rp400-500rb/bln).
 - Target 90 hari: [KEPUTUSAN] 10 klien pertama berbayar (DP masuk) dalam 90 hari setelah iklan Meta Ads tayang.
-- Tujuan utama bulan ini (Sisa 3 Tugas Eksekusi Murni Minggu 0 + Peluncuran Minggu 1): [KEPUTUSAN] (1) beli domain `enlesweb.com` dan hubungkan ke Cloudflare Workers, (2) siapkan materi iklan Meta Carousel 4 slide (dengan *problem-aware hook* dan label tier/harga eksplisit: #1 `tuntas` Business Rp750rb, #2 `Jerseay` Growth Rp1,2jt, #3 `ripeir` Starter Rp450rb, #4 Ringkasan & CTA WA), (3) kunci draf template Bukti Pemesanan formal PDF + TTD digital (dengan Nama Lengkap Pendiri sesuai rekening bank), lalu (4) tayangkan tes Meta Ads minggu pertama (target 21 Okt 2026) berdampingan dengan eksperimen Micro-Warm Outreach DM IG manual (tercatat terpisah).
+- Tujuan utama bulan ini (Sisa 2 Tugas Eksekusi Murni Minggu 0 + Peluncuran Minggu 1): [KEPUTUSAN] (1) Domain `enlesweb.com` sudah dibeli & dihubungkan ke Cloudflare Workers (**CLOSED**), (2) siapkan materi iklan Meta Carousel 4 slide (dengan *problem-aware hook* dan label tier/harga eksplisit: #1 `tuntas` Business Rp750rb, #2 `Jerseay` Growth Rp1,2jt, #3 `ripeir` Starter Rp450rb, #4 Ringkasan & CTA WA), (3) kunci draf template Bukti Pemesanan formal PDF + TTD digital (dengan Nama Lengkap Pendiri sesuai rekening bank), lalu (4) tayangkan tes Meta Ads minggu pertama (target 21 Okt 2026) berdampingan dengan eksperimen Micro-Warm Outreach DM IG manual (tercatat terpisah).
 - Definisi keberhasilan & Ambang Sinyal: [KEPUTUSAN] Tes minggu pertama (Rp100.000) sukses jika menghasilkan minimal 1 klien berbayar. Ambang sinyal antara (*intermediate signal*): minimal **2–3 chat masuk ke WhatsApp dari iklan** yang menanyakan rincian paket atau kebutuhan website (terpisah dari chat hasil Micro-Warm Outreach DM IG). [KEPUTUSAN EVALUASI] Setelah 1 minggu berjalan, kampanye dijeda untuk evaluasi menyeluruh sebelum menentukan kelanjutan kampanye.
 
 ## 3. Target Pelanggan
@@ -102,7 +102,7 @@
 - Dukungan teknis setelah website diluncurkan: Perbaikan bug teknis 30 hari bebas biaya (SLA 1–2 hari kerja).
 
 ## 7. Kondisi Keuangan
-- Modal yang tersedia: [KEPUTUSAN/FAKTA] Modal kerja siap pakai dialokasikan sekitar **Rp1.000.000 – Rp1.500.000** (mencakup domain `enlesweb.com` ~Rp152rb, iklan tes awal Minggu 1 Rp100rb, cadangan iklan lanjutan Rp400rb, biaya AI tools Rp100rb/bln, dan dana talangan domain klien). Plafon iklan 90 hari total Rp500.000 sampai Rp1.000.000 di luar AI tools dan domain (Decision 009). Plafon tahap pertama Rp500.000 tersedia langsung, dan pembukaan sisa plafon hingga Rp1.000.000 dibuka setelah minimal 1 DP masuk dengan opsi didanai tambahan modal pemilik.
+- Modal yang tersedia: [KEPUTUSAN/FAKTA] Modal kerja siap pakai dialokasikan sekitar **Rp1.000.000 – Rp1.500.000** (pembelian domain `enlesweb.com` Rp152.070 telah terealisasi, iklan tes awal Minggu 1 Rp100rb, cadangan iklan lanjutan Rp400rb, biaya AI tools Rp100rb/bln, dan dana talangan domain klien). Plafon iklan 90 hari total Rp500.000 sampai Rp1.000.000 di luar AI tools dan domain (Decision 009). Plafon tahap pertama Rp500.000 tersedia langsung, dan pembukaan sisa plafon hingga Rp1.000.000 dibuka setelah minimal 1 DP masuk dengan opsi didanai tambahan modal pemilik.
 - Biaya operasional bulanan:
   - [FAKTA/KEPUTUSAN] Biaya AI tools saat ini dikunci pada **Rp100.000 / bulan**, dan baru boleh dinaikkan ke **Rp300.000 - Rp400.000 / bulan** setelah **minimal 5 klien selesai dan lunas (100%) ATAU saat menangani 2 proyek Growth/Custom secara simultan** (Decision 014).
   - [FAKTA] Biaya langsung domain per klien: Rp152.070/thn (`.com`) atau Rp243.090/thn (`.id`).
@@ -152,6 +152,7 @@
   - Batas 3 proyek aktif; calon klien ke-4 dan seterusnya ditolak sopan atau diminta menunggu tanpa DP; iklan dijeda jika menunggu lebih dari 2 orang (Decision 009).
   - Alat PDF dan TTD digital: gratis (Google Docs/Canva + tanda tangan gambar atau fitur gratis Acrobat/Google), dikunci 18 Okt 2026 (Decision 007).
   - Konten organik IG `@enlesweb` sebagai kanal kedua dengan guardrail waktu dan prioritas (Decision 008).
+  - Pembelian Domain Resmi `enlesweb.com` & Status Produksi (Decision 018): Domain kanonikal `enlesweb.com` telah resmi dibeli di registrar Domainesia (Rp152.070, Tugas 1 Minggu 0 CLOSED / SELESAI) dan nameserver/DNS diarahkan ke Cloudflare Workers sebagai domain produksi utama (`siteUrl: 'https://enlesweb.com'`) menggantikan staging sementara `workers.dev`.
 - Hal yang tidak akan dilakukan untuk saat ini (Fokus penuh pada 10 klien pertama):
   - Memakai testimoni, rating bintang, jumlah klien, atau urgensi palsu.
   - Menambah kompleksitas atau fitur pada paket Starter dan Business.
@@ -160,9 +161,9 @@
   - Menaikkan langganan AI tools di atas Rp100.000/bulan sebelum 5 klien selesai dan lunas (atau 2 Growth/Custom simultan).
   - Mempromosikan paket Custom secara aktif di iklan.
 
-## 10. Prioritas Saat Ini (Sisa 3 Tugas Eksekusi Minggu 0 + Peluncuran Minggu 1)
-Detail jadwal ada di `Strategy/rencana.md` (SOP operasional WhatsApp telah **CLOSED** di `sop.md` v1.2).
-1. **Beli domain `enlesweb.com`** dan hubungkan ke Cloudflare Workers menggantikan staging `workers.dev`.
+## 10. Prioritas Saat Ini (Sisa 2 Tugas Eksekusi Minggu 0 + Peluncuran Minggu 1)
+Detail jadwal ada di `Strategy/rencana.md` (SOP operasional WhatsApp telah **CLOSED** di `sop.md` v1.2, domain kanonikal `enlesweb.com` **CLOSED / TELAH DIBELI**).
+1. [CLOSED] **Beli domain `enlesweb.com`**: Domain resmi telah dibeli di Domainesia dan nameserver/DNS diarahkan ke Cloudflare Workers (menggantikan staging sementara `workers.dev`).
 2. **Buat materi iklan Carousel (4 slide)** memakai `carousel-generator/` dengan *problem-aware hook* di pembuka dan label tier/harga eksplisit (`tuntas` Business Rp750rb, `Jerseay` Growth Rp1,2jt, `ripeir` Starter Rp450rb).
 3. **Kunci draf template PDF Bukti Pemesanan** ber-TTD digital yang mencantumkan Nama Lengkap Pendiri (sesuai rekening bank pribadi) sebagai Penanggung Jawab Resmi Studio ENLESWEB.
 4. **Tayangkan tes Meta Ads minggu pertama** (target 21 Okt 2026, Rp100.000) dan jalankan eksperimen **Micro-Warm Outreach DM IG manual** (2–3 usaha/hari, tercatat terpisah), lalu evaluasi hasil di akhir Minggu 1 sesuai aturan jalur A/B/C.
@@ -182,5 +183,6 @@ Detail jadwal ada di `Strategy/rencana.md` (SOP operasional WhatsApp telah **CLO
 | 14 Oktober 2026 | 1.4 | Pembaruan keputusan strategis & resolusi pertanyaan terbuka: mekanisme plafon iklan 2 tahap, aturan hard stop 30 hari 0 DP, arahan porsi dominan `.com`, patokan jam kerja Starter 5–12 jam, hipotesis konversi PDF 80%, gerbang blueprint JSON pasca-klien ke-10 go live, fokus jangka panjang Productized System (Decision 011 - 012). | Sesi arahan pemilik 14 Okt 2026 |
 | 15 Oktober 2026 | 1.5 | Sinkronisasi menyeluruh header metadata dokumen master, dokumen V3, dan histori progress konteks ke status rilis 15 Oktober 2026 yang sepenuhnya selaras dengan Decision 002. | Sesi sinkronisasi dokumen 15 Okt 2026 |
 | 16 Oktober 2026 | 1.6 | Sinkronisasi 6 perubahan strategis & operasional (Decision 013 - 017): (1) pembukaan Micro-Warm Outreach manual Rp0 via DM IG (2-3/hari) & penguncian urutan prioritas 3 demo (`tuntas`, `Jerseay`, `ripeir`), (2) penundaan kenaikan biaya AI tools hingga 5 klien lunas atau 2 Growth/Custom simultan & skrip default framing `.com` di SOP WA, (3) penambahan kuota gratis putaran update konten ringan tahunan (2x/4x/6x, lewat kuota Rp50rb/putaran, reset saat renewal terkelola), (4) label tier & harga di iklan Carousel 4 slide + jembatan ekspektasi di Template 5.2 SOP, (5) transparansi Nama Lengkap Pendiri di PDF, pembelian domain setelah DP + materi lengkap, & status On-Hold 60 hari, serta (6) aturan Problem-Aware Hook di iklan/DM & penutupan status SOP (`sop.md` v1.2 CLOSED). | Sesi `/grill-me` 16 Okt 2026 |
+| 17 Oktober 2026 | 1.7 | Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (Tugas 1 Minggu 0 CLOSED / SELESAI, Decision 018). Status operasional beralih ke sisa 2 tugas eksekusi murni Minggu 0 (materi iklan Carousel 4 slide dan template PDF Bukti Pemesanan) menjelang kampanye Meta Ads Minggu 1. | Konfirmasi pembelian domain oleh pemilik 17 Okt 2026 (Decision 018) |
 
 **Aturan:** Bedakan fakta, estimasi, hipotesis, dan keputusan. Jangan menganggap data yang belum tersedia sebagai nol. Jika informasi berubah, catat tanggal dan sumber perubahannya.

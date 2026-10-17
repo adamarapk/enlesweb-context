@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENLESWEB Meta Ads 18 detik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+:root{--canvas:#FFFFFF;--surface:#F5F5F2;--ink:#111111;--ink-muted:#55554F;--line:#E5E5DF;--accent:#E4FF30;--shelf:#A3C400;--wa:#25D366}
+*{box-sizing:border-box;margin:0}
+body{background:#CFCFC8;font-family:'Poppins',system-ui,sans-serif;color:var(--ink);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+#holder{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+#box{position:relative}
+#ctl{display:flex;gap:12px;align-items:center;justify-content:center;padding:12px;font-size:14px;background:#111;color:#fff}
+#ctl button{font:600 13px 'Poppins',system-ui,sans-serif;min-height:44px;min-width:44px;padding:10px 18px;border:0;border-radius:8px;background:var(--accent);color:var(--ink);cursor:pointer}
+#ctl input{width:min(520px,50vw);min-height:44px;cursor:pointer;accent-color:var(--accent)}
+#ctl button:focus-visible,#ctl input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Stage: default 9:16 (1080x1920). Class .r45 = 1080x1350 */
+.stage{--H:1920px;--safeT:220px;--padB:300px;width:1080px;height:var(--H);position:relative;overflow:hidden;background:var(--canvas);transform-origin:0 0}
+.stage.r45{--H:1350px;--safeT:56px;--padB:70px}
+
+.amb{position:absolute;inset:0;background:linear-gradient(135deg,rgba(228,255,48,.28) 0%,rgba(228,255,48,.08) 45%,transparent 75%);pointer-events:none;opacity:0}
+.hdr{position:absolute;left:50px;right:50px;top:var(--safeT);display:flex;align-items:center;gap:14px;font-weight:700;font-size:38px;letter-spacing:-.01em;z-index:10}
+.hdr img{width:52px;height:52px}
+
+.scene{position:absolute;left:50px;right:50px;top:calc(var(--safeT) + 110px);bottom:var(--padB);display:flex;flex-direction:column;justify-content:center;gap:32px}
+
+/* Scene 1A: Smartphone Lockscreen & Spam Notifikasi WA */
+#s1a{align-items:center;justify-content:center;top:calc(var(--safeT) + 60px);bottom:calc(var(--padB) - 60px)}
+.phone{position:relative;width:680px;height:1140px;background:#18181C;border-radius:54px;padding:14px;box-shadow:0 0 0 4px #2C2C32,0 35px 70px -15px rgba(17,17,17,.5);display:flex;flex-direction:column}
+.phone-inner{flex:1;background:linear-gradient(180deg,#1C1E26 0%,#0D0E12 100%);border-radius:42px;overflow:hidden;position:relative;display:flex;flex-direction:column;padding:32px 28px}
+.island{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:160px;height:32px;background:#000;border-radius:20px;z-index:5}
+
+.phone-time{margin-top:54px;text-align:center;color:#fff}
+.time-clock{font-size:88px;font-weight:700;line-height:1;letter-spacing:-.03em}
+.time-date{margin-top:6px;font-size:24px;font-weight:500;color:rgba(255,255,255,.75)}
+
+.notif-stack{margin-top:36px;display:flex;flex-direction:column;gap:16px;z-index:2}
+.notif{background:rgba(255,255,255,.14);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:18px 22px;color:#fff;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+.notif-head{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:600;color:rgba(255,255,255,.8)}
+.wa-icon{width:26px;height:26px;fill:var(--wa);flex:none}
+.notif-app{letter-spacing:.02em;font-size:19px;font-weight:700}
+.notif-dot{opacity:.5}
+.notif-time{font-size:18px;font-weight:400;opacity:.8}
+.notif-body{margin-top:8px}
+.notif-sender{font-size:22px;font-weight:700;color:#fff}
+.notif-msg{margin-top:2px;font-size:24px;line-height:1.32;font-weight:500;color:rgba(255,255,255,.94)}
+
+.notif-count-pill{margin-top:8px;align-self:center;display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--ink);padding:10px 24px;border-radius:24px;font-size:22px;font-weight:700;box-shadow:0 8px 24px rgba(228,255,48,.35)}
+.notif-count-pill span{background:var(--ink);color:#fff;padding:2px 10px;border-radius:12px;font-size:18px;font-weight:800}
+
+/* Scene 1B: Solusi Singkat & Tajam */
+#s1b{gap:28px}
+.sol-q{font-size:46px;line-height:1.25;font-weight:700;color:var(--ink-muted);letter-spacing:-.015em}
+.sol-title{font-size:84px;line-height:1.08;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.sol-sub{font-size:44px;line-height:1.35;font-weight:600;color:var(--ink)}
+.hl{color:var(--ink);font-weight:700;background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 92%/0% 25%;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sol-tag{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 24px;font-size:30px;font-weight:600;color:var(--ink)}
+
+/* Penyesuaian 4:5 */
+.stage.r45 #s1a{top:calc(var(--safeT) + 40px);bottom:calc(var(--padB) - 20px)}
+.stage.r45 .phone{width:560px;height:900px;border-radius:44px;padding:12px}
+.stage.r45 .phone-inner{border-radius:34px;padding:22px 20px}
+.stage.r45 .island{width:130px;height:26px}
+.stage.r45 .phone-time{margin-top:36px}
+.stage.r45 .time-clock{font-size:72px}
+.stage.r45 .time-date{font-size:20px}
+.stage.r45 .notif-stack{margin-top:24px;gap:12px}
+.stage.r45 .notif{padding:14px 18px;border-radius:18px}
+.stage.r45 .notif-head{font-size:17px}
+.stage.r45 .wa-icon{width:22px;height:22px}
+.stage.r45 .notif-sender{font-size:19px}
+.stage.r45 .notif-msg{font-size:20px}
+.stage.r45 .notif-count-pill{padding:8px 18px;font-size:19px}
+
+.stage.r45 #s1b{gap:20px}
+.stage.r45 .sol-q{font-size:38px}
+.stage.r45 .sol-title{font-size:68px}
+.stage.r45 .sol-sub{font-size:36px}
+.stage.r45 .sol-tag{font-size:25px;padding:12px 18px}
+
+/* Showcase */
+.sc{gap:36px}
+.stage.r45 .sc{gap:24px}
+.top{display:flex;align-items:center;justify-content:space-between}
+.badge{background:var(--accent);color:var(--ink);font-weight:500;font-size:32px;padding:14px 26px;border-radius:10px}
+.badge b{font-weight:700}
+.prog{display:flex;gap:10px}
+.seg{width:60px;height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.seg i{display:block;height:100%;background:var(--ink);transform-origin:0 0;transform:scaleX(0)}
+.seg.done i{transform:scaleX(1)}
+.frame{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 22px 44px -28px rgba(17,17,17,.4)}
+.bar{height:64px;display:flex;align-items:center;gap:14px;padding:0 22px;background:var(--surface);border-bottom:1px solid var(--line);font-weight:600;font-size:26px}
+.bar img{width:32px;height:32px}
+.vp{position:relative;width:980px;height:620px;overflow:hidden;background:var(--surface)}
+.cam{position:absolute;left:0;top:0;width:980px;height:620px;transform-origin:0 0}
+.cam>img{width:100%;height:100%;display:block}
+.hi{position:absolute;background:rgba(228,255,48,.06);border:3px solid var(--accent);box-shadow:0 0 0 2px var(--ink),0 8px 24px rgba(17,17,17,.28);border-radius:8px}
+.lab{position:absolute;left:0;top:0;z-index:2;display:flex;align-items:center;background:var(--ink);color:#fff;font-weight:600;font-size:26px;padding:10px 18px;border-radius:10px;box-shadow:0 6px 18px rgba(17,17,17,.28);white-space:nowrap}
+.cap h3{font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.cap h3 small{display:block;margin-top:4px;font-size:28px;font-weight:500;letter-spacing:0;color:var(--ink-muted)}
+.cap p{margin-top:14px;font-size:30px;line-height:1.45;color:var(--ink-muted)}
+
+/* Summary */
+.sum{background:var(--ink);color:#fff;border-radius:22px;padding:40px}
+.sum h2{font-size:46px;line-height:1.2;font-weight:600;letter-spacing:-.015em}
+.cells{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.cell{background:#fff;color:var(--ink);border-radius:14px;padding:22px 18px}
+.cell span{display:block;font-size:24px;font-weight:500;color:var(--ink-muted)}
+.cell strong{display:block;margin-top:6px;font-size:33px;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+.sum p{margin-top:26px;font-size:25px;line-height:1.45;color:rgba(255,255,255,.72)}
+.cta{position:relative;margin-top:10px}
+.btn{display:block;width:100%;background:var(--accent);color:var(--ink);border:none;border-radius:10px;box-shadow:0 3px 0 #A3C400,inset 0 1px 0 rgba(255,255,255,.6);font:600 34px 'Poppins',sans-serif;padding:30px 20px;text-align:center}
+#url{margin-top:26px;text-align:center;font-size:36px;font-weight:600}
+#cur{position:absolute;right:110px;top:62px;width:46px;height:46px;z-index:3}
+#ctl.hide{display:none}
+</style>
+</head>
+<body>
+<div id="holder"><div id="box">
+<div class="stage" id="stage">
+  <div class="amb"></div>
+  <div class="hdr"><img src="assets/favicon-enlesweb.svg" alt=""><span>ENLESWEB</span></div>
+
+  <!-- Scene 1A: Smartphone Lockscreen & Spam Notifikasi WA -->
+  <section class="scene" id="s1a">
+    <div class="phone">
+      <div class="island"></div>
+      <div class="phone-inner">
+        <div class="phone-time">
+          <div class="time-clock">10:14</div>
+          <div class="time-date">Senin, 16 Oktober</div>
+        </div>
+        <div class="notif-stack">
+          <div class="notif n1">
+            <div class="notif-head">
+              <svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span class="notif-app">WhatsApp</span>
+              <span class="notif-dot">&bull;</span>
+              <span class="notif-time">sekarang</span>
+            </div>
+            <div class="notif-body">
+              <div class="notif-sender">Calon Pelanggan</div>
+              <div class="notif-msg">"Kak, pricelist &amp; katalog lengkapnya lihat di mana ya?"</div>
+            </div>
+          </div>
+
+          <div class="notif n2">
+            <div class="notif-head">
+              <svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span class="notif-app">WhatsApp</span>
+              <span class="notif-dot">&bull;</span>
+              <span class="notif-time">1 mnt lalu</span>
+            </div>
+            <div class="notif-body">
+              <div class="notif-sender">Orang Tua Siswa</div>
+              <div class="notif-msg">"Jadwal kelas bimbelnya hari apa aja? Biayanya berapa?"</div>
+            </div>
+          </div>
+
+          <div class="notif n3">
+            <div class="notif-head">
+              <svg class="wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span class="notif-app">WhatsApp</span>
+              <span class="notif-dot">&bull;</span>
+              <span class="notif-time">2 mnt lalu</span>
+            </div>
+            <div class="notif-body">
+              <div class="notif-sender">Pelanggan Servis</div>
+              <div class="notif-msg">"Bisa servis laptop apa aja kak? Estimasi biayanya berapa?"</div>
+            </div>
+          </div>
+
+          <div class="notif-count-pill">
+            <span>+12</span> Pesan Belum Dibalas
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 1B: Solusi Singkat & Tajam -->
+  <section class="scene" id="s1b">
+    <div class="sol-q">Capek balas chat yang sama terus?</div>
+    <div class="sol-title">Bikin website usahamu.</div>
+    <div class="sol-sub">Rapi dalam 1 link. <span class="hl">Mulai Rp450.000.</span></div>
+    <div class="sol-tag">Sudah termasuk domain &amp; hosting 1 tahun</div>
+  </section>
+
+  <div id="shows"></div>
+
+  <!-- Scene 5: Ringkasan & CTA -->
+  <section class="scene" id="s5">
+    <div class="sum">
+      <h2>Sudah termasuk domain dan hosting 1 tahun.</h2>
+      <div class="cells">
+        <div class="cell"><span>Starter</span><strong>Rp450.000</strong></div>
+        <div class="cell"><span>Business</span><strong>Rp750.000</strong></div>
+        <div class="cell"><span>Growth</span><strong>Rp1.200.000</strong></div>
+      </div>
+      <p>Contoh yang ditampilkan adalah website konsep buatan ENLESWEB.</p>
+    </div>
+    <div class="cta">
+      <div class="btn" id="btn">Lihat Contoh &amp; Chat via WhatsApp</div>
+      <svg id="cur" aria-hidden="true" viewBox="0 0 40 40"><path d="M6 3v27l7-7 5 11 5-2-5-11h10z" fill="#111" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div id="url">enlesweb.com</div>
+    </div>
+  </section>
+</div>
+</div></div>
+
+<div id="ctl">
+  <button id="pp" type="button">Play</button>
+  <input id="rng" type="range" min="0" max="18" step="0.01" value="0" aria-label="Geser waktu pemutaran video iklan">
+  <span id="tt">0.00 / 18.00 s</span>
+  <button id="rt" type="button">Ganti ke 4:5</button>
+</div>
+
+<script>
+/* cubic-bezier(0.16, 1, 0.3, 1) sebagai fungsi easing GSAP */
+const cb=(x1,y1,x2,y2)=>t=>{if(t<=0||t>=1)return t;let lo=0,hi=1,u=t;
+  for(let i=0;i<32;i++){const x=3*(1-u)*(1-u)*u*x1+3*(1-u)*u*u*x2+u*u*u;if(Math.abs(x-t)<1e-5)break;x<t?lo=u:hi=u;u=(lo+hi)/2}
+  return 3*(1-u)*(1-u)*u*y1+3*(1-u)*u*u*y2+u*u*u};
+const E=cb(.16,1,.3,1);
+const SH='0 3px 0 #A3C400, inset 0 1px 0 rgba(255,255,255,0.6)';
+
+/* Data showcase: kamera zoom/pan + highlight fitur */
+const VW=980,VH=620;
+const cam=(z,cx,cy)=>{let x=VW/2-cx*VW*z,y=VH/2-cy*VH*z;x=Math.min(0,Math.max(VW-VW*z,x));y=Math.min(0,Math.max(VH-VH*z,y));return{z,x,y}};
+const D=[
+ {n:'tuntas',f:'tuntas',c:'(Konsep Bimbel &amp; Les Privat)',t:'Hingga 6 halaman, menu program dan jadwal kelas langsung jelas.',pk:'Business',pr:'Rp750.000',s:4.5,e:8.0,
+  alt:'Tangkapan layar website konsep tuntas untuk bimbel dan les privat dengan menu navigasi 6 halaman serta tabel jadwal kelas SD, SMP, dan SMA',
+  st:[{at:.5,cam:cam(1.65,.64,.16),hi:[.428,.022,.424,.05],lab:'Menu hingga 6 halaman rapi'},
+      {at:1.9,cam:cam(1.3,.52,.74),hi:[.128,.488,.778,.456],lab:'Jadwal tiap kelas langsung jelas'}]},
+ {n:'Jerseay',f:'jerseay',c:'(Konsep Studio Jersey)',t:'Hingga 10 halaman dengan fitur kustomisasi dan rekap ukuran pemain ke WhatsApp.',pk:'Growth',pr:'Rp1.200.000',s:8.0,e:11.4,
+  alt:'Tangkapan layar website konsep Jerseay untuk studio jersey kustom dengan fitur rancang kit dan pengajuan brief tim',
+  st:[{at:.5,cam:cam(1.5,.3,.5),hi:[.025,.335,.48,.3],lab:'Desain khusus sesuai karakter brand'},
+      {at:1.9,cam:cam(2,.2,.8),hi:[.025,.785,.26,.09],lab:'Fitur rancang kit & brief di web'}]},
+ {n:'ripeir',f:'ripeir',c:'(Konsep Bengkel Servis)',t:'1 halaman ringkas, harga peluncuran untuk 10 klien pertama.',pk:'Starter',pr:'Rp450.000',s:11.4,e:14.6,
+  alt:'Tangkapan layar website konsep ripeir untuk bengkel servis laptop, komputer, handphone, dan tablet dengan tombol chat WhatsApp',
+  st:[{at:.55,cam:cam(1.5,.5,.45),hi:[.343,.54,.316,.085],lab:'Layanan jelas & langsung ke WhatsApp'}]}
+];
+
+document.getElementById('shows').innerHTML=D.map((d,i)=>`
+<section class="scene sc" id="sh${i}">
+  <div class="top"><div class="badge">Contoh Paket ${d.pk}: <b>${d.pr}</b></div>
+  <div class="prog">${[0,1,2].map(k=>`<div class="seg${k<i?' done':k==i?' on':''}"><i></i></div>`).join('')}</div></div>
+  <div class="frame"><div class="bar"><img src="assets/favicon-${d.f}.svg" alt=""><span>${d.n}</span></div>
+  <div class="vp"><div class="cam"><img src="assets/${d.f}.png" alt="${d.alt}">${d.st.map((s,k)=>`<div class="hi" id="hi${i}_${k}" style="left:${s.hi[0]*100}%;top:${s.hi[1]*100}%;width:${s.hi[2]*100}%;height:${s.hi[3]*100}%"></div>`).join('')}</div>
+  ${d.st.map((s,k)=>`<div class="lab" id="lab${i}_${k}">${s.lab}</div>`).join('')}</div></div>
+  <div class="cap"><h3>${d.n}<small>${d.c}</small></h3><p>${d.t}</p></div>
+</section>`).join('');
+
+gsap.set('.cam',{x:0,y:0,scale:1,transformOrigin:'0 0'});
+function placeLabels(){D.forEach((d,i)=>d.st.forEach((s,k)=>{const l=document.getElementById('lab'+i+'_'+k),c=s.cam;
+  const sx=c.x+s.hi[0]*VW*c.z,sy=c.y+s.hi[1]*VH*c.z,sh=s.hi[3]*VH*c.z;
+  let top=sy-58;if(top<10)top=sy+sh+12;
+  top=Math.max(10,Math.min(VH-l.offsetHeight-10,top));
+  l.style.left=Math.max(14,Math.min(VW-l.offsetWidth-14,sx))+'px';l.style.top=top+'px'}))}
+
+/* Timeline 18 detik */
+const tl=gsap.timeline({paused:true,defaults:{ease:E}});
+tl.fromTo('.hdr',{y:-16,autoAlpha:0},{y:0,autoAlpha:1,duration:.45},.05);
+
+/* 0.0 - 2.0 Scene 1A: Mockup HP + Notifikasi Masuk */
+tl.fromTo('.amb',{autoAlpha:0},{autoAlpha:1,duration:.8},0)
+  .fromTo('#s1a .phone',{y:60,scale:.96,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.45},.08)
+  .fromTo('#s1a .n1',{y:24,scale:.95,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.32},.22)
+  .fromTo('#s1a .n2',{y:24,scale:.95,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.32},.55)
+  .fromTo('#s1a .n3',{y:24,scale:.95,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.32},.88)
+  .fromTo('#s1a .notif-count-pill',{y:16,scale:.9,autoAlpha:0},{y:0,scale:1,autoAlpha:1,duration:.32},1.20)
+  .to('#s1a .phone',{x:-4,repeat:3,yoyo:true,duration:.05,ease:'power1.inOut'},1.25)
+  .to('#s1a',{scale:.92,xPercent:-35,autoAlpha:0,duration:.35},1.95);
+
+/* 2.0 - 4.5 Scene 1B: Solusi Singkat & Tajam */
+tl.fromTo('#s1b',{xPercent:100,autoAlpha:0},{xPercent:0,autoAlpha:1,duration:.45},2.05)
+  .fromTo('#s1b .sol-q',{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.35},2.18)
+  .fromTo('#s1b .sol-title',{y:26,autoAlpha:0},{y:0,autoAlpha:1,duration:.38},2.42)
+  .fromTo('#s1b .sol-sub',{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.35},2.75)
+  .fromTo('#s1b .hl',{backgroundSize:'0% 25%'},{backgroundSize:'100% 25%',duration:.35},2.92)
+  .fromTo('#s1b .sol-tag',{y:16,autoAlpha:0},{y:0,autoAlpha:1,duration:.32},3.05)
+  .to('.amb',{autoAlpha:.45,duration:.5,ease:'none'},4.5)
+  .to('#s1b',{xPercent:-30,autoAlpha:0,duration:.35},4.45);
+
+/* 4.5 - 14.6 Showcase (3 Demo) */
+D.forEach((d,i)=>{const id='#sh'+i;let prev={x:0,y:0,z:1};
+  tl.fromTo(id,{xPercent:100,autoAlpha:0},{xPercent:0,autoAlpha:1,duration:.55},d.s)
+    .fromTo(id+' .frame',{y:30,autoAlpha:0},{y:0,autoAlpha:1,duration:.55},d.s+.15)
+    .fromTo(id+' .badge',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.5},d.s+.25)
+    .fromTo(id+' .cap',{y:24,autoAlpha:0},{y:0,autoAlpha:1,duration:.5},d.s+.45)
+    .fromTo(id+' .seg.on i',{scaleX:0},{scaleX:1,duration:d.e-d.s,ease:'none'},d.s);
+  d.st.forEach((s,k)=>{const t0=d.s+s.at,hi='#hi'+i+'_'+k,lb='#lab'+i+'_'+k;
+    tl.fromTo(id+' .cam',{x:prev.x,y:prev.y,scale:prev.z},{x:s.cam.x,y:s.cam.y,scale:s.cam.z,duration:.95},t0)
+      .fromTo(hi,{autoAlpha:0,scale:.96},{autoAlpha:1,scale:1,duration:.4},t0+.75)
+      .fromTo(lb,{autoAlpha:0,y:10},{autoAlpha:1,y:0,duration:.4},t0+.85);
+    if(k<d.st.length-1)tl.to([hi,lb],{autoAlpha:0,duration:.25,ease:'none'},d.s+d.st[k+1].at-.15);
+    prev={x:s.cam.x,y:s.cam.y,z:s.cam.z};
+  });
+  tl.to(id,{xPercent:-30,autoAlpha:0,duration:.55},d.e);
+});
+
+/* 14.6 - 18.0 Ringkasan + CTA */
+tl.to('.amb',{autoAlpha:1,duration:.5,ease:'none'},14.6)
+  .fromTo('#s5',{xPercent:100,autoAlpha:0},{xPercent:0,autoAlpha:1,duration:.55},14.6)
+  .fromTo('#s5 .sum',{y:30,autoAlpha:0},{y:0,autoAlpha:1,duration:.55},14.75)
+  .fromTo('#s5 .cell',{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.45,stagger:.1},15.05)
+  .fromTo('#s5 .btn',{y:24,autoAlpha:0},{y:0,autoAlpha:1,duration:.5},15.35)
+  .fromTo('#cur',{x:170,y:130,autoAlpha:0},{x:0,y:0,autoAlpha:1,duration:.7},15.8)
+  .to('#btn',{y:2,boxShadow:'0 1px 0 #A3C400, inset 0 1px 0 rgba(255,255,255,0.6)',duration:.1,ease:'power2.out'},16.5)
+  .to('#cur',{y:2,duration:.1,ease:'power2.out'},16.5)
+  .to('#btn',{y:0,boxShadow:SH,duration:.25},16.65)
+  .to('#cur',{y:0,duration:.25},16.65)
+  .fromTo('#url',{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.5},16.7)
+  .to({},{duration:.001},17.999);
+
+/* Kontrol, fit, dan API untuk render frame */
+const q=new URLSearchParams(location.search);
+const st=document.getElementById('stage'),box=document.getElementById('box'),hold=document.getElementById('holder');
+const ctl=document.getElementById('ctl'),pp=document.getElementById('pp'),rng=document.getElementById('rng'),tt=document.getElementById('tt');
+function fit(){const H=st.offsetHeight;const s=q.has('clean')?1:Math.min(hold.clientWidth/1080,hold.clientHeight/H);
+  st.style.transform='scale('+s+')';box.style.width=1080*s+'px';box.style.height=H*s+'px';placeLabels()}
+if(q.get('ratio')==='4x5')st.classList.add('r45');
+if(q.has('clean')){ctl.classList.add('hide');document.body.style.overflow='auto'}
+document.getElementById('rt').onclick=e=>{st.classList.toggle('r45');e.target.textContent=st.classList.contains('r45')?'Ganti ke 9:16':'Ganti ke 4:5';fit()};
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{
+  if(e.code==='Space'&&e.target.tagName!=='BUTTON'){e.preventDefault();pp.click()}
+  else if((e.code==='ArrowRight'||e.code==='ArrowLeft')&&e.target.tagName!=='INPUT'){
+    e.preventDefault();tl.pause();tl.time(Math.max(0,Math.min(18,tl.time()+(e.code==='ArrowRight'?.5:-.5))))
+  }
+});
+tl.eventCallback('onUpdate',()=>{const t=tl.time();rng.value=t;tt.textContent=t.toFixed(2)+' / 18.00 s';pp.textContent=tl.isActive()?'Pause':(t>=18?'Ulangi':'Play')});
+tl.eventCallback('onComplete',()=>{pp.textContent='Ulangi'});
+pp.onclick=()=>{if(tl.isActive())tl.pause();else{if(tl.time()>=17.99)tl.restart();else tl.play()}};
+rng.oninput=()=>{tl.pause();tl.time(+rng.value)};
+window.TOTAL=18;
+window.seekFrame=(f,fps=30)=>{tl.pause();tl.time(f/fps,false)}; /* untuk capture frame (Playwright/Puppeteer) */
+fit();
+document.fonts.ready.then(()=>{placeLabels();fit();
+  if(q.has('t')){tl.pause();tl.time(+q.get('t'))}
+  else if(!q.has('pause'))tl.play(0)});
+</script>
+</body>
+</html>
