@@ -1,7 +1,7 @@
 # MODEL BISNIS ENLESWEB
-**Versi:** 1.3  
-**Terakhir diperbarui:** 17 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan konfirmasi pembelian domain `enlesweb.com` 17 Oktober 2026.  
+**Versi:** 1.5  
+**Terakhir diperbarui:** 18 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan terukur, [HIPOTESIS] asumsi belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ---
@@ -254,4 +254,6 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | 14 Oktober 2026 | 1.1 | Pembaruan keputusan & parameter model: (1) Konfirmasi pembukaan sisa plafon iklan Rp500k-Rp1jt boleh menggunakan tambahan modal pemilik pasca-1 DP, (2) Penetapan estimasi jam kerja Starter pada 5–12 jam kerja nyata serta kalkulasi rate Rp/jam kerja pendiri, (3) Penegasan arahan strategis kepemilikan portofolio domain klien yang ingin porsi .com lebih besar guna menjaga blended gross margin > 60%, dan (4) Mempertahankan rasio konversi chat-ke-DP dan pilihan domain riil sebagai data empiris terbuka [BELUM DIKETAHUI]. | Arahan pemilik |
 | 16 Oktober 2026 | 1.2 | Sinkronisasi Decision 013 - 017: (1) penundaan kenaikan biaya AI tools (tetap Rp100rb/bln sampai 5 klien lunas atau 2 Growth/Custom simultan) dan pembaruan tabel proyeksi 12 bulan (Konservatif Rp2,7jt, Dasar Rp3,2jt, Optimis Rp4,2jt), (2) operasionalisasi default framing `.com` di SOP Template 5.2 dan perbandingan sensitivitas 70% `.com`, (3) penambahan kuota gratis putaran update konten ringan tahunan (2x/4x/6x), tarif kelebihan kuota Rp50.000/putaran, dan reset kuota saat Perpanjangan Terkelola, serta (4) proteksi kas pembelian domain setelah DP + materi lengkap dan pembebasan slot kapasitas lewat status On-Hold 60 hari. | Sesi `/grill-me` 16 Okt 2026 |
 | 17 Oktober 2026 | 1.3 | Pencatatan realisasi pengeluaran kas pembelian domain bisnis kanonikal enlesweb.com sebesar Rp152.070 (Decision 018). | Konfirmasi pembelian domain 17 Okt 2026 (Decision 018) |
+| 18 Oktober 2026 | 1.4 | Penutupan seluruh tugas persiapan Minggu 0 (100% CLOSED): Template PDF Bukti Pemesanan selesai dibuat oleh pendiri bisnis (Decision 020), materi kreatif iklan Meta di campaign-1/ siap tayang (Decision 016/020), dan penyelarasan ke dokumen master V4. | Decision 020 & summary.md v1.8 |
+| 18 Oktober 2026 | 1.5 | Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
 

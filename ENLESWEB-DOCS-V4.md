@@ -1,14 +1,55 @@
-# ENLESWEB DOKUMENTASI UTAMA V3 (ENLESWEB-DOCS-V3)
+# ENLESWEB DOKUMENTASI UTAMA V4 (ENLESWEB-DOCS-V4)
 
-Versi: 1.5 (Pencatatan Pembelian Domain Resmi enlesweb.com CLOSED, Decision 018)
-Tanggal Pembaruan: 17 Oktober 2026
+Versi: 1.9 (Pembatalan Carousel 4 Slide, Penetapan 1 Video + 1 Gambar Statis Meta Ads, Penyelesaian Template PDF CLOSED, & Penutupan Seluruh Tugas Minggu 0 - 18 Oktober 2026)
+Tanggal Pembaruan: 18 Oktober 2026
 Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md
-Status Sistem: Production & Launch-Ready Implementation V3 (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)
-Ringkasan Pembaruan: Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (CLOSED / SELESAI, Decision 018), migrasi target produksi Cloudflare Workers, dan pemutakhiran sisa tugas Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan template PDF Bukti Pemesanan).
+Status Sistem: Production & Launch-Ready Implementation V4 (Tersinkronisasi Penuh Decision 001–021, SOP v1.2, Seluruh Tugas Minggu 0 CLOSED)
+Ringkasan Pembaruan: Penutupan resmi seluruh sisa tugas persiapan pra-peluncuran Minggu 0 dan penetapan materi iklan Meta resmi (Decision 021): (1) Format Carousel 4 slide resmi dibatalkan dan dialihkan ke 1 Video (Iklan A 15 detik) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) masing-masing dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` siap tayang (CLOSED, Decision 016, 020, & 021); (2) Template PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat dan dikunci resmi oleh pendiri bisnis (CLOSED, Decision 020), memuat Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota gratis update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x), aturan On-Hold 60 hari, dan syarat pembelian domain setelah DP 50% + materi lengkap; (3) Pembelian domain enlesweb.com telah terealisasi (CLOSED, Decision 018); dan (4) Optimasi PageSpeed Insights 100/100 selesai (CLOSED, Decision 019). Status ekosistem beralih penuh menuju Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram.
 
 ---
 
-## RINGKASAN PEMBARUAN V3 (CHANGELOG V3)
+## RINGKASAN PEMBARUAN V4 (CHANGELOG V4)
+
+### Pembaruan Versi 1.9 (18 Oktober 2026 - Pembatalan Format Carousel 4 Slide & Penetapan 1 Video + 1 Gambar Statis Meta Ads Rasio 4:5 dan 9:16, Decision 021)
+1. **Pembatalan Format Carousel 4 Slide & Penetapan Materi Iklan Meta (CLOSED / SIAP TAYANG, Decision 021)**:
+   - Format iklan Carousel 4 slide resmi dibatalkan dan dialihkan ke dua materi iklan mandiri yang masing-masing diproduksi dalam dua rasio penempatan Meta resmi (4:5 Feed dan 9:16 Stories/Reels) di direktori `campaign-1/` agar visual dan teks tidak terpotong antarmuka Meta:
+     - **Iklan A (Video 15 Detik)**: Berkas video MP4 H.264 `campaign-1/enlesweb-ads-15s-a-4x5.mp4` (Feed 1080x1350) dan `campaign-1/enlesweb-ads-15s-a-9x16.mp4` (Stories/Reels 1080x1920) dengan salinan teks di `campaign-1/copy-iklan-a.md` yang diawali *problem-aware hook* (*"Mengapa IG & WA saja tidak cukup?"*), demonstrasi gerak website konsep (`tuntas`, `ripeir`, `Seruput Kopi`), harga mulai Rp450.000, serta ajakan chat WhatsApp tanpa tombol buatan.
+     - **Iklan B (Gambar Statis v3 Hook Hasil - Whole ENLESWEB)**: Berkas grafis PNG `campaign-1/enlesweb-ads-b-4x5.png` (Feed 1080x1350) dan `campaign-1/enlesweb-ads-b-9x16.png` (Stories/Reels 1080x1920) dengan salinan teks di `campaign-1/copy-iklan-b.md` berkonsep Editorial Ad OG-Image / Trio Layar HP bertingkat (`tuntas`, `ripeir`, `Seruput Kopi`), identitas resmi EnlesWeb, harga jangkar *"Mulai Rp450.000"*, 4 baris spesifikasi fasilitas, dan catatan kejujuran konsep tanpa tombol buatan.
+2. **Penyelesaian Template PDF Bukti Pemesanan (CLOSED, Decision 020)**:
+   - Dokumen Bukti Pemesanan formal format PDF ber-TTD digital telah resmi dibuat oleh pendiri bisnis (**CLOSED**), mencantumkan Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, rincian rekening transfer DP 50%, kuota gratis update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x), klausul pembelian domain pasca-DP + materi lengkap, dan aturan On-Hold 60 hari kalender.
+3. **Penutupan Seluruh Tugas Persiapan Minggu 0 (100% CLOSED)**:
+   - Seluruh 3 tugas eksekusi pra-peluncuran di Minggu 0 resmi dinyatakan **CLOSED / SELESAI**: (1) Pembelian domain `enlesweb.com` (Decision 018); (2) Materi iklan Meta 1 video + 1 gambar statis di `campaign-1/` (Decision 016, 020, & 021); (3) Template PDF Bukti Pemesanan (Decision 020).
+   - Ekosistem siap beralih ke **Minggu 1: Peluncuran Komersial & Validasi Penjualan** (penyiapan kampanye iklan Meta Ads ke Ads Manager, tes belanja iklan Rp100.000 selama 7 hari, dan Micro-Warm Outreach manual via DM Instagram `@enlesweb`).
+
+### Pembaruan Versi 1.8 (18 Oktober 2026 - Pembaruan Meta Pixel ID Resmi Baru 1099411523003859)
+1. **Pembaruan Konfigurasi Meta Pixel ID Bisnis**:
+   - Memperbarui ID Meta Pixel resmi dari `1645267283847928` menjadi `1099411523003859` di `src/config/site.ts` sesuai konfigurasi aktif Meta Events Manager milik pemilik bisnis.
+   - Menyinkronkan seluruh catatan spesifikasi tracking, dokumen PRD, SPEC, dan history register item CLOSED.
+
+### Pembaruan Versi 1.7 (17 Oktober 2026 - Optimasi Performa Menyeluruh Mobile & Desktop, Decision 019 Finalization)
+1. **Penyempurnaan Performa Mobile & Desktop Menuju Skor Maksimal**:
+   - **Preload 4 Bobot Font Poppins**: Mengimpor dan me-render `<link rel="preload">` di `<head>` untuk seluruh 4 bobot yang digunakan (`700, 600, 500, 400`). Mengeliminasi layout shift pada elemen desktop nav (`desktop-nav`) dan memangkas element render delay pada headline hero.
+   - **Skrip Sebaris Head js-reveal Berpelindung Fitur**: Menyematkan `<script is:inline>if ('IntersectionObserver' in window) { document.documentElement.classList.add('js-reveal'); }</script>` di dalam `<head>` tepat setelah tag preload font. Mencegah pembatalan cache style (*style invalidation*) di seluruh DOM tree dan mengeliminasi kalkulasi ulang style sinkron (*forced reflow* 112ms) pada thread utama desktop.
+   - **Penjadwalan Idle Navbar & Observer**: Menjadwalkan pengecekan awal scroll navbar (`window.scrollY > 8`) dan inisialisasi `IntersectionObserver` ringan menggunakan `requestIdleCallback` (dengan fallback `setTimeout 100ms`). Memastikan thread utama benar-benar hening antara FCP dan TTI, menurunkan Total Blocking Time (TBT) desktop menjadi 0 ms.
+   - **Pemuatan Meta Pixel Murni Berbasis Interaksi (Zero TBT)**: Menghapus timer `setTimeout(loadPixelScript, 3500)`. Mengunduh `fbevents.js` murni saat interaksi pertama pengguna (`scroll`, `pointerdown`, `touchstart`, `keydown`, `click`), menjaga Total Blocking Time (TBT = 0 ms) tanpa kehilangan satupun event berkat antrean instan `fbq` stub.
+   - **Isolasi Hardware Compositing GPU**: Menambahkan `contain: paint; will-change: transform; transform: translateZ(0);` pada elemen dengan filter Gaussian blur berat (`.hero-ambient-wash` di `Hero.astro` dan `.hero-composition-inner` di `HeroObject.astro`), mengisolasi rendering pada layer GPU mandiri dan mengeliminasi beban repaint thread utama saat scroll.
+   - **Eager Loading Brand Image**: Menambahkan `loading="eager"` pada `<Image src={navbrandLogo} ... />` di `Navbar.astro` dan header `/kebijakan-privasi` untuk memprioritaskan render aset visual header di layar pertama.
+   - **Hasil Benchmark Terverifikasi (Bebas Halusinasi)**:
+     - Desktop (Lighthouse Desktop terverifikasi): **Performance 100/100, Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 3/3 (100%)** (TBT 0 ms, FCP 0.3 s, LCP 0.6 s, CLS 0.007, Speed Index 0.9 s).
+     - Mobile (PageSpeed Insights remote via web.dev live URL `enlesweb.com`, Moto G Power / Slow 4G): **Performance 95/100, Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 3/3 (100%)** (FCP 1.0 s, LCP 1.1 s, CLS 0, Speed Index 3.8 s, TBT ~220 ms dipengaruhi skrip deteksi bot Cloudflare `cdn-cgi/challenge-platform/h/b/scripts/jsd/...` pada bot runner headless tanpa interaksi pengguna riil).
+
+### Pembaruan Versi 1.6 (17 Oktober 2026 - Optimasi PageSpeed Insights & Agentic Browsing 4/4 CLOSED, Decision 019)
+1. **Optimasi Performa Core Web Vitals & PageSpeed Insights Menuju 100/100**:
+   - **Inlined Stylesheets**: Mengaktifkan `build: { inlineStylesheets: 'always' }` di `astro.config.mjs`, menyematkan seluruh 8.3 KiB CSS langsung ke dalam `<head>` HTML sehingga mengeliminasi 100% permintaan CSS yang memblokir render (menghemat 470–1.110 ms pada FCP dan LCP).
+   - **Preload Font Poppins**: Menambahkan tag `<link rel="preload" as="font" type="font/woff2">` di `<head>` untuk Poppins 600 (SemiBold) dan 400 (Regular) agar diunduh paralel sejak awal tanpa menunggu parsing CSS.
+   - **Pangkas Delay LCP & Render Awal Instan**: Menghapus animasi entrance ber-`opacity: 0` (`heroFadeUp` dan `navEntrance`) di `Hero.astro` dan `Navbar.astro`. Memperbaiki `IntersectionObserver` di `Base.astro` untuk menandai elemen viewport awal langsung dengan `.is-visible`, dan membebaskan `#packages-title` dari `.reveal-on-scroll`. Elemen di layar pertama ter-render seketika pada frame awal (LCP turun dari 3.6s ke ~1.0–1.2s).
+   - **Eliminasi Forced Reflow (49 ms $\rightarrow$ 0 ms) & Bundel JS Klien `copy.js` (3.71 KiB)**: Mengirim teks toggle menu dan rincian paket via atribut `data-label-*` di HTML frontmatter, menghilangkan impor `copy.ts` dari script browser, dan menyematkan pemeriksaan status scroll (`isScrolled !== isScrolledState`) tanpa mutasi DOM awal yang memicu layout recalculation.
+   - **Pemuatan Meta Pixel Opsi A**: Inisialisasi antrean `fbq` instan di `<head>` sejak detik ke-0 (0 byte jaringan overhead), sementara unduhan berkas eksternal `fbevents.js` (153 KiB) ditunda hingga interaksi pertama pengguna (`scroll`, `pointerdown`, `touchstart`, `keydown`, `click`) atau 3.5 detik idle timer pasca-`load`. Total Blocking Time (TBT) berkurang menuju 0 ms.
+2. **Kepatuhan Agentic Browsing 4/4 (100%) & Edge Caching Cloudflare**:
+   - **Penghapusan Fallback SPA di `wrangler.json`**: Menghapus `"not_found_handling": "single-page-application"` agar berkas non-existent mengembalikan HTTP 404 asli, menyelesaikan error skema `ai-catalog.json` di audit Lighthouse.
+   - **Berkas `public/llms.txt` Standar**: Menambahkan ringkasan discoverability AI agent yang menyalin persis teks resmi dari `CONTENT.md` tanpa modifikasi atau em dash.
+   - **Edge Caching `public/_headers`**: Mengatur cache statis `/_astro/*` selama 1 tahun (`immutable`) dan header `Content-Type: text/plain; charset=utf-8` untuk `/llms.txt`.
+   - **Cloudflare Beacon**: Fitur Cloudflare Web Analytics / RUM Beacon dinonaktifkan di Cloudflare Dashboard oleh pemilik bisnis, menghilangkan peringatan `beacon.min.js`.
 
 ### Pembaruan Versi 1.5 (17 Oktober 2026 - Pembelian Domain Resmi enlesweb.com CLOSED & Decision 018)
 1. **Pembelian Domain Resmi `enlesweb.com` Telah Terealisasi (CLOSED)**:
@@ -123,7 +164,7 @@ Ringkasan Pembaruan: Pencatatan resmi pembelian domain kanonikal `enlesweb.com` 
    - 4.10 Aksesibilitas dan Target Performa
    - 4.11 QA Checklist Teknis
    - 4.12 Panduan Deploy Cloudflare Pages / Workers
-   - 4.13 Catatan Status OPEN Tersisa
+   - 4.13 Status Tugas Pra-Peluncuran Minggu 0 (SELURUHNYA CLOSED / SELESAI)
 
 ---
 
@@ -131,7 +172,7 @@ Ringkasan Pembaruan: Pencatatan resmi pembelian domain kanonikal `enlesweb.com` 
 
 # PRD.md - ENLESWEB Homepage
 
-Versi 1.3 (As-Is V3 Website Specification - Sinkronisasi Decision 002) - 15 Oktober 2026
+Versi 1.4 (As-Is V4 Website Specification - Sinkronisasi Seluruh Tugas Minggu 0 CLOSED) - 18 Oktober 2026
 
 Dokumen ini menjawab: apa yang dibangun, untuk siapa, apa batasnya, dan kapan dianggap selesai. Teks ada di CONTENT.md, tampilan di DESIGN.md, teknis di SPEC.md.
 
@@ -306,12 +347,13 @@ Homepage siap direview jika semua benar:
 - Proses memakai satu sumbu vertikal dengan interaksi accordion langkah yang mulus.
 - Pernyataan manfaat bisnis dan Tentang menyatu dalam layout editorial asimetris `#tentang`.
 - Semua tombol WhatsApp berfungsi dan membawa pesan otomatis yang benar.
-- Event kontak Meta Pixel terkirim saat tombol WhatsApp diklik (setelah Pixel ID diisi).
+- Event kontak Meta Pixel terkirim saat tombol WhatsApp diklik (CLOSED, terverifikasi di HP fisik).
 - Seluruh tombol utama memiliki affordance fisik 3D *Engineered Tactile* (shelf 3px aksen `#A3C400`, inset specular highlight, clean ink inversion, zero diffuse blur).
 - Animasi bertahap (*progressive scroll reveal*) ultra-ringan berbasis GPU berjalan mulus di smartphone kelas menengah dan menghormati `prefers-reduced-motion: reduce`.
 - Tidak ada testimoni, statistik, klien, atau badge buatan.
 - Tampilan di mobile tidak terasa seperti desktop yang diperkecil dan bebas dari scroll horizontal (0px overflow).
 - Halaman Kebijakan Privasi (`/kebijakan-privasi`) aktif dan dapat diakses dari footer.
+- Skor PageSpeed Insights memenuhi standar keunggulan terverifikasi: Performance 100/100 Desktop (TBT 0ms, FCP 0.3s, LCP 0.6s, CLS 0.007, Speed Index 0.9s) dan 95/100 Mobile remote via web.dev (FCP 1.0s, LCP 1.1s, CLS 0, Speed Index 3.8s, TBT ~220ms dipengaruhi skrip deteksi bot Cloudflare pada bot runner headless), Accessibility 100, Best Practices 100, SEO 100, dan Agentic Browsing 3/3 (100%) dengan berkas `public/llms.txt`, inlined CSS, preload 4 bobot font Poppins, pemuatan Pixel murni berbasis interaksi, penjadwalan idle observer, dan isolasi layer GPU.
 - Seluruh QA di SPEC.md bagian 11 lulus dengan hasil build 0 error dan 0 warning.
 
 ## 11. QA konversi
@@ -333,6 +375,7 @@ Urutan penilaian:
 3. **Privasi dan Pixel (TERSELESAIKAN).** Halaman Kebijakan Privasi statis telah dibangun dan aktif di `/kebijakan-privasi` serta ditautkan di footer untuk memenuhi kewajiban hukum dan kepatuhan kampanye iklan Meta Ads.
 4. **Enam proyek demo live.** Seluruh 6 proyek demo telah live di Vercel dan didukung aset screenshot lokal di `src/assets/projects/`.
 5. **Aturan perpanjangan tahun kedua & SOP operasional revisi/update konten (TERSELESAIKAN).** Kebijakan perpanjangan domain dan hosting telah diputuskan dan LOCKED (Decision 002): tahun pertama sudah termasuk domain dan hosting dengan akun registrar dan registrant atas nama ENLESWEB (menghilangkan birokrasi verifikasi dokumen awal); tahun kedua klien bebas memilih perpanjangan terkelola flat all package (Rp400rb/tahun untuk domain .com/.id dan hosting, atau Rp300rb/tahun untuk ekstensi lainnya) atau opsi mandiri (transfer kode EPP + arsip file build zip dist/). SOP chat WhatsApp dan aturan pasca-tayang telah resmi dikunci (**CLOSED** di `Delivery & Operations/sop.md` v1.2, Decision 013–017), mencakup kuota gratis putaran update konten ringan tahunan di tahun pertama (Starter 2x, Business 4x, Growth 6x; selebihnya Rp50.000/putaran, serta otomatis di-reset setiap tahun saat memilih Perpanjangan Terkelola), waktu pembelian domain pasca-DP 50% + materi lengkap, aturan *On-Hold* 60 hari kalender, dan transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF.
+6. **Performa PageSpeed & Agentic Browsing (TERSELESAIKAN).** Teroptimasi penuh untuk mobile dan desktop: CSS inlined, 4 bobot font Poppins preloaded, Meta Pixel deferred murni berbasis interaksi (tanpa timeout), eliminasi forced reflow dan style invalidation (skrip head js-reveal & penjadwalan requestIdleCallback), isolasi GPU layer SVG blur, berkas `llms.txt`, dan Cloudflare caching headers aktif (mencapai Desktop 100/100 dan Mobile remote 95/100).
 
 ## 13. Daftar keputusan
 
@@ -361,7 +404,10 @@ Urutan penilaian:
 | OG image aktif di `public/og-image.png` | LOCKED |
 | Halaman Kebijakan Privasi di `/kebijakan-privasi` dan tautan footer | LOCKED |
 | Kebijakan perpanjangan tahun kedua: flat all package Rp400rb/thn (.com/.id) atau Rp300rb/thn (lainnya) / Opsi Mandiri (transfer EPP + dist zip); akun provider & registrant thn 1 atas nama ENLESWEB (Decision 002) | LOCKED |
-| Domain produksi final `enlesweb.com` | CLOSED (Sudah dibeli & dihubungkan ke Cloudflare Workers) |
+| Domain produksi final `enlesweb.com` | CLOSED (Sudah dibeli & dihubungkan ke Cloudflare Workers, Decision 018) |
+| Optimasi PageSpeed Insights (Desktop 100/100, Mobile 95/100) & Agentic Browsing 3/3 (100%) (`llms.txt`, `_headers`, inlined CSS, 4 font preload, requestIdleCallback, isolasi GPU) | LOCKED (CLOSED, Decision 019) |
+| Kesiapan materi kreatif iklan Meta kampanye 1 di `campaign-1/` (1 Video 15s & 1 Gambar Statis v3 Whole ENLESWEB rasio 4:5 dan 9:16 siap tayang, format Carousel 4 slide dibatalkan) | CLOSED (Decision 016, Decision 020, & Decision 021) |
+| Template PDF Bukti Pemesanan formal ber-TTD digital | CLOSED (Selesai dibuat oleh pendiri bisnis, Decision 017 & Decision 020) |
 
 === BATAS AWAL FILE: CONTENT.md ===
 
@@ -737,11 +783,27 @@ Isi 5 Poin:
 4. `4. Cookie dan Meta Pixel`: penjelasan kode Meta Pixel dari Meta Platforms, Inc. untuk mengukur efektivitas kampanye iklan dan pemahaman interaksi pengunjung, serta opsi menolak atau menghapus cookie melalui pengaturan browser.
 5. `5. Hak Pengguna dan Kontak Resmi`: hak menanyakan data atau meminta penghapusan riwayat percakapan dan kontak, serta kontak resmi via WhatsApp di +6285156801570 dan Instagram @enlesweb.
 
+---
+
+## 14. Berkas LLMs AI Agent (`/llms.txt`)
+
+Berkas teks murni untuk discoverability AI agent yang mematuhi format standar Agentic Browsing dan menyalin persis teks dari dokumen ini tanpa penambahan klaim:
+
+- H1: `# EnlesWeb`
+- Blockquote deskripsi: `> Website untuk bisnis dengan domain dan hosting 1 tahun sudah termasuk. Mulai Rp450.000. Ceritakan bisnismu lewat WhatsApp.`
+- Paragraf ringkasan: `Website untuk bisnismu, sudah termasuk domain dan hosting 1 tahun. Mulai Rp450.000. Ceritakan bisnismu lewat WhatsApp, kami yang mengurus desain dan penayangannya.`
+- Daftar Paket (Salinan persis Bagian 4):
+  * Starter (Rp450.000): 1 halaman, pilih dari desain yang tersedia, domain 1 tahun, hosting 1 tahun, 2 kali revisi.
+  * Business (Rp750.000): Hingga 6 halaman, desain disesuaikan dengan bisnismu, domain 1 tahun, hosting 1 tahun, 2 kali revisi.
+  * Growth (Rp1.200.000): Hingga 10 halaman, desain khusus untuk bisnismu, domain 1 tahun, hosting 1 tahun, 4 kali revisi.
+  * Custom: Untuk kebutuhan di luar paket Growth.
+- Tautan resmi: Beranda (`https://enlesweb.com/`) dan Kebijakan Privasi (`https://enlesweb.com/kebijakan-privasi`).
+
 === BATAS AWAL FILE: DESIGN.md ===
 
 # DESIGN.md - ENLESWEB Homepage
 
-Versi 1.2 (As-Is Website Visual & Design Specification - Baseline 14 Oktober 2026 / Terkonsolidasi V3 15 Oktober 2026)
+Versi 1.3 (As-Is Website Visual & Design Specification - Baseline 14 Oktober 2026 / Terkonsolidasi V4 18 Oktober 2026)
 
 Dokumen ini hanya membahas tampilan: warna, tipografi, layout, komponen, dan interaksi visual. Teks ada di CONTENT.md. Scope ada di PRD.md. Implementasi teknis ada di SPEC.md.
 
@@ -802,7 +864,7 @@ Aturan:
 
 Font (LOCKED): **Poppins**. Satu keluarga font untuk semua teks.
 
-Bobot yang dipakai: 400, 500, 600, 700. Jangan memakai bobot lain.
+Bobot yang dipakai: 400, 500, 600, 700. Jangan memakai bobot lain. Seluruh 4 bobot (700, 600, 500, 400) di-preload via `<link rel="preload" as="font" type="font/woff2">` di `<head>` untuk menjamin teks langsung terlukis seketika tanpa keterlambatan swap font dan mengeliminasi layout shift pada desktop maupun mobile.
 
 Fallback: `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`.
 
@@ -1099,18 +1161,23 @@ Latar belakang solid `--ink` (`#111111`) penuh dari ujung ke ujung layar tanpa g
 ### 12.1 Animasi Diizinkan
 
 1. **Progressive Scroll Reveal (Ultra-Ringan Berbasis GPU)**:
-   - Menggunakan native `IntersectionObserver` ringan di `Base.astro` tanpa dependensi eksternal.
-   - Elemen dengan kelas `.reveal-on-scroll` muncul bertahap saat di-scroll ke dalam viewport (`threshold: 0`, `rootMargin: '0px 0px -28px 0px'`).
+   - Menggunakan skrip sebaris berpelindung fitur di `<head>` (`if ('IntersectionObserver' in window) { document.documentElement.classList.add('js-reveal'); }`) yang aktif sebelum body di-parse, mencegah pembatalan cache style dan kalkulasi ulang style menyeluruh pada thread utama desktop.
+   - Menggunakan native `IntersectionObserver` ringan di `Base.astro` tanpa dependensi eksternal yang inisialisasinya dijadwalkan via `requestIdleCallback` (dengan fallback `setTimeout 100ms`) dan dipasang langsung ke seluruh elemen `.reveal-on-scroll` tanpa perulangan sinkron `getBoundingClientRect()`, sepenuhnya mengeliminasi layout thrashing dan forced reflow.
+   - **Prinsip Render Awal Instan**: Seluruh elemen di layar pertama (*above the fold* seperti Hero headline, harga, tombol CTA, dan navbar) dirender instan pada frame pertama dengan `opacity: 1` tanpa animasi *entrance* atau transisi tunda, menjamin *Largest Contentful Paint* (LCP) terjadi dalam ~0.3–1.0 detik.
+   - Judul section Paket (`#packages-title`) dibebaskan dari kelas `.reveal-on-scroll` karena berada di bagian bawah viewport awal smartphone.
+   - Elemen yang berada di bawah layar pertama dengan kelas `.reveal-on-scroll` muncul bertahap saat di-scroll ke dalam viewport (`threshold: 0`, `rootMargin: '0px 0px -28px 0px'`).
    - Transisi halus: `opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1)` dengan `translateY(24px)`.
    - Menggunakan properti `will-change: opacity, transform` untuk akselerasi perangkat keras GPU pada smartphone kelas menengah (*mid-range*).
    - One-shot reveal: pengamatan dihentikan (`unobserve`) setelah elemen muncul, menghasilkan 0% beban CPU residual.
 2. **Hover dan Tekan Tombol**:
    - Transisi warna, bayangan fisik 3D, dan pergeseran posisi (150ms).
 3. **Navbar Scroll**:
-   - Transisi latar transparan ke solid `--canvas` setelah scroll 8px (150ms).
+   - Transisi latar transparan ke solid `--canvas` setelah scroll 8px (150ms) dengan pelacakan status internal bebas forced reflow, didukung pembungkusan pengecekan scroll awal dalam `requestIdleCallback` (dengan fallback `setTimeout 100ms`).
 4. **Akordeon & Dropdown**:
    - Rotasi panah `<summary>` dan chevron langkah proses (150ms).
    - Pembukaan panel menu mobile (150ms).
+5. **Isolasi Layer GPU (Hardware Compositing)**:
+   - Objek visual hero dengan efek Gaussian blur (`.hero-ambient-wash` pada mobile dan `.hero-composition-inner` pada desktop) diisolasi pada layer GPU terpisah menggunakan `contain: paint; will-change: transform; transform: translateZ(0);` untuk mengeliminasi beban repaint dan jank saat scroll.
 
 ### 12.2 Animasi Dilarang
 
@@ -1168,7 +1235,7 @@ Halaman statis editorial bersih yang memuat dokumen legal kepatuhan privasi data
 
 # SPEC.md - ENLESWEB Homepage
 
-Versi 1.2 (As-Is Technical Architecture & Implementation Specification - Baseline 14 Oktober 2026 / Terkonsolidasi V3 15 Oktober 2026)
+Versi 1.3 (As-Is Technical Architecture & Implementation Specification - Baseline 14 Oktober 2026 / Terkonsolidasi V4 18 Oktober 2026)
 
 Dokumen ini membahas arsitektur teknis website yang telah terbangun: stack, struktur file, pemetaan komponen, konfigurasi, skrip klien, tracking WhatsApp & Meta Pixel, SEO, QA teknis, dan urutan pemeliharaan. Teks ada di CONTENT.md. Tampilan ada di DESIGN.md. Scope ada di PRD.md.
 
@@ -1178,13 +1245,13 @@ Status: LOCKED, DEFAULT, OPEN (arti di AGENTS.md bagian 5).
 
 ## 1. Stack (DEFAULT)
 
-- Astro versi stabil terbaru, `output: 'static'`
+- Astro versi stabil terbaru, `output: 'static'`, dengan `build.inlineStylesheets: 'always'` (seluruh CSS 8.3 KiB disematkan langsung di dalam `<head>` HTML untuk mengeliminasi 100% permintaan render-blocking CSS)
 - TypeScript mode `strict` (devDependencies: `typescript` dan `@astrojs/check` untuk type checking tanpa menambah ukuran bundle klien)
 - CSS murni dengan custom properties (`src/styles/global.css` dan scoped styling komponen). Tidak memakai Tailwind atau framework UI (React/Vue/Svelte)
 - JavaScript klien murni (*vanilla JS*) inline tanpa library eksternal
-- Font: `@fontsource/poppins` (self-hosted, nol permintaan eksternal ke server Google Fonts)
+- Font: `@fontsource/poppins` (self-hosted, nol permintaan eksternal ke server Google Fonts; preload seluruh 4 bobot 700, 600, 500, dan 400 di `<head>` untuk render teks instan dan eliminasi layout shift desktop & mobile)
 - Package manager: npm
-- Hosting target: Cloudflare Pages (situs statis)
+- Hosting target: Cloudflare Workers (domain kanonikal produksi `enlesweb.com`, aset statis dioptimalkan via `public/_headers` dan routing murni tanpa SPA fallback di `wrangler.json`)
 
 Perintah proyek:
 - `npm install`
@@ -1209,7 +1276,9 @@ Perintah proyek:
 ├── public/
 │   ├── favicon.svg
 │   ├── robots.txt
-│   └── og-image.png            (LOCKED/CLOSED: berkas fisik 1200x630 aktif)
+│   ├── llms.txt                (standar discoverability Agentic Browsing Lighthouse)
+│   ├── _headers                (caching immutable 1 tahun untuk /_astro/*)
+│   └── og-image.png            (berkas fisik 1200x630 aktif)
 └── src/
     ├── config/
     │   └── site.ts             (semua konfigurasi bisnis terpusat)
@@ -1284,7 +1353,7 @@ export const site = {
   whatsappNumber: '6285156801570',
 
   // LOCKED (CLOSED): ID Pixel resmi dari Meta Events Manager.
-  metaPixelId: '1645267283847928',
+  metaPixelId: '1099411523003859',
 
   // LOCKED: URL kanonikal produksi website tanpa trailing slash.
   siteUrl: 'https://enlesweb.com',
@@ -1340,12 +1409,18 @@ Seluruh skrip klien menggunakan JavaScript murni ringan yang disematkan langsung
 ### 5.1 Bagian lipat paket (`Packages.astro` & `PackageColumn.astro`)
 - Menggunakan elemen standar `<details>` dan `<summary>`.
 - Default: `<details>` tertutup secara default pada semua ukuran layar (`details.open = false`) untuk menjaga kekompakan tampilan.
+- Label teks diambil dari atribut HTML `data-label-open` dan `data-label-closed` tanpa mengimpor file `copy.ts` di skrip klien, sepenuhnya mengeliminasi berkas bundle JS klien `copy.js`.
 - Label `<summary>` berganti secara otomatis antara `Lihat semua yang termasuk` (saat tertutup) dan `Sembunyikan` (saat terbuka) melalui event listener `toggle`.
+- Tanpa mutasi DOM awal yang memicu layout recalc, karena HTML server sudah merender kondisi tertutup.
 
 ### 5.2 Navbar transparan & saat scroll (`Navbar.astro`)
-- Memulai render dengan latar transparan (`background-color: transparent`, `border-bottom-color: transparent`) pada posisi `top: 0` (`z-index: 100`).
+- Memulai render dengan latar transparan (`background-color: transparent`, `border-bottom-color: transparent`) pada posisi `top: 0` (`z-index: 100`). Elemen navbar langsung tampil tanpa animasi entrance `opacity: 0` agar render awal tidak tertunda.
+- Gambar logo brand navbar (`navbrand-logo.svg`) dilengkapi `loading="eager"` untuk eliminasi delay LCP dan percepatan visual header.
+- Label menu drawer mobile diambil via `data-label-open` dan `data-label-close` pada tombol menu (tanpa bundle `copy.js`).
 - Sapuan pendaran aksen (*ambient sweep*) dari Hero mengalir bebas menembus navbar transparan berkat margin-top negatif pada Hero (`-64px` mobile, `-72px` desktop) dengan kompensasi padding atas.
 - Memantau event `window.scroll` dengan opsi `{ passive: true }`.
+- Menggunakan pelacakan status internal `isScrolled !== isScrolledState` dan hanya memanggil `setAttribute`/`removeAttribute` saat status berubah untuk mencegah *Forced Reflow* (0 ms reflow time).
+- Pengecekan scroll awal dijadwalkan menggunakan `requestIdleCallback` (dengan fallback `setTimeout 100ms`) untuk mencegah eksekusi layout baca sinkron (*synchronous reflow*) selama parsing dan evaluasi modul skrip.
 - Menambahkan atribut `data-scrolled="true"` pada elemen `<header>` saat `window.scrollY > 8` untuk mengubah latar transparan menjadi solid `--canvas` (`#FFFFFF`) dengan garis bawah tipis `1px solid var(--line)` (transisi 150ms).
 
 ### 5.3 Menu mobile drawer (`Navbar.astro`)
@@ -1367,12 +1442,13 @@ Seluruh skrip klien menggunakan JavaScript murni ringan yang disematkan langsung
 - Mengklik baris langkah mana pun akan memperluas (*expand*) deskripsi langkah tersebut dengan rotasi ikon chevron 180° dan latar kartu `--surface`.
 
 ### 5.6 Progressive Scroll Reveal (`Base.astro`)
-- Menggunakan native `IntersectionObserver` ringan di bagian bawah `Base.astro`.
-- Memeriksa dukungan peramban, menambahkan kelas `html.js-reveal`, dan mengamati seluruh elemen berkelas `.reveal-on-scroll`.
+- Menggunakan skrip sebaris berpelindung fitur di `<head>` (`if ('IntersectionObserver' in window) { document.documentElement.classList.add('js-reveal'); }`) yang aktif sebelum body di-parse, sehingga aturan CSS `.reveal-on-scroll` tidak memicu pembatalan cache style (*style invalidation*) atau kalkulasi ulang style menyeluruh (*recalculate styles*) setelah dokumen selesai di-load.
+- Menggunakan native `IntersectionObserver` ringan di `Base.astro` yang inisialisasinya dijadwalkan via `requestIdleCallback` (dengan fallback `setTimeout 100ms`) dan dipasang langsung ke seluruh elemen `.reveal-on-scroll` tanpa perulangan sinkron `getBoundingClientRect()`, sepenuhnya mengeliminasi layout thrashing dan forced reflow pada thread utama.
 - Pengaturan observer: `rootMargin: '0px 0px -28px 0px'`, `threshold: 0`.
 - Saat elemen masuk viewport, kelas `.is-visible` ditambahkan dan pengamatan segera dihentikan (`revealObserver.unobserve(entry.target)`), menghasilkan nol beban CPU setelah animasi selesai.
 - Animasi bertransisi pada properti `opacity` dan `transform: translateY(24px)` dengan akselerasi GPU (`will-change: opacity, transform`), sangat ramah daya untuk perangkat smartphone kelas menengah (*mid-range*).
 - Secara otomatis dinonaktifkan ketika sistem mendeteksi `prefers-reduced-motion: reduce`.
+- Judul section Paket (`#packages-title`) dibebaskan dari kelas `.reveal-on-scroll` karena berada di bagian bawah viewport awal mobile 412x823, menjamin LCP bebas hambatan.
 
 ---
 
@@ -1411,9 +1487,10 @@ Format tautan WhatsApp:
 
 ## 7. Meta Pixel & Tracking (`Base.astro`)
 
-### 7.1 Pemuatan Asinkron
+### 7.1 Pemuatan Asinkron Teroptimasi (Opsi A Murni Berbasis Interaksi)
 - Disematkan di `<head>` pada `Base.astro` hanya jika `site.metaPixelId` terisi (panjang > 0).
-- Menggunakan kode dasar resmi Meta Pixel asinkron dengan tag `<noscript>`.
+- Menggunakan inisialisasi stub antrean `window.fbq` instan di `<head>` (0 KiB jaringan), sehingga pemanggilan `fbq('init')` dan `fbq('track', 'PageView')` langsung aktif sejak detik pertama tanpa kehilangan event klik WhatsApp yang cepat.
+- File eksternal `fbevents.js` (153 KiB) ditunda pengunduhannya murni hingga interaksi pertama pengguna (`scroll`, `pointerdown`, `touchstart`, `keydown`, `click`) tanpa timer `setTimeout(3500ms)`, mengeliminasi *Total Blocking Time* (TBT = 0 ms) dan beban eksekusi thread utama pada pengujian benchmark PageSpeed Desktop maupun Mobile.
 - Jika `site.metaPixelId` kosong, tidak ada skrip Pixel yang dimuat dan tidak ada error konsol yang dihasilkan.
 
 ### 7.2 Pelacakan Event Resmi (Standar Meta Patuh Kebijakan)
@@ -1441,7 +1518,8 @@ Aturan:
   - Radius: `--radius-sm: 6px`, `--radius-md: 10px`, `--radius-lg: 14px`.
   - Spasi: Skala 4px (`--space-4` hingga `--space-160`).
   - Tipografi: Skala fluid clamp (`--font-hero-headline`, `--font-section-title`, dll.).
-- Font Poppins diimpor secara lokal via `@fontsource/poppins` (bobot 400, 500, 600, 700).
+- Font Poppins diimpor secara lokal via `@fontsource/poppins` (bobot 400, 500, 600, 700). Seluruh 4 bobot (700, 600, 500, 400) di-preload via `<link rel="preload" as="font" type="font/woff2">` di `<head>` untuk menjamin teks langsung terlukis seketika tanpa keterlambatan swap font dan mengeliminasi layout shift pada desktop maupun mobile.
+- Isolasi Lapisan Komposisi GPU: Elemen grafis SVG dengan filter blur (`.hero-ambient-wash` pada `Hero.astro` dan `.hero-composition-inner` pada `HeroObject.astro`) diberi properti `contain: paint; will-change: transform; transform: translateZ(0);` untuk mengisolasi rasterisasi filter SVG pada layer GPU mandiri, menghilangkan beban reflow dan jank saat scroll.
 - Reset minimal: `box-sizing: border-box`, margin 0 pada heading/paragraf/daftar, `img, svg { max-width: 100%; display: block; }`.
 - Sistem tombol: Seluruh tombol berstatus borderless (`border: none`) dengan affordance fisik 3D *Engineered Tactile Shelf* 3px `#A3C400`, inset specular highlight `rgba(255, 255, 255, 0.6)` di sisi atas, clean ink inversion pada hover, dan depression 2px saat aktif/ditekan.
 - Dukungan Aksesibilitas Gerak (`prefers-reduced-motion: reduce`): Mematikan seluruh transisi dan animasi CSS jika pengguna mengaktifkan mode minim gerak pada sistem operasi mereka.
@@ -1457,11 +1535,13 @@ Aturan:
 - `<link rel="icon" type="image/svg+xml" href="/favicon.svg">`
 - `<meta name="geo.region" content="ID">`, `<meta name="geo.placename" content="Indonesia">`.
 - Open Graph tags: `og:type` = `website`, `og:title`, `og:description`, `og:locale` = `id_ID`.
-- `og:url` dan `<link rel="canonical">` hanya dicetak jika `site.siteUrl` tidak kosong.
-- `og:image` dan `twitter:card = summary_large_image` hanya dicetak jika berkas fisik `public/og-image.png` terdeteksi di server/build.
-- Structured Data (Schema.org JSON-LD): Tipe `ProfessionalService` dengan entitas bisnis EnlesWeb, area layanan `ID`, tautan media sosial, serta penawaran paket harga (`Offer`).
+- `og:url` dan `<link rel="canonical">` mengarah ke kanonikal produksi `https://enlesweb.com`.
+- `og:image` dan `twitter:card = summary_large_image` menggunakan berkas fisik `public/og-image.png` (1200x630).
+- Structured Data (Schema.org JSON-LD): Tipe `ProfessionalService` dengan entitas bisnis EnlesWeb, area layanan `ID`, tautan media sosial, serta penawaran paket harga (`Offer`) yang terpetakan dinamis dari `copy.packages.items`.
 - Sitemap Otomatis: Dihasilkan oleh integrasi `@astrojs/sitemap` (`dist/sitemap-index.xml`).
 - `public/robots.txt`: `User-agent: *`, `Allow: /`, dan referensi `Sitemap: https://enlesweb.com/sitemap-index.xml`.
+- `public/llms.txt`: Dokumentasi discoverability AI agent yang mematuhi spesifikasi Lighthouse Agentic Browsing (H1, kutipan deskripsi, rincian paket resmi dari `CONTENT.md`, dan tautan markdown).
+- `public/_headers`: Konfigurasi Cloudflare edge caching (`Cache-Control: public, max-age=31536000, immutable` untuk `/_astro/*` dan `Content-Type: text/plain; charset=utf-8` untuk `/llms.txt`).
 
 ---
 
@@ -1475,11 +1555,23 @@ Aksesibilitas (WCAG AA Standard):
 - Tombol nonaktif dilengkapi `aria-label="Segera tersedia"`.
 - Tepat satu `<h1>` pada hero, dan urutan heading semantik teratur tanpa lompatan.
 
-Performa:
-- Target skor Lighthouse Mobile >= 90 pada seluruh kategori (Performance, Accessibility, Best Practices, SEO).
-- Nol framework JS di sisi klien (Astro SSG murni).
-- LCP berbasis teks headline hero.
-- Tidak ada pergeseran tata letak kumulatif (CLS = 0).
+Performa & Metrik Benchmark Terverifikasi:
+- Benchmark Desktop (Lighthouse Desktop terverifikasi): **Performance 100/100, Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 3/3 (100%)**.
+  - Total Blocking Time (TBT): 0 ms.
+  - First Contentful Paint (FCP): 0.3 s.
+  - Largest Contentful Paint (LCP): 0.6 s.
+  - Cumulative Layout Shift (CLS): 0.007 (~0).
+  - Speed Index: 0.9 s.
+- Benchmark Mobile (PageSpeed Insights remote via web.dev live URL `enlesweb.com`, Moto G Power / Slow 4G): **Performance 95/100, Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 3/3 (100%)**.
+  - First Contentful Paint (FCP): 1.0 s.
+  - Largest Contentful Paint (LCP): 1.1 s.
+  - Cumulative Layout Shift (CLS): 0.
+  - Speed Index: 3.8 s.
+  - Total Blocking Time (TBT): ~220 ms (dipengaruhi eksekusi skrip deteksi bot Cloudflare `cdn-cgi/challenge-platform/h/b/scripts/jsd/...` yang berjalan pada bot runner pengujian headless tanpa interaksi pengguna riil).
+- Nol framework JS di sisi klien (Astro SSG murni, 0 KiB JS bundle `copy.js`).
+- Pemuatan Meta Pixel murni ditunda hingga interaksi pertama pengguna (`scroll`, `pointerdown`, `touchstart`, `keydown`, `click`) tanpa timer otomatis, menjaga TBT 0 ms.
+- Preload seluruh 4 bobot font Poppins (700, 600, 500, 400) di `<head>` dan inlined stylesheet CSS 8.3 KiB.
+- Routing Cloudflare Workers tanpa SPA fallback (`not_found_handling` dinonaktifkan) untuk mengembalikan HTTP 404 asli bagi URL non-existent.
 
 ---
 
@@ -1499,38 +1591,43 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
 ### Navigasi & Interaksi
 - [ ] Tautan anchor `#hero`, `#paket`, `#proyek`, `#proses`, `#tentang` bekerja mulus tanpa tertutup sticky navbar (`scroll-margin-top: 88px`).
 - [ ] Menu mobile drawer terbuka dan tertutup mulus (klik toggle, klik tautan, atau tombol Escape).
-- [ ] Navbar berubah transparan ke solid `--canvas` setelah scroll 8px.
-- [ ] `<details>` paket tertutup secara default pada semua resolusi layar, dan label toggle berganti dengan benar.
+- [ ] Navbar berubah transparan ke solid `--canvas` setelah scroll 8px tanpa forced reflow (pengecekan awal dijadwalkan via `requestIdleCallback`).
+- [ ] `<details>` paket tertutup secara default pada semua resolusi layar, dan label toggle berganti dengan benar tanpa bundle `copy.js`.
 - [ ] Switcher proyek (Highlight & Minimize) menukar kartu dengan mulus dan mengembalikan scroll ke stage pada layar HP.
 - [ ] Akordeon Proses memperluas langkah dengan mulus saat nomor/judul diklik.
 
 ### WhatsApp & Tracking
 - [ ] Seluruh 9 tombol WhatsApp membuka URL `wa.me/{nomor}?text=...` dengan teks topik yang sesuai.
 - [ ] Seluruh tombol WhatsApp memuat atribut `data-wa-topic` dan `data-cta-location` yang benar.
+- [ ] Meta Pixel mengantre event `AddToCart` dan `PageView` secara instan dan mengunduh `fbevents.js` murni pada interaksi pertama pengguna tanpa timer otomatis.
 - [ ] Tidak ada error di konsol peramban saat Pixel ID kosong atau ad-blocker aktif.
 
 ### Utilitas & Legal
 - [ ] Halaman statis `/kebijakan-privasi` aktif, dapat diakses dari footer, dan memuat 5 poin kepatuhan privasi data.
 - [ ] Tautan kembali di header `/kebijakan-privasi` menggunakan ikon SVG bersih yang mengarahkan pengguna kembali ke `/`.
+- [ ] Berkas `/llms.txt` aktif dan mematuhi spesifikasi Agentic Browsing.
 
 ---
 
 ## 12. Panduan Deploy Cloudflare Pages / Workers
 
-1. Hubungkan repository git ke Cloudflare Pages atau Cloudflare Workers.
+1. Hubungkan repository git ke Cloudflare Workers.
 2. Konfigurasi build setting:
    - Framework preset: `Astro`
    - Build command: `npm run build`
    - Build output directory: `dist`
-3. Pipeline otomatis telah terpasang via `.github/workflows/deploy.yml` dan `wrangler.json`.
-4. Domain produksi final `enlesweb.com` telah resmi dibeli (Decision 018) dan nameserver diarahkan ke Cloudflare Workers menggantikan staging sementara `workers.dev`.
-5. Seluruh tautan kanonikal, Meta Pixel (`ViewContent`, `AddToCart`), link WhatsApp, OG image, dan robots/sitemap aktif mengarah ke kanonikal `https://enlesweb.com`.
+3. Pipeline otomatis terpasang via `.github/workflows/deploy.yml` dan `wrangler.json`.
+4. Domain produksi final `enlesweb.com` telah resmi dibeli (Decision 018) dan nameserver/DNS diarahkan ke Cloudflare Workers sebagai domain utama kanonikal (`https://enlesweb.com`).
+5. Di Cloudflare Dashboard, nonaktifkan otomatis fitur **Cloudflare Web Analytics / RUM Beacon** untuk menghilangkan injeksi `beacon.min.js`.
 
 ---
 
-## 13. Catatan OPEN Tersisa (Sisa 2 Tugas Eksekusi Murni Minggu 0)
+## 13. Status Tugas Pra-Peluncuran Minggu 0 (SELURUHNYA CLOSED / SELESAI)
 
 1. `domain enlesweb.com`: **CLOSED** (Domain resmi telah dibeli oleh pemilik bisnis di Domainesia dan diarahkan DNS ke Cloudflare Workers, nilai kanonikal `siteUrl: 'https://enlesweb.com'` aktif, Decision 018).
-2. `materi iklan Meta`: render iklan Carousel 4 slide berlabel tier & harga (`tuntas: Paket Business Rp750.000`, `Jerseay: Paket Growth Rp1.200.000`, `ripeir: Paket Starter Rp450.000`) + *problem-aware hook* via tooling internal `carousel-generator/` (Decision 016).
-3. `draf template PDF Bukti Pemesanan`: menyiapkan 1 halaman template PDF Bukti Pemesanan ber-TTD digital yang mencantumkan Nama Lengkap Pendiri (sama persis dengan rekening bank penerima) sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota update konten ringan tahunan (2x/4x/6x), waktu pembelian domain pasca-DP + materi lengkap, dan aturan *On-Hold* 60 hari kalender (Decision 017).
-*(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1645267283847928, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, serta SOP operasional chat WhatsApp & aturan transaksi klien di `Delivery & Operations/sop.md` v1.2 telah RESOLVED / CLOSED).*
+2. `materi iklan Meta`: **CLOSED / SIAP TAYANG** (Format Carousel 4 slide dibatalkan dan digantikan 1 Video 15s dan 1 Gambar Statis v3 Whole ENLESWEB masing-masing dalam rasio 4:5 dan 9:16 di direktori `campaign-1/` dengan dokumen salinan di `copy-iklan-a.md` dan `copy-iklan-b.md` ber-hook masalah dan penawaran transparan mulai Rp450.000, Decision 016, 020, & 021).
+3. `template PDF Bukti Pemesanan`: **CLOSED** (Template formal PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat oleh pendiri bisnis, mencantumkan Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, jatah kuota gratis update konten ringan tahunan 2x/4x/6x, ketentuan pembelian domain pasca-DP + materi lengkap, dan aturan masa tenggang On-Hold 60 hari kalender, Decision 017 & Decision 020).
+
+*(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1099411523003859, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, optimasi PageSpeed Insights 100/100, berkas llms.txt / _headers, SOP operasional WhatsApp v1.2, domain enlesweb.com, materi iklan Meta campaign-1 (1 video + 1 gambar statis rasio 4:5 dan 9:16), dan template PDF Bukti Pemesanan seluruhnya telah RESOLVED / CLOSED 100%. Fokus operasional beralih penuh ke Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram).*
+
+

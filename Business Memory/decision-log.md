@@ -359,3 +359,65 @@ Menuntaskan prasyarat infrastruktur kanonikal studio ENLESWEB sebelum penayangan
 
 ### 3. Alasan
 Memberikan kepastian identitas resmi dan meningkatkan kredibilitas studio bagi calon klien UMKM, serta memvalidasi kesiapan teknis pelacakan Meta Pixel (`ViewContent`, `AddToCart`), link WhatsApp, OG image, dan sitemap pada domain produksi kanonikal sebelum modal iklan dialirkan.
+
+---
+
+## Decision 019
+- **Tanggal:** 17 Oktober 2026
+- **Topik:** Optimasi Menyeluruh PageSpeed Insights (Desktop 100/100 TBT 0ms, Mobile 95/100) dan Kepatuhan Agentic Browsing (3/3 100%)
+- **Status:** Diputuskan & Terverifikasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Memaksimalkan kecepatan render dan menghilangkan friksi loading bagi calon klien UMKM di ponsel lambat (Slow 4G), menurunkan Total Blocking Time (TBT) ke 0 ms, serta memenuhi standar audit Lighthouse Agentic Browsing.
+
+### 2. Keputusan
+1. **Inlined 100% Stylesheet CSS (8.3 KiB):** Mengaktifkan `build: { inlineStylesheets: 'always' }` di `astro.config.mjs` untuk mengeliminasi seluruh permintaan CSS render-blocking.
+2. **Preload 4 Bobot Font Poppins:** Menyematkan `<link rel="preload">` di `<head>` untuk bobot 700, 600, 500, dan 400.
+3. **Skrip Sebaris Head `js-reveal` Berpelindung Fitur:** Menyematkan pemeriksaan `IntersectionObserver` di `<head>` tepat setelah preload font untuk mencegah pembatalan cache style (*style invalidation*) dan forced reflow.
+4. **Penjadwalan Idle Navbar & Observer:** Mengisolasi scroll listener navbar dan inisialisasi observer ke `requestIdleCallback` (fallback `setTimeout 100ms`), membebaskan thread utama desktop sehingga TBT mencapai 0 ms.
+5. **Pemuatan Meta Pixel Opsi A Murni Interaksi:** Antrean `fbq` instan di detik ke-0, unduhan `fbevents.js` (153 KiB) murni ditunda hingga interaksi pertama pengguna (`scroll`, `pointerdown`, `touchstart`, `keydown`, `click`) tanpa timer otomatis.
+6. **Isolasi Hardware Compositing GPU:** Menambahkan `contain: paint; will-change: transform; transform: translateZ(0);` pada elemen SVG blur.
+7. **Kepatuhan Agentic AI & Edge Caching:** Menghapus fallback SPA di `wrangler.json`, menyediakan berkas `public/llms.txt` standar, dan mengatur cache statis 1 tahun `public/_headers`.
+8. **Hasil Benchmark Terverifikasi:** Desktop 100/100 (TBT 0ms, FCP 0.3s, LCP 0.6s, CLS 0.007) dan Mobile 95/100 (FCP 1.0s, LCP 1.1s, CLS 0).
+
+### 3. Alasan
+Memberikan kecepatan akses instan, menjaga anggaran iklan efektif tanpa bounce rate tinggi akibat loading lambat, dan memastikan kepatuhan teknis web modern.
+
+---
+
+## Decision 020
+- **Tanggal:** 18 Oktober 2026
+- **Topik:** Penyelesaian Template PDF Bukti Pemesanan oleh Pendiri Bisnis (CLOSED), Kesiapan Materi Iklan Meta, dan Penutupan Seluruh Tugas Minggu 0 Menuju Transisi V4
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Menuntaskan seluruh sisa tugas persiapan pra-peluncuran Minggu 0 agar siap beralih ke penayangan kampanye iklan Meta Ads Minggu 1 dan melayani transaksi klien secara formal tanpa keraguan rekening pribadi.
+
+### 2. Keputusan
+1. **Template PDF Bukti Pemesanan Telah Selesai Dibuat (CLOSED):** Pendiri bisnis telah resmi membuat dokumen template Bukti Pemesanan formal PDF ber-TTD digital sesuai amanat Decision 003, Decision 017, dan SOP operasional WhatsApp v1.2 (Template 5.3). Dokumen memuat Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, rincian rekening transfer DP 50%, kuota gratis update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x), klausul pembelian domain setelah DP + materi lengkap, dan aturan masa tenggang On-Hold 60 hari kalender.
+2. **Kesiapan Materi Iklan Meta (CLOSED / SIAP TAYANG):** Tooling internal `campaign-1/` telah menghasilkan aset kreatif final: Iklan A (Video 15 detik rasio 4:5 dan 9:16) dan Iklan B (Gambar Statis v3 Whole ENLESWEB rasio 4:5 dan 9:16) berlabel tier & harga + hook masalah, siap diunggah ke Meta Ads Manager.
+3. **Penutupan Seluruh Tugas Minggu 0 (100% CLOSED):** Ketiga item tugas eksekusi persiapan pra-peluncuran (Domain resmi `enlesweb.com`, Materi Iklan Meta, Template PDF Bukti Pemesanan) telah berstatus CLOSED / SELESAI. Fokus berpindah ke Minggu 1 (penayangan kampanye Meta Ads tes Rp100.000 selama 7 hari dan Micro-Warm Outreach DM IG manual).
+4. **Transisi Dokumentasi Utama ke V4:** Peningkatan dokumen master ke `ENLESWEB-DOCS-V4.md`.
+
+### 3. Alasan
+Menghilangkan friksi transaksi, memberikan kepastian hukum dan rasa aman bagi klien UMKM, serta menuntaskan seluruh prasyarat pra-peluncuran secara disiplin tanpa halusinasi.
+
+---
+
+## Decision 021
+- **Tanggal:** 18 Oktober 2026
+- **Topik:** Pembatalan Format Iklan Carousel 4 Slide & Penetapan Format 1 Video (Iklan A 15s) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) Rasio 4:5 dan 9:16
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Format Carousel 4 slide memiliki keterbatasan interaktivitas swipe, risiko cropping tidak teratur di berbagai penempatan antarmuka Meta (Feed vs Stories/Reels), serta kurang optimal dalam mendemonstrasikan kelancaran interaksi website konsep dan proposisi nilai menyeluruh studio ENLESWEB secara instan kepada pengguna yang sedang scrolling cepat.
+
+### 2. Keputusan
+1. **Pembatalan Format Carousel 4 Slide:** Format iklan Carousel 4 slide resmi dibatalkan dan tidak digunakan untuk kampanye iklan berbayar perdana Meta Ads.
+2. **Penetapan Format 1 Video (Iklan A) dan 1 Gambar Statis (Iklan B):** Kampanye 1 dialihkan sepenuhnya ke dua materi iklan mandiri yang masing-masing diproduksi dalam dua rasio resmi Meta agar tidak terpotong sembarangan oleh UI sistem:
+   - **Iklan A (Video 15 Detik):** Menggunakan *problem-aware hook* (*"Mengapa IG & WA saja tidak cukup?"*), mendemonstrasikan showcase bergerak 3 website konsep (`tuntas`, `ripeir`, `Seruput Kopi`), penawaran harga mulai Rp450.000, domain + hosting 1 tahun, garansi update, dan ajakan chat WhatsApp langsung tanpa tombol buatan (`campaign-1/enlesweb-ads-15s-a-4x5.mp4` untuk Feed 1080x1350 dan `campaign-1/enlesweb-ads-15s-a-9x16.mp4` untuk Stories/Reels 1080x1920, salinan teks di `campaign-1/copy-iklan-a.md`).
+   - **Iklan B (Gambar Statis v3 Hook Hasil - Whole ENLESWEB):** Mengusung konsep Editorial Ad OG-Image / Trio Layar HP bertingkat (`tuntas`, `ripeir`, `Seruput Kopi`), identitas resmi EnlesWeb, harga jangkar *"Mulai Rp450.000"* dengan sorotan aksen kuning, 4 baris spesifikasi fasilitas, dan catatan kejujuran konsep tanpa tombol buatan (`campaign-1/enlesweb-ads-b-4x5.png` untuk Feed 1080x1350 dan `campaign-1/enlesweb-ads-b-9x16.png` untuk Stories/Reels 1080x1920, salinan teks di `campaign-1/copy-iklan-b.md`).
+3. **Penyelarasan Dokumentasi Menyeluruh:** Seluruh dokumen strategi, rencana kerja, rangkuman, dan konteks dimutakhirkan untuk menghapus dependensi pada format Carousel 4 slide dan menetapkan 1 video + 1 gambar statis sebagai materi kreatif resmi siap tayang Minggu 1.
+
+### 3. Alasan
+Format video 15 detik dan gambar statis adaptif 4:5/9:16 memberikan kepastian visual penuh (lolos verifikasi Safe Zone Meta), menyampaikan pesan dan visual secara langsung tanpa bergantung pada aksi geser pengguna, serta mewakili seluruh ekosistem studio ENLESWEB secara komprehensif.

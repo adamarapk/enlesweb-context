@@ -43,7 +43,7 @@ Perintah proyek:
 ├── public/
 │   ├── favicon.svg
 │   ├── robots.txt
-│   └── og-image.png          (OPEN)
+│   └── og-image.png          (CLOSED)
 └── src/
     ├── config/
     │   └── site.ts           (konfigurasi bisnis dan studio terpusat)

@@ -33,11 +33,11 @@ const hasFlag = (name) => args.includes(`--${name}`);
 const TARGET_RATIO = getArg('ratio', '9x16'); // '9x16', '4x5', or 'all'
 const RENDER_ALL = hasFlag('all') || TARGET_RATIO === 'all';
 const FPS = parseInt(getArg('fps', '30'), 10);
-const DURATION = parseFloat(getArg('duration', '18.0'));
+const DURATION = parseFloat(getArg('duration', '15.0'));
 const CRF = parseInt(getArg('crf', '18'), 10);
 const KEEP_FRAMES = hasFlag('keep-frames');
 const NO_AUDIO = hasFlag('no-audio');
-const TEMPLATE_FILE = getArg('file', 'enlesweb-ads-18s-v4.html');
+const TEMPLATE_FILE = getArg('file', 'enlesweb-ads-15s-a.html');
 
 // Resolve Chrome binary path
 function resolveChromePath() {
@@ -89,9 +89,9 @@ function prepareAudioTrack() {
     }
   }
 
-  // Generate procedural audio track with BGM + WhatsApp chimes + whooshes + clicks
-  const tempAudioPath = path.resolve(__dirname, 'temp_audio_18s.wav');
-  generateTrack(tempAudioPath);
+  // Generate procedural audio track with BGM + editorial pops + whooshes + highlighters
+  const tempAudioPath = path.resolve(__dirname, 'temp_audio_15s.wav');
+  generateTrack(tempAudioPath, DURATION);
   return tempAudioPath;
 }
 
@@ -268,7 +268,7 @@ async function main() {
       ratio: '9x16',
       width: 1080,
       height: 1920,
-      outputFile: path.resolve(__dirname, 'enlesweb-ads-18s-9x16.mp4'),
+      outputFile: path.resolve(__dirname, 'enlesweb-ads-15s-a-9x16.mp4'),
       urlParams: 'clean&pause'
     });
   }
@@ -278,7 +278,7 @@ async function main() {
       ratio: '4x5',
       width: 1080,
       height: 1350,
-      outputFile: path.resolve(__dirname, 'enlesweb-ads-18s-4x5.mp4'),
+      outputFile: path.resolve(__dirname, 'enlesweb-ads-15s-a-4x5.mp4'),
       urlParams: 'clean&ratio=4x5&pause'
     });
   }
@@ -289,7 +289,7 @@ async function main() {
   }
 
   // Cleanup temporary audio file if generated
-  if (audioTrackPath && audioTrackPath.includes('temp_audio_18s.wav') && fs.existsSync(audioTrackPath)) {
+  if (audioTrackPath && audioTrackPath.includes('temp_audio_15s.wav') && fs.existsSync(audioTrackPath)) {
     fs.unlinkSync(audioTrackPath);
   }
 

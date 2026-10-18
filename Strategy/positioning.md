@@ -1,7 +1,7 @@
 # POSITIONING ENLESWEB
-**Versi:** 1.6  
-**Terakhir diperbarui:** 17 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan sesi `/grill-me` 16 Oktober 2026.  
+**Versi:** 1.8  
+**Terakhir diperbarui:** 18 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Positioning
@@ -15,10 +15,10 @@
 - [KEPUTUSAN] **Pemilik usaha lokal kecil yang sudah aktif berjualan lewat Instagram/WhatsApp tetapi belum punya website.**
 - [KEPUTUSAN] Pasar tetap seluruh Indonesia secara remote. Segmen luas di `summary.md` (UMKM, bisnis lokal, jasa profesional) tetap sah sebagai pasar. Pesan iklan dan homepage ditulis untuk satu "wajah" pembeli di atas.
 - [FAKTA] Niche yang sudah punya demo: kedai kopi/F&B, bengkel reparasi, bimbel/les privat, studio jersey kustom, barbershop, florist/toko hadiah.
-- [KEPUTUSAN] **Urutan Prioritas 3 Demo Akuisisi (Decision 013):** Diuji pada Micro-Warm Outreach DM IG dan susunan slide Iklan Carousel berdasarkan nilai transaksi pelanggan:
-  1. **Prioritas #1:** `tuntas` (Bimbel & Les Privat, Paket Business Rp750.000) sebagai pembuka Carousel Meta Ads dan target utama DM manual.
-  2. **Prioritas #2:** `Jerseay` (Studio Jersey Custom, Paket Growth Rp1.200.000) sebagai target utama kedua DM manual dan slide kedua iklan.
-  3. **Prioritas #3:** `ripeir` (Servis Laptop/HP, Paket Starter Rp450.000) sebagai perwakilan pintu masuk harga Rp450.000 di slide ketiga iklan.
+- [KEPUTUSAN] **Urutan Prioritas 3 Demo Akuisisi (Decision 013 & Decision 021):** Format Carousel 4 slide dibatalkan (Decision 021). Urutan prioritas demo diterapkan pada Micro-Warm Outreach DM IG dan ditampilkan dalam showcase Iklan A (Video 15s) serta Iklan B (Gambar Statis v3 Whole ENLESWEB):
+  1. **Prioritas #1:** `tuntas` (Bimbel & Les Privat, Paket Business Rp750.000) sebagai pembuka demo dan target utama DM manual.
+  2. **Prioritas #2:** `Jerseay` (Studio Jersey Custom, Paket Growth Rp1.200.000) sebagai target utama kedua DM manual.
+  3. **Prioritas #3:** `ripeir` (Servis Laptop/HP, Paket Starter Rp450.000) dan `Seruput Kopi` (Kedai Kopi, Starter Rp450.000) sebagai perwakilan pintu masuk harga Rp450.000.
 - [HIPOTESIS] Pemilik usaha adalah pengambil keputusan langsung lewat chat WhatsApp. Belum ada percakapan nyata.
 
 ### Bukan target (Ditolak sopan / Diarahkan ke luar demi fokus 10 klien pertama yang paling realistis)
@@ -31,9 +31,9 @@
 
 ## 3. Lawan di Kepala Pembeli & Pembagian Peran Pesan (Iklan/DM vs Homepage)
 - [KEPUTUSAN] Lawan utama adalah **"tetap tanpa website, cukup IG/WhatsApp"**, bukan kompetitor tertentu.
-- [KEPUTUSAN] **Pembagian Peran Pesan Iklan/DM vs Homepage (Decision 016):**
+- [KEPUTUSAN] **Pembagian Peran Pesan Iklan/DM vs Homepage (Decision 016 & Decision 021):**
   1. **Homepage (*Solution-Aware*):** Headline homepage (`"Website untuk bisnismu, sudah termasuk domain dan hosting 1 tahun. Mulai Rp450.000"`) tetap dipertahankan tanpa perubahan untuk langsung menyambut pengunjung dengan kejelasan penawaran dan harga.
-  2. **Copy Iklan Meta Ads & Micro-Warm DM (*Problem-Aware Hook*):** Tugas mengedukasi masalah *"mengapa IG/WA saja tidak cukup"* diwajibkan hadir pada **kalimat pertama *caption* iklan Meta Ads**, **judul slide pembuka Carousel**, dan **pesan pembuka Micro-Warm DM di Instagram** (contoh: menyoroti kerepotan membalas pertanyaan jadwal/biaya bimbel yang berulang di WA pada `tuntas`, atau rumitnya merekap ukuran dan nomor punggung jersey tim lewat chat pada `Jerseay`).
+  2. **Copy Iklan Meta Ads & Micro-Warm DM (*Problem-Aware Hook*):** Tugas mengedukasi masalah *"mengapa IG/WA saja tidak cukup"* diwajibkan hadir pada **kalimat pertama *caption* iklan Meta Ads**, **hook pembuka video Iklan A & gambar Iklan B**, dan **pesan pembuka Micro-Warm DM di Instagram** (contoh: menyoroti kerepotan membalas pertanyaan jadwal/biaya bimbel yang berulang di WA pada `tuntas`, atau rumitnya merekap ukuran dan nomor punggung jersey tim lewat chat pada `Jerseay`).
 - [HIPOTESIS] Alternatif lain yang dipertimbangkan pembeli: pembuat website SaaS (Wix, Shopify) dan jasa web murah/freelancer. Belum ada riset terstruktur.
 - [FAKTA] Pembanding harga: kompetitor Landing Rp370k, Business Rp750k, Professional Rp1,5jt. Pasar umum low-cost Rp1 sampai 3jt, profesional Rp2 sampai 5jt.
 
@@ -67,12 +67,12 @@
 - [KEPUTUSAN] Tidak bersaing murni di harga termurah. Tidak memposisikan diri sebagai premium eksklusif.
 - [HIPOTESIS] Desain unik per niche cukup meyakinkan pembeli untuk memilih ENLESWEB dibanding opsi lebih murah.
 
-## 7. Peran Demo sebagai Bukti Utama & Jembatan Ekspektasi Tier
+### 7. Peran Demo sebagai Bukti Utama & Jembatan Ekspektasi Tier
 - [KEPUTUSAN] Bukti utama: **"lihat dulu contohnya."** Calon pembeli diarahkan memilih demo yang paling mirip usahanya.
 - [KEPUTUSAN] Demo ditampilkan jujur sebagai **konsep ENLESWEB**, bukan karya klien. Tidak ada testimoni, rating, atau jumlah klien palsu.
 - [FAKTA] 6 demo live di Vercel: Seruput Kopi, ripeir (Starter), tuntas (Business), Jerseay, dipotongin, berflower (Growth).
-- [KEPUTUSAN] **Jembatan Ekspektasi Tier Demo di Iklan & SOP WhatsApp (Decision 016):**
-  - Setiap kartu/slide contoh website pada iklan Carousel wajib mencantumkan label tingkatan paket dan harganya secara jelas (tanpa em dash `—`, misal: `tuntas: Paket Business Rp750.000`, `Jerseay: Paket Growth Rp1.200.000`, `ripeir: Paket Starter Rp450.000`) agar prospek beranggaran Rp450.000 tidak berekspektasi mendapatkan fitur interaktif sekelas Growth.
+- [KEPUTUSAN] **Jembatan Ekspektasi Tier Demo di Iklan & SOP WhatsApp (Decision 016 & Decision 021):**
+  - Materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3 Whole ENLESWEB) mencantumkan penawaran harga transparan mulai Rp450.000 dan mendemonstrasikan contoh website konsep secara proporsional sesuai tingkatannya (Decision 016 & Decision 021), mencegah prospek beranggaran Rp450.000 berekspektasi fitur interaktif kompleks sekelas Growth tanpa penjelasan.
   - Di SOP WhatsApp (Template 5.2), saat prospek menanyakan paket Starter (Rp450.000), admin wajib mengirimkan tautan demo tingkat Starter (`Seruput Kopi` atau `ripeir`) sebagai acuan utama 1 halaman, sembari menyandingkannya dengan contoh Business (`tuntas`) jika mereka membutuhkan lebih dari 1 halaman.
 
 ## 8. Pengurang Risiko (Pengganti Bukti Sosial)
@@ -104,15 +104,15 @@ Catatan transaksi:
 - [KEPUTUSAN] **Custom tidak dipromosikan aktif.**
 
 ## 12. Rencana Uji Positioning (Tes Meta Ads Minggu Pertama & Micro-Warm Outreach DM IG)
-- [KEPUTUSAN] **Iklan Meta Ads (Carousel 4 Slide):** Diawali *problem-aware hook* pada kalimat pertama *caption* dan judul slide pembuka, dengan susunan slide berlabel tier & harga eksplisit: Slide 1 `tuntas: Paket Business Rp750.000`, Slide 2 `Jerseay: Paket Growth Rp1.200.000`, Slide 3 `ripeir: Paket Starter Rp450.000`, Slide 4 Ringkasan Paket & CTA WA. Anggaran: Rp100.000 untuk 1 minggu (Decision 013 & Decision 016).
+- [KEPUTUSAN] **Iklan Meta Ads (1 Video 15s & 1 Gambar Statis v3 Whole ENLESWEB - Decision 021):** Format Carousel 4 slide dibatalkan (Decision 021) dan digantikan oleh 2 materi iklan mandiri yang masing-masing diproduksi dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/`. Iklan A (Video 15 detik) ber-hook masalah (*"Mengapa IG & WA saja tidak cukup?"*) dan demo gerak template; Iklan B (Gambar Statis v3 Whole ENLESWEB) ber-hook hasil dan editorial trio layar HP (`tuntas`, `ripeir`, `Seruput Kopi`). Keduanya mencantumkan penawaran harga transparan mulai Rp450.000 tanpa tombol buatan. Anggaran: Rp100.000 untuk 1 minggu (Decision 013, 016, 020, & 021).
 - [KEPUTUSAN] **Eksperimen Micro-Warm Outreach Manual (Rp0):** Maksimal 2–3 pemilik usaha per hari, sapaan awal **hanya via DM Instagram `@enlesweb`** (dengan pemanasan *like/reply story* terlebih dahulu) menggunakan *problem-aware hook* untuk urutan prioritas #1 Bimbel (`tuntas`), #2 Studio Jersey (`Jerseay`), dan #3 Servis Laptop/HP (`ripeir`). Dicatat terpisah dari metrik iklan (Decision 013).
 - [KEPUTUSAN] **Ambang sinyal minimal (*intermediate threshold*):** Minimal **2–3 chat masuk ke WhatsApp dari iklan** yang bertanya mengenai paket atau kebutuhan website (Decision 006).
 
 ## 13. Asumsi dan Risiko Positioning
 | Asumsi | Bukti saat ini | Cara validasi |
 |---|---|---|
-| Problem-aware hook di iklan & DM menyadarkan pemilik usaha bahwa IG/WA saja tidak cukup | Tidak ada. Belum ada lead | Evaluasi CTR iklan Carousel dan rasio respons Micro-Warm DM IG |
-| Label tier & harga eksplisit di Carousel + skrip Template 5.2 mencegah kesalahpahaman fitur Starter vs Growth | Belum teruji | Pantau apakah prospek Starter memahami batas 1 halaman tanpa kecewa |
+| Problem-aware hook di iklan & DM menyadarkan pemilik usaha bahwa IG/WA saja tidak cukup | Tidak ada. Belum ada lead | Evaluasi CTR iklan Meta (Iklan A dan Iklan B) dan rasio respons Micro-Warm DM IG |
+| Transparansi harga mulai Rp450.000 di Iklan A/B + skrip Template 5.2 mencegah kesalahpahaman fitur Starter vs Growth | Belum teruji | Pantau apakah prospek Starter memahami batas 1 halaman tanpa kecewa |
 | Bukti pemesanan formal PDF + TTD digital dengan Nama Lengkap Pendiri meningkatkan kepercayaan rekening pribadi (target konversi ke DP: 80%) | Asumsi tata kelola; [HIPOTESIS] target konversi 80% | Catat rasio konversi aktual dari pengiriman PDF menuju transfer DP di register chat WhatsApp |
 | Kuota gratis update konten ringan tahunan (2x/4x/6x) menghilangkan keberatan ketiadaan CMS | Belum teruji | Catat respons calon klien saat diberitahu kuota update ringan di chat |
 | Pembeli menerima transparansi biaya perpanjangan tahun ke-2 (Rp300k-Rp400k, sudah termasuk reset kuota update ringan) | Tidak ada | Catat reaksi saat disampaikan sebelum DP |
@@ -139,4 +139,7 @@ Catatan transaksi:
 | 14 Oktober 2026 | Versi 1.4: Penetapan hipotesis target konversi Bukti Pemesanan PDF ke DP sebesar 80% dan penegasan pertanyaan terbuka sebagai data empiris [BELUM DIKETAHUI]. | Arahan pemilik |
 | 16 Oktober 2026 | Versi 1.5: Sinkronisasi Decision 013 - 017: (1) pembagian peran Problem-Aware Hook di iklan/DM vs Solution-Aware di homepage, (2) urutan prioritas 3 demo (`tuntas`, `Jerseay`, `ripeir`) & pembukaan Micro-Warm Outreach DM IG manual, (3) label tier & harga eksplisit di Carousel 4 slide + jembatan ekspektasi di SOP Template 5.2, (4) kuota gratis update konten ringan tahunan (2x/4x/6x + reset saat renewal terkelola), serta (5) transparansi Nama Lengkap Pendiri di PDF dan aturan On-Hold 60 hari. | Sesi `/grill-me` 16 Okt 2026 |
 | 17 Oktober 2026 | Versi 1.6: Sinkronisasi pembelian domain resmi `enlesweb.com` (Decision 018), pemutakhiran sisa tugas Minggu 0, dan penyelarasan sumber kebenaran dengan `summary.md` v1.7. | Decision 018 & `summary.md` v1.7 |
+| 18 Oktober 2026 | Versi 1.7: Sinkronisasi penyelesaian template PDF Bukti Pemesanan oleh pendiri bisnis (Decision 020), kesiapan materi iklan Meta di `campaign-1/` (Decision 016/020), penutupan seluruh tugas Minggu 0, dan penyelarasan sumber kebenaran ke `summary.md` v1.8 serta master docs V4. | Decision 020 & `summary.md` v1.8 |
+| 18 Oktober 2026 | Versi 1.8: Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
+
 

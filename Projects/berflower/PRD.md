@@ -216,7 +216,7 @@ Urutan penilaian:
 | demoMode = true (WhatsApp mengarah ke ENLESWEB) | DEFAULT |
 | noindex selama demo (site.indexable: false) | DEFAULT |
 | Tanpa Meta Pixel dan analitik pihak ketiga | DEFAULT |
-| Nomor WhatsApp ENLESWEB untuk mode demo (site.enleswebWhatsappNumber) | OPEN |
-| URL produksi Vercel dan domain kustom (jika ada) | OPEN |
-| URL ENLESWEB untuk tautan footer dan Kontak | OPEN |
-| OG image dan favicon final | OPEN |
+| Nomor WhatsApp ENLESWEB untuk mode demo (site.enleswebWhatsappNumber) | CLOSED |
+| URL produksi Vercel dan domain kustom (jika ada) | CLOSED |
+| URL ENLESWEB untuk tautan footer dan Kontak | CLOSED |
+| OG image dan favicon final | CLOSED |

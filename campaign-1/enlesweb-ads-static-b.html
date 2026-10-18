@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENLESWEB Meta Ads - Iklan B (Gambar Statis v3: Whole ENLESWEB)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Token Desain Resmi ENLESWEB (DESIGN.md LOCKED, Selaras Penuh dengan Iklan A) */
+  --canvas: #FFFFFF;
+  --surface: #F5F5F2;
+  --ink: #111111;
+  --ink-muted: #55554F;
+  --line: #E5E5DF;
+  --accent: #E4FF30;
+
+  /* Safe Zone 9:16 (1080 x 1920): x 65..1015, y 270..1250 */
+  --sz-top: 270px;
+  --sz-bottom: 670px; /* 1920 - 1250 = 670px */
+  --sz-side: 65px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #D8D8D2;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#holder {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#box { position: relative; }
+
+/* Stage: 9:16 (1080x1920) default, .r45 = 4:5 (1080x1350) */
+.stage {
+  --H: 1920px;
+  width: 1080px;
+  height: var(--H);
+  position: relative;
+  overflow: hidden;
+  background: var(--canvas);
+  transform-origin: 0 0;
+}
+
+.stage.r45 {
+  --H: 1350px;
+  /* Safe Zone 4:5 (1080 x 1350): x 65..1015, y 250..1010 */
+  --sz-top: 250px;
+  --sz-bottom: 340px; /* 1350 - 1010 = 340px */
+  --sz-side: 65px;
+}
+
+/* Safe Zone Guide */
+.safe-guide {
+  position: absolute;
+  pointer-events: none;
+  top: var(--sz-top);
+  bottom: var(--sz-bottom);
+  left: var(--sz-side);
+  right: var(--sz-side);
+  outline: 3px dashed #E4FF30;
+  filter: drop-shadow(0 0 2px rgba(17, 17, 17, 0.9));
+  z-index: 99;
+}
+.safe-guide::after {
+  content: 'ZONA AMAN (SAFE ZONE META)';
+  position: absolute;
+  top: -34px;
+  left: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.safe-guide.hide, body.clean:not(.show-guide) .safe-guide { display: none; }
+
+/* Ambient Gradient Sweep khas Hero Mobile enlesweb.com (DESIGN.md 5.2.1) */
+.bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 750px at 8% 18%, rgba(228, 255, 48, 0.38) 0%, rgba(228, 255, 48, 0.14) 48%, rgba(255, 255, 255, 0) 78%),
+    linear-gradient(160deg, rgba(228, 255, 48, 0.16) 0%, rgba(255, 255, 255, 0) 52%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Komponen Kartu Layar HP (Layered Trio Showcase) */
+.mini-phone {
+  position: absolute;
+  background: var(--ink);
+  border-radius: 26px;
+  border: 6px solid var(--ink);
+  box-shadow:
+    0 0 0 2px rgba(229, 229, 223, 0.95),
+    0 20px 42px -12px rgba(17, 17, 17, 0.24);
+  overflow: hidden;
+}
+
+.mini-screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.mini-screen.bg-tuntas { background: #FFFFFF; }
+.mini-screen.bg-ripeir { background: #08100E; }
+.mini-screen.bg-seruput { background: #DF1400; }
+
+.mini-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Identitas Merek EnlesWeb */
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-row svg {
+  display: block;
+  flex-shrink: 0;
+}
+.brand-row span {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+/* Tipografi & Komponen Bersama */
+.label-sub {
+  color: var(--ink-muted);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.price-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Sorotan aksen 25% di bagian dasar angka harga (DESIGN.md 2.2.5) */
+.price-highlight-bar {
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: 5px;
+  height: 22px;
+  background: var(--accent);
+  z-index: 0;
+}
+
+.offer-price {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* 4 Baris Fasilitas (Garis Pemisah #E5E5DF + Centang #111111 Lugas) */
+.spec-list {
+  border-top: 2px solid var(--line);
+}
+
+.spec-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--line);
+}
+
+.spec-check {
+  flex-shrink: 0;
+  display: block;
+  color: var(--ink);
+}
+
+.spec-text {
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.note-concept {
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TATA LETAK VERSI 4:5 (1080 x 1350)
+   Safe Zone: x 65..1015, y 250..1010
+   Zona Kiri: x 65..475, y 270..1010 (Layered Trio Showcase 410 x 740 px)
+   Zona Kanan: x 505..1015, y 270..1010 (Brand + Label + Mulai Rp450.000 + 4 Baris + Catatan)
+   ========================================================= */
+.stage.r45 #layout-9x16 { display: none !important; }
+.stage:not(.r45) #layout-4x5 { display: none !important; }
+
+#layout-4x5 {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+#showcase-4x5 {
+  position: absolute;
+  left: 65px;
+  top: 270px;
+  width: 410px;
+  height: 740px;
+  z-index: 15;
+}
+
+/* 1. Tuntas (Kiri Atas — Bimbel Putih/Navy, seluruh judul 3 baris bebas halangan) */
+#showcase-4x5 .card-tuntas {
+  left: 0;
+  top: 0;
+  width: 254px;
+  height: 350px;
+  z-index: 1;
+}
+#showcase-4x5 .card-tuntas .mini-img {
+  transform: translateY(-16px);
+}
+
+/* 2. Ripeir (Kanan Tengah — Servis Gelap/Oranye, seluruh judul 4 baris bebas halangan) */
+#showcase-4x5 .card-ripeir {
+  left: 162px;
+  top: 200px;
+  width: 248px;
+  height: 356px;
+  z-index: 2;
+}
+#showcase-4x5 .card-ripeir .mini-img {
+  transform: translateY(-16px);
+}
+
+/* 3. Seruput Kopi (Kiri Bawah Depan — Kedai Kopi Merah/Nota Putih, tampil penuh di depan) */
+#showcase-4x5 .card-seruput {
+  left: 12px;
+  top: 380px;
+  width: 248px;
+  height: 358px;
+  z-index: 3;
+  box-shadow:
+    0 0 0 2px rgba(229, 229, 223, 0.95),
+    0 24px 48px -12px rgba(17, 17, 17, 0.30);
+}
+#showcase-4x5 .card-seruput .mini-img {
+  transform: translateY(-14px);
+}
+
+/* Kolom Kanan 4:5: x 505..1015 (lebar 510px) */
+#layout-4x5 .right-col {
+  position: absolute;
+  left: 505px;
+  width: 510px;
+  top: 270px;
+  bottom: 340px; /* Safe zone bottom boundary: y 1010 */
+  display: flex;
+  flex-direction: column;
+}
+
+#header-4x5 {
+  margin-bottom: 34px;
+}
+
+#header-4x5 .brand-row {
+  margin-bottom: 14px;
+}
+#header-4x5 .brand-row svg {
+  width: 46px;
+  height: 35px;
+}
+#header-4x5 .brand-row span {
+  font-size: 38px;
+}
+
+#header-4x5 .label-sub {
+  font-size: 38px;
+}
+
+#price-4x5 {
+  margin-bottom: 42px;
+}
+
+#price-4x5 .offer-price {
+  font-size: 60px;
+}
+
+#price-4x5 .price-highlight-bar {
+  bottom: 4px;
+  height: 19px;
+}
+
+#specs-4x5 {
+  width: 100%;
+}
+
+#specs-4x5 .spec-row {
+  padding: 19px 0;
+  gap: 12px;
+}
+
+#specs-4x5 .spec-check {
+  width: 22px;
+  height: 22px;
+}
+
+#specs-4x5 .spec-text {
+  font-size: 24.5px;
+  line-height: 1.25;
+}
+
+#note-4x5 {
+  margin-top: auto;
+  padding-bottom: 4px;
+  font-size: 25px;
+}
+
+/* =========================================================
+   TATA LETAK VERSI 9:16 (1080 x 1920)
+   Safe Zone: x 65..1015, y 270..1250 (tinggi 980px)
+   Susun Vertikal: Brand + Label, Triptych 3 Layar, Harga + 4 Baris, Catatan
+   Bebas tombol buatan
+   ========================================================= */
+#layout-9x16 {
+  position: absolute;
+  top: 270px;
+  bottom: 670px; /* y = 1250 boundary */
+  left: 65px;
+  right: 65px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#header-9x16 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+#header-9x16 .brand-row {
+  margin-bottom: 6px;
+}
+#header-9x16 .brand-row svg {
+  width: 40px;
+  height: 30px;
+}
+#header-9x16 .brand-row span {
+  font-size: 33px;
+}
+
+#header-9x16 .label-sub {
+  font-size: 36px;
+  text-align: center;
+}
+
+/* Triptych Showcase 3 Layar (Lebar 780px, Tinggi 410px) */
+#showcase-9x16 {
+  position: relative;
+  width: 780px;
+  height: 410px;
+  margin-bottom: 26px;
+  flex-shrink: 0;
+}
+
+/* Kiri: Tuntas (Bimbel) */
+#showcase-9x16 .card-tuntas {
+  left: 0;
+  top: 18px;
+  width: 256px;
+  height: 388px;
+  z-index: 1;
+}
+#showcase-9x16 .card-tuntas .mini-img {
+  transform: translateY(-16px);
+}
+
+/* Kanan: Ripeir (Servis — berhenti rapi di bawah foto motherboard sebelum judul seksi berikutnya) */
+#showcase-9x16 .card-ripeir {
+  left: 524px;
+  top: 18px;
+  width: 256px;
+  height: 380px;
+  z-index: 2;
+}
+#showcase-9x16 .card-ripeir .mini-img {
+  transform: translateY(-18px);
+}
+
+/* Tengah Depan: Seruput Kopi (Kedai Kopi + Nota Putih — berhenti rapi di ruang putih bawah garis putus-putus) */
+#showcase-9x16 .card-seruput {
+  left: 256px;
+  top: 0;
+  width: 268px;
+  height: 388px;
+  z-index: 3;
+  box-shadow:
+    0 0 0 2px rgba(229, 229, 223, 0.95),
+    0 26px 52px -12px rgba(17, 17, 17, 0.30);
+}
+#showcase-9x16 .card-seruput .mini-img {
+  transform: translateY(-14px);
+}
+
+#layout-9x16 .offer-block {
+  width: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#price-9x16 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+#price-9x16 .offer-price {
+  font-size: 72px;
+}
+
+#price-9x16 .price-highlight-bar {
+  bottom: 5px;
+  height: 21px;
+}
+
+#specs-9x16 {
+  width: 100%;
+}
+
+#specs-9x16 .spec-row {
+  padding: 9px 0;
+  gap: 16px;
+}
+
+#specs-9x16 .spec-check {
+  width: 26px;
+  height: 26px;
+}
+
+#specs-9x16 .spec-text {
+  font-size: 31px;
+  line-height: 1.25;
+}
+
+#note-9x16 {
+  margin-top: auto;
+  text-align: center;
+  font-size: 28px;
+  padding-bottom: 4px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   DEV / PREVIEW CONTROLS (Di luar kanvas gambar)
+   ========================================================= */
+#ctl {
+  background: #111111;
+  border-top: 1px solid #2A2A28;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  z-index: 100;
+  user-select: none;
+}
+.ctl-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#ctl button {
+  background: var(--surface);
+  color: var(--ink);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+#ctl button:hover { background: var(--accent); }
+#ctl button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#ratio-indicator {
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.hide { display: none !important; }
+</style>
+</head>
+<body>
+
+<div id="holder">
+  <div id="box">
+    <div id="stage" class="stage">
+      <!-- Safe Zone Guide -->
+      <div id="safe-guide" class="safe-guide"></div>
+
+      <!-- Ambient Sweep Khas ENLESWEB -->
+      <div class="bg-ambient"></div>
+
+      <!-- =========================================================
+           VERSI 4:5 (1080 x 1350)
+           ========================================================= -->
+      <div id="layout-4x5">
+        <!-- Zona Kiri: Layered Trio Showcase (x: 65..475, y: 270..1010) -->
+        <div id="showcase-4x5">
+          <div class="mini-phone card-tuntas">
+            <div class="mini-screen bg-tuntas">
+              <img class="mini-img" src="assets/tuntas-chrome-android.jpg" alt="Konsep Website Tuntas Bimbel">
+            </div>
+          </div>
+          <div class="mini-phone card-ripeir">
+            <div class="mini-screen bg-ripeir">
+              <img class="mini-img" src="assets/ripeir-chrome-android.jpg" alt="Konsep Website Ripeir Servis">
+            </div>
+          </div>
+          <div class="mini-phone card-seruput">
+            <div class="mini-screen bg-seruput">
+              <img class="mini-img" src="assets/seruput-chrome-android.jpg" alt="Konsep Website Seruput Kopi">
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: x 505..1015 -->
+        <div class="right-col">
+          <!-- Kanan Atas: Identitas EnlesWeb + Label -->
+          <div id="header-4x5">
+            <div class="brand-row">
+              <svg viewBox="85 130 355 245" aria-hidden="true">
+                <path d="M 235.500 137.544 C 198.661 144.411, 168.355 167.493, 151.528 201.500 C 141.651 221.460, 138.511 234.583, 138.608 255.500 C 138.668 268.305, 139.054 271.908, 141.248 280.119 C 145.337 295.422, 153.320 310.783, 162.980 321.936 L 165.955 325.371 170.728 321.985 C 177.386 317.262, 182.961 312.630, 182.982 311.803 C 182.992 311.420, 180.858 308.270, 178.240 304.803 C 172.318 296.960, 166.724 285.589, 164.060 275.974 C 162.131 269.012, 159.276 247.390, 160.168 246.498 C 160.398 246.269, 163.492 246.996, 167.043 248.115 C 182.207 252.894, 208.317 257, 223.534 257 L 230.581 257 243.358 241.382 L 256.134 225.763 256.428 207.632 C 256.794 185.041, 260.651 158.570, 263.866 156.583 C 265.463 155.596, 277.334 158.104, 284.929 161.033 C 289.122 162.650, 295.612 165.982, 299.351 168.438 L 306.151 172.904 313.825 166.806 C 318.046 163.451, 321.500 160.229, 321.500 159.645 C 321.500 155.738, 296.521 142.307, 283 138.945 C 271.645 136.121, 247.028 135.396, 235.500 137.544 M 357.808 150.547 C 328.721 157.601, 293.037 190.811, 234.933 264.904 C 200.336 309.021, 179.800 328.767, 159.613 337.325 C 153.684 339.839, 151.169 340.339, 144.500 340.333 C 135.083 340.325, 130.854 338.750, 124.487 332.882 C 113.466 322.722, 115.126 306.106, 128.572 292.010 L 134.226 286.082 132.514 276.791 C 131.572 271.681, 130.509 266.247, 130.151 264.715 L 129.500 261.931 121.261 267.010 C 106.778 275.939, 95.428 289.536, 91.219 303 C 90.012 306.862, 89.500 311.926, 89.500 320 C 89.500 331.226, 89.589 331.687, 93.250 339.354 C 101.966 357.609, 119.870 368, 142.605 368 C 152.990 368, 161.331 365.870, 172 360.494 C 196.056 348.371, 231.348 313.887, 263.635 270.955 C 295.780 228.212, 319.537 201.995, 338.175 188.695 C 360.550 172.728, 382.518 171.939, 395.936 186.620 C 402.399 193.692, 404.393 199.651, 403.788 210.093 C 403.146 221.191, 398.299 230.867, 388.411 240.790 L 381.146 248.080 380.823 262.430 L 380.500 276.780 386.500 273.753 C 409.901 261.948, 426.847 242.336, 432.083 221 C 433.917 213.526, 433.674 199.894, 431.567 192 C 427.356 176.228, 415.729 162.272, 400.899 155.191 C 396.280 152.985, 390.115 150.690, 387.201 150.090 C 380.044 148.618, 364.785 148.855, 357.808 150.547 M 232.349 157.985 C 202.154 165.900, 175.447 190.134, 165.478 218.665 C 162.676 226.685, 162.061 225.999, 175.192 229.494 C 189.253 233.237, 203.729 234.961, 221.250 234.982 L 237 235 237 216.034 C 237 195.601, 238.463 181.891, 242.365 165.748 L 244.722 156 242.111 156.055 C 240.675 156.085, 236.282 156.954, 232.349 157.985 M 346.951 192.145 C 341.524 195.398, 333 202.147, 333 203.191 C 333 203.713, 334.291 206.021, 335.868 208.320 C 339.394 213.459, 346.292 227.041, 345.685 227.649 C 344.660 228.673, 317.767 234.898, 309.172 236.100 L 299.845 237.404 293.266 245.452 C 289.647 249.879, 285.970 254.354, 285.093 255.398 C 283.542 257.246, 283.738 257.280, 292.500 256.675 C 303.915 255.888, 322.002 252.820, 337.827 248.986 C 344.606 247.344, 350.403 246, 350.709 246 C 351.866 246, 350.118 271.760, 348.572 277.500 C 340.430 307.735, 318.501 333.170, 292.411 342.640 C 283.942 345.714, 282.202 345.655, 280.895 342.250 C 278.477 335.954, 272.706 314.390, 269.254 298.750 C 267.220 289.538, 265.319 282.021, 265.028 282.046 C 264.738 282.072, 261.350 286.342, 257.500 291.535 C 251.742 299.302, 250.548 301.555, 250.769 304.238 C 251.290 310.555, 258.184 334.624, 262.560 345.407 C 263.299 347.226, 262.902 347.286, 253.917 346.714 C 243.814 346.070, 232.733 343.486, 222.488 339.385 L 216.113 336.833 207.563 344.166 C 202.860 348.200, 199.009 351.751, 199.006 352.057 C 198.995 353.094, 214.451 360.778, 221.838 363.408 C 232.029 367.036, 244.361 369, 256.955 369 C 306.514 369, 350.689 339.387, 367.341 295 C 378.713 264.689, 372.925 223.302, 353.258 194.288 L 350.403 190.077 346.951 192.145" fill="#111111" fill-rule="evenodd"/>
+              </svg>
+              <span>EnlesWeb</span>
+            </div>
+            <div class="label-sub">Website untuk bisnismu</div>
+          </div>
+
+          <!-- Kanan Tengah: Harga Utama -->
+          <div id="price-4x5" class="price-container">
+            <div class="price-wrap">
+              <div class="price-highlight-bar"></div>
+              <div class="offer-price">Mulai Rp450.000</div>
+            </div>
+          </div>
+
+          <!-- Kanan Bawah: 4 Baris Fasilitas -->
+          <div id="specs-4x5" class="spec-list">
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Tersedia paket 1 hingga 10 halaman</span>
+            </div>
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Domain + hosting 1 tahun</span>
+            </div>
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Termasuk revisi saat pembuatan</span>
+            </div>
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Gratis update teks/foto tahun pertama</span>
+            </div>
+          </div>
+
+          <!-- Catatan Konsep -->
+          <div id="note-4x5" class="note-concept">
+            Contoh: konsep buatan kami sendiri.
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           VERSI 9:16 (1080 x 1920)
+           ========================================================= -->
+      <div id="layout-9x16">
+        <!-- 1. Header Identitas & Label Atas -->
+        <div id="header-9x16">
+          <div class="brand-row">
+            <svg viewBox="85 130 355 245" aria-hidden="true">
+              <path d="M 235.500 137.544 C 198.661 144.411, 168.355 167.493, 151.528 201.500 C 141.651 221.460, 138.511 234.583, 138.608 255.500 C 138.668 268.305, 139.054 271.908, 141.248 280.119 C 145.337 295.422, 153.320 310.783, 162.980 321.936 L 165.955 325.371 170.728 321.985 C 177.386 317.262, 182.961 312.630, 182.982 311.803 C 182.992 311.420, 180.858 308.270, 178.240 304.803 C 172.318 296.960, 166.724 285.589, 164.060 275.974 C 162.131 269.012, 159.276 247.390, 160.168 246.498 C 160.398 246.269, 163.492 246.996, 167.043 248.115 C 182.207 252.894, 208.317 257, 223.534 257 L 230.581 257 243.358 241.382 L 256.134 225.763 256.428 207.632 C 256.794 185.041, 260.651 158.570, 263.866 156.583 C 265.463 155.596, 277.334 158.104, 284.929 161.033 C 289.122 162.650, 295.612 165.982, 299.351 168.438 L 306.151 172.904 313.825 166.806 C 318.046 163.451, 321.500 160.229, 321.500 159.645 C 321.500 155.738, 296.521 142.307, 283 138.945 C 271.645 136.121, 247.028 135.396, 235.500 137.544 M 357.808 150.547 C 328.721 157.601, 293.037 190.811, 234.933 264.904 C 200.336 309.021, 179.800 328.767, 159.613 337.325 C 153.684 339.839, 151.169 340.339, 144.500 340.333 C 135.083 340.325, 130.854 338.750, 124.487 332.882 C 113.466 322.722, 115.126 306.106, 128.572 292.010 L 134.226 286.082 132.514 276.791 C 131.572 271.681, 130.509 266.247, 130.151 264.715 L 129.500 261.931 121.261 267.010 C 106.778 275.939, 95.428 289.536, 91.219 303 C 90.012 306.862, 89.500 311.926, 89.500 320 C 89.500 331.226, 89.589 331.687, 93.250 339.354 C 101.966 357.609, 119.870 368, 142.605 368 C 152.990 368, 161.331 365.870, 172 360.494 C 196.056 348.371, 231.348 313.887, 263.635 270.955 C 295.780 228.212, 319.537 201.995, 338.175 188.695 C 360.550 172.728, 382.518 171.939, 395.936 186.620 C 402.399 193.692, 404.393 199.651, 403.788 210.093 C 403.146 221.191, 398.299 230.867, 388.411 240.790 L 381.146 248.080 380.823 262.430 L 380.500 276.780 386.500 273.753 C 409.901 261.948, 426.847 242.336, 432.083 221 C 433.917 213.526, 433.674 199.894, 431.567 192 C 427.356 176.228, 415.729 162.272, 400.899 155.191 C 396.280 152.985, 390.115 150.690, 387.201 150.090 C 380.044 148.618, 364.785 148.855, 357.808 150.547 M 232.349 157.985 C 202.154 165.900, 175.447 190.134, 165.478 218.665 C 162.676 226.685, 162.061 225.999, 175.192 229.494 C 189.253 233.237, 203.729 234.961, 221.250 234.982 L 237 235 237 216.034 C 237 195.601, 238.463 181.891, 242.365 165.748 L 244.722 156 242.111 156.055 C 240.675 156.085, 236.282 156.954, 232.349 157.985 M 346.951 192.145 C 341.524 195.398, 333 202.147, 333 203.191 C 333 203.713, 334.291 206.021, 335.868 208.320 C 339.394 213.459, 346.292 227.041, 345.685 227.649 C 344.660 228.673, 317.767 234.898, 309.172 236.100 L 299.845 237.404 293.266 245.452 C 289.647 249.879, 285.970 254.354, 285.093 255.398 C 283.542 257.246, 283.738 257.280, 292.500 256.675 C 303.915 255.888, 322.002 252.820, 337.827 248.986 C 344.606 247.344, 350.403 246, 350.709 246 C 351.866 246, 350.118 271.760, 348.572 277.500 C 340.430 307.735, 318.501 333.170, 292.411 342.640 C 283.942 345.714, 282.202 345.655, 280.895 342.250 C 278.477 335.954, 272.706 314.390, 269.254 298.750 C 267.220 289.538, 265.319 282.021, 265.028 282.046 C 264.738 282.072, 261.350 286.342, 257.500 291.535 C 251.742 299.302, 250.548 301.555, 250.769 304.238 C 251.290 310.555, 258.184 334.624, 262.560 345.407 C 263.299 347.226, 262.902 347.286, 253.917 346.714 C 243.814 346.070, 232.733 343.486, 222.488 339.385 L 216.113 336.833 207.563 344.166 C 202.860 348.200, 199.009 351.751, 199.006 352.057 C 198.995 353.094, 214.451 360.778, 221.838 363.408 C 232.029 367.036, 244.361 369, 256.955 369 C 306.514 369, 350.689 339.387, 367.341 295 C 378.713 264.689, 372.925 223.302, 353.258 194.288 L 350.403 190.077 346.951 192.145" fill="#111111" fill-rule="evenodd"/>
+            </svg>
+            <span>EnlesWeb</span>
+          </div>
+          <div class="label-sub">Website untuk bisnismu</div>
+        </div>
+
+        <!-- 2. Triptych Trio Showcase di Tengah -->
+        <div id="showcase-9x16">
+          <div class="mini-phone card-tuntas">
+            <div class="mini-screen bg-tuntas">
+              <img class="mini-img" src="assets/tuntas-chrome-android.jpg" alt="Konsep Website Tuntas Bimbel">
+            </div>
+          </div>
+          <div class="mini-phone card-ripeir">
+            <div class="mini-screen bg-ripeir">
+              <img class="mini-img" src="assets/ripeir-chrome-android.jpg" alt="Konsep Website Ripeir Servis">
+            </div>
+          </div>
+          <div class="mini-phone card-seruput">
+            <div class="mini-screen bg-seruput">
+              <img class="mini-img" src="assets/seruput-chrome-android.jpg" alt="Konsep Website Seruput Kopi">
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Blok Penawaran: Harga & 4 Baris Fasilitas -->
+        <div class="offer-block">
+          <div id="price-9x16" class="price-container">
+            <div class="price-wrap">
+              <div class="price-highlight-bar"></div>
+              <div class="offer-price">Mulai Rp450.000</div>
+            </div>
+          </div>
+
+          <div id="specs-9x16" class="spec-list">
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Tersedia paket 1 hingga 10 halaman</span>
+            </div>
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Domain + hosting 1 tahun</span>
+            </div>
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Termasuk revisi saat pembuatan</span>
+            </div>
+            <div class="spec-row">
+              <svg class="spec-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="spec-text">Gratis update teks/foto tahun pertama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Catatan Kecil di Bawah -->
+        <div id="note-9x16" class="note-concept">
+          Contoh: konsep buatan kami sendiri.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toolbar Pratinjau Dev -->
+<div id="ctl">
+  <div class="ctl-group">
+    <button id="rt">Ganti ke 4:5</button>
+    <button id="guide-toggle">Safe Zone Guide</button>
+  </div>
+  <div id="ratio-indicator">Rasio: 9:16 (1080 &times; 1920)</div>
+</div>
+
+<script>
+const q = new URLSearchParams(location.search);
+const st = document.getElementById('stage'), box = document.getElementById('box'), hold = document.getElementById('holder');
+const ctl = document.getElementById('ctl'), rtBtn = document.getElementById('rt'), guideBtn = document.getElementById('guide-toggle');
+const safeGuide = document.getElementById('safe-guide'), ratioIndicator = document.getElementById('ratio-indicator');
+
+function updateRatioText() {
+  const is45 = st.classList.contains('r45');
+  rtBtn.textContent = is45 ? 'Ganti ke 9:16' : 'Ganti ke 4:5';
+  ratioIndicator.innerHTML = is45 
+    ? 'Rasio: 4:5 (1080 &times; 1350) &mdash; Feed'
+    : 'Rasio: 9:16 (1080 &times; 1920) &mdash; Stories / Reels';
+}
+
+function fit() {
+  const H = st.offsetHeight;
+  const s = q.has('clean') ? 1 : Math.min(hold.clientWidth / 1080, hold.clientHeight / H);
+  st.style.transform = 'scale(' + s + ')';
+  box.style.width = (1080 * s) + 'px';
+  box.style.height = (H * s) + 'px';
+}
+
+if (q.get('ratio') === '4x5') {
+  st.classList.add('r45');
+}
+
+if (q.has('clean')) {
+  document.body.classList.add('clean');
+  ctl.classList.add('hide');
+  document.body.style.overflow = 'auto';
+}
+
+if (q.has('guide')) {
+  document.body.classList.add('show-guide');
+  safeGuide.classList.remove('hide');
+}
+
+updateRatioText();
+
+rtBtn.onclick = () => {
+  st.classList.toggle('r45');
+  updateRatioText();
+  fit();
+};
+
+guideBtn.onclick = () => {
+  safeGuide.classList.toggle('hide');
+};
+
+addEventListener('resize', fit);
+document.fonts.ready.then(fit);
+window.fit = fit;
+</script>
+</body>
+</html>

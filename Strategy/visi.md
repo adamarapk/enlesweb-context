@@ -1,7 +1,7 @@
 # VISI ENLESWEB
-**Versi:** 1.5  
-**Terakhir diperbarui:** 17 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.7), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 018), dan konfirmasi pembelian domain `enlesweb.com` 17 Oktober 2026.  
+**Versi:** 1.7  
+**Terakhir diperbarui:** 18 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Pernyataan Visi
@@ -9,12 +9,12 @@
 
 ENLESWEB berangkat dari jasa pembuatan website untuk UMKM dan bisnis kecil-menengah di seluruh Indonesia, lalu bergerak menuju sistem produksi internal berbasis blueprint JSON. Tujuannya agar tiap website baru dikonfigurasi dan dirakit dari sistem yang sudah dibangun, bukan dikerjakan dari nol.
 
-## 2. Titik Awal (Kondisi per 17 Oktober 2026)
+## 2. Titik Awal (Kondisi per 18 Oktober 2026)
 - [FAKTA] Solo founder dibantu AI assistant (langganan dikunci Rp100.000/bulan sampai 5 klien lunas atau 2 proyek Growth/Custom simultan, Decision 014). Belum ada tim internal.
 - [KEPUTUSAN] Komunikasi promosi dan publik menggunakan persona "kami" dan "tim" layaknya studio/agensi (Decision 001), dipadukan dengan transparansi Nama Lengkap Pendiri sebagai Penanggung Jawab Resmi Studio ENLESWEB di dokumen PDF Bukti Pemesanan (Decision 017).
 - [FAKTA] Launch-ready, siap go-live komersial. Domain kanonikal resmi `enlesweb.com` telah dibeli (Decision 018) dan dihubungkan ke Cloudflare Workers.
 - [FAKTA] 6 website konsep live di Vercel (Seruput Kopi, ripeir, tuntas, Jerseay, dipotongin, berflower).
-- [FAKTA] Aset reusable: 6 template konsep, `carousel-generator/`, SOP chat WhatsApp (`sop.md` v1.2 **CLOSED**).
+- [FAKTA] Aset reusable: 6 template konsep, tooling render materi iklan `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3 adaptif 4:5 dan 9:16), SOP chat WhatsApp (`sop.md` v1.2 **CLOSED**), dan template PDF Bukti Pemesanan ber-TTD digital (**CLOSED**, Decision 020).
 - [FAKTA] Klien: 0. Prospek: 0. Pendapatan: Rp0.
 - [KEPUTUSAN] Runway operasional awal: 30 hari (1 bulan) konsisten aktif menguji kampanye.
 - [KEPUTUSAN] Kapasitas proyek paralel solo founder tanpa builder: 2 - 3 klien simultan (dengan mekanisme *On-Hold* 60 hari untuk membebaskan slot jika klien terlambat mengirim materi lewat dari 7 hari kalender, Decision 017).
@@ -102,4 +102,6 @@ Batas tetap selama bisnis bertumbuh. Perubahan hanya lewat keputusan baru yang d
 | 14 Oktober 2026 | Versi 1.3: (1) Penegasan jadwal perancangan spesifikasi blueprint JSON internal dimulai persis setelah klien ke-10 go live (selesai, tayang, lunas), (2) Penguncian ambisi sistem jangka panjang pada Productized System terlebih dahulu, dan menunda/mendiferensiasi SaaS mandiri hingga Productized System terbukti matang. | Arahan pemilik |
 | 16 Oktober 2026 | Versi 1.4: Sinkronisasi Decision 013 - 017: pembukaan Micro-Warm Outreach manual Rp0 via DM IG (2-3/hari) dengan tetap melarang tools scraping berbayar sebelum 10 klien selesai, penundaan kenaikan biaya AI tools hingga 5 klien lunas, kuota gratis update konten ringan tahunan (2x/4x/6x), aturan On-Hold 60 hari, dan status SOP WhatsApp `sop.md` v1.2 CLOSED. | Sesi `/grill-me` 16 Okt 2026 |
 | 17 Oktober 2026 | Versi 1.5: Sinkronisasi pembelian domain kanonikal resmi `enlesweb.com` (Decision 018) dan pembaruan kesiapan peluncuran produksi pada Cloudflare Workers. | Konfirmasi pembelian domain 17 Okt 2026 (Decision 018) |
+| 18 Oktober 2026 | Versi 1.6: Sinkronisasi penyelesaian template PDF Bukti Pemesanan oleh pendiri bisnis (Decision 020), kesiapan materi iklan Meta di campaign-1/, penutupan seluruh tugas Minggu 0, dan transisi ke dokumen master V4. | Konfirmasi pembuatan PDF oleh pemilik 18 Okt 2026 (Decision 020) |
+| 18 Oktober 2026 | Versi 1.7: Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
 

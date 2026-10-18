@@ -66,5 +66,5 @@ Data dari dokumen ini berfungsi sebagai:
 ---
 
 ### Minggu 0 (Persiapan Pra-Peluncuran: 14 – 18 Oktober 2026)
-- **Status:** CLOSED / SELESAI
-- **Fokus:** Setup infrastruktur kanonikal studio, penguncian dokumentasi master V3, pembelian domain resmi `enlesweb.com` (Decision 018), persiapan materi Carousel iklan, draf PDF Bukti Pemesanan formal.
+- **Status:** CLOSED / SELESAI (100%)
+- **Fokus & Realisasi:** Setup infrastruktur kanonikal studio, penguncian dokumentasi master V4 (`ENLESWEB-DOCS-V4.md`), pembelian domain resmi `enlesweb.com` di Domainesia (Rp152.070, Decision 018), optimasi PageSpeed Insights 100/100 (Decision 019), pembuatan materi iklan Meta di `campaign-1/` berupa 1 Video (Iklan A 15s) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) rasio 4:5 dan 9:16 (format Carousel 4 slide dibatalkan, Decision 016, 020, & 021), dan penyelesaian dokumen template PDF Bukti Pemesanan ber-TTD digital oleh pendiri bisnis (Decision 017 & Decision 020). Seluruh prasyarat Minggu 0 selesai 100%, siap eksekusi Minggu 1.

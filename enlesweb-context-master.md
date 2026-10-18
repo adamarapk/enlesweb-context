@@ -1,10 +1,10 @@
 # ENLESWEB CONTEXT MASTER: DOKUMENTASI TERPADU PLATFORM & 6 TEMPLATE KONSEP
 
-**Versi:** 3.5 (Pencatatan Pembelian Domain Resmi enlesweb.com CLOSED & Decision 018)  
-**Tanggal Rilis:** 17 Oktober 2026  
-**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–018 & SOP v1.2 CLOSED)  
+**Versi:** 3.7 (Pembatalan Carousel 4 Slide, Penetapan 1 Video + 1 Gambar Statis Meta Ads, Template PDF CLOSED, & Penutupan Seluruh Tugas Minggu 0 - Decision 021)  
+**Tanggal Rilis:** 18 Oktober 2026  
+**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–021, SOP v1.2, & Seluruh Tugas Minggu 0 CLOSED)  
 **Target Pengguna Dokumen:** Dokumentasi Teknis Standar, Panduan Arsitektur Sistem, dan Wiki Pengembang  
-**Ringkasan Pembaruan:** Pencatatan resmi pembelian domain kanonikal `enlesweb.com` (CLOSED / SELESAI, Decision 018), pengalihan status rilis ke Cloudflare Workers custom domain, dan pemutakhiran sisa tugas Minggu 0 menjadi 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan template PDF Bukti Pemesanan).  
+**Ringkasan Pembaruan:** Penutupan resmi seluruh tugas persiapan pra-peluncuran Minggu 0 (100% CLOSED) dan penguncian format materi iklan Meta (Decision 021): Format Carousel 4 slide resmi dibatalkan dan dialihkan ke 1 Video (Iklan A 15 detik) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) masing-masing dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` siap tayang; Template PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat oleh pendiri bisnis (CLOSED, Decision 020); domain resmi `enlesweb.com` aktif di Cloudflare Workers (CLOSED, Decision 018); dan optimasi PageSpeed Insights 100/100 selesai (CLOSED, Decision 019). Ekosistem beralih penuh menuju pelaksanaan Minggu 1: Penayangan Meta Ads dan Micro-Warm Outreach DM Instagram.  
 
 ---
 
@@ -704,9 +704,7 @@ enlesweb-master/
    - **Build Command:** `npm run build`
    - **Build Output Directory:** `dist`
    - **Node.js Version:** `>= 18.17.0`
-3. Tambahkan environment variable produksi di Cloudflare Dashboard jika diperlukan:
-   - `PUBLIC_WHATSAPP_NUMBER`: Nomor resmi WhatsApp agensi.
-   - `PUBLIC_META_PIXEL_ID`: ID Meta Pixel untuk tracking kampanye iklan berbayar (event `AddToCart`).
+3. Seluruh variabel bisnis produksi (nomor WhatsApp resmi `6285156801570` dan Meta Pixel ID `1099411523003859`) telah terkunci langsung di berkas TypeScript `src/config/site.ts` (tidak memerlukan environment variable terpisah).
 4. Hubungkan domain kanonikal utama (`enlesweb.com`) yang telah resmi dibeli (Decision 018) melalui menu DNS Cloudflare dengan status *Proxied*.
 
 #### Pipeline Vercel (Showcase Portofolio Konsep):
