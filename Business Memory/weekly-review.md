@@ -65,6 +65,13 @@ Data dari dokumen ini berfungsi sebagai:
 
 ---
 
+### Minggu 1 (Tes Meta Ads & Micro-Warm Outreach: 21 – 27 Oktober 2026)
+- **Status:** BERJALAN; checkpoint awal setelah 12 jam tayang pada 21 Oktober.
+- **Meta Ads:** Mulai tayang 21 Oktober pukul 09.00. Dua iklan menghabiskan total **Rp16.000** pada checkpoint 12 jam. Sekitar **70% belanja terserap iklan video**. Tercatat **1 percakapan pesan** dari iklan; isi dan kualifikasinya belum diketahui. Biaya per percakapan sementara Rp16.000, bukan CAC per klien.
+- **Micro-Warm Outreach DM IG:** Belum dimulai; 0 usaha disapa, 0 balasan, 0 percakapan pindah ke WhatsApp.
+- **Pipeline:** Belum ada DP atau proyek nyata. Jumlah PDF Bukti Pemesanan yang dikirim dan pilihan domain belum dicatat.
+- **Catatan evaluasi:** Satu percakapan pesan belum memenuhi ambang sinyal 2-3 chat valid yang menanyakan paket atau kebutuhan website. Lanjutkan pencatatan sampai 27 Oktober; evaluasi Jalur A/B/C pada 28 Oktober. Jangan pilih jalur lebih awal.
+
 ### Minggu 0 (Persiapan Pra-Peluncuran: 14 – 18 Oktober 2026)
 - **Status:** CLOSED / SELESAI (100%)
 - **Fokus & Realisasi:** Setup infrastruktur kanonikal studio, penguncian dokumentasi master V4 (`ENLESWEB-DOCS-V4.md`), pembelian domain resmi `enlesweb.com` di Domainesia (Rp152.070, Decision 018), optimasi PageSpeed Insights 100/100 (Decision 019), pembuatan materi iklan Meta di `campaign-1/` berupa 1 Video (Iklan A 15s) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) rasio 4:5 dan 9:16 (format Carousel 4 slide dibatalkan, Decision 016, 020, & 021), dan penyelesaian dokumen template PDF Bukti Pemesanan ber-TTD digital oleh pendiri bisnis (Decision 017 & Decision 020). Seluruh prasyarat Minggu 0 selesai 100%, siap eksekusi Minggu 1.

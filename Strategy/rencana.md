@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.6  
-**Terakhir diperbarui:** 18 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
+**Versi:** 1.7
+**Terakhir diperbarui:** 21 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.2), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.2 CLOSED, addendum Decision 022), `Business Memory/decision-log.md` (Decision 001 - 022), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -45,6 +45,8 @@
 - [KEPUTUSAN] Ambang sinyal iklan: minimal **2-3 chat WA dari iklan** yang menanyakan paket atau kebutuhan website (Decision 006). Target akhir: minimal **1 klien berbayar (DP masuk)**.
 - [KEPUTUSAN] Prospek dari **Micro-Warm Outreach DM IG manual** (2-3 usaha/hari, Decision 013) dicatat secara terpisah agar evaluasi performa iklan Rp100.000 pada tabel di bawah tetap murni dan tidak bias.
 - [KEPUTUSAN] Niche atau demo yang paling banyak diklik dan ditanyakan menjadi sinyal fokus iklan berikutnya.
+
+**Checkpoint awal, 21 Oktober 2026 (setelah 12 jam tayang):** Iklan mulai tayang pukul 09.00. Total belanja dua iklan Rp16.000; sekitar 70% terserap iklan video. Tercatat satu percakapan pesan, tetapi kualifikasinya belum diketahui. Micro-Warm Outreach belum dimulai, DP belum masuk, dan belum ada proyek. Checkpoint ini belum menentukan Jalur A/B/C; tunggu data sampai akhir tes 27 Oktober dan evaluasi pada 28 Oktober.
 
 **Aturan keputusan pada hari ke-7 (28 Okt 2026):**
 | Jalur | Kondisi (Metrik Iklan Meta Ads) | Tindakan |
@@ -129,7 +131,6 @@ Dihitung sejak iklan tayang.
 ## 13. Pertanyaan Terbuka
 - [BELUM DIKETAHUI] Berapa rasio konversi aktual dari chat WhatsApp masuk menuju pembayaran DP riil pada tes iklan minggu pertama dan Micro-Warm Outreach DM IG? (Data empiris lapangan).
 - [BELUM DIKETAHUI] Berapa proporsi riil pilihan domain (`.com` vs `.id`) yang terealisasi setelah penerapan kalimat rekomendasi standar `.com` di SOP Template 5.2?
-- [BELUM DIKETAHUI] Akun iklan dan materi iklan baru Meta Ads apakah lolos review tanpa penundaan di hari ke-6?
 
 ## 14. Riwayat Perubahan
 | Tanggal | Perubahan | Sumber |
@@ -141,5 +142,6 @@ Dihitung sejak iklan tayang.
 | 17 Oktober 2026 | Versi 1.4: Sinkronisasi pembelian domain resmi `enlesweb.com` (Tugas 1 Minggu 0 CLOSED / SELESAI, Decision 018), menyisakan 2 tugas eksekusi murni (materi iklan Carousel 4 slide dan draf template PDF Bukti Pemesanan) sebelum penayangan kampanye Meta Ads Minggu 1. | Konfirmasi pembelian domain oleh pemilik 17 Okt 2026 (Decision 018) |
 | 18 Oktober 2026 | Versi 1.5: Penutupan seluruh tugas pra-peluncuran Minggu 0 (100% CLOSED): Template PDF Bukti Pemesanan selesai dibuat oleh pendiri bisnis (Decision 020), materi iklan Meta selesai di-render di `campaign-1/` (Decision 016/020), dan persiapan peluncuran kampanye Meta Ads Minggu 1. | Konfirmasi pembuatan PDF oleh pemilik 18 Okt 2026 (Decision 020) |
 | 18 Oktober 2026 | Versi 1.6: Pembatalan format Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi kampanye Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
+| 21 Oktober 2026 | Versi 1.7: Pencatatan checkpoint 12 jam pertama kampanye Meta Ads dan penegasan bahwa evaluasi akhir Minggu 1 tetap pada 28 Oktober. | Laporan pemilik, `Business Memory/weekly-review.md` |
 
 

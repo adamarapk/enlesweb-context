@@ -1,5 +1,7 @@
 # Matriks Metrik Kumulatif & KPI Bisnis ENLESWEB
 
+Checkpoint terakhir: 21 Oktober 2026, setelah 12 jam pertama tes Meta Ads.
+
 Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala dari kompilasi mingguan `Business Memory/weekly-review.md` sesuai mandat `Strategy/rencana.md` (Bagian 10) dan pemodelan `Strategy/model-bisnis.md`.
 
 ---
@@ -14,7 +16,7 @@ Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala 
 | **Konversi PDF Bukti Pemesanan ke DP** | Target **≥ 80,0%** (Decision 012) | - % | ⚪ Menunggu Data |
 | **Rata-rata Jam Kerja Starter** | **5 – 12 jam / klien** (Max 15 jam) | - jam | ⚪ Menunggu Data |
 | **Rata-rata Imbalan Kerja Pendiri** | **≥ Rp35.000 / jam** | - Rp/jam | ⚪ Menunggu Data |
-| **Plafon Pengeluaran Iklan 90 Hari** | Maksimal Rp500.000 – Rp1.000.000 | Rp0 (M0) | 🟢 Aman |
+| **Plafon Pengeluaran Iklan 90 Hari** | Maksimal Rp500.000 – Rp1.000.000 | Rp16.000 terpakai pada tes Minggu 1 | 🟢 Dalam batas |
 
 ---
 
@@ -22,7 +24,7 @@ Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala 
 
 ### A. Pengeluaran Modal & Operasional Tetap
 - **Biaya Domain Resmi Studio (`enlesweb.com`):** Rp152.070 (Domainesia 1 thn - TEREALISASI, Decision 018).
-- **Akumulasi Belanja Iklan Meta Ads:** Rp0
+- **Akumulasi Belanja Iklan Meta Ads:** Rp16.000 (checkpoint 12 jam pertama, 21 Oktober)
 - **Akumulasi Langganan AI Tools:** Rp0 (Terkunci flat Rp100.000/bln sampai 5 klien lunas, Decision 014).
 - **Pengeluaran Operasional Lainnya:** Rp0
 
@@ -44,11 +46,13 @@ Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala 
 |---|---|---|---|---|
 | **Tayangan / Jangkauan (Reach)** | - | - | - | - |
 | **Klik Tautan Iklan / Profil** | - | - | - | - |
-| **Chat WhatsApp Masuk** | 0 chat | 0 chat | 0 chat | - |
+| **Percakapan Pesan Masuk** | 1 percakapan | 0 | 1 percakapan | Belum dikualifikasi |
 | **Konsultasi / Rekomendasi Paket** | - | - | 0 prospek | - |
-| **Dokumen Bukti Pemesanan Terkirim** | - | - | 0 berkas | - |
+| **Dokumen Bukti Pemesanan Terkirim** | Belum dicatat | Belum dicatat | Belum dicatat | - |
 | **DP 50% Masuk (Klien Terakuisisi)** | 0 klien | 0 klien | 0 klien | Target PDF→DP: 80% |
 | **Biaya Akuisisi Kas (CAC Nyata)** | Rp... / klien | Rp0 / klien | Rp... / klien | - |
+
+Catatan awal iklan: total belanja Rp16.000 menghasilkan 1 percakapan pesan yang belum dikualifikasi. Biaya per percakapan sementara Rp16.000; angka ini belum menunjukkan biaya per prospek valid atau per klien.
 
 ---
 
