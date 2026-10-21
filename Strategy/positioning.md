@@ -1,7 +1,7 @@
 # POSITIONING ENLESWEB
-**Versi:** 1.8  
-**Terakhir diperbarui:** 18 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
+**Versi:** 2.0
+**Terakhir diperbarui:** 21 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.2), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.2 CLOSED, addendum Decision 022), `Business Memory/decision-log.md` (Decision 001 - 022), `layout-lab/README.md`, dan `layout-lab/NOTES.md`.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Positioning
@@ -71,6 +71,7 @@
 - [KEPUTUSAN] Bukti utama: **"lihat dulu contohnya."** Calon pembeli diarahkan memilih demo yang paling mirip usahanya.
 - [KEPUTUSAN] Demo ditampilkan jujur sebagai **konsep ENLESWEB**, bukan karya klien. Tidak ada testimoni, rating, atau jumlah klien palsu.
 - [FAKTA] 6 demo live di Vercel: Seruput Kopi, ripeir (Starter), tuntas (Business), Jerseay, dipotongin, berflower (Growth).
+- [KEPUTUSAN 022] Setelah URL publik layout-lab aktif dan diverifikasi, admin mengirim satu preview layout yang sesuai kebutuhan prospek sebelum ringkasan kesepakatan dan permintaan DP. Preview memakai data dummy, bukan karya klien atau draf proyek, dan tidak menggantikan preview pengerjaan resmi pasca-DP. Per 21 Oktober, lab masih lokal dan belum digunakan klien.
 - [KEPUTUSAN] **Jembatan Ekspektasi Tier Demo di Iklan & SOP WhatsApp (Decision 016 & Decision 021):**
   - Materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3 Whole ENLESWEB) mencantumkan penawaran harga transparan mulai Rp450.000 dan mendemonstrasikan contoh website konsep secara proporsional sesuai tingkatannya (Decision 016 & Decision 021), mencegah prospek beranggaran Rp450.000 berekspektasi fitur interaktif kompleks sekelas Growth tanpa penjelasan.
   - Di SOP WhatsApp (Template 5.2), saat prospek menanyakan paket Starter (Rp450.000), admin wajib mengirimkan tautan demo tingkat Starter (`Seruput Kopi` atau `ripeir`) sebagai acuan utama 1 halaman, sembari menyandingkannya dengan contoh Business (`tuntas`) jika mereka membutuhkan lebih dari 1 halaman.
@@ -141,5 +142,7 @@ Catatan transaksi:
 | 17 Oktober 2026 | Versi 1.6: Sinkronisasi pembelian domain resmi `enlesweb.com` (Decision 018), pemutakhiran sisa tugas Minggu 0, dan penyelarasan sumber kebenaran dengan `summary.md` v1.7. | Decision 018 & `summary.md` v1.7 |
 | 18 Oktober 2026 | Versi 1.7: Sinkronisasi penyelesaian template PDF Bukti Pemesanan oleh pendiri bisnis (Decision 020), kesiapan materi iklan Meta di `campaign-1/` (Decision 016/020), penutupan seluruh tugas Minggu 0, dan penyelarasan sumber kebenaran ke `summary.md` v1.8 serta master docs V4. | Decision 020 & `summary.md` v1.8 |
 | 18 Oktober 2026 | Versi 1.8: Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
+| 21 Oktober 2026 | Versi 1.9: Pencatatan layout-lab sebagai opsi eksplorasi layout sebelum DP setelah deployment dan URL terverifikasi, dengan penegasan data dummy dan pemisahan dari preview pengerjaan resmi setelah DP. | `layout-lab/README.md` dan `layout-lab/NOTES.md` |
+| 21 Oktober 2026 | Versi 2.0: Sinkronisasi Decision 022. Setelah URL layout-lab terverifikasi, preview data dummy dikirim sebelum kesepakatan dan DP untuk membantu prospek membayangkan susunan layout. | `Business Memory/decision-log.md` Decision 022 dan `Delivery & Operations/sop.md` |
 
 

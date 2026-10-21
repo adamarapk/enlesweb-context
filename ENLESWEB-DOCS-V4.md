@@ -1,14 +1,30 @@
 # ENLESWEB DOKUMENTASI UTAMA V4 (ENLESWEB-DOCS-V4)
 
-Versi: 1.9 (Pembatalan Carousel 4 Slide, Penetapan 1 Video + 1 Gambar Statis Meta Ads, Penyelesaian Template PDF CLOSED, & Penutupan Seluruh Tugas Minggu 0 - 18 Oktober 2026)
-Tanggal Pembaruan: 18 Oktober 2026
-Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md
-Status Sistem: Production & Launch-Ready Implementation V4 (Tersinkronisasi Penuh Decision 001–021, SOP v1.2, Seluruh Tugas Minggu 0 CLOSED)
-Ringkasan Pembaruan: Penutupan resmi seluruh sisa tugas persiapan pra-peluncuran Minggu 0 dan penetapan materi iklan Meta resmi (Decision 021): (1) Format Carousel 4 slide resmi dibatalkan dan dialihkan ke 1 Video (Iklan A 15 detik) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) masing-masing dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` siap tayang (CLOSED, Decision 016, 020, & 021); (2) Template PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat dan dikunci resmi oleh pendiri bisnis (CLOSED, Decision 020), memuat Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota gratis update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x), aturan On-Hold 60 hari, dan syarat pembelian domain setelah DP 50% + materi lengkap; (3) Pembelian domain enlesweb.com telah terealisasi (CLOSED, Decision 018); dan (4) Optimasi PageSpeed Insights 100/100 selesai (CLOSED, Decision 019). Status ekosistem beralih penuh menuju Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram.
+Versi: 2.2 (Checkpoint Awal Kampanye Meta Ads - 21 Oktober 2026)
+Tanggal Pembaruan: 21 Oktober 2026
+Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, dan `Business Memory/decision-log.md`.
+Status Sistem: Homepage production dan launch-ready V4 (Decision 001–022, SOP v1.2 dengan aturan transaksi tetap CLOSED, seluruh tugas Minggu 0 CLOSED). layout-lab masih lokal dan belum digunakan klien.
+Ringkasan Pembaruan: Decision 022 menetapkan preview layout data dummy sebagai langkah sebelum kesepakatan dan DP setelah deployment publik serta URL preview diverifikasi. Preview pengerjaan resmi setelah DP tetap memakai materi klien. Lab tidak menghasilkan website produksi atau blueprint JSON dan tidak mengubah gerbang Website Builder setelah klien ke-10 go live.
 
 ---
 
 ## RINGKASAN PEMBARUAN V4 (CHANGELOG V4)
+
+### Pembaruan Versi 2.2 (21 Oktober 2026 - Checkpoint 12 Jam Kampanye Meta Ads)
+1. Iklan mulai tayang pukul 09.00. Setelah 12 jam, dua iklan menghabiskan Rp16.000; sekitar 70% belanja terserap iklan video.
+2. Satu percakapan pesan tercatat dari iklan, tetapi belum dikualifikasi. Belum ada outreach Micro-Warm, DP, atau proyek nyata.
+3. Evaluasi Jalur A/B/C tetap menunggu data lengkap sampai 27 Oktober dan dijadwalkan pada 28 Oktober.
+
+### Pembaruan Versi 2.1 (21 Oktober 2026 - Decision 022: Preview Layout pra-DP)
+1. Setelah prospek menerima rekomendasi paket dan demo sesuai tier, admin mengirim satu preview layout yang relevan sebelum ringkasan kesepakatan dan permintaan DP, setelah URL publik aktif dan diverifikasi.
+2. Preview menggunakan data dummy, bukan draf proyek, bukan hasil kerja klien, dan tidak memulai pengerjaan atau mengubah aturan pembatalan/refund.
+3. Preview pengerjaan resmi setelah DP tetap memakai materi klien. Deployment publik layout-lab belum terkonfirmasi, sehingga tautan belum siap dibagikan.
+
+### Pembaruan Versi 2.0 (21 Oktober 2026 - Progress Composer Internal layout-lab)
+1. Mencatat layout-lab sebagai composer internal dengan 43 varian pada 13 kategori. Konten preview memakai contoh bisnis umum dan data dummy.
+2. Deployment publik dan penggunaan dengan klien belum terkonfirmasi. Lab baru dapat dibagikan sebagai opsi eksplorasi sebelum DP setelah deployment dan URL preview diverifikasi.
+3. Preview pengerjaan resmi setelah DP tetap memakai materi klien. layout-lab bukan website produksi, tidak menghasilkan blueprint JSON, dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
+4. Panduan, catatan teknis, dan indeks screenshot audit tersedia di [layout-lab/README.md](layout-lab/README.md), [NOTES.md](layout-lab/NOTES.md), dan [arsip screenshot audit 21 Oktober](layout-lab/docs/screens-as-is-2026-10-21/README.md).
 
 ### Pembaruan Versi 1.9 (18 Oktober 2026 - Pembatalan Format Carousel 4 Slide & Penetapan 1 Video + 1 Gambar Statis Meta Ads Rasio 4:5 dan 9:16, Decision 021)
 1. **Pembatalan Format Carousel 4 Slide & Penetapan Materi Iklan Meta (CLOSED / SIAP TAYANG, Decision 021)**:
@@ -1629,5 +1645,19 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
 3. `template PDF Bukti Pemesanan`: **CLOSED** (Template formal PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat oleh pendiri bisnis, mencantumkan Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, jatah kuota gratis update konten ringan tahunan 2x/4x/6x, ketentuan pembelian domain pasca-DP + materi lengkap, dan aturan masa tenggang On-Hold 60 hari kalender, Decision 017 & Decision 020).
 
 *(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1099411523003859, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, optimasi PageSpeed Insights 100/100, berkas llms.txt / _headers, SOP operasional WhatsApp v1.2, domain enlesweb.com, materi iklan Meta campaign-1 (1 video + 1 gambar statis rasio 4:5 dan 9:16), dan template PDF Bukti Pemesanan seluruhnya telah RESOLVED / CLOSED 100%. Fokus operasional beralih penuh ke Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram).*
+
+## 14. Status dan Penggunaan layout-lab (21 Oktober 2026, Decision 022)
+
+layout-lab adalah alat internal untuk memilih varian dan menyusun urutan section sebagai eksplorasi visual sebelum DP. Composer mencakup 43 varian dalam 13 kategori dan menggunakan contoh bisnis umum dengan data dummy. Preview dirender melalui rute `/pratinjau?s=...`.
+
+Decision 022 menetapkan bahwa setelah prospek menerima rekomendasi paket dan demo sesuai tier, admin mengirim satu tautan preview layout yang relevan sebelum ringkasan kesepakatan dan permintaan DP. Tujuannya membantu prospek membayangkan arah susunan layout sebelum memutuskan.
+
+Per 21 Oktober, lab masih berjalan lokal dan belum digunakan klien. Alur ini baru dapat dijalankan setelah deployment aktif dan URL preview diverifikasi. Preview memakai contoh bisnis umum dan data dummy; jelaskan bahwa preview bukan hasil kerja klien atau draf proyek, tidak memulai pengerjaan, dan tidak mengubah aturan pembatalan/refund. Preview resmi pengerjaan setelah DP tetap menggunakan materi klien. Lab tidak menghasilkan website produksi atau blueprint JSON, dan tidak mengubah Decision 011: perancangan Website Builder tetap menunggu klien ke-10 go live, selesai, tayang, dan lunas.
+
+Panduan dan bukti audit:
+- [Panduan layout-lab](layout-lab/README.md)
+- [Catatan teknis](layout-lab/NOTES.md)
+- [Indeks screenshot hasil build audit 21 Oktober 2026](layout-lab/docs/screens-as-is-2026-10-21/README.md)
+- [Decision log, Decision 022](Business%20Memory/decision-log.md#decision-022)
 
 

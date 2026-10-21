@@ -1,6 +1,6 @@
 # SOP Chat WhatsApp dan Transaksi Klien ENLESWEB
 
-Versi 1.2, 16 Oktober 2026 (STATUS: CLOSED / TERKUNCI). Dipakai untuk lead dari website, Meta Ads, dan Micro-Warm Outreach DM Instagram sebelum klien pertama.
+Versi 1.2, 16 Oktober 2026 (aturan transaksi tetap CLOSED / TERKUNCI). Addendum alur preview layout pra-DP mengikuti Decision 022, 21 Oktober 2026. Dipakai untuk lead dari website, Meta Ads, dan Micro-Warm Outreach DM Instagram sebelum klien pertama.
 
 ## 1. Tujuan
 
@@ -22,6 +22,7 @@ Dokumen ini menyeragamkan cara ENLESWEB menangani chat WhatsApp, kesepakatan, pe
 - **Pembatalan:** DP dikembalikan 50% jika pembatalan dilakukan saat tahap naskah/pengumpulan materi (sebelum domain dibeli dan sebelum draf visual dikirim); DP hangus (0%) jika domain sudah dibeli atau draf visual sudah dikirim.
 - **Teks dan Foto:** Klien menyediakan bahan mentah. ENLESWEB membantu merapikan teks hanya untuk Business dan Growth.
 - **Domain, Default Framing `.com`, & Registrant Tahun Pertama (Decision 002, 010, & 014):** Klien bebas memilih ekstensi `.com` atau `.id` tanpa biaya tambahan di seluruh paket inti. Namun, skrip chat SOP WhatsApp (Template 5.2) wajib mengajukan ekstensi **`.com` sebagai rekomendasi kalimat standar** (*"Untuk nama domainnya, apakah namabisnis.com sudah sesuai untuk kami daftarkan?"*) sebelum menyebut opsi ekstensi lain demi menjaga *blended gross margin* > 60%. Akun registrar dan nama *registrant* domain tahun pertama didaftarkan atas nama ENLESWEB demi kecepatan aktivasi tanpa birokrasi verifikasi dokumen di awal.
+- **Preview Layout pra-DP (Decision 022):** Untuk prospek yang melanjutkan pertimbangan paket, kirim satu preview layout sebelum ringkasan kesepakatan dan permintaan DP setelah URL publik layout-lab aktif dan diverifikasi. Pilih susunan yang relevan dengan kebutuhan prospek. Preview memakai data dummy, hanya menunjukkan arah susunan layout, dan bukan draf proyek. Preview ini tidak memulai pengerjaan serta tidak mengubah syarat pembatalan/refund. Sebelum URL terverifikasi, gunakan demo tier yang tersedia dan jangan membagikan layout-lab.
 - **Perpanjangan Tahun Kedua (Renewal - Decision 002 & Decision 015):** Bersifat opsional bagi klien:
   1. **Perpanjangan Terkelola:** Flat all package **Rp400.000/tahun** (domain `.com`/`.id` + hosting + pemeliharaan script + **reset kuota gratis 2x/4x/6x putaran update konten ringan tahunan** sesuai paket awal) atau **Rp300.000/tahun** (domain lainnya). Masa tenggang 14 hari dengan 3 kali pengingat. Jika tidak dibayar, website dinonaktifkan sementara.
   2. **Opsi Mandiri (Transfer):** Jika tidak ingin perpanjang, ENLESWEB memberikan kode transfer domain (EPP / Auth Code) dan penyerahan arsip file website hasil *build* statis (`.zip` dari `dist/`) secara cuma-cuma agar klien dapat mengelola hosting sendiri secara mandiri.
@@ -51,14 +52,15 @@ Aturan memilih paket dan jembatan ekspektasi demo (Decision 016):
 
 1. **Balas chat pertama & catat sumber lead.** Sapa, sebut topik dari pesan otomatis (misalnya “paket Starter”), lalu ajukan tiga pertanyaan kualifikasi (template 5.1). Catat di register apakah prospek berasal dari **Meta Ads**, **Organik IG**, atau **Micro-Warm Outreach DM IG** (agar evaluasi tes iklan Minggu 1 tidak tercampur). Target balasan: jam operasional aktif 09.00 - 21.00 WIB (12 jam), diusahakan secepatnya.
 2. **Rekomendasikan satu paket, luruskan ekspektasi demo, & ajukan default framing `.com`.** Pilih paket dari kebutuhan klien (template 5.2), sertakan tautan demo yang sesuai tingkat paketnya, dan tutup dengan kalimat rekomendasi domain `.com`.
-3. **Kirim ringkasan kesepakatan dan Bukti Pemesanan PDF bertanda tangan digital** (template 5.3). Pastikan PDF mencantumkan **Nama Lengkap Pendiri** (sesuai rekening bank) sebagai Penanggung Jawab Resmi Studio ENLESWEB. Minta klien membaca dan membalas “Setuju”. Simpan chat dan dokumen tersebut sebagai bukti kesepakatan resmi.
-4. **Terima DP 50% & kirim permintaan brief.** Setelah dana benar-benar masuk ke rekening pribadi pendiri, catat tanggalnya di register klien, lalu kirim permintaan brief (template 5.4). *(Catatan: Domain belum dibeli pada tahap ini sampai materi dasar lengkap, kecuali klien meminta secara khusus agar domain langsung didaftarkan saat DP masuk).*
-5. **Kumpulkan materi sampai lengkap & daftarkan domain.** Gunakan checklist bagian 7. Begitu materi dasar dinyatakan lengkap, segera belikan/daftarkan domain yang disepakati di registrar (bagian 9). Jadwal pengerjaan (3/7/14 hari kerja) mulai dihitung dari hari materi dinyatakan lengkap. Jika lewat **7 hari kalender** materi belum lengkap, alihkan proyek ke status **Tunda Sementara (*On-Hold* / Antrean Pasif)** dengan batas waktu maksimal **60 hari kalender sejak tanggal DP** (template 5.9).
-6. **Pengerjaan dan preview.** Kirim tautan preview sementara (template 5.5). Jangan tayang di domain asli dulu.
-7. **Revisi pengerjaan.** Klien mengirim satu daftar perubahan per putaran (bagian 8).
-8. **Persetujuan final dan pelunasan.** Setelah klien menyetujui hasil akhir, minta pelunasan 50% (template 5.6). Website dipublikasikan di domain asli setelah pelunasan masuk.
-9. **Serah terima** (template 5.7). Mulai masa garansi perbaikan bug 30 hari, aktifkan kuota gratis update konten ringan tahun pertama (2x/4x/6x), dan catat tanggal jatuh tempo perpanjangan.
-10. **Perpanjangan tahun kedua** mengikuti bagian 11.
+3. **Berikan preview layout sebelum DP (Decision 022).** Setelah URL publik layout-lab aktif dan terverifikasi, pilih satu susunan yang sesuai kebutuhan prospek, lalu kirim tautan preview dan jelaskan bahwa isinya data dummy serta hanya contoh arah layout. Preview ini bukan draf proyek dan tidak memulai pengerjaan. Jika URL belum terverifikasi, lanjutkan dengan demo tier yang tersedia tanpa membagikan layout-lab.
+4. **Kirim ringkasan kesepakatan dan Bukti Pemesanan PDF bertanda tangan digital** (template 5.3). Pastikan PDF mencantumkan **Nama Lengkap Pendiri** (sesuai rekening bank) sebagai Penanggung Jawab Resmi Studio ENLESWEB. Minta klien membaca dan membalas “Setuju”. Simpan chat dan dokumen tersebut sebagai bukti kesepakatan resmi.
+5. **Terima DP 50% & kirim permintaan brief.** Setelah dana benar-benar masuk ke rekening pribadi pendiri, catat tanggalnya di register klien, lalu kirim permintaan brief (template 5.4). *(Catatan: Domain belum dibeli pada tahap ini sampai materi dasar lengkap, kecuali klien meminta secara khusus agar domain langsung didaftarkan saat DP masuk).*
+6. **Kumpulkan materi sampai lengkap & daftarkan domain.** Gunakan checklist bagian 7. Begitu materi dasar dinyatakan lengkap, segera belikan/daftarkan domain yang disepakati di registrar (bagian 9). Jadwal pengerjaan (3/7/14 hari kerja) mulai dihitung dari hari materi dinyatakan lengkap. Jika lewat **7 hari kalender** materi belum lengkap, alihkan proyek ke status **Tunda Sementara (*On-Hold* / Antrean Pasif)** dengan batas waktu maksimal **60 hari kalender sejak tanggal DP** (template 5.9).
+7. **Pengerjaan dan preview resmi.** Kirim tautan preview sementara (template 5.5) dengan materi klien setelah DP. Jangan tayang di domain asli dulu.
+8. **Revisi pengerjaan.** Klien mengirim satu daftar perubahan per putaran (bagian 8).
+9. **Persetujuan final dan pelunasan.** Setelah klien menyetujui hasil akhir, minta pelunasan 50% (template 5.6). Website dipublikasikan di domain asli setelah pelunasan masuk.
+10. **Serah terima** (template 5.7). Mulai masa garansi perbaikan bug 30 hari, aktifkan kuota gratis update konten ringan tahun pertama (2x/4x/6x), dan catat tanggal jatuh tempo perpanjangan.
+11. **Perpanjangan tahun kedua** mengikuti bagian 11.
 
 ## 5. Template pesan
 
@@ -89,6 +91,12 @@ Isi bagian dalam tanda kurung siku sebelum dikirim. Jangan menambah klaim yang t
 > Dari kebutuhanmu tadi, kamu lebih cocok mulai dari Paket Starter (1 halaman) atau Paket Business? Dan untuk nama domainnya, apakah [namabisnis].com sudah sesuai untuk kami daftarkan?
 
 *(Catatan admin: Klien tetap bebas memilih `.com` atau `.id` tanpa biaya tambahan. Jika klien menanyakan `.id` atau ekstensi lain setelah kalimat di atas, konfirmasi bahwa `.id` juga tersedia tanpa biaya tambahan).*
+
+**Preview layout sebelum DP (Decision 022):** Setelah URL layout-lab aktif dan diverifikasi, pilih satu susunan yang sesuai kebutuhan prospek dan kirim tautan preview sebelum mengirim template 5.3 atau meminta DP. Gunakan pesan berikut:
+
+> Sebelum kamu memutuskan, ini contoh susunan layout yang bisa membantu membayangkan tampilan website untuk [jenis usaha]: [tautan preview]. Isinya masih memakai contoh umum dan data dummy, jadi ini bukan draf website kamu. Setelah DP dan materi lengkap, kami siapkan preview pengerjaan berdasarkan materi yang kamu kirim.
+
+Per 21 Oktober 2026, layout-lab masih berjalan lokal dan belum memiliki URL publik. Sampai deployment aktif dan URL diverifikasi, admin tetap menggunakan demo tier yang tersedia. Lihat [panduan layout-lab](../layout-lab/README.md).
 
 ### 5.3 Ringkasan kesepakatan (kirim sebelum DP)
 
@@ -121,6 +129,8 @@ Isi bagian dalam tanda kurung siku sebelum dikirim. Jangan menambah klaim yang t
 > Jadwal pengerjaan [3/7/14] hari kerja mulai dihitung dan domain resmi didaftarkan begitu semua materi di atas lengkap. Kalau sudah dikirim semuanya, mohon balas “Materi lengkap”.
 
 ### 5.5 Preview dan revisi
+
+Catatan admin: Template ini dipakai untuk preview draf pengerjaan resmi setelah DP dan menggunakan materi yang dikirim klien. Jangan gunakan layout-lab sebagai preview pengerjaan klien.
 
 > Draf website sudah selesai dan bisa dilihat di [tautan preview]. Silakan dicek di HP dan laptop/komputer, lalu kirimkan semua masukan perubahan dalam satu pesan ya. Ini revisi pembuatan ke-[n] dari [kuota].
 

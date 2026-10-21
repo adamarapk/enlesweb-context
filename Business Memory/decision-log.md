@@ -421,3 +421,23 @@ Format Carousel 4 slide memiliki keterbatasan interaktivitas swipe, risiko cropp
 
 ### 3. Alasan
 Format video 15 detik dan gambar statis adaptif 4:5/9:16 memberikan kepastian visual penuh (lolos verifikasi Safe Zone Meta), menyampaikan pesan dan visual secara langsung tanpa bergantung pada aksi geser pengguna, serta mewakili seluruh ekosistem studio ENLESWEB secara komprehensif.
+
+---
+
+## Decision 022
+- **Tanggal:** 21 Oktober 2026
+- **Topik:** Preview Layout pra-DP dengan layout-lab untuk Mendukung Keputusan Prospek
+- **Status:** Diputuskan; pelaksanaan menunggu deployment dan verifikasi URL publik
+
+### 1. Masalah yang ingin diselesaikan
+Calon klien dapat memahami paket dan melihat website konsep, tetapi belum tentu bisa membayangkan susunan layout untuk kebutuhan usahanya sebelum membayar DP. layout-lab dapat memberi gambaran visual awal sebelum prospek membuat keputusan.
+
+### 2. Keputusan
+1. **Preview Layout sebelum DP:** Setelah prospek menerima rekomendasi paket dan demo sesuai tier, ENLESWEB memberikan satu tautan preview layout dari layout-lab sebelum mengirim ringkasan kesepakatan dan meminta DP. Pilih susunan yang relevan dengan kebutuhan prospek untuk membantu mereka menilai arah tampilan.
+2. **Batas Preview:** Preview menggunakan contoh bisnis umum dan data dummy. Jelaskan bahwa tautan tersebut menunjukkan susunan layout, bukan draf proyek prospek, bukan hasil kerja klien, dan bukan janji bahwa hasil akhir akan sama persis. Preview ini tidak memulai pengerjaan proyek dan tidak dihitung sebagai draf visual dalam aturan pembatalan/refund.
+3. **Prasyarat Berbagi:** Penggunaan kepada prospek dimulai setelah deployment publik aktif dan URL preview diverifikasi. Sebelum itu, admin tetap menggunakan demo website yang sudah tersedia dan tidak menyebut layout-lab sebagai tautan publik yang siap dibagikan.
+4. **Pemisahan dari Preview Pengerjaan:** Preview resmi setelah DP tetap dibuat dari materi klien dan mengikuti paket serta proses revisi yang disepakati. layout-lab tidak menggantikannya.
+5. **Batas Website Builder:** Keputusan ini tidak mengubah Decision 011. layout-lab tidak membuat website produksi atau blueprint JSON; gerbang perancangan Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
+
+### 3. Alasan
+Memberi prospek gambaran susunan layout sebelum DP agar mereka lebih yakin terhadap arah tampilan, sambil menjaga perbedaan yang jelas antara contoh dummy pra-DP dan draf pengerjaan resmi setelah DP.

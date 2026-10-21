@@ -1,7 +1,7 @@
 # VISI ENLESWEB
-**Versi:** 1.7  
-**Terakhir diperbarui:** 18 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
+**Versi:** 2.0
+**Terakhir diperbarui:** 21 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.2), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.2 CLOSED, addendum Decision 022), `Business Memory/decision-log.md` (Decision 001 - 022), `layout-lab/README.md`, dan `layout-lab/NOTES.md`.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Pernyataan Visi
@@ -9,13 +9,16 @@
 
 ENLESWEB berangkat dari jasa pembuatan website untuk UMKM dan bisnis kecil-menengah di seluruh Indonesia, lalu bergerak menuju sistem produksi internal berbasis blueprint JSON. Tujuannya agar tiap website baru dikonfigurasi dan dirakit dari sistem yang sudah dibangun, bukan dikerjakan dari nol.
 
-## 2. Titik Awal (Kondisi per 18 Oktober 2026)
+## 2. Titik Awal (Kondisi per 21 Oktober 2026)
 - [FAKTA] Solo founder dibantu AI assistant (langganan dikunci Rp100.000/bulan sampai 5 klien lunas atau 2 proyek Growth/Custom simultan, Decision 014). Belum ada tim internal.
 - [KEPUTUSAN] Komunikasi promosi dan publik menggunakan persona "kami" dan "tim" layaknya studio/agensi (Decision 001), dipadukan dengan transparansi Nama Lengkap Pendiri sebagai Penanggung Jawab Resmi Studio ENLESWEB di dokumen PDF Bukti Pemesanan (Decision 017).
 - [FAKTA] Launch-ready, siap go-live komersial. Domain kanonikal resmi `enlesweb.com` telah dibeli (Decision 018) dan dihubungkan ke Cloudflare Workers.
 - [FAKTA] 6 website konsep live di Vercel (Seruput Kopi, ripeir, tuntas, Jerseay, dipotongin, berflower).
-- [FAKTA] Aset reusable: 6 template konsep, tooling render materi iklan `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3 adaptif 4:5 dan 9:16), SOP chat WhatsApp (`sop.md` v1.2 **CLOSED**), dan template PDF Bukti Pemesanan ber-TTD digital (**CLOSED**, Decision 020).
-- [FAKTA] Klien: 0. Prospek: 0. Pendapatan: Rp0.
+- [FAKTA] Aset reusable: 6 template konsep, tooling render materi iklan `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3 adaptif 4:5 dan 9:16), SOP chat WhatsApp (`sop.md` v1.2 **CLOSED**), template PDF Bukti Pemesanan ber-TTD digital (**CLOSED**, Decision 020), dan composer internal `layout-lab/`.
+- [FAKTA] layout-lab memuat 43 varian dalam 13 kategori dengan contoh bisnis umum dan data dummy. Per 21 Oktober, lab masih lokal dan belum digunakan klien.
+- [KEPUTUSAN 022] Setelah URL publik diverifikasi, ENLESWEB mengirim preview layout dari layout-lab kepada prospek sebelum kesepakatan dan DP. Preview memakai data dummy dan hanya menggambarkan susunan layout.
+- [FAKTA per 21 Oktober 2026] Belum ada DP atau proyek nyata. Satu percakapan pesan tercatat dari iklan setelah 12 jam tayang; isi dan status prospek belum diketahui. Belum ada pendapatan dari proyek.
+- [FAKTA per 21 Oktober 2026] Meta Ads mulai tayang pukul 09.00. Belanja awal Rp16.000; sekitar 70% terserap iklan video. Micro-Warm Outreach belum dimulai.
 - [KEPUTUSAN] Runway operasional awal: 30 hari (1 bulan) konsisten aktif menguji kampanye.
 - [KEPUTUSAN] Kapasitas proyek paralel solo founder tanpa builder: 2 - 3 klien simultan (dengan mekanisme *On-Hold* 60 hari untuk membebaskan slot jika klien terlambat mengirim materi lewat dari 7 hari kalender, Decision 017).
 - [KEPUTUSAN/FAKTA] Modal kerja siap pakai yang dialokasikan: sekitar Rp1.000.000 – Rp1.500.000 (mencakup domain bisnis `enlesweb.com` Rp152.070 yang telah terealisasi dibeli, iklan, AI tools, dan dana talangan).
@@ -71,6 +74,8 @@ Batas tetap selama bisnis bertumbuh. Perubahan hanya lewat keputusan baru yang d
 6. **Akuisisi berdisiplin (Tanpa Tools Scraping Berbayar & Tanpa Cold WA Spam):** tidak ada penggunaan tools scraping/outbound berbayar (seperti Apollo.io) sebelum 10 klien pertama selesai; eksperimen Micro-Warm Outreach dibatasi maksimal 2–3 pemilik usaha/hari secara manual dengan sapaan awal hanya via DM Instagram `@enlesweb` (Decision 013).
 7. **Builder menunggu bukti:** tidak membangun Website Builder atau SaaS sebelum klien ke-10 go live.
 
+Composer layout-lab dipakai untuk membantu prospek membayangkan susunan visual sebelum DP setelah URL publik diverifikasi. Preview memakai data dummy dan bukan draf pengerjaan. Preview resmi setelah DP tetap memakai materi klien. Lab tidak menghasilkan website produksi atau blueprint JSON dan tidak memulai fase Website Builder. Gerbang Decision 011 tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
+
 ## 8. Asumsi dan Risiko Visi
 | Asumsi | Bukti saat ini | Cara validasi |
 |---|---|---|
@@ -104,4 +109,7 @@ Batas tetap selama bisnis bertumbuh. Perubahan hanya lewat keputusan baru yang d
 | 17 Oktober 2026 | Versi 1.5: Sinkronisasi pembelian domain kanonikal resmi `enlesweb.com` (Decision 018) dan pembaruan kesiapan peluncuran produksi pada Cloudflare Workers. | Konfirmasi pembelian domain 17 Okt 2026 (Decision 018) |
 | 18 Oktober 2026 | Versi 1.6: Sinkronisasi penyelesaian template PDF Bukti Pemesanan oleh pendiri bisnis (Decision 020), kesiapan materi iklan Meta di campaign-1/, penutupan seluruh tugas Minggu 0, dan transisi ke dokumen master V4. | Konfirmasi pembuatan PDF oleh pemilik 18 Okt 2026 (Decision 020) |
 | 18 Oktober 2026 | Versi 1.7: Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
+| 21 Oktober 2026 | Versi 1.8: Pencatatan layout-lab sebagai composer internal berbasis data dummy, pembedaan dari Website Builder berbasis blueprint JSON, dan penegasan gerbang Decision 011. Deployment publik dan penggunaan klien belum terkonfirmasi. | `layout-lab/README.md` dan `layout-lab/NOTES.md` |
+| 21 Oktober 2026 | Versi 1.9: Decision 022 menetapkan pengiriman preview layout data dummy sebelum kesepakatan dan DP setelah deployment publik serta URL terverifikasi. | `Business Memory/decision-log.md` Decision 022 dan `Delivery & Operations/sop.md` |
+| 21 Oktober 2026 | Versi 2.0: Pencatatan checkpoint 12 jam pertama Meta Ads, tanpa mengubah gerbang Website Builder atau keputusan jangka panjang. | Laporan pemilik, `Business Memory/weekly-review.md` |
 

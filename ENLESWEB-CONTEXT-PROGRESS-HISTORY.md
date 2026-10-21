@@ -1,10 +1,10 @@
 # ENLESWEB --- HISTORI KONTEKS, PERKEMBANGAN, DAN PROGRESS DELTA
 
-Versi Dokumen: 3.8 (Penyelesaian Template PDF Bukti Pemesanan CLOSED, Kesiapan Materi Iklan Meta, Penutupan Seluruh Tugas Minggu 0, & Transisi Master Docs V4 - 18 Oktober 2026)
-Tanggal Pembaruan Terakhir: 18 Oktober 2026
-Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Tersinkronisasi Penuh Decision 001–021, SOP v1.2, Seluruh Tugas Minggu 0 CLOSED)
+Versi Dokumen: 4.1 (Checkpoint Awal Kampanye Meta Ads - 21 Oktober 2026)
+Tanggal Pembaruan Terakhir: 21 Oktober 2026
+Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–022, SOP transaksi v1.2 tetap CLOSED, seluruh tugas Minggu 0 CLOSED; deployment layout-lab belum terkonfirmasi)
 Fungsi: Sumber Referensi Tunggal untuk Konteks Bisnis, Evolusi Konsep, Progress Delta, dan Gap Register ENLESWEB.
-Ringkasan Pembaruan: Penutupan resmi seluruh sisa tugas persiapan pra-peluncuran Minggu 0 (100% CLOSED): (1) Template PDF Bukti Pemesanan ber-TTD digital resmi selesai dibuat oleh pendiri bisnis (CLOSED, Decision 020) sesuai SOP v1.2 dan Decision 017; (2) Kesiapan materi kreatif iklan Meta kampanye 1 (Iklan A video 15s dan Iklan B gambar statis v3) di direktori campaign-1/ (CLOSED / SIAP TAYANG, Decision 016/020); (3) Domain resmi enlesweb.com aktif di Cloudflare Workers (CLOSED, Decision 018); (4) Optimasi PageSpeed Insights 100/100 (CLOSED, Decision 019); dan (5) Transisi dokumentasi utama master ke ENLESWEB-DOCS-V4.md. Fokus operasional beralih penuh ke Minggu 1: Penayangan Iklan Meta Ads & Micro-Warm Outreach DM Instagram.
+Ringkasan Pembaruan: Iklan mulai tayang 21 Oktober pukul 09.00. Setelah 12 jam, belanja dua iklan Rp16.000 dengan sekitar 70% terserap iklan video dan satu percakapan pesan yang belum dikualifikasi. Outreach dan DP masih nol, belum ada proyek nyata, dan layout-lab masih lokal. Decision 022 tetap menunggu deployment serta verifikasi URL sebelum preview pra-DP dibagikan.
 
 ---
 
@@ -18,6 +18,8 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
 ---
 
 ## TABLE OF CONTENTS (DAFTAR ISI)
+
+Pembaruan terbaru per 21 Oktober 2026: checkpoint iklan awal ada di [Minggu 1 review](Business%20Memory/weekly-review.md) dan [KPI](Business%20Memory/kpi.md). Aturan preview pra-DP ada di [Decision 022](Business%20Memory/decision-log.md#decision-022) dan [panduan layout-lab](layout-lab/README.md). Gerbang Website Builder pada Decision 011 tidak berubah.
 
 1. BERKAS 1: ENLESWEB-CONTEXT-GAPS.md (Gap Register & Decision Register Terkini - 18 Oktober 2026)
    - 0. Source yang Dibandingkan
@@ -374,6 +376,32 @@ Keputusan inti tetap LOCKED: satu halaman homepage, WhatsApp sebagai jalur konve
 11. CURRENT NORTH STAR
 Homepage, keenam aset demo proyek, domain kanonikal resmi enlesweb.com (CLOSED), SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED), materi kreatif iklan Meta campaign-1 (CLOSED), dan template PDF Bukti Pemesanan ber-TTD digital (CLOSED, Decision 020) telah selesai dan aktif.
 North Star Minggu 0 (100% CLOSED) -> **Beralih ke Minggu 1: Jalankan kampanye iklan berbayar Meta Ads Minggu 1 (Rp100.000 selama 7 hari) + Micro-Warm Outreach manual via DM Instagram @enlesweb.**
+
+--------------------------------------------------------------------------------
+
+12. PROGRESS & KEPUTUSAN PENGGUNAAN layout-lab (21 OKTOBER 2026)
+
+- layout-lab sudah dibangun sebagai composer internal untuk memilih varian dan menyusun urutan section sebelum DP.
+- Composer memuat 43 varian dari 13 kategori. Contoh bisnis dan seluruh isi seperti nama, harga, ulasan, alamat, serta kontak merupakan data dummy.
+- Preview resep memakai rute `/pratinjau?s=...`. Per 21 Oktober, lab masih berjalan lokal dan belum digunakan klien, sehingga belum ada tautan publik yang siap dibagikan.
+- Decision 022 menetapkan satu preview layout yang relevan dikirim sebelum ringkasan kesepakatan dan permintaan DP, setelah deployment publik aktif dan URL diverifikasi. Ini adalah langkah penjualan untuk membantu prospek membayangkan susunan layout.
+- Deployment publik dan penggunaan dengan klien belum terkonfirmasi. Sebelum URL diverifikasi, admin tetap memakai demo tier yang tersedia dan tidak membagikan layout-lab.
+- Preview layout memakai data dummy. Jelaskan bahwa preview bukan draf proyek, bukan hasil kerja klien, tidak memulai pengerjaan, dan tidak mengubah aturan pembatalan/refund.
+- Preview pengerjaan resmi setelah DP tetap memakai materi klien.
+- Lab tidak membuat website produksi atau blueprint JSON dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
+- Panduan: [layout-lab/README.md](layout-lab/README.md). Catatan teknis: [layout-lab/NOTES.md](layout-lab/NOTES.md). Screenshot audit: [arsip 21 Oktober 2026](layout-lab/docs/screens-as-is-2026-10-21/README.md).
+- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022).
+
+--------------------------------------------------------------------------------
+
+13. CHECKPOINT AWAL MINGGU 1: META ADS (21 OKTOBER 2026)
+
+- Iklan mulai tayang pada 21 Oktober pukul 09.00.
+- Setelah 12 jam, belanja dua iklan tercatat Rp16.000. Sekitar 70% belanja terserap iklan video.
+- Satu percakapan pesan tercatat dari iklan. Isi dan kualifikasinya belum diketahui, jadi belum dihitung sebagai chat valid yang menanyakan paket atau kebutuhan website.
+- Micro-Warm Outreach DM IG belum dimulai. Belum ada DP, pilihan domain yang tercatat, atau proyek nyata.
+- Tes berjalan sampai 27 Oktober. Evaluasi Jalur A/B/C tetap pada 28 Oktober; checkpoint ini belum menentukan jalur atau anggaran lanjutan.
+- Rincian berjalan dicatat di [Business Memory/weekly-review.md](Business%20Memory/weekly-review.md) dan [Business Memory/kpi.md](Business%20Memory/kpi.md).
 
 === BATAS AKHIR FILE: ENLESWEB-PROGRESS-DELTA.md ===
 
