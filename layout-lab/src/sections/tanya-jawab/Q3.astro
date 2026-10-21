@@ -1,0 +1,133 @@
+---
+import type { TanyaJawabData } from '../../schema/tanya-jawab';
+
+interface Props {
+  data: TanyaJawabData;
+  id?: string;
+}
+
+const { data, id = 'q3' } = Astro.props;
+---
+
+<section class="wf-tanya-jawab q3" id={id}>
+  <div class="wf-container">
+    <div class="q3-header">
+      <h2 class="q3-title wf-break-word">{data.title}</h2>
+      {data.intro && <p class="q3-intro wf-break-word">{data.intro}</p>}
+      {data.helperText && <p class="q3-helper wf-break-word">{data.helperText}</p>}
+    </div>
+
+    {data.status === 'loading' ? (
+      <div class="wf-state-indicator" role="status" aria-live="polite">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Memuat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Sedang memuat data tanya jawab...'}</span>
+        </div>
+      </div>
+    ) : data.status === 'error' ? (
+      <div class="wf-state-indicator" role="alert" aria-live="assertive">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Galat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Gagal memuat tanya jawab. Silakan coba muat ulang.'}</span>
+        </div>
+        <a href="/uji" class="wf-btn wf-btn-secondary wf-state-action">Muat Ulang</a>
+      </div>
+    ) : (data.status === 'empty' || !data.items || data.items.length === 0) ? (
+      <div class="wf-empty-state">
+        <h3 class="wf-empty-title">Belum Ada Tanya Jawab</h3>
+        <p class="wf-empty-desc">{data.pesanStatus || 'Tidak ada entri pertanyaan terdaftar saat ini.'}</p>
+        <a href="/uji" class="wf-btn wf-btn-secondary">Pilih Dataset Lain</a>
+      </div>
+    ) : (
+      <div class="q3-grid">
+        {data.items.map((item) => (
+          <article class="q3-card">
+            <h3 class="q3-question wf-break-word">{item.question}</h3>
+            <p class="q3-answer wf-break-word">{item.answer}</p>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .q3 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .q3-header {
+    margin-bottom: var(--wf-space-6);
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .q3-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .q3-intro {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  .q3-helper {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+
+  .q3-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-4);
+  }
+
+  .q3-card {
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    padding: var(--wf-space-5);
+    background-color: var(--wf-bg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .q3-question {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .q3-answer {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .q3-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--wf-space-5);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .q3 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .q3-title {
+      font-size: 2rem;
+    }
+  }
+</style>

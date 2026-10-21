@@ -1,0 +1,135 @@
+---
+import type { FooterData } from '../../schema/footer';
+
+interface Props {
+  data: FooterData;
+  id?: string;
+}
+
+const { data, id = 'f2' } = Astro.props;
+// Flatten some top links for the single row
+const flatLinks = data.kolom.length > 0 ? data.kolom[0].tautan : data.legal.tautan;
+---
+
+<footer class="wf-footer f2" id={id}>
+  <div class="wf-container">
+    <div class="f2-inner">
+      <div class="f2-brand">
+        <span class="f2-brand-name">{data.brand}</span>
+      </div>
+
+      <nav class="f2-nav" aria-label="Navigasi Footer F2">
+        <ul class="f2-links">
+          {flatLinks.map((item) => (
+            <li>
+              <a href={item.href} class="f2-link">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="f2-legal">
+        <span class="f2-copyright">{data.legal.hakCipta}</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .f2 {
+    background-color: var(--wf-bg);
+    border-top: 1px solid var(--wf-line);
+    padding-block: var(--wf-space-4);
+  }
+
+  .f2-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .f2-brand {
+    min-width: 0;
+  }
+
+  .f2-brand-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .f2-nav {
+    min-width: 0;
+  }
+
+  .f2-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wf-space-3) var(--wf-space-4);
+  }
+
+  .f2-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.8125rem;
+    color: var(--wf-ink);
+    text-decoration: none;
+    padding: var(--wf-space-1) var(--wf-space-2);
+  }
+
+  .f2-link:hover {
+    text-decoration: underline;
+  }
+
+  .f2-legal {
+    min-width: 0;
+  }
+
+  .f2-copyright {
+    font-size: 0.75rem;
+    color: var(--wf-line);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* 1280px / >=1024px desktop layout: satu baris horizontal */
+  @media (min-width: 1024px) {
+    .f2 {
+      padding-block: var(--wf-space-5);
+    }
+
+    .f2-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--wf-space-5);
+      flex-wrap: wrap;
+    }
+
+    .f2-brand {
+      flex: 1 1 200px;
+      max-width: 320px;
+    }
+
+    .f2-nav {
+      flex: 2 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .f2-links {
+      gap: var(--wf-space-4);
+      justify-content: center;
+    }
+
+    .f2-legal {
+      flex: 1 1 240px;
+      max-width: 360px;
+      text-align: right;
+    }
+  }
+</style>

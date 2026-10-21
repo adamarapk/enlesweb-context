@@ -1,0 +1,130 @@
+---
+import type { KeunggulanData } from '../../schema/keunggulan';
+
+interface Props {
+  data: KeunggulanData;
+  id?: string;
+}
+
+const { data, id = 'k2' } = Astro.props;
+---
+
+<section class="wf-keunggulan k2" id={id}>
+  <div class="wf-container">
+    <div class="k2-header">
+      <h2 class="k2-title wf-break-word">{data.title}</h2>
+      {data.intro && <p class="k2-intro wf-break-word">{data.intro}</p>}
+    </div>
+
+    {data.status === 'loading' ? (
+      <div class="wf-state-indicator" role="status" aria-live="polite">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Memuat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Sedang memuat data karakteristik keunggulan sistem...'}</span>
+        </div>
+      </div>
+    ) : data.status === 'error' ? (
+      <div class="wf-state-indicator" role="alert" aria-live="assertive">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Galat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Gagal memuat karakteristik keunggulan. Silakan coba muat ulang.'}</span>
+        </div>
+        <a href="/uji?mode=status" class="wf-btn wf-btn-secondary wf-state-action">Muat Ulang</a>
+      </div>
+    ) : (data.status === 'empty' || !data.items || data.items.length === 0) ? (
+      <div class="wf-empty-state">
+        <h3 class="wf-empty-title">Belum Ada Karakteristik Keunggulan</h3>
+        <p class="wf-empty-desc">{data.pesanStatus || 'Tidak ada entri karakteristik terdaftar dalam konfigurasi saat ini.'}</p>
+        <a href="/uji" class="wf-btn wf-btn-secondary">Pilih Dataset Lain</a>
+      </div>
+    ) : (
+      <div class="k2-list">
+        {data.items.map((item) => (
+          <article class="k2-item">
+            <h3 class="k2-item-title wf-break-word">{item.title}</h3>
+            <p class="k2-item-desc wf-break-word">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .k2 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .k2-header {
+    margin-bottom: var(--wf-space-6);
+    max-width: 48rem;
+  }
+
+  .k2-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--wf-space-2);
+  }
+
+  .k2-intro {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  .k2-list {
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    background-color: var(--wf-bg);
+    display: flex;
+    flex-direction: column;
+    max-width: 52rem;
+  }
+
+  .k2-item {
+    padding: var(--wf-space-5);
+    border-bottom: 1px solid var(--wf-line);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .k2-item:last-child {
+    border-bottom: none;
+  }
+
+  .k2-item-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .k2-item-desc {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  /* 1280px / >=1024px desktop layout: single vertical list with wide spacing and border lines */
+  @media (min-width: 1024px) {
+    .k2 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .k2-title {
+      font-size: 2rem;
+    }
+
+    .k2-item {
+      padding: var(--wf-space-6);
+    }
+
+    .k2-item-title {
+      font-size: 1.25rem;
+    }
+  }
+</style>

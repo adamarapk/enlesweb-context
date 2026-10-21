@@ -1,0 +1,150 @@
+---
+import type { HeroData } from '../../schema/hero';
+
+interface Props {
+  data: HeroData;
+  id?: string;
+}
+
+const { data, id = 'h1' } = Astro.props;
+---
+
+<section class="wf-hero h1" id={id}>
+  <div class="wf-container">
+    <div class={`h1-grid ${!data.visual ? 'h1-no-visual' : ''}`}>
+      <div class="h1-text-col">
+        <h1 class="h1-title wf-break-word">{data.judul}</h1>
+        <p class="h1-desc wf-break-word">{data.subjudul}</p>
+        
+        <div class="h1-actions">
+          <a href={data.ctaUtama.href} class="wf-btn wf-btn-primary">{data.ctaUtama.label}</a>
+          {data.ctaSekunder && (
+            <a href={data.ctaSekunder.href} class="wf-btn wf-btn-secondary">{data.ctaSekunder.label}</a>
+          )}
+        </div>
+      </div>
+
+      <div class="h1-visual-col">
+        {data.visual ? (
+          <div class="wf-visual h1-visual-box" style={{ aspectRatio: data.visual.rasio || '16/9' }}>
+            <span>{data.visual.label}</span>
+          </div>
+        ) : (
+          <div class="h1-fallback-box">
+            <div class="h1-fallback-header">Struktur modul teks penuh</div>
+            <p class="h1-fallback-note">Skenario data tanpa aset visual. Blok teks mengisi ruang arsitektural secara proporsional.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .h1 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .h1-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-6);
+  }
+
+  .h1-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .h1-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--wf-space-3);
+  }
+
+  .h1-desc {
+    font-size: 1rem;
+    color: var(--wf-ink);
+    margin-bottom: var(--wf-space-5);
+    max-width: 40rem;
+    line-height: 1.6;
+  }
+
+  .h1-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wf-space-3);
+    width: 100%;
+  }
+
+  .h1-actions .wf-btn {
+    flex: 1 1 140px;
+    text-align: center;
+  }
+
+  .h1-visual-col {
+    width: 100%;
+  }
+
+  .h1-visual-box {
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .h1-fallback-box {
+    border: 1px solid var(--wf-line);
+    padding: var(--wf-space-4);
+    background-color: var(--wf-fill);
+    border-radius: var(--wf-radius);
+  }
+
+  .h1-fallback-header {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--wf-ink);
+    margin-bottom: var(--wf-space-2);
+  }
+
+  .h1-fallback-note {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    line-height: 1.5;
+  }
+
+  /* 1280px / >=1024px desktop layout: [Teks] | [Visual] */
+  @media (min-width: 1024px) {
+    .h1 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .h1-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: var(--wf-space-7);
+    }
+
+    .h1-title {
+      font-size: 2.5rem;
+    }
+
+    .h1-actions .wf-btn {
+      flex: 0 0 auto;
+    }
+
+    .h1-visual-box {
+      min-height: 320px;
+    }
+
+    .h1-no-visual {
+      grid-template-columns: 7fr 5fr;
+      align-items: stretch;
+    }
+  }
+</style>

@@ -1,0 +1,158 @@
+---
+import type { UlasanData } from '../../schema/ulasan';
+
+interface Props {
+  data: UlasanData;
+  id?: string;
+}
+
+const { data, id = 'u1' } = Astro.props;
+---
+
+<section class="wf-ulasan u1" id={id}>
+  <div class="wf-container">
+    <div class="u1-header">
+      <h2 class="u1-title wf-break-word">{data.title}</h2>
+      {data.intro && <p class="u1-intro wf-break-word">{data.intro}</p>}
+      {data.summaryNote && <p class="u1-summary-note wf-break-word">{data.summaryNote}</p>}
+    </div>
+
+    {data.status === 'loading' ? (
+      <div class="wf-state-indicator" role="status" aria-live="polite">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Memuat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Sedang memuat data ulasan...'}</span>
+        </div>
+      </div>
+    ) : data.status === 'error' ? (
+      <div class="wf-state-indicator" role="alert" aria-live="assertive">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Galat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Gagal memuat ulasan. Silakan coba muat ulang.'}</span>
+        </div>
+        <a href="/uji" class="wf-btn wf-btn-secondary wf-state-action">Muat Ulang</a>
+      </div>
+    ) : (data.status === 'empty' || !data.items || data.items.length === 0) ? (
+      <div class="wf-empty-state">
+        <h3 class="wf-empty-title">Belum Ada Ulasan</h3>
+        <p class="wf-empty-desc">{data.pesanStatus || 'Tidak ada entri ulasan terdaftar saat ini.'}</p>
+        <a href="/uji" class="wf-btn wf-btn-secondary">Pilih Dataset Lain</a>
+      </div>
+    ) : (
+      <div class="u1-grid">
+        {data.items.map((item) => (
+          <article class="u1-card">
+            <blockquote class="u1-quote wf-break-word">"{item.quote}"</blockquote>
+            <footer class="u1-author-wrap">
+              <div class="u1-author wf-break-word">{item.author}</div>
+              {item.context && <div class="u1-context wf-break-word">{item.context}</div>}
+            </footer>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .u1 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .u1-header {
+    margin-bottom: var(--wf-space-6);
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .u1-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .u1-intro {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  .u1-summary-note {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    opacity: 0.85;
+    font-weight: 500;
+  }
+
+  .u1-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-4);
+  }
+
+  .u1-card {
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    padding: var(--wf-space-5);
+    background-color: var(--wf-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--wf-space-4);
+  }
+
+  .u1-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--wf-ink);
+    margin: 0;
+  }
+
+  .u1-author-wrap {
+    border-top: 1px solid var(--wf-line);
+    padding-top: var(--wf-space-3);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .u1-author {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .u1-context {
+    font-size: 0.8125rem;
+    color: var(--wf-ink);
+    opacity: 0.85;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .u1-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--wf-space-4);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .u1 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .u1-title {
+      font-size: 2rem;
+    }
+
+    .u1-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--wf-space-5);
+    }
+  }
+</style>

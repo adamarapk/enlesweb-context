@@ -1,0 +1,162 @@
+---
+import type { FooterData } from '../../schema/footer';
+
+interface Props {
+  data: FooterData;
+  id?: string;
+}
+
+const { data, id = 'f4' } = Astro.props;
+---
+
+<footer class="wf-footer f4" id={id}>
+  <div class="wf-container">
+    <div class="f4-cta-card">
+      <div class="f4-cta-text">
+        <h3 class="f4-cta-title wf-break-word">{data.ctaBesar.judul}</h3>
+        <p class="f4-cta-sub wf-break-word">{data.ctaBesar.subjudul}</p>
+      </div>
+
+      <div class="f4-cta-action">
+        <a href={data.ctaBesar.href} class="wf-btn wf-btn-primary f4-btn-action">{data.ctaBesar.labelTombol}</a>
+      </div>
+    </div>
+
+    <div class="f4-legal-row">
+      <div class="f4-brand-wrap">
+        <span class="f4-brand-name">{data.brand}</span>
+        <span class="f4-copyright">{data.legal.hakCipta}</span>
+      </div>
+
+      <ul class="f4-legal-links">
+        {data.legal.tautan.map((item) => (
+          <li>
+            <a href={item.href} class="f4-legal-link">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .f4 {
+    background-color: var(--wf-bg);
+    border-top: 2px solid var(--wf-line);
+    padding-top: var(--wf-space-6);
+    padding-bottom: var(--wf-space-5);
+  }
+
+  .f4-cta-card {
+    border: 1px solid var(--wf-line);
+    background-color: var(--wf-fill);
+    border-radius: var(--wf-radius);
+    padding: var(--wf-space-5);
+    margin-bottom: var(--wf-space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-4);
+  }
+
+  .f4-cta-title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: var(--wf-space-2);
+  }
+
+  .f4-cta-sub {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.5;
+    max-width: 44rem;
+  }
+
+  .f4-btn-action {
+    width: 100%;
+    text-align: center;
+  }
+
+  .f4-legal-row {
+    padding-top: var(--wf-space-4);
+    border-top: 1px solid var(--wf-line);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .f4-brand-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .f4-brand-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .f4-copyright {
+    font-size: 0.75rem;
+    color: var(--wf-line);
+  }
+
+  .f4-legal-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wf-space-4);
+  }
+
+  .f4-legal-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.8125rem;
+    color: var(--wf-ink);
+    text-decoration: none;
+    padding: var(--wf-space-1) var(--wf-space-2);
+  }
+
+  .f4-legal-link:hover {
+    text-decoration: underline;
+  }
+
+  /* 1280px / >=1024px desktop layout: [CTA besar] / [baris legal] */
+  @media (min-width: 1024px) {
+    .f4 {
+      padding-top: var(--wf-space-8);
+      padding-bottom: var(--wf-space-6);
+    }
+
+    .f4-cta-card {
+      padding: var(--wf-space-7);
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--wf-space-6);
+    }
+
+    .f4-cta-title {
+      font-size: 1.875rem;
+    }
+
+    .f4-btn-action {
+      width: auto;
+      white-space: nowrap;
+      padding-inline: var(--wf-space-6);
+    }
+
+    .f4-legal-row {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .f4-brand-wrap {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--wf-space-4);
+    }
+  }
+</style>

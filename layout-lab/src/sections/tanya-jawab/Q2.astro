@@ -1,0 +1,167 @@
+---
+import type { TanyaJawabData } from '../../schema/tanya-jawab';
+
+interface Props {
+  data: TanyaJawabData;
+  id?: string;
+}
+
+const { data, id = 'q2' } = Astro.props;
+---
+
+<section class="wf-tanya-jawab q2" id={id}>
+  <div class="wf-container">
+    {data.status === 'loading' ? (
+      <div class="wf-state-indicator" role="status" aria-live="polite">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Memuat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Sedang memuat data tanya jawab...'}</span>
+        </div>
+      </div>
+    ) : data.status === 'error' ? (
+      <div class="wf-state-indicator" role="alert" aria-live="assertive">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Galat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Gagal memuat tanya jawab. Silakan coba muat ulang.'}</span>
+        </div>
+        <a href="/uji" class="wf-btn wf-btn-secondary wf-state-action">Muat Ulang</a>
+      </div>
+    ) : (data.status === 'empty' || !data.items || data.items.length === 0) ? (
+      <div class="wf-empty-state">
+        <h3 class="wf-empty-title">Belum Ada Tanya Jawab</h3>
+        <p class="wf-empty-desc">{data.pesanStatus || 'Tidak ada entri pertanyaan terdaftar saat ini.'}</p>
+        <a href="/uji" class="wf-btn wf-btn-secondary">Pilih Dataset Lain</a>
+      </div>
+    ) : (
+      <div class="q2-layout">
+        <header class="q2-header">
+          <h2 class="q2-title wf-break-word">{data.title}</h2>
+          {data.intro && <p class="q2-intro wf-break-word">{data.intro}</p>}
+          {data.helperText && <p class="q2-helper wf-break-word">{data.helperText}</p>}
+        </header>
+
+        <div class="q2-list">
+          {data.items.map((item) => (
+            <details class="q2-item">
+              <summary class="q2-summary">
+                <h3 class="q2-question wf-break-word">{item.question}</h3>
+              </summary>
+              <div class="q2-answer">
+                <p class="wf-break-word">{item.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .q2 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .q2-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-6);
+  }
+
+  .q2-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .q2-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .q2-intro {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  .q2-helper {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    opacity: 0.85;
+    line-height: 1.5;
+    border-left: 2px solid var(--wf-line);
+    padding-left: var(--wf-space-3);
+  }
+
+  .q2-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .q2-item {
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    background-color: var(--wf-bg);
+  }
+
+  .q2-summary {
+    padding: var(--wf-space-4);
+    cursor: pointer;
+    user-select: none;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .q2-summary:focus-visible {
+    outline: 2px solid var(--wf-ink);
+    outline-offset: -2px;
+  }
+
+  .q2-question {
+    display: inline;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .q2-answer {
+    padding: var(--wf-space-4);
+    padding-top: 0;
+    border-top: 1px solid var(--wf-fill);
+    margin-top: var(--wf-space-2);
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 1024px) {
+    .q2 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .q2-title {
+      font-size: 2rem;
+    }
+
+    .q2-question {
+      font-size: 1.0625rem;
+    }
+
+    .q2-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: var(--wf-space-7);
+      align-items: start;
+    }
+
+    .q2-header {
+      position: sticky;
+      top: var(--wf-space-6);
+    }
+  }
+</style>

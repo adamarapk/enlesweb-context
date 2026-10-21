@@ -1,0 +1,977 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import N1 from '../sections/navbar/N1.astro';
+import N2 from '../sections/navbar/N2.astro';
+import N3 from '../sections/navbar/N3.astro';
+import N4 from '../sections/navbar/N4.astro';
+import H1 from '../sections/hero/H1.astro';
+import H2 from '../sections/hero/H2.astro';
+import H3 from '../sections/hero/H3.astro';
+import H4 from '../sections/hero/H4.astro';
+import S1 from '../sections/layanan/S1.astro';
+import S2 from '../sections/layanan/S2.astro';
+import S3 from '../sections/layanan/S3.astro';
+import S4 from '../sections/layanan/S4.astro';
+import F1 from '../sections/footer/F1.astro';
+import F2 from '../sections/footer/F2.astro';
+import F3 from '../sections/footer/F3.astro';
+import F4 from '../sections/footer/F4.astro';
+import P1 from '../sections/langkah/P1.astro';
+import P2 from '../sections/langkah/P2.astro';
+import P3 from '../sections/langkah/P3.astro';
+import K1 from '../sections/keunggulan/K1.astro';
+import K2 from '../sections/keunggulan/K2.astro';
+import K3 from '../sections/keunggulan/K3.astro';
+import L1 from '../sections/lokasi/L1.astro';
+import L2 from '../sections/lokasi/L2.astro';
+import L3 from '../sections/lokasi/L3.astro';
+import C1 from '../sections/cta/C1.astro';
+import C2 from '../sections/cta/C2.astro';
+import C3 from '../sections/cta/C3.astro';
+import G1 from '../sections/galeri/G1.astro';
+import G2 from '../sections/galeri/G2.astro';
+import G3 from '../sections/galeri/G3.astro';
+import U1 from '../sections/ulasan/U1.astro';
+import U2 from '../sections/ulasan/U2.astro';
+import U3 from '../sections/ulasan/U3.astro';
+import B1 from '../sections/biaya/B1.astro';
+import B2 from '../sections/biaya/B2.astro';
+import B3 from '../sections/biaya/B3.astro';
+import Q1 from '../sections/tanya-jawab/Q1.astro';
+import Q2 from '../sections/tanya-jawab/Q2.astro';
+import Q3 from '../sections/tanya-jawab/Q3.astro';
+import R1 from '../sections/profil/R1.astro';
+import R2 from '../sections/profil/R2.astro';
+import R3 from '../sections/profil/R3.astro';
+
+import { standarNavbar } from '../schema/navbar';
+import { standarHero } from '../schema/hero';
+import { standarLayanan } from '../schema/layanan';
+import { standarFooter } from '../schema/footer';
+import { standarLangkah } from '../schema/langkah';
+import { standarKeunggulan } from '../schema/keunggulan';
+import { standarLokasi } from '../schema/lokasi';
+import { standarCta } from '../schema/cta';
+import { standarGaleri } from '../schema/galeri';
+import { standarUlasan } from '../schema/ulasan';
+import { standarBiaya } from '../schema/biaya';
+import { standarTanyaJawab } from '../schema/tanya-jawab';
+import { standarProfil } from '../schema/profil';
+---
+
+<BaseLayout title="Galeri Varian Section">
+  <div class="galeri-page">
+    <section class="wf-container galeri-intro" id="galeri-header-intro">
+      <h1 class="galeri-title">Laboratorium Komparasi Tata Letak</h1>
+      <p class="galeri-desc">
+        Pilih varian individual untuk menguji perilaku responsif atau tampilkan seluruh varian secara bersamaan untuk mengevaluasi perbedaan penataan ruang horizontal pada kanvas 1280px.
+      </p>
+    </section>
+
+    <nav class="galeri-jump-bar" id="galeri-sticky-jump-bar" aria-label="Lompat Cepat Kategori Section">
+      <div class="wf-container galeri-jump-inner">
+        <span class="galeri-jump-label">Kategori:</span>
+        <div class="galeri-jump-links">
+          <a href="#section-navbar" class="galeri-jump-link">Navbar</a>
+          <a href="#section-hero" class="galeri-jump-link">Hero</a>
+          <a href="#section-layanan" class="galeri-jump-link">Layanan</a>
+          <a href="#section-langkah" class="galeri-jump-link">Langkah</a>
+          <a href="#section-keunggulan" class="galeri-jump-link">Keunggulan</a>
+          <a href="#section-galeri" class="galeri-jump-link">Galeri</a>
+          <a href="#section-ulasan" class="galeri-jump-link">Ulasan</a>
+          <a href="#section-biaya" class="galeri-jump-link">Biaya</a>
+          <a href="#section-tanya-jawab" class="galeri-jump-link">Tanya Jawab</a>
+          <a href="#section-profil" class="galeri-jump-link">Profil</a>
+          <a href="#section-lokasi" class="galeri-jump-link">Lokasi</a>
+          <a href="#section-cta" class="galeri-jump-link">CTA Akhir</a>
+          <a href="#section-footer" class="galeri-jump-link">Footer</a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="galeri-param-notice" class="wf-container wf-state-indicator" style="display: none; margin-block: var(--wf-space-4);" role="status" aria-live="polite">
+      <span class="wf-state-mark">Perhatian</span>
+      <span class="wf-state-text" id="galeri-param-notice-text"></span>
+    </div>
+
+    <section class="galeri-section-group" id="section-navbar-group">
+      <div id="section-navbar"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="navbar">
+        <div class="galeri-toolbar-label">
+          <strong>NAVBAR:</strong>
+          <span class="galeri-current-desc" id="navbar-active-desc">N1 [Brand] | [Menu] | [CTA]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="navbar" data-variant="N1">N1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="navbar" data-variant="N2">N2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="navbar" data-variant="N3">N3</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="navbar" data-variant="N4">N4</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="navbar" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="navbar" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="navbar" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="navbar" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="navbar">
+        <div class="galeri-variant-item active" data-variant-box="N1">
+          <div class="galeri-variant-tag">VARIAN N1: [Brand] | [Menu] | [CTA]</div>
+          <N1 data={standarNavbar} id="n1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="N2">
+          <div class="galeri-variant-tag">VARIAN N2: [Brand] | [Menu + CTA kanan]</div>
+          <N2 data={standarNavbar} id="n2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="N3">
+          <div class="galeri-variant-tag">VARIAN N3: [Menu kiri] | [Brand tengah] | [Menu kanan + CTA]</div>
+          <N3 data={standarNavbar} id="n3-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="N4">
+          <div class="galeri-variant-tag">VARIAN N4: [Brand + kontak/jam] / [Menu]</div>
+          <N4 data={standarNavbar} id="n4-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-hero-group">
+      <div id="section-hero"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="hero">
+        <div class="galeri-toolbar-label">
+          <strong>HERO:</strong>
+          <span class="galeri-current-desc" id="hero-active-desc">H1 [Teks] | [Visual]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="hero" data-variant="H1">H1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="hero" data-variant="H2">H2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="hero" data-variant="H3">H3</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="hero" data-variant="H4">H4</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="hero" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="hero" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="hero" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="hero" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="hero">
+        <div class="galeri-variant-item active" data-variant-box="H1">
+          <div class="galeri-variant-tag">VARIAN H1: [Teks] | [Visual]</div>
+          <H1 data={standarHero} id="h1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="H2">
+          <div class="galeri-variant-tag">VARIAN H2: [Teks terpusat]</div>
+          <H2 data={standarHero} id="h2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="H3">
+          <div class="galeri-variant-tag">VARIAN H3: [Visual penuh latar] + teks kiri bawah</div>
+          <H3 data={standarHero} id="h3-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="H4">
+          <div class="galeri-variant-tag">VARIAN H4: [Teks] | [Kartu info ringkas]</div>
+          <H4 data={standarHero} id="h4-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-layanan-group">
+      <div id="section-layanan"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="layanan">
+        <div class="galeri-toolbar-label">
+          <strong>LAYANAN:</strong>
+          <span class="galeri-current-desc" id="layanan-active-desc">S1 Grid kartu</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="layanan" data-variant="S1">S1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="layanan" data-variant="S2">S2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="layanan" data-variant="S3">S3</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="layanan" data-variant="S4">S4</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="layanan" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="layanan" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="layanan" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="layanan" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="layanan">
+        <div class="galeri-variant-item active" data-variant-box="S1">
+          <div class="galeri-variant-tag">VARIAN S1: Grid kartu berjenjang</div>
+          <S1 data={standarLayanan} id="s1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="S2">
+          <div class="galeri-variant-tag">VARIAN S2: Daftar baris [Nama][Deskripsi][Harga]</div>
+          <S2 data={standarLayanan} id="s2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="S3">
+          <div class="galeri-variant-tag">VARIAN S3: [Judul tetap] | [Daftar]</div>
+          <S3 data={standarLayanan} id="s3-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="S4">
+          <div class="galeri-variant-tag">VARIAN S4: Kartu bergantian kiri-kanan</div>
+          <S4 data={standarLayanan} id="s4-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-footer-group">
+      <div id="section-footer"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="footer">
+        <div class="galeri-toolbar-label">
+          <strong>FOOTER:</strong>
+          <span class="galeri-current-desc" id="footer-active-desc">F1 Empat kolom</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="footer" data-variant="F1">F1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="footer" data-variant="F2">F2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="footer" data-variant="F3">F3</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="footer" data-variant="F4">F4</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="footer" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="footer" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="footer" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="footer" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="footer">
+        <div class="galeri-variant-item active" data-variant-box="F1">
+          <div class="galeri-variant-tag">VARIAN F1: Empat kolom modular</div>
+          <F1 data={standarFooter} id="f1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="F2">
+          <div class="galeri-variant-tag">VARIAN F2: Satu baris horizontal</div>
+          <F2 data={standarFooter} id="f2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="F3">
+          <div class="galeri-variant-tag">VARIAN F3: Terpusat bertumpuk</div>
+          <F3 data={standarFooter} id="f3-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="F4">
+          <div class="galeri-variant-tag">VARIAN F4: [CTA besar] / [baris legal]</div>
+          <F4 data={standarFooter} id="f4-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-langkah-group">
+      <div id="section-langkah"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="langkah">
+        <div class="galeri-toolbar-label">
+          <strong>LANGKAH:</strong>
+          <span class="galeri-current-desc" id="langkah-active-desc">P1 [Nomor][Judul][Teks] 3-4 kolom horizontal</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="langkah" data-variant="P1">P1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="langkah" data-variant="P2">P2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="langkah" data-variant="P3">P3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="langkah" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="langkah" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="langkah" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="langkah" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="langkah">
+        <div class="galeri-variant-item active" data-variant-box="P1">
+          <div class="galeri-variant-tag">VARIAN P1: [Nomor][Judul][Teks] 3-4 kolom horizontal</div>
+          <P1 data={standarLangkah} id="p1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="P2">
+          <div class="galeri-variant-tag">VARIAN P2: [Nomor] [Judul + Teks] timeline vertikal</div>
+          <P2 data={standarLangkah} id="p2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="P3">
+          <div class="galeri-variant-tag">VARIAN P3: Grid 2x2 kartu, nomor besar</div>
+          <P3 data={standarLangkah} id="p3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-keunggulan-group">
+      <div id="section-keunggulan"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="keunggulan">
+        <div class="galeri-toolbar-label">
+          <strong>KEUNGGULAN:</strong>
+          <span class="galeri-current-desc" id="keunggulan-active-desc">K1 3 kolom [Placeholder ikon][Judul][Teks]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="keunggulan" data-variant="K1">K1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="keunggulan" data-variant="K2">K2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="keunggulan" data-variant="K3">K3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="keunggulan" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="keunggulan" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="keunggulan" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="keunggulan" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="keunggulan">
+        <div class="galeri-variant-item active" data-variant-box="K1">
+          <div class="galeri-variant-tag">VARIAN K1: 3 kolom [Placeholder ikon][Judul][Teks]</div>
+          <K1 data={standarKeunggulan} id="k1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="K2">
+          <div class="galeri-variant-tag">VARIAN K2: Daftar satu kolom garis pemisah</div>
+          <K2 data={standarKeunggulan} id="k2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="K3">
+          <div class="galeri-variant-tag">VARIAN K3: [Pernyataan besar] | [Poin kecil bertumpuk]</div>
+          <K3 data={standarKeunggulan} id="k3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-lokasi-group">
+      <div id="section-lokasi"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="lokasi">
+        <div class="galeri-toolbar-label">
+          <strong>LOKASI DAN JAM:</strong>
+          <span class="galeri-current-desc" id="lokasi-active-desc">L1 [Peta] | [Info: alamat, jam, tombol Maps]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="lokasi" data-variant="L1">L1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="lokasi" data-variant="L2">L2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="lokasi" data-variant="L3">L3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="lokasi" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="lokasi" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="lokasi" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="lokasi" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="lokasi">
+        <div class="galeri-variant-item active" data-variant-box="L1">
+          <div class="galeri-variant-tag">VARIAN L1: [Peta] | [Info: alamat, jam, tombol Maps]</div>
+          <L1 data={standarLokasi} id="l1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="L2">
+          <div class="galeri-variant-tag">VARIAN L2: Peta penuh lebar kartu menimpa sudut</div>
+          <L2 data={standarLokasi} id="l2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="L3">
+          <div class="galeri-variant-tag">VARIAN L3: Info bertumpuk tanpa peta</div>
+          <L3 data={standarLokasi} id="l3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-cta-group">
+      <div id="section-cta"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="cta">
+        <div class="galeri-toolbar-label">
+          <strong>CTA AKHIR:</strong>
+          <span class="galeri-current-desc" id="cta-active-desc">C1 Banner satu baris [Teks] | [Tombol]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="cta" data-variant="C1">C1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="cta" data-variant="C2">C2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="cta" data-variant="C3">C3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="cta" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="cta" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="cta" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="cta" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="cta">
+        <div class="galeri-variant-item active" data-variant-box="C1">
+          <div class="galeri-variant-tag">VARIAN C1: Banner satu baris [Teks] | [Tombol]</div>
+          <C1 data={standarCta} id="c1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="C2">
+          <div class="galeri-variant-tag">VARIAN C2: Terpusat [Judul / teks / tombol]</div>
+          <C2 data={standarCta} id="c2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="C3">
+          <div class="galeri-variant-tag">VARIAN C3: Kartu terbungkus [Judul / teks / tombol] + kontak</div>
+          <C3 data={standarCta} id="c3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-galeri-group">
+      <div id="section-galeri"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="galeri">
+        <div class="galeri-toolbar-label">
+          <strong>GALERI:</strong>
+          <span class="galeri-current-desc" id="galeri-active-desc">G1 Grid 3 kolom seragam [Visual / Judul / Keterangan]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="galeri" data-variant="G1">G1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="galeri" data-variant="G2">G2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="galeri" data-variant="G3">G3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="galeri" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="galeri" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="galeri" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="galeri" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="galeri">
+        <div class="galeri-variant-item active" data-variant-box="G1">
+          <div class="galeri-variant-tag">VARIAN G1: Grid 3 kolom seragam [Visual / Judul / Keterangan]</div>
+          <G1 data={standarGaleri} id="g1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="G2">
+          <div class="galeri-variant-tag">VARIAN G2: Susunan asimetris (bento) di 1280px</div>
+          <G2 data={standarGaleri} id="g2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="G3">
+          <div class="galeri-variant-tag">VARIAN G3: Daftar perbandingan 2 kolom [Visual A | Visual B]</div>
+          <G3 data={standarGaleri} id="g3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-ulasan-group">
+      <div id="section-ulasan"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="ulasan">
+        <div class="galeri-toolbar-label">
+          <strong>ULASAN:</strong>
+          <span class="galeri-current-desc" id="ulasan-active-desc">U1 Grid 3 kolom kartu sejajar [Kutipan / Penulis + Konteks]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="ulasan" data-variant="U1">U1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="ulasan" data-variant="U2">U2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="ulasan" data-variant="U3">U3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="ulasan" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="ulasan" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="ulasan" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="ulasan" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="ulasan">
+        <div class="galeri-variant-item active" data-variant-box="U1">
+          <div class="galeri-variant-tag">VARIAN U1: Grid 3 kolom kartu sejajar [Kutipan / Penulis + Konteks]</div>
+          <U1 data={standarUlasan} id="u1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="U2">
+          <div class="galeri-variant-tag">VARIAN U2: [Header kolom kiri] | [Grid 2 kolom ulasan di kanan]</div>
+          <U2 data={standarUlasan} id="u2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="U3">
+          <div class="galeri-variant-tag">VARIAN U3: Daftar satu kolom penuh garis pemisah</div>
+          <U3 data={standarUlasan} id="u3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-biaya-group">
+      <div id="section-biaya"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="biaya">
+        <div class="galeri-toolbar-label">
+          <strong>BIAYA:</strong>
+          <span class="galeri-current-desc" id="biaya-active-desc">B1 Grid kartu vertikal sejajar</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="biaya" data-variant="B1">B1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="biaya" data-variant="B2">B2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="biaya" data-variant="B3">B3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="biaya" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="biaya" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="biaya" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="biaya" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="biaya">
+        <div class="galeri-variant-item active" data-variant-box="B1">
+          <div class="galeri-variant-tag">VARIAN B1: Grid kartu vertikal sejajar</div>
+          <B1 data={standarBiaya} id="b1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="B2">
+          <div class="galeri-variant-tag">VARIAN B2: Daftar baris horizontal bertumpuk</div>
+          <B2 data={standarBiaya} id="b2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="B3">
+          <div class="galeri-variant-tag">VARIAN B3: Tata letak terpisah per item</div>
+          <B3 data={standarBiaya} id="b3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-tanya-jawab-group">
+      <div id="section-tanya-jawab"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="tanya-jawab">
+        <div class="galeri-toolbar-label">
+          <strong>TANYA JAWAB:</strong>
+          <span class="galeri-current-desc" id="tanya-jawab-active-desc">Q1 Satu kolom terpusat akordeon HTML murni</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="tanya-jawab" data-variant="Q1">Q1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="tanya-jawab" data-variant="Q2">Q2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="tanya-jawab" data-variant="Q3">Q3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="tanya-jawab" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="tanya-jawab" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="tanya-jawab" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="tanya-jawab" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="tanya-jawab">
+        <div class="galeri-variant-item active" data-variant-box="Q1">
+          <div class="galeri-variant-tag">VARIAN Q1: Satu kolom terpusat akordeon details/summary</div>
+          <Q1 data={standarTanyaJawab} id="q1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="Q2">
+          <div class="galeri-variant-tag">VARIAN Q2: [Header kolom kiri] | [Akordeon bertumpuk di kanan]</div>
+          <Q2 data={standarTanyaJawab} id="q2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="Q3">
+          <div class="galeri-variant-tag">VARIAN Q3: Grid 2 kolom terbuka</div>
+          <Q3 data={standarTanyaJawab} id="q3-view" />
+        </div>
+      </div>
+    </section>
+
+    <section class="galeri-section-group" id="section-profil-group">
+      <div id="section-profil"></div>
+      <div class="wf-container galeri-toolbar" data-section-kind="profil">
+        <div class="galeri-toolbar-label">
+          <strong>PROFIL:</strong>
+          <span class="galeri-current-desc" id="profil-active-desc">R1 [Teks kiri] | [Visual kanan] / [Metrics] / [Mitra]</span>
+        </div>
+        <div class="galeri-toolbar-controls">
+          <button type="button" class="wf-btn galeri-btn active" data-kind="profil" data-variant="R1">R1</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="profil" data-variant="R2">R2</button>
+          <button type="button" class="wf-btn galeri-btn" data-kind="profil" data-variant="R3">R3</button>
+          <button type="button" class="wf-btn galeri-btn galeri-btn-all" data-kind="profil" data-variant="all">Semua Varian (Berdampingan)</button>
+          <div class="galeri-view-toggle" data-view-toggle="profil" style="display: none;">
+            <button type="button" class="wf-btn galeri-mode-btn active" data-kind="profil" data-mode="stack">Tumpuk</button>
+            <button type="button" class="wf-btn galeri-mode-btn" data-kind="profil" data-mode="side">Berdampingan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeri-render-area" data-render-kind="profil">
+        <div class="galeri-variant-item active" data-variant-box="R1">
+          <div class="galeri-variant-tag">VARIAN R1: [Teks kiri] | [Visual kanan] / [Metrics] / [Mitra]</div>
+          <R1 data={standarProfil} id="r1-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="R2">
+          <div class="galeri-variant-tag">VARIAN R2: Terpusat bertumpuk tanpa visual</div>
+          <R2 data={standarProfil} id="r2-view" />
+        </div>
+        <div class="galeri-variant-item" data-variant-box="R3">
+          <div class="galeri-variant-tag">VARIAN R3: [Visual tinggi kiri] | [Konten kanan]</div>
+          <R3 data={standarProfil} id="r3-view" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script is:inline>
+    const descriptions = {
+      N1: 'N1 [Brand] | [Menu] | [CTA]',
+      N2: 'N2 [Brand] | [Menu + CTA kanan]',
+      N3: 'N3 [Menu kiri] | [Brand tengah] | [Menu kanan + CTA]',
+      N4: 'N4 [Brand + kontak/jam] / [Menu]',
+      H1: 'H1 [Teks] | [Visual]',
+      H2: 'H2 [Teks terpusat]',
+      H3: 'H3 [Visual penuh latar] + teks kiri bawah',
+      H4: 'H4 [Teks] | [Kartu info ringkas]',
+      S1: 'S1 Grid kartu berjenjang',
+      S2: 'S2 Daftar baris [Nama][Deskripsi][Harga]',
+      S3: 'S3 [Judul tetap] | [Daftar]',
+      S4: 'S4 Kartu bergantian kiri-kanan',
+      F1: 'F1 Empat kolom modular',
+      F2: 'F2 Satu baris horizontal',
+      F3: 'F3 Terpusat bertumpuk',
+      F4: 'F4 [CTA besar] / [baris legal]',
+      P1: 'P1 [Nomor][Judul][Teks] 3-4 kolom horizontal',
+      P2: 'P2 [Nomor] [Judul + Teks] timeline vertikal',
+      P3: 'P3 Grid 2x2 kartu, nomor besar',
+      K1: 'K1 3 kolom [Placeholder ikon][Judul][Teks]',
+      K2: 'K2 Daftar satu kolom garis pemisah',
+      K3: 'K3 [Pernyataan besar] | [Poin kecil bertumpuk]',
+      L1: 'L1 [Peta] | [Info: alamat, jam, tombol Maps]',
+      L2: 'L2 Peta penuh lebar kartu menimpa sudut',
+      L3: 'L3 Info bertumpuk tanpa peta',
+      C1: 'C1 Banner satu baris [Teks] | [Tombol]',
+      C2: 'C2 Terpusat [Judul / teks / tombol]',
+      C3: 'C3 Kartu terbungkus [Judul / teks / tombol] + kontak',
+      G1: 'G1 Grid 3 kolom seragam [Visual / Judul / Keterangan]',
+      G2: 'G2 Susunan asimetris (bento) di 1280px',
+      G3: 'G3 Daftar perbandingan 2 kolom [Visual A | Visual B]',
+      U1: 'U1 Grid 3 kolom kartu sejajar [Kutipan / Penulis + Konteks]',
+      U2: 'U2 [Header kolom kiri] | [Grid 2 kolom ulasan di kanan]',
+      U3: 'U3 Daftar satu kolom penuh garis pemisah',
+      B1: 'B1 Grid kartu vertikal sejajar',
+      B2: 'B2 Daftar baris horizontal bertumpuk',
+      B3: 'B3 Tata letak terpisah per item',
+      Q1: 'Q1 Satu kolom terpusat akordeon details/summary',
+      Q2: 'Q2 [Header kolom kiri] | [Akordeon bertumpuk di kanan]',
+      Q3: 'Q3 Grid 2 kolom terbuka',
+      R1: 'R1 [Teks kiri] | [Visual kanan] / [Metrics] / [Mitra]',
+      R2: 'R2 Terpusat bertumpuk tanpa visual',
+      R3: 'R3 [Visual tinggi kiri] | [Konten kanan]'
+    };
+
+    function setSectionVariant(kind, variant) {
+      const renderArea = document.querySelector(`[data-render-kind="${kind}"]`);
+      if (!renderArea) return;
+
+      const items = renderArea.querySelectorAll('.galeri-variant-item');
+      const buttons = document.querySelectorAll(`[data-kind="${kind}"].galeri-btn`);
+      const viewToggle = document.querySelector(`[data-view-toggle="${kind}"]`);
+
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-variant') === variant;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+      });
+
+      const descEl = document.getElementById(`${kind}-active-desc`);
+      if (descEl) {
+        descEl.textContent = variant === 'all' ? 'Menampilkan semua varian komparasi' : (descriptions[variant] || variant);
+      }
+
+      if (viewToggle) {
+        viewToggle.style.display = variant === 'all' ? 'inline-flex' : 'none';
+      }
+
+      items.forEach((item) => {
+        if (variant === 'all') {
+          item.classList.add('active');
+        } else {
+          item.classList.toggle('active', item.getAttribute('data-variant-box') === variant);
+        }
+      });
+    }
+
+    document.querySelectorAll('.galeri-mode-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const kind = btn.getAttribute('data-kind');
+        const mode = btn.getAttribute('data-mode');
+        const renderArea = document.querySelector(`[data-render-kind="${kind}"]`);
+        if (!renderArea) return;
+
+        const siblings = document.querySelectorAll(`[data-view-toggle="${kind}"] .galeri-mode-btn`);
+        siblings.forEach((s) => {
+          const isActive = s === btn;
+          s.classList.toggle('active', isActive);
+          s.setAttribute('aria-pressed', String(isActive));
+        });
+
+        if (mode === 'side') {
+          renderArea.classList.add('is-side-by-side');
+        } else {
+          renderArea.classList.remove('is-side-by-side');
+        }
+      });
+    });
+
+    document.querySelectorAll('.galeri-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const kind = btn.getAttribute('data-kind');
+        const variant = btn.getAttribute('data-variant');
+        if (kind && variant) {
+          setSectionVariant(kind, variant);
+        }
+      });
+    });
+
+    // Add Gunakan di Perakit button to each toolbar
+    document.querySelectorAll('.galeri-toolbar').forEach((tb) => {
+      const kind = tb.getAttribute('data-section-kind');
+      const controls = tb.querySelector('.galeri-toolbar-controls');
+      if (controls && kind) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'wf-btn galeri-btn galeri-btn-use';
+        btn.textContent = 'Gunakan di Perakit';
+        btn.title = 'Gunakan varian aktif ini di Perakit Halaman';
+        btn.addEventListener('click', () => {
+          const activeBtn = tb.querySelector(`.galeri-btn.active[data-kind="${kind}"]`);
+          const variant = activeBtn ? activeBtn.getAttribute('data-variant') : null;
+          if (variant && variant !== 'all') {
+            window.location.href = `/?set=${variant}`;
+          } else {
+            window.location.href = '/';
+          }
+        });
+        controls.appendChild(btn);
+      }
+    });
+
+    // Initialize initial ARIA states
+    document.querySelectorAll('.galeri-btn, .galeri-mode-btn').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn.classList.contains('active')));
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const targetSection = params.get('section');
+    const targetVariant = params.get('variant');
+    const isClean = params.get('clean') === '1';
+
+    const validSections = [
+      'navbar', 'hero', 'layanan', 'footer',
+      'langkah', 'keunggulan', 'lokasi', 'cta',
+      'galeri', 'ulasan', 'biaya', 'tanya-jawab', 'profil'
+    ];
+    if (targetSection) {
+      if (validSections.includes(targetSection)) {
+        validSections.forEach((k) => {
+          const group = document.getElementById(`section-${k}-group`);
+          if (group) {
+            if (k === targetSection) {
+              group.style.display = 'block';
+              if (targetVariant) {
+                setSectionVariant(k, targetVariant);
+              }
+            } else {
+              group.style.display = 'none';
+            }
+          }
+        });
+      } else {
+        const notice = document.getElementById('galeri-param-notice');
+        const noticeText = document.getElementById('galeri-param-notice-text');
+        if (notice && noticeText) {
+          notice.style.display = 'flex';
+          noticeText.textContent = `Parameter section "${targetSection}" tidak dikenali. Seluruh section ditampilkan secara lengkap.`;
+        }
+      }
+
+      if (isClean) {
+        const intro = document.getElementById('galeri-header-intro');
+        if (intro) intro.style.display = 'none';
+        const jumpBar = document.getElementById('galeri-sticky-jump-bar');
+        if (jumpBar) jumpBar.style.display = 'none';
+        document.querySelectorAll('.galeri-toolbar, .galeri-variant-tag').forEach((el) => {
+          el.style.display = 'none';
+        });
+      }
+    }
+  </script>
+
+  <style>
+    .galeri-page {
+      padding-bottom: var(--wf-space-8);
+    }
+
+    .galeri-jump-bar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: var(--wf-bg);
+      border-bottom: 2px solid var(--wf-line);
+      padding-block: var(--wf-space-2);
+    }
+
+    .galeri-jump-inner {
+      display: flex;
+      align-items: center;
+      gap: var(--wf-space-3);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .galeri-jump-label {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--wf-ink);
+      flex-shrink: 0;
+    }
+
+    .galeri-jump-links {
+      display: flex;
+      align-items: center;
+      gap: var(--wf-space-1);
+    }
+
+    .galeri-jump-link {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: var(--wf-space-1) var(--wf-space-2);
+      color: var(--wf-ink);
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: var(--wf-radius);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .galeri-jump-link:hover {
+      background-color: var(--wf-fill);
+      border-color: var(--wf-line);
+    }
+
+    .galeri-btn-use {
+      margin-left: auto;
+      background-color: var(--wf-ink);
+      color: var(--wf-bg);
+      border-color: var(--wf-ink);
+    }
+
+    .galeri-btn-use:hover {
+      background-color: var(--wf-line);
+      color: var(--wf-bg);
+    }
+
+    .galeri-intro {
+      padding-block: var(--wf-space-6);
+      border-bottom: 2px solid var(--wf-line);
+      max-width: 52rem;
+    }
+
+    .galeri-title {
+      font-size: 1.875rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: var(--wf-space-2);
+    }
+
+    .galeri-desc {
+      font-size: 1rem;
+      color: var(--wf-ink);
+      line-height: 1.6;
+    }
+
+    .galeri-section-group {
+      border-bottom: 3px solid var(--wf-line);
+    }
+
+    .galeri-toolbar {
+      background-color: var(--wf-fill);
+      border-bottom: 1px solid var(--wf-line);
+      padding-block: var(--wf-space-3);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--wf-space-3);
+    }
+
+    .galeri-toolbar-label {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8125rem;
+      color: var(--wf-ink);
+    }
+
+    .galeri-current-desc {
+      color: var(--wf-ink);
+      opacity: 0.85;
+      margin-left: var(--wf-space-2);
+    }
+
+    .galeri-toolbar-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--wf-space-2);
+    }
+
+    .galeri-btn {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      padding: var(--wf-space-1) var(--wf-space-3);
+      background-color: var(--wf-bg);
+      border: 1px solid var(--wf-line);
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .galeri-btn.active {
+      background-color: var(--wf-ink);
+      color: var(--wf-bg);
+      border-color: var(--wf-ink);
+    }
+
+    .galeri-btn-all {
+      font-style: italic;
+    }
+
+    .galeri-view-toggle {
+      display: inline-flex;
+      gap: 2px;
+      margin-left: var(--wf-space-2);
+      border-left: 1px solid var(--wf-line);
+      padding-left: var(--wf-space-2);
+    }
+
+    .galeri-mode-btn {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: var(--wf-space-1) var(--wf-space-2);
+      background-color: var(--wf-bg);
+      border: 1px solid var(--wf-line);
+      min-height: 44px;
+      min-width: 44px;
+      color: var(--wf-ink);
+    }
+
+    .galeri-mode-btn.active {
+      background-color: var(--wf-ink);
+      color: var(--wf-bg);
+      border-color: var(--wf-ink);
+    }
+
+    .galeri-render-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .galeri-render-area.is-side-by-side {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: var(--wf-space-4);
+      padding: var(--wf-space-4);
+      scroll-snap-type: x mandatory;
+      background-color: var(--wf-fill);
+    }
+
+    .galeri-render-area.is-side-by-side .galeri-variant-item {
+      flex: 0 0 100%;
+      min-width: 100%;
+      scroll-snap-align: start;
+      background-color: var(--wf-bg);
+      border: 1px solid var(--wf-line);
+      border-radius: var(--wf-radius);
+    }
+
+    @media (min-width: 1024px) {
+      .galeri-render-area.is-side-by-side .galeri-variant-item {
+        flex: 0 0 1024px;
+        min-width: 1024px;
+      }
+    }
+
+    .galeri-variant-item {
+      display: none;
+      width: 100%;
+    }
+
+    .galeri-variant-item.active {
+      display: block;
+    }
+
+    .galeri-variant-tag {
+      background-color: var(--wf-fill);
+      border-bottom: 1px solid var(--wf-line);
+      padding: var(--wf-space-1) var(--wf-space-4);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--wf-ink);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</BaseLayout>

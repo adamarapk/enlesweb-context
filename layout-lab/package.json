@@ -1,0 +1,27 @@
+{
+  "name": "layout-lab",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "node scripts/no-eyebrow-lint.mjs && astro check && astro build",
+    "preview": "astro preview",
+    "screenshot": "node scripts/capture.mjs",
+    "astro": "astro",
+    "test:eyebrow": "node scripts/no-eyebrow-lint.mjs && node scripts/check-eyebrow-visual.mjs",
+    "test:composer": "node scripts/test-perakit-pratinjau.mjs",
+    "test": "npm run test:eyebrow && npm run test:composer"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "astro": "^5.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "playwright-core": "^1.64.1",
+    "puppeteer-core": "^25.15.0",
+    "typescript": "^5.7.3"
+  }
+}

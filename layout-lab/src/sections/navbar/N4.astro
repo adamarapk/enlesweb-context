@@ -1,0 +1,226 @@
+---
+import type { NavbarData } from '../../schema/navbar';
+
+interface Props {
+  data: NavbarData;
+  id?: string;
+}
+
+const { data, id = 'n4' } = Astro.props;
+const menuId = `${id}-panel`;
+---
+
+<header class="wf-navbar n4" id={id}>
+  <div class="wf-container n4-inner">
+    <div class="n4-top-row">
+      <div class="n4-brand">
+        <a href={data.brand.href || "#section-navbar"} class="n4-brand-link">
+          <span class="n4-brand-name">{data.brand.nama}</span>
+          {data.brand.subjudul && <span class="n4-brand-sub">{data.brand.subjudul}</span>}
+        </a>
+      </div>
+
+      {data.kontakJam && (
+        <div class="n4-contact-desktop">
+          <span class="n4-contact-item">{data.kontakJam.kontak}</span>
+          <span class="n4-contact-sep">|</span>
+          <span class="n4-contact-item">{data.kontakJam.jam}</span>
+        </div>
+      )}
+
+      <button
+        type="button"
+        class="wf-btn n4-toggle"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls={menuId}
+        aria-label="Buka menu navigasi"
+      >
+        Menu
+      </button>
+    </div>
+
+    <div class="n4-bottom-row" id={menuId}>
+      {data.kontakJam && (
+        <div class="n4-contact-mobile">
+          <div>{data.kontakJam.kontak}</div>
+          <div>{data.kontakJam.jam}</div>
+        </div>
+      )}
+
+      <nav class="n4-menu" aria-label="Navigasi Utama N4">
+        <ul class="n4-list">
+          {data.menu.map((item) => (
+            <li>
+              <a href={item.href} class="n4-link">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="n4-cta-wrap">
+        <a href={data.cta.href} class="wf-btn wf-btn-primary n4-cta">{data.cta.label}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .n4 {
+    background-color: var(--wf-bg);
+    border-bottom: 1px solid var(--wf-line);
+    width: 100%;
+  }
+
+  .n4-inner {
+    padding-block: var(--wf-space-2);
+  }
+
+  .n4-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+  }
+
+  .n4-brand-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 44px;
+    color: var(--wf-ink);
+  }
+
+  .n4-brand-name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .n4-brand-sub {
+    font-size: 0.6875rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: var(--wf-line);
+  }
+
+  .n4-contact-desktop {
+    display: none;
+  }
+
+  .n4-toggle {
+    display: inline-flex;
+    padding: var(--wf-space-2) var(--wf-space-3);
+  }
+
+  .n4-bottom-row {
+    display: none;
+    width: 100%;
+    padding-top: var(--wf-space-3);
+    margin-top: var(--wf-space-2);
+    border-top: 1px solid var(--wf-line);
+  }
+
+  @media (max-width: 1023px) {
+    .n4-bottom-row.is-open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--wf-space-3);
+    }
+  }
+
+  .n4-contact-mobile {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    color: var(--wf-line);
+    padding-bottom: var(--wf-space-2);
+    border-bottom: 1px dashed var(--wf-line);
+  }
+
+  .n4-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .n4-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--wf-space-1) 0;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    text-decoration: none;
+  }
+
+  .n4-link:hover {
+    text-decoration: underline;
+  }
+
+  .n4-cta-wrap {
+    padding-top: var(--wf-space-2);
+  }
+
+  .n4-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 1280px / >=1024px desktop layout: 2 stacked rows [Brand+kontak/jam] / [Menu] */
+  @media (min-width: 1024px) {
+    .n4-inner {
+      padding-block: var(--wf-space-1);
+    }
+
+    .n4-toggle {
+      display: none;
+    }
+
+    .n4-contact-desktop {
+      display: flex;
+      align-items: center;
+      gap: var(--wf-space-3);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8125rem;
+      color: var(--wf-line);
+    }
+
+    .n4-contact-sep {
+      color: var(--wf-line);
+    }
+
+    .n4-bottom-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--wf-line);
+      padding-top: var(--wf-space-2);
+      margin-top: var(--wf-space-1);
+    }
+
+    .n4-contact-mobile {
+      display: none;
+    }
+
+    .n4-list {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--wf-space-5);
+    }
+
+    .n4-link {
+      padding: var(--wf-space-2) var(--wf-space-1);
+    }
+
+    .n4-cta-wrap {
+      padding-top: 0;
+    }
+
+    .n4-cta {
+      width: auto;
+    }
+  }
+</style>

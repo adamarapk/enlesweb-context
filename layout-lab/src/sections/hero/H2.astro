@@ -1,0 +1,120 @@
+---
+import type { HeroData } from '../../schema/hero';
+
+interface Props {
+  data: HeroData;
+  id?: string;
+}
+
+const { data, id = 'h2' } = Astro.props;
+---
+
+<section class="wf-hero h2" id={id}>
+  <div class="wf-container">
+    <div class="h2-inner">
+      <div class="h2-content">
+        <h1 class="h2-title wf-break-word">{data.judul}</h1>
+        <p class="h2-desc wf-break-word">{data.subjudul}</p>
+
+        <div class="h2-actions">
+          <a href={data.ctaUtama.href} class="wf-btn wf-btn-primary">{data.ctaUtama.label}</a>
+          {data.ctaSekunder && (
+            <a href={data.ctaSekunder.href} class="wf-btn wf-btn-secondary">{data.ctaSekunder.label}</a>
+          )}
+        </div>
+      </div>
+
+      {data.visual && (
+        <div class="h2-visual-wrap">
+          <div class="wf-visual h2-visual-box" style={{ aspectRatio: data.visual.rasio || '16/9' }}>
+            <span>{data.visual.label}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .h2 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .h2-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--wf-space-5);
+  }
+
+  .h2-content {
+    max-width: 48rem;
+    margin-inline: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h2-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--wf-space-3);
+  }
+
+  .h2-desc {
+    font-size: 1rem;
+    color: var(--wf-ink);
+    margin-bottom: var(--wf-space-5);
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  .h2-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--wf-space-3);
+    width: 100%;
+  }
+
+  .h2-actions .wf-btn {
+    flex: 1 1 140px;
+    max-width: 220px;
+    text-align: center;
+  }
+
+  .h2-visual-wrap {
+    width: 100%;
+    max-width: 56rem;
+    margin-top: var(--wf-space-3);
+  }
+
+  .h2-visual-box {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  /* 1280px / >=1024px desktop layout: [Teks terpusat] */
+  @media (min-width: 1024px) {
+    .h2 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .h2-title {
+      font-size: 2.75rem;
+    }
+
+    .h2-actions .wf-btn {
+      flex: 0 0 auto;
+    }
+
+    .h2-visual-box {
+      min-height: 340px;
+    }
+  }
+</style>

@@ -1,0 +1,160 @@
+---
+import type { HeroData } from '../../schema/hero';
+
+interface Props {
+  data: HeroData;
+  id?: string;
+}
+
+const { data, id = 'h4' } = Astro.props;
+---
+
+<section class="wf-hero h4" id={id}>
+  <div class="wf-container">
+    <div class="h4-grid">
+      <div class="h4-text-col">
+        <h1 class="h4-title wf-break-word">{data.judul}</h1>
+        <p class="h4-desc wf-break-word">{data.subjudul}</p>
+
+        <div class="h4-actions">
+          <a href={data.ctaUtama.href} class="wf-btn wf-btn-primary">{data.ctaUtama.label}</a>
+          {data.ctaSekunder && (
+            <a href={data.ctaSekunder.href} class="wf-btn wf-btn-secondary">{data.ctaSekunder.label}</a>
+          )}
+        </div>
+      </div>
+
+      <div class="h4-info-col">
+        <div class="h4-info-header">Spesifikasi modul ringkas</div>
+        <div class="h4-info-stack">
+          {(!data.kartuInfo || data.kartuInfo.length === 0) ? (
+            <div class="wf-empty-state">
+              <div class="wf-empty-title">Informasi Belum Tersedia</div>
+              <p class="wf-empty-desc">Tidak ada data spesifikasi kartu ringkas dalam konfigurasi data saat ini.</p>
+            </div>
+          ) : (
+            data.kartuInfo.map((card) => (
+              <div class="h4-info-card">
+                <div class="h4-info-label">{card.label}</div>
+                <div class="h4-info-value wf-break-word">{card.nilai}</div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .h4 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .h4-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-6);
+  }
+
+  .h4-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .h4-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--wf-space-3);
+  }
+
+  .h4-desc {
+    font-size: 1rem;
+    color: var(--wf-ink);
+    margin-bottom: var(--wf-space-5);
+    line-height: 1.6;
+    max-width: 38rem;
+  }
+
+  .h4-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wf-space-3);
+    width: 100%;
+  }
+
+  .h4-actions .wf-btn {
+    flex: 1 1 140px;
+    text-align: center;
+  }
+
+  .h4-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .h4-info-header {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--wf-line);
+    letter-spacing: 0.02em;
+  }
+
+  .h4-info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .h4-info-card {
+    border: 1px solid var(--wf-line);
+    background-color: var(--wf-fill);
+    border-radius: var(--wf-radius);
+    padding: var(--wf-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-1);
+  }
+
+  .h4-info-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--wf-ink);
+  }
+
+  .h4-info-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--wf-ink);
+  }
+
+  /* 1280px / >=1024px desktop layout: [Teks] | [Kartu info ringkas] */
+  @media (min-width: 1024px) {
+    .h4 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .h4-grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      align-items: start;
+      gap: var(--wf-space-7);
+    }
+
+    .h4-title {
+      font-size: 2.5rem;
+    }
+
+    .h4-actions .wf-btn {
+      flex: 0 0 auto;
+    }
+  }
+</style>

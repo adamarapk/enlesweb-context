@@ -1,0 +1,238 @@
+---
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '../styles/wireframe.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  clean?: boolean;
+}
+
+const {
+  title,
+  description = 'Laboratorium Tata Letak Section Wireframe Astro Statis',
+  clean = false
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Layout Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap"
+    />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem('layout-lab-theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="wf-skip-link">Lewati ke Konten Utama</a>
+    <header class={`wf-lab-nav ${clean ? 'wf-lab-clean' : ''}`} id="lab-global-bar">
+      <div class="wf-container wf-lab-nav-inner">
+        <div class="wf-lab-brand">
+          <a href="/" class="wf-lab-logo">LAYOUT-LAB</a>
+          <span class="wf-lab-tag">SISTEM WIREFRAME MONOKROM</span>
+        </div>
+
+        <nav class="wf-lab-links" aria-label="Navigasi Laboratorium">
+          <a href="/" class="wf-lab-link">Perakit Halaman</a>
+          <a href="/galeri" class="wf-lab-link">Galeri 43 Varian</a>
+          <a href="/pratinjau" class="wf-lab-link">Pratinjau Klien</a>
+          <a href="/uji" class="wf-lab-link">Uji Data</a>
+          <a href="/legal" class="wf-lab-link">Legal</a>
+          <button type="button" class="wf-lab-link wf-lab-theme-btn" id="wf-theme-toggle" aria-label="Ganti mode tampilan tema">
+            Tema: <span id="wf-theme-label">Terang</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <script is:inline>
+      const themeBtn = document.getElementById('wf-theme-toggle');
+      const themeLabel = document.getElementById('wf-theme-label');
+
+      function updateThemeLabel() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (themeLabel) themeLabel.textContent = isDark ? 'Gelap' : 'Terang';
+      }
+
+      updateThemeLabel();
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+          const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          const nextTheme = isDark ? 'light' : 'dark';
+          if (nextTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+          }
+          try {
+            localStorage.setItem('layout-lab-theme', nextTheme);
+          } catch (e) {}
+          updateThemeLabel();
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        const toggleBtn = e.target.closest('[data-menu-toggle]');
+        if (toggleBtn) {
+          const controlsId = toggleBtn.getAttribute('aria-controls');
+          const panel = controlsId ? document.getElementById(controlsId) : null;
+          const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+          const nextState = !isExpanded;
+
+          toggleBtn.setAttribute('aria-expanded', String(nextState));
+          if (panel) {
+            panel.classList.toggle('is-open', nextState);
+          }
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const openToggles = document.querySelectorAll('[data-menu-toggle][aria-expanded="true"]');
+          openToggles.forEach((btn) => {
+            btn.setAttribute('aria-expanded', 'false');
+            const controlsId = btn.getAttribute('aria-controls');
+            const panel = controlsId ? document.getElementById(controlsId) : null;
+            if (panel) {
+              panel.classList.remove('is-open');
+            }
+            if (btn instanceof HTMLElement) {
+              btn.focus();
+            }
+          });
+        }
+      });
+
+      if (new URLSearchParams(window.location.search).get('clean') === '1') {
+        const bar = document.getElementById('lab-global-bar');
+        if (bar) bar.style.display = 'none';
+      }
+    </script>
+
+    <style>
+      .wf-lab-nav {
+        background-color: var(--wf-ink);
+        color: var(--wf-bg);
+        border-bottom: 1px solid var(--wf-line);
+        padding-block: var(--wf-space-2);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.8125rem;
+      }
+
+      .wf-lab-clean {
+        display: none !important;
+      }
+
+      .wf-lab-nav-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--wf-space-3);
+      }
+
+      .wf-lab-brand {
+        display: flex;
+        align-items: center;
+        gap: var(--wf-space-3);
+      }
+
+      .wf-lab-logo {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        color: var(--wf-bg);
+        text-decoration: none;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .wf-lab-logo:hover {
+        background: none;
+        text-decoration: underline;
+      }
+
+      .wf-lab-tag {
+        font-size: 0.6875rem;
+        color: var(--wf-fill);
+      }
+
+      .wf-lab-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--wf-space-2);
+      }
+
+      .wf-lab-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        min-width: 44px;
+        color: var(--wf-bg);
+        text-decoration: none;
+        padding: var(--wf-space-1) var(--wf-space-3);
+        border: 1px solid transparent;
+        border-radius: var(--wf-radius);
+        background: none;
+        font-family: inherit;
+        font-size: inherit;
+      }
+
+      .wf-lab-link:hover {
+        background-color: var(--wf-line);
+        color: var(--wf-bg);
+        border-color: var(--wf-bg);
+      }
+
+      .wf-lab-nav a:focus,
+      .wf-lab-nav button:focus {
+        outline: 2px solid var(--wf-bg);
+        outline-offset: 2px;
+      }
+
+      .wf-lab-nav a:focus:not(:focus-visible),
+      .wf-lab-nav button:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      .wf-lab-nav a:focus-visible,
+      .wf-lab-nav button:focus-visible {
+        outline: 2px solid var(--wf-bg);
+        outline-offset: 2px;
+      }
+
+      .wf-lab-theme-btn {
+        cursor: pointer;
+        font-weight: 700;
+      }
+    </style>
+  </body>
+</html>

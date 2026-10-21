@@ -1,0 +1,195 @@
+---
+import type { GaleriData } from '../../schema/galeri';
+
+interface Props {
+  data: GaleriData;
+  id?: string;
+}
+
+const { data, id = 'g2' } = Astro.props;
+const items = data.items || [];
+const mainItem = items[0];
+const sideItems = items.slice(1);
+---
+
+<section class="wf-galeri g2" id={id}>
+  <div class="wf-container">
+    <div class="g2-header">
+      <h2 class="g2-title wf-break-word">{data.title}</h2>
+      {data.intro && <p class="g2-intro wf-break-word">{data.intro}</p>}
+    </div>
+
+    {data.status === 'loading' ? (
+      <div class="wf-state-indicator" role="status" aria-live="polite">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Memuat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Sedang memuat data galeri bento...'}</span>
+        </div>
+      </div>
+    ) : data.status === 'error' ? (
+      <div class="wf-state-indicator" role="alert" aria-live="assertive">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Galat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Gagal memuat galeri bento. Silakan coba muat ulang.'}</span>
+        </div>
+        <a href="/uji" class="wf-btn wf-btn-secondary wf-state-action">Muat Ulang</a>
+      </div>
+    ) : (!items || items.length === 0) ? (
+      <div class="wf-empty-state">
+        <h3 class="wf-empty-title">Belum Ada Item Galeri</h3>
+        <p class="wf-empty-desc">{data.pesanStatus || 'Tidak ada entri dokumentasi terdaftar saat ini.'}</p>
+        <a href="/uji" class="wf-btn wf-btn-secondary">Pilih Dataset Lain</a>
+      </div>
+    ) : (
+      <div class="g2-bento">
+        {mainItem && (
+          <article class="g2-card g2-main-card">
+            <div class="wf-visual g2-main-visual">Visual</div>
+            <div class="g2-card-content">
+              <h3 class="g2-main-title wf-break-word">{mainItem.title}</h3>
+              {mainItem.caption && <p class="g2-item-caption wf-break-word">{mainItem.caption}</p>}
+            </div>
+          </article>
+        )}
+
+        {sideItems.length > 0 && (
+          <div class="g2-side-grid">
+            {sideItems.map((item) => (
+              <article class="g2-card g2-side-card">
+                <div class="wf-visual g2-side-visual">Visual</div>
+                <div class="g2-card-content">
+                  <h3 class="g2-item-title wf-break-word">{item.title}</h3>
+                  {item.caption && <p class="g2-item-caption wf-break-word">{item.caption}</p>}
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .g2 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .g2-header {
+    margin-bottom: var(--wf-space-6);
+    max-width: 48rem;
+  }
+
+  .g2-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: var(--wf-space-2);
+  }
+
+  .g2-intro {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.6;
+  }
+
+  .g2-bento {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-5);
+  }
+
+  .g2-card {
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    background-color: var(--wf-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .g2-main-card {
+    border-width: 2px;
+  }
+
+  .g2-main-visual {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 200px;
+    border: none;
+    border-bottom: 1px solid var(--wf-line);
+    border-radius: 0;
+  }
+
+  .g2-side-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-4);
+  }
+
+  .g2-side-visual {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 120px;
+    border: none;
+    border-bottom: 1px solid var(--wf-line);
+    border-radius: 0;
+  }
+
+  .g2-card-content {
+    padding: var(--wf-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .g2-main-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .g2-item-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .g2-item-caption {
+    font-size: 0.875rem;
+    color: var(--wf-ink);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .g2-side-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--wf-space-4);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .g2 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .g2-title {
+      font-size: 2rem;
+    }
+
+    .g2-bento {
+      display: grid;
+      grid-template-columns: 1.1fr 1.9fr;
+      gap: var(--wf-space-6);
+      align-items: stretch;
+    }
+
+    .g2-main-visual {
+      flex: 1;
+      min-height: 280px;
+    }
+  }
+</style>

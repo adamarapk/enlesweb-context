@@ -1,0 +1,189 @@
+---
+import type { NavbarData } from '../../schema/navbar';
+
+interface Props {
+  data: NavbarData;
+  id?: string;
+}
+
+const { data, id = 'n2' } = Astro.props;
+const menuId = `${id}-panel`;
+---
+
+<header class="wf-navbar n2" id={id}>
+  <div class="wf-container n2-inner">
+    <div class="n2-brand">
+      <a href={data.brand.href || "#section-navbar"} class="n2-brand-link">
+        <span class="n2-brand-name">{data.brand.nama}</span>
+        {data.brand.subjudul && <span class="n2-brand-sub">{data.brand.subjudul}</span>}
+      </a>
+    </div>
+
+    <button
+      type="button"
+      class="wf-btn n2-toggle"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls={menuId}
+      aria-label="Buka menu navigasi"
+    >
+      Menu
+    </button>
+
+    <div class="n2-nav-wrap" id={menuId}>
+      <div class="n2-right-group">
+        <nav class="n2-menu" aria-label="Navigasi Utama N2">
+          <ul class="n2-list">
+            {data.menu.map((item) => (
+              <li class="n2-item">
+                <a href={item.href} class="n2-link">{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="n2-cta-wrap">
+          <a href={data.cta.href} class="wf-btn wf-btn-primary n2-cta">{data.cta.label}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .n2 {
+    background-color: var(--wf-bg);
+    border-bottom: 1px solid var(--wf-line);
+    width: 100%;
+  }
+
+  .n2-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    padding-block: var(--wf-space-2);
+  }
+
+  .n2-brand-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 44px;
+    color: var(--wf-ink);
+  }
+
+  .n2-brand-name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .n2-brand-sub {
+    font-size: 0.6875rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: var(--wf-line);
+  }
+
+  .n2-toggle {
+    display: inline-flex;
+    padding: var(--wf-space-2) var(--wf-space-3);
+  }
+
+  .n2-nav-wrap {
+    display: none;
+    width: 100%;
+    padding-top: var(--wf-space-3);
+    margin-top: var(--wf-space-2);
+    border-top: 1px solid var(--wf-line);
+  }
+
+  @media (max-width: 1023px) {
+    .n2-nav-wrap.is-open {
+      display: block;
+    }
+  }
+
+  .n2-right-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-3);
+  }
+
+  .n2-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .n2-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--wf-space-1) 0;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    text-decoration: none;
+  }
+
+  .n2-link:hover {
+    text-decoration: underline;
+  }
+
+  .n2-cta-wrap {
+    padding-top: var(--wf-space-2);
+  }
+
+  .n2-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 1280px / >=1024px desktop layout: [Brand] | [Menu + CTA kanan] */
+  @media (min-width: 1024px) {
+    .n2-inner {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    .n2-toggle {
+      display: none;
+    }
+
+    .n2-nav-wrap {
+      display: block;
+      width: auto;
+      padding-top: 0;
+      margin-top: 0;
+      border-top: none;
+    }
+
+    .n2-right-group {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--wf-space-6);
+    }
+
+    .n2-list {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--wf-space-5);
+    }
+
+    .n2-link {
+      padding: var(--wf-space-2) var(--wf-space-1);
+    }
+
+    .n2-cta-wrap {
+      padding-top: 0;
+    }
+
+    .n2-cta {
+      width: auto;
+    }
+  }
+</style>

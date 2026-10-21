@@ -1,0 +1,257 @@
+---
+import type { LokasiData } from '../../schema/lokasi';
+
+interface Props {
+  data: LokasiData;
+  id?: string;
+}
+
+const { data, id = 'l2' } = Astro.props;
+const isExternalMap = data.mapsUrl ? (data.mapsUrl.startsWith('http://') || data.mapsUrl.startsWith('https://')) : false;
+---
+
+<section class="wf-lokasi l2" id={id}>
+  <div class="wf-container">
+    <div class="l2-header">
+      <h2 class="l2-title wf-break-word">{data.title}</h2>
+    </div>
+
+    {data.status === 'loading' ? (
+      <div class="wf-state-indicator" role="status" aria-live="polite">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Memuat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Sedang memuat data lokasi dan jadwal operasional...'}</span>
+        </div>
+      </div>
+    ) : data.status === 'error' ? (
+      <div class="wf-state-indicator" role="alert" aria-live="assertive">
+        <div class="wf-state-content">
+          <span class="wf-state-mark">Galat</span>
+          <span class="wf-state-text">{data.pesanStatus || 'Gagal memuat data lokasi dan jadwal. Silakan coba muat ulang.'}</span>
+        </div>
+        <a href="/uji?mode=status" class="wf-btn wf-btn-secondary wf-state-action">Muat Ulang</a>
+      </div>
+    ) : (data.status === 'empty' || (!data.address && (!data.openingHours || data.openingHours.length === 0))) ? (
+      <div class="wf-empty-state">
+        <h3 class="wf-empty-title">Informasi Lokasi Belum Tersedia</h3>
+        <p class="wf-empty-desc">{data.pesanStatus || 'Detail alamat dan jam operasional belum dikonfigurasi dalam sistem.'}</p>
+        <a href="/uji" class="wf-btn wf-btn-secondary">Pilih Dataset Lain</a>
+      </div>
+    ) : (
+      <div class="l2-stage">
+        <div class="l2-map-placeholder" role="img" aria-label="Area Peta Lokasi">
+          <span class="l2-map-text" aria-hidden="true">Peta</span>
+        </div>
+
+        <div class="l2-overlay-card">
+          {data.address && (
+            <div class="l2-section-block">
+              <h3 class="l2-block-title">Alamat Operasional</h3>
+              <p class="l2-address-text wf-break-word">{data.address}</p>
+              {data.city && <p class="l2-city-text wf-break-word">{data.city}</p>}
+              {data.landmarkNote && (
+                <p class="l2-landmark-text wf-break-word">{data.landmarkNote}</p>
+              )}
+            </div>
+          )}
+
+          {data.openingHours && data.openingHours.length > 0 && (
+            <div class="l2-section-block">
+              <h3 class="l2-block-title">Jadwal Operasional</h3>
+              <div class="l2-hours-list">
+                {data.openingHours.map((row) => (
+                  <div class="l2-hours-row">
+                    <span class="l2-hours-days wf-break-word">{row.days}</span>
+                    <span class="l2-hours-time wf-break-word">{row.hours}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="l2-actions">
+            <a
+              href={data.mapsUrl || '#section-lokasi'}
+              target={isExternalMap ? '_blank' : undefined}
+              rel={isExternalMap ? 'noopener noreferrer' : undefined}
+              class="wf-btn wf-btn-primary"
+              aria-label={isExternalMap ? 'Buka lokasi di Google Maps (terbuka di tab baru)' : 'Lokasi kantor'}
+            >
+              Buka di Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .l2 {
+    padding-block: var(--wf-space-6);
+    border-bottom: 1px solid var(--wf-line);
+    background-color: var(--wf-bg);
+  }
+
+  .l2-header {
+    margin-bottom: var(--wf-space-6);
+    max-width: 48rem;
+  }
+
+  .l2-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  /* Mobile: peta di atas, kartu info ditumpuk di bawah */
+  .l2-stage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-4);
+  }
+
+  .l2-map-placeholder {
+    width: 100%;
+    min-height: 240px;
+    background-color: var(--wf-fill);
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .l2-map-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--wf-ink);
+  }
+
+  .l2-overlay-card {
+    border: 1px solid var(--wf-line);
+    border-radius: var(--wf-radius);
+    padding: var(--wf-space-5);
+    background-color: var(--wf-bg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-4);
+  }
+
+  .l2-section-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .l2-block-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    border-bottom: 1px solid var(--wf-line);
+    padding-bottom: var(--wf-space-1);
+    color: var(--wf-ink);
+  }
+
+  .l2-address-text {
+    font-size: 0.9375rem;
+    color: var(--wf-ink);
+    line-height: 1.5;
+  }
+
+  .l2-city-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--wf-ink);
+  }
+
+  .l2-landmark-text {
+    font-size: 0.8125rem;
+    color: var(--wf-ink);
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .l2-hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wf-space-2);
+  }
+
+  .l2-hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--wf-space-3);
+    font-size: 0.875rem;
+    border-bottom: 1px dashed var(--wf-line);
+    padding-bottom: var(--wf-space-1);
+  }
+
+  .l2-hours-days {
+    font-weight: 600;
+  }
+
+  .l2-hours-time {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8125rem;
+    text-align: right;
+  }
+
+  .l2-actions {
+    padding-top: var(--wf-space-2);
+  }
+
+  .l2-actions .wf-btn {
+    width: 100%;
+  }
+
+  /* 768px tablet layout: tombol lebar alami */
+  @media (min-width: 768px) {
+    .l2-actions .wf-btn {
+      width: auto;
+    }
+  }
+
+  /* 1280px / >=1024px desktop layout: peta penuh lebar dengan kartu info menimpa di sudut */
+  @media (min-width: 1024px) {
+    .l2 {
+      padding-block: var(--wf-space-8);
+    }
+
+    .l2-title {
+      font-size: 2rem;
+    }
+
+    .l2-stage {
+      display: grid;
+      grid-template-areas: "stage";
+      min-height: 480px;
+    }
+
+    .l2-map-placeholder {
+      grid-area: stage;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+    }
+
+    .l2-overlay-card {
+      grid-area: stage;
+      justify-self: end;
+      align-self: end;
+      margin: var(--wf-space-5);
+      max-width: 26rem;
+      width: calc(100% - 2 * var(--wf-space-5));
+      border: 2px solid var(--wf-line);
+      z-index: 2;
+    }
+
+    .l2-actions .wf-btn {
+      width: auto;
+    }
+  }
+</style>
