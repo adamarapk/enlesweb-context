@@ -1,17 +1,17 @@
 # ENLESWEB --- HISTORI KONTEKS, PERKEMBANGAN, DAN PROGRESS DELTA
 
-Versi Dokumen: 4.1 (Checkpoint Awal Kampanye Meta Ads - 21 Oktober 2026)
-Tanggal Pembaruan Terakhir: 21 Oktober 2026
-Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–022, SOP transaksi v1.2 tetap CLOSED, seluruh tugas Minggu 0 CLOSED; deployment layout-lab belum terkonfirmasi)
+Versi Dokumen: 4.2 (Unifikasi Cloudflare Workers & Peluncuran Produksi layout-lab - 28 Oktober 2026)
+Tanggal Pembaruan Terakhir: 28 Oktober 2026
+Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–023, SOP transaksi v1.3, seluruh ekosistem terpadu di Cloudflare Workers; layout-lab live di preview.enlesweb.com)
 Fungsi: Sumber Referensi Tunggal untuk Konteks Bisnis, Evolusi Konsep, Progress Delta, dan Gap Register ENLESWEB.
-Ringkasan Pembaruan: Iklan mulai tayang 21 Oktober pukul 09.00. Setelah 12 jam, belanja dua iklan Rp16.000 dengan sekitar 70% terserap iklan video dan satu percakapan pesan yang belum dikualifikasi. Outreach dan DP masih nol, belum ada proyek nyata, dan layout-lab masih lokal. Decision 022 tetap menunggu deployment serta verifikasi URL sebelum preview pra-DP dibagikan.
+Ringkasan Pembaruan: Seluruh 6 demo konsep portofolio (*.enlesweb.com) dan internal composer layout-lab (preview.enlesweb.com) resmi di-deploy ke Cloudflare Workers. Hosting lama Vercel telah resmi dinonaktifkan (Decision 023). layout-lab live menggunakan format Stateless Compact ID (/p/<id>) dan alur SOP chat WhatsApp ditingkatkan ke v1.3 (Decision 022 CLOSED).
 
 ---
 
 ## ATURAN HIRARKI KEPUTUSAN (SOURCE OF TRUTH HIERARCHY)
 Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan hirarki prioritas berikut:
-1. KEPUTUSAN TERBARU (18 Oktober 2026 - PENYELESAIAN TEMPLATE PDF BUKTI PEMESANAN CLOSED, KESIAPAN MATERI IKLAN META CLOSED, PENUTUPAN SELURUH TUGAS MINGGU 0 CLOSED, TRANSISI MASTER DOCS V4, DECISION 020; 17 Oktober 2026 - OPTIMASI MENYELURUH PAGESPEED INSIGHTS 100/100 MOBILE & DESKTOP CLOSED, DECISION 019; 17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
-2. ENLESWEB-DOCS-V4.md (PRD / CONTENT / DESIGN / SPEC) & `Delivery & Operations/sop.md` v1.2 > Menang untuk spesifikasi teknis, salinan copy baseline, dan SOP operasional.
+1. KEPUTUSAN TERBARU (28 Oktober 2026 - UNIFIKASI HOSTING CLOUDFLARE WORKERS *.ENLESWEB.COM, PENONAKTIFAN VERCEL, PELUNCURAN PRODUKSI LAYOUT-LAB PREVIEW.ENLESWEB.COM DENGAN STATELESS COMPACT ID /P/<ID>, DECISION 023 & DECISION 022 CLOSED; 18 Oktober 2026 - PENYELESAIAN TEMPLATE PDF BUKTI PEMESANAN CLOSED, KESIAPAN MATERI IKLAN META CLOSED, PENUTUPAN SELURUH TUGAS MINGGU 0 CLOSED, TRANSISI MASTER DOCS V4, DECISION 020; 17 Oktober 2026 - OPTIMASI MENYELURUH PAGESPEED INSIGHTS 100/100 MOBILE & DESKTOP CLOSED, DECISION 019; 17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
+2. ENLESWEB-DOCS-V4.md (PRD / CONTENT / DESIGN / SPEC) & `Delivery & Operations/sop.md` v1.3 > Menang untuk spesifikasi teknis, salinan copy baseline, dan SOP operasional.
 3. CONTEXT-DETAIL-V3.md > Menang atas V2 untuk transisi Ship Mode dan Launch-Ready state.
 4. CONTEXT-DETAIL-V2.md > Konteks historis fondasi bisnis & Website Builder system.
 
@@ -19,18 +19,18 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
 
 ## TABLE OF CONTENTS (DAFTAR ISI)
 
-Pembaruan terbaru per 21 Oktober 2026: checkpoint iklan awal ada di [Minggu 1 review](Business%20Memory/weekly-review.md) dan [KPI](Business%20Memory/kpi.md). Aturan preview pra-DP ada di [Decision 022](Business%20Memory/decision-log.md#decision-022) dan [panduan layout-lab](layout-lab/README.md). Gerbang Website Builder pada Decision 011 tidak berubah.
+Pembaruan terbaru per 28 Oktober 2026: Unifikasi hosting ekosistem (*.enlesweb.com) ke Cloudflare Workers dan penonaktifan Vercel (Decision 023). layout-lab telah live di `preview.enlesweb.com` dengan Stateless Compact ID (`/p/<id>`) dan rute studio terlindungi (`/studio-admin/*`) untuk mendukung alur SOP v1.3 pra-DP Langkah 3b (Decision 022 CLOSED). Gerbang Website Builder pada Decision 011 tidak berubah.
 
 1. BERKAS 1: ENLESWEB-CONTEXT-GAPS.md (Gap Register & Decision Register Terkini - 18 Oktober 2026)
    - 0. Source yang Dibandingkan
    - 1. Status Homepage V3: Selesai Diimplementasikan & Lulus QA Penuh (0 Error, 0 Warning)
    - 2. Desain Hero & Navbar: Ambient Wash Menembus Navbar Transparan (Hero Bleed)
    - 3. Affordance Tombol: Engineered Tactile 3D Shelf (Presisi 3px Solid #A3C400, Zero Diffuse Blur)
-   - 4. Eyebrow & Anti-Slop: Peniadaan Eyebrow & Larangan Tanda Baca Em Dash (—)
+   - 4. Eyebrow & Anti-Slop: Peniadaan Eyebrow & Larangan Tanda Baca Em Dash (-)
    - 5. Showcase Portofolio: 6 Proyek Konsep Lengkap Mencakup Ketiga Tingkatan Paket
-   - 6. Standar Minimum Proyek Demo (Semua Live Publik di Vercel dengan Aset Lokal)
-   - 7. Strategi Hosting Terpisah: Homepage (Cloudflare Workers) & Proyek Demo (Vercel)
-   - 8. Status Variabel Bisnis & Register Item CLOSED (WhatsApp, Pixel, Instagram, OG Image, Staging, SOP v1.2, Domain enlesweb.com, PSI 100/100)
+   - 6. Standar Minimum Proyek Demo (Semua Live Publik di Cloudflare Workers dengan Aset Lokal)
+   - 7. Strategi Hosting Terpadu: Seluruh Ekosistem di Cloudflare Workers (*.enlesweb.com, Vercel Dinonaktifkan)
+   - 8. Status Variabel Bisnis & Register Item CLOSED (WhatsApp, Pixel, Instagram, OG Image, Staging, SOP v1.3, Domain enlesweb.com, PSI 100/100)
    - 9. Posisi Etis Showcase: Contoh Kemampuan Jujur, Bukan Klien Nyata / Testimoni Palsu
    - 10. Status Terkini: Homepage Selesai, Domain enlesweb.com Aktif, & PageSpeed 100/100 (Siap Produksi Cloudflare Workers)
    - 11. REGISTER ITEM MINGGU 0 & STATUS TINDAK LANJUT (SELURUHNYA CLOSED)
@@ -47,7 +47,7 @@ Pembaruan terbaru per 21 Oktober 2026: checkpoint iklan awal ada di [Minggu 1 re
    - 4. Implementation Review & Polish V3
    - 5. Hero & Navbar Transparan (Perkembangan Terkini)
    - 6. Sistem Tombol Engineered Tactile (Penyempurnaan Anti-Slop)
-   - 7. Status Portofolio 6 Proyek Demo Live di Vercel
+   - 7. Status Portofolio 6 Proyek Demo Live di Cloudflare Workers
    - 8. Penyelarasan Tipografi Paket Sub-Pixel di Desktop
    - 9. Evaluasi 16 Langkah Flawless Execution (16 dari 16 Selesai - 100% Complete)
    - 10. Hal yang Tidak Berubah (Prinsip Terkunci)
@@ -146,12 +146,12 @@ Penyempurnaan tombol aksi WhatsApp dan paket (LOCKED):
 
 5. SHOWCASE PORTOFOLIO: 6 PROYEK KONSEP LENGKAP DENGAN PEMETAAN TIER
 Risiko jurang ekspektasi (*expectation gap*) yang tercatat di fase sebelumnya telah **RESMI TERSELESAIKAN (RESOLVED)**. Homepage kini menampilkan 6 proyek konsep yang mewakili ketiga tingkatan paket:
-1. **Jerseay** (Studio jersey custom): Tingkat Growth, URL: `https://jerseay.vercel.app/` (Default Highlighted Stage)
-2. **dipotongin** (Studio barbershop): Tingkat Growth, URL: `https://dipotongin.vercel.app/`
-3. **tuntas** (Bimbel kelompok kecil & privat): Tingkat Business, URL: `https://tuntas-steel.vercel.app/`
-4. **Seruput Kopi** (Kedai kopi lokal): Tingkat Starter, URL: `https://seruput-kopi.vercel.app/`
-5. **ripeir** (Workshop perbaikan barang): Tingkat Starter, URL: `https://ripeir.vercel.app/` (Downgrade dari Growth ke Starter sesuai keputusan pemilik bisnis)
-6. **berflower** (Toko bunga dan hadiah): Tingkat Growth, URL: `https://berflower-lilac.vercel.app/`
+1. **Jerseay** (Studio jersey custom): Tingkat Growth, URL: `https://jerseay.enlesweb.com/` (Default Highlighted Stage)
+2. **dipotongin** (Studio barbershop): Tingkat Growth, URL: `https://dipotongin.enlesweb.com/`
+3. **tuntas** (Bimbel kelompok kecil & privat): Tingkat Business, URL: `https://tuntas.enlesweb.com/`
+4. **Seruput Kopi** (Kedai kopi lokal): Tingkat Starter, URL: `https://seruput.enlesweb.com/`
+5. **ripeir** (Workshop perbaikan barang): Tingkat Starter, URL: `https://ripeir.enlesweb.com/` (Downgrade dari Growth ke Starter sesuai keputusan pemilik bisnis)
+6. **berflower** (Toko bunga dan hadiah): Tingkat Growth, URL: `https://berflower.enlesweb.com/`
 
 Sistem Showcase:
 - 1 proyek tampil dalam panggung pameran berasio 16:10 (*highlighted stage*).
@@ -160,20 +160,20 @@ Sistem Showcase:
 
 --------------------------------------------------------------------------------
 
-6. STANDAR MINIMUM PROYEK DEMO (SEMUA LIVE PUBLIK DI VERCEL)
+6. STANDAR MINIMUM PROYEK DEMO (SEMUA LIVE PUBLIK DI CLOUDFLARE WORKERS)
 Keenam proyek portofolio konsep telah memenuhi standar kelayakan demo publik:
 - Visual selesai, responsif dari layar smartphone hingga desktop.
 - Navigasi utama dan interaksi esensial berfungsi.
-- Dideploy publik via Vercel dengan HTTPS aktif.
+- Dideploy publik via Cloudflare Workers (*.enlesweb.com) dengan HTTPS aktif (Vercel dinonaktifkan per Decision 023).
 - Memiliki aset tangkapan layar WebP lokal dan favicon SVG di `src/assets/projects/`.
 - Seluruh 6 tombol proyek di homepage berstatus aktif sebagai `[Lihat Website]` membuka demo live di tab baru (`target="_blank" rel="noopener noreferrer"`).
 
 --------------------------------------------------------------------------------
 
-7. STRATEGI HOSTING TERPISAH
-- ENLESWEB Homepage -> Cloudflare Workers (target hosting produksi situs utama).
-- Proyek Demo (6 proyek) -> Vercel (hosting live demo).
-Pemisahan ini menjaga stabilitas dan performa independen antar situs.
+7. STRATEGI HOSTING TERPADU
+- Seluruh ekosistem ENLESWEB (Homepage `enlesweb.com`, 6 proyek demo `*.enlesweb.com`, dan internal composer `preview.enlesweb.com`) kini dihosting terpusat di **Cloudflare Workers**.
+- Hosting pihak ketiga lama (Vercel) telah dinonaktifkan secara resmi (Decision 023).
+Unifikasi ini mengkonsolidasikan seluruh domain di bawah manajemen DNS Cloudflare yang rapi dan berbiaya Rp0 (tier gratis).
 
 --------------------------------------------------------------------------------
 
@@ -190,7 +190,7 @@ Berdasarkan audit repositori dan konfirmasi wawancara /grill-me (14–17 Oktober
 - **Favicon & Web Manifest**: `public/favicon.svg` dan favicon proyek lengkap (CLOSED).
 - **SEO & Sitemap**: Schema.org JSON-LD `ProfessionalService`, sitemap otomatis `dist/sitemap-index.xml`, dan `public/robots.txt` aktif (CLOSED).
 - **CI/CD Pipeline**: `wrangler.json` dan `.github/workflows/deploy.yml` terpasang untuk deployment otomatis ke Cloudflare Workers saat push ke `main` (CLOSED).
-- **SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.2)**: Resmi terkunci (**CLOSED**, Decision 013–017) mencakup Template 5.1 s/d 5.9, jembatan ekspektasi demo antar-tier, *default framing* ekstensi `.com`, kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset saat perpanjangan terkelola), waktu pembelian domain pasca-DP 50% + materi dasar lengkap, aturan *On-Hold* 60 hari kalender, serta transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF.
+- **SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.3)**: Resmi terkunci (**CLOSED**, Decision 013–017, Decision 022 & 023) mencakup Template 5.1 s/d 5.9, jembatan ekspektasi demo antar-tier, *default framing* ekstensi `.com`, kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset saat perpanjangan terkelola), waktu pembelian domain pasca-DP 50% + materi dasar lengkap, aturan *On-Hold* 60 hari kalender, transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF, serta integrasi preview tata letak dummy pra-DP via `preview.enlesweb.com/p/<id>`.
 - **Optimasi PageSpeed Insights (Desktop 100/100, Mobile 95/100) & Agentic Browsing 3/3 (100%)**: Selesai diimplementasikan penuh (**CLOSED**, Decision 019) mencakup inlined stylesheet CSS 8.3 KiB, eliminasi forced reflow & late style invalidation via skrip sebaris head js-reveal berpelindung fitur, eliminasi bundle JS `copy.js`, preload seluruh 4 bobot font Poppins (700/600/500/400), isolasi GPU hardware compositing pada SVG blur, inisialisasi IntersectionObserver dan scroll check Navbar dijadwalkan via `requestIdleCallback` (fallback setTimeout 100ms), Meta Pixel Opsi A (pemuatan `fbevents.js` murni ditunda hingga interaksi pertama pengguna tanpa timer otomatis untuk TBT 0ms), penonaktifan SPA fallback Cloudflare Workers, dan penambahan `public/llms.txt` serta `public/_headers`.
 
 --------------------------------------------------------------------------------
@@ -204,7 +204,7 @@ Keenam demo portofolio diposisikan secara jujur dan transparan: "Contoh website 
 Status ringkas sistem:
 - Homepage: Selesai, teruji, 0 errors, 0 warnings.
 - Halaman Utilitas: `/kebijakan-privasi` aktif dan memenuhi standar kepatuhan iklan Meta.
-- Portofolio: 6 demo live di Vercel, aset WebP dan favicon terintegrasi.
+- Portofolio: 6 demo live di Cloudflare Workers (*.enlesweb.com, Decision 023), aset WebP dan favicon terintegrasi.
 - Produksi / Domain Kanonikal: Domain resmi `enlesweb.com` telah dibeli di Domainesia dan nameserver/DNS diarahkan ke Cloudflare Workers menggantikan staging sementara `workers.dev` (Decision 018).
 - Metrik PageSpeed Insights Terverifikasi:
   * Benchmark Desktop (Lighthouse Desktop terverifikasi): Performance 100/100, Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 3/3 (100%) (TBT 0 ms, FCP 0.3 s, LCP 0.6 s, CLS 0.007, Speed Index 0.9 s).
@@ -327,15 +327,15 @@ Hero dan Navbar telah selesai diintegrasikan:
 
 --------------------------------------------------------------------------------
 
-7. STATUS PORTOFOLIO 6 PROYEK DEMO LIVE DI VERCEL
-1. **Jerseay** (Studio jersey custom - Growth): `https://jerseay.vercel.app/`
-2. **dipotongin** (Studio barbershop - Growth): `https://dipotongin.vercel.app/`
-3. **tuntas** (Bimbel kelompok kecil & privat - Business): `https://tuntas-steel.vercel.app/`
-4. **Seruput Kopi** (Kedai kopi lokal - Starter): `https://seruput-kopi.vercel.app/`
-5. **ripeir** (Workshop perbaikan barang - Starter): `https://ripeir.vercel.app/`
-6. **berflower** (Toko bunga dan hadiah - Growth): `https://berflower-lilac.vercel.app/`
+7. STATUS PORTOFOLIO 6 PROYEK DEMO LIVE DI CLOUDFLARE WORKERS
+1. **Jerseay** (Studio jersey custom - Growth): `https://jerseay.enlesweb.com/`
+2. **dipotongin** (Studio barbershop - Growth): `https://dipotongin.enlesweb.com/`
+3. **tuntas** (Bimbel kelompok kecil & privat - Business): `https://tuntas.enlesweb.com/`
+4. **Seruput Kopi** (Kedai kopi lokal - Starter): `https://seruput.enlesweb.com/`
+5. **ripeir** (Workshop perbaikan barang - Starter): `https://ripeir.enlesweb.com/`
+6. **berflower** (Toko bunga dan hadiah - Growth): `https://berflower.enlesweb.com/`
 
-Aset tangkapan layar WebP dan favicon vektor dari masing-masing konsep proyek telah tersimpan lokal di `src/assets/projects/`.
+Aset tangkapan layar WebP dan favicon vektor dari masing-masing konsep proyek telah tersimpan lokal di `src/assets/projects/`. (Hosting lama di Vercel telah resmi dinonaktifkan per Decision 023).
 
 --------------------------------------------------------------------------------
 
@@ -351,20 +351,20 @@ Hasil: Tombol toggle dropdown dan tombol CTA sejajar presisi secara horizontal.
 9. EVALUASI 16 LANGKAH FLAWLESS EXECUTION (16 DARI 16 SELESAI - 100% COMPLETE)
 1. Selesaikan Jerseay: SELESAI.
 2. Responsive QA Jerseay: SELESAI.
-3. Deploy Jerseay ke Vercel: SELESAI.
+3. Deploy Jerseay ke Cloudflare Workers (jerseay.enlesweb.com, Vercel dinonaktifkan): SELESAI.
 4. Ambil screenshot Jerseay: SELESAI.
 5. Lock Jerseay: SELESAI.
 6. Selesaikan proyek berflower & ripeir: SELESAI.
 7. Responsive QA berflower & ripeir: SELESAI.
-8. Deploy berflower & ripeir ke Vercel: SELESAI.
+8. Deploy berflower & ripeir ke Cloudflare Workers (*.enlesweb.com, Vercel dinonaktifkan): SELESAI.
 9. Ambil screenshot berflower & ripeir: SELESAI.
 10. Lock berflower & ripeir: SELESAI.
-11. Tambahkan 3 proyek baru (dipotongin, tuntas, seruput kopi), deploy Vercel, screenshot, lock: SELESAI.
+11. Tambahkan 3 proyek baru (dipotongin, tuntas, seruput kopi), deploy Cloudflare Workers (*.enlesweb.com), screenshot, lock: SELESAI.
 12. Update project section ENLESWEB (6 proyek): SELESAI.
 13. Final responsive QA homepage (360px - 1440px): SELESAI.
 14. Final technical/conversion QA & PSI Performance Optimization: SELESAI (0 error, 0 warning, Desktop 100/100 TBT 0ms, Mobile remote web.dev 95/100, Agentic Browsing 3/3 [100%], Decision 019).
-15. Lengkapi konfigurasi variabel riil & kepatuhan (Nomor WA, Pixel ID, Instagram, OG image, halaman Kebijakan Privasi, staging Cloudflare workers.dev, verifikasi fisik HP, serta SOP operasional WhatsApp v1.2 CLOSED): SELESAI.
-16. Launch produksi (Beli domain enlesweb.com & hubungkan ke Cloudflare Workers): SELESAI / CLOSED (Domain kanonikal enlesweb.com telah dibeli di Domainesia, Decision 018).
+15. Lengkapi konfigurasi variabel riil & kepatuhan (Nomor WA, Pixel ID, Instagram, OG image, halaman Kebijakan Privasi, staging Cloudflare workers.dev, verifikasi fisik HP, serta SOP operasional WhatsApp v1.3 CLOSED): SELESAI.
+16. Launch produksi (Beli domain enlesweb.com & hubungkan ke Cloudflare Workers, unifikasi 6 subdomain *.enlesweb.com, dan nonaktifkan Vercel): SELESAI / CLOSED (Domain kanonikal enlesweb.com telah dibeli di Domainesia, Decision 018 & Decision 023).
 
 --------------------------------------------------------------------------------
 
@@ -374,23 +374,23 @@ Keputusan inti tetap LOCKED: satu halaman homepage, WhatsApp sebagai jalur konve
 --------------------------------------------------------------------------------
 
 11. CURRENT NORTH STAR
-Homepage, keenam aset demo proyek, domain kanonikal resmi enlesweb.com (CLOSED), SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED), materi kreatif iklan Meta campaign-1 (CLOSED), dan template PDF Bukti Pemesanan ber-TTD digital (CLOSED, Decision 020) telah selesai dan aktif.
+Homepage, keenam aset demo proyek di Cloudflare Workers, domain kanonikal resmi enlesweb.com (CLOSED), SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.3 CLOSED), materi kreatif iklan Meta campaign-1 (CLOSED), template PDF Bukti Pemesanan ber-TTD digital (CLOSED, Decision 020), dan composer layout-lab di `preview.enlesweb.com` (CLOSED, Decision 022 & 023) telah selesai dan aktif.
 North Star Minggu 0 (100% CLOSED) -> **Beralih ke Minggu 1: Jalankan kampanye iklan berbayar Meta Ads Minggu 1 (Rp100.000 selama 7 hari) + Micro-Warm Outreach manual via DM Instagram @enlesweb.**
 
 --------------------------------------------------------------------------------
 
-12. PROGRESS & KEPUTUSAN PENGGUNAAN layout-lab (21 OKTOBER 2026)
+12. PROGRESS & KEPUTUSAN PENGGUNAAN layout-lab (28 OKTOBER 2026, DECISION 022 CLOSED & DECISION 023)
 
-- layout-lab sudah dibangun sebagai composer internal untuk memilih varian dan menyusun urutan section sebelum DP.
-- Composer memuat 43 varian dari 13 kategori. Contoh bisnis dan seluruh isi seperti nama, harga, ulasan, alamat, serta kontak merupakan data dummy.
-- Preview resep memakai rute `/pratinjau?s=...`. Per 21 Oktober, lab masih berjalan lokal dan belum digunakan klien, sehingga belum ada tautan publik yang siap dibagikan.
-- Decision 022 menetapkan satu preview layout yang relevan dikirim sebelum ringkasan kesepakatan dan permintaan DP, setelah deployment publik aktif dan URL diverifikasi. Ini adalah langkah penjualan untuk membantu prospek membayangkan susunan layout.
-- Deployment publik dan penggunaan dengan klien belum terkonfirmasi. Sebelum URL diverifikasi, admin tetap memakai demo tier yang tersedia dan tidak membagikan layout-lab.
-- Preview layout memakai data dummy. Jelaskan bahwa preview bukan draf proyek, bukan hasil kerja klien, tidak memulai pengerjaan, dan tidak mengubah aturan pembatalan/refund.
-- Preview pengerjaan resmi setelah DP tetap memakai materi klien.
-- Lab tidak membuat website produksi atau blueprint JSON dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
-- Panduan: [layout-lab/README.md](layout-lab/README.md). Catatan teknis: [layout-lab/NOTES.md](layout-lab/NOTES.md). Screenshot audit: [arsip 21 Oktober 2026](layout-lab/docs/screens-as-is-2026-10-21/README.md).
-- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022).
+- layout-lab telah resmi di-deploy dan live di Cloudflare Workers dengan subdomain kanonikal `https://preview.enlesweb.com/`.
+- Composer memuat 43 varian dari 13 kategori dengan standardisasi visual (kesetaraan tier S1-S4 & B1-B3, footer F4 bersih tanpa kartu ganda, eliminasi orphan card G1/G2/U1, dsb.).
+- Format URL preview klien menggunakan **Stateless Compact ID** (`https://preview.enlesweb.com/p/<id>`) berbasis Base62 + salt + checksum (`src/utils/recipe-codec.ts`), menggantikan query param lama `/pratinjau?s=...`.
+- Pengamanan rute studio internal (`src/worker.ts`): seluruh alat editor dilindungi di bawah rute `/studio-admin/*` (`/studio-admin/`, `/studio-admin/galeri`, `/studio-admin/uji`, `/studio-admin/legal`), sedangkan rute root `/` dan `/pratinjau` sengaja merespons 404 Not Found demi keamanan.
+- Preview `/p/<id>` terkunci pada Light Theme secara default, menyaring navbar/footer dinamis sesuai section aktif, dan mengalihkan tombol CTA jika section CTA ditiadakan.
+- Kualitas sistem terverifikasi: `astro check` pada 70 berkas menghasilkan 0 error/warning/hint, 42 assertion lulus 100%, dan 86 Playwright visual snapshot lulus uji.
+- Alur operasional pra-DP Langkah 3b di SOP WhatsApp (`Delivery & Operations/sop.md` v1.3) resmi diaktifkan (**Decision 022 CLOSED**).
+- Lab memakai data dummy, bukan draf proyek klien, tidak memulai pengerjaan proyek, dan tidak mengubah aturan pembatalan/refund. Preview pengerjaan resmi pasca-DP tetap menggunakan materi asli klien.
+- Lab tidak menghasilkan website produksi atau blueprint JSON dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
+- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023](Business%20Memory/decision-log.md#decision-023).
 
 --------------------------------------------------------------------------------
 
@@ -419,11 +419,11 @@ Penting: Dokumen ini adalah delta dari CONTEXT-DETAIL-V2.md, bukan pengganti isi
 1. CURRENT PROJECT STATUS
 ENLESWEB berada dalam **Launch-Ready Mode V4**.
 - Seluruh kode homepage telah teruji dan domain resmi `enlesweb.com` telah dibeli di Domainesia dan nameserver/DNS diarahkan ke Cloudflare Workers (Decision 018).
-- Seluruh 6 proyek demo live di Vercel.
+- Seluruh 6 proyek demo live di Cloudflare Workers (*.enlesweb.com, Decision 023).
 - Nomor WhatsApp dan Meta Pixel ID telah dikonfirmasi riil dan aktif.
 - Halaman Kebijakan Privasi (`/kebijakan-privasi`) telah selesai dibangun dan ditautkan di bar bawah footer (CLOSED).
 - Pengujian nyata klik tombol WhatsApp dan event Meta Pixel di HP fisik telah berhasil diverifikasi (CLOSED).
-- SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.2) telah resmi dikunci (**CLOSED**, Decision 013–017).
+- SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.3) telah resmi dikunci (**CLOSED**, Decision 013–017, Decision 022 & 023).
 - Domain resmi `enlesweb.com` telah resmi dibeli (**CLOSED**, Decision 018).
 - Optimasi PageSpeed Insights (Desktop 100/100, Mobile 95/100) & Agentic Browsing 3/3 (100%) telah selesai diimplementasikan (**CLOSED**, Decision 019: inlined 100% CSS 8.3 KiB, eliminasi forced reflow & late style invalidation via skrip head js-reveal berpelindung fitur, eliminasi bundle `copy.js`, preload 4 bobot font Poppins 700/600/500/400, progressive scroll reveal langsung dengan penjadwalan `requestIdleCallback`, isolasi GPU hardware compositing pada SVG blur, loading eager brand logo, Meta Pixel Opsi A deferred load `fbevents.js` murni berbasis interaksi pertama tanpa timer otomatis untuk TBT 0ms, penonaktifan SPA fallback Cloudflare Workers, dan penambahan `public/llms.txt` serta `public/_headers`).
 - Materi iklan Meta kampanye 1 di `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3) telah selesai di-render (**CLOSED / SIAP TAYANG**, Decision 016 & Decision 020).
@@ -436,14 +436,14 @@ ENLESWEB berada dalam **Launch-Ready Mode V4**.
 - **ENLESWEB-DOCS-V4.md** adalah sumber kebenaran tunggal untuk spesifikasi teknis, desain, dan salinan teks pelanggan.
 - **src/content/copy.ts** adalah sumber salinan teks di kode.
 - **src/config/site.ts** adalah pusat konfigurasi variabel bisnis.
-- **Delivery & Operations/sop.md (v1.2)** & **Business Memory/decision-log.md (Decision 001–021)** adalah sumber kebenaran operasional dan keputusan bisnis.
+- **Delivery & Operations/sop.md (v1.3)** & **Business Memory/decision-log.md (Decision 001–023)** adalah sumber kebenaran operasional dan keputusan bisnis.
 
 --------------------------------------------------------------------------------
 
-3. LOCKED DECISIONS V4 (Tersinkronisasi Decision 001–021)
+3. LOCKED DECISIONS V4 (Tersinkronisasi Decision 001–023)
 - Hero: website untuk bisnis, domain dan hosting 1 tahun, mulai Rp450.000, CTA utama WhatsApp, CTA sekunder ke paket. Margin-top negatif untuk ambient wash bleed menembus navbar transparan.
 - Package: 3 kolom sejajar di desktop dengan penyesuaian baris sub-pixel, Starter harga peluncuran 10 klien pertama, Custom terpisah di bawah.
-- Project: 6 proyek konsep (Starter: Seruput & ripeir, Business: tuntas, Growth: Jerseay, dipotongin, berflower), live di Vercel.
+- Project: 6 proyek konsep (Starter: Seruput & ripeir, Business: tuntas, Growth: Jerseay, dipotongin, berflower), live di Cloudflare Workers (*.enlesweb.com, Decision 023; Vercel dinonaktifkan).
 - Button: Engineered Tactile 3px bottom shelf (#A3C400), inset specular highlight 1px, ink inversion pada hover, depresi 2px saat ditekan.
 - Process: 5 langkah accordion vertikal.
 - Business value: Konkret tanpa klaim palsu.
@@ -458,6 +458,8 @@ ENLESWEB berada dalam **Launch-Ready Mode V4**.
 - Performa & Agentic Browsing (Decision 019): CSS 100% inlined (0 request CSS render-blocking), 4 bobot font Poppins (700, 600, 500, 400) preloaded di `<head>`, scroll reveal viewport-aware dengan skrip head js-reveal dan penjadwalan `requestIdleCallback` tanpa blocking hero LCP (~0.3–0.6s desktop, ~1.0–1.1s mobile), client JS murni 0 KiB `copy.js`, scroll listener Navbar tanpa forced reflow via `requestIdleCallback`, Meta Pixel Opsi A (stub antrean instan + deferred script 153 KiB murni interaksi), routing non-SPA di `wrangler.json`, `public/llms.txt` mematuhi standar Agentic Browsing (3/3 100%), serta `public/_headers` cache immutable 1 tahun di Cloudflare Workers.
 - Penyelesaian Template PDF Bukti Pemesanan, Kesiapan Materi Iklan Meta, & Penutupan Seluruh Tugas Minggu 0 (Decision 020): Pendiri bisnis telah menyelesaikan pembuatan dokumen formal template PDF Bukti Pemesanan ber-TTD digital sesuai ketentuan SOP v1.2 dan Decision 017 (mencantumkan Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota update konten ringan tahunan 2x/4x/6x, ketentuan pembelian domain pasca-DP + materi lengkap, dan aturan On-Hold 60 hari kalender); materi kreatif iklan Meta kampanye 1 di direktori `campaign-1/` siap tayang; seluruh 3 tugas Minggu 0 resmi 100% CLOSED dan fokus operasional beralih penuh ke pelaksanaan Minggu 1.
 - Pembatalan Carousel 4 Slide & Penetapan 1 Video + 1 Gambar Statis Meta Ads Rasio 4:5 dan 9:16 (Decision 021): Format iklan Carousel 4 slide dibatalkan dan digantikan oleh 1 Video (Iklan A 15s) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) masing-masing dalam rasio 4:5 Feed dan 9:16 Stories/Reels di direktori `campaign-1/` dengan dokumen salinan di `copy-iklan-a.md` dan `copy-iklan-b.md` agar visual dan teks tidak terpotong sembarangan oleh antarmuka Meta.
+- Pengaktifan Preview Layout Data Dummy Pra-DP (Decision 022 CLOSED): Integrasi alur pengiriman preview tata letak dummy menggunakan format Stateless Compact ID sebelum kesepakatan dan DP pada SOP v1.3 Langkah 3b, dengan data dummy dan tanpa mengubah gerbang Website Builder pasca-10 klien lunas.
+- Unifikasi Cloudflare Workers & Peluncuran layout-lab (Decision 023): Seluruh 6 proyek demo (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) dihosting terpusat di Cloudflare Workers; hosting Vercel dinonaktifkan secara resmi. Rute studio internal (/studio-admin/*) diproteksi dan rute publik preview (/p/<id>) aktif.
 
 --------------------------------------------------------------------------------
 
@@ -652,7 +654,7 @@ ENLESWEB Starter Rp450k memberikan nilai tinggi dengan domain dan hosting 1 tahu
 15. WEBSITE, DOMAIN, HOSTING, MAINTENANCE
 Pisahkan empat entitas ini secara jelas dalam komunikasi operasional, materi promosi/iklan, dan kesepakatan klien:
 - **Website**: Hasil pengerjaan desain, kode sumber statis, dan penataan konten. Menjadi aset milik klien seutuhnya setelah pelunasan tanpa royalti.
-- **Hosting & Platform**: Berjalan di atas edge network modern (Cloudflare Pages/Workers & Vercel) yang dikelola terpusat oleh ENLESWEB.
+- **Hosting & Platform**: Berjalan di atas edge network modern Cloudflare Workers/Pages (*.enlesweb.com) yang dikelola terpusat oleh ENLESWEB; hosting Vercel telah dinonaktifkan per Decision 023.
 - **Domain**: Hak pakai nama domain. Sudah termasuk untuk 1 tahun pertama (akun registrar dan data registrant atas nama ENLESWEB demi kemudahan aktivasi, Decision 002). Tahun ke-2 dan seterusnya klien bebas memilih perpanjangan terkelola flat tahunan (Rp400rb/tahun .com/.id atau Rp300rb/tahun ekstensi lainnya) atau opsi mandiri (transfer domain via EPP code + penyerahan arsip static build dist/ zip secara cuma-cuma).
 - **Maintenance / Revisi & Update Konten Ringan**: Terikat pada kuota revisi paket saat pembuatan (2x Starter/Business, 4x Growth), garansi perbaikan bug teknis 30 hari, serta kuota gratis putaran update konten ringan tahunan di tahun pertama (Starter 2x, Business 4x, Growth 6x; selebihnya Rp50.000/putaran, SLA 1–2 hari kerja, dan otomatis di-reset setiap tahun saat klien memilih Perpanjangan Terkelola — Decision 015).
 
@@ -660,7 +662,7 @@ Pisahkan empat entitas ini secara jelas dalam komunikasi operasional, materi pro
 
 16. HAL YANG BELUM FINAL (HISTORI V2 -> TELAH FINAL DI V3)
 - Renewal domain/hosting tahun kedua: TELAH FINAL (LOCKED - Decision 002). Tahun pertama registrant atas nama ENLESWEB; tahun kedua klien bebas memilih perpanjangan terkelola flat all package (Rp400rb/tahun .com/.id atau Rp300rb/tahun ekstensi lainnya) atau opsi mandiri transfer EPP + dist zip.
-- SOP operasional, SLA pengerjaan, kuota update konten ringan pasca-tayang, dan ketentuan pembayaran tertulis: TELAH FINAL (LOCKED / CLOSED di `Delivery & Operations/sop.md` v1.2, Decision 003, 004, 013–017).
+- SOP operasional, SLA pengerjaan, kuota update konten ringan pasca-tayang, dan ketentuan pembayaran tertulis: TELAH FINAL (LOCKED / CLOSED di `Delivery & Operations/sop.md` v1.3, Decision 003, 004, 013–017, Decision 022 & 023).
 - Domain resmi bisnis `enlesweb.com`: TELAH FINAL / SUDAH DIBELI (CLOSED di registrar Domainesia & Cloudflare Workers, Decision 018).
 
 --------------------------------------------------------------------------------

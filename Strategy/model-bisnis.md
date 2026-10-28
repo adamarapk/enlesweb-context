@@ -1,7 +1,7 @@
 # MODEL BISNIS ENLESWEB
-**Versi:** 1.5  
-**Terakhir diperbarui:** 18 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v1.9), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.2 CLOSED), `Business Memory/decision-log.md` (Decision 001 - 021), dan konfirmasi penyelesaian template PDF serta materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3) 18 Oktober 2026.  
+**Versi:** 1.6  
+**Terakhir diperbarui:** 28 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.3), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.3), `Business Memory/decision-log.md` (Decision 001 - 023).  
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan terukur, [HIPOTESIS] asumsi belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ---
@@ -19,7 +19,7 @@ Rincian harga paket, batas halaman, fitur, dan SLA waktu pengerjaan sepenuhnya m
 | Sumber Pendapatan | Skema | Harga | Deskripsi & Batasan |
 |---|---|---|---|
 | **1. Paket Inti Sekali Bayar** | Pembayaran bertahap: DP 50% di awal, 50% pelunasan sebelum tayang di domain asli | - **Starter:** Rp450.000 (harga peluncuran 10 klien pertama)<br>- **Business:** Rp750.000<br>- **Growth:** Rp1.200.000 | Termasuk pengerjaan website statis, hosting 1 tahun, domain 1 tahun (`.com` atau `.id`), garansi perbaikan bug 30 hari, serta jatah gratis putaran update konten ringan tahun pertama (**Starter 2x, Business 4x, Growth 6x**, Decision 015). Sumber pendapatan utama tahun pertama. |
-| **2. Perpanjangan Terkelola Tahunan** | Pembayaran tahunan berulang di muka | - **Flat Rp400.000 / tahun** (`.com` / `.id`)<br>- **Flat Rp300.000 / tahun** (domain lain) | *All-in*: perpanjangan domain, hosting Cloudflare/Vercel, pemeliharaan script, dan **reset otomatis kuota gratis putaran update konten ringan tahunan (2x/4x/6x sesuai paket awal)** (Decision 002 & Decision 015). Jatuh tempo mulai bulan ke-12 s/d ke-15. Jika klien memilih mandiri, domain ditransfer (kode EPP) dan arsip build `.zip` diserahkan tanpa biaya perpanjangan. |
+| **2. Perpanjangan Terkelola Tahunan** | Pembayaran tahunan berulang di muka | - **Flat Rp400.000 / tahun** (`.com` / `.id`)<br>- **Flat Rp300.000 / tahun** (domain lain) | *All-in*: perpanjangan domain, hosting Cloudflare Workers/Pages, pemeliharaan script, dan **reset otomatis kuota gratis putaran update konten ringan tahunan (2x/4x/6x sesuai paket awal)** (Decision 002 & Decision 015). Jatuh tempo mulai bulan ke-12 s/d ke-15. Jika klien memilih mandiri, domain ditransfer (kode EPP) dan arsip build `.zip` diserahkan tanpa biaya perpanjangan. |
 | **3. Paket Custom (Oportunistik)** | Kesepakatan per proyek | Mulai **Rp2.000.000** | [KEPUTUSAN] Bersifat oportunistik pasif. Tidak dipromosikan secara aktif di iklan atau homepage, dan tidak dimasukkan ke dalam target proyeksi keuangan 12 bulan. |
 | **4. Tarif Kelebihan Kuota Update Konten Ringan (Mikro)** | Pembayaran per putaran update setelah kuota tahunan habis | **Flat Rp50.000 / putaran update** | [KEPUTUSAN] Berlaku jika klien telah menghabiskan kuota gratis tahunannya (2x/4x/6x). Satu putaran = maks 5–10 item teks/foto dalam 1 pesan WA, SLA 1–2 hari kerja (Decision 015). Tidak dimasukkan ke dalam target proyeksi dasar 12 bulan. |
 
@@ -37,7 +37,7 @@ Biaya operasional dibagi secara tegas menjadi biaya tunai tetap, biaya tunai var
   - [FAKTA/KEPUTUSAN] Saat ini dikunci tetap pada **Rp100.000 / bulan** (alat bantu pengembangan dasar).
   - [KEPUTUSAN] **Aturan Penundaan Kenaikan Biaya AI Tools:** Langganan AI tools baru boleh dinaikkan ke **Rp300.000 – Rp400.000 / bulan** setelah **minimal 5 klien selesai dan lunas (100%) ATAU saat menangani 2 proyek Growth/Custom secara simultan**. Aturan ini menghemat Rp300.000/bulan kas awal dan menurunkan beban tetap tahun pertama dari Rp3,6–4,8 juta menjadi sekitar **Rp2.700.000 – Rp4.200.000 per tahun** (tergantung kecepatan pencapaian 5 klien lunas).
 - **Infrastruktur Hosting & Tooling Internal:**
-  - [FAKTA] Hosting Cloudflare Pages/Workers & Vercel: **Rp0** (memanfaatkan free tier).
+  - [FAKTA] Hosting Cloudflare Workers/Pages (*.enlesweb.com): **Rp0** (memanfaatkan free tier Cloudflare Workers; hosting Vercel resmi dinonaktifkan per Decision 023).
   - [FAKTA] Repositori GitHub & CI/CD Actions: **Rp0**.
   - [KEPUTUSAN] Alat pembuatan Bukti Pemesanan PDF & TTD digital: **Rp0** (Google Docs/Canva + TTD gambar, Decision 007).
   - [KEPUTUSAN] Eksperimen Micro-Warm Outreach DM Instagram (2–3 pemilik usaha/hari): **Rp0** (manual tanpa tools scraping berbayar, Decision 013).
@@ -164,7 +164,7 @@ Tabel sensitivitas berikut memetakan variasi kombinasi paket untuk 10 klien pert
 - Biaya perpanjangan di registrar tahun ke-2 (Domainesia):
   - Ekstensi `.com`: Rp209.000 + PPN 11% = **Rp231.990 / tahun** $\to$ Margin bersih: **Rp168.010 (42,0%)**.
   - Ekstensi `.id`: Rp249.000 + PPN 11% = **Rp276.390 / tahun** $\to$ Margin bersih: **Rp123.610 (30,9%)**.
-- Hosting tetap Rp0 (Cloudflare/Vercel) dan otomatisasi script tanpa biaya tambahan.
+- Hosting tetap Rp0 (Cloudflare Workers/Pages) dan otomatisasi script tanpa biaya tambahan.
 
 ### B. Tabel Sensitivitas Retensi Perpanjangan (Basis 10 Klien Pertama)
 
@@ -226,7 +226,7 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | Default framing `.com` di SOP Template 5.2 mendorong >= 70% klien memilih `.com` sehingga blended margin > 60% | Perhitungan matematis unit (Tabel 6.C) | Pantau rasio pemilihan ekstensi domain (`.com` vs `.id`) pada 3-10 klien pertama |
 | Kuota gratis update konten ringan tahunan (2x/4x/6x, maks 5-10 item/putaran) tidak menggerus jam kerja pendiri secara berlebihan | Belum ada klien nyata | Batasi ketat definisi 1 putaran di SOP v1.2 (dikirim sekaligus dalam 1 pesan WA, tanpa ubah layout) dan kenakan Rp50.000/putaran setelah kuota habis |
 | Penundaan kenaikan AI tools (tetap Rp100rb/bln sampai 5 klien lunas) tidak menghambat kecepatan pengerjaan Starter/Business | 6 demo live berhasil dibangun dengan setup saat ini | Pantau durasi jam kerja aktual pada 5 klien pertama |
-| Hosting Cloudflare Pages/Workers dan Vercel tetap berada di tier gratis (Rp0) | FAKTA kuota gratis Cloudflare sangat besar untuk web statis | Monitor penggunaan bandwidth mingguan di dashboard Cloudflare |
+| Hosting Cloudflare Workers/Pages (*.enlesweb.com) tetap berada di tier gratis (Rp0) | FAKTA kuota gratis Cloudflare sangat besar untuk web statis; hosting Vercel telah dinonaktifkan (Decision 023) | Monitor penggunaan requests dan bandwidth mingguan di dashboard Cloudflare |
 
 ---
 
@@ -256,4 +256,5 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | 17 Oktober 2026 | 1.3 | Pencatatan realisasi pengeluaran kas pembelian domain bisnis kanonikal enlesweb.com sebesar Rp152.070 (Decision 018). | Konfirmasi pembelian domain 17 Okt 2026 (Decision 018) |
 | 18 Oktober 2026 | 1.4 | Penutupan seluruh tugas persiapan Minggu 0 (100% CLOSED): Template PDF Bukti Pemesanan selesai dibuat oleh pendiri bisnis (Decision 020), materi kreatif iklan Meta di campaign-1/ siap tayang (Decision 016/020), dan penyelarasan ke dokumen master V4. | Decision 020 & summary.md v1.8 |
 | 18 Oktober 2026 | 1.5 | Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
+| 28 Oktober 2026 | 1.6 | Penyelarasan unifikasi hosting seluruh ekosistem (*.enlesweb.com) ke Cloudflare Workers, penonaktifan hosting Vercel (Decision 023), dan pemutakhiran acuan ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
 

@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.7
-**Terakhir diperbarui:** 21 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.2), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.2 CLOSED, addendum Decision 022), `Business Memory/decision-log.md` (Decision 001 - 022), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
+**Versi:** 1.8
+**Terakhir diperbarui:** 28 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.3), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.3, Decision 022 & 023), `Business Memory/decision-log.md` (Decision 001 - 023), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -68,7 +68,7 @@ Dihitung sejak iklan tayang.
 | Hari ke-90 | [KEPUTUSAN] Hitung DP final vs target 10. Hasil menentukan apakah harga dievaluasi dan apakah gerbang `visi.md` bagian 5 mendekat. |
 
 - [KEPUTUSAN] "Runway 30 hari" di `summary.md` dibaca sebagai jendela uji pertama sampai hard stop, bukan batas hidup bisnis.
-- [KEPUTUSAN] **Aturan Mode Jeda (Hard Stop Hari ke-30):** Jika hari ke-30 tercapai dengan 0 DP, penegasan aturan adalah *hard stop total*: seluruh anggaran iklan dihentikan seketika untuk mencegah pembakaran modal (*no cash burn*). Mode jeda berlangsung hingga pemilik mengevaluasi ulang secara mendasar pesan penawaran, format iklan, atau merancang strategi permodalan baru. Selama mode jeda, aset digital (homepage `enlesweb.com` dan 6 situs demo) dibiarkan tetap *live* di Cloudflare & Vercel karena berbiaya operasional Rp0.
+- [KEPUTUSAN] **Aturan Mode Jeda (Hard Stop Hari ke-30):** Jika hari ke-30 tercapai dengan 0 DP, penegasan aturan adalah *hard stop total*: seluruh anggaran iklan dihentikan seketika untuk mencegah pembakaran modal (*no cash burn*). Mode jeda berlangsung hingga pemilik mengevaluasi ulang secara mendasar pesan penawaran, format iklan, atau merancang strategi permodalan baru. Selama mode jeda, aset digital (homepage `enlesweb.com`, 6 situs demo `*.enlesweb.com`, dan `layout-lab` `preview.enlesweb.com`) dibiarkan tetap *live* di Cloudflare Workers karena berbiaya operasional Rp0 (Vercel telah dinonaktifkan per Decision 023).
 
 ## 7. Anggaran Iklan & Penundaan Biaya AI Tools
 - [KEPUTUSAN] Anggaran iklan 90 hari: **Rp500.000 sampai Rp1.000.000**, **di luar** AI tools dan biaya domain (ditanggung terpisah).
@@ -143,5 +143,6 @@ Dihitung sejak iklan tayang.
 | 18 Oktober 2026 | Versi 1.5: Penutupan seluruh tugas pra-peluncuran Minggu 0 (100% CLOSED): Template PDF Bukti Pemesanan selesai dibuat oleh pendiri bisnis (Decision 020), materi iklan Meta selesai di-render di `campaign-1/` (Decision 016/020), dan persiapan peluncuran kampanye Meta Ads Minggu 1. | Konfirmasi pembuatan PDF oleh pemilik 18 Okt 2026 (Decision 020) |
 | 18 Oktober 2026 | Versi 1.6: Pembatalan format Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi kampanye Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
 | 21 Oktober 2026 | Versi 1.7: Pencatatan checkpoint 12 jam pertama kampanye Meta Ads dan penegasan bahwa evaluasi akhir Minggu 1 tetap pada 28 Oktober. | Laporan pemilik, `Business Memory/weekly-review.md` |
+| 28 Oktober 2026 | Versi 1.8: Unifikasi hosting seluruh aset digital (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta penyelarasan acuan operasional ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
 
 

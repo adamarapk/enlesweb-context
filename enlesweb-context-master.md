@@ -1,10 +1,10 @@
 # ENLESWEB CONTEXT MASTER: DOKUMENTASI TERPADU PLATFORM & 6 TEMPLATE KONSEP
 
-**Versi:** 3.7 (Pembatalan Carousel 4 Slide, Penetapan 1 Video + 1 Gambar Statis Meta Ads, Template PDF CLOSED, & Penutupan Seluruh Tugas Minggu 0 - Decision 021)  
-**Tanggal Rilis:** 18 Oktober 2026  
-**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–021, SOP v1.2, & Seluruh Tugas Minggu 0 CLOSED)  
+**Versi:** 3.8 (Unifikasi Hosting Seluruh Ekosistem ke Cloudflare Workers *.enlesweb.com, Penonaktifan Vercel, & Peluncuran layout-lab preview.enlesweb.com - Decision 023 & Decision 022 CLOSED)  
+**Tanggal Rilis:** 28 Oktober 2026  
+**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–023, SOP v1.3, unifikasi hosting Cloudflare Workers, & layout-lab live di preview.enlesweb.com)  
 **Target Pengguna Dokumen:** Dokumentasi Teknis Standar, Panduan Arsitektur Sistem, dan Wiki Pengembang  
-**Ringkasan Pembaruan:** Penutupan resmi seluruh tugas persiapan pra-peluncuran Minggu 0 (100% CLOSED) dan penguncian format materi iklan Meta (Decision 021): Format Carousel 4 slide resmi dibatalkan dan dialihkan ke 1 Video (Iklan A 15 detik) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) masing-masing dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` siap tayang; Template PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat oleh pendiri bisnis (CLOSED, Decision 020); domain resmi `enlesweb.com` aktif di Cloudflare Workers (CLOSED, Decision 018); dan optimasi PageSpeed Insights 100/100 selesai (CLOSED, Decision 019). Ekosistem beralih penuh menuju pelaksanaan Minggu 1: Penayangan Meta Ads dan Micro-Warm Outreach DM Instagram.  
+**Ringkasan Pembaruan:** Unifikasi hosting seluruh ekosistem (homepage enlesweb.com, 6 demo konsep portofolio *.enlesweb.com, dan internal composer layout-lab preview.enlesweb.com) ke Cloudflare Workers serta penonaktifan hosting Vercel (Decision 023). Pengaktifan penuh alur SOP v1.3 pra-DP Langkah 3b dengan Stateless Compact ID (/p/<id>) dari layout-lab (Decision 022 CLOSED). Seluruh tugas persiapan Minggu 0 telah CLOSED 100% dan ekosistem beralih penuh menuju pelaksanaan Minggu 1: Penayangan Meta Ads dan Micro-Warm Outreach DM Instagram.  
 
 ---
 
@@ -18,7 +18,7 @@ ENLESWEB menyajikan penawaran komersial yang terbagi menjadi 3 tingkatan paket i
 3. **Paket Growth (Rp1.200.000)**: Website hingga 10 halaman dengan desain khusus, pengalaman pengunjung/frontend interaktif khusus (*custom client islands*), sudah termasuk domain & hosting 1 tahun, 4 kali revisi saat pengerjaan, serta gratis 6 kali putaran update konten ringan di tahun pertama.
 4. **Paket Custom (Mulai Rp2.000.000)**: Jalur terpisah di luar paket Growth untuk kebutuhan lebih dari 10 halaman atau integrasi sistem khusus (tombol aksi: `[Diskusikan Kebutuhan Custom]`, topik: `paket Custom`).
 
-Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Vercel), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA.
+Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Cloudflare Workers dengan subdomain kanonikal *.enlesweb.com, Vercel dinonaktifkan per Decision 023), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA. Ekosistem juga dilengkapi internal composer `layout-lab` (live di `preview.enlesweb.com`) untuk menyusun preview tata letak dummy pra-DP.
 
 ---
 
@@ -75,7 +75,7 @@ Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** akt
     - [6.3.5 Arsitektur Teknis & State Nanostores](#635-arsitektur-teknis--state-nanostores)
 - [7. QA Terpadu & Panduan Deployment](#7-qa-terpadu--panduan-deployment)
   - [7.1 Checklist Verifikasi Kualitas Lintas Proyek](#71-checklist-verifikasi-kualitas-lintas-proyek)
-  - [7.2 Prosedur Rilis Cloudflare & Vercel](#72-prosedur-rilis-cloudflare--vercel)
+  - [7.2 Prosedur Rilis Cloudflare Workers (Ekosistem Terpadu)](#72-prosedur-rilis-cloudflare-workers-ekosistem-terpadu)
 
 ---
 
@@ -83,7 +83,7 @@ Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** akt
 
 ### 1.1 Visi Komersial & Nilai Inti
 ENLESWEB didirikan untuk menyelesaikan masalah umum pelaku usaha lokal dan UMKM saat memesan website:
-- **Kepastian dan Kemudahan (Tanpa Biaya Platform Tersembunyi):** Berbeda dengan SaaS pembuat website (seperti Wix/Shopify) yang membebankan sewa platform bulanan terus-menerus atau jasa agensi yang membingungkan, ENLESWEB mengedepankan kepastian harga paket di muka, proses pemesanan praktis via WhatsApp, serta penayangan website statis berkinerja tinggi di infrastruktur modern (Cloudflare Pages / Vercel).
+- **Kepastian dan Kemudahan (Tanpa Biaya Platform Tersembunyi):** Berbeda dengan SaaS pembuat website (seperti Wix/Shopify) yang membebankan sewa platform bulanan terus-menerus atau jasa agensi yang membingungkan, ENLESWEB mengedepankan kepastian harga paket di muka, proses pemesanan praktis via WhatsApp, serta penayangan website statis berkinerja tinggi di infrastruktur modern (Cloudflare Workers/Pages).
 - **Transparansi Harga & Sudah Termasuk Domain + Hosting 1 Tahun:** Biaya pembuatan transparan (Mulai Rp450.000) sudah mencakup nama domain pilihan klien (.com, .id, dll. dengan rekomendasi standar `.com` di SOP chat) dan hosting selama 1 tahun penuh tanpa biaya platform bulanan tersembunyi.
 - **Kebijakan Perpanjangan Tahun ke-2+, Update Konten Ringan Tahunan, & Perlindungan Transaksi (LOCKED - Decision 002, 015, 017):**
   - **Kepemilikan Akun Provider, Registrant Tahun Pertama, & Waktu Pembelian Domain:** Seluruh akun registrar dan data *registrant* domain pada tahun pertama didaftarkan atas nama **ENLESWEB** demi menghilangkan birokrasi verifikasi dokumen identitas awal (seperti KTP untuk `.id`). Pembelian domain dieksekusi setelah DP 50% diterima dan materi dasar klien lengkap (melindungi arus kas studio).
@@ -92,7 +92,7 @@ ENLESWEB didirikan untuk menyelesaikan masalah umum pelaku usaha lokal dan UMKM 
     1. **Perpanjangan Terkelola (bersama ENLESWEB):** Flat all-in **Rp400.000 / tahun** (untuk domain `.com` atau `.id`) atau **Rp300.000 / tahun** (domain lainnya). Biaya ini mencakup perpanjangan domain, hosting, pemeliharaan teknis, serta **reset otomatis kuota gratis putaran update konten ringan tahunan sesuai paket awal (2x/4x/6x per tahun)**.
     2. **Opsi Mandiri (Transfer Domain & File):** Jika klien ingin mengelola website secara mandiri, ENLESWEB memberikan opsi transfer kepemilikan domain (kode transfer EPP / *Auth Code*) dan penyerahan file arsip *build* statis website (`.zip` dari `dist/`) secara cuma-cuma tanpa biaya perpanjangan.
   - **Reaktivasi Website Bebas Biaya Tambahan (Decision 005) & Aturan On-Hold 60 Hari (Decision 017):** Jika website sempat dinonaktifkan karena melewati masa tenggang 14 hari, tidak ada denda atau biaya reaktivasi tambahan selama domain belum dilepas registrar. Saat pengerjaan awal, jika klien belum melengkapi materi dasar lewat dari 7 hari kalender sejak DP, proyek masuk ke status *On-Hold* (antrean pasif) hingga maksimal 60 hari kalender sejak tanggal DP.
-  - **Integritas Klaim Pemasaran:** ENLESWEB tidak memakai "tanpa biaya langganan berulang" sebagai klaim pemasaran utama. Janji inti yang dipegang adalah **Kepastian dan Kemudahan**: harga paket jelas di awal, domain dan hosting 1 tahun sudah termasuk, alur komunikasi via WhatsApp (`Delivery & Operations/sop.md` v1.2 CLOSED), bukti pemesanan formal PDF ber-TTD digital dengan Nama Lengkap Pendiri yang sama persis dengan rekening bank penerima, serta ketentuan perpanjangan tahun kedua yang terbuka dan transparan sejak awal.
+  - **Integritas Klaim Pemasaran:** ENLESWEB tidak memakai "tanpa biaya langganan berulang" sebagai klaim pemasaran utama. Janji inti yang dipegang adalah **Kepastian dan Kemudahan**: harga paket jelas di awal, domain dan hosting 1 tahun sudah termasuk, alur komunikasi via WhatsApp (`Delivery & Operations/sop.md` v1.3 CLOSED), bukti pemesanan formal PDF ber-TTD digital dengan Nama Lengkap Pendiri yang sama persis dengan rekening bank penerima, serta ketentuan perpanjangan tahun kedua yang terbuka dan transparan sejak awal.
 - **Konversi Langsung ke WhatsApp:** Bagi konsumen di Indonesia, WhatsApp adalah jalur penutupan transaksi paling efektif. Seluruh arsitektur situs diarahkan untuk memicu pesan WhatsApp yang telah terisi konteks spesifik (*pre-filled*).
 - **Kecepatan Akses Instan:** Menggunakan static-site generation (SSG), halaman dirender instan di jaringan CDN tepi (*edge network*) dengan skor performa mendekati 100 di perangkat bergerak.
 
@@ -175,8 +175,8 @@ Setiap titik kontak konversi dihubungkan ke WhatsApp dengan standar implementasi
 
 ### 1.6 Infrastruktur & Pipeline Deployment
 
-- **Hosting Produksi Platform Induk:** Cloudflare Pages atau Cloudflare Workers (dengan adapter static `@astrojs/cloudflare`).
-- **Hosting Showcase Portofolio:** Vercel Static Hosting.
+- **Hosting Produksi Platform Induk:** Cloudflare Workers (dengan adapter static `@astrojs/cloudflare` dan domain kanonikal `https://enlesweb.com`).
+- **Hosting Showcase Portofolio & Internal Composer:** Seluruh 6 template konsep (`*.enlesweb.com`) dan composer internal `layout-lab` (`preview.enlesweb.com`) dihosting terpusat di Cloudflare Workers; hosting lama Vercel telah resmi dinonaktifkan (Decision 023).
 - **Continuous Integration (CI/CD):**
   - Linting & tipe data: `npm run lint` / `astro check`.
   - Automated testing: Vitest atau unit test internal.
@@ -191,7 +191,7 @@ Setiap titik kontak konversi dihubungkan ke WhatsApp dengan standar implementasi
 | **Paket ENLESWEB** | Starter (Rp450rb) | Starter (Rp450rb) | Business (Rp750rb) | Growth (Rp1.2jt) | Growth (Rp1.2jt) | Growth (Rp1.2jt) |
 | **Niche Industri** | Kedai Kopi & F&B | Workshop Servis & Reparasi | Bimbel & Les Privat | Studio Jersey Kustom | Barbershop Pria | Florist & Hadiah Konsep |
 | **Arsitektur Halaman** | Single-page | Single-page | Multi-page (6 rute + 404) | Multi-page (10 halaman utama + 404) | Multi-page (2 rute + 404) | Multi-page (7 rute + 404) |
-| **Live Demo URL** | [seruput-kopi.vercel.app](https://seruput-kopi.vercel.app/) | [ripeir.vercel.app](https://ripeir.vercel.app/) | [tuntas-steel.vercel.app](https://tuntas-steel.vercel.app/) | [jerseay.vercel.app](https://jerseay.vercel.app/) | [dipotongin.vercel.app](https://dipotongin.vercel.app/) | [berflower-lilac.vercel.app](https://berflower-lilac.vercel.app/) |
+| **Live Demo URL** | [seruput.enlesweb.com](https://seruput.enlesweb.com/) | [ripeir.enlesweb.com](https://ripeir.enlesweb.com/) | [tuntas.enlesweb.com](https://tuntas.enlesweb.com/) | [jerseay.enlesweb.com](https://jerseay.enlesweb.com/) | [dipotongin.enlesweb.com](https://dipotongin.enlesweb.com/) | [berflower.enlesweb.com](https://berflower.enlesweb.com/) |
 | **Signature Metaphor** | Rol Struk Kasir Panjang (Potongan Lurus Bersih) | Papan Kerja Bengkel & Nota Servis | Lembar Buku Tulis SiDU (Margin Merah Vertikal) | Kain Dry-fit & Label Kerah Tenun | Kartu Member Kraft (8 Stempel) & Tiket Pangkas | Kertas Sutra Pembungkus & Segel Lilin |
 | **Tema Warna** | Merah tomat hero, putih tulang & hitam arang | Deep dark spruce black & oranye sinyal | Kertas putih SiDU & biru tinta pulpen | Monokrom Atelier (Putih terang, hitam, aksen WA) | Putih linen terang & substrat kartu arang | Kertas paper gading, terracotta clay & hijau daun |
 | **Token Warna Utama** | `#CE3216`, `#FBF9F5`, `#141414` | `#08100e`, `#E8EBED`, `#FF6B1A` | `#FFFFFF`, `#0F224A`, `#163275`, `#C5221F` | `#FFFFFF`, `#111111`, `#0A0A0A`, `#25D366` | `#F6F5F0`, `#C29F75`, `#121312`, `#1A1A18` | `#F6F0E6`, `#2B2420`, `#9E3F3A`, `#2F4235` |
@@ -695,21 +695,18 @@ enlesweb-master/
 
 ---
 
-### 7.2 Prosedur Rilis Cloudflare & Vercel
+### 7.2 Prosedur Rilis Cloudflare Workers (Ekosistem Terpadu)
 
-#### Pipeline Cloudflare Pages / Workers (Website Induk ENLESWEB):
-1. Hubungkan repositori GitHub ke Cloudflare Pages atau Workers.
+Seluruh ekosistem ENLESWEB (website induk `enlesweb.com`, 6 subdomain showcase portofolio konsep `*.enlesweb.com`, dan internal composer `preview.enlesweb.com`) berjalan terpusat di atas infrastruktur Cloudflare Workers. Platform pihak ketiga Vercel telah resmi dinonaktifkan (Decision 023).
+
+#### Pipeline Cloudflare Workers (Website Induk & Seluruh Subdomain):
+1. Hubungkan repositori GitHub ke Cloudflare Workers.
 2. Tetapkan konfigurasi kompilasi:
    - **Framework Preset:** `Astro`
    - **Build Command:** `npm run build`
    - **Build Output Directory:** `dist`
    - **Node.js Version:** `>= 18.17.0`
 3. Seluruh variabel bisnis produksi (nomor WhatsApp resmi `6285156801570` dan Meta Pixel ID `1099411523003859`) telah terkunci langsung di berkas TypeScript `src/config/site.ts` (tidak memerlukan environment variable terpisah).
-4. Hubungkan domain kanonikal utama (`enlesweb.com`) yang telah resmi dibeli (Decision 018) melalui menu DNS Cloudflare dengan status *Proxied*.
-
-#### Pipeline Vercel (Showcase Portofolio Konsep):
-1. Import repositori template konsep ke tim/akun Vercel.
-2. Tetapkan Framework Preset ke `Astro`.
-3. Biarkan Build Command default (`astro build`) dan Output Directory (`dist`).
-4. Pastikan opsi *Automatic Deployments* aktif untuk branch `main`.
-5. Uji coba seluruh tautan demo dari switcher panggung ENLESWEB (`https://enlesweb.com/#proyek`) ke masing-masing subdomain Vercel yang telah diverifikasi aktif.
+4. Hubungkan domain kanonikal utama (`enlesweb.com`) dan seluruh DNS subdomain terkait (`jerseay`, `dipotongin`, `tuntas`, `seruput`, `ripeir`, `berflower`, dan `preview`) melalui panel DNS Cloudflare dengan status *Proxied*.
+5. Verifikasi pengamanan rute pada `preview.enlesweb.com`: rute publik hanya mengizinkan `/p/<id>` dan aset statis, rute editor internal terlindungi di bawah `/studio-admin/*`, serta rute `/` dan `/pratinjau` sengaja merespons `404 Not Found`.
+6. Uji coba seluruh tautan demo dari switcher panggung ENLESWEB (`https://enlesweb.com/#proyek`) ke masing-masing subdomain kanonikal Cloudflare Workers yang telah diverifikasi aktif.

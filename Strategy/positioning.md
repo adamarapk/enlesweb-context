@@ -1,7 +1,7 @@
 # POSITIONING ENLESWEB
-**Versi:** 2.0
-**Terakhir diperbarui:** 21 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.2), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.2 CLOSED, addendum Decision 022), `Business Memory/decision-log.md` (Decision 001 - 022), `layout-lab/README.md`, dan `layout-lab/NOTES.md`.
+**Versi:** 2.1
+**Terakhir diperbarui:** 28 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.3), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.3, Decision 022 & 023), `Business Memory/decision-log.md` (Decision 001 - 023).
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Positioning
@@ -43,11 +43,11 @@
 | Elemen janji | Dasar bukti | Status |
 |---|---|---|
 | Harga jelas per paket (Rp450rb / Rp750rb / Rp1,2jt) | Tabel paket terkunci | [FAKTA] |
-| Domain dan hosting 1 tahun termasuk (bebas pilih `.com`/`.id`, dengan *default framing* `.com` di SOP WA, Decision 010 & 014) | Aturan paket & SOP v1.2 | [KEPUTUSAN] |
-| Waktu pengerjaan 3 / 7 / 14 hari kerja sejak DP dan materi lengkap | SOP v1.2 | [KEPUTUSAN]. Belum teruji pada klien nyata |
-| Kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x; lewat kuota Rp50rb/putaran, Decision 015) | SOP v1.2 & PDF Bukti Pemesanan | [KEPUTUSAN] |
-| Komunikasi dan proses pemesanan via WhatsApp | SOP v1.2 | [KEPUTUSAN] |
-| Bukti pemesanan formal PDF + TTD digital mencantumkan Nama Lengkap Pendiri sesuai rekening bank (Decision 003 & 017) | SOP transaksi v1.2 | [KEPUTUSAN] |
+| Domain dan hosting 1 tahun termasuk (bebas pilih `.com`/`.id`, dengan *default framing* `.com` di SOP WA, Decision 010 & 014) | Aturan paket & SOP v1.3 | [KEPUTUSAN] |
+| Waktu pengerjaan 3 / 7 / 14 hari kerja sejak DP dan materi lengkap | SOP v1.3 | [KEPUTUSAN]. Belum teruji pada klien nyata |
+| Kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x; lewat kuota Rp50rb/putaran, Decision 015) | SOP v1.3 & PDF Bukti Pemesanan | [KEPUTUSAN] |
+| Komunikasi dan proses pemesanan via WhatsApp | SOP v1.3 | [KEPUTUSAN] |
+| Bukti pemesanan formal PDF + TTD digital mencantumkan Nama Lengkap Pendiri sesuai rekening bank (Decision 003 & 017) | SOP transaksi v1.3 | [KEPUTUSAN] |
 
 ### Janji yang sengaja TIDAK dibuat
 - [KEPUTUSAN] Tidak menjanjikan pelanggan atau penjualan lebih banyak (belum ada bukti klien, melanggar prinsip "klaim hanya yang terbukti").
@@ -70,8 +70,8 @@
 ### 7. Peran Demo sebagai Bukti Utama & Jembatan Ekspektasi Tier
 - [KEPUTUSAN] Bukti utama: **"lihat dulu contohnya."** Calon pembeli diarahkan memilih demo yang paling mirip usahanya.
 - [KEPUTUSAN] Demo ditampilkan jujur sebagai **konsep ENLESWEB**, bukan karya klien. Tidak ada testimoni, rating, atau jumlah klien palsu.
-- [FAKTA] 6 demo live di Vercel: Seruput Kopi, ripeir (Starter), tuntas (Business), Jerseay, dipotongin, berflower (Growth).
-- [KEPUTUSAN 022] Setelah URL publik layout-lab aktif dan diverifikasi, admin mengirim satu preview layout yang sesuai kebutuhan prospek sebelum ringkasan kesepakatan dan permintaan DP. Preview memakai data dummy, bukan karya klien atau draf proyek, dan tidak menggantikan preview pengerjaan resmi pasca-DP. Per 21 Oktober, lab masih lokal dan belum digunakan klien.
+- [FAKTA] 6 demo konsep live di Cloudflare Workers dengan subdomain kanonikal masing-masing: `seruput.enlesweb.com`, `ripeir.enlesweb.com` (Starter), `tuntas.enlesweb.com` (Business), `jerseay.enlesweb.com`, `dipotongin.enlesweb.com`, `berflower.enlesweb.com` (Growth). Hosting Vercel dinonaktifkan per Decision 023.
+- [KEPUTUSAN 022 & 023] layout-lab telah resmi live di Cloudflare Workers pada subdomain kanonikal `preview.enlesweb.com` dengan format tautan Stateless Compact ID (`preview.enlesweb.com/p/<id>`) dan rute studio terlindungi (`/studio-admin/*`). Admin mengirimkan tautan preview layout data dummy ini kepada calon klien sebelum ringkasan kesepakatan dan permintaan DP (SOP v1.3 Langkah 3b). Preview memakai data dummy, bukan karya klien atau draf proyek, dan tidak menggantikan preview pengerjaan resmi pasca-DP.
 - [KEPUTUSAN] **Jembatan Ekspektasi Tier Demo di Iklan & SOP WhatsApp (Decision 016 & Decision 021):**
   - Materi iklan Meta (Iklan A video 15s dan Iklan B gambar statis v3 Whole ENLESWEB) mencantumkan penawaran harga transparan mulai Rp450.000 dan mendemonstrasikan contoh website konsep secara proporsional sesuai tingkatannya (Decision 016 & Decision 021), mencegah prospek beranggaran Rp450.000 berekspektasi fitur interaktif kompleks sekelas Growth tanpa penjelasan.
   - Di SOP WhatsApp (Template 5.2), saat prospek menanyakan paket Starter (Rp450.000), admin wajib mengirimkan tautan demo tingkat Starter (`Seruput Kopi` atau `ripeir`) sebagai acuan utama 1 halaman, sembari menyandingkannya dengan contoh Business (`tuntas`) jika mereka membutuhkan lebih dari 1 halaman.
@@ -144,5 +144,6 @@ Catatan transaksi:
 | 18 Oktober 2026 | Versi 1.8: Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
 | 21 Oktober 2026 | Versi 1.9: Pencatatan layout-lab sebagai opsi eksplorasi layout sebelum DP setelah deployment dan URL terverifikasi, dengan penegasan data dummy dan pemisahan dari preview pengerjaan resmi setelah DP. | `layout-lab/README.md` dan `layout-lab/NOTES.md` |
 | 21 Oktober 2026 | Versi 2.0: Sinkronisasi Decision 022. Setelah URL layout-lab terverifikasi, preview data dummy dikirim sebelum kesepakatan dan DP untuk membantu prospek membayangkan susunan layout. | `Business Memory/decision-log.md` Decision 022 dan `Delivery & Operations/sop.md` |
+| 28 Oktober 2026 | Versi 2.1: Unifikasi hosting 6 demo portofolio (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta pengaktifan operasional preview data dummy pra-DP via Stateless Compact ID (/p/<id>) di SOP v1.3 (Decision 022 CLOSED). | Arahan pemilik, rilis Workers, Decision 023 |
 
 

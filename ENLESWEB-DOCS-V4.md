@@ -1,14 +1,31 @@
 # ENLESWEB DOKUMENTASI UTAMA V4 (ENLESWEB-DOCS-V4)
 
-Versi: 2.2 (Checkpoint Awal Kampanye Meta Ads - 21 Oktober 2026)
-Tanggal Pembaruan: 21 Oktober 2026
-Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, dan `Business Memory/decision-log.md`.
-Status Sistem: Homepage production dan launch-ready V4 (Decision 001–022, SOP v1.2 dengan aturan transaksi tetap CLOSED, seluruh tugas Minggu 0 CLOSED). layout-lab masih lokal dan belum digunakan klien.
-Ringkasan Pembaruan: Decision 022 menetapkan preview layout data dummy sebagai langkah sebelum kesepakatan dan DP setelah deployment publik serta URL preview diverifikasi. Preview pengerjaan resmi setelah DP tetap memakai materi klien. Lab tidak menghasilkan website produksi atau blueprint JSON dan tidak mengubah gerbang Website Builder setelah klien ke-10 go live.
+Versi: 2.3 (Unifikasi Cloudflare Workers & Peluncuran layout-lab - 28 Oktober 2026)
+Tanggal Pembaruan: 28 Oktober 2026
+Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, `Business Memory/decision-log.md` (Decision 001 - 023), dan arsitektur `layout-lab`.
+Status Sistem: Homepage production dan launch-ready V4 (Decision 001–023, SOP v1.3, seluruh ekosistem terpadu di Cloudflare Workers). layout-lab telah live di preview.enlesweb.com dan siap digunakan untuk SOP pra-DP.
+Ringkasan Pembaruan: Decision 023 menetapkan unifikasi hosting seluruh ekosistem (homepage enlesweb.com, 6 demo konsep portofolio *.enlesweb.com, dan internal composer layout-lab preview.enlesweb.com) ke Cloudflare Workers serta penonaktifan hosting Vercel. Decision 022 resmi CLOSED dengan pengaktifan alur preview layout data dummy pra-DP via Stateless Compact ID (/p/<id>) di SOP v1.3.
 
 ---
 
 ## RINGKASAN PEMBARUAN V4 (CHANGELOG V4)
+
+### Pembaruan Versi 2.3 (28 Oktober 2026 - Unifikasi Hosting Cloudflare Workers *.enlesweb.com, Penonaktifan Vercel, & Peluncuran layout-lab preview.enlesweb.com, Decision 023 & Decision 022 CLOSED)
+1. **Unifikasi Hosting Cloudflare Workers (*.enlesweb.com, Decision 023)**:
+   - Seluruh 6 website portofolio konsep telah resmi dimigrasikan dan di-deploy ke Cloudflare Workers di bawah subdomain kanonikal enlesweb.com:
+     - `https://jerseay.enlesweb.com/` (Growth - Studio Jersey Custom)
+     - `https://dipotongin.enlesweb.com/` (Growth - Barbershop)
+     - `https://tuntas.enlesweb.com/` (Business - Bimbel)
+     - `https://seruput.enlesweb.com/` (Starter - Kedai Kopi)
+     - `https://ripeir.enlesweb.com/` (Starter - Servis Perangkat)
+     - `https://berflower.enlesweb.com/` (Growth - Florist)
+   - Konfigurasi `projects` pada `src/data/site.ts` di homepage telah diperbarui mengarah ke subdomain baru tersebut.
+   - Hosting lama di platform Vercel (`*.vercel.app`) telah resmi dinonaktifkan.
+2. **Peluncuran Produksi `layout-lab` di `preview.enlesweb.com` (Decision 022 CLOSED & Decision 023)**:
+   - Tool composer internal `layout-lab` telah live di Cloudflare Workers pada subdomain kanonikal `https://preview.enlesweb.com/`.
+   - Menggunakan format URL Stateless Compact ID (`https://preview.enlesweb.com/p/<id>`) berbasis Base62 + salt + checksum, menggantikan format lama `/pratinjau?s=...`.
+   - Rute studio internal (`/studio-admin/`, `/studio-admin/galeri`, `/studio-admin/uji`, `/studio-admin/legal`) diproteksi, rute `/` dan `/pratinjau` menghasilkan 404, default render terkunci di tema terang (Light Theme), dan link navbar/footer disaring dinamis sesuai section aktif.
+   - SOP chat WhatsApp ditingkatkan ke versi 1.3 (Langkah 3b diaktifkan secara operasional menggunakan link Stateless Compact ID).
 
 ### Pembaruan Versi 2.2 (21 Oktober 2026 - Checkpoint 12 Jam Kampanye Meta Ads)
 1. Iklan mulai tayang pukul 09.00. Setelah 12 jam, dua iklan menghabiskan Rp16.000; sekitar 70% belanja terserap iklan video.
@@ -24,7 +41,7 @@ Ringkasan Pembaruan: Decision 022 menetapkan preview layout data dummy sebagai l
 1. Mencatat layout-lab sebagai composer internal dengan 43 varian pada 13 kategori. Konten preview memakai contoh bisnis umum dan data dummy.
 2. Deployment publik dan penggunaan dengan klien belum terkonfirmasi. Lab baru dapat dibagikan sebagai opsi eksplorasi sebelum DP setelah deployment dan URL preview diverifikasi.
 3. Preview pengerjaan resmi setelah DP tetap memakai materi klien. layout-lab bukan website produksi, tidak menghasilkan blueprint JSON, dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
-4. Panduan, catatan teknis, dan indeks screenshot audit tersedia di [layout-lab/README.md](layout-lab/README.md), [NOTES.md](layout-lab/NOTES.md), dan [arsip screenshot audit 21 Oktober](layout-lab/docs/screens-as-is-2026-10-21/README.md).
+4. Dokumentasi teknis, arsitektur, dan ringkasan audit layout-lab dicatat terpusat pada Bagian 14 dokumen ini.
 
 ### Pembaruan Versi 1.9 (18 Oktober 2026 - Pembatalan Format Carousel 4 Slide & Penetapan 1 Video + 1 Gambar Statis Meta Ads Rasio 4:5 dan 9:16, Decision 021)
 1. **Pembatalan Format Carousel 4 Slide & Penetapan Materi Iklan Meta (CLOSED / SIAP TAYANG, Decision 021)**:
@@ -90,7 +107,7 @@ Ringkasan Pembaruan: Decision 022 menetapkan preview layout data dummy sebagai l
 
 ### Pembaruan Baseline Versi 1.2 (14 Oktober 2026)
 1. **Showcase 6 Proyek Portofolio Konsep Lengkap**:
-   - Menampilkan 6 proyek portofolio konsep dengan live demo URL Vercel aktif untuk ketiga tingkatan paket:
+   - Menampilkan 6 proyek portofolio konsep dengan live demo URL Cloudflare Workers (*.enlesweb.com) aktif untuk ketiga tingkatan paket (Vercel dinonaktifkan per Decision 023):
      - Starter: Seruput Kopi (kedai kopi) & ripeir (workshop perbaikan barang)
      - Business: tuntas (bimbel & les privat)
      - Growth: Jerseay (studio jersey custom, default highlight), dipotongin (barbershop), & berflower (toko bunga)
@@ -279,7 +296,7 @@ Persyaratan per section:
   - Mobile (< 1024px): Ditumpuk secara kompak (highlight di atas, switcher kartu minimized di bawah dengan auto-scroll halus kembali ke stage).
   - Default proyek yang di-highlight adalah Jerseay.
 - Status tombol saat ini:
-  - Keenam proyek (`jerseay`, `dipotongin`, `tuntas`, `seruput`, `ripeir`, `berflower`) berstatus `live` dengan URL demo Vercel aktif (`[Lihat Website]`). Jika salah satu URL dikosongkan di `site.ts`, komponen otomatis menampilkan tombol nonaktif `[Segera]` dengan atribut `aria-label="Segera tersedia"` dan mencetak peringatan build `console.warn` (mencegah broken link).
+  - Keenam proyek (`jerseay`, `dipotongin`, `tuntas`, `seruput`, `ripeir`, `berflower`) berstatus `live` dengan URL demo Cloudflare Workers aktif (`*.enlesweb.com`, per Decision 023; Vercel dinonaktifkan) pada tombol `[Lihat Website]`. Jika salah satu URL dikosongkan di `site.ts`, komponen otomatis menampilkan tombol nonaktif `[Segera]` dengan atribut `aria-label="Segera tersedia"` dan mencetak peringatan build `console.warn` (mencegah broken link).
 
 **Proses**
 - Lima langkah berurutan dalam satu sumbu vertikal lurus.
@@ -320,14 +337,14 @@ Persyaratan per section:
  
 | Proyek | Tingkat Paket | Status saat go live | Tombol | URL Demo |
 |---|---|---|---|---|
-| Jerseay | Growth | Live, demo aktif | "Lihat Website" | `https://jerseay.vercel.app/` |
-| dipotongin | Growth | Live, demo aktif | "Lihat Website" | `https://dipotongin.vercel.app/` |
-| tuntas | Business | Live, demo aktif | "Lihat Website" | `https://tuntas-steel.vercel.app/` |
-| Seruput Kopi | Starter | Live, demo aktif | "Lihat Website" | `https://seruput-kopi.vercel.app/` |
-| ripeir | Starter | Live, demo aktif | "Lihat Website" | `https://ripeir.vercel.app/` |
-| berflower | Growth | Live, demo aktif | "Lihat Website" | `https://berflower-lilac.vercel.app/` |
+| Jerseay | Growth | Live, demo aktif | "Lihat Website" | `https://jerseay.enlesweb.com/` |
+| dipotongin | Growth | Live, demo aktif | "Lihat Website" | `https://dipotongin.enlesweb.com/` |
+| tuntas | Business | Live, demo aktif | "Lihat Website" | `https://tuntas.enlesweb.com/` |
+| Seruput Kopi | Starter | Live, demo aktif | "Lihat Website" | `https://seruput.enlesweb.com/` |
+| ripeir | Starter | Live, demo aktif | "Lihat Website" | `https://ripeir.enlesweb.com/` |
+| berflower | Growth | Live, demo aktif | "Lihat Website" | `https://berflower.enlesweb.com/` |
 
-Catatan: Keenam proyek contoh berstatus `live` dengan demo Vercel aktif dan aset visual screenshot lokal di `src/assets/projects/` (didukung fallback SVG jika URL dikosongkan).
+Catatan: Keenam proyek contoh berstatus `live` di Cloudflare Workers (*.enlesweb.com, Vercel dinonaktifkan per Decision 023) dan didukung aset visual screenshot lokal di `src/assets/projects/` (didukung fallback SVG jika URL dikosongkan).
 
 ## 8. Batasan bisnis (LOCKED)
 
@@ -359,7 +376,7 @@ Homepage siap direview jika semua benar:
 - Rp450.000 dan "domain dan hosting 1 tahun" terlihat jelas di hero.
 - Tiga paket inti dapat dibandingkan secara sejajar di desktop, dan Custom terpisah di bawahnya.
 - Tidak ada badge "Most Popular", "Best Value", atau badge buatan.
-- Enam proyek tampil dengan label konsep (sistem Highlight & Minimize); keenam proyek aktif dengan demo URL Vercel live (`[Lihat Website]`), didukung mekanisme fallback nonaktif aman `[Segera]` dengan warning build jika URL dikosongkan.
+- Enam proyek tampil dengan label konsep (sistem Highlight & Minimize); keenam proyek aktif dengan demo URL Cloudflare Workers live (*.enlesweb.com, Decision 023) pada tombol `[Lihat Website]`, didukung mekanisme fallback nonaktif aman `[Segera]` dengan warning build jika URL dikosongkan.
 - Proses memakai satu sumbu vertikal dengan interaksi accordion langkah yang mulus.
 - Pernyataan manfaat bisnis dan Tentang menyatu dalam layout editorial asimetris `#tentang`.
 - Semua tombol WhatsApp berfungsi dan membawa pesan otomatis yang benar.
@@ -389,7 +406,7 @@ Urutan penilaian:
 1. **Jurang ekspektasi (TERSELESAIKAN).** Sebelumnya hanya ada contoh proyek tingkat Growth. Kini telah tersedia contoh spesifik untuk ketiga tingkatan paket (Starter: Seruput Kopi & ripeir, Business: tuntas, Growth: dipotongin, Jerseay, berflower).
 2. **Kapasitas.** Jika iklan menghasilkan banyak lead sebelum sistem siap, kualitas respons turun. Ini di luar homepage, tetapi pemilik perlu membatasi budget iklan awal dan jumlah proyek berjalan.
 3. **Privasi dan Pixel (TERSELESAIKAN).** Halaman Kebijakan Privasi statis telah dibangun dan aktif di `/kebijakan-privasi` serta ditautkan di footer untuk memenuhi kewajiban hukum dan kepatuhan kampanye iklan Meta Ads.
-4. **Enam proyek demo live.** Seluruh 6 proyek demo telah live di Vercel dan didukung aset screenshot lokal di `src/assets/projects/`.
+4. **Enam proyek demo live.** Seluruh 6 proyek demo telah live di Cloudflare Workers (*.enlesweb.com; hosting Vercel dinonaktifkan per Decision 023) dan didukung aset screenshot lokal di `src/assets/projects/`.
 5. **Aturan perpanjangan tahun kedua & SOP operasional revisi/update konten (TERSELESAIKAN).** Kebijakan perpanjangan domain dan hosting telah diputuskan dan LOCKED (Decision 002): tahun pertama sudah termasuk domain dan hosting dengan akun registrar dan registrant atas nama ENLESWEB (menghilangkan birokrasi verifikasi dokumen awal); tahun kedua klien bebas memilih perpanjangan terkelola flat all package (Rp400rb/tahun untuk domain .com/.id dan hosting, atau Rp300rb/tahun untuk ekstensi lainnya) atau opsi mandiri (transfer kode EPP + arsip file build zip dist/). SOP chat WhatsApp dan aturan pasca-tayang telah resmi dikunci (**CLOSED** di `Delivery & Operations/sop.md` v1.2, Decision 013–017), mencakup kuota gratis putaran update konten ringan tahunan di tahun pertama (Starter 2x, Business 4x, Growth 6x; selebihnya Rp50.000/putaran, serta otomatis di-reset setiap tahun saat memilih Perpanjangan Terkelola), waktu pembelian domain pasca-DP 50% + materi lengkap, aturan *On-Hold* 60 hari kalender, dan transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF.
 6. **Performa PageSpeed & Agentic Browsing (TERSELESAIKAN).** Teroptimasi penuh untuk mobile dan desktop: CSS inlined, 4 bobot font Poppins preloaded, Meta Pixel deferred murni berbasis interaksi (tanpa timeout), eliminasi forced reflow dan style invalidation (skrip head js-reveal & penjadwalan requestIdleCallback), isolasi GPU layer SVG blur, berkas `llms.txt`, dan Cloudflare caching headers aktif (mencapai Desktop 100/100 dan Mobile remote 95/100).
 
@@ -611,7 +628,7 @@ Sistem showcase menggunakan interaksi **Highlight & Minimize**:
 - Label konsep: `Konsep buatan kami sendiri. Contoh tingkat Growth.`
 - Jenis bisnis: `Studio jersey custom`
 - Deskripsi: `Konsep website untuk studio jersey custom.`
-- URL Demo: `https://jerseay.vercel.app/`
+- URL Demo: `https://jerseay.enlesweb.com/`
 - Tombol: `[Lihat Website]` (aktif dengan link demo, atau fallback `[Segera]` jika URL dikosongkan)
 
 ### 5.2 dipotongin
@@ -620,7 +637,7 @@ Sistem showcase menggunakan interaksi **Highlight & Minimize**:
 - Label konsep: `Konsep buatan kami sendiri. Contoh tingkat Growth.`
 - Jenis bisnis: `Studio barbershop`
 - Deskripsi: `Konsep website barbershop dengan daftar layanan, kartu member loyalitas, jam operasional, dan lokasi.`
-- URL Demo: `https://dipotongin.vercel.app/`
+- URL Demo: `https://dipotongin.enlesweb.com/`
 - Tombol: `[Lihat Website]` (aktif dengan link demo, atau fallback `[Segera]` jika URL dikosongkan)
 
 ### 5.3 tuntas
@@ -629,7 +646,7 @@ Sistem showcase menggunakan interaksi **Highlight & Minimize**:
 - Label konsep: `Konsep buatan kami sendiri. Contoh tingkat Business.`
 - Jenis bisnis: `Bimbel kelompok kecil dan privat`
 - Deskripsi: `Konsep website bimbel kelompok kecil dan les privat untuk SD, SMP, dan SMA.`
-- URL Demo: `https://tuntas-steel.vercel.app/`
+- URL Demo: `https://tuntas.enlesweb.com/`
 - Tombol: `[Lihat Website]` (aktif dengan link demo, atau fallback `[Segera]` jika URL dikosongkan)
 
 ### 5.4 Seruput Kopi
@@ -638,7 +655,7 @@ Sistem showcase menggunakan interaksi **Highlight & Minimize**:
 - Label konsep: `Konsep buatan kami sendiri. Contoh tingkat Starter.`
 - Jenis bisnis: `Kedai kopi dan sangrai dadakan`
 - Deskripsi: `Konsep website kedai kopi lokal dengan menu seduh dadakan, biji kopi pilihan, dan lokasi.`
-- URL Demo: `https://seruput-kopi.vercel.app/`
+- URL Demo: `https://seruput.enlesweb.com/`
 - Tombol: `[Lihat Website]` (aktif dengan link demo, atau fallback `[Segera]` jika URL dikosongkan)
 
 ### 5.5 ripeir
@@ -647,7 +664,7 @@ Sistem showcase menggunakan interaksi **Highlight & Minimize**:
 - Label konsep: `Konsep buatan kami sendiri. Contoh tingkat Starter.`
 - Jenis bisnis: `Workshop perbaikan barang`
 - Deskripsi: `Konsep website servis laptop, komputer, handphone, dan tablet.`
-- URL Demo: `https://ripeir.vercel.app/`
+- URL Demo: `https://ripeir.enlesweb.com/`
 - Tombol: `[Lihat Website]` (aktif dengan link demo, atau fallback `[Segera]` jika URL dikosongkan)
 
 ### 5.6 berflower
@@ -656,7 +673,7 @@ Sistem showcase menggunakan interaksi **Highlight & Minimize**:
 - Label konsep: `Konsep buatan kami sendiri. Contoh tingkat Growth.`
 - Jenis bisnis: `Toko bunga dan hadiah`
 - Deskripsi: `Konsep website untuk toko bunga.`
-- URL Demo: `https://berflower-lilac.vercel.app/`
+- URL Demo: `https://berflower.enlesweb.com/`
 - Tombol: `[Lihat Website]` (aktif dengan link demo, atau fallback `[Segera]` jika URL dikosongkan)
 
 Nama proyek ditulis persis seperti di atas (huruf kecil untuk dipotongin, tuntas, ripeir, dan berflower). Keenam proyek memiliki tangkapan layar webp/png di `src/assets/projects/` dan favicon identitas svg masing-masing.
@@ -1086,12 +1103,12 @@ Mobile (< 1024px):
 - Konsep: Menampilkan contoh kemampuan nyata untuk ketiga tingkatan paket tanpa memaksa pengunjung melakukan scroll panjang.
 - Sistem **Highlight & Minimize**:
   - Enam proyek portofolio konsep tampil:
-    1. `jerseay` (Tingkat Growth, default highlighted): Studio jersey custom (`https://jerseay.vercel.app/`).
-    2. `dipotongin` (Tingkat Growth): Studio barbershop (`https://dipotongin.vercel.app/`).
-    3. `tuntas` (Tingkat Business): Bimbel kelompok kecil dan privat (`https://tuntas-steel.vercel.app/`).
-    4. `seruput` (Tingkat Starter): Kedai kopi dan sangrai dadakan (`https://seruput-kopi.vercel.app/`).
-    5. `ripeir` (Tingkat Starter): Workshop perbaikan barang (`https://ripeir.vercel.app/`).
-    6. `berflower` (Tingkat Growth): Toko bunga dan hadiah (`https://berflower-lilac.vercel.app/`).
+    1. `jerseay` (Tingkat Growth, default highlighted): Studio jersey custom (`https://jerseay.enlesweb.com/`).
+    2. `dipotongin` (Tingkat Growth): Studio barbershop (`https://dipotongin.enlesweb.com/`).
+    3. `tuntas` (Tingkat Business): Bimbel kelompok kecil dan privat (`https://tuntas.enlesweb.com/`).
+    4. `seruput` (Tingkat Starter): Kedai kopi dan sangrai dadakan (`https://seruput.enlesweb.com/`).
+    5. `ripeir` (Tingkat Starter): Workshop perbaikan barang (`https://ripeir.enlesweb.com/`).
+    6. `berflower` (Tingkat Growth): Toko bunga dan hadiah (`https://berflower.enlesweb.com/`).
   - Satu proyek tampil secara penuh dalam panggung pameran berasio 16:10 (*highlighted stage*).
   - Lima proyek lainnya tampil sebagai kartu ringkas (*minimized cards*) di bawah panggung.
   - Default proyek highlighted: **Jerseay**.
@@ -1107,7 +1124,7 @@ Mobile (< 1024px):
   - Business: `Konsep buatan kami sendiri. Contoh tingkat Business.`
   - Growth: `Konsep buatan kami sendiri. Contoh tingkat Growth.`
 - Tombol tindakan:
-  - Keenam proyek dilengkapi tombol aktif `[Lihat Website]` yang membuka URL demo Vercel live di tab baru (`target="_blank" rel="noopener noreferrer"`).
+  - Keenam proyek dilengkapi tombol aktif `[Lihat Website]` yang membuka URL demo Cloudflare Workers live (*.enlesweb.com) di tab baru (`target="_blank" rel="noopener noreferrer"`).
   - Mekanisme keamanan fallback: jika URL dikosongkan di `site.ts`, tombol otomatis menjadi nonaktif `[Segera]` dengan atribut `aria-label="Segera tersedia"` dan mencetak peringatan build aman di konsol.
 
 ---
@@ -1381,39 +1398,39 @@ export const site = {
     {
       id: 'jerseay',
       status: 'live',
-      url: 'https://jerseay.vercel.app/',
+      url: 'https://jerseay.enlesweb.com/',
     },
     {
       id: 'dipotongin',
       status: 'live',
-      url: 'https://dipotongin.vercel.app/',
+      url: 'https://dipotongin.enlesweb.com/',
     },
     {
       id: 'tuntas',
       status: 'live',
-      url: 'https://tuntas-steel.vercel.app/',
+      url: 'https://tuntas.enlesweb.com/',
     },
     {
       id: 'seruput',
       status: 'live',
-      url: 'https://seruput-kopi.vercel.app/',
+      url: 'https://seruput.enlesweb.com/',
     },
     {
       id: 'ripeir',
       status: 'live',
-      url: 'https://ripeir.vercel.app/',
+      url: 'https://ripeir.enlesweb.com/',
     },
     {
       id: 'berflower',
       status: 'live',
-      url: 'https://berflower-lilac.vercel.app/',
+      url: 'https://berflower.enlesweb.com/',
     },
   ],
 } as const;
 ```
 
 Logika penanganan proyek dan nomor:
-- Keenam proyek contoh berstatus `live` dengan URL demo Vercel aktif. Jika salah satu URL dikosongkan di konfigurasi, tombol proyek tersebut dirender secara aman sebagai tombol nonaktif `[Segera]` dengan atribut `aria-label="Segera tersedia"` dan sistem mencetak peringatan build `console.warn` tanpa menggagalkan build.
+- Keenam proyek contoh berstatus `live` dengan URL demo Cloudflare Workers (*.enlesweb.com) aktif (Vercel dinonaktifkan per Decision 023). Jika salah satu URL dikosongkan di konfigurasi, tombol proyek tersebut dirender secara aman sebagai tombol nonaktif `[Segera]` dengan atribut `aria-label="Segera tersedia"` dan sistem mencetak peringatan build `console.warn` tanpa menggagalkan build.
 - Format tampilan nomor WhatsApp di footer: `+` diikuti string `whatsappNumber`.
 
 ---
@@ -1644,20 +1661,54 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
 2. `materi iklan Meta`: **CLOSED / SIAP TAYANG** (Format Carousel 4 slide dibatalkan dan digantikan 1 Video 15s dan 1 Gambar Statis v3 Whole ENLESWEB masing-masing dalam rasio 4:5 dan 9:16 di direktori `campaign-1/` dengan dokumen salinan di `copy-iklan-a.md` dan `copy-iklan-b.md` ber-hook masalah dan penawaran transparan mulai Rp450.000, Decision 016, 020, & 021).
 3. `template PDF Bukti Pemesanan`: **CLOSED** (Template formal PDF Bukti Pemesanan ber-TTD digital telah selesai dibuat oleh pendiri bisnis, mencantumkan Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, jatah kuota gratis update konten ringan tahunan 2x/4x/6x, ketentuan pembelian domain pasca-DP + materi lengkap, dan aturan masa tenggang On-Hold 60 hari kalender, Decision 017 & Decision 020).
 
-*(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1099411523003859, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, optimasi PageSpeed Insights 100/100, berkas llms.txt / _headers, SOP operasional WhatsApp v1.2, domain enlesweb.com, materi iklan Meta campaign-1 (1 video + 1 gambar statis rasio 4:5 dan 9:16), dan template PDF Bukti Pemesanan seluruhnya telah RESOLVED / CLOSED 100%. Fokus operasional beralih penuh ke Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram).*
+*(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1099411523003859, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, optimasi PageSpeed Insights 100/100, berkas llms.txt / _headers, SOP operasional WhatsApp v1.3, domain enlesweb.com, materi iklan Meta campaign-1 (1 video + 1 gambar statis rasio 4:5 dan 9:16), template PDF Bukti Pemesanan, serta unifikasi hosting Cloudflare Workers *.enlesweb.com dan peluncuran preview.enlesweb.com seluruhnya telah RESOLVED / CLOSED 100%. Fokus operasional beralih penuh ke Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram).*
 
-## 14. Status dan Penggunaan layout-lab (21 Oktober 2026, Decision 022)
+## 14. Status dan Penggunaan layout-lab (28 Oktober 2026, Decision 022 CLOSED & Decision 023)
 
-layout-lab adalah alat internal untuk memilih varian dan menyusun urutan section sebagai eksplorasi visual sebelum DP. Composer mencakup 43 varian dalam 13 kategori dan menggunakan contoh bisnis umum dengan data dummy. Preview dirender melalui rute `/pratinjau?s=...`.
+### 14.1 Status Produksi & Arsitektur Deployment
+- **Domain Kanonikal:** `https://preview.enlesweb.com/` (di-deploy ke Cloudflare Workers).
+- **Format URL Preview Klien:** Menggunakan format Stateless Compact ID:
+  ```
+  https://preview.enlesweb.com/p/<id>
+  ```
+  Format ID ringkas ini di-generate melalui codec berbasis Base62 + salt 16-bit + checksum 12-bit (`src/utils/recipe-codec.ts`), menggantikan format query parameter panjang lama (`/pratinjau?s=...`).
+- **Pengamanan Rute Studio Internal & Worker Allowlist (`src/worker.ts`):**
+  - Rute studio editor internal dilindungi di bawah prefix `/studio-admin/*`:
+    - `/studio-admin/`: Studio visual utama (canvas live, picker varian, reorder section).
+    - `/studio-admin/galeri`: Galeri visual seluruh varian komponen.
+    - `/studio-admin/uji`: Halaman pengujian dan validasi visual.
+    - `/studio-admin/legal`: Generator dan preview halaman legal/kebijakan privasi.
+  - Rute publik yang diizinkan untuk klien hanya rute preview compact: `/p/*` dan aset statis (`/_astro/*`, favicon, dsb.).
+  - Rute root `/` dan rute lawas `/pratinjau` secara sadar merender respons `404 Not Found` guna menjaga integritas studio internal dari akses publik tanpa izin.
 
-Decision 022 menetapkan bahwa setelah prospek menerima rekomendasi paket dan demo sesuai tier, admin mengirim satu tautan preview layout yang relevan sebelum ringkasan kesepakatan dan permintaan DP. Tujuannya membantu prospek membayangkan arah susunan layout sebelum memutuskan.
+### 14.2 Karakteristik Render Preview Klien (`/p/<id>`)
+- **Default Light Theme:** Halaman preview `/p/<id>` terkunci pada mode terang (*light mode*) secara konsisten dengan identitas ENLESWEB, kecuali jika parameter URL `?tema=gelap` ditambahkan secara manual.
+- **Penyaringan Navigasi Dinamis:** Navbar dan footer pada halaman preview menyaring tautan menu secara dinamis: link menu hanya muncul apabila section terkait benar-benar aktif di dalam komposisi resep layout.
+- **Fallback Tombol CTA:** Jika suatu resep susunan layout tidak menyertakan section Call-to-Action (CTA), tombol aksi pada navbar otomatis diarahkan ke section penutup atau kontak yang tersedia.
 
-Per 21 Oktober, lab masih berjalan lokal dan belum digunakan klien. Alur ini baru dapat dijalankan setelah deployment aktif dan URL preview diverifikasi. Preview memakai contoh bisnis umum dan data dummy; jelaskan bahwa preview bukan hasil kerja klien atau draf proyek, tidak memulai pengerjaan, dan tidak mengubah aturan pembatalan/refund. Preview resmi pengerjaan setelah DP tetap menggunakan materi klien. Lab tidak menghasilkan website produksi atau blueprint JSON, dan tidak mengubah Decision 011: perancangan Website Builder tetap menunggu klien ke-10 go live, selesai, tayang, dan lunas.
+### 14.3 Komposisi Katalog Komponen (43 Varian pada 13 Kategori)
+Composer mencakup perbaikan visual terstandarisasi untuk menghasilkan layout bersih dan berbobot:
+1. **Layanan (S1–S4):** Memperlakukan varian S1 sampai S4 secara sejajar tanpa ada varian yang direndahkan sebagai kelas dua.
+2. **Daftar Harga (B1–B3):** Varian B1 sampai B3 menyajikan informasi paket secara transparan dan proporsional.
+3. **Footer F4 Bersih:** Varian F4 dirancang sebagai footer bersih tanpa menyematkan kartu CTA ganda di dalamnya.
+4. **Grid & Galeri (G1/G2/U1):** Penataan grid dan kartu testimoni/keunggulan seimbang tanpa meninggalkan kartu tunggal menggantung (*orphan cards*).
+5. **Daftar Kredibilitas K2:** Tampilan 2 kolom penuh tanpa ruang kosong (*dead space*) yang tidak perlu.
+6. **FAQ Q1/Q2:** Teks bantuan (*helper text*) dirancang taktil dan bersih tanpa garis batas samping kiri (*no left border*).
+7. **Profil Tim R1–R3:** Komponen profil fokus menampilkan profil inti tanpa kartu mitra/sponsor buatan.
 
-Panduan dan bukti audit:
-- [Panduan layout-lab](layout-lab/README.md)
-- [Catatan teknis](layout-lab/NOTES.md)
-- [Indeks screenshot hasil build audit 21 Oktober 2026](layout-lab/docs/screens-as-is-2026-10-21/README.md)
-- [Decision log, Decision 022](Business%20Memory/decision-log.md#decision-022)
+### 14.4 Metrik Kualitas & Pengujian Sistem
+- **Astro Check:** 70 berkas terverifikasi dengan hasil 0 error, 0 warning, dan 0 hint.
+- **Automated Assertions:** 42 assertion fungsional lulus 100%.
+- **Playwright Visual Regression:** 86 skenario visual snapshot lulus uji di seluruh breakpoint mobile dan desktop.
+
+### 14.5 Alur Operasional SOP Pra-DP (Langkah 3b)
+- **Keputusan 022 CLOSED:** Alur pengiriman preview pra-DP resmi diaktifkan di `Delivery & Operations/sop.md` (v1.3 Langkah 3b).
+- **Penggunaan:** Setelah calon klien menerima rekomendasi paket dan melihat demo konsep di WhatsApp, admin menyusun draf susunan section di studio internal, lalu membagikan tautan preview Stateless Compact ID (`preview.enlesweb.com/p/<id>`) kepada calon klien sebelum mengirimkan ringkasan kesepakatan dan permintaan DP 50%.
+- **Guardrail Operasional:** Preview menggunakan contoh bisnis umum dan data dummy; admin wajib menjelaskan bahwa preview ini adalah gambaran tata letak visual, bukan draf pengerjaan materi klien, tidak memulai pengerjaan proyek, dan tidak mengubah aturan pembatalan/DP. Preview resmi dengan materi asli klien baru dikerjakan setelah DP 50% masuk dan materi dasar lengkap (Langkah 6).
+- **Pemisahan dari Website Builder (Decision 011):** `layout-lab` adalah alat bantu visual eksplorasi layout sebelum DP. Lab tidak menghasilkan website produksi atau skema blueprint JSON, dan tidak mengubah gerbang Website Builder yang tetap menunggu klien ke-10 go live, selesai, tayang, dan lunas.
+
+Rujukan dokumen terkait:
+- [Decision Log: Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023](Business%20Memory/decision-log.md#decision-023)
+- [SOP Operasional WhatsApp: Langkah 3b](Delivery%20&%20Operations/sop.md#langkah-3b-opsional-kirim-preview-layout-data-dummy-decision-022--023)
 
 

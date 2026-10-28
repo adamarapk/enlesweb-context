@@ -425,9 +425,9 @@ Format video 15 detik dan gambar statis adaptif 4:5/9:16 memberikan kepastian vi
 ---
 
 ## Decision 022
-- **Tanggal:** 21 Oktober 2026
+- **Tanggal:** 21 Oktober 2026 (Diperbarui & Terealisasi: 28 Oktober 2026)
 - **Topik:** Preview Layout pra-DP dengan layout-lab untuk Mendukung Keputusan Prospek
-- **Status:** Diputuskan; pelaksanaan menunggu deployment dan verifikasi URL publik
+- **Status:** Diputuskan & Terealisasi (CLOSED - Aktif di https://preview.enlesweb.com per 28 Oktober 2026)
 
 ### 1. Masalah yang ingin diselesaikan
 Calon klien dapat memahami paket dan melihat website konsep, tetapi belum tentu bisa membayangkan susunan layout untuk kebutuhan usahanya sebelum membayar DP. layout-lab dapat memberi gambaran visual awal sebelum prospek membuat keputusan.
@@ -435,9 +435,42 @@ Calon klien dapat memahami paket dan melihat website konsep, tetapi belum tentu 
 ### 2. Keputusan
 1. **Preview Layout sebelum DP:** Setelah prospek menerima rekomendasi paket dan demo sesuai tier, ENLESWEB memberikan satu tautan preview layout dari layout-lab sebelum mengirim ringkasan kesepakatan dan meminta DP. Pilih susunan yang relevan dengan kebutuhan prospek untuk membantu mereka menilai arah tampilan.
 2. **Batas Preview:** Preview menggunakan contoh bisnis umum dan data dummy. Jelaskan bahwa tautan tersebut menunjukkan susunan layout, bukan draf proyek prospek, bukan hasil kerja klien, dan bukan janji bahwa hasil akhir akan sama persis. Preview ini tidak memulai pengerjaan proyek dan tidak dihitung sebagai draf visual dalam aturan pembatalan/refund.
-3. **Prasyarat Berbagi:** Penggunaan kepada prospek dimulai setelah deployment publik aktif dan URL preview diverifikasi. Sebelum itu, admin tetap menggunakan demo website yang sudah tersedia dan tidak menyebut layout-lab sebagai tautan publik yang siap dibagikan.
+3. **Prasyarat Berbagi (Terealisasi per 28 Oktober 2026):** Penggunaan kepada prospek resmi dimulai setelah deployment publik aktif di Cloudflare Workers pada subdomain `https://preview.enlesweb.com` dengan format Stateless Compact ID `https://preview.enlesweb.com/p/<id>`. Studio internal diakses via `https://preview.enlesweb.com/studio-admin/` untuk menghasilkan tautan klien yang aman.
 4. **Pemisahan dari Preview Pengerjaan:** Preview resmi setelah DP tetap dibuat dari materi klien dan mengikuti paket serta proses revisi yang disepakati. layout-lab tidak menggantikannya.
 5. **Batas Website Builder:** Keputusan ini tidak mengubah Decision 011. layout-lab tidak membuat website produksi atau blueprint JSON; gerbang perancangan Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
 
 ### 3. Alasan
 Memberi prospek gambaran susunan layout sebelum DP agar mereka lebih yakin terhadap arah tampilan, sambil menjaga perbedaan yang jelas antara contoh dummy pra-DP dan draf pengerjaan resmi setelah DP.
+
+---
+
+## Decision 023
+- **Tanggal:** 28 Oktober 2026
+- **Topik:** Unifikasi Infrastruktur Penuh ke Cloudflare Workers (*.enlesweb.com & preview.enlesweb.com), Penonaktifan Vercel, dan Peluncuran Produksi layout-lab
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Sebelumnya, showcase portofolio konsep berada di hosting Vercel (`*.vercel.app`) yang terpisah dari website utama ENLESWEB di Cloudflare Workers (`enlesweb.com`), menciptakan fragmentasi domain, ketergantungan multi-platform, dan tautan demo yang belum memakai domain kanonikal studio. Selain itu, alat composer internal `layout-lab` masih berjalan lokal tanpa domain publik, sehingga addendum alur penjualan pra-DP pada Decision 022 belum dapat dijalankan secara nyata kepada calon klien.
+
+### 2. Keputusan
+1. **Unifikasi Hosting ke Cloudflare Workers pada Subdomain *.enlesweb.com:**
+   Seluruh 6 website portofolio konsep resmi dimigrasikan dan dideploy ke Cloudflare Workers menggunakan subdomain resmi di bawah `enlesweb.com`:
+   - `Jerseay` (Tingkat Growth): `https://jerseay.enlesweb.com/` (sebelumnya `https://jerseay.vercel.app/`)
+   - `berflower` (Tingkat Growth): `https://berflower.enlesweb.com/` (sebelumnya `https://berflower-lilac.vercel.app/`)
+   - `tuntas` (Tingkat Business): `https://tuntas.enlesweb.com/` (sebelumnya `https://tuntas-steel.vercel.app/`)
+   - `dipotongin` (Tingkat Growth): `https://dipotongin.enlesweb.com/` (sebelumnya `https://dipotongin.vercel.app/`)
+   - `ripeir` (Tingkat Starter): `https://ripeir.enlesweb.com/` (sebelumnya `https://ripeir.vercel.app/`)
+   - `Seruput Kopi` (Tingkat Starter): `https://seruput.enlesweb.com/` (sebelumnya `https://seruput-kopi.vercel.app/`)
+2. **Pembaruan Tautan di Platform Induk & Penonaktifan Vercel:**
+   Seluruh tombol dan tautan proyek pada website utama `enlesweb.com` (`src/config/site.ts`) telah diarahkan ke masing-masing subdomain `*.enlesweb.com`. Seluruh deployment dan proyek terkait di Vercel resmi dinonaktifkan, menjadikan ekosistem hosting ENLESWEB 100% terkonsolidasi di Cloudflare Workers.
+3. **Peluncuran Produksi layout-lab di preview.enlesweb.com:**
+   `layout-lab` resmi dideploy di Cloudflare Workers (`name = "layout-lab-enlesweb"`) pada subdomain `https://preview.enlesweb.com`:
+   - Pratinjau susunan klien menggunakan rute Stateless Compact ID `https://preview.enlesweb.com/p/<id>` berbasis Base62 dengan salt 16-bit dan checksum 12-bit (`src/utils/recipe-codec.ts`), menggantikan query URL lama `/pratinjau?s=...`. Pratinjau terkunci ke Tema Terang secara default dan otomatis menyembunyikan tautan navbar/footer ke seksi yang tidak aktif pada resep.
+   - Studio perakit internal dilindungi di bawah path `/studio-admin/` (`/studio-admin/`, `/studio-admin/galeri`, `/studio-admin/uji`, `/studio-admin/legal`).
+   - Allowlist Cloudflare Worker (`src/worker.ts`) menolak request root `/` dan `/pratinjau` dengan 404 Not Found untuk mencegah akses publik langsung ke antarmuka internal studio.
+   - Komposisi 43 varian dari 13 kategori section dimurnikan: kesetaraan equal tier pada Layanan (`S1`-`S4`) dan Biaya (`B1`-`B3`), footer murni tanpa kartu CTA (`F4` asimetris), eliminasi orphan card (`G1`, `G2`, `U1`), eliminasi dead space (`K2` baris 2 kolom penuh kanvas), penghapusan border kiri dekoratif pada FAQ (`Q1`, `Q2`), serta pembersihan kartu mitra pada Profil (`R1`-`R3`).
+4. **Pengaktifan Penuh Alur Pra-DP (Decision 022 CLOSED):**
+   Dengan terverifikasinya URL `https://preview.enlesweb.com`, admin resmi diwajibkan menggunakan generator ID studio untuk mengirimkan tautan preview layout kepada prospek sebelum meminta DP sesuai SOP WhatsApp.
+
+### 3. Alasan
+Menyatukan seluruh aset digital studio di bawah satu domain kanonikal resmi (`enlesweb.com`), memperkuat reputasi profesional di mata prospek, mengeliminasi biaya dan kompleksitas multi-vendor hosting, serta mengaktifkan instrumen penjualan pra-DP yang aman, cepat, dan teruji tanpa risiko kebocoran data klien.

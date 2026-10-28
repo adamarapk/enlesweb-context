@@ -1,6 +1,6 @@
 # SOP Chat WhatsApp dan Transaksi Klien ENLESWEB
 
-Versi 1.2, 16 Oktober 2026 (aturan transaksi tetap CLOSED / TERKUNCI). Addendum alur preview layout pra-DP mengikuti Decision 022, 21 Oktober 2026. Dipakai untuk lead dari website, Meta Ads, dan Micro-Warm Outreach DM Instagram sebelum klien pertama.
+Versi 1.3, 16 Oktober 2026 (aturan transaksi tetap CLOSED / TERKUNCI). Addendum alur preview layout pra-DP mengikuti Decision 022 & Decision 023, 28 Oktober 2026 (preview.enlesweb.com aktif di Cloudflare Workers). Dipakai untuk lead dari website, Meta Ads, dan Micro-Warm Outreach DM Instagram sebelum klien pertama.
 
 ## 1. Tujuan
 
@@ -22,7 +22,7 @@ Dokumen ini menyeragamkan cara ENLESWEB menangani chat WhatsApp, kesepakatan, pe
 - **Pembatalan:** DP dikembalikan 50% jika pembatalan dilakukan saat tahap naskah/pengumpulan materi (sebelum domain dibeli dan sebelum draf visual dikirim); DP hangus (0%) jika domain sudah dibeli atau draf visual sudah dikirim.
 - **Teks dan Foto:** Klien menyediakan bahan mentah. ENLESWEB membantu merapikan teks hanya untuk Business dan Growth.
 - **Domain, Default Framing `.com`, & Registrant Tahun Pertama (Decision 002, 010, & 014):** Klien bebas memilih ekstensi `.com` atau `.id` tanpa biaya tambahan di seluruh paket inti. Namun, skrip chat SOP WhatsApp (Template 5.2) wajib mengajukan ekstensi **`.com` sebagai rekomendasi kalimat standar** (*"Untuk nama domainnya, apakah namabisnis.com sudah sesuai untuk kami daftarkan?"*) sebelum menyebut opsi ekstensi lain demi menjaga *blended gross margin* > 60%. Akun registrar dan nama *registrant* domain tahun pertama didaftarkan atas nama ENLESWEB demi kecepatan aktivasi tanpa birokrasi verifikasi dokumen di awal.
-- **Preview Layout pra-DP (Decision 022):** Untuk prospek yang melanjutkan pertimbangan paket, kirim satu preview layout sebelum ringkasan kesepakatan dan permintaan DP setelah URL publik layout-lab aktif dan diverifikasi. Pilih susunan yang relevan dengan kebutuhan prospek. Preview memakai data dummy, hanya menunjukkan arah susunan layout, dan bukan draf proyek. Preview ini tidak memulai pengerjaan serta tidak mengubah syarat pembatalan/refund. Sebelum URL terverifikasi, gunakan demo tier yang tersedia dan jangan membagikan layout-lab.
+- **Preview Layout pra-DP (Decision 022 & Decision 023):** Untuk prospek yang melanjutkan pertimbangan paket, kirim satu preview layout sebelum ringkasan kesepakatan dan permintaan DP menggunakan tautan resmi dari layout-lab yang telah aktif dan terverifikasi di Cloudflare Workers (`https://preview.enlesweb.com/p/<id>`). Admin menyusun susunan yang relevan dengan kebutuhan prospek melalui Studio Perakit internal di `https://preview.enlesweb.com/studio-admin/`. Preview memakai data dummy, hanya menunjukkan arah susunan layout, dan bukan draf proyek. Preview ini tidak memulai pengerjaan serta tidak mengubah syarat pembatalan/refund.
 - **Perpanjangan Tahun Kedua (Renewal - Decision 002 & Decision 015):** Bersifat opsional bagi klien:
   1. **Perpanjangan Terkelola:** Flat all package **Rp400.000/tahun** (domain `.com`/`.id` + hosting + pemeliharaan script + **reset kuota gratis 2x/4x/6x putaran update konten ringan tahunan** sesuai paket awal) atau **Rp300.000/tahun** (domain lainnya). Masa tenggang 14 hari dengan 3 kali pengingat. Jika tidak dibayar, website dinonaktifkan sementara.
   2. **Opsi Mandiri (Transfer):** Jika tidak ingin perpanjang, ENLESWEB memberikan kode transfer domain (EPP / Auth Code) dan penyerahan arsip file website hasil *build* statis (`.zip` dari `dist/`) secara cuma-cuma agar klien dapat mengelola hosting sendiri secara mandiri.
@@ -52,7 +52,7 @@ Aturan memilih paket dan jembatan ekspektasi demo (Decision 016):
 
 1. **Balas chat pertama & catat sumber lead.** Sapa, sebut topik dari pesan otomatis (misalnya “paket Starter”), lalu ajukan tiga pertanyaan kualifikasi (template 5.1). Catat di register apakah prospek berasal dari **Meta Ads**, **Organik IG**, atau **Micro-Warm Outreach DM IG** (agar evaluasi tes iklan Minggu 1 tidak tercampur). Target balasan: jam operasional aktif 09.00 - 21.00 WIB (12 jam), diusahakan secepatnya.
 2. **Rekomendasikan satu paket, luruskan ekspektasi demo, & ajukan default framing `.com`.** Pilih paket dari kebutuhan klien (template 5.2), sertakan tautan demo yang sesuai tingkat paketnya, dan tutup dengan kalimat rekomendasi domain `.com`.
-3. **Berikan preview layout sebelum DP (Decision 022).** Setelah URL publik layout-lab aktif dan terverifikasi, pilih satu susunan yang sesuai kebutuhan prospek, lalu kirim tautan preview dan jelaskan bahwa isinya data dummy serta hanya contoh arah layout. Preview ini bukan draf proyek dan tidak memulai pengerjaan. Jika URL belum terverifikasi, lanjutkan dengan demo tier yang tersedia tanpa membagikan layout-lab.
+3. **Berikan preview layout sebelum DP (Decision 022 & Decision 023).** Buka Studio Perakit internal di `https://preview.enlesweb.com/studio-admin/`, pilih satu susunan yang sesuai kebutuhan prospek, salin tautan pratinjau klien (`https://preview.enlesweb.com/p/<id>`), lalu kirim tautan preview tersebut dan jelaskan bahwa isinya data dummy serta hanya contoh arah layout. Preview ini bukan draf proyek dan tidak memulai pengerjaan.
 4. **Kirim ringkasan kesepakatan dan Bukti Pemesanan PDF bertanda tangan digital** (template 5.3). Pastikan PDF mencantumkan **Nama Lengkap Pendiri** (sesuai rekening bank) sebagai Penanggung Jawab Resmi Studio ENLESWEB. Minta klien membaca dan membalas “Setuju”. Simpan chat dan dokumen tersebut sebagai bukti kesepakatan resmi.
 5. **Terima DP 50% & kirim permintaan brief.** Setelah dana benar-benar masuk ke rekening pribadi pendiri, catat tanggalnya di register klien, lalu kirim permintaan brief (template 5.4). *(Catatan: Domain belum dibeli pada tahap ini sampai materi dasar lengkap, kecuali klien meminta secara khusus agar domain langsung didaftarkan saat DP masuk).*
 6. **Kumpulkan materi sampai lengkap & daftarkan domain.** Gunakan checklist bagian 7. Begitu materi dasar dinyatakan lengkap, segera belikan/daftarkan domain yang disepakati di registrar (bagian 9). Jadwal pengerjaan (3/7/14 hari kerja) mulai dihitung dari hari materi dinyatakan lengkap. Jika lewat **7 hari kalender** materi belum lengkap, alihkan proyek ke status **Tunda Sementara (*On-Hold* / Antrean Pasif)** dengan batas waktu maksimal **60 hari kalender sejak tanggal DP** (template 5.9).
@@ -84,19 +84,19 @@ Isi bagian dalam tanda kurung siku sebelum dikirim. Jangan menambah klaim yang t
 > Untuk nama domainnya, apakah [namabisnis].com sudah sesuai untuk kami daftarkan?
 
 **Variasi B (Khusus jika prospek menanyakan Paket Starter Rp450.000 atau membandingkan dengan demo tingkat atas):**
-> Untuk anggaran Rp450.000 (Paket Starter), kamu mendapatkan website ringkas 1 halaman lengkap dengan domain dan hosting 1 tahun, 2 kali revisi pembuatan, serta gratis 2 kali putaran update konten ringan di tahun pertama. Contoh acuan untuk Paket Starter (1 halaman) bisa kamu lihat di konsep kami ini: https://ripeir.vercel.app/ atau https://seruput-kopi.vercel.app/
+> Untuk anggaran Rp450.000 (Paket Starter), kamu mendapatkan website ringkas 1 halaman lengkap dengan domain dan hosting 1 tahun, 2 kali revisi pembuatan, serta gratis 2 kali putaran update konten ringan di tahun pertama. Contoh acuan untuk Paket Starter (1 halaman) bisa kamu lihat di konsep kami ini: https://ripeir.enlesweb.com/ atau https://seruput.enlesweb.com/
 >
-> Kalau bisnismu membutuhkan beberapa halaman terpisah (hingga 6 halaman, seperti halaman jadwal dan rincian biaya tersendiri), acuannya ada di Paket Business (Rp750.000) seperti konsep ini: https://tuntas-steel.vercel.app/ Sedangkan contoh dengan fitur simulasi interaktif seperti https://jerseay.vercel.app/ masuk di Paket Growth (Rp1.200.000).
+> Kalau bisnismu membutuhkan beberapa halaman terpisah (hingga 6 halaman, seperti halaman jadwal dan rincian biaya tersendiri), acuannya ada di Paket Business (Rp750.000) seperti konsep ini: https://tuntas.enlesweb.com/ Sedangkan contoh dengan fitur simulasi interaktif seperti https://jerseay.enlesweb.com/ masuk di Paket Growth (Rp1.200.000).
 >
 > Dari kebutuhanmu tadi, kamu lebih cocok mulai dari Paket Starter (1 halaman) atau Paket Business? Dan untuk nama domainnya, apakah [namabisnis].com sudah sesuai untuk kami daftarkan?
 
 *(Catatan admin: Klien tetap bebas memilih `.com` atau `.id` tanpa biaya tambahan. Jika klien menanyakan `.id` atau ekstensi lain setelah kalimat di atas, konfirmasi bahwa `.id` juga tersedia tanpa biaya tambahan).*
 
-**Preview layout sebelum DP (Decision 022):** Setelah URL layout-lab aktif dan diverifikasi, pilih satu susunan yang sesuai kebutuhan prospek dan kirim tautan preview sebelum mengirim template 5.3 atau meminta DP. Gunakan pesan berikut:
+**Preview layout sebelum DP (Decision 022 & Decision 023):** Buka Studio Perakit di `https://preview.enlesweb.com/studio-admin/`, pilih atau acak susunan varian section yang relevan dengan kebutuhan prospek, lalu salin tautan pratinjau klien yang dihasilkan (`https://preview.enlesweb.com/p/<id>`). Kirim tautan tersebut sebelum mengirim template 5.3 atau meminta DP menggunakan pesan berikut:
 
-> Sebelum kamu memutuskan, ini contoh susunan layout yang bisa membantu membayangkan tampilan website untuk [jenis usaha]: [tautan preview]. Isinya masih memakai contoh umum dan data dummy, jadi ini bukan draf website kamu. Setelah DP dan materi lengkap, kami siapkan preview pengerjaan berdasarkan materi yang kamu kirim.
+> Sebelum kamu memutuskan, ini contoh susunan layout yang bisa membantu membayangkan tampilan website untuk [jenis usaha]: [tautan preview: https://preview.enlesweb.com/p/<id>]. Isinya masih memakai contoh umum dan data dummy, jadi ini bukan draf website kamu. Setelah DP dan materi lengkap, kami siapkan preview pengerjaan berdasarkan materi yang kamu kirim.
 
-Per 21 Oktober 2026, layout-lab masih berjalan lokal dan belum memiliki URL publik. Sampai deployment aktif dan URL diverifikasi, admin tetap menggunakan demo tier yang tersedia. Lihat [panduan layout-lab](../layout-lab/README.md).
+Per 28 Oktober 2026, layout-lab telah resmi aktif dan terverifikasi di Cloudflare Workers pada `https://preview.enlesweb.com`. Tautan pratinjau klien menggunakan format Stateless Compact ID `/p/<id>` yang aman dan terkunci ke tema terang secara default. Gunakan Studio internal di `https://preview.enlesweb.com/studio-admin/` untuk merakit susunan.
 
 ### 5.3 Ringkasan kesepakatan (kirim sebelum DP)
 
@@ -250,7 +250,7 @@ Aturan teks:
 - Tanggal jatuh tempo layanan ENLESWEB, status perpanjangan, harga perpanjangan
 - Status kuota 10 klien pertama dan jam kerja aktual pendiri
 
-Hosting situs klien memakai hosting statis (Cloudflare atau Vercel). Kelola DNS dan akses hosting dari akun milik ENLESWEB, dan simpan kredensial di pengelola kata sandi aman.
+Hosting situs klien memakai hosting statis (Cloudflare Workers / Pages). Kelola DNS dan akses hosting dari akun milik ENLESWEB, dan simpan kredensial di pengelola kata sandi aman.
 
 ## 10. Setelah tayang: Garansi Bug 30 Hari & Layanan Update Konten Ringan
 
