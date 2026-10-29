@@ -1,14 +1,35 @@
 # ENLESWEB DOKUMENTASI UTAMA V4 (ENLESWEB-DOCS-V4)
 
-Versi: 2.3 (Unifikasi Cloudflare Workers & Peluncuran layout-lab - 28 Oktober 2026)
-Tanggal Pembaruan: 28 Oktober 2026
-Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, `Business Memory/decision-log.md` (Decision 001 - 023), dan arsitektur `layout-lab`.
-Status Sistem: Homepage production dan launch-ready V4 (Decision 001–023, SOP v1.3, seluruh ekosistem terpadu di Cloudflare Workers). layout-lab telah live di preview.enlesweb.com dan siap digunakan untuk SOP pra-DP.
-Ringkasan Pembaruan: Decision 023 menetapkan unifikasi hosting seluruh ekosistem (homepage enlesweb.com, 6 demo konsep portofolio *.enlesweb.com, dan internal composer layout-lab preview.enlesweb.com) ke Cloudflare Workers serta penonaktifan hosting Vercel. Decision 022 resmi CLOSED dengan pengaktifan alur preview layout data dummy pra-DP via Stateless Compact ID (/p/<id>) di SOP v1.3.
+Versi: 2.4 (Penyerapan Menyeluruh Arsitektur & Audit layout-lab - 29 Oktober 2026)
+Tanggal Pembaruan: 29 Oktober 2026
+Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum), dan arsitektur `layout-lab`.
+Status Sistem: Homepage production dan launch-ready V4 (Decision 001–023 + Addendum, SOP v1.4, seluruh ekosistem terpadu di Cloudflare Workers). layout-lab beroperasi penuh di preview.enlesweb.com untuk alur SOP pra-DP Langkah 3b.
+Ringkasan Pembaruan: Penyerapan mendalam arsitektur teknis dan desain layout-lab: standarisasi Dual-Layer Token System (--ew-* vs --wf-*), antarmuka split-screen (Scaled 1280px Virtual Artboard & sandboxed iframe dalam chassis fisik iPhone 15), 5 preset skenario klien, protokol postMessage runtime, 46 assertion otomatis fungsional, 86 Playwright visual snapshot tests, hasil evaluasi audit komposisi 13 kategori (UX 9.4/10), dan pemutakhiran SOP ke v1.4.
 
 ---
 
 ## RINGKASAN PEMBARUAN V4 (CHANGELOG V4)
+
+### Pembaruan Versi 2.4 (29 Oktober 2026 - Penyerapan Menyeluruh Arsitektur & Audit layout-lab, 5 Preset Klien, SOP v1.4, & Addendum Decision 023)
+1. **Arsitektur Dual-Layer Token System (`--ew-*` vs `--wf-*`)**:
+   - Memisahkan secara tegas token antarmuka Studio Shell (`--ew-*`) bergaya ENLESWEB dengan jenis huruf Poppins, aksen tactile `#E4FF30`, dan transisi interaksi halus 150ms dari Wireframe Canvas (`--wf-*`) monokrom murni (`#FFFFFF`, `#E5E5E5`, `#595959`, `#111111`) dengan IBM Plex Sans dan `transition: none !important; animation: none !important` (`ENERGY 1 / RHYTHM 2 / MOTION 1`) untuk menjamin evaluasi murni hierarki dan proporsi tanpa bias estetika.
+2. **Studio Workbench Split-Screen (Scaled 1280px Virtual Artboard & Chassis Fisik iPhone 15)**:
+   - Mode desktop mengadopsi kanvas virtual kanonikal 1280px yang diskalakan secara dinamis via CSS `transform: scale()` (`scale = Math.min(1.0, Math.max(0.2, availableWidth / 1280))`) dengan tombol toggle Auto-Fit dan 100% Zoom (panning horizontal).
+   - Mode mobile diisolasi di dalam sandboxed live iframe (`/p/<id>?clean=1`) berukuran 390×796px dalam bingkai chassis fisik iPhone 15 berukuran 414×844px (Dynamic Island, status bar 9:41, tombol samping fisik, dan Home Indicator). Isolasi iframe menjamin media query CSS berjalan 100% akurat tanpa distorsi jendela browser host.
+   - Komunikasi runtime antar-frame menggunakan `window.postMessage` (`SYNC_RECIPE`, `SCROLL_TO`, `SET_THEME`, `RECIPE_SYNCED`, `FRAME_RESIZED`), auto-focus deck scroll dengan highlight flash halus (`.ew-highlight-flash` 1200ms), dan shortcut keyboard `[` untuk melipat panel deck kontrol.
+3. **Penyediaan 5 Preset Skenario Klien di Studio Admin**:
+   - Menghadirkan 5 preset skenario bawaan: *Lengkap · 13 Section*, *Starter · Ringkas*, *Business · Jasa*, *Business · Korporat*, dan *Growth · Katalog*.
+   - Admin diberikan kebebasan penuh memilih preset mana pun atau merakit varian secara mandiri di `https://preview.enlesweb.com/studio-admin/`.
+4. **Peningkatan Mutu Pengujian & Refaktor Salinan Netral**:
+   - 46 assertion otomatis fungsional pada `scripts/test-perakit-pratinjau.mjs` (naik dari 42 assertion).
+   - 86 skenario visual snapshot Playwright pada viewport 1280px dan 390px di `/studio-admin/galeri/`.
+   - 70 berkas terverifikasi melalui `astro check` dengan 0 error, 0 warning, dan 0 hint.
+   - Refaktor netralisasi salinan commit `87548e1` pada 13 skema TypeScript dengan visitor-facing voice tanpa buzzwords pemasaran.
+5. **Evaluasi Faktual Audit Komposisi 13 Kategori**:
+   - Evaluasi UX Arsitektural mencapai skor **9.4/10** (solid, bebas overflow, responsif, aksesibel) vs estetika pameran Dribbble **4.0/10**.
+   - Perbaikan spasial tuntas: `R1` (center align visual 16:10), `K2` (daftar 2 kolom 4fr|8fr rentang penuh bebas dead space), `K3` (headline kolom sticky), `F4` (split asimetris murni tanpa kartu CTA), `S4` (baris berselang-seling zig-zag), serta eliminasi orphan cards pada `G1`, `G2`, dan `U1`.
+6. **Penyelarasan SOP Operasional WhatsApp ke Versi 1.4**:
+   - Mengintegrasikan panduan 5 preset skenario klien dan shortcut keyboard `[` pada Langkah 3 & Langkah 3b dengan kebebasan pemilihan bagi admin.
 
 ### Pembaruan Versi 2.3 (28 Oktober 2026 - Unifikasi Hosting Cloudflare Workers *.enlesweb.com, Penonaktifan Vercel, & Peluncuran layout-lab preview.enlesweb.com, Decision 023 & Decision 022 CLOSED)
 1. **Unifikasi Hosting Cloudflare Workers (*.enlesweb.com, Decision 023)**:
@@ -1663,7 +1684,7 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
 
 *(Catatan: nomor WhatsApp 6285156801570, Meta Pixel ID 1099411523003859, public/og-image.png, pengujian fisik HP/Pixel, halaman kebijakan privasi, optimasi PageSpeed Insights 100/100, berkas llms.txt / _headers, SOP operasional WhatsApp v1.3, domain enlesweb.com, materi iklan Meta campaign-1 (1 video + 1 gambar statis rasio 4:5 dan 9:16), template PDF Bukti Pemesanan, serta unifikasi hosting Cloudflare Workers *.enlesweb.com dan peluncuran preview.enlesweb.com seluruhnya telah RESOLVED / CLOSED 100%. Fokus operasional beralih penuh ke Minggu 1: Penayangan Kampanye Meta Ads & Micro-Warm Outreach DM Instagram).*
 
-## 14. Status dan Penggunaan layout-lab (28 Oktober 2026, Decision 022 CLOSED & Decision 023)
+## 14. Status dan Penggunaan layout-lab (28-29 Oktober 2026, Decision 022 CLOSED & Decision 023 Addendum)
 
 ### 14.1 Status Produksi & Arsitektur Deployment
 - **Domain Kanonikal:** `https://preview.enlesweb.com/` (di-deploy ke Cloudflare Workers).
@@ -1671,44 +1692,88 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
   ```
   https://preview.enlesweb.com/p/<id>
   ```
-  Format ID ringkas ini di-generate melalui codec berbasis Base62 + salt 16-bit + checksum 12-bit (`src/utils/recipe-codec.ts`), menggantikan format query parameter panjang lama (`/pratinjau?s=...`).
+  Format ID ringkas ini di-generate melalui codec berbasis Base62 + salt acak 16-bit + checksum 12-bit (`src/utils/recipe-codec.ts`), menggantikan format query parameter panjang lama (`/pratinjau?s=...`). Setiap resep menghasilkan ID unik baru setiap kali diacak ulang tanpa memerlukan database/KV.
 - **Pengamanan Rute Studio Internal & Worker Allowlist (`src/worker.ts`):**
   - Rute studio editor internal dilindungi di bawah prefix `/studio-admin/*`:
-    - `/studio-admin/`: Studio visual utama (canvas live, picker varian, reorder section).
+    - `/studio-admin/`: Studio visual utama (canvas live, picker varian, reorder section). Rute `/studio-admin` tanpa trailing slash diarahkan secara otomatis via 301 redirect ke `/studio-admin/`.
     - `/studio-admin/galeri`: Galeri visual seluruh varian komponen.
-    - `/studio-admin/uji`: Halaman pengujian dan validasi visual.
+    - `/studio-admin/uji`: Halaman pengujian dan validasi visual (termasuk status empty, loading, error).
     - `/studio-admin/legal`: Generator dan preview halaman legal/kebijakan privasi.
   - Rute publik yang diizinkan untuk klien hanya rute preview compact: `/p/*` dan aset statis (`/_astro/*`, favicon, dsb.).
-  - Rute root `/` dan rute lawas `/pratinjau` secara sadar merender respons `404 Not Found` guna menjaga integritas studio internal dari akses publik tanpa izin.
+  - Rute root `/` dan rute lawas `/pratinjau` secara sadar merender respons `404 Not Found` guna menjaga integritas studio internal dari akses publik tanpa izin. Permintaan selain metode `GET` dan `HEAD` ditolak otomatis.
 
-### 14.2 Karakteristik Render Preview Klien (`/p/<id>`)
+### 14.2 Arsitektur Studio Workbench & Antarmuka Split-Screen
+- **Dual-Layer Token Architecture:**
+  - **Studio Shell (`--ew-*`):** Antarmuka perakit admin mengadopsi token ENLESWEB di `src/styles/wireframe.css` (`--ew-canvas: #FFFFFF`, `--ew-surface: #F5F5F2`, `--ew-ink: #111111`, `--ew-ink-muted: #55554F`, `--ew-line: #E5E5DF`, `--ew-accent: #E4FF30`, `--ew-accent-shelf: #A3C400`). Menggunakan jenis huruf Poppins, mendukung tema terang dan gelap via `[data-theme="dark"]`, serta transisi halus 150ms pada elemen shell saat `prefers-reduced-motion: no-preference`. Rasio kontras teks memenuhi standar WCAG AA (4.5:1) dan AAA (13.9:1).
+  - **Wireframe Canvas (`--wf-*`):** Kanvas pratinjau klien menggunakan token monokrom murni (`--wf-bg: #FFFFFF`, `--wf-ink: #111111`, `--wf-line: #595959`, `--wf-fill: #E5E5E5`, `--wf-radius: 2px`, `--wf-space-1` s.d. `--wf-space-8`). Menggunakan jenis huruf IBM Plex Sans, dan seluruh elemen kanvas dikunci pada `transition: none !important` dan `animation: none !important` demi evaluasi struktural tanpa bias estetika (`ENERGY 1 / RHYTHM 2 / MOTION 1`).
+- **Scaled Virtual Artboard (1280px Desktop):**
+  - Kanvas live desktop dirender pada lebar kanonikal 1280px di dalam kontainer `.composer-artboard-scaler`. Skala virtual dihitung dinamis via CSS `transform: scale()`:
+    ```
+    scale = Math.min(1.0, Math.max(0.2, availableWidth / 1280))
+    ```
+  - Menyediakan toggle mode Fit (menyesuaikan proporsional lebar kontainer host) dan mode 100% Zoom (skala 1:1 dengan panning horizontal) tanpa memicu reflow sempit pada layout desktop.
+- **Sandboxed Live Iframe dalam Chassis Fisik iPhone 15 (390px Mobile):**
+  - Kanvas pratinjau dirender melalui elemen `<iframe>` mandiri (`/p/<id>?clean=1`) sehingga media query CSS berjalan murni tanpa terdistorsi jendela browser host.
+  - Pada Studio Admin, kanvas iframe (390×796px) dibingkai oleh simulasi visual chassis fisik iPhone 15 berukuran 414×844px: Dynamic Island cutout (dengan titik lensa kamera), status bar 9:41 setinggi 48px (ikon sinyal, Wi-Fi, baterai), tombol samping fisik (Action, Volume Up, Volume Down, Power), dan Home Indicator bawah.
+  - Pada pratinjau mandiri klien (`https://preview.enlesweb.com/p/<id>`), kanvas disajikan pada viewport 390×844px penuh.
+- **Protokol Komunikasi Runtime `window.postMessage`:**
+  - Komunikasi dua arah antara host Studio Shell dan Iframe Kanvas:
+    - `SYNC_RECIPE` (Shell ke Iframe): Mengirimkan `{ type: 'SYNC_RECIPE', codes, theme }` untuk menyinkronkan susunan section aktif dan tema secara reaktif tanpa memuat ulang iframe.
+    - `SCROLL_TO` (Shell ke Iframe): Mengarahkan scroll kanvas ke elemen section target disertai efek highlight flash (`.ew-highlight-flash` selama 1200ms).
+    - `SET_THEME` (Shell ke Iframe): Mengubah mode tema terang atau gelap (`data-theme="dark"`) pada root iframe seketika.
+    - `RECIPE_SYNCED` (Iframe ke Shell): Mengembalikan `scrollHeight` aktual iframe ke parent shell setelah perakitan DOM selesai.
+    - `FRAME_RESIZED` (Iframe ke Shell): Mengirimkan pembaruan `scrollHeight` ke host shell setiap kali dimensi jendela atau konten berubah.
+- **Shortcut Keyboard Fokus Cepat:**
+  - Tombol keyboard `[` (kurung siku buka) terpasang global untuk melipat (*collapse*) atau membuka panel kontrol deck section seketika saat pengguna tidak sedang mengetik di elemen input.
+- **5 Preset Skenario Klien Bawaan Studio Admin:**
+  1. *Lengkap · 13 Section*: N1 H1 R1 K1 S1 P1 G1 U1 B1 Q1 L1 C1 F1 (komposisi penuh 13 kategori).
+  2. *Starter · Ringkas*: N1 H2 S1 C1 F2 (4 section inti, proporsional untuk UMKM pemula).
+  3. *Business · Jasa*: N2 H1 R1 S3 U1 C2 F1 (7 section, fokus kredibilitas dan alur penawaran jasa).
+  4. *Business · Korporat*: N3 H3 R3 K3 S2 P2 L1 C3 F4 (8 section, layout asimetris berbobot arsitektural).
+  5. *Growth · Katalog*: N4 H4 K2 S4 G2 B2 Q2 C3 F3 (9 section, navigasi utilitas 2 baris dan katalog bento).
+  - Admin memiliki kebebasan penuh memilih preset mana saja, memodifikasi urutan, atau merakit manual dari nol. Tersedia tombol Acak ID dan input "Muat dari Link / ID Klien" (`/studio-admin/?p=<id>`).
+
+### 14.3 Karakteristik Render Preview Klien (`/p/<id>`)
 - **Default Light Theme:** Halaman preview `/p/<id>` terkunci pada mode terang (*light mode*) secara konsisten dengan identitas ENLESWEB, kecuali jika parameter URL `?tema=gelap` ditambahkan secara manual.
-- **Penyaringan Navigasi Dinamis:** Navbar dan footer pada halaman preview menyaring tautan menu secara dinamis: link menu hanya muncul apabila section terkait benar-benar aktif di dalam komposisi resep layout.
-- **Fallback Tombol CTA:** Jika suatu resep susunan layout tidak menyertakan section Call-to-Action (CTA), tombol aksi pada navbar otomatis diarahkan ke section penutup atau kontak yang tersedia.
+- **Penyaringan Navigasi Dinamis:** Navbar dan footer pada halaman preview menyaring tautan menu secara dinamis: tautan menu `#section-*` hanya muncul apabila section terkait benar-benar aktif di dalam komposisi resep layout.
+- **Fallback Tombol CTA:** Jika suatu resep susunan layout tidak menyertakan section Call-to-Action (CTA), tombol aksi pada navbar otomatis diarahkan ke target section aktif terdekat (seperti section penutup atau kontak).
 
-### 14.3 Komposisi Katalog Komponen (43 Varian pada 13 Kategori)
-Composer mencakup perbaikan visual terstandarisasi untuk menghasilkan layout bersih dan berbobot:
-1. **Layanan (S1–S4):** Memperlakukan varian S1 sampai S4 secara sejajar tanpa ada varian yang direndahkan sebagai kelas dua.
-2. **Daftar Harga (B1–B3):** Varian B1 sampai B3 menyajikan informasi paket secara transparan dan proporsional.
-3. **Footer F4 Bersih:** Varian F4 dirancang sebagai footer bersih tanpa menyematkan kartu CTA ganda di dalamnya.
-4. **Grid & Galeri (G1/G2/U1):** Penataan grid dan kartu testimoni/keunggulan seimbang tanpa meninggalkan kartu tunggal menggantung (*orphan cards*).
-5. **Daftar Kredibilitas K2:** Tampilan 2 kolom penuh tanpa ruang kosong (*dead space*) yang tidak perlu.
-6. **FAQ Q1/Q2:** Teks bantuan (*helper text*) dirancang taktil dan bersih tanpa garis batas samping kiri (*no left border*).
-7. **Profil Tim R1–R3:** Komponen profil fokus menampilkan profil inti tanpa kartu mitra/sponsor buatan.
+### 14.4 Komposisi Katalog 13 Kategori & Audit UI/UX Faktual
+- **Filosofi Arsitektur & Wireframe Monokrom:**
+  - Mengadopsi prinsip desain `ENERGY: 1 (Calm)`, `RHYTHM: 2 (Balanced)`, dan `MOTION: 1 (Calm)`.
+  - Evaluasi audit faktual mencatat skor UX Arsitektural mencapai 9.4/10 (sangat solid, bebas limpahan horizontal 390px s.d. 1280px, rasio kontras WCAG AA/AAA, navigasi keyboard) berbanding skor Estetika Dribbble 4.0/10. Perbedaan ini disengaja: `layout-lab` berfungsi sebagai alat uji tata letak objektif tanpa bias warna dekoratif, bayangan bertingkat, atau aset fotografi artifisial.
+- **Refaktor Netralisasi Salinan (Commit `87548e1`):**
+  - Seluruh 13 skema data standar (`src/schema/*.ts`) telah dimurnikan dari istilah pemasaran bombastis dan pola klise khas *AI slop*.
+  - Salinan teks placeholder mengadopsi suara langsung ramah pengunjung (*visitor-facing voice*), jujur, ringkas, dan relevan dengan etika bisnis riil (rincian paket di awal, satu jalur komunikasi, dan jadwal yang disepakati).
+- **Matriks 13 Kategori (43 Varian) & Perbaikan Komposisi:**
+  1. **Navbar (`N1`–`N4`):** `N1` klasik [Brand|Menu|CTA], `N2` modern right-group, `N3` simetris [Menu|Brand|Menu+CTA], `N4` navigasi utilitas 2 baris (baris atas memuat kontak dan jam operasional, baris bawah memuat menu dan CTA). Handler menu mobile tunggal di `BaseLayout.astro`.
+  2. **Hero (`H1`–`H4`):** `H1` kolom ganda 50:50 visual 16:9, `H2` judul dan aksi terpusat dengan kanvas visual lebar, `H3` panggung kanvas visual penuh dengan kartu teks mengambang, `H4` kolom teks kiri dan tumpukan kartu spesifikasi di kanan.
+  3. **Profil (`R1`–`R3`):** `R1` split teks dan visual 16:10 rata tengah (`align-items: center`) dengan baris metrik pencapaian, `R2` narasi murni teks terpusat tanpa elemen visual untuk bisnis tanpa foto figur, `R3` visual vertikal tinggi di kiri dan narasi metrik di kanan. Seluruh varian profil bebas dari kartu mitra atau afiliasi artifisial.
+  4. **Keunggulan (`K1`–`K3`):** `K1` kisi 3 kolom ikon arsitektural, `K2` daftar baris horizontal 2 kolom penuh [4fr|8fr] tanpa ruang kosong mati (*dead space*), `K3` split 2 kolom dengan judul pernyataan sticky (`position: sticky`).
+  5. **Layanan (`S1`–`S4`):** `S1` kisi 3 kolom seragam, `S2` daftar tabular arsitektural, `S3` split kolom header sticky di kiri dan kartu vertikal di kanan, `S4` baris berselang-seling (*alternating zig-zag rows*). Seluruh item layanan berstatus setara (*equal tier*) tanpa highlight kontainer pembeda.
+  6. **Langkah (`P1`–`P3`):** `P1` alur horizontal 4 kolom penomoran indeks, `P2` garis waktu vertikal (*timeline*), `P3` grid 2x2 dengan tipografi penomoran besar 3rem.
+  7. **Galeri (`G1`–`G3`):** `G1` grid adaptif (`data-count="4"` menjadi grid 2x2 seimbang tanpa kartu menggantung), `G2` susunan asimetris bento dengan kartu samping ganjil merentang penuh 2 kolom dan border seragam 1px tanpa pembeda tebal, `G3` daftar komparasi visual berdampingan (Visual A vs Visual B 16:10).
+  8. **Ulasan (`U1`–`U3`):** `U1` grid adaptif 2x2 seimbang tanpa kartu menggantung (*orphan card*), `U2` split header sticky dan grid ulasan, `U3` daftar vertikal satu kolom penuh garis pemisah. Kepatuhan data dummy transparan (R-18 & C-5).
+  9. **Biaya (`B1`–`B3`):** `B1` kartu vertikal sejajar, `B2` baris horizontal 3 kolom, `B3` daftar terpisah dengan grid fitur 2 kolom. Seluruh paket biaya diperlakukan setara (*equal tier*) dengan border 1px seragam tanpa highlight kontainer buatan, dan skema `biaya.ts` ditiadakan dari properti `utama`.
+  10. **Tanya-Jawab (`Q1`–`Q3`):** `Q1` satu kolom akordeon `<details><summary>`, `Q2` split header sticky dan daftar akordeon, `Q3` grid 2 kolom terbuka langsung tanpa akordeon. Garis batas kiri dekoratif (*no left border*) pada teks bantuan telah dieliminasi.
+  11. **Lokasi & Jam Operasional (`L1`–`L3`):** `L1` split 50:50 area peta 16:10 dan jadwal, `L2` panggung peta lebar penuh kartu melayang, `L3` kartu informasi tunggal tanpa peta untuk bisnis jasa daring.
+  12. **CTA (`C1`–`C3`):** `C1` spanduk berbingkai horizontal satu baris, `C2` blok ajakan bertindak minimalis terpusat, `C3` kartu berbingkai 2 kolom dengan informasi kontak langsung.
+  13. **Footer (`F1`–`F4`):** `F1` 4 kolom modular terstruktur, `F2` bilah minimalis satu baris horizontal, `F3` terpusat bertumpuk pernyataan komitmen, `F4` split asimetris murni tanpa kartu CTA terintegrasi (brand di kiri, navigasi terkelompok di kanan).
 
-### 14.4 Metrik Kualitas & Pengujian Sistem
+### 14.5 Metrik Mutu & Pengujian Sistem
 - **Astro Check:** 70 berkas terverifikasi dengan hasil 0 error, 0 warning, dan 0 hint.
-- **Automated Assertions:** 42 assertion fungsional lulus 100%.
-- **Playwright Visual Regression:** 86 skenario visual snapshot lulus uji di seluruh breakpoint mobile dan desktop.
+- **Automated Assertions (`scripts/test-perakit-pratinjau.mjs`):** 46 assertion fungsional lulus 100% (mencakup validasi codec fuzzing, zoom artboard 1280px, auto-focus deck scroll highlight flash, preset bisnis, fallback CTA, dan keamanan allowlist Worker).
+- **Playwright Visual Regression:** 86 skenario visual snapshot lulus uji di seluruh breakpoint mobile (390px) dan desktop (1280px) pada `/studio-admin/galeri/`.
+- **Lint Eyebrow:** Skrip `scripts/no-eyebrow-lint.mjs` memeriksa 65 berkas di `src/` bersih 100% dari pelanggaran eyebrow kapsul dekoratif.
 
-### 14.5 Alur Operasional SOP Pra-DP (Langkah 3b)
-- **Keputusan 022 CLOSED:** Alur pengiriman preview pra-DP resmi diaktifkan di `Delivery & Operations/sop.md` (v1.3 Langkah 3b).
-- **Penggunaan:** Setelah calon klien menerima rekomendasi paket dan melihat demo konsep di WhatsApp, admin menyusun draf susunan section di studio internal, lalu membagikan tautan preview Stateless Compact ID (`preview.enlesweb.com/p/<id>`) kepada calon klien sebelum mengirimkan ringkasan kesepakatan dan permintaan DP 50%.
+### 14.6 Alur Operasional SOP Pra-DP (Langkah 3b) & Pemisahan dari Website Builder (Decision 011)
+- **Keputusan 022 CLOSED & Decision 023 Addendum:** Alur pengiriman preview pra-DP resmi diintegrasikan ke `Delivery & Operations/sop.md` (v1.4 Langkah 3b).
+- **Penggunaan Operasional:** Setelah calon klien menerima rekomendasi paket dan melihat demo konsep di WhatsApp, admin menyusun draf susunan section di studio internal (dapat memilih dari 5 preset atau merakit manual), lalu membagikan tautan preview Stateless Compact ID (`https://preview.enlesweb.com/p/<id>`) kepada calon klien sebelum mengirimkan ringkasan kesepakatan dan permintaan DP 50%.
 - **Guardrail Operasional:** Preview menggunakan contoh bisnis umum dan data dummy; admin wajib menjelaskan bahwa preview ini adalah gambaran tata letak visual, bukan draf pengerjaan materi klien, tidak memulai pengerjaan proyek, dan tidak mengubah aturan pembatalan/DP. Preview resmi dengan materi asli klien baru dikerjakan setelah DP 50% masuk dan materi dasar lengkap (Langkah 6).
 - **Pemisahan dari Website Builder (Decision 011):** `layout-lab` adalah alat bantu visual eksplorasi layout sebelum DP. Lab tidak menghasilkan website produksi atau skema blueprint JSON, dan tidak mengubah gerbang Website Builder yang tetap menunggu klien ke-10 go live, selesai, tayang, dan lunas.
 
 Rujukan dokumen terkait:
-- [Decision Log: Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023](Business%20Memory/decision-log.md#decision-023)
+- [Decision Log: Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](Business%20Memory/decision-log.md#addendum-29-oktober-2026-penyempurnaan-arsitektur-dan-audit-komposisi-13-kategori)
 - [SOP Operasional WhatsApp: Langkah 3b](Delivery%20&%20Operations/sop.md#langkah-3b-opsional-kirim-preview-layout-data-dummy-decision-022--023)
 
 

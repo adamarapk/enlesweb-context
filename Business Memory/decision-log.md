@@ -474,3 +474,33 @@ Sebelumnya, showcase portofolio konsep berada di hosting Vercel (`*.vercel.app`)
 
 ### 3. Alasan
 Menyatukan seluruh aset digital studio di bawah satu domain kanonikal resmi (`enlesweb.com`), memperkuat reputasi profesional di mata prospek, mengeliminasi biaya dan kompleksitas multi-vendor hosting, serta mengaktifkan instrumen penjualan pra-DP yang aman, cepat, dan teruji tanpa risiko kebocoran data klien.
+
+---
+
+### Addendum (29 Oktober 2026): Penyempurnaan Arsitektur layout-lab, 5 Preset Skenario Klien, & Hasil Audit Komposisi 13 Kategori
+
+Menindaklanjuti peluncuran produksi pada Decision 023, dilakukan standarisasi menyeluruh pada arsitektur antarmuka dan operasional `layout-lab`:
+1. **Dual-Layer Token Architecture:**
+   - Standarisasi pemisahan token: Studio Shell (`--ew-*`) mengadopsi identitas ENLESWEB dengan tipografi Poppins, latar surface netral, aksen tactile `#E4FF30`, dan transisi interaksi halus 150ms pada elemen shell saat `prefers-reduced-motion: no-preference`.
+   - Wireframe Canvas (`--wf-*`) mengadopsi monokrom murni (`#FFFFFF`, `#E5E5E5`, `#595959`, `#111111`) dengan tipografi IBM Plex Sans serta `transition: none !important` dan `animation: none !important` (`ENERGY 1 / RHYTHM 2 / MOTION 1`) untuk menjamin evaluasi murni hierarki dan proporsi tanpa bias visual estetika.
+2. **Scaled Virtual Artboard (1280px Desktop) & Chassis Fisik iPhone 15 (390px Mobile):**
+   - Mode desktop mengadopsi kanvas virtual 1280px kanonikal yang diskalakan secara matematis dengan CSS `transform: scale()` (`scale = Math.min(1.0, Math.max(0.2, availableWidth / 1280))`) dengan toggle Auto-Fit dan 100% Zoom (panning horizontal) untuk mencegah reflow sempit pada layar laptop kecil atau panel workbench terbelah.
+   - Mode mobile diisolasi di dalam sandboxed live iframe (`/p/<id>?clean=1`) berukuran 390x796px dalam bingkai chassis fisik iPhone 15 berukuran 414x844px (Dynamic Island, status bar 9:41, tombol samping fisik, dan Home Indicator). Pada pratinjau mandiri klien (`/p/<id>`), kanvas dirender pada viewport penuh 390x844px. Isolasi iframe menjamin media query CSS mobile berjalan 100% akurat tanpa terpengaruh lebar jendela browser host.
+   - Komunikasi runtime antar-frame menggunakan `window.postMessage` (`SYNC_RECIPE`, `SCROLL_TO`, `SET_THEME`, `RECIPE_SYNCED`, `FRAME_RESIZED`) serta auto-focus deck scroll dengan highlight flash halus (`.ew-highlight-flash` 1200ms) dan shortcut keyboard `[` untuk melipat deck.
+3. **Penyediaan 5 Preset Skenario Klien di Studio Admin:**
+   Studio Admin (`https://preview.enlesweb.com/studio-admin/`) menyediakan 5 preset siap pakai yang dapat dipilih admin secara bebas:
+   - *Lengkap · 13 Section*: Seluruh 13 kategori section aktif berurutan untuk demonstrasi kapasitas studio penuh.
+   - *Starter · Ringkas*: Format esensial 4 section (Navbar, Hero, Layanan, Footer) untuk UMKM pemula.
+   - *Business · Jasa*: Format komprehensif 7 section untuk bisnis layanan profesional.
+   - *Business · Korporat*: Format kredibel 8 section untuk institusi atau profil korporasi.
+   - *Growth · Katalog*: Format dinamis 9 section berfokus pada katalog visual dan portofolio produk.
+   Admin memiliki kebebasan penuh memilih preset mana pun atau mengacak susunan resep secara manual sesuai karakter kebutuhan calon klien.
+4. **Peningkatan Rangkaian Pengujian Otomatis & Mutu Kode:**
+   - 46 assertion otomatis fungsional pada `scripts/test-perakit-pratinjau.mjs` (mencakup integritas codec Base62, F4 pure footer assertion, fallback CTA, uji toggle zoom, auto-focus deck scroll, dan keamanan rute).
+   - 86 skenario visual snapshot Playwright pada viewport 1280px dan 390px di `/studio-admin/galeri/`.
+   - 70 berkas terverifikasi melalui `astro check` dengan 0 error, 0 warning, dan 0 hint.
+5. **Hasil Audit Komposisi 13 Kategori (43 Varian):**
+   - Hasil evaluasi UX Arsitektural mencapai skor **9.4/10** (solid, bebas overflow, responsif, aksesibel) berbanding skor estetika pameran Dribbble **4.0/10** (karena ketiadaan elemen kosmetik/warna dekoratif yang memang sengaja dihindari).
+   - Perbaikan komposisi spesifik: `R1` (center-aligned visual 16:10), `K2` (daftar 2 kolom 4fr|8fr rentang penuh bebas dead space), `K3` (headline kolom sticky), `F4` (split asimetris murni tanpa kartu CTA), `S4` (baris berselang-seling zig-zag), serta pencegahan orphan cards pada `G1`, `G2`, dan `U1`.
+   - Refaktor netralisasi salinan commit `87548e1` dengan visitor-facing voice tanpa buzzwords pemasaran.
+

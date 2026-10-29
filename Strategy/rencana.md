@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.8
-**Terakhir diperbarui:** 28 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.3), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.3, Decision 022 & 023), `Business Memory/decision-log.md` (Decision 001 - 023), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
+**Versi:** 1.9
+**Terakhir diperbarui:** 29 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -20,14 +20,14 @@
 | Evaluasi hari ke-90 | sekitar 18 Jan 2027 | Hitung DP final vs target 10 |
 
 ## 3. Minggu 0: Persiapan (14 - 20 Oktober 2026)
-[KEPUTUSAN] Seluruh 3 tugas persiapan pra-peluncuran Minggu 0 telah resmi **CLOSED / SELESAI** (SOP WhatsApp CLOSED di `sop.md` v1.2, domain `enlesweb.com` CLOSED, materi iklan Meta CLOSED di `campaign-1/`, dan template PDF Bukti Pemesanan CLOSED dibuat oleh pendiri bisnis, Decision 018-021). Format iklan Carousel 4 slide dibatalkan dan digantikan 1 Video + 1 Gambar Statis (Decision 021). Tim kini bersiap meluncurkan kampanye ke Meta Ads Manager dan penayangan Minggu 1:
+[KEPUTUSAN] Seluruh 3 tugas persiapan pra-peluncuran Minggu 0 telah resmi **CLOSED / SELESAI** (SOP WhatsApp CLOSED di `sop.md` v1.4, domain `enlesweb.com` CLOSED, materi iklan Meta CLOSED di `campaign-1/`, dan template PDF Bukti Pemesanan CLOSED dibuat oleh pendiri bisnis, Decision 018-021). Format iklan Carousel 4 slide dibatalkan dan digantikan 1 Video + 1 Gambar Statis (Decision 021). Tim kini bersiap meluncurkan kampanye ke Meta Ads Manager dan penayangan Minggu 1:
 
 | Hari | Pekerjaan | Selesai jika |
 |---|---|---|
 | 1-2 (14-16 Okt) | **Tugas 1 (CLOSED / SELESAI):** Beli `enlesweb.com` (telah dibeli di Domainesia) dan hubungkan DNS ke Cloudflare Workers menggantikan `workers.dev`. Uji ulang WhatsApp link, Meta Pixel (`ViewContent`, `AddToCart`), OG image, sitemap di domain kanonikal `enlesweb.com` (Decision 018). | Homepage live di `enlesweb.com`, event Pixel terbaca |
 | 2-4 (16-17 Okt) | **Tugas 2 (CLOSED / SELESAI):** Buat materi iklan Meta kampanye 1 di `campaign-1/`: format Carousel 4 slide dibatalkan (Decision 021) dan digantikan 1 Video (Iklan A 15s rasio 4:5 dan 9:16) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB rasio 4:5 dan 9:16) dengan penawaran mulai Rp450.000 dan *problem-aware hook* (Decision 016, 020, & 021). | Video MP4 dan grafis PNG selesai di-render di `campaign-1/`, salinan teks di `copy-iklan-a.md` & `copy-iklan-b.md` |
 | 5 (18 Okt) | **Tugas 3 (CLOSED / SELESAI):** Template Bukti Pemesanan formal PDF ber-TTD digital telah selesai dibuat oleh pendiri bisnis. Mencantumkan **Nama Lengkap Pendiri** (sesuai rekening bank pribadi) sebagai **Penanggung Jawab Resmi Studio ENLESWEB**, kuota update ringan tahunan (2x/4x/6x), dan aturan *On-Hold* 60 hari kalender (Decision 015, 017, & 020). | Template PDF formal ber-TTD digital selesai dibuat dan siap diterbitkan |
-| 6 (19 Okt) | *(SOP chat WhatsApp telah CLOSED di `sop.md` v1.2).* Siapkan kampanye di Meta Ads Manager (caption diawali *problem-aware hook*) dan kirim ke review. | Iklan berstatus menunggu/disetujui |
+| 6 (19 Okt) | *(SOP chat WhatsApp telah CLOSED di `sop.md` v1.4).* Siapkan kampanye di Meta Ads Manager (caption diawali *problem-aware hook*) dan kirim ke review. | Iklan berstatus menunggu/disetujui |
 | 7 (20 Okt) | Pemeriksaan akhir: link, pixel di `enlesweb.com`, jam balas chat, draf PDF siap dikirim, dan daftar akun target awal Micro-Warm DM IG siap. | Daftar periksa tanpa temuan terbuka |
 
 - [FAKTA/KEPUTUSAN] PDF Bukti Pemesanan telah selesai dibuat oleh pendiri bisnis sebelum iklan tayang dan siap diterbitkan saat penutupan transaksi klien perdana.
@@ -144,5 +144,7 @@ Dihitung sejak iklan tayang.
 | 18 Oktober 2026 | Versi 1.6: Pembatalan format Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi kampanye Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
 | 21 Oktober 2026 | Versi 1.7: Pencatatan checkpoint 12 jam pertama kampanye Meta Ads dan penegasan bahwa evaluasi akhir Minggu 1 tetap pada 28 Oktober. | Laporan pemilik, `Business Memory/weekly-review.md` |
 | 28 Oktober 2026 | Versi 1.8: Unifikasi hosting seluruh aset digital (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta penyelarasan acuan operasional ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
+| 29 Oktober 2026 | Versi 1.9: Sinkronisasi kesiapan operasional layout-lab (5 preset skenario klien, chassis fisik iPhone 15 pada live iframe, virtual artboard 1280px), SOP v1.4, dan Addendum Decision 023. | SOP v1.4, Addendum Decision 023 |
+
 
 

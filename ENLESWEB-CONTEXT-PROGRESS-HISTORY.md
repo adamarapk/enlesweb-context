@@ -1,17 +1,17 @@
 # ENLESWEB --- HISTORI KONTEKS, PERKEMBANGAN, DAN PROGRESS DELTA
 
-Versi Dokumen: 4.2 (Unifikasi Cloudflare Workers & Peluncuran Produksi layout-lab - 28 Oktober 2026)
-Tanggal Pembaruan Terakhir: 28 Oktober 2026
-Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–023, SOP transaksi v1.3, seluruh ekosistem terpadu di Cloudflare Workers; layout-lab live di preview.enlesweb.com)
+Versi Dokumen: 4.3 (Penyempurnaan Arsitektur layout-lab, Dual-Layer Token, Chassis iPhone 15, & SOP v1.4 - 29 Oktober 2026)
+Tanggal Pembaruan Terakhir: 29 Oktober 2026
+Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–023 Addendum, SOP transaksi v1.4, seluruh ekosistem terpadu di Cloudflare Workers; layout-lab live di preview.enlesweb.com)
 Fungsi: Sumber Referensi Tunggal untuk Konteks Bisnis, Evolusi Konsep, Progress Delta, dan Gap Register ENLESWEB.
-Ringkasan Pembaruan: Seluruh 6 demo konsep portofolio (*.enlesweb.com) dan internal composer layout-lab (preview.enlesweb.com) resmi di-deploy ke Cloudflare Workers. Hosting lama Vercel telah resmi dinonaktifkan (Decision 023). layout-lab live menggunakan format Stateless Compact ID (/p/<id>) dan alur SOP chat WhatsApp ditingkatkan ke v1.3 (Decision 022 CLOSED).
+Ringkasan Pembaruan: Penyempurnaan menyeluruh arsitektur internal composer layout-lab (preview.enlesweb.com) dan alur SOP WhatsApp v1.4 pra-DP Langkah 3b (Decision 023 Addendum). Mencakup integrasi Dual-Layer Token System (--ew-* shell vs --wf-* wireframe monokrom), Scaled 1280px Virtual Artboard, sandboxed live iframe dalam chassis fisik iPhone 15 (390x796px kanvas dalam, 414x844px chassis luar), 5 Preset Skenario Klien di Studio Admin, refaktor salinan netral commit 87548e1, 46 assertion otomatis, serta audit komposisi 13 kategori dengan skor UX arsitektural 9.4/10.
 
 ---
 
 ## ATURAN HIRARKI KEPUTUSAN (SOURCE OF TRUTH HIERARCHY)
 Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan hirarki prioritas berikut:
-1. KEPUTUSAN TERBARU (28 Oktober 2026 - UNIFIKASI HOSTING CLOUDFLARE WORKERS *.ENLESWEB.COM, PENONAKTIFAN VERCEL, PELUNCURAN PRODUKSI LAYOUT-LAB PREVIEW.ENLESWEB.COM DENGAN STATELESS COMPACT ID /P/<ID>, DECISION 023 & DECISION 022 CLOSED; 18 Oktober 2026 - PENYELESAIAN TEMPLATE PDF BUKTI PEMESANAN CLOSED, KESIAPAN MATERI IKLAN META CLOSED, PENUTUPAN SELURUH TUGAS MINGGU 0 CLOSED, TRANSISI MASTER DOCS V4, DECISION 020; 17 Oktober 2026 - OPTIMASI MENYELURUH PAGESPEED INSIGHTS 100/100 MOBILE & DESKTOP CLOSED, DECISION 019; 17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
-2. ENLESWEB-DOCS-V4.md (PRD / CONTENT / DESIGN / SPEC) & `Delivery & Operations/sop.md` v1.3 > Menang untuk spesifikasi teknis, salinan copy baseline, dan SOP operasional.
+1. KEPUTUSAN TERBARU (29 Oktober 2026 - PENYEMPURNAAN ARSITEKTUR LAYOUT-LAB, DUAL-LAYER TOKEN SYSTEM, CHASSIS IPHONE 15, 5 PRESET SKENARIO KLIEN, SOP V1.4, DECISION 023 ADDENDUM; 28 Oktober 2026 - UNIFIKASI HOSTING CLOUDFLARE WORKERS *.ENLESWEB.COM, PENONAKTIFAN VERCEL, PELUNCURAN PRODUKSI LAYOUT-LAB PREVIEW.ENLESWEB.COM DENGAN STATELESS COMPACT ID /P/<ID>, DECISION 023 & DECISION 022 CLOSED; 18 Oktober 2026 - PENYELESAIAN TEMPLATE PDF BUKTI PEMESANAN CLOSED, KESIAPAN MATERI IKLAN META CLOSED, PENUTUPAN SELURUH TUGAS MINGGU 0 CLOSED, TRANSISI MASTER DOCS V4, DECISION 020; 17 Oktober 2026 - OPTIMASI MENYELURUH PAGESPEED INSIGHTS 100/100 MOBILE & DESKTOP CLOSED, DECISION 019; 17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
+2. ENLESWEB-DOCS-V4.md (PRD / CONTENT / DESIGN / SPEC) & `Delivery & Operations/sop.md` v1.4 > Menang untuk spesifikasi teknis, salinan copy baseline, dan SOP operasional.
 3. CONTEXT-DETAIL-V3.md > Menang atas V2 untuk transisi Ship Mode dan Launch-Ready state.
 4. CONTEXT-DETAIL-V2.md > Konteks historis fondasi bisnis & Website Builder system.
 
@@ -19,7 +19,7 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
 
 ## TABLE OF CONTENTS (DAFTAR ISI)
 
-Pembaruan terbaru per 28 Oktober 2026: Unifikasi hosting ekosistem (*.enlesweb.com) ke Cloudflare Workers dan penonaktifan Vercel (Decision 023). layout-lab telah live di `preview.enlesweb.com` dengan Stateless Compact ID (`/p/<id>`) dan rute studio terlindungi (`/studio-admin/*`) untuk mendukung alur SOP v1.3 pra-DP Langkah 3b (Decision 022 CLOSED). Gerbang Website Builder pada Decision 011 tidak berubah.
+Pembaruan terbaru per 29 Oktober 2026: Penyempurnaan arsitektur layout-lab di `preview.enlesweb.com` dengan Dual-Layer Token System, Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada sandboxed iframe, 5 Preset Skenario Klien, 46 assertion otomatis, audit komposisi 13 kategori (UX 9.4/10), serta pengkinian SOP operasional WhatsApp ke versi 1.4 (Langkah 3b, Decision 023 Addendum). Gerbang Website Builder pada Decision 011 tidak berubah.
 
 1. BERKAS 1: ENLESWEB-CONTEXT-GAPS.md (Gap Register & Decision Register Terkini - 18 Oktober 2026)
    - 0. Source yang Dibandingkan
@@ -190,7 +190,7 @@ Berdasarkan audit repositori dan konfirmasi wawancara /grill-me (14–17 Oktober
 - **Favicon & Web Manifest**: `public/favicon.svg` dan favicon proyek lengkap (CLOSED).
 - **SEO & Sitemap**: Schema.org JSON-LD `ProfessionalService`, sitemap otomatis `dist/sitemap-index.xml`, dan `public/robots.txt` aktif (CLOSED).
 - **CI/CD Pipeline**: `wrangler.json` dan `.github/workflows/deploy.yml` terpasang untuk deployment otomatis ke Cloudflare Workers saat push ke `main` (CLOSED).
-- **SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.3)**: Resmi terkunci (**CLOSED**, Decision 013–017, Decision 022 & 023) mencakup Template 5.1 s/d 5.9, jembatan ekspektasi demo antar-tier, *default framing* ekstensi `.com`, kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset saat perpanjangan terkelola), waktu pembelian domain pasca-DP 50% + materi dasar lengkap, aturan *On-Hold* 60 hari kalender, transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF, serta integrasi preview tata letak dummy pra-DP via `preview.enlesweb.com/p/<id>`.
+- **SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.4)**: Resmi terkunci (**CLOSED**, Decision 013–017, Decision 022, & Decision 023 Addendum) mencakup Template 5.1 s/d 5.9, jembatan ekspektasi demo antar-tier, *default framing* ekstensi `.com`, kuota gratis putaran update konten ringan tahunan (Starter 2x, Business 4x, Growth 6x + reset saat perpanjangan terkelola), waktu pembelian domain pasca-DP 50% + materi dasar lengkap, aturan *On-Hold* 60 hari kalender, transparansi Nama Lengkap Pendiri di Bukti Pemesanan PDF, serta integrasi preview tata letak dummy pra-DP via `preview.enlesweb.com/p/<id>` dengan kebebasan admin memilih dari 5 preset skenario klien (*Lengkap*, *Starter*, *Business Jasa*, *Business Korporat*, *Growth Katalog*) atau merakit manual.
 - **Optimasi PageSpeed Insights (Desktop 100/100, Mobile 95/100) & Agentic Browsing 3/3 (100%)**: Selesai diimplementasikan penuh (**CLOSED**, Decision 019) mencakup inlined stylesheet CSS 8.3 KiB, eliminasi forced reflow & late style invalidation via skrip sebaris head js-reveal berpelindung fitur, eliminasi bundle JS `copy.js`, preload seluruh 4 bobot font Poppins (700/600/500/400), isolasi GPU hardware compositing pada SVG blur, inisialisasi IntersectionObserver dan scroll check Navbar dijadwalkan via `requestIdleCallback` (fallback setTimeout 100ms), Meta Pixel Opsi A (pemuatan `fbevents.js` murni ditunda hingga interaksi pertama pengguna tanpa timer otomatis untuk TBT 0ms), penonaktifan SPA fallback Cloudflare Workers, dan penambahan `public/llms.txt` serta `public/_headers`.
 
 --------------------------------------------------------------------------------
@@ -374,23 +374,38 @@ Keputusan inti tetap LOCKED: satu halaman homepage, WhatsApp sebagai jalur konve
 --------------------------------------------------------------------------------
 
 11. CURRENT NORTH STAR
-Homepage, keenam aset demo proyek di Cloudflare Workers, domain kanonikal resmi enlesweb.com (CLOSED), SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.3 CLOSED), materi kreatif iklan Meta campaign-1 (CLOSED), template PDF Bukti Pemesanan ber-TTD digital (CLOSED, Decision 020), dan composer layout-lab di `preview.enlesweb.com` (CLOSED, Decision 022 & 023) telah selesai dan aktif.
+Homepage, keenam aset demo proyek di Cloudflare Workers, domain kanonikal resmi enlesweb.com (CLOSED), SOP operasional WhatsApp (`Delivery & Operations/sop.md` v1.4 CLOSED), materi kreatif iklan Meta campaign-1 (CLOSED), template PDF Bukti Pemesanan ber-TTD digital (CLOSED, Decision 020), dan composer layout-lab di `preview.enlesweb.com` (CLOSED, Decision 022 & 023 Addendum) telah selesai dan aktif.
 North Star Minggu 0 (100% CLOSED) -> **Beralih ke Minggu 1: Jalankan kampanye iklan berbayar Meta Ads Minggu 1 (Rp100.000 selama 7 hari) + Micro-Warm Outreach manual via DM Instagram @enlesweb.**
 
 --------------------------------------------------------------------------------
 
-12. PROGRESS & KEPUTUSAN PENGGUNAAN layout-lab (28 OKTOBER 2026, DECISION 022 CLOSED & DECISION 023)
+12. PROGRESS & KEPUTUSAN PENGGUNAAN layout-lab (28-29 OKTOBER 2026, DECISION 022 CLOSED & DECISION 023 ADDENDUM)
 
 - layout-lab telah resmi di-deploy dan live di Cloudflare Workers dengan subdomain kanonikal `https://preview.enlesweb.com/`.
-- Composer memuat 43 varian dari 13 kategori dengan standardisasi visual (kesetaraan tier S1-S4 & B1-B3, footer F4 bersih tanpa kartu ganda, eliminasi orphan card G1/G2/U1, dsb.).
-- Format URL preview klien menggunakan **Stateless Compact ID** (`https://preview.enlesweb.com/p/<id>`) berbasis Base62 + salt + checksum (`src/utils/recipe-codec.ts`), menggantikan query param lama `/pratinjau?s=...`.
-- Pengamanan rute studio internal (`src/worker.ts`): seluruh alat editor dilindungi di bawah rute `/studio-admin/*` (`/studio-admin/`, `/studio-admin/galeri`, `/studio-admin/uji`, `/studio-admin/legal`), sedangkan rute root `/` dan `/pratinjau` sengaja merespons 404 Not Found demi keamanan.
+- Dual-Layer Token Architecture:
+  - Studio Shell (`--ew-*`): mengadopsi token ENLESWEB di `src/styles/wireframe.css` (`--ew-canvas`, `--ew-surface`, `--ew-ink`, `--ew-accent: #E4FF30`, font Poppins, transisi 150ms).
+  - Wireframe Canvas (`--wf-*`): token monokrom murni (`--wf-bg`, `--wf-ink`, `--wf-line`, `--wf-fill`, font IBM Plex Sans) dengan `transition: none !important` dan `animation: none !important` untuk evaluasi struktural tanpa bias estetika (`ENERGY 1 / RHYTHM 2 / MOTION 1`).
+- Scaled Virtual Artboard (1280px Desktop): dirender pada lebar kanonikal 1280px dengan penskalaan dinamis CSS `transform: scale()` (`scale = Math.min(1.0, Math.max(0.2, availableWidth / 1280))`) serta toggle mode Fit dan 100% Zoom dengan horizontal panning.
+- Sandboxed Live Iframe dalam Chassis Fisik iPhone 15 (390px Mobile):
+  - Kanvas pratinjau diisolasi di dalam `<iframe>` (`/p/<id>?clean=1`) agar media query CSS berjalan murni tanpa distorsi browser host.
+  - Studio Admin menampilkan chassis fisik iPhone 15 berukuran 414x844px membingkai iframe 390x796px, lengkap dengan Dynamic Island cutout, status bar 9:41 setinggi 48px, tombol samping fisik, dan Home Indicator.
+  - Tampilan mandiri klien menyajikan viewport 390x844px penuh.
+- Sinkronisasi Runtime `window.postMessage`:
+  - Shell ke Iframe: `SYNC_RECIPE`, `SCROLL_TO` (disertai efek highlight flash `.ew-highlight-flash` selama 1200ms), `SET_THEME`.
+  - Iframe ke Shell: `RECIPE_SYNCED`, `FRAME_RESIZED`.
+  - Shortcut keyboard `[` untuk melipat atau membuka deck section seketika.
+- 5 Preset Skenario Klien di Studio Admin:
+  - *Lengkap · 13 Section*, *Starter · Ringkas*, *Business · Jasa*, *Business · Korporat*, dan *Growth · Katalog*. Admin bebas memilih preset atau merakit manual dari nol. Tersedia tombol Acak ID dan input muat URL/ID klien (`/studio-admin/?p=<id>`).
+- Format URL preview klien menggunakan **Stateless Compact ID** (`https://preview.enlesweb.com/p/<id>`) berbasis Base62 + salt acak 16-bit + checksum 12-bit (`src/utils/recipe-codec.ts`), menggantikan query param panjang lama `/pratinjau?s=...`.
+- Pengamanan rute studio internal (`src/worker.ts`): seluruh alat editor dilindungi di bawah rute `/studio-admin/*` (`/studio-admin/`, `/studio-admin/galeri`, `/studio-admin/uji`, `/studio-admin/legal`), sedangkan rute root `/` dan `/pratinjau` merespons 404 Not Found.
 - Preview `/p/<id>` terkunci pada Light Theme secara default, menyaring navbar/footer dinamis sesuai section aktif, dan mengalihkan tombol CTA jika section CTA ditiadakan.
-- Kualitas sistem terverifikasi: `astro check` pada 70 berkas menghasilkan 0 error/warning/hint, 42 assertion lulus 100%, dan 86 Playwright visual snapshot lulus uji.
-- Alur operasional pra-DP Langkah 3b di SOP WhatsApp (`Delivery & Operations/sop.md` v1.3) resmi diaktifkan (**Decision 022 CLOSED**).
+- Refaktor Salinan Netral (Commit `87548e1`): seluruh skema 13 kategori dimurnikan dengan suara langsung ramah pengunjung (*visitor-facing voice*) tanpa hiperbola promosi atau pola *AI slop*.
+- Kualitas sistem terverifikasi: `astro check` pada 70 berkas menghasilkan 0 error/warning/hint, 46 assertion otomatis fungsional lulus 100%, 86 Playwright visual snapshot lulus uji, dan lint eyebrow bersih pada 65 berkas.
+- Audit Komposisi 13 Kategori (43 Varian): skor UX Arsitektural mencapai 9.4/10 (bebas overflow, WCAG AA/AAA) berbanding skor Estetika Dribbble 4.0/10 (secara sengaja wireframe objektif). Koreksi spasial diterapkan: eliminasi orphan card pada G1/G2/U1, eliminasi dead space pada K2 dengan 2 kolom [4fr|8fr], kesetaraan tier S1-S4 & B1-B3, footer F4 bersih tanpa CTA ganda, sticky statement pada K3, dan no left border pada Q1/Q2.
+- Alur operasional pra-DP Langkah 3b di SOP WhatsApp (`Delivery & Operations/sop.md` v1.4) resmi aktif (**Decision 022 CLOSED & Decision 023 Addendum**).
 - Lab memakai data dummy, bukan draf proyek klien, tidak memulai pengerjaan proyek, dan tidak mengubah aturan pembatalan/refund. Preview pengerjaan resmi pasca-DP tetap menggunakan materi asli klien.
 - Lab tidak menghasilkan website produksi atau blueprint JSON dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
-- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023](Business%20Memory/decision-log.md#decision-023).
+- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](Business%20Memory/decision-log.md#addendum-29-oktober-2026-penyempurnaan-arsitektur-dan-audit-komposisi-13-kategori).
 
 --------------------------------------------------------------------------------
 
@@ -411,7 +426,7 @@ North Star Minggu 0 (100% CLOSED) -> **Beralih ke Minggu 1: Jalankan kampanye ik
 
 ### CONTEXT-DETAIL-V3.md
 Handoff context untuk session berikutnya.
-Status: Launch-Ready Mode V4 (Tersinkronisasi Penuh Decision 001–021, SOP v1.2, Seluruh Tugas Minggu 0 CLOSED - 18 Oktober 2026)
+Status: Launch-Ready Mode V4 (Tersinkronisasi Penuh Decision 001–023 Addendum, SOP v1.4, Seluruh Tugas Minggu 0 CLOSED - 29 Oktober 2026)
 Penting: Dokumen ini adalah delta dari CONTEXT-DETAIL-V2.md, bukan pengganti isi V2.
 
 --------------------------------------------------------------------------------
@@ -423,7 +438,7 @@ ENLESWEB berada dalam **Launch-Ready Mode V4**.
 - Nomor WhatsApp dan Meta Pixel ID telah dikonfirmasi riil dan aktif.
 - Halaman Kebijakan Privasi (`/kebijakan-privasi`) telah selesai dibangun dan ditautkan di bar bawah footer (CLOSED).
 - Pengujian nyata klik tombol WhatsApp dan event Meta Pixel di HP fisik telah berhasil diverifikasi (CLOSED).
-- SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.3) telah resmi dikunci (**CLOSED**, Decision 013–017, Decision 022 & 023).
+- SOP Operasional Chat WhatsApp & Transaksi Klien (`Delivery & Operations/sop.md` v1.4) telah resmi dikunci (**CLOSED**, Decision 013–017, Decision 022, & Decision 023 Addendum).
 - Domain resmi `enlesweb.com` telah resmi dibeli (**CLOSED**, Decision 018).
 - Optimasi PageSpeed Insights (Desktop 100/100, Mobile 95/100) & Agentic Browsing 3/3 (100%) telah selesai diimplementasikan (**CLOSED**, Decision 019: inlined 100% CSS 8.3 KiB, eliminasi forced reflow & late style invalidation via skrip head js-reveal berpelindung fitur, eliminasi bundle `copy.js`, preload 4 bobot font Poppins 700/600/500/400, progressive scroll reveal langsung dengan penjadwalan `requestIdleCallback`, isolasi GPU hardware compositing pada SVG blur, loading eager brand logo, Meta Pixel Opsi A deferred load `fbevents.js` murni berbasis interaksi pertama tanpa timer otomatis untuk TBT 0ms, penonaktifan SPA fallback Cloudflare Workers, dan penambahan `public/llms.txt` serta `public/_headers`).
 - Materi iklan Meta kampanye 1 di `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3) telah selesai di-render (**CLOSED / SIAP TAYANG**, Decision 016 & Decision 020).
@@ -436,7 +451,7 @@ ENLESWEB berada dalam **Launch-Ready Mode V4**.
 - **ENLESWEB-DOCS-V4.md** adalah sumber kebenaran tunggal untuk spesifikasi teknis, desain, dan salinan teks pelanggan.
 - **src/content/copy.ts** adalah sumber salinan teks di kode.
 - **src/config/site.ts** adalah pusat konfigurasi variabel bisnis.
-- **Delivery & Operations/sop.md (v1.3)** & **Business Memory/decision-log.md (Decision 001–023)** adalah sumber kebenaran operasional dan keputusan bisnis.
+- **Delivery & Operations/sop.md (v1.4)** & **Business Memory/decision-log.md (Decision 001–023 Addendum)** adalah sumber kebenaran operasional dan keputusan bisnis.
 
 --------------------------------------------------------------------------------
 
@@ -458,8 +473,8 @@ ENLESWEB berada dalam **Launch-Ready Mode V4**.
 - Performa & Agentic Browsing (Decision 019): CSS 100% inlined (0 request CSS render-blocking), 4 bobot font Poppins (700, 600, 500, 400) preloaded di `<head>`, scroll reveal viewport-aware dengan skrip head js-reveal dan penjadwalan `requestIdleCallback` tanpa blocking hero LCP (~0.3–0.6s desktop, ~1.0–1.1s mobile), client JS murni 0 KiB `copy.js`, scroll listener Navbar tanpa forced reflow via `requestIdleCallback`, Meta Pixel Opsi A (stub antrean instan + deferred script 153 KiB murni interaksi), routing non-SPA di `wrangler.json`, `public/llms.txt` mematuhi standar Agentic Browsing (3/3 100%), serta `public/_headers` cache immutable 1 tahun di Cloudflare Workers.
 - Penyelesaian Template PDF Bukti Pemesanan, Kesiapan Materi Iklan Meta, & Penutupan Seluruh Tugas Minggu 0 (Decision 020): Pendiri bisnis telah menyelesaikan pembuatan dokumen formal template PDF Bukti Pemesanan ber-TTD digital sesuai ketentuan SOP v1.2 dan Decision 017 (mencantumkan Nama Lengkap Pendiri sesuai rekening bank pribadi sebagai Penanggung Jawab Resmi Studio ENLESWEB, kuota update konten ringan tahunan 2x/4x/6x, ketentuan pembelian domain pasca-DP + materi lengkap, dan aturan On-Hold 60 hari kalender); materi kreatif iklan Meta kampanye 1 di direktori `campaign-1/` siap tayang; seluruh 3 tugas Minggu 0 resmi 100% CLOSED dan fokus operasional beralih penuh ke pelaksanaan Minggu 1.
 - Pembatalan Carousel 4 Slide & Penetapan 1 Video + 1 Gambar Statis Meta Ads Rasio 4:5 dan 9:16 (Decision 021): Format iklan Carousel 4 slide dibatalkan dan digantikan oleh 1 Video (Iklan A 15s) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) masing-masing dalam rasio 4:5 Feed dan 9:16 Stories/Reels di direktori `campaign-1/` dengan dokumen salinan di `copy-iklan-a.md` dan `copy-iklan-b.md` agar visual dan teks tidak terpotong sembarangan oleh antarmuka Meta.
-- Pengaktifan Preview Layout Data Dummy Pra-DP (Decision 022 CLOSED): Integrasi alur pengiriman preview tata letak dummy menggunakan format Stateless Compact ID sebelum kesepakatan dan DP pada SOP v1.3 Langkah 3b, dengan data dummy dan tanpa mengubah gerbang Website Builder pasca-10 klien lunas.
-- Unifikasi Cloudflare Workers & Peluncuran layout-lab (Decision 023): Seluruh 6 proyek demo (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) dihosting terpusat di Cloudflare Workers; hosting Vercel dinonaktifkan secara resmi. Rute studio internal (/studio-admin/*) diproteksi dan rute publik preview (/p/<id>) aktif.
+- Pengaktifan Preview Layout Data Dummy Pra-DP (Decision 022 CLOSED): Integrasi alur pengiriman preview tata letak dummy menggunakan format Stateless Compact ID sebelum kesepakatan dan DP pada SOP v1.4 Langkah 3b, dengan data dummy dan tanpa mengubah gerbang Website Builder pasca-10 klien lunas.
+- Unifikasi Cloudflare Workers, Peluncuran layout-lab, & Penyempurnaan Arsitektur (Decision 023 & Addendum 29 Oktober 2026): Seluruh 6 proyek demo (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) dihosting terpusat di Cloudflare Workers; hosting Vercel dinonaktifkan secara resmi. Rute studio internal (/studio-admin/*) diproteksi dan rute publik preview (/p/<id>) aktif. Addendum 29 Oktober 2026 menstandarkan Dual-Layer Token System (--ew-* vs --wf-*), Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada sandboxed iframe, 5 Preset Skenario Klien, refaktor salinan netral commit 87548e1, 46 assertion otomatis, serta audit 13 kategori section dengan skor UX 9.4/10.
 
 --------------------------------------------------------------------------------
 

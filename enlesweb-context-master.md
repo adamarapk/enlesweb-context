@@ -1,10 +1,10 @@
 # ENLESWEB CONTEXT MASTER: DOKUMENTASI TERPADU PLATFORM & 6 TEMPLATE KONSEP
 
-**Versi:** 3.8 (Unifikasi Hosting Seluruh Ekosistem ke Cloudflare Workers *.enlesweb.com, Penonaktifan Vercel, & Peluncuran layout-lab preview.enlesweb.com - Decision 023 & Decision 022 CLOSED)  
-**Tanggal Rilis:** 28 Oktober 2026  
-**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–023, SOP v1.3, unifikasi hosting Cloudflare Workers, & layout-lab live di preview.enlesweb.com)  
+**Versi:** 3.9 (Penyempurnaan Arsitektur layout-lab, Dual-Layer Token, Chassis iPhone 15, & SOP v1.4 - Decision 023 Addendum & Decision 022 CLOSED)  
+**Tanggal Rilis:** 29 Oktober 2026  
+**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–023 Addendum, SOP v1.4, unifikasi hosting Cloudflare Workers, & layout-lab live di preview.enlesweb.com)  
 **Target Pengguna Dokumen:** Dokumentasi Teknis Standar, Panduan Arsitektur Sistem, dan Wiki Pengembang  
-**Ringkasan Pembaruan:** Unifikasi hosting seluruh ekosistem (homepage enlesweb.com, 6 demo konsep portofolio *.enlesweb.com, dan internal composer layout-lab preview.enlesweb.com) ke Cloudflare Workers serta penonaktifan hosting Vercel (Decision 023). Pengaktifan penuh alur SOP v1.3 pra-DP Langkah 3b dengan Stateless Compact ID (/p/<id>) dari layout-lab (Decision 022 CLOSED). Seluruh tugas persiapan Minggu 0 telah CLOSED 100% dan ekosistem beralih penuh menuju pelaksanaan Minggu 1: Penayangan Meta Ads dan Micro-Warm Outreach DM Instagram.  
+**Ringkasan Pembaruan:** Penyempurnaan menyeluruh arsitektur composer internal layout-lab (preview.enlesweb.com) dan alur SOP v1.4 pra-DP Langkah 3b (Decision 023 Addendum). Mencakup integrasi Dual-Layer Token System (--ew-* shell vs --wf-* wireframe canvas), Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada sandboxed live iframe (390x796px kanvas dalam, 414x844px chassis luar), 5 Preset Skenario Klien di Studio Admin, refaktor salinan netral commit 87548e1, 46 assertion otomatis, serta audit komposisi 13 kategori dengan skor UX 9.4/10. Ekosistem siap operasional untuk pelaksanaan Minggu 1: Penayangan Meta Ads dan Micro-Warm Outreach DM Instagram.  
 
 ---
 
@@ -18,7 +18,7 @@ ENLESWEB menyajikan penawaran komersial yang terbagi menjadi 3 tingkatan paket i
 3. **Paket Growth (Rp1.200.000)**: Website hingga 10 halaman dengan desain khusus, pengalaman pengunjung/frontend interaktif khusus (*custom client islands*), sudah termasuk domain & hosting 1 tahun, 4 kali revisi saat pengerjaan, serta gratis 6 kali putaran update konten ringan di tahun pertama.
 4. **Paket Custom (Mulai Rp2.000.000)**: Jalur terpisah di luar paket Growth untuk kebutuhan lebih dari 10 halaman atau integrasi sistem khusus (tombol aksi: `[Diskusikan Kebutuhan Custom]`, topik: `paket Custom`).
 
-Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Cloudflare Workers dengan subdomain kanonikal *.enlesweb.com, Vercel dinonaktifkan per Decision 023), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA. Ekosistem juga dilengkapi internal composer `layout-lab` (live di `preview.enlesweb.com`) untuk menyusun preview tata letak dummy pra-DP.
+Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Cloudflare Workers dengan subdomain kanonikal *.enlesweb.com, Vercel dinonaktifkan per Decision 023), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA. Ekosistem juga dilengkapi internal composer `layout-lab` (live di `preview.enlesweb.com` dengan Dual-Layer Token, chassis iPhone 15, scaled 1280px artboard, dan 5 preset skenario klien) untuk menyusun preview tata letak dummy pra-DP (SOP v1.4 Langkah 3b).
 
 ---
 
@@ -177,9 +177,10 @@ Setiap titik kontak konversi dihubungkan ke WhatsApp dengan standar implementasi
 
 - **Hosting Produksi Platform Induk:** Cloudflare Workers (dengan adapter static `@astrojs/cloudflare` dan domain kanonikal `https://enlesweb.com`).
 - **Hosting Showcase Portofolio & Internal Composer:** Seluruh 6 template konsep (`*.enlesweb.com`) dan composer internal `layout-lab` (`preview.enlesweb.com`) dihosting terpusat di Cloudflare Workers; hosting lama Vercel telah resmi dinonaktifkan (Decision 023).
+  - `layout-lab` (`https://preview.enlesweb.com/`): format Stateless Compact ID `/p/<id>`, rute internal `/studio-admin/*` terproteksi, Cloudflare Worker allowlist (`/` & `/pratinjau` sengaja merespons 404), Dual-Layer Token System (`--ew-*` vs `--wf-*`), Scaled 1280px Virtual Artboard, sandboxed live iframe dalam chassis fisik iPhone 15 (390x796px kanvas dalam, 414x844px chassis luar), 5 Preset Skenario Klien, 46 assertion otomatis di `scripts/test-perakit-pratinjau.mjs`, dan 86 skenario visual snapshot Playwright.
 - **Continuous Integration (CI/CD):**
-  - Linting & tipe data: `npm run lint` / `astro check`.
-  - Automated testing: Vitest atau unit test internal.
+  - Linting & tipe data: `npm run lint` / `astro check` (70 berkas terverifikasi 0 error/warning/hint).
+  - Automated testing: Vitest atau unit test internal, serta 46 assertion fungsional `layout-lab`.
   - Build pipeline: `npm run build` menghasilkan direktori statis `dist/`.
 
 ---
@@ -708,5 +709,5 @@ Seluruh ekosistem ENLESWEB (website induk `enlesweb.com`, 6 subdomain showcase p
    - **Node.js Version:** `>= 18.17.0`
 3. Seluruh variabel bisnis produksi (nomor WhatsApp resmi `6285156801570` dan Meta Pixel ID `1099411523003859`) telah terkunci langsung di berkas TypeScript `src/config/site.ts` (tidak memerlukan environment variable terpisah).
 4. Hubungkan domain kanonikal utama (`enlesweb.com`) dan seluruh DNS subdomain terkait (`jerseay`, `dipotongin`, `tuntas`, `seruput`, `ripeir`, `berflower`, dan `preview`) melalui panel DNS Cloudflare dengan status *Proxied*.
-5. Verifikasi pengamanan rute pada `preview.enlesweb.com`: rute publik hanya mengizinkan `/p/<id>` dan aset statis, rute editor internal terlindungi di bawah `/studio-admin/*`, serta rute `/` dan `/pratinjau` sengaja merespons `404 Not Found`.
+5. Verifikasi pengamanan rute pada `preview.enlesweb.com`: rute publik hanya mengizinkan `/p/<id>` dan aset statis `/_astro/*`, rute editor internal terlindungi di bawah `/studio-admin/*` (dengan redirect 301 otomatis dari `/studio-admin` ke `/studio-admin/`), serta rute `/` dan `/pratinjau` sengaja merespons `404 Not Found` (non-GET/HEAD ditolak). Rangkaian 46 automated assertions memvalidasi integritas rute dan codec Base62 salt 16-bit.
 6. Uji coba seluruh tautan demo dari switcher panggung ENLESWEB (`https://enlesweb.com/#proyek`) ke masing-masing subdomain kanonikal Cloudflare Workers yang telah diverifikasi aktif.

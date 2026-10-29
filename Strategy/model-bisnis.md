@@ -1,7 +1,7 @@
 # MODEL BISNIS ENLESWEB
-**Versi:** 1.6  
-**Terakhir diperbarui:** 28 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.3), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.3), `Business Memory/decision-log.md` (Decision 001 - 023).  
+**Versi:** 1.7  
+**Terakhir diperbarui:** 29 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum).  
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan terukur, [HIPOTESIS] asumsi belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ---
@@ -9,7 +9,7 @@
 ## 1. Ringkasan Model Bisnis
 [KEPUTUSAN] ENLESWEB beroperasi dengan model bisnis **jasa pembuatan website statis berpaket dengan alur serah terima tuntas, kuota update konten ringan tahunan terukur, dan biaya tahunan terkelola opsional**. Bisnis ini dirancang untuk bertransformasi secara bertahap menuju sistem produksi internal (Website Builder berbasis blueprint JSON) setelah validasi pasar 10 klien pertama selesai (`visi.md`).
 
-Rincian harga paket, batas halaman, fitur, dan SLA waktu pengerjaan sepenuhnya mengacu pada `Start Here/summary.md` dan `Delivery & Operations/sop.md` (v1.2). Dokumen ini fokus memetakan **ekonomi bisnis**: struktur biaya, margin unit, ekonomi akuisisi, titik impas, proyeksi skenario arus kas 12 bulan, dan batas kapasitas solo founder.
+Rincian harga paket, batas halaman, fitur, dan SLA waktu pengerjaan sepenuhnya mengacu pada `Start Here/summary.md` dan `Delivery & Operations/sop.md` (v1.4). Dokumen ini fokus memetakan **ekonomi bisnis**: struktur biaya, margin unit, ekonomi akuisisi, titik impas, proyeksi skenario arus kas 12 bulan, dan batas kapasitas solo founder.
 
 ---
 
@@ -257,4 +257,6 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | 18 Oktober 2026 | 1.4 | Penutupan seluruh tugas persiapan Minggu 0 (100% CLOSED): Template PDF Bukti Pemesanan selesai dibuat oleh pendiri bisnis (Decision 020), materi kreatif iklan Meta di campaign-1/ siap tayang (Decision 016/020), dan penyelarasan ke dokumen master V4. | Decision 020 & summary.md v1.8 |
 | 18 Oktober 2026 | 1.5 | Pembatalan format iklan Carousel 4 slide dan penetapan 1 Video (Iklan A 15s) serta 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) dalam rasio 4:5 Feed dan 9:16 Stories/Reels di `campaign-1/` sebagai materi resmi Meta Ads Minggu 1 (Decision 021). | Arahan pemilik & penyelesaian aset campaign-1/ (Decision 021) |
 | 28 Oktober 2026 | 1.6 | Penyelarasan unifikasi hosting seluruh ekosistem (*.enlesweb.com) ke Cloudflare Workers, penonaktifan hosting Vercel (Decision 023), dan pemutakhiran acuan ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
+| 29 Oktober 2026 | 1.7 | Sinkronisasi rujukan operasional SOP v1.4, Addendum Decision 023, dan konfirmasi stabilitas unit economics dengan kesiapan instrumen pra-DP layout-lab. | SOP v1.4, Addendum Decision 023 |
+
 
