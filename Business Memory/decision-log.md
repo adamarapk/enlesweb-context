@@ -477,6 +477,8 @@ Menyatukan seluruh aset digital studio di bawah satu domain kanonikal resmi (`en
 
 ---
 
+<a id="decision-023-addendum"></a>
+<a id="addendum-29-oktober-2026-penyempurnaan-arsitektur-dan-audit-komposisi-13-kategori"></a>
 ### Addendum (29 Oktober 2026): Penyempurnaan Arsitektur layout-lab, 5 Preset Skenario Klien, & Hasil Audit Komposisi 13 Kategori
 
 Menindaklanjuti peluncuran produksi pada Decision 023, dilakukan standarisasi menyeluruh pada arsitektur antarmuka dan operasional `layout-lab`:

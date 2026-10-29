@@ -90,9 +90,10 @@ Isi bagian dalam tanda kurung siku sebelum dikirim. Jangan menambah klaim yang t
 >
 > Dari kebutuhanmu tadi, kamu lebih cocok mulai dari Paket Starter (1 halaman) atau Paket Business? Dan untuk nama domainnya, apakah [namabisnis].com sudah sesuai untuk kami daftarkan?
 
-*(Catatan admin: Klien tetap bebas memilih `.com` atau `.id` tanpa biaya tambahan. Jika klien menanyakan `.id` atau ekstensi lain setelah kalimat di atas, konfirmasi bahwa `.id` juga tersedia tanpa biaya tambahan).*
-
-**Langkah 3b: Preview layout sebelum DP (Decision 022, Decision 023, & Addendum 29 Oktober 2026):** Buka Studio Perakit di `https://preview.enlesweb.com/studio-admin/`. Admin bebas memilih dari 5 Preset Skenario Klien bawaan (*Lengkap · 13 Section*, *Starter · Ringkas*, *Business · Jasa*, *Business · Korporat*, atau *Growth · Katalog*) atau merakit susunan varian section secara manual sesuai kebutuhan prospek. Tekan shortcut keyboard `[` (*bracket* kiri) untuk melipat panel deck kontrol agar kanvas tampil penuh saat demonstrasi. Salin tautan pratinjau klien yang dihasilkan (`https://preview.enlesweb.com/p/<id>`). Kirim tautan tersebut sebelum mengirim template 5.3 atau meminta DP menggunakan pesan berikut:
+<a id="langkah-3b"></a>
+<a id="langkah-3b-opsional-kirim-preview-layout-data-dummy-decision-022--023"></a>
+### Langkah 3b: Preview layout sebelum DP (Decision 022, Decision 023, & Addendum 29 Oktober 2026)
+Buka Studio Perakit di `https://preview.enlesweb.com/studio-admin/`. Admin bebas memilih dari 5 Preset Skenario Klien bawaan (*Lengkap · 13 Section*, *Starter · Ringkas*, *Business · Jasa*, *Business · Korporat*, atau *Growth · Katalog*) atau merakit susunan varian section secara manual sesuai kebutuhan prospek. Tekan shortcut keyboard `[` (*bracket* kiri) untuk melipat panel deck kontrol agar kanvas tampil penuh saat demonstrasi. Salin tautan pratinjau klien yang dihasilkan (`https://preview.enlesweb.com/p/<id>`). Kirim tautan tersebut sebelum mengirim template 5.3 atau meminta DP menggunakan pesan berikut:
 
 > Sebelum kamu memutuskan, ini contoh susunan layout yang bisa membantu membayangkan tampilan website untuk [jenis usaha]: [tautan preview: https://preview.enlesweb.com/p/<id>]. Isinya masih memakai contoh umum dan data dummy, jadi ini bukan draf website kamu. Setelah DP dan materi lengkap, kami siapkan preview pengerjaan berdasarkan materi yang kamu kirim.
 

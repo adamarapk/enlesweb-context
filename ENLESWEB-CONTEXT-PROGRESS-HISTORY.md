@@ -405,7 +405,7 @@ North Star Minggu 0 (100% CLOSED) -> **Beralih ke Minggu 1: Jalankan kampanye ik
 - Alur operasional pra-DP Langkah 3b di SOP WhatsApp (`Delivery & Operations/sop.md` v1.4) resmi aktif (**Decision 022 CLOSED & Decision 023 Addendum**).
 - Lab memakai data dummy, bukan draf proyek klien, tidak memulai pengerjaan proyek, dan tidak mengubah aturan pembatalan/refund. Preview pengerjaan resmi pasca-DP tetap menggunakan materi asli klien.
 - Lab tidak menghasilkan website produksi atau blueprint JSON dan bukan Website Builder pada Decision 011. Gerbang Website Builder tetap setelah klien ke-10 go live, selesai, tayang, dan lunas.
-- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](Business%20Memory/decision-log.md#addendum-29-oktober-2026-penyempurnaan-arsitektur-dan-audit-komposisi-13-kategori).
+- Rujukan keputusan: [Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](Business%20Memory/decision-log.md#decision-023-addendum).
 
 --------------------------------------------------------------------------------
 

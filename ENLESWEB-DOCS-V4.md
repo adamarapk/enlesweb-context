@@ -1773,7 +1773,7 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
 - **Pemisahan dari Website Builder (Decision 011):** `layout-lab` adalah alat bantu visual eksplorasi layout sebelum DP. Lab tidak menghasilkan website produksi atau skema blueprint JSON, dan tidak mengubah gerbang Website Builder yang tetap menunggu klien ke-10 go live, selesai, tayang, dan lunas.
 
 Rujukan dokumen terkait:
-- [Decision Log: Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](Business%20Memory/decision-log.md#addendum-29-oktober-2026-penyempurnaan-arsitektur-dan-audit-komposisi-13-kategori)
-- [SOP Operasional WhatsApp: Langkah 3b](Delivery%20&%20Operations/sop.md#langkah-3b-opsional-kirim-preview-layout-data-dummy-decision-022--023)
+- [Decision Log: Decision 022](Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](Business%20Memory/decision-log.md#decision-023-addendum)
+- [SOP Operasional WhatsApp: Langkah 3b](Delivery%20&%20Operations/sop.md#langkah-3b)
 
 
