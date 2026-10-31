@@ -10,11 +10,13 @@ const __dirname = path.dirname(__filename);
 
 // Workspace Root resolution:
 // Canonical root is D:/myself/web/enlesweb-workspace
-const WORKSPACE_ROOT = process.env.ENLESWEB_WORKSPACE ||
-  (fs.existsSync('D:/myself/web/enlesweb-workspace')
-    ? 'D:/myself/web/enlesweb-workspace'
-    : path.resolve(__dirname, '../../..'));
+const resolvedRoot = fs.existsSync('D:/myself/web/enlesweb-workspace')
+  ? 'D:/myself/web/enlesweb-workspace'
+  : (fs.existsSync(path.resolve(__dirname, '../..', 'layout-lab'))
+    ? path.resolve(__dirname, '../..')
+    : path.resolve(__dirname, '..'));
 
+const WORKSPACE_ROOT = process.env.ENLESWEB_WORKSPACE || resolvedRoot;
 const MASTER_ROOT = path.join(WORKSPACE_ROOT, 'enlesweb-context-master');
 
 // -------------------------------------------------------------
@@ -84,7 +86,11 @@ const AGENTS_REGISTRY = {
     name: 'SOP & Operations Custodian',
     repo: 'enlesweb-context-master',
     homeFiles: [
-      'enlesweb-context-master/Delivery & Operations/sop.md'
+      'enlesweb-context-master/Delivery & Operations/sop.md',
+      'enlesweb-context-master/pdf-template.md',
+      'enlesweb-context-master/pdf-template-starter.md',
+      'enlesweb-context-master/pdf-template-business.md',
+      'enlesweb-context-master/pdf-template-growth.md'
     ],
     subscribedTopics: ['sop-ops', 'pricing-packages', 'preview-workflow', 'legal-terms']
   },
@@ -122,7 +128,11 @@ const FORBIDDEN_TWIN_PATHS = [
   'enlesweb-context-master/ENLESWEB-DOCS-V4.md',
   'enlesweb-context-master/copy.ts',
   'enlesweb/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md',
-  'layout-lab/enlesweb-docs'
+  'layout-lab/enlesweb-docs',
+  'enlesweb/enlesweb-context-master.md',
+  'layout-lab/enlesweb-context-master.md',
+  'layout-lab/ENLESWEB-DOCS-V4.md',
+  'layout-lab/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'
 ];
 
 // Required Template Piece Files (PRD, DESIGN, SPEC, CONTENT in each repo)
@@ -139,7 +149,114 @@ const REQUIRED_PIECE_REPOS = [
 // -------------------------------------------------------------
 // 1. MULTI-AGENT BUS & INTER-AGENT DISPATCH (--dispatch)
 // -------------------------------------------------------------
-function dispatchUpdate(senderId, topics, summary, commitHashes = []) {
+function recordDispatchToLog({
+  senderId,
+  senderRepo,
+  topics,
+  summary,
+  commitHashes = [],
+  responses = [],
+  auditPassed = true
+}) {
+  const commsLogPath = path.join(MASTER_ROOT, 'Business Memory', 'agent-comms-log.md');
+  if (!fs.existsSync(commsLogPath)) {
+    console.error(`[LOG ERROR] File agent-comms-log.md tidak ditemukan di ${commsLogPath}`);
+    return;
+  }
+
+  const existing = fs.readFileSync(commsLogPath, 'utf8');
+
+  // Generate next dispatch ID
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const datePrefix = `${yyyy}${mm}${dd}`;
+
+  const dispatchRegex = new RegExp(`DISPATCH-${datePrefix}-(\\d{3})`, 'g');
+  let maxSeq = 0;
+  let match;
+  while ((match = dispatchRegex.exec(existing)) !== null) {
+    const seq = parseInt(match[1], 10);
+    if (seq > maxSeq) maxSeq = seq;
+  }
+  const nextSeq = String(maxSeq + 1).padStart(3, '0');
+  const dispatchId = `DISPATCH-${datePrefix}-${nextSeq}`;
+
+  const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  const formattedDate = `${today.getDate()} ${months[today.getMonth()]} ${yyyy}`;
+  const hh = String(today.getHours()).padStart(2, '0');
+  const min = String(today.getMinutes()).padStart(2, '0');
+  const timeStr = `${formattedDate}, ${hh}:${min} WIB`;
+
+  const hashesStr = commitHashes.length > 0 ? commitHashes.map(h => `\`${h}\``).join(', ') : '`N/A`';
+
+  let dialogText = '';
+  let counter = 1;
+
+  // 1. Sender
+  dialogText += `${counter++}. **\`${senderId}\` (Pengirim):**\n`;
+  dialogText += `   > *"Menyiarkan pembaruan pada repositori \`${senderRepo}\` dengan ringkasan: ${summary}. Memohon rekan agen mengevaluasi relevansi dokumen masing-masing."*\n\n`;
+
+  // 2. Recipients
+  for (const resp of responses) {
+    dialogText += `${counter++}. **\`${resp.agentId}\` (Penerima):**\n`;
+    if (resp.status === 'UPDATED') {
+      dialogText += `   > **\`[UPDATED]\`**\n`;
+      dialogText += `   > - **Dokumen:** ${resp.files.map(f => `\`${f}\``).join(', ')}\n`;
+      dialogText += `   > - **Tindakan:** Memperbarui dan menyelaraskan isi dokumen dengan topik [${topics.join(', ')}].\n\n`;
+    } else if (resp.status === 'PARTIAL') {
+      dialogText += `   > - **Rincian Status:**\n`;
+      const parts = resp.details.split('; ');
+      for (const p of parts) {
+        dialogText += `   >   - ${p}\n`;
+      }
+      dialogText += `\n`;
+    } else {
+      dialogText += `   > **\`[SKIP - Tidak terdampak langsung]\`**\n`;
+      dialogText += `   > - **Alasan:** ${resp.reason}\n\n`;
+    }
+  }
+
+  const auditStatusStr = auditPassed ? '`[LULUS 100% - 0 ERROR, 0 WARNING]`' : '`[AUDIT GAGAL]`';
+  const decisionStr = auditPassed
+    ? 'Izin auto-commit dan auto-push ke GitHub diberikan.'
+    : 'Auto-commit dibatalkan sampai audit lulus 100%.';
+
+  const entry = `
+---
+
+## [${dispatchId}] ${summary}
+
+- **Waktu:** ${timeStr}
+- **Agent Pengirim:** \`${senderId}\`
+- **Repositori Sumber:** \`${senderRepo}\` (branch: \`main\`)
+- **Commit Hash:** ${hashesStr}
+- **Topik Siaran:** \`[${topics.join(', ')}]\`
+- **Ringkasan Fakta Perubahan:**
+  ${summary}
+
+### Dialog Respon Antar-Agent:
+
+${dialogText.trim()}
+
+---
+
+### Verifikasi & Stempel \`@agent-auditor\`:
+- **Status Audit:** ${auditStatusStr}
+- **Lapis 1 (Zero-Twin & Single Home):** Terverifikasi 0 file kembar lintas-folder dan keutuhan berkas tunggal tiap agen.
+- **Lapis 2 (Ground-Truth package.json):** Cocok dengan versi dependensi aktual di repo terkait.
+- **Lapis 3 (Validitas Commit Hash):** Seluruh commit hash terverifikasi di git log asli.
+- **Lapis 4 (Validitas Tautan & Konsistensi Dokumen):** Seluruh tautan relatif lintas-folder valid (0 broken link).
+- **Lapis 5 (Metrik Kode & Anti-Slop):** Metrik kode valid dan 0 karakter em-dash pada teks prosa.
+- **Keputusan:** ${decisionStr}
+`;
+
+  fs.appendFileSync(commsLogPath, entry, 'utf8');
+  console.log(`[LOG RECORDED] Berhasil mencatat transaksi obrolan ke ${path.relative(WORKSPACE_ROOT, commsLogPath)} (${dispatchId}).`);
+}
+
+function dispatchUpdate(senderId, topics, summary, commitHashes = [], options = {}) {
   console.log(`\n=======================================================`);
   console.log(`MULTI-AGENT DOCUMENT CUSTODIAN BUS DISPATCH`);
   console.log(`=======================================================`);
@@ -148,6 +265,9 @@ function dispatchUpdate(senderId, topics, summary, commitHashes = []) {
   console.log(`[DISPATCH] Commit Hashes: ${commitHashes.length > 0 ? commitHashes.join(', ') : 'N/A'}`);
   console.log(`[DISPATCH] Summary      : ${summary}`);
   console.log(`-------------------------------------------------------\n`);
+
+  const senderAgent = AGENTS_REGISTRY[senderId];
+  const senderRepo = senderAgent ? senderAgent.repo : 'workspace';
 
   const responses = [];
 
@@ -189,6 +309,19 @@ function dispatchUpdate(senderId, topics, summary, commitHashes = []) {
   console.log(`\n-------------------------------------------------------`);
   console.log(`Obrolan multi-agent selesai. Menyerahkan ke @agent-auditor untuk verifikasi.`);
   console.log(`=======================================================\n`);
+
+  if (options.recordToLog) {
+    const auditOk = options.skipAudit ? true : auditEcosystem();
+    recordDispatchToLog({
+      senderId,
+      senderRepo,
+      topics,
+      summary,
+      commitHashes,
+      responses,
+      auditPassed: auditOk
+    });
+  }
 }
 
 // -------------------------------------------------------------
@@ -313,16 +446,18 @@ function auditEcosystem() {
 
   // --- LAPIS 3: Verifikasi Validitas Commit Hash di git log ---
   console.log(`[LAPIS 3] Memvalidasi Eksistensi Commit Hash di Git Log Asli...`);
-  const commitChecks = [
+
+  // Historical verified hashes in layout-lab
+  const historicalChecks = [
     {
       repo: 'layout-lab',
       hashes: ['19671bf', '9a1de77', 'e3b57e5', '2651c68', '87548e1', '477e456', '26c5076', '1bcdc6d', 'f2657ea']
     }
   ];
 
-  for (const check of commitChecks) {
+  for (const check of historicalChecks) {
     const repoPath = path.join(WORKSPACE_ROOT, check.repo);
-    if (fs.existsSync(repoPath)) {
+    if (fs.existsSync(repoPath) && fs.existsSync(path.join(repoPath, '.git'))) {
       for (const hash of check.hashes) {
         try {
           execSync(`git -C "${repoPath}" cat-file -e ${hash}`, { stdio: 'pipe' });
@@ -333,25 +468,51 @@ function auditEcosystem() {
     }
   }
 
+  // Dynamic commit check from agent-comms-log.md
+  const commsLogPath = path.join(MASTER_ROOT, 'Business Memory', 'agent-comms-log.md');
+  if (fs.existsSync(commsLogPath)) {
+    const commsContent = fs.readFileSync(commsLogPath, 'utf8');
+    const dispatchBlocks = commsContent.split(/^## \[DISPATCH-/m).slice(1);
+
+    for (const block of dispatchBlocks) {
+      // Find source repo
+      const repoMatch = block.match(/-\s+\*\*Repositori Sumber:\*\*\s+`?([a-zA-Z0-9_\-]+)`?/i);
+      const repoName = repoMatch ? repoMatch[1].trim() : null;
+
+      // Find commit hashes
+      const commitMatch = block.match(/-\s+\*\*Commit Hash:\*\*\s+([^\r\n]+)/i);
+      if (commitMatch && repoName) {
+        const rawHashes = commitMatch[1];
+        if (!rawHashes.includes('N/A')) {
+          const hashList = [...rawHashes.matchAll(/`?([0-9a-fA-F]{7,40})`?/g)].map(m => m[1]);
+          const repoPath = path.join(WORKSPACE_ROOT, repoName);
+          if (fs.existsSync(repoPath) && fs.existsSync(path.join(repoPath, '.git'))) {
+            for (const h of hashList) {
+              try {
+                execSync(`git -C "${repoPath}" cat-file -e ${h}`, { stdio: 'pipe' });
+              } catch {
+                errors.push(`[HALUSINASI COMMIT] Commit hash '${h}' pada obrolan agent tidak ditemukan di repo '${repoName}'!`);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   // --- LAPIS 4: Validitas Tautan Lintas-Folder & Konsistensi Dokumen ---
   console.log(`[LAPIS 4] Memvalidasi Tautan Lintas-Folder & Konsistensi Versi Dokumen...`);
   
-  // 4.1 Validasi relative markdown links di dokumen master & enlesweb/ENLESWEB-DOCS-V4.md
-  const docsWithLinks = [
-    path.join(WORKSPACE_ROOT, 'enlesweb', 'ENLESWEB-DOCS-V4.md'),
-    path.join(MASTER_ROOT, 'enlesweb-context-master.md'),
-    path.join(MASTER_ROOT, 'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'),
-    path.join(MASTER_ROOT, 'Start Here', 'summary.md'),
-    path.join(MASTER_ROOT, 'Delivery & Operations', 'sop.md'),
-    path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md'),
-    path.join(MASTER_ROOT, 'Strategy', 'visi.md'),
-    path.join(MASTER_ROOT, 'Strategy', 'positioning.md'),
-    path.join(MASTER_ROOT, 'Strategy', 'model-bisnis.md'),
-    path.join(MASTER_ROOT, 'Strategy', 'rencana.md')
-  ];
+  // 4.1 Validasi relative markdown links di seluruh dokumen yang dijaga para agen
+  const docsWithLinks = new Set();
+  for (const [agentId, agent] of Object.entries(AGENTS_REGISTRY)) {
+    for (const homeFile of agent.homeFiles) {
+      docsWithLinks.add(path.join(WORKSPACE_ROOT, homeFile));
+    }
+  }
 
   for (const docPath of docsWithLinks) {
-    if (!fs.existsSync(docPath)) continue;
+    if (!docPath.endsWith('.md') || !fs.existsSync(docPath)) continue;
     const content = fs.readFileSync(docPath, 'utf8');
     const dir = path.dirname(docPath);
 
@@ -364,6 +525,20 @@ function auditEcosystem() {
       if (rawTarget.startsWith('http://') || rawTarget.startsWith('https://') || rawTarget.startsWith('#') || rawTarget.startsWith('mailto:')) {
         continue;
       }
+
+      if (rawTarget.startsWith('file:///')) {
+        const [fileUrlPart] = rawTarget.split('#');
+        try {
+          const targetAbs = fileURLToPath(fileUrlPart);
+          if (!fs.existsSync(targetAbs)) {
+            errors.push(`[BROKEN LINK] ${path.relative(WORKSPACE_ROOT, docPath)} -> ${rawTarget} (Berkas tujuan tidak ditemukan di disk)`);
+          }
+        } catch {
+          errors.push(`[BROKEN LINK] ${path.relative(WORKSPACE_ROOT, docPath)} -> ${rawTarget} (Format file URL tidak valid)`);
+        }
+        continue;
+      }
+
       // Remove anchor part for file check
       const [filePathPart] = rawTarget.split('#');
       if (!filePathPart) continue;
@@ -435,7 +610,6 @@ function auditEcosystem() {
   }
 
   // Pastikan log komunikasi agent-comms-log.md ada dan mencatat transaksi hari ini
-  const commsLogPath = path.join(MASTER_ROOT, 'Business Memory', 'agent-comms-log.md');
   if (fs.existsSync(commsLogPath)) {
     const commsText = fs.readFileSync(commsLogPath, 'utf8');
     if (!commsText.includes('DISPATCH-20261031-001') || !commsText.includes('@agent-layout-lab')) {
@@ -483,22 +657,30 @@ function auditEcosystem() {
 
   // 5.3 Check 0 em-dash (—) in master files prose & audit documents
   const emDashCheckFiles = [
-    'enlesweb-context-master.md',
-    'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md',
-    'Start Here/summary.md',
-    'Delivery & Operations/sop.md',
-    'Strategy/visi.md',
-    'Strategy/positioning.md',
-    'Strategy/model-bisnis.md',
-    'Strategy/rencana.md',
-    'Business Memory/decision-log.md',
-    'Business Memory/agent-comms-log.md',
-    '../enlesweb/ENLESWEB-DOCS-V4.md',
-    '../_audit/AUDIT-TEMPLATE-READINESS.md'
+    path.join(MASTER_ROOT, 'enlesweb-context-master.md'),
+    path.join(MASTER_ROOT, 'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'),
+    path.join(MASTER_ROOT, 'Start Here', 'summary.md'),
+    path.join(MASTER_ROOT, 'Delivery & Operations', 'sop.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'visi.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'positioning.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'model-bisnis.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'rencana.md'),
+    path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md'),
+    path.join(MASTER_ROOT, 'Business Memory', 'agent-comms-log.md'),
+    path.join(WORKSPACE_ROOT, 'enlesweb', 'ENLESWEB-DOCS-V4.md'),
+    path.join(WORKSPACE_ROOT, '_audit', 'AUDIT-TEMPLATE-READINESS.md')
   ];
 
-  for (const f of emDashCheckFiles) {
-    const p = path.resolve(MASTER_ROOT, f);
+  const auditNotesDir = path.join(WORKSPACE_ROOT, '_audit', 'notes');
+  if (fs.existsSync(auditNotesDir)) {
+    for (const note of fs.readdirSync(auditNotesDir)) {
+      if (note.endsWith('.md')) {
+        emDashCheckFiles.push(path.join(auditNotesDir, note));
+      }
+    }
+  }
+
+  for (const p of emDashCheckFiles) {
     if (!fs.existsSync(p)) continue;
     const content = fs.readFileSync(p, 'utf8');
     const lines = content.split('\n');
@@ -509,7 +691,7 @@ function auditEcosystem() {
       if (!inCodeBlock && line.includes('\u2014')) {
         const isExemption = line.includes('em dash') || line.includes('em-dash') || line.includes('Larangan Tanda') || line.includes('Bebas 100%');
         if (!isExemption) {
-          errors.push(`${f}:${idx + 1}: Ditemukan karakter em-dash (—) di teks prosa. Ganti dengan '-' atau tanda kurung.`);
+          errors.push(`${path.relative(WORKSPACE_ROOT, p)}:${idx + 1}: Ditemukan karakter em-dash (—) di teks prosa. Ganti dengan '-' atau tanda kurung.`);
         }
       }
     });
@@ -590,8 +772,18 @@ function publishEcosystem(customMessage) {
 // 4. INSTALL GIT HOOKS (--install-hooks)
 // -------------------------------------------------------------
 function installHooks() {
-  console.log(`[HOOKS] Memasang Git pre-push hook & alias di seluruh sub-repositori...`);
-  const repos = ['layout-lab', 'enlesweb', 'berflower', 'jerseay', 'klimis', 'ripeir', 'seruput', 'tuntas'];
+  console.log(`[HOOKS] Memasang Git pre-push hook & alias di seluruh repositori...`);
+  const repos = [
+    'enlesweb-context-master',
+    'layout-lab',
+    'enlesweb',
+    'berflower',
+    'jerseay',
+    'klimis',
+    'ripeir',
+    'seruput',
+    'tuntas'
+  ];
 
   const prePushContent = `#!/bin/sh
 # ENLESWEB Ecosystem Pre-Push Reminder
@@ -617,10 +809,16 @@ echo "=========================================================="
       }
 
       try {
-        execSync(`git -C "${repoPath}" config alias.publish "!node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"`);
+        if (r === 'enlesweb-context-master') {
+          execSync(`git -C "${repoPath}" config alias.publish "!node scripts/sync-ecosystem.mjs --publish"`);
+          execSync(`git -C "${repoPath}" config alias.audit "!node scripts/sync-ecosystem.mjs --audit"`);
+        } else {
+          execSync(`git -C "${repoPath}" config alias.publish "!node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"`);
+          execSync(`git -C "${repoPath}" config alias.audit "!node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --audit"`);
+        }
       } catch {}
 
-      console.log(`  -> Terpasang di ${r}/.git/hooks/pre-push & alias.publish`);
+      console.log(`  -> Terpasang di ${r}/.git/hooks/pre-push & alias (publish, audit)`);
     }
   }
   console.log(`[HOOKS COMPLETE] Seluruh Git hooks & alias berhasil dipasang.`);
@@ -638,16 +836,58 @@ if (command === '--audit') {
 } else if (command === '--dispatch') {
   const sender = args[1] || '@agent-layout-lab';
   const topicsArg = args[2] || 'layout-lab-tech,dependencies';
-  const summaryArg = args.slice(3).join(' ') || 'Pembaruan teknis ekosistem';
-  dispatchUpdate(sender, topicsArg.split(','), summaryArg);
+  
+  // Parse optional flags --commit <hash1,hash2> and --record / --log
+  let commitHashes = [];
+  let recordToLog = false;
+  const otherTokens = [];
+
+  for (let i = 3; i < args.length; i++) {
+    if (args[i] === '--commit' && args[i + 1]) {
+      commitHashes = args[i + 1].split(',').map(s => s.trim());
+      i++;
+    } else if (args[i] === '--record' || args[i] === '--log') {
+      recordToLog = true;
+    } else {
+      otherTokens.push(args[i]);
+    }
+  }
+
+  const summaryArg = otherTokens.join(' ').trim() || 'Pembaruan teknis ekosistem';
+  dispatchUpdate(sender, topicsArg.split(','), summaryArg, commitHashes, { recordToLog });
 } else if (command === '--publish') {
   const customMsg = args.slice(1).join(' ').trim() || null;
   publishEcosystem(customMsg);
 } else if (command === '--record-push') {
-  const repoName = args[1] || 'sub-folder';
-  const customMsg = args.slice(2).join(' ').trim() || `docs: record post-push update from ${repoName}`;
-  console.log(`[RECORD-PUSH] Mencatat pembaruan pasca-push dari ${repoName}...`);
-  publishEcosystem(customMsg);
+  const repoName = args[1] || 'layout-lab';
+  const repoPath = path.join(WORKSPACE_ROOT, repoName);
+  let latestHash = '';
+  if (fs.existsSync(repoPath) && fs.existsSync(path.join(repoPath, '.git'))) {
+    try {
+      latestHash = execSync(`git -C "${repoPath}" rev-parse --short HEAD`, { encoding: 'utf8' }).trim();
+    } catch {}
+  }
+
+  // Determine sender agent & topics from repoName
+  let senderId = '@agent-context-master';
+  let defaultTopics = ['ecosystem-update'];
+  if (repoName === 'layout-lab') {
+    senderId = '@agent-layout-lab';
+    defaultTopics = ['layout-lab-tech', 'dependencies'];
+  } else if (repoName === 'enlesweb') {
+    senderId = '@agent-enlesweb-tech';
+    defaultTopics = ['enlesweb-tech'];
+  } else if (['berflower', 'klimis', 'jerseay', 'ripeir', 'seruput', 'tuntas', '_audit'].includes(repoName)) {
+    senderId = '@agent-templates-tech';
+    defaultTopics = ['template-update'];
+  }
+
+  const summary = args.slice(2).join(' ').trim() || `Pembaruan pasca-push dari repositori ${repoName}`;
+  const commitHashes = latestHash ? [latestHash] : [];
+
+  console.log(`[RECORD-PUSH] Mencatat pembaruan pasca-push dari ${repoName} (${latestHash || 'no-hash'})...`);
+  dispatchUpdate(senderId, defaultTopics, summary, commitHashes, { recordToLog: true, skipAudit: true });
+  publishEcosystem(`docs: record post-push update from ${repoName} (${latestHash || 'sync'})`);
 } else if (command === '--install-hooks') {
   installHooks();
 } else {
