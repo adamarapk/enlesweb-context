@@ -168,8 +168,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Gambar/teks nama merek, daftar tautan menu, tombol hamburger mobile.
    - *Field Opsional*: Tombol aksi langsung di navbar desktop.
    - *Perilaku Mobile (390px)*: Di bawah 768px, tautan desktop dan tombol aksi disembunyikan (`display: none`). Tombol hamburger ditampilkan. Saat tombol ditekan, panel `#nav-menu-panel` membuka ke bawah secara vertikal dengan transisi meluncur.
-   - *Sumber*: [`enlesweb/src/components/Navbar.astro:8-104`](file:///d:/myself/web/7project/enlesweb/src/components/Navbar.astro#L8-L104)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/navbar-mobile-drawer.png)
+   - *Sumber*: [`enlesweb/src/components/Navbar.astro:8-104`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Navbar.astro#L8-L104)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/navbar-mobile-drawer.png)
 
 2. **seruput**
    - *Arketipe*: Baris 3 zona horizontal dengan teks teknis dan panel dropdown scroll-aware
@@ -182,8 +182,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama merek, daftar tautan navigasi, tombol toggle mobile.
    - *Field Opsional*: Tombol aksi WhatsApp desktop.
    - *Perilaku Mobile (390px)*: Di bawah 768px, menu desktop dan tombol aksi di-hide. Tombol toggle aktif. Klik tombol membuka panel navigasi vertikal drop-down berlatar buram (*backdrop-filter: blur*).
-   - *Sumber*: [`seruput/src/components/Navbar.astro:20-120, 301-307`](file:///d:/myself/web/7project/seruput/src/components/Navbar.astro#L20-L120)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/navbar-mobile-drawer.png)
+   - *Sumber*: [`seruput/src/components/Navbar.astro:20-120, 301-307`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/Navbar.astro#L20-L120)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/navbar-mobile-drawer.png)
 
 3. **ripeir**
    - *Arketipe*: Baris 3 zona terpusat dengan garis pembatas ganda
@@ -196,8 +196,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Teks merek, tautan navigasi desktop, tombol toggle.
    - *Field Opsional*: Tombol WhatsApp navbar desktop.
    - *Perilaku Mobile (390px)*: Di bawah 768px, navigasi tengah dan tombol WhatsApp hilang. Tombol toggle garis ganda menampilkan panel drawer layar penuh dengan tautan berukuran sentuh minimal 48px.
-   - *Sumber*: [`ripeir/src/components/Navbar.astro:13-90`](file:///d:/myself/web/7project/ripeir/src/components/Navbar.astro#L13-L90)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/navbar-mobile-drawer.png)
+   - *Sumber*: [`ripeir/src/components/Navbar.astro:13-90`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/Navbar.astro#L13-L90)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/navbar-mobile-drawer.png)
 
 4. **tuntas**
    - *Arketipe*: Baris 2 zona asimetris terpadu
@@ -209,8 +209,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama merek, daftar tautan, tombol hamburger.
    - *Field Opsional*: Tombol WhatsApp terpadu di dalam desktop nav.
    - *Perilaku Mobile (390px)*: Di bawah 1024px (`@media (max-width: 1023px)`), seluruh grup `.desktop-nav` disembunyikan. Tombol toggle hamburger memicu panel vertikal drop-down dengan tombol WhatsApp penuh selebar panel di bagian bawah menu.
-   - *Sumber*: [`tuntas/src/components/Navbar.astro:16-120`](file:///d:/myself/web/7project/tuntas/src/components/Navbar.astro#L16-L120)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/navbar-mobile-drawer.png)
+   - *Sumber*: [`tuntas/src/components/Navbar.astro:16-120`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/Navbar.astro#L16-L120)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/navbar-mobile-drawer.png)
 
 5. **jerseay**
    - *Arketipe*: Baris adaptif mengambang dengan drawer samping off-canvas (320px) dan focus-trap
@@ -227,8 +227,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama studio, daftar tautan navigasi, tombol toggle mobile, tombol tutup drawer.
    - *Field Opsional*: Penanda garis bawah aktif (`nav-link-indicator`), tombol aksi desktop.
    - *Perilaku Mobile (390px)*: Di bawah 1024px, menu tengah dan tombol desktop hilang. Tombol "MENU" membuka drawer geser samping dari tepi kanan dengan transisi selebar 320px, mengaktifkan tirai pelindung (*backdrop scrim*), mengurung fokus keyboard, serta mengunci scroll dokumen.
-   - *Sumber*: [`jerseay/src/components/navigation/Navbar.astro:18-150, 270-350`](file:///d:/myself/web/7project/jerseay/src/components/navigation/Navbar.astro#L18-L150)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/navbar-mobile-drawer.png)
+   - *Sumber*: [`jerseay/src/components/navigation/Navbar.astro:18-150, 270-350`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/navigation/Navbar.astro#L18-L150)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/navbar-mobile-drawer.png)
 
 6. **klimis**
    - *Arketipe*: Baris 2 zona asimetris dengan penanda kuis
@@ -241,8 +241,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama studio, tautan navigasi, tombol hamburger.
    - *Field Opsional*: Badge kapsul penanda interaktif pada item menu, tombol aksi WhatsApp.
    - *Perilaku Mobile (390px)*: Di bawah 1024px, `.desktop-nav` disembunyikan. Hamburger memicu drawer menu vertikal meluncur ke bawah dari header dengan pembungkus tombol WhatsApp di sisi bawah.
-   - *Sumber*: [`klimis/src/components/Navbar.astro:15-78`](file:///d:/myself/web/7project/klimis/src/components/Navbar.astro#L15-L78)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/navbar-mobile-drawer.png)
+   - *Sumber*: [`klimis/src/components/Navbar.astro:15-78`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/Navbar.astro#L15-L78)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/navbar-mobile-drawer.png)
 
 7. **berflower**
    - *Arketipe*: Baris 4 elemen multi-utilitas dengan menu bersarang & indikator status persisten
@@ -256,8 +256,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama toko, tautan navigasi, tombol toggle mobile.
    - *Field Opsional*: Menu dropdown bersarang (`<details>`), indikator status keranjang belanja.
    - *Perilaku Mobile (390px)*: Di bawah 1024px, navigasi desktop disembunyikan. Namun, indikator keranjang belanja tetap tampil di samping tombol hamburger. Panel drawer memecah tautan utama dan tautan info ke dalam dua sub-grup vertikal terpisah.
-   - *Sumber*: [`berflower/src/components/Navbar.astro:10-110`](file:///d:/myself/web/7project/berflower/src/components/Navbar.astro#L10-L110)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/navbar-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/navbar-mobile-drawer.png)
+   - *Sumber*: [`berflower/src/components/Navbar.astro:10-110`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/Navbar.astro#L10-L110)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/navbar-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/navbar-mobile.png) | [Mobile Drawer](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/navbar-mobile-drawer.png)
 
 ---
 
@@ -284,8 +284,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul utama, tag harga, tombol primer.
    - *Field Opsional*: Tautan sekunder, objek visual sekunder, latar ambient SVG.
    - *Perilaku Mobile (390px)*: Beralih dari 2 kolom horizontal menjadi 1 kolom vertikal bertumpuk. Judul dan harga di atas, tombol aksi di tengah, dan objek grafis berpindah ke bagian bawah dengan ukuran proporsional.
-   - *Sumber*: [`enlesweb/src/components/Hero.astro:64-99`](file:///d:/myself/web/7project/enlesweb/src/components/Hero.astro#L64-L99)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/hero-mobile.png)
+   - *Sumber*: [`enlesweb/src/components/Hero.astro:64-99`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Hero.astro#L64-L99)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/hero-mobile.png)
 
 2. **seruput**
    - *Arketipe*: Satu kolom terpusat monumental dengan kartu struk kasir katalog lengkap
@@ -301,8 +301,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul pengantar, kartu struk daftar menu, tombol pesan.
    - *Field Opsional*: Baris metadata struk (no nota, kasir, meja), stempel cap.
    - *Perilaku Mobile (390px)*: Tetap 1 kolom terpusat. Kartu struk otomatis mengisi 100% lebar kontainer ponsel (350-390px), garis pemisah memendek fleksibel, dan tombol aksi WhatsApp menjadi tombol blok selebar kartu.
-   - *Sumber*: [`seruput/src/components/Hero.astro:18-115`](file:///d:/myself/web/7project/seruput/src/components/Hero.astro#L18-L115)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/hero-mobile.png)
+   - *Sumber*: [`seruput/src/components/Hero.astro:18-115`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/Hero.astro#L18-L115)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/hero-mobile.png)
 
 3. **ripeir**
    - *Arketipe*: Dua kolom panggung visual (kiri teks teknis & aksi ganda, kanan visual objek bongkaran di atas alas kerja)
@@ -315,8 +315,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul utama, paragraf pendukung, tombol aksi primer.
    - *Field Opsional*: Tombol aksi sekunder, panggung visual jangkar objek.
    - *Perilaku Mobile (390px)*: Dua kolom beralih menjadi susunan bertumpuk vertikal (teks di atas, visual di bawah). Tombol aksi primer dan sekunder masing-masing mengisi lebar penuh secara bertumpuk.
-   - *Sumber*: [`ripeir/src/components/Hero.astro:23-50`](file:///d:/myself/web/7project/ripeir/src/components/Hero.astro#L23-L50)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/hero-mobile.png)
+   - *Sumber*: [`ripeir/src/components/Hero.astro:23-50`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/Hero.astro#L23-L50)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/hero-mobile.png)
 
 4. **tuntas**
    - *Arketipe*: Dua blok bertumpuk monumental (atas: blok intro monumental & tombol stempel; bawah: tabel jadwal master ledger per jenjang)
@@ -331,8 +331,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul utama, paragraf pengantar, tombol aksi primer, jadwal sesi per jenjang.
    - *Field Opsional*: Catatan kapasitas maksimal siswa.
    - *Perilaku Mobile (390px)*: Tabel 3 kolom disembunyikan (`.ledger-desktop-only { display: none }`). Digantikan oleh kartu tumpuk vertikal per jenjang (`.ledger-mobile-only`) dengan baris hari dan jam belajar, sementara tombol WhatsApp melebar 100%.
-   - *Sumber*: [`tuntas/src/components/Hero.astro:32-175`](file:///d:/myself/web/7project/tuntas/src/components/Hero.astro#L32-L175)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/hero-mobile.png)
+   - *Sumber*: [`tuntas/src/components/Hero.astro:32-175`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/Hero.astro#L32-L175)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/hero-mobile.png)
 
 5. **jerseay**
    - *Arketipe*: Kanvas visual sinematik lebar penuh 16:9 dengan overlay teks editorial sisi kiri
@@ -345,8 +345,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Gambar latar sinematik, judul studio, tombol aksi primer.
    - *Field Opsional*: Paragraf pendukung, tombol aksi sekunder.
    - *Perilaku Mobile (390px)*: Bidang latar mempertahankan ketinggian minimum 600px. Gradien pelindung menebal untuk menjamin keterbacaan teks. Tombol primer dan sekunder bertumpuk jika lebar layar sempit.
-   - *Sumber*: [`jerseay/src/components/home/HomeHero.astro:6-71`](file:///d:/myself/web/7project/jerseay/src/components/home/HomeHero.astro#L6-L71)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/hero-mobile.png)
+   - *Sumber*: [`jerseay/src/components/home/HomeHero.astro:6-71`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/home/HomeHero.astro#L6-L71)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/hero-mobile.png)
 
 6. **klimis**
    - *Arketipe*: Panggung carousel slider foto lebar penuh tanpa garis tepi dengan kontrol samping
@@ -359,8 +359,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Slide gambar foto, tombol navigasi prev/next, indikator titik tablist.
    - *Field Opsional*: Tag teks dan subjudul penjelas foto per slide.
    - *Perilaku Mobile (390px)*: Ketinggian carousel menyesuaikan proporsi layar sentuh (52vh hingga 65vh). Navigasi dapat dipicu lewat gesekan jari (*touch swipe*) maupun tombol samping.
-   - *Sumber*: [`klimis/src/components/Hero.astro:55-150`](file:///d:/myself/web/7project/klimis/src/components/Hero.astro#L55-L150)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/hero-mobile.png)
+   - *Sumber*: [`klimis/src/components/Hero.astro:55-150`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/Hero.astro#L55-L150)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/hero-mobile.png)
 
 7. **berflower**
    - *Arketipe*: Dua kolom terbelah (kiri teks editorial bertajuk penekanan miring, kanan foto produk potong siluet)
@@ -372,8 +372,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul utama, paragraf pendukung, tombol aksi WhatsApp, foto produk siluet.
    - *Field Opsional*: Elemen penekanan kata miring pada judul.
    - *Perilaku Mobile (390px)*: Dua kolom beralih menjadi 1 kolom vertikal bertumpuk. Teks berada di bagian atas, diikuti foto produk buket di bagian bawah dengan penskalaan gambar proporsional.
-   - *Sumber*: [`berflower/src/components/Hero.astro:12-51`](file:///d:/myself/web/7project/berflower/src/components/Hero.astro#L12-L51)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/hero-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/hero-mobile.png)
+   - *Sumber*: [`berflower/src/components/Hero.astro:12-51`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/Hero.astro#L12-L51)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/hero-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/hero-mobile.png)
 
 ---
 
@@ -399,8 +399,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
      - *Field Wajib*: Nama paket, harga, daftar fitur inti, tombol aksi WhatsApp.
      - *Field Opsional*: Launch note, penyingkap dropdown fitur tambahan, kartu paket kustom terpisah.
      - *Perilaku Mobile (390px)*: Grid 3 kolom desktop beralih menjadi 1 kolom vertikal bertumpuk berurutan ke bawah.
-     - *Sumber*: [`enlesweb/src/components/Packages.astro:8-60`](file:///d:/myself/web/7project/enlesweb/src/components/Packages.astro#L8-L60) & [`PackageColumn.astro:34-100`](file:///d:/myself/web/7project/enlesweb/src/components/PackageColumn.astro#L34-L100)
-     - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/packages-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/packages-mobile.png)
+     - *Sumber*: [`enlesweb/src/components/Packages.astro:8-60`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Packages.astro#L8-L60) & [`PackageColumn.astro:34-100`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/PackageColumn.astro#L34-L100)
+     - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/packages-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/packages-mobile.png)
    - *Arketipe 2 (Proyek Showcase)*: Split Stage Master-Detail Interaktif (Panggung Pratinjau Kiri, Pemilih Tab Kanan)
      - *Struktur Slot*:
        - Judul seksi pameran proyek
@@ -409,8 +409,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
      - *Field Wajib*: Mockup gambar, judul proyek, tombol pemilih, tautan aksi.
      - *Field Opsional*: Favicon, badge penanda tier.
      - *Perilaku Mobile (390px)*: Bertumpuk vertikal: panggung aktif mockup di atas, deretan tombol pemilih di bawah.
-     - *Sumber*: [`enlesweb/src/components/Projects.astro:30-150`](file:///d:/myself/web/7project/enlesweb/src/components/Projects.astro#L30-L150)
-     - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/projects-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/projects-mobile.png)
+     - *Sumber*: [`enlesweb/src/components/Projects.astro:30-150`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Projects.astro#L30-L150)
+     - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/projects-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/projects-mobile.png)
 
 2. **seruput**
    - *Arketipe*: Grid 3 kolom kartu komoditas biji kopi
@@ -425,8 +425,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama varietas, asal daerah, catatan rasa, harga, tombol pesan.
    - *Field Opsional*: Ketinggian kebun tanam (mdpl), proses pascapanen.
    - *Perilaku Mobile (390px)*: Grid 3 kolom desktop runtuh menjadi 1 kolom bertumpuk vertikal dengan jarak lapang antar kartu.
-   - *Sumber*: [`seruput/src/components/BeansSection.astro:5-65`](file:///d:/myself/web/7project/seruput/src/components/BeansSection.astro#L5-L65)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/beans-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/beans-mobile.png)
+   - *Sumber*: [`seruput/src/components/BeansSection.astro:5-65`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/BeansSection.astro#L5-L65)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/beans-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/beans-mobile.png)
 
 3. **ripeir**
    - *Arketipe*: Grid modular 4 kartu kategori perangkat servis
@@ -441,8 +441,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Kategori perangkat, daftar masalah yang ditangani, estimasi waktu, tombol konsultasi.
    - *Field Opsional*: Ikon grafis perangkat.
    - *Perilaku Mobile (390px)*: Grid 2x2 desktop beralih menjadi 1 kolom vertikal bertumpuk ke bawah dengan tombol aksi melebar penuh.
-   - *Sumber*: [`ripeir/src/components/ServicesGrid.astro:8-60`](file:///d:/myself/web/7project/ripeir/src/components/ServicesGrid.astro#L8-L60)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/services-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/services-mobile.png)
+   - *Sumber*: [`ripeir/src/components/ServicesGrid.astro:8-60`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/ServicesGrid.astro#L8-L60)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/services-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/services-mobile.png)
 
 4. **tuntas**
    - *Arketipe*: Baris horizontal bertabel per jenjang & Matriks komparasi tabular
@@ -453,8 +453,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama program, target jenjang, mata pelajaran, format belajar, tarif nominal.
    - *Field Opsional*: Tabel komparasi parameter privat vs kelompok.
    - *Perilaku Mobile (390px)*: Baris jenjang beralih ke format kartu vertikal per jenjang. Tabel matriks dan tabel biaya dilengkapi kontainer gulir horizontal (*overflow-x: auto*) atau konversi ke format pasangan baris label-nilai.
-   - *Sumber*: [`tuntas/src/components/ProgramRows.astro:14-80`](file:///d:/myself/web/7project/tuntas/src/components/ProgramRows.astro#L14-L80), [`FormatCards.astro:5-60`](file:///d:/myself/web/7project/tuntas/src/components/FormatCards.astro#L5-L60), [`jadwal-biaya.astro:45-80`](file:///d:/myself/web/7project/tuntas/src/pages/jadwal-biaya.astro#L45-L80)
-   - *Screenshot*: [Program Rows Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/program-rows-desktop.png) | [Program Rows Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/program-rows-mobile.png) | [Format Cards Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/format-cards-desktop.png) | [Format Cards Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/format-cards-mobile.png) | [Fees Table Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/fees-table-desktop.png) | [Fees Table Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/fees-table-mobile.png)
+   - *Sumber*: [`tuntas/src/components/ProgramRows.astro:14-80`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/ProgramRows.astro#L14-L80), [`FormatCards.astro:5-60`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/FormatCards.astro#L5-L60), [`jadwal-biaya.astro:45-80`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/pages/jadwal-biaya.astro#L45-L80)
+   - *Screenshot*: [Program Rows Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/program-rows-desktop.png) | [Program Rows Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/program-rows-mobile.png) | [Format Cards Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/format-cards-desktop.png) | [Format Cards Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/format-cards-mobile.png) | [Fees Table Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/fees-table-desktop.png) | [Fees Table Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/fees-table-mobile.png)
 
 5. **jerseay**
    - *Arketipe 1 (Layanan)*: Lookbook editorial zig-zag bergantian dengan micro-specs tabular garis tipis
@@ -469,11 +469,11 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
      - *Field Wajib*: Foto showcase, nama cabang olahraga, spesifikasi teknis tabular, tombol brief.
      - *Field Opsional*: Tombol tautan konfigurator "Rancang Kit", tautan halaman studi kasus proyek.
      - *Perilaku Mobile (390px)*: Susunan zig-zag kiri-kanan runtuh menjadi satu kolom memanjang: foto berada di atas, diikuti judul, teks konsep, micro-specs tabular, dan tombol aksi di bawahnya.
-     - *Sumber*: [`jerseay/src/pages/layanan/index.astro:52-130`](file:///d:/myself/web/7project/jerseay/src/pages/layanan/index.astro#L52-L130)
-     - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/layanan-catalog-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/layanan-catalog-mobile.png)
+     - *Sumber*: [`jerseay/src/pages/layanan/index.astro:52-130`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/pages/layanan/index.astro#L52-L130)
+     - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/layanan-catalog-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/layanan-catalog-mobile.png)
    - *Arketipe 2 (Portofolio Proyek)*: Showcase proyek pilihan dua gambar asimetris (`FeaturedProject.astro`) & Grid 3 kolom pratinjau proyek studio (`ProjectPreview.astro`)
-     - *Sumber*: [`jerseay/src/components/home/FeaturedProject.astro:18-60`](file:///d:/myself/web/7project/jerseay/src/components/home/FeaturedProject.astro#L18-L60) & [`ProjectPreview.astro:31-60`](file:///d:/myself/web/7project/jerseay/src/components/home/ProjectPreview.astro#L31-L60)
-     - *Screenshot*: [Featured Project Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/featured-project-desktop.png) | [Featured Project Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/featured-project-mobile.png) | [Project Preview Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/project-preview-desktop.png) | [Project Preview Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/project-preview-mobile.png)
+     - *Sumber*: [`jerseay/src/components/home/FeaturedProject.astro:18-60`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/home/FeaturedProject.astro#L18-L60) & [`ProjectPreview.astro:31-60`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/home/ProjectPreview.astro#L31-L60)
+     - *Screenshot*: [Featured Project Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/featured-project-desktop.png) | [Featured Project Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/featured-project-mobile.png) | [Project Preview Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/project-preview-desktop.png) | [Project Preview Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/project-preview-mobile.png)
 
 6. **klimis**
    - *Arketipe*: Papan menu daftar tarif terstruktur dengan rincian tindakan & titik pengisi
@@ -484,8 +484,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama paket pangkas, durasi menit, harga nominal, rincian tindakan.
    - *Field Opsional*: Daftar layanan grooming tambahan bertitik pengisi.
    - *Perilaku Mobile (390px)*: Di dalam wadah dua kolom desktop, pada mobile seksi papan harga ini berada di urutan kedua setelah kartu member (`order: 2`), dan seluruh entri tersusun vertikal dengan harga rata kanan secara konsisten.
-   - *Sumber*: [`klimis/src/components/ServicesSection.astro:10-90`](file:///d:/myself/web/7project/klimis/src/components/ServicesSection.astro#L10-L90)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/services-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/services-mobile.png)
+   - *Sumber*: [`klimis/src/components/ServicesSection.astro:10-90`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/ServicesSection.astro#L10-L90)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/services-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/services-mobile.png)
 
 7. **berflower**
    - *Arketipe*: Tab filter kategori horizontal + Grid 3 kolom kartu produk e-commerce
@@ -501,8 +501,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Foto produk, nama produk, harga nominal, tombol aksi WhatsApp/keranjang.
    - *Field Opsional*: Tab filter kategori, tombol tambah ke keranjang lokal.
    - *Perilaku Mobile (390px)*: Grid 3 kolom desktop beralih menjadi susunan 1 kolom fleksibel. Bilah filter tab kategori menggunakan wadah gulir horizontal (*overflow-x: auto*) yang dapat digeser jari.
-   - *Sumber*: [`berflower/src/pages/koleksi.astro:10-23`](file:///d:/myself/web/7project/berflower/src/pages/koleksi.astro#L10-L23)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/product-list-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/product-list-mobile.png)
+   - *Sumber*: [`berflower/src/pages/koleksi.astro:10-23`](file:///d:/myself/web/enlesweb-workspace/berflower/src/pages/koleksi.astro#L10-L23)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/product-list-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/product-list-mobile.png)
 
 ---
 
@@ -532,8 +532,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nomor langkah, judul tahap, tombol pemicu akordeon, uraian aktivitas.
    - *Field Opsional*: Rel garis vertikal penghubung.
    - *Perilaku Mobile (390px)*: Dua kolom beralih menjadi 1 kolom vertikal berjalur rel; judul seksi berada di atas akordeon; interaksi klik tombol membuka langkah terkait dan menutup langkah lainnya.
-   - *Sumber*: [`enlesweb/src/components/Process.astro:7-80, 94-107`](file:///d:/myself/web/7project/enlesweb/src/components/Process.astro#L7-L80) & [`copy.ts:221-248`](file:///d:/myself/web/7project/enlesweb/src/content/copy.ts#L221-L248)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/process-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/process-mobile.png)
+   - *Sumber*: [`enlesweb/src/components/Process.astro:7-80, 94-107`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Process.astro#L7-L80) & [`copy.ts:221-248`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/content/copy.ts#L221-L248)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/process-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/process-mobile.png)
 
 2. **ripeir**
    - *Arketipe*: Daftar baris tabular bergaris pemisah horizontal 3-kolom (*Hairline Row Ledger*)
@@ -547,8 +547,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nomor digit, judul prosedur, teks detail tindakan, tombol konsultasi.
    - *Field Opsional*: Estimasi total durasi perbaikan.
    - *Perilaku Mobile (390px)*: Nomor, judul, dan uraian bertumpuk vertikal di dalam baris bergaris batas atas-bawah tipis (`border-top` / `border-bottom`).
-   - *Sumber*: [`ripeir/src/components/StepList.astro:19-33, 69-140`](file:///d:/myself/web/7project/ripeir/src/components/StepList.astro#L19-L33)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/steps-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/steps-mobile.png)
+   - *Sumber*: [`ripeir/src/components/StepList.astro:19-33, 69-140`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/StepList.astro#L19-L33)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/steps-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/steps-mobile.png)
 
 3. **tuntas**
    - *Arketipe*: Baris ledger bertabel dengan kolom nomor terpisah
@@ -560,8 +560,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nomor langkah, judul tahapan, rincian instruksi.
    - *Field Opsional*: Tautan tombol telusuri panduan lengkap di bilah header.
    - *Perilaku Mobile (390px)*: Nomor urut dan judul langkah bertumpuk vertikal di atas paragraf penjelas; garis pemisah antar baris tetap dipertahankan untuk memisahkan tahapan secara tegas.
-   - *Sumber*: [`tuntas/src/components/StepList.astro:15-60`](file:///d:/myself/web/7project/tuntas/src/components/StepList.astro#L15-L60)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/steps-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/steps-mobile.png)
+   - *Sumber*: [`tuntas/src/components/StepList.astro:15-60`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/StepList.astro#L15-L60)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/steps-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/steps-mobile.png)
 
 4. **jerseay**
    - *Arketipe 1 (Home)*: Bilah rantai langkah sebaris berpanah dengan tautan telusuri (*Inline Arrow-Chained Flow Strip*)
@@ -570,8 +570,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
        - Tautan telusuri di sisi kanan ("Pelajari proses &rarr;")
      - *Field Wajib*: Nama 4 tahapan alur, tanda panah pemisah sebaris, tautan telusuri.
      - *Perilaku Mobile (390px)*: Elemen membungkus baris secara fleksibel (*flex-wrap*).
-     - *Sumber*: [`jerseay/src/components/home/ProcessPreview.astro:10-35`](file:///d:/myself/web/7project/jerseay/src/components/home/ProcessPreview.astro#L10-L35)
-     - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/process-preview-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/process-preview-mobile.png)
+     - *Sumber*: [`jerseay/src/components/home/ProcessPreview.astro:10-35`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/home/ProcessPreview.astro#L10-L35)
+     - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/process-preview-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/process-preview-mobile.png)
    - *Arketipe 2 (Proses)*: Diagram alur node interaktif (*Node Workflow Canvas* dengan konektor kurva SVG dinamis)
      - *Struktur Slot*:
        - Kanvas alur kerja dengan lapisan jalur kurva kabel SVG (`svg#workflow-wires` dengan penanda kepala panah `marker#wire-arrow`)
@@ -583,8 +583,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
      - *Field Wajib*: Kartu node tahapan kerja, urutan proses, rincian keluaran berkas.
      - *Field Opsional*: Jalur kabel kurva SVG dan soket konektor.
      - *Perilaku Mobile (390px)*: Seluruh kartu node beralih menjadi 1 kolom penuh (lebar 100%), dan kabel SVG melengkung menghubungkan soket bawah ke soket atas secara vertikal linier.
-     - *Sumber*: [`jerseay/src/pages/proses/index.astro:35-115`](file:///d:/myself/web/7project/jerseay/src/pages/proses/index.astro#L35-L115)
-     - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/workflow-canvas-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/workflow-canvas-mobile.png)
+     - *Sumber*: [`jerseay/src/pages/proses/index.astro:35-115`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/pages/proses/index.astro#L35-L115)
+     - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/workflow-canvas-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/workflow-canvas-mobile.png)
 
 5. **berflower**
    - *Arketipe*: 3 Kolom horizontal minimalis bernomor digit besar
@@ -598,8 +598,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nomor langkah, judul aksi, teks instruksi.
    - *Field Opsional*: Tautan panduan lengkap.
    - *Perilaku Mobile (390px)*: Berubah dari 3 kolom horizontal menjadi 1 kolom vertikal bertumpuk ke bawah dengan nomor digit di atas tiap blok.
-   - *Sumber*: [`berflower/src/components/OrderSteps.astro:20-60`](file:///d:/myself/web/7project/berflower/src/components/OrderSteps.astro#L20-L60)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/order-steps-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/order-steps-mobile.png)
+   - *Sumber*: [`berflower/src/components/OrderSteps.astro:20-60`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/OrderSteps.astro#L20-L60)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/order-steps-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/order-steps-mobile.png)
 
 ---
 
@@ -622,8 +622,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul seksi, teks narasi profil, kartu pernyataan nilai tunggal.
    - *Field Opsional*: Paragraf kedua narasi.
    - *Perilaku Mobile (390px)*: Dua kolom desktop runtuh menjadi satu kolom vertikal bertumpuk: teks narasi profil di atas, diikuti kartu nilai bisnis di bawahnya.
-   - *Sumber*: [`enlesweb/src/components/About.astro:7-21, 38-50`](file:///d:/myself/web/7project/enlesweb/src/components/About.astro#L7-L21)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/about-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/about-mobile.png)
+   - *Sumber*: [`enlesweb/src/components/About.astro:7-21, 38-50`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/About.astro#L7-L21)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/about-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/about-mobile.png)
 
 2. **seruput**
    - *Arketipe*: Dua kolom editorial narasi racikan & Grid 3 kartu testimoni pembuktian sosial
@@ -633,8 +633,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Foto dokumentasi / teks narasi cerita; teks kutipan testimoni dan identitas ulasan.
    - *Field Opsional*: Badge penanda pelanggan tetap.
    - *Perilaku Mobile (390px)*: Story bertumpuk foto di atas teks di bawah; kartu testimoni bertumpuk menjadi 1 kolom vertikal.
-   - *Sumber*: [`seruput/src/components/Story.astro:6-50`](file:///d:/myself/web/7project/seruput/src/components/Story.astro#L6-L50) & [`SocialProofSection.astro:5-60`](file:///d:/myself/web/7project/seruput/src/components/SocialProofSection.astro#L5-L60)
-   - *Screenshot*: [Story Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/story-desktop.png) | [Story Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/story-mobile.png) | [Social Proof Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/social-proof-desktop.png) | [Social Proof Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/social-proof-mobile.png)
+   - *Sumber*: [`seruput/src/components/Story.astro:6-50`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/Story.astro#L6-L50) & [`SocialProofSection.astro:5-60`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/SocialProofSection.astro#L5-L60)
+   - *Screenshot*: [Story Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/story-desktop.png) | [Story Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/story-mobile.png) | [Social Proof Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/social-proof-desktop.png) | [Social Proof Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/social-proof-mobile.png)
 
 3. **ripeir**
    - *Arketipe*: Tiga kartu pilar horizontal sejajar bernomor digit besar
@@ -647,8 +647,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nomor pilar, judul prinsip, teks komitmen.
    - *Field Opsional*: Durasi formal jaminan garansi.
    - *Perilaku Mobile (390px)*: 3 Kolom kartu sejajar desktop beralih menjadi susunan 3 kartu vertikal bertumpuk penuh selebar kontainer.
-   - *Sumber*: [`ripeir/src/components/Principles.astro:6-55`](file:///d:/myself/web/7project/ripeir/src/components/Principles.astro#L6-L55)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/principles-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/principles-mobile.png)
+   - *Sumber*: [`ripeir/src/components/Principles.astro:6-55`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/Principles.astro#L6-L55)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/principles-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/principles-mobile.png)
 
 4. **tuntas**
    - *Arketipe*: Dua kolom editorial profil bimbingan belajar tuntas
@@ -659,8 +659,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Teks narasi profil bimbingan, jadwal konsultasi, alamat.
    - *Field Opsional*: Peta embed, kartu konsep situs.
    - *Perilaku Mobile (390px)*: Dua kolom beralih menjadi 1 kolom vertikal bertumpuk; peta dialihkan ke posisi bawah alamat via blok `.mobile-map-block`.
-   - *Sumber*: [`tuntas/src/pages/tentang.astro:21-108`](file:///d:/myself/web/7project/tuntas/src/pages/tentang.astro#L21-L108)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/tentang-main-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/tentang-main-mobile.png)
+   - *Sumber*: [`tuntas/src/pages/tentang.astro:21-108`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/pages/tentang.astro#L21-L108)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/tentang-main-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/tentang-main-mobile.png)
 
 5. **klimis**
    - *Arketipe*: Kartu vertikal stempel loyalitas mengambang (*sticky sidebar*)
@@ -672,8 +672,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Kotak simulasi stempel loyalitas, jadwal jam buka, jaminan kepuasan.
    - *Field Opsional*: Nomor seri kartu pelanggan.
    - *Perilaku Mobile (390px)*: Pada desktop melayang di kolom samping (`position: sticky; top: calc(var(--header-height) + var(--space-4)); width: 370px`). Pada mobile beralih menjadi kartu horizontal teratas (`order: 1`), sebelum daftar layanan pangkas.
-   - *Sumber*: [`klimis/src/components/SidebarInfo.astro:5-80`](file:///d:/myself/web/7project/klimis/src/components/SidebarInfo.astro#L5-L80) & [`pages/index.astro:48-60`](file:///d:/myself/web/7project/klimis/src/pages/index.astro#L48-L60)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/sidebar-info-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/sidebar-info-mobile.png)
+   - *Sumber*: [`klimis/src/components/SidebarInfo.astro:5-80`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/SidebarInfo.astro#L5-L80) & [`pages/index.astro:48-60`](file:///d:/myself/web/enlesweb-workspace/klimis/src/pages/index.astro#L48-L60)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/sidebar-info-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/sidebar-info-mobile.png)
 
 6. **berflower**
    - *Arketipe*: Kartu kontainer horizontal tunggal memanjang berbingkai lapang
@@ -684,8 +684,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul seksi, teks narasi komitmen, tautan panduan.
    - *Field Opsional*: Tanda tangan digital florist.
    - *Perilaku Mobile (390px)*: Padding dalam kartu berkurang; teks bertumpuk linier dari judul, isi narasi, hingga tautan penutup.
-   - *Sumber*: [`berflower/src/components/AboutBrief.astro:6-45`](file:///d:/myself/web/7project/berflower/src/components/AboutBrief.astro#L6-L45)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/about-brief-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/about-brief-mobile.png)
+   - *Sumber*: [`berflower/src/components/AboutBrief.astro:6-45`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/AboutBrief.astro#L6-L45)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/about-brief-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/about-brief-mobile.png)
 
 ---
 
@@ -710,8 +710,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Alamat fisik lengkap, jadwal jam operasional, tautan Google Maps.
    - *Field Opsional*: Iframe peta tersemat, catatan petunjuk rute jalan kaki.
    - *Perilaku Mobile (390px)*: Dua kolom beralih menjadi 1 kolom vertikal: teks alamat dan jam di atas, peta iframe di bawah dengan rasio 16:9.
-   - *Sumber*: [`seruput/src/components/LocationSection.astro:6-75`](file:///d:/myself/web/7project/seruput/src/components/LocationSection.astro#L6-L75)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/location-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/location-mobile.png)
+   - *Sumber*: [`seruput/src/components/LocationSection.astro:6-75`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/LocationSection.astro#L6-L75)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/location-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/location-mobile.png)
 
 2. **klimis**
    - *Arketipe*: Dua kolom terbalik (kiri iframe peta interaktif, kanan kartu rincian jam & alamat)
@@ -723,8 +723,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Alamat lengkap studio, jam operasional walk-in, tautan peta luar.
    - *Field Opsional*: Iframe peta tersemat, keterangan patokan gedung.
    - *Perilaku Mobile (390px)*: Peta dan teks alamat bertumpuk 1 kolom vertikal dengan lebar 100% dan ketinggian peta 300px.
-   - *Sumber*: [`klimis/src/components/LocationSection.astro:6-85`](file:///d:/myself/web/7project/klimis/src/components/LocationSection.astro#L6-L85)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/location-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/location-mobile.png)
+   - *Sumber*: [`klimis/src/components/LocationSection.astro:6-85`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/LocationSection.astro#L6-L85)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/location-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/location-mobile.png)
 
 3. **tuntas**
    - *Arketipe*: Kolom pendamping peta tersemat dengan bilah tautan eksternal
@@ -736,8 +736,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Alamat cabang, jam operasional, tautan peta luar.
    - *Field Opsional*: Iframe peta tersemat.
    - *Perilaku Mobile (390px)*: Ditampilkan di bawah alamat teks via kontainer `.mobile-map-block`. *(Catatan bug CSS: Pada desktop repositori asli tuntas, baris 147-149 `tentang.astro` menimpa display peta desktop karena urutan deklarasi kelas)*.
-   - *Sumber*: [`tuntas/src/components/MapEmbed.astro:1-45`](file:///d:/myself/web/7project/tuntas/src/components/MapEmbed.astro#L1-L45) & [`tentang.astro:130-160`](file:///d:/myself/web/7project/tuntas/src/pages/tentang.astro#L130-L160)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/map-location-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/map-location-mobile.png)
+   - *Sumber*: [`tuntas/src/components/MapEmbed.astro:1-45`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/MapEmbed.astro#L1-L45) & [`tentang.astro:130-160`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/pages/tentang.astro#L130-L160)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/map-location-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/map-location-mobile.png)
 
 4. **berflower**
    - *Arketipe*: Modul peta terintegrasi langsung di dalam kolom footer & kartu kontak di halaman `/kontak`
@@ -747,8 +747,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Alamat toko fisik, jam buka kurasi bunga, tautan Google Maps.
    - *Field Opsional*: Iframe peta tersemat di dalam footer.
    - *Perilaku Mobile (390px)*: Pada footer, kolom peta berada di antara kolom identitas toko dan kolom navigasi menu, melebar 100% selebar kolom mobile.
-   - *Sumber*: [`berflower/src/components/ContactInfo.astro:5-70`](file:///d:/myself/web/7project/berflower/src/components/ContactInfo.astro#L5-L70) & [`Footer.astro:40-62`](file:///d:/myself/web/7project/berflower/src/components/Footer.astro#L40-L62)
-   - *Screenshot*: [Contact Info Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/contact-info-desktop.png) | [Contact Info Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/contact-info-mobile.png)
+   - *Sumber*: [`berflower/src/components/ContactInfo.astro:5-70`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/ContactInfo.astro#L5-L70) & [`Footer.astro:40-62`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/Footer.astro#L40-L62)
+   - *Screenshot*: [Contact Info Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/contact-info-desktop.png) | [Contact Info Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/contact-info-mobile.png)
 
 5. **enlesweb, ripeir, jerseay**
    - *Arketipe*: Bilah alamat dan jam respons ringkas berbasis teks/tautan tanpa iframe
@@ -756,7 +756,7 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Teks kontak dan alamat.
    - *Field Opsional*: Tautan peta eksternal.
    - *Perilaku Mobile (390px)*: Tersusun vertikal di dalam kolom footer dengan efisiensi tinggi tanpa beban unduhan iframe.
-   - *Sumber*: [`enlesweb/src/components/Footer.astro:58-72`](file:///d:/myself/web/7project/enlesweb/src/components/Footer.astro#L58-L72), [`ripeir/src/components/Footer.astro:42-55`](file:///d:/myself/web/7project/ripeir/src/components/Footer.astro#L42-L55), [`jerseay/src/components/navigation/Footer.astro:12-38`](file:///d:/myself/web/7project/jerseay/src/components/navigation/Footer.astro#L12-L38)
+   - *Sumber*: [`enlesweb/src/components/Footer.astro:58-72`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Footer.astro#L58-L72), [`ripeir/src/components/Footer.astro:42-55`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/Footer.astro#L42-L55), [`jerseay/src/components/navigation/Footer.astro:12-38`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/navigation/Footer.astro#L12-L38)
 
 ---
 
@@ -779,8 +779,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul ajakan, tombol aksi WhatsApp.
    - *Field Opsional*: Paragraf penjelas jaminan biaya.
    - *Perilaku Mobile (390px)*: Padding dalam kartu berkurang; tombol aksi WhatsApp otomatis melebar 100% selebar layar ponsel.
-   - *Sumber*: [`enlesweb/src/components/FinalCta.astro:6-45`](file:///d:/myself/web/7project/enlesweb/src/components/FinalCta.astro#L6-L45)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/final-cta-mobile.png)
+   - *Sumber*: [`enlesweb/src/components/FinalCta.astro:6-45`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/FinalCta.astro#L6-L45)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/final-cta-mobile.png)
 
 2. **seruput**
    - *Arketipe*: Kartu kontak terpusat dengan aksen stempel tiket kedai
@@ -792,8 +792,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul ajakan, tombol pesan WhatsApp.
    - *Field Opsional*: Catatan suasana kedai.
    - *Perilaku Mobile (390px)*: Kartu memusat dan tombol aksi menjadi tombol blok penuh selebar layar.
-   - *Sumber*: [`seruput/src/components/ContactSection.astro:6-65`](file:///d:/myself/web/7project/seruput/src/components/ContactSection.astro#L6-L65)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/contact-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/contact-mobile.png)
+   - *Sumber*: [`seruput/src/components/ContactSection.astro:6-65`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/ContactSection.astro#L6-L65)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/contact-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/contact-mobile.png)
 
 3. **ripeir**
    - *Arketipe*: Bilah horizontal dua kolom terbagi diapit garis pemisah tipis
@@ -804,8 +804,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul ajakan konsultasi, tombol kontak teknisi.
    - *Field Opsional*: Kalimat penjelas tanpa komitmen perbaikan.
    - *Perilaku Mobile (390px)*: Dua kolom beralih menjadi 1 kolom vertikal bertumpuk: teks di atas, tombol WhatsApp penuh di bawahnya.
-   - *Sumber*: [`ripeir/src/components/FinalCta.astro:6-50`](file:///d:/myself/web/7project/ripeir/src/components/FinalCta.astro#L6-L50)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/final-cta-mobile.png)
+   - *Sumber*: [`ripeir/src/components/FinalCta.astro:6-50`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/FinalCta.astro#L6-L50)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/final-cta-mobile.png)
 
 4. **tuntas**
    - *Arketipe*: Format tiket pendaftaran asimetris dengan tombol stempel
@@ -816,8 +816,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul sesi evaluasi, tombol WhatsApp.
    - *Field Opsional*: Teks jaminan bebas komitmen.
    - *Perilaku Mobile (390px)*: Berubah dari susunan baris horizontal fleksibel menjadi satu kolom vertikal bertumpuk dengan tombol penuh selebar layar.
-   - *Sumber*: [`tuntas/src/components/FinalCta.astro:6-55`](file:///d:/myself/web/7project/tuntas/src/components/FinalCta.astro#L6-L55)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/final-cta-mobile.png)
+   - *Sumber*: [`tuntas/src/components/FinalCta.astro:6-55`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/FinalCta.astro#L6-L55)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/final-cta-mobile.png)
 
 5. **jerseay**
    - *Arketipe*: Bilah horizontal dua kolom terbagi diapit garis pemisah tipis dengan tombol aksi ganda
@@ -829,8 +829,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul ajakan, tombol aksi formulir brief.
    - *Field Opsional*: Tombol sekunder chat WhatsApp.
    - *Perilaku Mobile (390px)*: Teks dan grup tombol bertumpuk vertikal; tombol aksi primer dan sekunder masing-masing menjadi tombol penuh selebar kontainer ponsel.
-   - *Sumber*: [`jerseay/src/components/home/HomeFinalCTA.astro:6-65`](file:///d:/myself/web/7project/jerseay/src/components/home/HomeFinalCTA.astro#L6-L65)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/final-cta-mobile.png)
+   - *Sumber*: [`jerseay/src/components/home/HomeFinalCTA.astro:6-65`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/home/HomeFinalCTA.astro#L6-L65)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/final-cta-mobile.png)
 
 6. **klimis**
    - *Arketipe*: Plakat terpusat bergaya kertas tiket
@@ -841,8 +841,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul ajakan, tombol kontak.
    - *Field Opsional*: Catatan walk-in tanpa antrean kaku.
    - *Perilaku Mobile (390px)*: Plakat memusat dengan tombol aksi melebar 100% selebar layar ponsel.
-   - *Sumber*: [`klimis/src/components/ContactSection.astro:6-75`](file:///d:/myself/web/7project/klimis/src/components/ContactSection.astro#L6-L75)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/contact-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/contact-mobile.png)
+   - *Sumber*: [`klimis/src/components/ContactSection.astro:6-75`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/ContactSection.astro#L6-L75)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/contact-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/contact-mobile.png)
 
 7. **berflower**
    - *Arketipe*: Kartu bertumpuk terpusat lapang
@@ -853,8 +853,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Judul konsultasi, tombol pesan kustom.
    - *Field Opsional*: Paragraf penjelas fleksibilitas buket.
    - *Perilaku Mobile (390px)*: Padding dalam kartu mengecil; tombol aksi memanjang penuh selebar kontainer.
-   - *Sumber*: [`berflower/src/components/FinalCta.astro:6-50`](file:///d:/myself/web/7project/berflower/src/components/FinalCta.astro#L6-L50)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/final-cta-mobile.png)
+   - *Sumber*: [`berflower/src/components/FinalCta.astro:6-50`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/FinalCta.astro#L6-L50)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/final-cta-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/final-cta-mobile.png)
 
 ---
 
@@ -880,8 +880,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama merek, tautan navigasi, hak cipta.
    - *Field Opsional*: Logo gambar, tautan halaman kebijakan privasi terpisah.
    - *Perilaku Mobile (390px)*: 4 Kolom horizontal runtuh menjadi susunan 1 kolom bertumpuk vertikal dari kolom 1 hingga kolom 4.
-   - *Sumber*: [`enlesweb/src/components/Footer.astro:8-90`](file:///d:/myself/web/7project/enlesweb/src/components/Footer.astro#L8-L90)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/enlesweb/footer-mobile.png)
+   - *Sumber*: [`enlesweb/src/components/Footer.astro:8-90`](file:///d:/myself/web/enlesweb-workspace/enlesweb/src/components/Footer.astro#L8-L90)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/enlesweb/footer-mobile.png)
 
 2. **seruput**
    - *Arketipe*: Footer 3 kolom klasik terstruktur (Profil, Jam Kerja, Tautan Menu)
@@ -893,8 +893,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama kedai, jam operasional, tautan navigasi, hak cipta.
    - *Field Opsional*: Catatan penafian konsep.
    - *Perilaku Mobile (390px)*: 3 Kolom horizontal desktop beralih menjadi 1 kolom vertikal bertumpuk.
-   - *Sumber*: [`seruput/src/components/Footer.astro:6-85`](file:///d:/myself/web/7project/seruput/src/components/Footer.astro#L6-L85)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/seruput/footer-mobile.png)
+   - *Sumber*: [`seruput/src/components/Footer.astro:6-85`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/Footer.astro#L6-L85)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/seruput/footer-mobile.png)
 
 3. **ripeir**
    - *Arketipe*: Footer 3 kolom modular teknis (Profil Servis, Tautan Seksi, Alamat Workshop)
@@ -906,8 +906,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama merek, navigasi halaman, alamat kontak, hak cipta.
    - *Field Opsional*: Rincian spesialisasi teknis di kolom profil.
    - *Perilaku Mobile (390px)*: Kolom-kolom tersusun bertumpuk secara linier ke bawah.
-   - *Sumber*: [`ripeir/src/components/Footer.astro:6-75`](file:///d:/myself/web/7project/ripeir/src/components/Footer.astro#L6-L75)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/ripeir/footer-mobile.png)
+   - *Sumber*: [`ripeir/src/components/Footer.astro:6-75`](file:///d:/myself/web/enlesweb-workspace/ripeir/src/components/Footer.astro#L6-L75)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/ripeir/footer-mobile.png)
 
 4. **tuntas**
    - *Arketipe*: Footer 3 kolom berbasis ledger (Profil Lembaga, Halaman Utama, Jam Konsultasi)
@@ -919,8 +919,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama lembaga, tautan halaman situs, kontak, hak cipta.
    - *Field Opsional*: Penafian konsep template.
    - *Perilaku Mobile (390px)*: Beralih menjadi susunan vertikal 1 kolom dengan jarak antar grup tautan minimal 44px untuk kenyamanan sentuh.
-   - *Sumber*: [`tuntas/src/components/Footer.astro:6-95`](file:///d:/myself/web/7project/tuntas/src/components/Footer.astro#L6-L95)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/tuntas/footer-mobile.png)
+   - *Sumber*: [`tuntas/src/components/Footer.astro:6-95`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/components/Footer.astro#L6-L95)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/tuntas/footer-mobile.png)
 
 5. **jerseay**
    - *Arketipe*: Footer arsitektural 3 kolom dengan tombol aksi cepat langsung di kolom profil
@@ -932,8 +932,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama studio, tautan navigasi, hak cipta.
    - *Field Opsional*: Tombol aksi mini langsung di dalam kolom profil footer, daftar sub-kategori spesialisasi.
    - *Perilaku Mobile (390px)*: Grid 12 kolom desktop (`grid-cols-1 md:grid-cols-12`) runtuh menjadi 1 kolom vertikal bertumpuk; tombol aksi mini tetap mempertahankan target sentuh 44px.
-   - *Sumber*: [`jerseay/src/components/navigation/Footer.astro:12-90`](file:///d:/myself/web/7project/jerseay/src/components/navigation/Footer.astro#L12-L90)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/jerseay/footer-mobile.png)
+   - *Sumber*: [`jerseay/src/components/navigation/Footer.astro:12-90`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/navigation/Footer.astro#L12-L90)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/jerseay/footer-mobile.png)
 
 6. **klimis**
    - *Arketipe*: Footer 3 kolom klasik (Profil Barbershop, Jam & Lokasi, Navigasi Seksi)
@@ -945,8 +945,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama studio, jam buka, navigasi, hak cipta.
    - *Field Opsional*: Tautan khusus kuis gaya rambut.
    - *Perilaku Mobile (390px)*: Bertumpuk vertikal satu kolom dari atas ke bawah.
-   - *Sumber*: [`klimis/src/components/Footer.astro:6-80`](file:///d:/myself/web/7project/klimis/src/components/Footer.astro#L6-L80)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/klimis/footer-mobile.png)
+   - *Sumber*: [`klimis/src/components/Footer.astro:6-80`](file:///d:/myself/web/enlesweb-workspace/klimis/src/components/Footer.astro#L6-L80)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/klimis/footer-mobile.png)
 
 7. **berflower**
    - *Arketipe*: Footer multi-fitur 3 kolom kaya konten (Sosial Media, Modul Peta Embed, Navigasi Menu)
@@ -959,8 +959,8 @@ Berikut adalah rekomendasi 3 arketipe paling berbeda secara struktural untuk tia
    - *Field Wajib*: Nama toko, tautan menu, alamat fisik, hak cipta.
    - *Field Opsional*: Ikon media sosial eksternal, modul iframe peta tersemat di footer, catatan penafian konsep.
    - *Perilaku Mobile (390px)*: Ketiga kolom bertumpuk secara vertikal (profil toko & sosial di atas, peta dan alamat di tengah, tautan menu di bawah). Peta tetap responsif selebar kolom.
-   - *Sumber*: [`berflower/src/components/Footer.astro:8-115`](file:///d:/myself/web/7project/berflower/src/components/Footer.astro#L8-L115)
-   - *Screenshot*: [Desktop](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/footer-desktop.png) | [Mobile](file:///d:/myself/web/7project/_audit/layout-inventory/berflower/footer-mobile.png)
+   - *Sumber*: [`berflower/src/components/Footer.astro:8-115`](file:///d:/myself/web/enlesweb-workspace/berflower/src/components/Footer.astro#L8-L115)
+   - *Screenshot*: [Desktop](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/footer-desktop.png) | [Mobile](file:///d:/myself/web/enlesweb-workspace/_audit/layout-inventory/berflower/footer-mobile.png)
 
 ---
 
@@ -986,16 +986,16 @@ Seluruh 155 berkas tangkapan layar PNG yang disimpan pada folder `d:\myself\web\
 Bagian ini mencatat keterbatasan bukti, anomali kode yang ditemukan selama investigasi, serta rekomendasi prioritas untuk investigator atau pengembang berikutnya:
 
 1. **Anomali CSS Overwrite pada Peta Desktop `tuntas`**:
-   - *Temuan*: Pada file [`tuntas/src/pages/tentang.astro:141-149`](file:///d:/myself/web/7project/tuntas/src/pages/tentang.astro#L141-L149), deklarasi tanpa media query `.tentang-right-col { display: none; }` diletakkan tepat setelah blok `@media (min-width: 1024px) { .tentang-right-col { display: block; } }`. Karena kedua aturan memiliki spesifisitas kelas yang identik (0, 1, 0), aturan yang ditulis lebih bawah menimpa aturan media query di atasnya. Bersamaan dengan itu, `.mobile-map-block` memiliki `@media (min-width: 1024px) { display: none; }`.
+   - *Temuan*: Pada file [`tuntas/src/pages/tentang.astro:141-149`](file:///d:/myself/web/enlesweb-workspace/tuntas/src/pages/tentang.astro#L141-L149), deklarasi tanpa media query `.tentang-right-col { display: none; }` diletakkan tepat setelah blok `@media (min-width: 1024px) { .tentang-right-col { display: block; } }`. Karena kedua aturan memiliki spesifisitas kelas yang identik (0, 1, 0), aturan yang ditulis lebih bawah menimpa aturan media query di atasnya. Bersamaan dengan itu, `.mobile-map-block` memiliki `@media (min-width: 1024px) { display: none; }`.
    - *Dampak Nyata*: Pada layar desktop 1280px, peta embed Google Maps menghilang sepenuhnya dari tampilan (`display: none`), sehingga berkas `map-location-desktop.png` hanya berukuran 4,839 bytes.
    - *Fokus Rekomendasi*: Pindahkan deklarasi dasar `.tentang-right-col { display: none; }` ke posisi sebelum blok media query `@media (min-width: 1024px)` pada file `tuntas/src/pages/tentang.astro`.
 
 2. **Dukungan Aksesibilitas Focus-Trap pada Mobile Drawer**:
-   - *Temuan*: Audit aksesibilitas menunjukkan bahwa hanya `jerseay` ([`Navbar.astro:279-350`](file:///d:/myself/web/7project/jerseay/src/components/navigation/Navbar.astro#L279-L350)) yang mengimplementasikan penjerat fokus keyboard (menahan tombol Tab agar tidak menjelajah elemen halaman di balik drawer yang terbuka) dan menandai kontainer utama dengan `mainContent.inert = true`. Enam repositori lainnya (`enlesweb`, `seruput`, `ripeir`, `tuntas`, `klimis`, `berflower`) hanya menyembunyikan panel dengan atribut `hidden` saat tertutup, tetapi membiarkan fokus keyboard menembus ke latar belakang saat menu mobile terbuka.
+   - *Temuan*: Audit aksesibilitas menunjukkan bahwa hanya `jerseay` ([`Navbar.astro:279-350`](file:///d:/myself/web/enlesweb-workspace/jerseay/src/components/navigation/Navbar.astro#L279-L350)) yang mengimplementasikan penjerat fokus keyboard (menahan tombol Tab agar tidak menjelajah elemen halaman di balik drawer yang terbuka) dan menandai kontainer utama dengan `mainContent.inert = true`. Enam repositori lainnya (`enlesweb`, `seruput`, `ripeir`, `tuntas`, `klimis`, `berflower`) hanya menyembunyikan panel dengan atribut `hidden` saat tertutup, tetapi membiarkan fokus keyboard menembus ke latar belakang saat menu mobile terbuka.
    - *Fokus Rekomendasi*: Standarisasi modul skrip navigasi mobile di seluruh template ENLESWEB dengan mengadopsi modul penjerat fokus (*focus-trap*) milik `jerseay`.
 
 3. **Inkonsistensi Threshold Scroll-Listener pada Header Mengambang**:
-   - *Temuan*: Repositori `jerseay` menggunakan script listener scroll yang mengubah latar belakang header dari transparan menjadi padat begitu melewati ambang batas 40px, dan `seruput` ([`Navbar.astro:301-307`](file:///d:/myself/web/7project/seruput/src/components/Navbar.astro#L301-L307)) memiliki scroll-listener aktif pada ambang batas 20px. Sementara itu, 5 repositori lainnya (`enlesweb`, `ripeir`, `tuntas`, `klimis`, `berflower`) menggunakan header padat permanen sejak posisi scroll 0.
+   - *Temuan*: Repositori `jerseay` menggunakan script listener scroll yang mengubah latar belakang header dari transparan menjadi padat begitu melewati ambang batas 40px, dan `seruput` ([`Navbar.astro:301-307`](file:///d:/myself/web/enlesweb-workspace/seruput/src/components/Navbar.astro#L301-L307)) memiliki scroll-listener aktif pada ambang batas 20px. Sementara itu, 5 repositori lainnya (`enlesweb`, `ripeir`, `tuntas`, `klimis`, `berflower`) menggunakan header padat permanen sejak posisi scroll 0.
    - *Pertanyaan yang Belum Terjawab*: Apakah varian wireframe header adaptif mengambang (transparan ke padat saat digulir) perlu dibakukan sebagai standar tersendiri khusus untuk hero bertipe kanvas sinematik penuh (seperti `jerseay`), atau dibiarkan sebagai opsi fleksibel per template?
 
 4. **Integrasi Pola Master-Detail Split Stage ke Standar Wireframe**:

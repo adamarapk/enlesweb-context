@@ -42,12 +42,12 @@ Halo ENLESWEB, saya lihat contoh website di iklan. Saya mau tanya tentang paket 
 ## 5. Spesifikasi Teknis Aset Visual
 
 - **Versi Feed (Rasio 4:5):**
-  - Resolusi: `1080 Ã— 1350 px`
+  - Resolusi: `1080 Ã- 1350 px`
   - Area konten aman: `x: 65..1015 px`, `y: 250..1010 px`
   - File output: `campaign-1/enlesweb-ads-b-4x5.png`
 
 - **Versi Stories / Reels (Rasio 9:16):**
-  - Resolusi: `1080 Ã— 1920 px`
+  - Resolusi: `1080 Ã- 1920 px`
   - Area konten aman: `x: 65..1015 px`, `y: 270..1250 px`
   - File output: `campaign-1/enlesweb-ads-b-9x16.png`
 
