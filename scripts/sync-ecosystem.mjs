@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -476,14 +476,13 @@ function publishEcosystem(customMessage) {
     try {
       const status = execSync(`git -C "${repoPath}" status -s`, { encoding: 'utf8' }).trim();
       if (status.length > 0) {
-        console.log(`\n  -> [${r}] Terdeteksi perubahan:\n${status}`);
-        execSync(`git -C "${repoPath}" add -A`);
+        execFileSync('git', ['-C', repoPath, 'add', '-A'], { stdio: 'inherit' });
         const commitMsg = customMessage
           ? customMessage
           : `docs: sync ecosystem hardlinks & anti-hallucination audit [${r}]`;
-        execSync(`git -C "${repoPath}" commit -m "${commitMsg}"`);
+        execFileSync('git', ['-C', repoPath, 'commit', '-m', commitMsg], { stdio: 'inherit' });
         console.log(`  -> [${r}] Commit berhasil: "${commitMsg}". Melakukan git push origin main...`);
-        execSync(`git -C "${repoPath}" push origin main`);
+        execFileSync('git', ['-C', repoPath, 'push', 'origin', 'main'], { stdio: 'inherit' });
         console.log(`  -> [${r}] Push berhasil!`);
       } else {
         console.log(`  -> [${r}] Bersih (no changes).`);
