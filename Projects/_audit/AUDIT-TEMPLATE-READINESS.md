@@ -71,7 +71,7 @@ Skala skor per dimensi: `0` (buruk/gagal) sampai `3` (sangat baik/siap pakai), t
 
 ---
 
-### 3.2. `seruput` (Seruput Kopi — Starter, Kedai Kopi)
+### 3.2. `seruput` (Seruput Kopi - Starter, Kedai Kopi)
 
 #### Tahap 1: Inventarisasi
 - `[FAKTA]` **Versi & Engine:** Astro `5.18.2` terpasang (`seruput/package.json:18` `"astro": "^5.4.2"`), TypeScript `^5.7.3` (`package.json:22`). Tanpa `engines` di `package.json` dan tanpa `.nvmrc`.
@@ -89,7 +89,7 @@ Skala skor per dimensi: `0` (buruk/gagal) sampai `3` (sangat baik/siap pakai), t
 #### Tahap 3: Pemisahan Data dan Kode
 - **a. Lokasi data bisnis:** `[FAKTA]` `src/config/site.ts:24-44` menyimpan `name`, `tagline`, `siteUrl`, `enleswebUrl`, `demoMode`, `publicIndexable`, `studioWhatsappNumber`, `demoWhatsappNumber`, `instagramUrl`, `mapsUrl`, `mapsEmbedUrl`, `address`, `patokan`, `akses`, dan `openingHours`. Data produk berada di `src/data/menu.ts`, `src/data/beans.ts`, dan `src/data/reviews.ts`. Tidak ada `copy.ts` dan tidak ada Pixel ID.
 - **b. Nilai hardcode di komponen/halaman:** `[FAKTA]` Sangat banyak teks bisnis dan niche yang tertanam langsung di komponen `.astro` (`42 simpul / ~345 kata` `[ESTIMASI]`):
-  - Nomor WA & alamat dummy tertanam di struk hero: `src/components/Hero.astro:22` (`Fondamenta della Misericordia No. 2599, Venice | WA: 0812-3456-7890`) dan `Hero.astro:13` — **tidak mengambil dari `site.address` maupun `site.studioWhatsappNumber`**.
+  - Nomor WA & alamat dummy tertanam di struk hero: `src/components/Hero.astro:22` (`Fondamenta della Misericordia No. 2599, Venice | WA: 0812-3456-7890`) dan `Hero.astro:13`, tidak mengambil dari `site.address` maupun `site.studioWhatsappNumber`.
   - Nama usaha/niche (`Seruput`, `Venice`, `kopi`, `kanal`) muncul `105 kali` di `13 berkas`, termasuk `Story.astro` (17 kali), `lib/whatsapp.ts` (16 kali), `menu.ts` (15 kali), `beans.ts` (10 kali), `Hero.astro` (9 kali), `BaseHead.astro` (8 kali), `Footer.astro` (5 kali), `BeansSection.astro` (5 kali).
   - Kode warna hex (`#...`): `33` kemunculan di `9` berkas (`global.css` 15, `FloatingWhatsApp.astro` 5, `Footer.astro` 3, `Navbar.astro` 3, `Hero.astro` 2, `WhatsAppButton.astro` 2, `ContactSection.astro` 1, `LocationSection.astro` 1, `404.astro` 1).
 - **c. Sentralisasi token desain:** `[FAKTA]` Token warna dan font berada di `src/styles/global.css:1-44`. Warna aksen `#CE3216` ditulis di 3 variabel berbeda (`--canvas-hero` L2, `--accent` L12, `--focus-outline` L16) plus `--accent-hover: #AF250D` (L13), tetapi tidak bocor sebagai literal hex di komponen (`0` kemunculan `#CE3216` di luar `global.css`). Dua paket font di `package.json` (`@fontsource/fraunces` dan `@fontsource/plus-jakarta-sans`) **tidak diimpor di mana pun** di `src/` (dependensi mati; `BaseHead.astro:3-7` hanya mengimpor `bricolage-grotesque` dan `space-mono`).
@@ -191,7 +191,7 @@ Skala skor per dimensi: `0` (buruk/gagal) sampai `3` (sangat baik/siap pakai), t
 
 #### Tahap 2: Kesehatan Build
 - `[FAKTA]` `npm ci`: sukses (exit `0`) dalam `26,3 detik` (warning `EBADENGINE undici@8.11.0`, `deprecated tsconfck@3.1.6`).
-- `[FAKTA]` `npm run build`: sukses (exit `0`) dalam `9,3 detik` (11 halaman + sitemap). Ukuran `dist/`: `39 berkas`, `7.107.083 byte` (`6,78 MB` — terbesar karena foto `.jpg` di `public/images/` berukuran 792–951 KB per berkas tidak dikompresi oleh Astro Assets).
+- `[FAKTA]` `npm run build`: sukses (exit `0`) dalam `9,3 detik` (11 halaman + sitemap). Ukuran `dist/`: `39 berkas`, `7.107.083 byte` (`6,78 MB`, terbesar karena foto `.jpg` di `public/images/` berukuran 792–951 KB per berkas tidak dikompresi oleh Astro Assets).
 - `[FAKTA]` `npm run check`: sukses (`47 files, 0 errors, 0 warnings, 2 hints`). `npm run verify`: `10 pass, 0 fail`.
 
 #### Tahap 3: Pemisahan Data dan Kode
@@ -319,7 +319,7 @@ Skala skor per dimensi: `0` (buruk/gagal) sampai `3` (sangat baik/siap pakai), t
    - **Sangat layak diseragamkan 100% identik antar-template:**
      1. `src/config/site.ts` (kontrak interface `SiteConfig` tunggal).
      2. `src/lib/whatsapp.ts` (satu fungsi `waUrl(topic, page?)` + sanitasi nomor + switch otomatis `demoMode`).
-     3. `src/lib/format.ts` (`rupiah`, `joinDays`, `timeRange`, `fill` — gabungan `tuntas/src/lib/format.ts` dan `berflower/src/lib/format.ts`).
+     3. `src/lib/format.ts` (`rupiah`, `joinDays`, `timeRange`, `fill` , gabungan `tuntas/src/lib/format.ts` dan `berflower/src/lib/format.ts`).
      4. `src/layouts/Base.astro` (meta SEO, canonical bersyarat, `noindex` otomatis saat `demoMode || !indexable`, JSON-LD `LocalBusiness`, dan banner konsep otomatis saat `demoMode: true`).
      5. `src/components/FloatingWhatsApp.astro` & `src/components/WhatsAppButton.astro`.
      6. `src/pages/robots.txt.ts` (endpoint dinamis milik `tuntas` supaya tidak perlu mengedit `public/robots.txt` secara manual).
@@ -335,7 +335,7 @@ Skala skor per dimensi: `0` (buruk/gagal) sampai `3` (sangat baik/siap pakai), t
 
 ---
 
-## 5. Skema JSON Usulan (Tahap 8a — Jangan Diimplementasikan)
+## 5. Skema JSON Usulan (Tahap 8a - Jangan Diimplementasikan)
 
 Skema minimal berikut hanya mencakup data yang **selalu berubah antar-klien** pada varian Starter/bisnis jasa, memisahkan konfigurasi identitas/teknis (`site`), tema visual (`theme`), dan konten bisnis (`business` + `catalog`). `[ESTIMASI]`
 
@@ -539,7 +539,7 @@ export interface ClientTemplateData {
 
 ---
 
-## 7. Rencana Rapikan / Daftar Refactor Berurutan (Tahap 8b — Jangan Diimplementasikan)
+## 7. Rencana Rapikan / Daftar Refactor Berurutan (Tahap 8b - Jangan Diimplementasikan)
 
 Daftar berikut diurutkan menurut **rasio dampak dibanding usaha (impact-to-effort tertinggi lebih dulu)** untuk menjadikan `ripeir` sebagai master template Starter "bisnis jasa" dan menyeragamkan konvensi lintas repo. Seluruh angka jam bersifat `[ESTIMASI]`.
 
@@ -586,7 +586,7 @@ Daftar berikut diurutkan menurut **rasio dampak dibanding usaha (impact-to-effor
    - **Lapisan 3 (HTTP Header di `vercel.json` / `_headers`):** Tambahkan header respons HTTP `X-Robots-Tag: noindex, nofollow, noarchive` pada deployment preview sehingga file gambar/PDF pun tidak diindeks mesin pencari.
 3. **Banner Konsep Otomatis Berbasis Flag `site.demoMode`:**
    - Pasang satu komponen `<ConceptBanner />` tepat di dalam `Base.astro` (di atas `<Navbar />`) yang hanya dirender jika `site.demoMode === true`:
-     > *"CONTOH KONSEP DESAIN OLEH ENLESWEB — Halaman ini adalah pratinjau konsep, bukan situs resmi [Nama Usaha]. Seluruh tombol pemesanan diarahkan ke tim ENLESWEB."*
+     > *"CONTOH KONSEP DESAIN OLEH ENLESWEB - Halaman ini adalah pratinjau konsep, bukan situs resmi [Nama Usaha]. Seluruh tombol pemesanan diarahkan ke tim ENLESWEB."*
    - Dengan menaruh banner ini di `Base.astro` berbasis `site.demoMode`, seluruh teks halaman utama dapat berisi copy bersih tanpa perlu menyelipkan kalimat disclaimer di tengah konten yang rawan terlupa saat serah-terima.
 4. **Penghapusan / Kedaluwarsa Otomatis Setelah 14 Hari:**
    - Tambahkan field `previewExpiresAt: 'YYYY-MM-DD'` di `site.ts` (atau variabel environment deployment `PUBLIC_PREVIEW_EXPIRES_AT`).

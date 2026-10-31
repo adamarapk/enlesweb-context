@@ -19,7 +19,7 @@ Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan
 
 ## TABLE OF CONTENTS (DAFTAR ISI)
 
-Pembaruan terbaru per 29 Oktober 2026: Penyempurnaan arsitektur layout-lab di `preview.enlesweb.com` dengan Dual-Layer Token System, Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada sandboxed iframe, 5 Preset Skenario Klien, 46 assertion otomatis, audit komposisi 13 kategori (UX 9.4/10), serta pengkinian SOP operasional WhatsApp ke versi 1.4 (Langkah 3b, Decision 023 Addendum). Gerbang Website Builder pada Decision 011 tidak berubah.
+Pembaruan terbaru per 31 Oktober 2026: Unifikasi tunggal ruang kerja lokal ke `D:\myself\web\enlesweb-workspace`, 45 grup file kembar terhubung NTFS Hardlink 0ms, otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis, serta penyerapan pemeliharaan teknis layout-lab (upgrade ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan per commit 9a1de77 & 19671bf). Pembaruan per 29 Oktober 2026 (Dual-Layer Token, chassis iPhone 15, 5 Preset Skenario Klien, 46 assertion otomatis, audit komposisi 13 kategori, SOP v1.4 Langkah 3b) tetap berlaku penuh. Gerbang Website Builder pada Decision 011 tidak berubah.
 
 1. BERKAS 1: ENLESWEB-CONTEXT-GAPS.md (Gap Register & Decision Register Terkini - 18 Oktober 2026)
    - 0. Source yang Dibandingkan

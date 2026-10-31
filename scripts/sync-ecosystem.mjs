@@ -191,17 +191,18 @@ function auditEcosystem() {
   const errors = [];
   const warnings = [];
 
-  // --- LAPIS 1: Verifikasi Versi Stack & Dependensi (package.json Ground-Truth) ---
-  console.log(`[LAPIS 1] Memvalidasi Versi Dependensi (Ground-Truth package.json)...`);
+  // --- LAPIS 1: Verifikasi Versi Stack & Dependensi (package.json vs Docs) ---
+  console.log(`[LAPIS 1] Memvalidasi Versi Dependensi (Ground-Truth package.json vs Dokumentasi)...`);
   const layoutLabPkgPath = path.join(WORKSPACE_ROOT, 'layout-lab', 'package.json');
+  let layoutLabPkg = null;
   if (fs.existsSync(layoutLabPkgPath)) {
-    const pkg = JSON.parse(fs.readFileSync(layoutLabPkgPath, 'utf8'));
-    const astroVer = pkg.dependencies?.astro;
-    const tsVer = pkg.devDependencies?.typescript;
-    const checkVer = pkg.devDependencies?.['@astrojs/check'];
-    const viteOverride = pkg.overrides?.vite;
-    const playwrightVer = pkg.devDependencies?.['playwright-core'];
-    const puppeteerVer = pkg.devDependencies?.['puppeteer-core'];
+    layoutLabPkg = JSON.parse(fs.readFileSync(layoutLabPkgPath, 'utf8'));
+    const astroVer = layoutLabPkg.dependencies?.astro;
+    const tsVer = layoutLabPkg.devDependencies?.typescript;
+    const checkVer = layoutLabPkg.devDependencies?.['@astrojs/check'];
+    const viteOverride = layoutLabPkg.overrides?.vite;
+    const playwrightVer = layoutLabPkg.devDependencies?.['playwright-core'];
+    const puppeteerVer = layoutLabPkg.devDependencies?.['puppeteer-core'];
 
     if (astroVer !== '^7.4.4') {
       errors.push(`layout-lab/package.json: astro version is '${astroVer}', expected '^7.4.4'`);
@@ -233,10 +234,48 @@ function auditEcosystem() {
     }
   }
 
+  // Cross-verify docs actually state the ground-truth versions (no hallucinated / drifting versions)
+  const docsToCheck = [
+    { file: 'layout-lab/README.md', path: path.join(WORKSPACE_ROOT, 'layout-lab', 'README.md') },
+    { file: 'layout-lab/NOTES.md', path: path.join(WORKSPACE_ROOT, 'layout-lab', 'NOTES.md') },
+    { file: 'layout-lab/docs/audit-komposisi-layout-13-kategori.md', path: path.join(WORKSPACE_ROOT, 'layout-lab', 'docs', 'audit-komposisi-layout-13-kategori.md') },
+    { file: 'ENLESWEB-DOCS-V4.md', path: path.join(MASTER_ROOT, 'ENLESWEB-DOCS-V4.md') },
+    { file: 'enlesweb-context-master.md', path: path.join(MASTER_ROOT, 'enlesweb-context-master.md') },
+    { file: 'Business Memory/decision-log.md', path: path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md') }
+  ];
+
+  for (const doc of docsToCheck) {
+    if (!fs.existsSync(doc.path)) {
+      errors.push(`Dokumen wajib tidak ditemukan: ${doc.file}`);
+      continue;
+    }
+    const docText = fs.readFileSync(doc.path, 'utf8');
+
+    // Must mention Astro 7.4.4 for layout-lab
+    if (!docText.includes('7.4.4')) {
+      errors.push(`${doc.file}: Tidak memuat referensi versi Astro '7.4.4' untuk pemutakhiran layout-lab.`);
+    }
+    // Must mention Node 22.23.4
+    if (!docText.includes('22.23.4')) {
+      errors.push(`${doc.file}: Tidak memuat referensi runtime Node '22.23.4'.`);
+    }
+    // Must mention TypeScript 6.0.3
+    if (!docText.includes('6.0.3')) {
+      errors.push(`${doc.file}: Tidak memuat referensi TypeScript '6.0.3'.`);
+    }
+    // Must mention Vite 8.3.5
+    if (!docText.includes('8.3.5')) {
+      errors.push(`${doc.file}: Tidak memuat referensi override Vite '8.3.5'.`);
+    }
+  }
+
   // --- LAPIS 2: Verifikasi Eksistensi Commit Hash (git log Ground-Truth) ---
   console.log(`[LAPIS 2] Memvalidasi Eksistensi Commit Hash di Git Log Asli...`);
   const commitChecks = [
-    { repo: 'layout-lab', hashes: ['19671bf', '9a1de77', 'e3b57e5', '2651c68', '87548e1', '477e456', '26c5076'] }
+    {
+      repo: 'layout-lab',
+      hashes: ['19671bf', '9a1de77', 'e3b57e5', '2651c68', '87548e1', '477e456', '26c5076', '1bcdc6d', 'f2657ea']
+    }
   ];
 
   for (const check of commitChecks) {
@@ -254,20 +293,36 @@ function auditEcosystem() {
 
   // --- LAPIS 3: Verifikasi Metrik Pengujian Aktual ---
   console.log(`[LAPIS 3] Memvalidasi Metrik Pengujian Aktual...`);
-  // Verify layout-lab/src file count checked by lint
+  // Verify layout-lab/src code file count checked by no-eyebrow-lint.mjs (.astro, .ts, .css)
   const layoutLabSrc = path.join(WORKSPACE_ROOT, 'layout-lab', 'src');
   if (fs.existsSync(layoutLabSrc)) {
-    const srcFiles = [];
-    function scan(dir) {
+    const codeFiles = [];
+    function scanCode(dir) {
       for (const item of fs.readdirSync(dir)) {
         const full = path.join(dir, item);
-        if (fs.statSync(full).isDirectory()) scan(full);
-        else srcFiles.push(full);
+        if (fs.statSync(full).isDirectory()) {
+          scanCode(full);
+        } else {
+          const ext = path.extname(item).toLowerCase();
+          if (['.astro', '.ts', '.css'].includes(ext)) {
+            codeFiles.push(full);
+          }
+        }
       }
     }
-    scan(layoutLabSrc);
-    if (srcFiles.length !== 65) {
-      warnings.push(`layout-lab/src contains ${srcFiles.length} files (lint expects 65).`);
+    scanCode(layoutLabSrc);
+    if (codeFiles.length !== 65) {
+      errors.push(`layout-lab/src memuat ${codeFiles.length} berkas (.astro, .ts, .css), diharapkan tepat 65 berkas sesuai no-eyebrow-lint.`);
+    }
+  }
+
+  // Verify assertions count in layout-lab/scripts/test-perakit-pratinjau.mjs
+  const testScriptPath = path.join(WORKSPACE_ROOT, 'layout-lab', 'scripts', 'test-perakit-pratinjau.mjs');
+  if (fs.existsSync(testScriptPath)) {
+    const testContent = fs.readFileSync(testScriptPath, 'utf8');
+    const assertMatches = [...testContent.matchAll(/assert\(/g)];
+    if (assertMatches.length < 46) {
+      errors.push(`test-perakit-pratinjau.mjs hanya memuat ${assertMatches.length} assertion (diharapkan minimal 46 assertion).`);
     }
   }
 
@@ -308,24 +363,10 @@ function auditEcosystem() {
       }
     }
 
-    // Check Table of Contents Anchor Integrity
-    const anchorMatches = [...content.matchAll(/\[([^\]]+)\]\((#[a-zA-Z0-9_-]+)\)/g)];
-    const headings = [...content.matchAll(/^#{1,6}\s+(.+)$/gm)].map(m => {
-      // standard github slugifier
-      return '#' + m[1].toLowerCase()
-        .replace(/<[^>]+>/g, '')
-        .replace(/[^a-z0-9\s-]/g, '')
-        .trim()
-        .replace(/\s+/g, '-');
-    });
-    const explicitIds = [...content.matchAll(/id="([^"]+)"/g)].map(m => '#' + m[1]);
-    const validAnchors = new Set([...headings, ...explicitIds]);
-
-    for (const match of anchorMatches) {
-      const anchor = match[2];
-      if (!validAnchors.has(anchor)) {
-        // Warning if anchor not found
-        // Only warn for now as markdown slugifying can vary
+    // Special check for decision-log.md: must contain Decision 023 Addendum (31 Oktober 2026)
+    if (f === 'Business Memory/decision-log.md') {
+      if (!content.includes('Addendum (31 Oktober 2026)')) {
+        errors.push(`Business Memory/decision-log.md: Addendum (31 Oktober 2026) tidak ditemukan.`);
       }
     }
   }
@@ -358,8 +399,13 @@ function auditEcosystem() {
     }
   }
 
-  // Check 0 em-dash (—) in master files prose (excluding code blocks and rule-declaration lines)
-  for (const f of MASTER_FILES) {
+  // Check 0 em-dash (—) in master files prose & audit documents (excluding code blocks and rule-declaration lines)
+  const emDashCheckFiles = [
+    ...MASTER_FILES,
+    'Projects/_audit/AUDIT-TEMPLATE-READINESS.md'
+  ];
+
+  for (const f of emDashCheckFiles) {
     const p = path.join(MASTER_ROOT, f);
     if (!fs.existsSync(p)) continue;
     const content = fs.readFileSync(p, 'utf8');
@@ -370,7 +416,7 @@ function auditEcosystem() {
       if (line.trim().startsWith('```')) inCodeBlock = !inCodeBlock;
       if (!inCodeBlock && line.includes('\u2014')) {
         // Allow lines that define or forbid em-dash
-        const isExemption = line.includes('em dash') || line.includes('Larangan Tanda') || line.includes('Bebas 100%');
+        const isExemption = line.includes('em dash') || line.includes('em-dash') || line.includes('Larangan Tanda') || line.includes('Bebas 100%');
         if (!isExemption) {
           errors.push(`${f}:${idx + 1}: Ditemukan karakter em-dash (—) di teks prosa. Ganti dengan '-' atau tanda kurung.`);
         }
@@ -402,7 +448,7 @@ function auditEcosystem() {
 // -------------------------------------------------------------
 // 3. AUTO-COMMIT & PUBLISH ENGINE (--publish / --record-push)
 // -------------------------------------------------------------
-function publishEcosystem() {
+function publishEcosystem(customMessage) {
   syncHardlinks();
   const passed = auditEcosystem();
   if (!passed) {
@@ -432,8 +478,11 @@ function publishEcosystem() {
       if (status.length > 0) {
         console.log(`\n  -> [${r}] Terdeteksi perubahan:\n${status}`);
         execSync(`git -C "${repoPath}" add -A`);
-        execSync(`git -C "${repoPath}" commit -m "docs: sync ecosystem hardlinks, anti-hallucination audit, & Astro 7.4.4 update"`);
-        console.log(`  -> [${r}] Commit berhasil. Melakukan git push origin main...`);
+        const commitMsg = customMessage
+          ? customMessage
+          : `docs: sync ecosystem hardlinks & anti-hallucination audit [${r}]`;
+        execSync(`git -C "${repoPath}" commit -m "${commitMsg}"`);
+        console.log(`  -> [${r}] Commit berhasil: "${commitMsg}". Melakukan git push origin main...`);
         execSync(`git -C "${repoPath}" push origin main`);
         console.log(`  -> [${r}] Push berhasil!`);
       } else {
@@ -451,30 +500,46 @@ function publishEcosystem() {
 // 4. INSTALL GIT HOOKS (--install-hooks)
 // -------------------------------------------------------------
 function installHooks() {
-  console.log(`[HOOKS] Memasang git hooks di seluruh sub-repositori...`);
+  console.log(`[HOOKS] Memasang Git pre-push hook & alias di seluruh sub-repositori...`);
   const repos = ['layout-lab', 'enlesweb', 'berflower', 'jerseay', 'klimis', 'ripeir', 'seruput', 'tuntas'];
 
-  const hookContent = `#!/bin/sh
-# ENLESWEB Ecosystem Post-Push Trigger
+  // Note: Git client hooks only support 'pre-push' (Git does NOT support client-side 'post-push').
+  // A pre-push hook displays an ecosystem reminder before pushing,
+  // and 'git config alias.publish' provides a 1-command auto-publish.
+  const prePushContent = `#!/bin/sh
+# ENLESWEB Ecosystem Pre-Push Reminder
 REPO_NAME="$(basename "$(git rev-parse --show-toplevel)")"
-WORKSPACE_DIR="$(dirname "$(git rev-parse --show-toplevel)")"
-SCRIPT_PATH="$WORKSPACE_DIR/enlesweb-context-master/scripts/sync-ecosystem.mjs"
-
-if [ -f "$SCRIPT_PATH" ]; then
-  echo "==> Memicu sync-ecosystem pasca-push untuk repo $REPO_NAME..."
-  node "$SCRIPT_PATH" --record-push "$REPO_NAME"
-fi
+echo "=========================================================="
+echo "[ENLESWEB PROTOCOL] PUSH TERDETEKSI: $REPO_NAME"
+echo "Ingat: begitu push selesai, jalankan audit dan sinkronisasi docs:"
+echo "  node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"
+echo "Atau jalankan: git publish"
+echo "=========================================================="
 `;
 
   for (const r of repos) {
-    const hooksDir = path.join(WORKSPACE_ROOT, r, '.git', 'hooks');
+    const repoPath = path.join(WORKSPACE_ROOT, r);
+    const hooksDir = path.join(repoPath, '.git', 'hooks');
     if (fs.existsSync(hooksDir)) {
-      const hookFile = path.join(hooksDir, 'post-push');
-      fs.writeFileSync(hookFile, hookContent, { mode: 0o755 });
-      console.log(`  -> Terpasang di ${r}/.git/hooks/post-push`);
+      // Install pre-push hook
+      const prePushFile = path.join(hooksDir, 'pre-push');
+      fs.writeFileSync(prePushFile, prePushContent, { mode: 0o755 });
+
+      // Clean up legacy/ineffective post-push hook if present
+      const legacyPostPush = path.join(hooksDir, 'post-push');
+      if (fs.existsSync(legacyPostPush)) {
+        try { fs.unlinkSync(legacyPostPush); } catch {}
+      }
+
+      // Configure git alias 'git publish' in local repo config
+      try {
+        execSync(`git -C "${repoPath}" config alias.publish "!node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"`);
+      } catch {}
+
+      console.log(`  -> Terpasang di ${r}/.git/hooks/pre-push & alias.publish`);
     }
   }
-  console.log(`[HOOKS COMPLETE] Seluruh Git hooks berhasil dipasang.`);
+  console.log(`[HOOKS COMPLETE] Seluruh Git hooks & alias berhasil dipasang.`);
 }
 
 // -------------------------------------------------------------
@@ -488,11 +553,13 @@ if (command === '--audit') {
   const ok = auditEcosystem();
   process.exit(ok ? 0 : 1);
 } else if (command === '--publish') {
-  publishEcosystem();
+  const customMsg = args[1] || null;
+  publishEcosystem(customMsg);
 } else if (command === '--record-push') {
   const repoName = args[1] || 'sub-folder';
+  const customMsg = args[2] || `docs: record post-push update from ${repoName}`;
   console.log(`[RECORD-PUSH] Mencatat pembaruan pasca-push dari ${repoName}...`);
-  publishEcosystem();
+  publishEcosystem(customMsg);
 } else if (command === '--install-hooks') {
   installHooks();
 } else {

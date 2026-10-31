@@ -1,6 +1,6 @@
 # SOP Chat WhatsApp dan Transaksi Klien ENLESWEB
 
-Versi 1.4, 31 Oktober 2026 (aturan transaksi tetap CLOSED / TERKUNCI). Integrasi 5 Preset Skenario Klien & shortcut keyboard studio mengikuti Decision 022, Decision 023, & Addendum 31 Oktober 2026 (preview.enlesweb.com). Dipakai untuk lead dari website, Meta Ads, dan Micro-Warm Outreach DM Instagram sebelum klien pertama.
+Versi 1.4, 31 Oktober 2026 (aturan transaksi tetap CLOSED / TERKUNCI). Integrasi 5 Preset Skenario Klien & shortcut keyboard studio mengikuti Decision 022, Decision 023, & Addendum 29 & 31 Oktober 2026 (preview.enlesweb.com). Dipakai untuk lead dari website, Meta Ads, dan Micro-Warm Outreach DM Instagram sebelum klien pertama.
 
 ## 1. Tujuan
 
