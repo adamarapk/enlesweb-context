@@ -786,14 +786,24 @@ function installHooks() {
   ];
 
   const prePushContent = `#!/bin/sh
-# ENLESWEB Ecosystem Pre-Push Reminder
+# ENLESWEB Ecosystem Auto Post-Push Watcher Trigger
 REPO_NAME="$(basename "$(git rev-parse --show-toplevel)")"
-echo "=========================================================="
-echo "[ENLESWEB PROTOCOL] PUSH TERDETEKSI: $REPO_NAME"
-echo "Ingat: begitu push selesai, siarkan update ke Document Custodians dan jalankan audit:"
-echo "  node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"
-echo "Atau jalankan: git publish"
-echo "=========================================================="
+
+# Jika bukan enlesweb-context-master, luncurkan watcher otomatis di latar belakang
+if [ "$REPO_NAME" != "enlesweb-context-master" ]; then
+  WORKSPACE_DIR="$(cd "$(git rev-parse --show-toplevel)/.." && pwd -W 2>/dev/null || pwd)"
+  WATCHER_SCRIPT="$WORKSPACE_DIR/enlesweb-context-master/scripts/post-push-watcher.mjs"
+  
+  if [ -f "$WATCHER_SCRIPT" ]; then
+    echo "=========================================================="
+    echo "[ENLESWEB AUTO-CUSTODIAN] Push terdeteksi di $REPO_NAME"
+    echo "[ENLESWEB AUTO-CUSTODIAN] Otomatisasi sinkronisasi, audit 5 lapis, & auto-push master docs disiapkan di latar belakang..."
+    echo "=========================================================="
+    nohup node "$WATCHER_SCRIPT" "$REPO_NAME" "$PPID" >/dev/null 2>&1 &
+  fi
+fi
+
+exit 0
 `;
 
   for (const r of repos) {
