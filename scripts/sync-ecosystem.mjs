@@ -552,11 +552,11 @@ if (command === '--audit') {
   const ok = auditEcosystem();
   process.exit(ok ? 0 : 1);
 } else if (command === '--publish') {
-  const customMsg = args[1] || null;
+  const customMsg = args.slice(1).join(' ').trim() || null;
   publishEcosystem(customMsg);
 } else if (command === '--record-push') {
   const repoName = args[1] || 'sub-folder';
-  const customMsg = args[2] || `docs: record post-push update from ${repoName}`;
+  const customMsg = args.slice(2).join(' ').trim() || `docs: record post-push update from ${repoName}`;
   console.log(`[RECORD-PUSH] Mencatat pembaruan pasca-push dari ${repoName}...`);
   publishEcosystem(customMsg);
 } else if (command === '--install-hooks') {
