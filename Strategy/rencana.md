@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.9
-**Terakhir diperbarui:** 29 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
+**Versi:** 2.0
+**Terakhir diperbarui:** 31 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/visi.md` (v2.3), `Strategy/positioning.md` (v2.3), `Strategy/model-bisnis.md` (v1.8), `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 31 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan

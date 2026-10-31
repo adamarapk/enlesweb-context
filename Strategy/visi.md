@@ -1,7 +1,7 @@
 # VISI ENLESWEB
-**Versi:** 2.2
-**Terakhir diperbarui:** 29 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum).
+**Versi:** 2.3
+**Terakhir diperbarui:** 31 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/positioning.md` (v2.3), `Strategy/model-bisnis.md` (v1.8), `Delivery & Operations/sop.md` (aturan transaksi v1.4, Decision 022, Decision 023, & Addendum 31 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Pernyataan Visi
@@ -9,13 +9,13 @@
 
 ENLESWEB berangkat dari jasa pembuatan website untuk UMKM dan bisnis kecil-menengah di seluruh Indonesia, lalu bergerak menuju sistem produksi internal berbasis blueprint JSON. Tujuannya agar tiap website baru dikonfigurasi dan dirakit dari sistem yang sudah dibangun, bukan dikerjakan dari nol.
 
-## 2. Titik Awal (Kondisi per 29 Oktober 2026)
+## 2. Titik Awal (Kondisi per 31 Oktober 2026)
 - [FAKTA] Solo founder dibantu AI assistant (langganan dikunci Rp100.000/bulan sampai 5 klien lunas atau 2 proyek Growth/Custom simultan, Decision 014). Belum ada tim internal.
 - [KEPUTUSAN] Komunikasi promosi dan publik menggunakan persona "kami" dan "tim" layaknya studio/agensi (Decision 001), dipadukan dengan transparansi Nama Lengkap Pendiri sebagai Penanggung Jawab Resmi Studio ENLESWEB di dokumen PDF Bukti Pemesanan (Decision 017).
 - [FAKTA] Launch-ready, siap go-live komersial. Domain kanonikal resmi `enlesweb.com` telah dibeli (Decision 018) dan dihubungkan ke Cloudflare Workers.
 - [FAKTA] 6 website konsep live di Cloudflare Workers dengan subdomain kanonikal masing-masing: `jerseay.enlesweb.com`, `berflower.enlesweb.com`, `tuntas.enlesweb.com`, `dipotongin.enlesweb.com`, `ripeir.enlesweb.com`, `seruput.enlesweb.com`. Hosting Vercel dinonaktifkan per Decision 023.
 - [FAKTA] Aset reusable: 6 template konsep, tooling render materi iklan `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3 adaptif 4:5 dan 9:16), SOP chat WhatsApp (`sop.md` v1.4), template PDF Bukti Pemesanan ber-TTD digital (**CLOSED**, Decision 020), dan composer internal `layout-lab`.
-- [FAKTA] layout-lab telah beroperasi di Cloudflare Workers pada subdomain kanonikal `preview.enlesweb.com`, memuat 43 varian dalam 13 kategori dengan Stateless Compact ID (`/p/<id>`), sistem token ganda (`--ew-*` studio Poppins vs `--wf-*` monokrom IBM Plex Sans), Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada live iframe, 5 preset skenario klien, 46 assertion otomatis, dan rute studio internal terlindungi (`/studio-admin/*`) (Decision 023 & Addendum).
+- [FAKTA] layout-lab telah beroperasi di Cloudflare Workers pada subdomain kanonikal `preview.enlesweb.com`, memuat 43 varian dalam 13 kategori dengan Stateless Compact ID (`/p/<id>`), sistem token ganda (`--ew-*` studio Poppins vs `--wf-*` monokrom IBM Plex Sans), Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada live iframe, 5 preset skenario klien, 46 assertion otomatis, stack Astro 7.4.4 di atas Node 22.23.4 (commit `9a1de77` & `19671bf`), dan rute studio internal terlindungi (`/studio-admin/*`) (Decision 023 & Addendum).
 - [KEPUTUSAN 022, 023, & Addendum] ENLESWEB mengirimkan preview tata letak dari layout-lab (`preview.enlesweb.com/p/<id>`) kepada calon klien sebelum kesepakatan dan DP (SOP v1.4 Langkah 3b). Preview memakai data dummy dan hanya menggambarkan susunan layout.
 - [FAKTA per 21 Oktober 2026] Belum ada DP atau proyek nyata. Satu percakapan pesan tercatat dari iklan setelah 12 jam tayang; isi dan status prospek belum diketahui. Belum ada pendapatan dari proyek.
 - [FAKTA per 21 Oktober 2026] Meta Ads mulai tayang pukul 09.00. Belanja awal Rp16.000; sekitar 70% terserap iklan video. Micro-Warm Outreach belum dimulai.

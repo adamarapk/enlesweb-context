@@ -506,3 +506,24 @@ Menindaklanjuti peluncuran produksi pada Decision 023, dilakukan standarisasi me
    - Perbaikan komposisi spesifik: `R1` (center-aligned visual 16:10), `K2` (daftar 2 kolom 4fr|8fr rentang penuh bebas dead space), `K3` (headline kolom sticky), `F4` (split asimetris murni tanpa kartu CTA), `S4` (baris berselang-seling zig-zag), serta pencegahan orphan cards pada `G1`, `G2`, dan `U1`.
    - Refaktor netralisasi salinan commit `87548e1` dengan visitor-facing voice tanpa buzzwords pemasaran.
 
+---
+
+<a id="decision-023-addendum-31-oktober-2026"></a>
+<a id="addendum-31-oktober-2026-unifikasi-workspace-dan-upgrade-astro-7-4-4"></a>
+### Addendum (31 Oktober 2026): Unifikasi Tunggal Workspace Lokal `enlesweb-workspace`, Hardlink Ekosistem 45 Grup, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di `layout-lab`
+
+Menindaklanjuti kebutuhan efisiensi pemeliharaan dokumen dan eliminasi kebiasaan menyalin manual antar-folder (copas docs drift), diputuskan dan direalisasikan pembaruan infrastruktur kerja lokal:
+1. **Unifikasi Tunggal Workspace (`D:\myself\web\enlesweb-workspace`):**
+   - Menata ulang seluruh repositori ke dalam satu workspace root terpadu `D:\myself\web\enlesweb-workspace` (menggantikan folder lama `7project` dan mengonsolidasikan 9 repositori git mandiri dari `experiments`).
+   - Menyediakan `enlesweb.code-workspace` untuk pembukaan multi-root mulus di IDE.
+2. **Koneksi Fisik NTFS Hardlink (45 Grup Berkas Kembar):**
+   - Menghubungkan seluruh dokumen spesifikasi di sub-folder `Projects/` pada `enlesweb-context-master` dengan repositori terkait via NTFS Hardlink (`nlink >= 2`).
+   - Setiap perubahan berkas spesifikasi di satu repositori langsung tercermin secara instan (0 ms latency, 0 data redundancy, 0 drift) di `enlesweb-context-master/Projects/`.
+3. **Pilar Otomatisasi & Gerbang Audit Anti-Halusinasi (`sync-ecosystem.mjs`):**
+   - Alur baku: Developer / AI melakukan commit & push di repositori sub-folder -> perbarui docs dan 10 berkas master -> jalankan Gerbang Audit Anti-Halusinasi (`node scripts/sync-ecosystem.mjs --audit`) -> jika lulus 100%, sistem melakukan auto-commit dan auto-push ke GitHub (`--publish`).
+   - Verifikasi 5 lapis audit: package.json ground truth, commit hash valid di git log, sinkronisasi 10 master files, SHA-256 match pada 45 grup hardlink, dan 0 karakter em dash pada teks prosa.
+4. **Penyerapan Pemeliharaan Teknis `layout-lab` Hari Ini (31 Oktober 2026):**
+   - Upgrade Astro ke versi `^7.4.4` di atas runtime Node `22.23.4`, TypeScript `^6.0.3`, `@astrojs/check ^0.9.12`, `playwright-core ^1.64.1`, `puppeteer-core ^25.16.0`, dan override `vite ^8.3.5` untuk memitigasi seluruh CVE keamanan (commit `9a1de77` dan `19671bf`).
+   - Hasil audit terverifikasi: `npm run build` lulus (65 berkas no-eyebrow lint, 70 berkas `astro check` dengan 0 error/0 warning/0 hint, 5 rute HTML statis terbangun), `npm test` lulus 100% (46 assertion otomatis composer & fuzzing + 86 skenario visual Playwright).
+
+

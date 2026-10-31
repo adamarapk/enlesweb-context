@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENLESWEB Meta Ads 15 detik - Iklan C (Catatan mentah jadi halaman)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+:root {
+  /* Token Desain Resmi ENLESWEB (locked, tidak boleh ditambah warna lain) */
+  --canvas: #FFFFFF;
+  --surface: #F5F5F2;
+  --ink: #111111;
+  --ink-muted: #55554F;
+  --line: #E5E5DF;
+  --accent: #E4FF30;
+
+  /* Safe Zone 9:16 (1080 x 1920): x 65..1015, y 270..1250 */
+  --sz-top: 270px;
+  --sz-bottom: 670px;
+  --sz-side: 65px;
+  --safe-w: 950px;
+  --safe-h: calc(var(--H) - var(--sz-top) - var(--sz-bottom));
+
+  /* Tipografi per rasio (9:16) */
+  --fs-hook: 76px;
+  --fs-sheet-title: 30px;
+  --fs-note: 42px;
+  --fs-row: 32px;
+  --fs-caption: 40px;
+  --fs-fact: 42px;
+  --fs-name: 40px;
+  --fs-meta: 30px;
+  --fs-price: 64px;
+  --fs-brand: 46px;
+  --fs-cta: 72px;
+  --fs-sub: 42px;
+  --fs-disclosure: 28px;
+
+  /* Swash aksen: tinggi sapuan di belakang teks ink */
+  --swash-h: 30px;
+  --swash-bottom: 9px;
+
+  /* Adegan 2 (9:16): panel kiri, mockup HP kanan dengan bleed */
+  --build-panel-top: 560px;
+  --build-panel-w: 520px;
+  --build-cap-top: 1040px;
+  --build-phone-top: 470px;
+  --build-phone-left: 605px;
+  --build-phone-w: 560px;
+  --build-phone-h: 1150px;
+
+  /* Adegan 3 (9:16): dua kolom paket, masing-masing dengan satu perangkat */
+  --facts-top: 300px;
+  --cols-top: 520px;
+  --col1-left: 65px;
+  --col2-left: 575px;
+  --col-w: 440px;
+  --phone1-left: 75px;
+  --phone2-left: 585px;
+  --phone3-top: 720px;
+  --phone3-w: 420px;
+  --phone3-h: 780px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #D8D8D2; /* backdrop preview di luar kanvas, bukan bagian iklan */
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#holder { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+#box { position: relative; }
+
+/* Kanvas: 9:16 (1080x1920) default, .r45 = 4:5 (1080x1350) */
+.stage {
+  --H: 1920px;
+  width: 1080px;
+  height: var(--H);
+  position: relative;
+  overflow: hidden;
+  background: var(--canvas);
+  transform-origin: 0 0;
+}
+
+.stage.r45 {
+  --H: 1350px;
+  /* Safe Zone 4:5 (1080 x 1350): x 65..1015, y 250..1010 */
+  --sz-top: 250px;
+  --sz-bottom: 340px;
+
+  --fs-hook: 62px;
+  --fs-sheet-title: 26px;
+  --fs-note: 36px;
+  --fs-row: 34px;
+  --fs-caption: 34px;
+  --fs-fact: 34px;
+  --fs-name: 34px;
+  --fs-meta: 26px;
+  --fs-price: 54px;
+  --fs-brand: 40px;
+  --fs-cta: 58px;
+  --fs-sub: 34px;
+  --fs-disclosure: 24px;
+
+  --swash-h: 24px;
+  --swash-bottom: 7px;
+
+  /* Adegan 2 (4:5): panel memanjang, perangkat bleeds ke bawah */
+  --build-panel-top: 250px;
+  --build-panel-w: 950px;
+  --build-cap-top: 620px;
+  --build-phone-top: 690px;
+  --build-phone-left: 280px;
+  --build-phone-w: 520px;
+  --build-phone-h: 900px;
+
+  --facts-top: 250px;
+  --cols-top: 430px;
+  --col1-left: 65px;
+  --col2-left: 615px;
+  --col-w: 400px;
+  --phone1-left: 65px;
+  --phone2-left: 615px;
+  --phone3-top: 620px;
+  --phone3-w: 400px;
+  --phone3-h: 700px;
+}
+
+/* Guide zona aman, hanya untuk produksi, mati saat ?clean */
+.safe-guide {
+  position: absolute;
+  pointer-events: none;
+  top: var(--sz-top);
+  bottom: var(--sz-bottom);
+  left: var(--sz-side);
+  right: var(--sz-side);
+  outline: 3px dashed var(--accent);
+  filter: drop-shadow(0 0 2px rgba(17, 17, 17, 0.9));
+  z-index: 99;
+}
+.safe-guide::after {
+  content: 'ZONA AMAN (SAFE ZONE)';
+  position: absolute;
+  top: -34px;
+  left: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.safe-guide.hide, body.clean:not(.show-guide) .safe-guide { display: none; }
+
+/* Ambient sweep tipis dari aksen, tidak pernah jadi warna teks */
+.bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 620px at 6% 12%, rgba(228, 255, 48, 0.20) 0%, rgba(228, 255, 48, 0.06) 46%, rgba(255, 255, 255, 0) 76%),
+    linear-gradient(160deg, rgba(228, 255, 48, 0.08) 0%, rgba(255, 255, 255, 0) 48%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Adegan 2, 3, 4 default tersembunyi di CSS agar frame 0 bebas dari fade-in.
+   Adegan 1 sengaja TIDAK diberi opacity 0: komposisi pembuka harus tegas di detik 0. */
+#scene-build, #scene-price, #scene-cta { opacity: 0; visibility: hidden; }
+
+/* Swash aksen: satu sapuan di belakang teks ink, dipakai tiga kali saja */
+.swash { position: relative; display: inline-block; }
+.swash-bg {
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  bottom: var(--swash-bottom);
+  height: var(--swash-h);
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 0;
+}
+.swash-text { position: relative; z-index: 1; }
+
+/* =========================================================
+   ADEGAN 1 (0,00s - 2,60s): CATATAN MENTAH
+   ========================================================= */
+#scene-hook {
+  position: absolute;
+  top: var(--sz-top);
+  left: var(--sz-side);
+  width: var(--safe-w);
+  height: var(--safe-h);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hook-stack { display: flex; flex-direction: column; align-items: flex-start; }
+.stage.r45 .hook-stack { margin-bottom: 40px; }
+
+.hook-line {
+  font-size: var(--fs-hook);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.hook-line + .hook-line { margin-top: 4px; }
+
+/* Lembar catatan: objek datar, bukan antarmuka pesan */
+.note-sheet {
+  margin-top: 54px;
+  width: 100%;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+.stage.r45 .note-sheet { margin-top: 40px; padding: 24px 32px; }
+
+.note-sheet-title {
+  font-size: var(--fs-sheet-title);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink-muted);
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--line);
+}
+.note-line {
+  font-size: var(--fs-note);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+  padding: 18px 0;
+  border-bottom: 2px solid var(--line);
+}
+.note-line:last-child { border-bottom: none; padding-bottom: 0; }
+.stage.r45 .note-line { padding: 14px 0; }
+
+/* =========================================================
+   ADEGAN 2 (2,60s - 7,20s): CATATAN DIRAPIKAN JADI HALAMAN
+   ========================================================= */
+#build-panel {
+  position: absolute;
+  top: var(--build-panel-top);
+  left: var(--sz-side);
+  width: var(--build-panel-w);
+  background: var(--canvas);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 26px 32px;
+  z-index: 18;
+}
+.stage.r45 #build-panel { padding: 18px 28px; }
+
+.build-row {
+  font-size: var(--fs-row);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  padding: 22px 0;
+  border-bottom: 2px solid var(--line);
+}
+.build-row:last-child { border-bottom: none; padding-bottom: 0; }
+.stage.r45 .build-row { padding: 14px 0; }
+
+#build-caption {
+  position: absolute;
+  top: var(--build-cap-top);
+  left: var(--sz-side);
+  width: var(--build-panel-w);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  z-index: 18;
+}
+
+/* Mockup perangkat: satu-satunya elemen yang boleh berbayang dan boleh bleed */
+.phone-rig { position: absolute; z-index: 14; }
+#phone-rig {
+  top: var(--build-phone-top);
+  left: var(--build-phone-left);
+  width: var(--build-phone-w);
+  height: var(--build-phone-h);
+}
+#phone-starter, #phone-business { top: var(--phone3-top); width: var(--phone3-w); height: var(--phone3-h); }
+#phone-starter { left: var(--phone1-left); }
+#phone-business { left: var(--phone2-left); }
+
+.phone-shell {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  border-radius: 46px;
+  border: 9px solid var(--ink);
+  box-shadow: 0 28px 64px -16px rgba(17, 17, 17, 0.25);
+  overflow: hidden;
+}
+#phone-starter .phone-shell, #phone-business .phone-shell { border-radius: 34px; border-width: 8px; }
+
+.phone-screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* .screen-scroll sized oleh lebar, sehingga tinggi marker dalam persen
+   selalu relatif terhadap tinggi gambar yang sama di kedua rasio */
+.screen-scroll { position: relative; width: 100%; }
+.screen-img { display: block; width: 100%; height: auto; }
+
+.shot-marker {
+  position: absolute;
+  left: 6%;
+  width: 88%;
+  height: 1.6%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  border-radius: 4px;
+  z-index: 3;
+}
+#marker-hero { top: 25.5%; }
+#marker-schedule { top: 44%; }
+#marker-services { top: 17%; }
+
+/* =========================================================
+   ADEGAN 3 (7,40s - 11,20s): DUA PAKET
+   ========================================================= */
+#price-facts {
+  position: absolute;
+  top: var(--facts-top);
+  left: var(--sz-side);
+  width: var(--safe-w);
+  z-index: 22;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.stage.r45 #price-facts { gap: 14px; }
+
+.fact {
+  font-size: var(--fs-fact);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+#price-cols {
+  position: absolute;
+  top: var(--cols-top);
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 22;
+}
+.price-col { position: absolute; top: 0; width: var(--col-w); }
+#price-col-1 { left: var(--col1-left); }
+#price-col-2 { left: var(--col2-left); }
+
+.price-row { display: flex; flex-direction: column; align-items: flex-start; }
+.price-name {
+  font-size: var(--fs-name);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.price-meta {
+  margin-top: 4px;
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink-muted);
+}
+.price-val {
+  margin-top: 8px;
+  font-size: var(--fs-price);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+/* =========================================================
+   ADEGAN 4 (11,20s - 15,00s): CTA
+   ========================================================= */
+#scene-cta {
+  position: absolute;
+  top: var(--sz-top);
+  left: var(--sz-side);
+  width: var(--safe-w);
+  height: var(--safe-h);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.brand-row { display: flex; align-items: center; gap: 14px; margin-bottom: 56px; }
+.stage.r45 .brand-row { margin-bottom: 36px; }
+.brand-row svg { width: 44px; height: 36px; display: block; color: var(--ink); }
+.brand-row span {
+  font-size: var(--fs-brand);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.cta-head {
+  font-size: var(--fs-cta);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.cta-sub {
+  margin-top: 40px;
+  font-size: var(--fs-sub);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink-muted);
+}
+.stage.r45 .cta-sub { margin-top: 28px; }
+
+.cta-note {
+  margin-top: 36px;
+  font-size: var(--fs-disclosure);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ink-muted);
+}
+.stage.r45 .cta-note { margin-top: 26px; }
+
+/* =========================================================
+   TOOLBAR PREVIEW (di luar kanvas video)
+   ========================================================= */
+#ctl {
+  background: var(--ink);
+  border-top: 2px solid var(--line);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  z-index: 100;
+  user-select: none;
+}
+#ctl button {
+  background: var(--surface);
+  color: var(--ink);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+#ctl button:hover { background: var(--accent); }
+#ctl button:focus-visible, #ctl input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#ctl input[type=range] { flex: 1; accent-color: var(--accent); cursor: pointer; }
+#tt { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 110px; color: var(--accent); }
+.hide { display: none !important; }
+</style>
+</head>
+<body>
+
+<div id="holder">
+  <div id="box">
+    <div id="stage" class="stage">
+      <div id="safe-guide" class="safe-guide"></div>
+      <div class="bg-ambient"></div>
+
+      <!-- ADEGAN 1: komposisi pembuka, teguh sejak frame 0 -->
+      <div id="scene-hook">
+        <div class="hook-stack">
+          <p id="hook-line-a" class="hook-line">Catatan sudah lengkap.</p>
+          <p id="hook-line-b" class="hook-line">Website <span class="swash"><span id="swash-hook" class="swash-bg"></span><span class="swash-text">belum ada</span></span>.</p>
+          <div class="note-sheet">
+            <div class="note-sheet-title">Catatan</div>
+            <div id="note-1" class="note-line">buka senin sampai jumat jam 9.00</div>
+            <div id="note-2" class="note-line">alamat Jl. Melati No. 12</div>
+            <div id="note-3" class="note-line">no. hp untuk pesanan</div>
+            <div id="note-4" class="note-line">nama usaha: Meranti</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADEGAN 2: baris catatan berubah menjadi baris halaman -->
+      <div id="scene-build">
+        <div id="build-panel">
+          <div id="row-1" class="build-row">Buka Senin sampai Jumat</div>
+          <div id="row-2" class="build-row">Jam 09.00</div>
+          <div id="row-3" class="build-row">Alamat &amp; lokasi</div>
+          <div id="row-4" class="build-row">Nama usaha</div>
+        </div>
+        <p id="build-caption">Sisanya kami rapikan.</p>
+        <div id="phone-rig" class="phone-rig">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="screen-scroll">
+                <img class="screen-img" src="assets/tuntas-chrome-android.jpg" alt="Contoh website tuntas">
+                <div id="marker-hero" class="shot-marker"></div>
+                <div id="marker-schedule" class="shot-marker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADEGAN 3: dua paket, masing-masing dengan satu bukti tampilan -->
+      <div id="scene-price">
+        <div id="price-facts">
+          <p id="fact-domain" class="fact">Termasuk domain .com atau .id dan hosting 1 tahun.</p>
+          <p id="fact-days" class="fact">Selesai dalam 7 hari kerja.</p>
+        </div>
+
+        <div id="price-cols">
+          <div id="price-col-1" class="price-col">
+            <div id="row-starter" class="price-row">
+              <span class="price-name">Starter</span>
+              <span class="price-meta">1 halaman</span>
+              <span class="price-val"><span class="swash"><span id="swash-starter" class="swash-bg"></span><span class="swash-text">Rp450.000</span></span></span>
+            </div>
+          </div>
+
+          <div id="price-col-2" class="price-col">
+            <div id="row-business" class="price-row">
+              <span class="price-name">Business</span>
+              <span class="price-meta">hingga 6 halaman</span>
+              <span class="price-val">Rp750.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="phone-starter" class="phone-rig">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="screen-scroll">
+                <img class="screen-img" src="assets/ripeir-chrome-android.jpg" alt="Contoh website ripeir">
+                <div id="marker-services" class="shot-marker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="phone-business" class="phone-rig">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="screen-scroll">
+                <img class="screen-img" src="assets/tuntas-chrome-android.jpg" alt="Contoh website tuntas">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADEGAN 4: ajakan -->
+      <div id="scene-cta">
+        <div class="brand-row">
+          <svg viewBox="85 130 355 245" fill="currentColor" aria-hidden="true">
+            <path d="M 235.500 137.544 C 198.661 144.411, 168.355 167.493, 151.528 201.500 C 141.651 221.460, 138.511 234.583, 138.608 255.500 C 138.668 268.305, 139.054 271.908, 141.248 280.119 C 145.337 295.422, 153.320 310.783, 162.980 321.936 L 165.955 325.371 170.728 321.985 C 177.386 317.262, 182.961 312.630, 182.982 311.803 C 182.992 311.420, 180.858 308.270, 178.240 304.803 C 172.318 296.960, 166.724 285.589, 164.060 275.974 C 162.131 269.012, 159.276 247.390, 160.168 246.498 C 160.398 246.269, 163.492 246.996, 167.043 248.115 C 182.207 252.894, 208.317 257, 223.534 257 L 230.581 257 243.358 241.382 L 256.134 225.763 256.428 207.632 C 256.794 185.041, 260.651 158.570, 263.866 156.583 C 265.463 155.596, 277.334 158.104, 284.929 161.033 C 289.122 162.650, 295.612 165.982, 299.351 168.438 L 306.151 172.904 313.825 166.806 C 318.046 163.451, 321.500 160.229, 321.500 159.645 C 321.500 155.738, 296.521 142.307, 283 138.945 C 271.645 136.121, 247.028 135.396, 235.500 137.544 M 357.808 150.547 C 328.721 157.601, 293.037 190.811, 234.933 264.904 C 200.336 309.021, 179.800 328.767, 159.613 337.325 C 153.684 339.839, 151.169 340.339, 144.500 340.333 C 135.083 340.325, 130.854 338.750, 124.487 332.882 C 113.466 322.722, 115.126 306.106, 128.572 292.010 L 134.226 286.082 132.514 276.791 C 131.572 271.681, 130.509 266.247, 130.151 264.715 L 129.500 261.931 121.261 267.010 C 106.778 275.939, 95.428 289.536, 91.219 303 C 90.012 306.862, 89.500 311.926, 89.500 320 C 89.500 331.226, 89.589 331.687, 93.250 339.354 C 101.966 357.609, 119.870 368, 142.605 368 C 152.990 368, 161.331 365.870, 172 360.494 C 196.056 348.371, 231.348 313.887, 263.635 270.955 C 295.780 228.212, 319.537 201.995, 338.175 188.695 C 360.550 172.728, 382.518 171.939, 395.936 186.620 C 402.399 193.692, 404.393 199.651, 403.788 210.093 C 403.146 221.191, 398.299 230.867, 388.411 240.790 L 381.146 248.080 380.823 262.430 L 380.500 276.780 386.500 273.753 C 409.901 261.948, 426.847 242.336, 432.083 221 C 433.917 213.526, 433.674 199.894, 431.567 192 C 427.356 176.228, 415.729 162.272, 400.899 155.191 C 396.280 152.985, 390.115 150.690, 387.201 150.090 C 380.044 148.618, 364.785 148.855, 357.808 150.547 M 232.349 157.985 C 202.154 165.900, 175.447 190.134, 165.478 218.665 C 162.676 226.685, 162.061 225.999, 175.192 229.494 C 189.253 233.237, 203.729 234.961, 221.250 234.982 L 237 235 237 216.034 C 237 195.601, 238.463 181.891, 242.365 165.748 L 244.722 156 242.111 156.055 C 240.675 156.085, 236.282 156.954, 232.349 157.985 M 346.951 192.145 C 341.524 195.398, 333 202.147, 333 203.191 C 333 203.713, 334.291 206.021, 335.868 208.320 C 339.394 213.459, 346.292 227.041, 345.685 227.649 C 344.660 228.673, 317.767 234.898, 309.172 236.100 L 299.845 237.404 293.266 245.452 C 289.647 249.879, 285.970 254.354, 285.093 255.398 C 283.542 257.246, 283.738 257.280, 292.500 256.675 C 303.915 255.888, 322.002 252.820, 337.827 248.986 C 344.606 247.344, 350.403 246, 350.709 246 C 351.866 246, 350.118 271.760, 348.572 277.500 C 340.430 307.735, 318.501 333.170, 292.411 342.640 C 283.942 345.714, 282.202 345.655, 280.895 342.250 C 278.477 335.954, 272.706 314.390, 269.254 298.750 C 267.220 289.538, 265.319 282.021, 265.028 282.046 C 264.738 282.072, 261.350 286.342, 257.500 291.535 C 251.742 299.302, 250.548 301.555, 250.769 304.238 C 251.290 310.555, 258.184 334.624, 262.560 345.407 C 263.299 347.226, 262.902 347.286, 253.917 346.714 C 243.814 346.070, 232.733 343.486, 222.488 339.385 L 216.113 336.833 207.563 344.166 C 202.860 348.200, 199.009 351.751, 199.006 352.057 C 198.995 353.094, 214.451 360.778, 221.838 363.408 C 232.029 367.036, 244.361 369, 256.955 369 C 306.514 369, 350.689 339.387, 367.341 295 C 378.713 264.689, 372.925 223.302, 353.258 194.288 L 350.403 190.077 346.951 192.145" />
+          </svg>
+          <span>EnlesWeb</span>
+        </div>
+        <p id="cta-head" class="cta-head">Ceritakan usahamu lewat <span class="swash"><span id="swash-cta" class="swash-bg"></span><span class="swash-text">WhatsApp</span></span>.</p>
+        <p id="cta-sub" class="cta-sub">Kami bantu pilih paket yang paling sesuai.</p>
+        <p id="cta-note" class="cta-note">Contoh catatan dan tampilan. Semua materi adalah konsep milik kami.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ctl">
+  <button id="pp">Play</button>
+  <button id="rt">Ganti ke 4:5</button>
+  <button id="guide-toggle">Toggle Safe Zone</button>
+  <input type="range" id="rng" min="0" max="15" step="0.01" value="0">
+  <span id="tt">0.00 / 15.00 s</span>
+</div>
+
+<script>
+const q = new URLSearchParams(location.search);
+const st = document.getElementById('stage'), box = document.getElementById('box'), hold = document.getElementById('holder');
+const ctl = document.getElementById('ctl'), pp = document.getElementById('pp'), rng = document.getElementById('rng'), tt = document.getElementById('tt');
+const rt = document.getElementById('rt'), guideToggle = document.getElementById('guide-toggle'), safeGuide = document.getElementById('safe-guide');
+
+function fit() {
+  const H = st.offsetHeight;
+  const s = q.has('clean') ? 1 : Math.min(hold.clientWidth / 1080, hold.clientHeight / H);
+  st.style.transform = 'scale(' + s + ')';
+  box.style.width = (1080 * s) + 'px';
+  box.style.height = (H * s) + 'px';
+}
+
+if (q.get('ratio') === '4x5') st.classList.add('r45');
+if (q.has('clean')) {
+  document.body.classList.add('clean');
+  ctl.classList.add('hide');
+  document.body.style.overflow = 'auto';
+}
+
+let tl = null;
+
+if (typeof gsap !== 'undefined') {
+  /* Satu timeline paused sebagai satu-satunya pemegang waktu (15,000 detik) */
+  tl = gsap.timeline({ paused: true });
+
+  /* State awal ditulis eksplisit supaya frame 0 tegas dan seek tetap deterministik */
+  tl.set('#hook-line-a', { autoAlpha: 1, y: 0 })
+    .set('#hook-line-b', { autoAlpha: 1, y: 0 })
+    .set('#swash-hook', { scaleX: 0 })
+    .set(['#note-1', '#note-2', '#note-3', '#note-4'], { autoAlpha: 0, y: 14 })
+    .set('#scene-build', { autoAlpha: 0, y: 0 })
+    .set('#build-panel', { autoAlpha: 0 })
+    .set(['#row-1', '#row-2', '#row-3', '#row-4'], { autoAlpha: 0, y: 14 })
+    .set(['#marker-hero', '#marker-schedule'], { scaleX: 0 })
+    .set('#build-caption', { autoAlpha: 0 })
+    .set('#phone-rig', { autoAlpha: 0, x: 120 })
+    .set('#scene-price', { autoAlpha: 0 })
+    .set(['#fact-domain', '#fact-days'], { autoAlpha: 0, y: 10 })
+    .set(['#row-starter', '#row-business'], { autoAlpha: 0, y: 16 })
+    .set('#swash-starter', { scaleX: 0 })
+    .set('#phone-starter', { autoAlpha: 0, y: 40 })
+    .set('#phone-business', { autoAlpha: 0, y: 40 })
+    .set('#marker-services', { scaleX: 0 })
+    .set('#scene-cta', { autoAlpha: 0 })
+    .set('.brand-row', { autoAlpha: 0, y: 10 })
+    .set('#cta-head', { autoAlpha: 0, y: 18 })
+    .set('#swash-cta', { scaleX: 0 })
+    .set('#cta-sub', { autoAlpha: 0, y: 12 })
+    .set('#cta-note', { autoAlpha: 0 });
+
+  /* 0,00s - 2,60s: ADEGAN 1 */
+  tl.to('#note-1', { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 0.550)
+    .to('#note-2', { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 0.910)
+    .to('#note-3', { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 1.270)
+    .to('#note-4', { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 1.630)
+    .to('#swash-hook', { scaleX: 1, duration: 0.34, ease: 'power2.out' }, 1.300)
+    .to('#scene-hook', { autoAlpha: 0, y: -16, duration: 0.28, ease: 'power2.in' }, 2.600);
+
+  /* 2,90s - 7,20s: ADEGAN 2 */
+  tl.to('#scene-build', { autoAlpha: 1, duration: 0.01 }, 2.900)
+    .to('#build-panel', { autoAlpha: 1, duration: 0.30, ease: 'power2.out' }, 2.900)
+    .to('#phone-rig', { autoAlpha: 1, x: 0, duration: 0.45, ease: 'power3.out' }, 2.900)
+    .to('#row-1', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 3.200)
+    .to('#marker-schedule', { scaleX: 1, duration: 0.36, ease: 'power2.out' }, 3.320)
+    .to('#row-2', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 3.950)
+    .to('#marker-hero', { scaleX: 1, duration: 0.36, ease: 'power2.out' }, 4.070)
+    .to('#row-3', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 4.700)
+    .to('#row-4', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 5.450)
+    .to('#build-caption', { autoAlpha: 1, duration: 0.30, ease: 'power2.out' }, 6.200)
+    .to('#scene-build', { autoAlpha: 0, y: -18, duration: 0.30, ease: 'power2.in' }, 7.200);
+
+  /* 7,40s - 11,20s: ADEGAN 3 */
+  tl.to('#scene-price', { autoAlpha: 1, duration: 0.01 }, 7.400)
+    .to('#row-starter', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 7.400)
+    .to('#swash-starter', { scaleX: 1, duration: 0.38, ease: 'power2.out' }, 7.880)
+    .to('#phone-starter', { autoAlpha: 1, y: 0, duration: 0.40, ease: 'power3.out' }, 7.880)
+    .to('#marker-services', { scaleX: 1, duration: 0.36, ease: 'power2.out' }, 8.060)
+    .to('#row-business', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 8.400)
+    .to('#phone-business', { autoAlpha: 1, y: 0, duration: 0.40, ease: 'power3.out' }, 8.400)
+    .to('#fact-domain', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 9.300)
+    .to('#fact-days', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 9.850)
+    .to('#scene-price', { autoAlpha: 0, y: -16, duration: 0.28, ease: 'power2.in' }, 11.200);
+
+  /* 11,20s - 13,30s: ADEGAN 4, lalu tahan diam sampai 15,00s */
+  tl.to('#scene-cta', { autoAlpha: 1, duration: 0.01 }, 11.200)
+    .to('.brand-row', { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 11.200)
+    .to('#cta-head', { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' }, 11.600)
+    .to('#swash-cta', { scaleX: 1, duration: 0.42, ease: 'power2.out' }, 12.050)
+    .to('#cta-sub', { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 12.700)
+    .to('#cta-note', { autoAlpha: 1, duration: 0.25, ease: 'power2.out' }, 13.050)
+    .to({}, { duration: 0.001 }, 14.999);
+
+  tl.eventCallback('onUpdate', () => {
+    const t = tl.time();
+    rng.value = t;
+    tt.textContent = t.toFixed(2) + ' / 15.00 s';
+    pp.textContent = tl.isActive() ? 'Pause' : (t >= 14.99 ? 'Ulangi' : 'Play');
+  });
+  tl.eventCallback('onComplete', () => { pp.textContent = 'Ulangi'; });
+}
+
+/* API perekaman otomatis, dipakai render-video.js dan preview-snapshots.js */
+window.TOTAL = 15.0;
+window.seekFrame = (f, fps = 30) => {
+  if (!tl) return;
+  tl.pause();
+  tl.time(f / fps, false);
+};
+
+rt.onclick = () => {
+  st.classList.toggle('r45');
+  rt.textContent = st.classList.contains('r45') ? 'Ganti ke 9:16' : 'Ganti ke 4:5';
+  fit();
+};
+guideToggle.onclick = () => safeGuide.classList.toggle('hide');
+pp.onclick = () => {
+  if (!tl) return;
+  if (tl.isActive()) tl.pause();
+  else if (tl.time() >= 14.99) tl.restart();
+  else tl.play();
+};
+rng.oninput = () => {
+  if (!tl) return;
+  tl.pause();
+  tl.time(+rng.value);
+};
+
+addEventListener('resize', fit);
+addEventListener('keydown', e => {
+  if (e.code === 'Space' && e.target.tagName !== 'BUTTON') {
+    e.preventDefault();
+    pp.click();
+  } else if ((e.code === 'ArrowRight' || e.code === 'ArrowLeft') && e.target.tagName !== 'INPUT' && tl) {
+    e.preventDefault();
+    tl.pause();
+    tl.time(Math.max(0, Math.min(15, tl.time() + (e.code === 'ArrowRight' ? 0.5 : -0.5))));
+  }
+});
+
+fit();
+document.fonts.ready.then(() => {
+  fit();
+  if (!tl) return;
+  if (q.has('t')) { tl.pause(); tl.time(+q.get('t')); }
+  else if (!q.has('pause')) tl.play(0);
+});
+</script>
+</body>
+</html>

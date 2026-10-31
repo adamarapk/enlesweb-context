@@ -1,10 +1,10 @@
 # ENLESWEB CONTEXT MASTER: DOKUMENTASI TERPADU PLATFORM & 6 TEMPLATE KONSEP
 
-**Versi:** 3.9 (Penyempurnaan Arsitektur layout-lab, Dual-Layer Token, Chassis iPhone 15, & SOP v1.4 - Decision 023 Addendum & Decision 022 CLOSED)  
-**Tanggal Rilis:** 29 Oktober 2026  
-**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–023 Addendum, SOP v1.4, unifikasi hosting Cloudflare Workers, & layout-lab live di preview.enlesweb.com)  
+**Versi:** 4.0 (Unifikasi Workspace enlesweb-workspace, Hardlink Ekosistem 45 Grup, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di layout-lab - Decision 023 Addendum & Decision 022 CLOSED)  
+**Tanggal Rilis:** 31 Oktober 2026  
+**Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–023 Addendum 31 Okt, SOP v1.4, workspace tunggal D:\myself\web\enlesweb-workspace, layout-lab Astro 7.4.4 di preview.enlesweb.com)  
 **Target Pengguna Dokumen:** Dokumentasi Teknis Standar, Panduan Arsitektur Sistem, dan Wiki Pengembang  
-**Ringkasan Pembaruan:** Penyempurnaan menyeluruh arsitektur composer internal layout-lab (preview.enlesweb.com) dan alur SOP v1.4 pra-DP Langkah 3b (Decision 023 Addendum). Mencakup integrasi Dual-Layer Token System (--ew-* shell vs --wf-* wireframe canvas), Scaled 1280px Virtual Artboard, chassis fisik iPhone 15 pada sandboxed live iframe (390x796px kanvas dalam, 414x844px chassis luar), 5 Preset Skenario Klien di Studio Admin, refaktor salinan netral commit 87548e1, 46 assertion otomatis, serta audit komposisi 13 kategori dengan skor UX 9.4/10. Ekosistem siap operasional untuk pelaksanaan Minggu 1: Penayangan Meta Ads dan Micro-Warm Outreach DM Instagram.  
+**Ringkasan Pembaruan:** Unifikasi tunggal ruang kerja ke D:\myself\web\enlesweb-workspace dengan 45 grup berkas kembar terhubung NTFS Hardlink (0ms latency), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (package.json ground truth, git log hash valid, 10 file master sinkron, 0 em-dash), serta penyerapan pemeliharaan teknis layout-lab hari ini: upgrade ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).  
 
 ---
 
@@ -119,8 +119,8 @@ ENLESWEB didirikan untuk menyelesaikan masalah umum pelaku usaha lokal dan UMKM 
 
 Semua materi teks di ENLESWEB dan ke-6 template wajib mematuhi standar penulisan berikut:
 
-1. **Bebas Tanda Hubung Em Dash (—) pada Copy Pelanggan:**
-   - Dilarang keras menggunakan karakter em dash (`—`) pada seluruh teks antarmuka publik. Gunakan titik dua (`:`), tanda kurung, koma, atau titik.
+1. **Bebas Tanda Hubung Em Dash pada Copy Pelanggan:**
+   - Dilarang keras menggunakan karakter em dash pada seluruh teks antarmuka publik. Gunakan titik dua (`:`), tanda kurung, koma, atau titik.
 2. **Larangan Superlatif & Kata Promosi Terlarang:**
    - Dilarang memakai kata promosi klise: *"terbaik"*, *"nomor 1"*, *"terpercaya"*, *"revolusioner"*, *"canggih"*, *"murah meriah"*, *"ajaib"*, *"premium"*, *"presisi"*, *"elevate"*, *"seamless"*, *"crafted"*, *"powerful"*, *"modern"*, atau sejenisnya di teks pelanggan.
    - Dilarang memakai kata *"gratis"* untuk layanan servis atau pengerjaan dasar (seperti pada alur bengkel).

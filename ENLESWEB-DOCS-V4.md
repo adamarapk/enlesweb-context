@@ -1,14 +1,24 @@
 # ENLESWEB DOKUMENTASI UTAMA V4 (ENLESWEB-DOCS-V4)
 
-Versi: 2.4 (Penyerapan Menyeluruh Arsitektur & Audit layout-lab - 29 Oktober 2026)
-Tanggal Pembaruan: 29 Oktober 2026
-Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum), dan arsitektur `layout-lab`.
-Status Sistem: Homepage production dan launch-ready V4 (Decision 001–023 + Addendum, SOP v1.4, seluruh ekosistem terpadu di Cloudflare Workers). layout-lab beroperasi penuh di preview.enlesweb.com untuk alur SOP pra-DP Langkah 3b.
-Ringkasan Pembaruan: Penyerapan mendalam arsitektur teknis dan desain layout-lab: standarisasi Dual-Layer Token System (--ew-* vs --wf-*), antarmuka split-screen (Scaled 1280px Virtual Artboard & sandboxed iframe dalam chassis fisik iPhone 15), 5 preset skenario klien, protokol postMessage runtime, 46 assertion otomatis fungsional, 86 Playwright visual snapshot tests, hasil evaluasi audit komposisi 13 kategori (UX 9.4/10), dan pemutakhiran SOP ke v1.4.
+Versi: 2.5 (Unifikasi Workspace enlesweb-workspace, Hardlink Ekosistem 45 Grup, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di layout-lab - 31 Oktober 2026)
+Tanggal Pembaruan: 31 Oktober 2026
+Sumber Konsolidasi: PRD.md, CONTENT.md, DESIGN.md, SPEC.md, `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026), dan arsitektur `layout-lab`.
+Status Sistem: Homepage production dan launch-ready V4 (Decision 001–023 + Addendum, SOP v1.4, workspace tunggal D:\myself\web\enlesweb-workspace, seluruh ekosistem terpadu di Cloudflare Workers). layout-lab beroperasi penuh di preview.enlesweb.com untuk alur SOP pra-DP Langkah 3b.
+Ringkasan Pembaruan: Unifikasi tunggal struktur workspace ke D:\myself\web\enlesweb-workspace dengan 45 grup berkas kembar terhubung NTFS Hardlink (0ms latency), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (package.json ground truth, git log hash valid, 10 file master sinkron, 0 em-dash), serta penyerapan pemeliharaan teknis layout-lab hari ini: upgrade ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).
 
 ---
 
 ## RINGKASAN PEMBARUAN V4 (CHANGELOG V4)
+
+### Pembaruan Versi 2.5 (31 Oktober 2026 - Unifikasi Workspace enlesweb-workspace, Hardlink Ekosistem 45 Grup, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di layout-lab)
+1. **Unifikasi Tunggal Workspace Lokal (`D:\myself\web\enlesweb-workspace`)**:
+   - Menata ulang 9 repositori git mandiri dari `experiments` dan `7project` ke dalam satu folder utama `D:\myself\web\enlesweb-workspace` lengkap dengan `enlesweb.code-workspace`.
+2. **Koneksi Fisik 45 Grup Berkas Kembar via NTFS Hardlinks**:
+   - Menghubungkan seluruh dokumen spesifikasi sub-folder `Projects/` pada `enlesweb-context-master` dengan berkas terkait di sub-proyek (`enlesweb`, `layout-lab`, `_audit`, `berflower`, `klimis`, `jerseay`, `ripeir`, `seruput`, `tuntas`). Setiap modifikasi dokumen langsung sinkron 0ms tanpa penyalinan manual.
+3. **Gerbang Audit Anti-Halusinasi Terpusat (`sync-ecosystem.mjs`)**:
+   - Menjalankan 5 lapis validasi sebelum auto-commit dan auto-push ke GitHub: verifikasi fakta dependensi `package.json`, validitas commit hash di `git log`, metrik pengujian aktual, sinkronisasi versi dan tanggal 10 file master, serta ketiadaan karakter em-dash pada teks prosa.
+4. **Upgrade Stack layout-lab ke Astro 7.4.4 & Mitigasi CVE**:
+   - Memutakhirkan layout-lab ke Astro `^7.4.4` pada runtime Node `22.23.4`, TypeScript `^6.0.3`, `@astrojs/check ^0.9.12`, `playwright-core ^1.64.1`, `puppeteer-core ^25.16.0`, dan override `vite ^8.3.5` untuk memitigasi seluruh CVE keamanan (commit `9a1de77` dan `19671bf`).
 
 ### Pembaruan Versi 2.4 (29 Oktober 2026 - Penyerapan Menyeluruh Arsitektur & Audit layout-lab, 5 Preset Klien, SOP v1.4, & Addendum Decision 023)
 1. **Arsitektur Dual-Layer Token System (`--ew-*` vs `--wf-*`)**:

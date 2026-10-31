@@ -1,3 +1,24 @@
+# ATURAN EKOSISTEM ENLESWEB (CONTEXT MASTER PROTOCOL)
+
+## ATURAN BAKU SINKRONISASI DOKUMENTASI (POST-COMMIT/PUSH BENCHMARK)
+
+1. **Eksperimen Bebas di Sub-Folder:**
+   Selama masih dalam tahap mengoding, debugging, atau bereksperimen di sub-folder mana pun (`layout-lab`, `enlesweb`, atau template), developer / AI **tidak perlu** menyentuh atau mengubah berkas master docs di `enlesweb-context-master`.
+2. **Patokan Eksekusi (Benchmark Trigger):**
+   **Begitu suatu update selesai di-commit dan di-push ke remote GitHub (`git push origin main`) di sub-folder mana pun**, developer / AI **WAJIB LANGSUNG**:
+   - Memperbarui dokumentasi teknis proyek bersangkutan (misal `README.md`, `NOTES.md`, `DESIGN.md`).
+   - Menyerap pembaruan tersebut ke **10 File Master Utama** di `enlesweb-context-master` (terutama `decision-log.md`, `summary.md`, `ENLESWEB-DOCS-V4.md`, `enlesweb-context-master.md`, dan `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md`).
+   - Menjalankan **Gerbang Audit Anti-Halusinasi**:
+     ```powershell
+     node scripts/sync-ecosystem.mjs --audit
+     ```
+   - Jika lulus 100% (0 error & 0 warning), lakukan auto-commit dan auto-push ke GitHub:
+     ```powershell
+     node scripts/sync-ecosystem.mjs --publish
+     ```
+
+---
+
 <!-- antislop:start -->
 ## antislop
 For UI, copy, people, mobile layout, or code comments work, read these installed skill files directly (use these paths even if a same-named global skill exists):

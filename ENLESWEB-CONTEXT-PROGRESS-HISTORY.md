@@ -1,16 +1,16 @@
 # ENLESWEB --- HISTORI KONTEKS, PERKEMBANGAN, DAN PROGRESS DELTA
 
-Versi Dokumen: 4.3 (Penyempurnaan Arsitektur layout-lab, Dual-Layer Token, Chassis iPhone 15, & SOP v1.4 - 29 Oktober 2026)
-Tanggal Pembaruan Terakhir: 29 Oktober 2026
-Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–023 Addendum, SOP transaksi v1.4, seluruh ekosistem terpadu di Cloudflare Workers; layout-lab live di preview.enlesweb.com)
+Versi: 4.4 (Unifikasi Workspace enlesweb-workspace, Hardlink Ekosistem 45 Grup, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di layout-lab - 31 Oktober 2026)
+Tanggal Pembaruan Terakhir: 31 Oktober 2026
+Status Dokumen: Master Context, Progress Delta, & Launch-Ready State V4 (Decision 001–023 Addendum 31 Okt, SOP transaksi v1.4, workspace tunggal D:\myself\web\enlesweb-workspace, seluruh ekosistem terpadu di Cloudflare Workers; layout-lab live di preview.enlesweb.com)
 Fungsi: Sumber Referensi Tunggal untuk Konteks Bisnis, Evolusi Konsep, Progress Delta, dan Gap Register ENLESWEB.
-Ringkasan Pembaruan: Penyempurnaan menyeluruh arsitektur internal composer layout-lab (preview.enlesweb.com) dan alur SOP WhatsApp v1.4 pra-DP Langkah 3b (Decision 023 Addendum). Mencakup integrasi Dual-Layer Token System (--ew-* shell vs --wf-* wireframe monokrom), Scaled 1280px Virtual Artboard, sandboxed live iframe dalam chassis fisik iPhone 15 (390x796px kanvas dalam, 414x844px chassis luar), 5 Preset Skenario Klien di Studio Admin, refaktor salinan netral commit 87548e1, 46 assertion otomatis, serta audit komposisi 13 kategori dengan skor UX arsitektural 9.4/10.
+Ringkasan Pembaruan: Unifikasi tunggal ruang kerja ke D:\myself\web\enlesweb-workspace dengan 45 grup berkas kembar terhubung NTFS Hardlink (0ms latency), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (package.json ground truth, git log hash valid, 10 file master sinkron, 0 em-dash), serta penyerapan pemeliharaan teknis layout-lab hari ini: upgrade ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).
 
 ---
 
 ## ATURAN HIRARKI KEPUTUSAN (SOURCE OF TRUTH HIERARCHY)
 Jika terdapat perbedaan informasi antar bagian atau dengan dokumen lama, gunakan hirarki prioritas berikut:
-1. KEPUTUSAN TERBARU (29 Oktober 2026 - PENYEMPURNAAN ARSITEKTUR LAYOUT-LAB, DUAL-LAYER TOKEN SYSTEM, CHASSIS IPHONE 15, 5 PRESET SKENARIO KLIEN, SOP V1.4, DECISION 023 ADDENDUM; 28 Oktober 2026 - UNIFIKASI HOSTING CLOUDFLARE WORKERS *.ENLESWEB.COM, PENONAKTIFAN VERCEL, PELUNCURAN PRODUKSI LAYOUT-LAB PREVIEW.ENLESWEB.COM DENGAN STATELESS COMPACT ID /P/<ID>, DECISION 023 & DECISION 022 CLOSED; 18 Oktober 2026 - PENYELESAIAN TEMPLATE PDF BUKTI PEMESANAN CLOSED, KESIAPAN MATERI IKLAN META CLOSED, PENUTUPAN SELURUH TUGAS MINGGU 0 CLOSED, TRANSISI MASTER DOCS V4, DECISION 020; 17 Oktober 2026 - OPTIMASI MENYELURUH PAGESPEED INSIGHTS 100/100 MOBILE & DESKTOP CLOSED, DECISION 019; 17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
+1. KEPUTUSAN TERBARU (31 Oktober 2026 - UNIFIKASI TUNGGAL WORKSPACE ENLESWEB-WORKSPACE, HARDLINK EKOSISTEM 45 GRUP, AUDIT ANTI-HALUSINASI, UPGRADE ASTRO 7.4.4 DI LAYOUT-LAB, DECISION 023 ADDENDUM 31 OKT; 29 Oktober 2026 - PENYEMPURNAAN ARSITEKTUR LAYOUT-LAB, DUAL-LAYER TOKEN SYSTEM, CHASSIS IPHONE 15, 5 PRESET SKENARIO KLIEN, SOP V1.4, DECISION 023 ADDENDUM; 28 Oktober 2026 - UNIFIKASI HOSTING CLOUDFLARE WORKERS *.ENLESWEB.COM, PENONAKTIFAN VERCEL, PELUNCURAN PRODUKSI LAYOUT-LAB PREVIEW.ENLESWEB.COM DENGAN STATELESS COMPACT ID /P/<ID>, DECISION 023 & DECISION 022 CLOSED; 18 Oktober 2026 - PENYELESAIAN TEMPLATE PDF BUKTI PEMESANAN CLOSED, KESIAPAN MATERI IKLAN META CLOSED, PENUTUPAN SELURUH TUGAS MINGGU 0 CLOSED, TRANSISI MASTER DOCS V4, DECISION 020; 17 Oktober 2026 - OPTIMASI MENYELURUH PAGESPEED INSIGHTS 100/100 MOBILE & DESKTOP CLOSED, DECISION 019; 17 Oktober 2026 - PEMBELIAN DOMAIN RESMI ENLESWEB.COM CLOSED / TEREALISASI, DECISION 018; 16 Oktober 2026 - SINKRONISASI SOP OPERASIONAL V1.2 CLOSED & DECISION 013–017; 15 Oktober 2026 - SINKRONISASI KEPUTUSAN DOMAIN REGISTRANT DECISION 002 & RENEWAL POSITIONING TERPADU; 14 Oktober 2026 - SHOWCASE 6 PROYEK LENGKAP DENGAN PEMETAAN TIER, NAVBAR TRANSPARAN AMBIENT BLEED, ENGINEERED TACTILE 3D SHELF BUTTONS, DEPLOYMENT STAGING CLOUDFLARE WORKERS.DEV, TRACKING RESMI ADDTOCART/VIEWCONTENT, SCHEMA.ORG JSON-LD & SITEMAP) > Menang atas semua konteks lama.
 2. ENLESWEB-DOCS-V4.md (PRD / CONTENT / DESIGN / SPEC) & `Delivery & Operations/sop.md` v1.4 > Menang untuk spesifikasi teknis, salinan copy baseline, dan SOP operasional.
 3. CONTEXT-DETAIL-V3.md > Menang atas V2 untuk transisi Ship Mode dan Launch-Ready state.
 4. CONTEXT-DETAIL-V2.md > Konteks historis fondasi bisnis & Website Builder system.
@@ -137,7 +137,7 @@ Penyempurnaan tombol aksi WhatsApp dan paket (LOCKED):
 
 --------------------------------------------------------------------------------
 
-4. EYEBROW & ANTI-SLOP: PENIADAAN EYEBROW & KETIADAAN EM DASH (—)
+4. EYEBROW & ANTI-SLOP: PENIADAAN EYEBROW & KETIADAAN EM DASH
 - Eyebrow tetap ditiadakan di atas headline H1 hero untuk menjaga kebersihan layar pertama bagi audiens dingin Meta Ads.
 - Seluruh teks pelanggan di CONTENT.md dan src/content/copy.ts bebas 100% dari karakter em dash (—). Teks menggunakan titik, koma, atau struktur kalimat alami.
 - Bebas dari klaim promosi generik ("terbaik", "profesional", "seamless", "cutting-edge").
@@ -671,7 +671,7 @@ Pisahkan empat entitas ini secara jelas dalam komunikasi operasional, materi pro
 - **Website**: Hasil pengerjaan desain, kode sumber statis, dan penataan konten. Menjadi aset milik klien seutuhnya setelah pelunasan tanpa royalti.
 - **Hosting & Platform**: Berjalan di atas edge network modern Cloudflare Workers/Pages (*.enlesweb.com) yang dikelola terpusat oleh ENLESWEB; hosting Vercel telah dinonaktifkan per Decision 023.
 - **Domain**: Hak pakai nama domain. Sudah termasuk untuk 1 tahun pertama (akun registrar dan data registrant atas nama ENLESWEB demi kemudahan aktivasi, Decision 002). Tahun ke-2 dan seterusnya klien bebas memilih perpanjangan terkelola flat tahunan (Rp400rb/tahun .com/.id atau Rp300rb/tahun ekstensi lainnya) atau opsi mandiri (transfer domain via EPP code + penyerahan arsip static build dist/ zip secara cuma-cuma).
-- **Maintenance / Revisi & Update Konten Ringan**: Terikat pada kuota revisi paket saat pembuatan (2x Starter/Business, 4x Growth), garansi perbaikan bug teknis 30 hari, serta kuota gratis putaran update konten ringan tahunan di tahun pertama (Starter 2x, Business 4x, Growth 6x; selebihnya Rp50.000/putaran, SLA 1–2 hari kerja, dan otomatis di-reset setiap tahun saat klien memilih Perpanjangan Terkelola — Decision 015).
+- **Maintenance / Revisi & Update Konten Ringan**: Terikat pada kuota revisi paket saat pembuatan (2x Starter/Business, 4x Growth), garansi perbaikan bug teknis 30 hari, serta kuota gratis putaran update konten ringan tahunan di tahun pertama (Starter 2x, Business 4x, Growth 6x; selebihnya Rp50.000/putaran, SLA 1–2 hari kerja, dan otomatis di-reset setiap tahun saat klien memilih Perpanjangan Terkelola - Decision 015).
 
 --------------------------------------------------------------------------------
 

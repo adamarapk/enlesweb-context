@@ -1,7 +1,7 @@
 # MODEL BISNIS ENLESWEB
-**Versi:** 1.7  
-**Terakhir diperbarui:** 29 Oktober 2026  
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/rencana.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum).  
+**Versi:** 1.8  
+**Terakhir diperbarui:** 31 Oktober 2026  
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/visi.md` (v2.3), `Strategy/positioning.md` (v2.3), `Strategy/rencana.md` (v2.0), `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 31 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).  
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan terukur, [HIPOTESIS] asumsi belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ---
@@ -42,7 +42,7 @@ Biaya operasional dibagi secara tegas menjadi biaya tunai tetap, biaya tunai var
   - [KEPUTUSAN] Alat pembuatan Bukti Pemesanan PDF & TTD digital: **Rp0** (Google Docs/Canva + TTD gambar, Decision 007).
   - [KEPUTUSAN] Eksperimen Micro-Warm Outreach DM Instagram (2–3 pemilik usaha/hari): **Rp0** (manual tanpa tools scraping berbayar, Decision 013).
 - **Domain Internal Bisnis:**
-  - [FAKTA] `enlesweb.com`: **Rp152.070** (tahun pertama, pendaftaran registrar Domainesia — **TEREALISASI / SUDAH DIBELI**, Decision 018).
+  - [FAKTA] `enlesweb.com`: **Rp152.070** (tahun pertama, pendaftaran registrar Domainesia - **TEREALISASI / SUDAH DIBELI**, Decision 018).
 
 ### B. Biaya Tunai Variabel Langsung per Klien (COGS / Direct Costs)
 Biaya langsung yang timbul saat proyek klien mulai dikerjakan (setelah DP 50% diterima DAN materi dasar klien dinyatakan lengkap, Decision 017):

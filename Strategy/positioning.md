@@ -1,7 +1,7 @@
 # POSITIONING ENLESWEB
-**Versi:** 2.2
-**Terakhir diperbarui:** 29 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/rencana.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (aturan transaksi v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum).
+**Versi:** 2.3
+**Terakhir diperbarui:** 31 Oktober 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/visi.md` (v2.3), `Strategy/rencana.md` (v2.0), `Strategy/model-bisnis.md` (v1.8), `Delivery & Operations/sop.md` (aturan transaksi v1.4, Decision 022, Decision 023, & Addendum 31 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Positioning

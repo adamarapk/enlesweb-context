@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENLESWEB Meta Ads 15 detik - Iklan D (Jadwal, Harga, Lokasi)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+/* =========================================================
+   TOKEN DESAIN RESMI ENLESWEB (LOCKED)
+   ========================================================= */
+:root {
+  --canvas: #FFFFFF;
+  --surface: #F5F5F2;
+  --ink: #111111;
+  --ink-muted: #55554F;
+  --line: #E5E5DF;
+  --accent: #E4FF30;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--surface);
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#holder {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#box { position: relative; }
+
+/* =========================================================
+   STAGE: 9:16 (1080x1920) default, .r45 = 4:5 (1080x1350)
+   ========================================================= */
+.stage {
+  --H: 1920px;
+
+  /* Safe Zone 9:16 (1080x1920): x 65..1015, y 270..1250 */
+  --sz-top: 270px;
+  --sz-bottom: 670px;
+  --sz-side: 65px;
+
+  /* Skala tipografi 9:16 */
+  --fs-l1: 60px;
+  --fs-l2: 60px;
+  --fs-l3: 76px;
+  --fs-sub: 34px;
+  --fs-tier: 42px;
+  --fs-tier-price: 62px;
+  --fs-spec: 30px;
+  --fs-cap: 40px;
+  --fs-brand: 44px;
+  --fs-cta-price: 92px;
+  --fs-cta-sub: 32px;
+  --fs-inc: 34px;
+  --fs-cta-line: 54px;
+  --fs-num: 30px;
+  --fs-note: 26px;
+
+  /* Layout 9:16 */
+  --hook-top: 300px;
+  --col-l: 65px;
+  --col-r: 564px;
+  --col-w: 451px;
+  --tier-top: 285px;
+  --phone-top: 515px;
+  --phone-w: 430px;
+  --phone-h: 860px;
+  --crop-top: 280px;
+  --crop-h: 860px;
+  --cap-top: 1150px;
+  --cta-top: 285px;
+
+  width: 1080px;
+  height: var(--H);
+  position: relative;
+  overflow: hidden;
+  background: var(--canvas);
+  transform-origin: 0 0;
+}
+
+.stage.r45 {
+  --H: 1350px;
+
+  /* Safe Zone 4:5 (1080x1350): x 65..1015, y 250..1010 */
+  --sz-top: 250px;
+  --sz-bottom: 340px;
+
+  /* Skala tipografi 4:5 */
+  --fs-l1: 54px;
+  --fs-l2: 54px;
+  --fs-l3: 66px;
+  --fs-sub: 30px;
+  --fs-tier: 38px;
+  --fs-tier-price: 56px;
+  --fs-spec: 27px;
+  --fs-cap: 35px;
+  --fs-brand: 38px;
+  --fs-cta-price: 78px;
+  --fs-cta-sub: 28px;
+  --fs-inc: 30px;
+  --fs-cta-line: 46px;
+  --fs-num: 26px;
+  --fs-note: 23px;
+
+  /* Layout 4:5 */
+  --hook-top: 268px;
+  --col-l: 65px;
+  --col-r: 564px;
+  --col-w: 451px;
+  --tier-top: 262px;
+  --phone-top: 465px;
+  --phone-w: 430px;
+  --phone-h: 800px;
+  --crop-top: 262px;
+  --crop-h: 520px;
+  --cap-top: 820px;
+  --cta-top: 262px;
+}
+
+/* Safe Zone Guide (hanya untuk preview produksi, mati saat ekspor .clean) */
+.safe-guide {
+  position: absolute;
+  pointer-events: none;
+  top: var(--sz-top);
+  bottom: var(--sz-bottom);
+  left: var(--sz-side);
+  right: var(--sz-side);
+  outline: 3px dashed var(--accent);
+  z-index: 99;
+}
+.safe-guide::after {
+  content: 'ZONA AMAN';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.safe-guide.hide, body.clean:not(.show-guide) .safe-guide { display: none; }
+
+/* Sapuan ambient tipis dari --accent (desain resmi 5.2.1) */
+.bg-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 760px at 8% 16%, rgba(228, 255, 48, 0.30) 0%, rgba(228, 255, 48, 0.10) 48%, rgba(255, 255, 255, 0) 78%),
+    linear-gradient(160deg, rgba(228, 255, 48, 0.12) 0%, rgba(255, 255, 255, 0) 52%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scene { position: absolute; pointer-events: none; }
+
+/* =========================================================
+   STATE AWAL DI CSS
+   Frame 0 harus tampil tegas tanpa bergantung pada render GSAP.
+   ========================================================= */
+#hook-l3, #hook-sub,
+#sc-split, #col-starter, #col-business,
+#phone-starter, #phone-business,
+#sc-detail, #detail-cap,
+#sc-cta, #brand-row, #cta-price, #cta-sub,
+#inc-1, #inc-2, #inc-3, #cta-line, #cta-num, #cta-note {
+  opacity: 0;
+}
+#hook-l3 { transform: translateY(22px); }
+#hook-sub { transform: translateY(14px); }
+#col-starter, #col-business { transform: translateY(16px); }
+#phone-starter, #phone-business { transform: translateY(60px); }
+#detail-cap { transform: translateY(10px); }
+#brand-row { transform: translateY(10px); }
+#cta-price { transform: translateY(14px); }
+#cta-sub { transform: translateY(10px); }
+#inc-1, #inc-2, #inc-3 { transform: translateY(10px); }
+#cta-line { transform: translateY(12px); }
+#crop-win { transform: scale(1.06); }
+
+/* =========================================================
+   ADEGAN 1: HOOK (0.00s - 2.85s)
+   ========================================================= */
+#sc-hook {
+  left: var(--sz-side);
+  top: var(--hook-top);
+  width: 950px;
+  z-index: 20;
+}
+
+.hook-l1 {
+  font-size: var(--fs-l1);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.hook-l2 {
+  font-size: var(--fs-l2);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+.hook-l3 {
+  font-size: var(--fs-l3);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-top: 16px;
+}
+.hook-sub {
+  font-size: var(--fs-sub);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+  margin-top: 36px;
+}
+
+/* Sapuan aksen di belakang frasa (persegi, bukan pill) */
+.swash { position: relative; display: inline-block; }
+.swash-bg {
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: 0.26em;
+  bottom: 0.08em;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  z-index: 0;
+}
+.swash-text { position: relative; z-index: 1; }
+
+/* =========================================================
+   ADEGAN 2: SPLIT SCREEN DUA PAKET (2.85s - 7.30s)
+   ========================================================= */
+#sc-split { inset: 0; z-index: 20; }
+
+.split-divider {
+  position: absolute;
+  left: 540px;
+  top: var(--sz-top);
+  width: 2px;
+  height: calc(var(--H) - var(--sz-top) - var(--sz-bottom));
+  background: var(--line);
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.col { position: absolute; top: var(--tier-top); width: var(--col-w); }
+
+.tier-name {
+  font-size: var(--fs-tier);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.tier-price {
+  font-size: var(--fs-tier-price);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-top: 6px;
+}
+.tier-spec {
+  font-size: var(--fs-spec);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* Mockup HP: satu-satunya tempat box-shadow di file ini */
+.phone-rig {
+  position: absolute;
+  top: calc(var(--phone-top) - var(--tier-top));
+  left: 10px;
+  width: var(--phone-w);
+  height: var(--phone-h);
+  transform-origin: center center;
+}
+.phone-shell {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  border-radius: 44px;
+  border: 9px solid var(--ink);
+  box-shadow: 0 28px 64px -16px rgba(17, 17, 17, 0.25);
+  overflow: hidden;
+}
+.phone-screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+.screen-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   ADEGAN 3: DETAIL TABEL JADWAL (7.45s - 10.65s)
+   ========================================================= */
+#sc-detail { inset: 0; z-index: 20; }
+
+.crop-win {
+  position: absolute;
+  left: var(--sz-side);
+  top: var(--crop-top);
+  width: 950px;
+  height: var(--crop-h);
+  overflow: hidden;
+  background: var(--surface);
+}
+.crop-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 950px;
+  height: auto;
+  display: block;
+  transform: translateY(-1365px);
+}
+
+.detail-cap {
+  position: absolute;
+  left: var(--sz-side);
+  top: var(--cap-top);
+  width: 950px;
+  font-size: var(--fs-cap);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+/* =========================================================
+   ADEGAN 4: CTA (10.75s - 15.00s)
+   ========================================================= */
+#sc-cta {
+  left: var(--sz-side);
+  top: var(--cta-top);
+  width: 950px;
+  z-index: 30;
+}
+
+.brand-row { display: flex; align-items: center; gap: 16px; }
+.brand-mark { width: 52px; height: 36px; display: block; color: var(--ink); }
+.brand-name {
+  font-size: var(--fs-brand);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.cta-price {
+  font-size: var(--fs-cta-price);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-top: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.cta-mulai {
+  font-size: var(--fs-cta-sub);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+}
+.cta-sub {
+  font-size: var(--fs-cta-sub);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+  margin-top: 16px;
+}
+.cta-rule {
+  height: 2px;
+  width: 100%;
+  background: var(--line);
+  transform-origin: left center;
+  transform: scaleX(0);
+  margin-top: 22px;
+}
+
+.inc-list {
+  list-style: none;
+  border-top: 2px solid var(--line);
+}
+.inc-list li {
+  font-size: var(--fs-inc);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  padding: 13px 0;
+  border-bottom: 2px solid var(--line);
+}
+
+.cta-line {
+  font-size: var(--fs-cta-line);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-top: 28px;
+}
+.cta-num {
+  font-size: var(--fs-num);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+  margin-top: 12px;
+}
+.cta-note {
+  font-size: var(--fs-note);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* =========================================================
+   TOOLBAR PREVIEW (di luar kanvas video)
+   ========================================================= */
+#ctl {
+  background: var(--ink);
+  border-top: 2px solid var(--line);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  z-index: 100;
+  user-select: none;
+}
+#ctl button {
+  background: var(--surface);
+  color: var(--ink);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+#ctl button:hover { background: var(--accent); }
+#ctl button:focus-visible, #ctl input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#ctl input[type=range] { flex: 1; accent-color: var(--accent); cursor: pointer; }
+#tt {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  min-width: 110px;
+  color: var(--accent);
+}
+.hide { display: none !important; }
+</style>
+</head>
+<body>
+
+<div id="holder">
+  <div id="box">
+    <div id="stage" class="stage">
+
+      <div id="safe-guide" class="safe-guide"></div>
+      <div class="bg-ambient"></div>
+
+      <!-- ADEGAN 1: HOOK (0.00s - 2.85s) -->
+      <section id="sc-hook" class="scene">
+        <p id="hook-l1" class="hook-l1">Jadwal, harga, lokasi.</p>
+        <p id="hook-l2" class="hook-l2">Selalu dijawab lewat chat.</p>
+        <p id="hook-l3" class="hook-l3">Sekarang ada <span class="swash"><span id="swash-hook" class="swash-bg"></span><span class="swash-text">website resminya.</span></span></p>
+        <p id="hook-sub" class="hook-sub">Buat usaha yang jalan di Instagram dan WhatsApp.</p>
+      </section>
+
+      <!-- ADEGAN 2: SPLIT SCREEN DUA PAKET (2.85s - 7.30s) -->
+      <section id="sc-split" class="scene">
+        <div id="split-divider" class="split-divider"></div>
+
+        <div id="col-starter" class="col" style="left: var(--col-l);">
+          <div id="tier-name-starter" class="tier-name">Starter</div>
+          <div id="tier-price-starter" class="tier-price">Rp450.000</div>
+          <div id="tier-spec-starter" class="tier-spec">1 halaman<br>3 hari kerja</div>
+          <div id="phone-starter" class="phone-rig">
+            <div class="phone-shell">
+              <div class="phone-screen">
+                <img id="screen-starter" class="screen-img" src="assets/ripeir-chrome-android.jpg" alt="Contoh website 1 halaman untuk paket Starter">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="col-business" class="col" style="left: var(--col-r);">
+          <div id="tier-name-business" class="tier-name">Business</div>
+          <div id="tier-price-business" class="tier-price">Rp750.000</div>
+          <div id="tier-spec-business" class="tier-spec">hingga 6 halaman<br>7 hari kerja</div>
+          <div id="phone-business" class="phone-rig">
+            <div class="phone-shell">
+              <div class="phone-screen">
+                <img id="screen-business" class="screen-img" src="assets/tuntas-chrome-android.jpg" alt="Contoh website multi halaman untuk paket Business">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADEGAN 3: DETAIL TABEL JADWAL (7.45s - 10.65s) -->
+      <section id="sc-detail" class="scene">
+        <div id="crop-win" class="crop-win">
+          <img id="crop-img" class="crop-img" src="assets/tuntas-chrome-android.jpg" alt="Tabel jadwal kelas pada contoh website Business">
+        </div>
+        <p id="detail-cap" class="detail-cap">Jadwal, harga, lokasi: ada di halaman resmi.</p>
+      </section>
+
+      <!-- ADEGAN 4: CTA (10.75s - 15.00s) -->
+      <section id="sc-cta" class="scene">
+        <div id="brand-row" class="brand-row">
+          <svg class="brand-mark" viewBox="85 130 355 245" fill="currentColor" aria-hidden="true">
+            <path d="M 235.500 137.544 C 198.661 144.411, 168.355 167.493, 151.528 201.500 C 141.651 221.460, 138.511 234.583, 138.608 255.500 C 138.668 268.305, 139.054 271.908, 141.248 280.119 C 145.337 295.422, 153.320 310.783, 162.980 321.936 L 165.955 325.371 170.728 321.985 C 177.386 317.262, 182.961 312.630, 182.982 311.803 C 182.992 311.420, 180.858 308.270, 178.240 304.803 C 172.318 296.960, 166.724 285.589, 164.060 275.974 C 162.131 269.012, 159.276 247.390, 160.168 246.498 C 160.398 246.269, 163.492 246.996, 167.043 248.115 C 182.207 252.894, 208.317 257, 223.534 257 L 230.581 257 243.358 241.382 L 256.134 225.763 256.428 207.632 C 256.794 185.041, 260.651 158.570, 263.866 156.583 C 265.463 155.596, 277.334 158.104, 284.929 161.033 C 289.122 162.650, 295.612 165.982, 299.351 168.438 L 306.151 172.904 313.825 166.806 C 318.046 163.451, 321.500 160.229, 321.500 159.645 C 321.500 155.738, 296.521 142.307, 283 138.945 C 271.645 136.121, 247.028 135.396, 235.500 137.544 M 357.808 150.547 C 328.721 157.601, 293.037 190.811, 234.933 264.904 C 200.336 309.021, 179.800 328.767, 159.613 337.325 C 153.684 339.839, 151.169 340.339, 144.500 340.333 C 135.083 340.325, 130.854 338.750, 124.487 332.882 C 113.466 322.722, 115.126 306.106, 128.572 292.010 L 134.226 286.082 132.514 276.791 C 131.572 271.681, 130.509 266.247, 130.151 264.715 L 129.500 261.931 121.261 267.010 C 106.778 275.939, 95.428 289.536, 91.219 303 C 90.012 306.862, 89.500 311.926, 89.500 320 C 89.500 331.226, 89.589 331.687, 93.250 339.354 C 101.966 357.609, 119.870 368, 142.605 368 C 152.990 368, 161.331 365.870, 172 360.494 C 196.056 348.371, 231.348 313.887, 263.635 270.955 C 295.780 228.212, 319.537 201.995, 338.175 188.695 C 360.550 172.728, 382.518 171.939, 395.936 186.620 C 402.399 193.692, 404.393 199.651, 403.788 210.093 C 403.146 221.191, 398.299 230.867, 388.411 240.790 L 381.146 248.080 380.823 262.430 L 380.500 276.780 386.500 273.753 C 409.901 261.948, 426.847 242.336, 432.083 221 C 433.917 213.526, 433.674 199.894, 431.567 192 C 427.356 176.228, 415.729 162.272, 400.899 155.191 C 396.280 152.985, 390.115 150.690, 387.201 150.090 C 380.044 148.618, 364.785 148.855, 357.808 150.547 M 232.349 157.985 C 202.154 165.900, 175.447 190.134, 165.478 218.665 C 162.676 226.685, 162.061 225.999, 175.192 229.494 C 189.253 233.237, 203.729 234.961, 221.250 234.982 L 237 235 237 216.034 C 237 195.601, 238.463 181.891, 242.365 165.748 L 244.722 156 242.111 156.055 C 240.675 156.085, 236.282 156.954, 232.349 157.985 M 346.951 192.145 C 341.524 195.398, 333 202.147, 333 203.191 C 333 203.713, 334.291 206.021, 335.868 208.320 C 339.394 213.459, 346.292 227.041, 345.685 227.649 C 344.660 228.673, 317.767 234.898, 309.172 236.100 L 299.845 237.404 293.266 245.452 C 289.647 249.879, 285.970 254.354, 285.093 255.398 C 283.542 257.246, 283.738 257.280, 292.500 256.675 C 303.915 255.888, 322.002 252.820, 337.827 248.986 C 344.606 247.344, 350.403 246, 350.709 246 C 351.866 246, 350.118 271.760, 348.572 277.500 C 340.430 307.735, 318.501 333.170, 292.411 342.640 C 283.942 345.714, 282.202 345.655, 280.895 342.250 C 278.477 335.954, 272.706 314.390, 269.254 298.750 C 267.220 289.538, 265.319 282.021, 265.028 282.046 C 264.738 282.072, 261.350 286.342, 257.500 291.535 C 251.742 299.302, 250.548 301.555, 250.769 304.238 C 251.290 310.555, 258.184 334.624, 262.560 345.407 C 263.299 347.226, 262.902 347.286, 253.917 346.714 C 243.814 346.070, 232.733 343.486, 222.488 339.385 L 216.113 336.833 207.563 344.166 C 202.860 348.200, 199.009 351.751, 199.006 352.057 C 198.995 353.094, 214.451 360.778, 221.838 363.408 C 232.029 367.036, 244.361 369, 256.955 369 C 306.514 369, 350.689 339.387, 367.341 295 C 378.713 264.689, 372.925 223.302, 353.258 194.288 L 350.403 190.077 346.951 192.145"/>
+          </svg>
+          <span class="brand-name">EnlesWeb</span>
+        </div>
+
+        <div id="cta-price" class="cta-price">
+          <span class="cta-mulai">Mulai</span>
+          <span class="swash"><span id="swash-price" class="swash-bg"></span><span class="swash-text">Rp450.000</span></span>
+        </div>
+
+        <p id="cta-sub" class="cta-sub">Business Rp750.000 &middot; hingga 6 halaman &middot; 7 hari kerja</p>
+
+        <div id="cta-rule" class="cta-rule"></div>
+
+        <ul class="inc-list">
+          <li id="inc-1">Termasuk domain .com atau .id dan hosting 1 tahun</li>
+          <li id="inc-2">Paket Business: teks mentah kamu, kami rapikan</li>
+          <li id="inc-3">Gratis update teks, harga, atau foto di tahun pertama</li>
+        </ul>
+
+        <p id="cta-line" class="cta-line">Ceritakan usahamu lewat <span class="swash"><span id="swash-wa" class="swash-bg"></span><span class="swash-text">WhatsApp</span></span></p>
+
+        <p id="cta-num" class="cta-num">6285156801570</p>
+        <p id="cta-note" class="cta-note">Contoh tampilan dari konsep ENLESWEB.</p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toolbar preview control (di luar kanvas) -->
+<div id="ctl">
+  <button id="pp">Play</button>
+  <button id="rt">Ganti ke 4:5</button>
+  <button id="guide-toggle">Toggle Safe Zone</button>
+  <input type="range" id="rng" min="0" max="15" step="0.01" value="0">
+  <span id="tt">0.00 / 15.00 s</span>
+</div>
+
+<script>
+/* =========================================================
+   TIMELINE UTAMA TUNGGAL (15.0 detik, paused, siap di-seek)
+   ========================================================= */
+const tl = (typeof gsap !== 'undefined') ? gsap.timeline({ paused: true }) : null;
+
+const q = new URLSearchParams(location.search);
+const st = document.getElementById('stage');
+const box = document.getElementById('box');
+const hold = document.getElementById('holder');
+const ctl = document.getElementById('ctl');
+const pp = document.getElementById('pp');
+const rng = document.getElementById('rng');
+const tt = document.getElementById('tt');
+const rt = document.getElementById('rt');
+const guideToggle = document.getElementById('guide-toggle');
+const safeGuide = document.getElementById('safe-guide');
+
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+/* =========================================================
+   BUILD TIMELINE
+   ========================================================= */
+function buildTimeline(t) {
+  /* State awal ditulis eksplisit supaya frame 0 tegas dan seek deterministik */
+  t.set('#hook-l1', { autoAlpha: 1, y: 0 })
+    .set('#hook-l2', { autoAlpha: 1, y: 0 })
+    .set('#hook-l3', { autoAlpha: 0, y: 22 })
+    .set('#swash-hook', { scaleX: 0 })
+    .set('#hook-sub', { autoAlpha: 0, y: 14 })
+    .set('#sc-split', { autoAlpha: 0 })
+    .set('#split-divider', { scaleY: 0 })
+    .set('#col-starter', { autoAlpha: 0, y: 16 })
+    .set('#col-business', { autoAlpha: 0, y: 16 })
+    .set('#phone-starter', { autoAlpha: 0, y: 60 })
+    .set('#phone-business', { autoAlpha: 0, y: 60 })
+    .set('#screen-starter', { yPercent: 0 })
+    .set('#screen-business', { yPercent: 0 })
+    .set('#sc-detail', { autoAlpha: 0 })
+    .set('#crop-win', { scale: 1.06 })
+    .set('#crop-img', { y: -1365 })
+    .set('#detail-cap', { autoAlpha: 0, y: 10 })
+    .set('#sc-cta', { autoAlpha: 0 })
+    .set('#brand-row', { autoAlpha: 0, y: 10 })
+    .set('#cta-price', { autoAlpha: 0, y: 14 })
+    .set('#swash-price', { scaleX: 0 })
+    .set('#cta-sub', { autoAlpha: 0, y: 10 })
+    .set('#cta-rule', { scaleX: 0 })
+    .set('#inc-1', { autoAlpha: 0, y: 10 })
+    .set('#inc-2', { autoAlpha: 0, y: 10 })
+    .set('#inc-3', { autoAlpha: 0, y: 10 })
+    .set('#cta-line', { autoAlpha: 0, y: 12 })
+    .set('#swash-wa', { scaleX: 0 })
+    .set('#cta-num', { autoAlpha: 0 })
+    .set('#cta-note', { autoAlpha: 0 });
+
+  /* ADEGAN 1: HOOK (0.00s - 2.85s) */
+  t.to('#hook-l3', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 1.10)
+    .to('#swash-hook', { scaleX: 1, duration: 0.42, ease: 'power2.out' }, 1.18)
+    .to('#hook-sub', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 1.95)
+    .to('#sc-hook', { autoAlpha: 0, y: -34, duration: 0.30, ease: 'power2.in' }, 2.55);
+
+  /* ADEGAN 2: SPLIT SCREEN DUA PAKET (2.85s - 7.30s) */
+  t.to('#sc-split', { autoAlpha: 1, duration: 0.01 }, 2.85)
+    .to('#split-divider', { scaleY: 1, duration: 0.35, ease: 'power2.out' }, 2.85)
+    .to('#col-starter', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 2.95)
+    .to('#col-business', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 3.05)
+    .to('#phone-starter', { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 3.35)
+    .to('#phone-business', { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 3.47)
+    .to('#screen-business', { yPercent: -40, duration: 1.10, ease: 'power1.inOut' }, 4.30)
+    .to('#screen-starter', { yPercent: -28, duration: 1.10, ease: 'power1.inOut' }, 5.60)
+    .to('#sc-split', { autoAlpha: 0, duration: 0.28, ease: 'power2.in' }, 7.30);
+
+  /* ADEGAN 3: DETAIL TABEL JADWAL (7.45s - 10.65s) */
+  t.to('#sc-detail', { autoAlpha: 1, duration: 0.01 }, 7.45)
+    .to('#crop-win', { scale: 1.00, duration: 0.45, ease: 'power2.out' }, 7.45)
+    .to('#detail-cap', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 8.10)
+    .to('#crop-img', { y: -2453, duration: 1.45, ease: 'power1.inOut' }, 8.45)
+    .to('#crop-win', { scale: 1.05, duration: 0.35, ease: 'power2.in' }, 10.30)
+    .to('#sc-detail', { autoAlpha: 0, duration: 0.35, ease: 'power2.in' }, 10.30);
+
+  /* ADEGAN 4: CTA (10.75s - 15.00s) */
+  t.to('#sc-cta', { autoAlpha: 1, duration: 0.01 }, 10.75)
+    .to('#brand-row', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 10.85)
+    .to('#cta-price', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 11.25)
+    .to('#swash-price', { scaleX: 1, duration: 0.42, ease: 'power2.out' }, 11.40)
+    .to('#cta-sub', { autoAlpha: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 11.60)
+    .to('#cta-rule', { scaleX: 1, duration: 0.30, ease: 'power2.out' }, 11.95)
+    .to('#inc-1', { autoAlpha: 1, y: 0, duration: 0.26, ease: 'power2.out' }, 12.05)
+    .to('#inc-2', { autoAlpha: 1, y: 0, duration: 0.26, ease: 'power2.out' }, 12.25)
+    .to('#inc-3', { autoAlpha: 1, y: 0, duration: 0.26, ease: 'power2.out' }, 12.45)
+    .to('#cta-line', { autoAlpha: 1, y: 0, duration: 0.30, ease: 'power2.out' }, 12.85)
+    .to('#swash-wa', { scaleX: 1, duration: 0.42, ease: 'power2.out' }, 12.95)
+    .to('#cta-num', { autoAlpha: 1, duration: 0.26 }, 13.30)
+    .to('#cta-note', { autoAlpha: 1, duration: 0.26 }, 13.55);
+
+  /* Kunci durasi tepat 15,000 detik */
+  t.to({}, { duration: 0.001 }, 14.999);
+
+  t.eventCallback('onUpdate', () => {
+    const time = t.time();
+    rng.value = time;
+    tt.textContent = time.toFixed(2) + ' / 15.00 s';
+    pp.textContent = t.isActive() ? 'Pause' : (time >= 14.99 ? 'Ulangi' : 'Play');
+  });
+  t.eventCallback('onComplete', () => { pp.textContent = 'Ulangi'; });
+}
+
+if (tl) buildTimeline(tl);
+
+/* =========================================================
+   API perekaman otomatis (dipakai render-video.js)
+   ========================================================= */
+window.TOTAL = 15.0;
+window.seekFrame = (f, fps = 30) => {
+  if (!tl) return;
+  tl.pause();
+  tl.time(f / fps, false);
+};
+
+/* =========================================================
+   FIT & KONTROL
+   ========================================================= */
+function fit() {
+  const H = st.offsetHeight;
+  const s = q.has('clean') ? 1 : Math.min(hold.clientWidth / 1080, hold.clientHeight / H);
+  st.style.transform = 'scale(' + s + ')';
+  box.style.width = (1080 * s) + 'px';
+  box.style.height = (H * s) + 'px';
+}
+
+if (q.get('ratio') === '4x5') st.classList.add('r45');
+if (q.has('clean')) {
+  document.body.classList.add('clean');
+  ctl.classList.add('hide');
+  document.body.style.overflow = 'auto';
+}
+
+rt.onclick = () => {
+  st.classList.toggle('r45');
+  rt.textContent = st.classList.contains('r45') ? 'Ganti ke 9:16' : 'Ganti ke 4:5';
+  fit();
+};
+
+guideToggle.onclick = () => {
+  safeGuide.classList.toggle('hide');
+};
+
+pp.onclick = () => {
+  if (!tl) return;
+  if (tl.isActive()) {
+    tl.pause();
+    pp.textContent = 'Play';
+  } else if (tl.time() >= 14.99) {
+    tl.restart();
+    pp.textContent = 'Pause';
+  } else {
+    tl.play();
+    pp.textContent = 'Pause';
+  }
+};
+
+rng.oninput = () => {
+  if (!tl) return;
+  tl.pause();
+  tl.time(+rng.value);
+};
+
+addEventListener('resize', fit);
+addEventListener('keydown', (e) => {
+  if (e.code === 'Space' && e.target.tagName !== 'BUTTON') {
+    e.preventDefault();
+    pp.click();
+  } else if ((e.code === 'ArrowRight' || e.code === 'ArrowLeft') && e.target.tagName !== 'INPUT' && tl) {
+    e.preventDefault();
+    tl.pause();
+    tl.time(clamp(tl.time() + (e.code === 'ArrowRight' ? 0.5 : -0.5), 0, 15));
+  }
+});
+
+fit();
+document.fonts.ready.then(() => {
+  fit();
+  if (q.has('t')) {
+    if (tl) { tl.pause(); tl.time(clamp(+q.get('t'), 0, 15)); }
+  } else if (!q.has('pause') && tl) {
+    tl.play(0);
+  }
+});
+</script>
+</body>
+</html>
