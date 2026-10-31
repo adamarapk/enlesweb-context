@@ -1,7 +1,7 @@
 # VISI ENLESWEB
 **Versi:** 2.3
 **Terakhir diperbarui:** 31 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/positioning.md` (v2.3), `Strategy/model-bisnis.md` (v1.8), `Delivery & Operations/sop.md` (aturan transaksi v1.4, Decision 022, Decision 023, & Addendum 31 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/positioning.md` (v2.2), `Strategy/model-bisnis.md` (v1.7), `Delivery & Operations/sop.md` (aturan transaksi v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Pernyataan Visi
@@ -114,5 +114,6 @@ Composer layout-lab (live di `preview.enlesweb.com`) dipakai untuk membantu pros
 | 21 Oktober 2026 | Versi 2.0: Pencatatan checkpoint 12 jam pertama Meta Ads, tanpa mengubah gerbang Website Builder atau keputusan jangka panjang. | Laporan pemilik, `Business Memory/weekly-review.md` |
 | 28 Oktober 2026 | Versi 2.1: Unifikasi hosting 6 demo portofolio (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta pengaktifan penuh SOP v1.3 pra-DP berbasis Stateless Compact ID (/p/<id>) (Decision 022 CLOSED). | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | Versi 2.2: Penegasan prinsip wireframe monokrom ENERGY 1 / RHYTHM 2 / MOTION 1 bebas bias estetika, pemutakhiran kapabilitas layout-lab (5 preset klien, chassis iPhone 15 pada live iframe, virtual artboard 1280px), dan SOP v1.4. | Addendum Decision 023, SOP v1.4, DESIGN.md |
+| 31 Oktober 2026 | Versi 2.3: Pemutakhiran spesifikasi teknis layout-lab ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi CVE (commit 9a1de77 & 19671bf). | Addendum Decision 023 (31 Oktober 2026) |
 
 

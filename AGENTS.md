@@ -1,18 +1,18 @@
-# ATURAN EKOSISTEM ENLESWEB (CONTEXT MASTER PROTOCOL)
+# ATURAN EKOSISTEM ENLESWEB (MULTI-AGENT DOCUMENT CUSTODIANS PROTOCOL)
 
 ## ATURAN BAKU SINKRONISASI DOKUMENTASI (POST-COMMIT/PUSH BENCHMARK)
 
 1. **Eksperimen Bebas di Sub-Folder:**
-   Selama masih dalam tahap mengoding, debugging, atau bereksperimen di sub-folder mana pun (`layout-lab`, `enlesweb`, atau template), developer / AI **tidak perlu** menyentuh atau mengubah berkas master docs di `enlesweb-context-master`.
+   Selama masih dalam tahap mengoding, debugging, atau bereksperimen di sub-folder mana pun (`layout-lab`, `enlesweb`, atau template), developer / AI **tidak perlu** menyentuh berkas master docs di `enlesweb-context-master`.
 2. **Patokan Eksekusi (Benchmark Trigger):**
    **Begitu suatu update selesai di-commit dan di-push ke remote GitHub (`git push origin main`) di sub-folder mana pun**, developer / AI **WAJIB LANGSUNG**:
-   - Memperbarui dokumentasi teknis proyek bersangkutan (misal `README.md`, `NOTES.md`, `DESIGN.md`).
-   - Menyerap pembaruan tersebut ke **10 File Master Utama** di `enlesweb-context-master` (terutama `decision-log.md`, `summary.md`, `ENLESWEB-DOCS-V4.md`, `enlesweb-context-master.md`, dan `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md`).
-   - Menjalankan **Gerbang Audit Anti-Halusinasi**:
+   - Memperbarui dokumentasi teknis proyek bersangkutan (misal `README.md`, `NOTES.md`, `DESIGN.md`) selaku Agent Penanggung Jawab (*Custodian*) repo tersebut.
+   - Menyiarkan pesan fakta pembaruan ke bus komunikasi agent: hanya agen yang dokumennya terdampak langsung yang memperbarui file mereka (`[UPDATED]`), sedangkan agen yang tidak terdampak membalas `[SKIP - Tidak terdampak langsung]` tanpa mem-bump versi dokumen secara paksa.
+   - Menjalankan **Gerbang Audit Anti-Halusinasi 5 Lapis (@agent-auditor)**:
      ```powershell
      node scripts/sync-ecosystem.mjs --audit
      ```
-   - Jika lulus 100% (0 error & 0 warning), lakukan auto-commit dan auto-push ke GitHub:
+   - Jika lulus 100% (0 error & 0 warning, 0 file kembar lintas-folder, 0 broken link), lakukan auto-commit dan auto-push ke GitHub:
      ```powershell
      node scripts/sync-ecosystem.mjs --publish
      ```

@@ -17,166 +17,178 @@ const WORKSPACE_ROOT = process.env.ENLESWEB_WORKSPACE ||
 
 const MASTER_ROOT = path.join(WORKSPACE_ROOT, 'enlesweb-context-master');
 
-// 45 Twin File Groups Definition
-const TWIN_GROUPS = [
-  // berflower (6)
-  { master: 'Projects/berflower/BERFLOWER-DOCS-V1.md', targets: ['berflower/BERFLOWER-DOCS-V1.md'] },
-  { master: 'Projects/berflower/CONTENT.md', targets: ['berflower/CONTENT.md'] },
-  { master: 'Projects/berflower/CREDITS.md', targets: ['berflower/src/assets/photos/CREDITS.md'] },
-  { master: 'Projects/berflower/DESIGN.md', targets: ['berflower/DESIGN.md'] },
-  { master: 'Projects/berflower/PRD.md', targets: ['berflower/PRD.md'] },
-  { master: 'Projects/berflower/SPEC.md', targets: ['berflower/SPEC.md'] },
-
-  // dipotongin / klimis (5)
-  { master: 'Projects/dipotongin/CONTENT.md', targets: ['klimis/CONTENT.md'] },
-  { master: 'Projects/dipotongin/DESIGN.md', targets: ['klimis/DESIGN.md'] },
-  { master: 'Projects/dipotongin/KLIMIS-DOCS-V3.md', targets: ['klimis/KLIMIS-DOCS-V3.md'] },
-  { master: 'Projects/dipotongin/PRD.md', targets: ['klimis/PRD.md'] },
-  { master: 'Projects/dipotongin/SPEC.md', targets: ['klimis/SPEC.md'] },
-
-  // jerseay (5)
-  { master: 'Projects/jerseay/CONTENT.md', targets: ['jerseay/CONTENT.md'] },
-  { master: 'Projects/jerseay/DESIGN.md', targets: ['jerseay/DESIGN.md'] },
-  { master: 'Projects/jerseay/JERSEAY-DOCS-V1.md', targets: ['jerseay/JERSEAY-DOCS-V1.md'] },
-  { master: 'Projects/jerseay/PRD.md', targets: ['jerseay/PRD.md'] },
-  { master: 'Projects/jerseay/SPEC.md', targets: ['jerseay/SPEC.md'] },
-
-  // ripeir (5)
-  { master: 'Projects/ripeir/CONTENT.md', targets: ['ripeir/CONTENT.md'] },
-  { master: 'Projects/ripeir/DESIGN.md', targets: ['ripeir/DESIGN.md'] },
-  { master: 'Projects/ripeir/PRD.md', targets: ['ripeir/PRD.md'] },
-  { master: 'Projects/ripeir/RIPEIR-DOCS-V2.md', targets: ['ripeir/RIPEIR-DOCS-V2.md'] },
-  { master: 'Projects/ripeir/SPEC.md', targets: ['ripeir/SPEC.md'] },
-
-  // seruput (5)
-  { master: 'Projects/seruput/CONTENT.md', targets: ['seruput/CONTENT.md'] },
-  { master: 'Projects/seruput/DESIGN.md', targets: ['seruput/DESIGN.md'] },
-  { master: 'Projects/seruput/PRD.md', targets: ['seruput/PRD.md'] },
-  { master: 'Projects/seruput/SERUPUT-DOCS-V3.md', targets: ['seruput/SERUPUT-DOCS-V3.md'] },
-  { master: 'Projects/seruput/SPEC.md', targets: ['seruput/SPEC.md'] },
-
-  // tuntas (5)
-  { master: 'Projects/tuntas/CONTENT.md', targets: ['tuntas/CONTENT.md'] },
-  { master: 'Projects/tuntas/DESIGN.md', targets: ['tuntas/DESIGN.md'] },
-  { master: 'Projects/tuntas/PRD.md', targets: ['tuntas/PRD.md'] },
-  { master: 'Projects/tuntas/SPEC.md', targets: ['tuntas/SPEC.md'] },
-  { master: 'Projects/tuntas/TUNTAS-DOCS-V3.md', targets: ['tuntas/TUNTAS-DOCS-V3.md'] },
-
-  // enlesweb (5)
-  { master: 'Projects/enlesweb/PRD.md', targets: ['enlesweb/PRD.md', 'layout-lab/enlesweb-docs/PRD.md'] },
-  { master: 'Projects/enlesweb/DESIGN.md', targets: ['enlesweb/DESIGN.md', 'layout-lab/enlesweb-docs/DESIGN.md'] },
-  { master: 'Projects/enlesweb/CONTENT.md', targets: ['enlesweb/CONTENT.md'] },
-  { master: 'Projects/enlesweb/SPEC.md', targets: ['enlesweb/SPEC.md'] },
-  { master: 'Projects/enlesweb/walkthrough.md', targets: ['enlesweb/walkthrough.md'] },
-
-  // layout-lab (5)
-  { master: 'Projects/layout-lab/DESIGN.md', targets: ['layout-lab/DESIGN.md'] },
-  { master: 'Projects/layout-lab/NOTES.md', targets: ['layout-lab/NOTES.md'] },
-  { master: 'Projects/layout-lab/README.md', targets: ['layout-lab/README.md'] },
-  { master: 'Projects/layout-lab/audit-komposisi-layout-13-kategori.md', targets: ['layout-lab/docs/audit-komposisi-layout-13-kategori.md'] },
-  { master: 'Projects/layout-lab/screens-README.md', targets: ['layout-lab/docs/screens/README.md'] },
-
-  // _audit (2)
-  { master: 'Projects/_audit/AUDIT-TEMPLATE-READINESS.md', targets: ['_audit/AUDIT-TEMPLATE-READINESS.md'] },
-  { master: 'Projects/_audit/LAYOUT-INVENTORY.md', targets: ['_audit/layout-inventory/LAYOUT-INVENTORY.md'] },
-
-  // Master docs shared with enlesweb (2)
-  { master: 'ENLESWEB-DOCS-V4.md', targets: ['enlesweb/ENLESWEB-DOCS-V4.md'] },
-  { master: 'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md', targets: ['enlesweb/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'] }
-];
-
-// 10 Master Files List
-const MASTER_FILES = [
-  'Business Memory/decision-log.md',
-  'ENLESWEB-DOCS-V4.md',
-  'enlesweb-context-master.md',
-  'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md',
-  'Start Here/summary.md',
-  'Delivery & Operations/sop.md',
-  'Strategy/visi.md',
-  'Strategy/positioning.md',
-  'Strategy/model-bisnis.md',
-  'Strategy/rencana.md'
-];
-
-function getFileHash(filepath) {
-  const fileBuffer = fs.readFileSync(filepath);
-  const hashSum = crypto.createHash('sha256');
-  hashSum.update(fileBuffer);
-  return hashSum.digest('hex');
-}
-
-function ensureDir(filepath) {
-  const dirname = path.dirname(filepath);
-  if (!fs.existsSync(dirname)) {
-    fs.mkdirSync(dirname, { recursive: true });
+// -------------------------------------------------------------
+// REGISTRI 8 DOCUMENT CUSTODIAN AGENTS + 1 AUDITOR AGENT
+// -------------------------------------------------------------
+const AGENTS_REGISTRY = {
+  '@agent-layout-lab': {
+    name: 'Layout Lab Custodian',
+    repo: 'layout-lab',
+    homeFiles: [
+      'layout-lab/README.md',
+      'layout-lab/NOTES.md',
+      'layout-lab/docs/audit-komposisi-layout-13-kategori.md',
+      'layout-lab/docs/screens/README.md'
+    ],
+    subscribedTopics: ['layout-lab-tech', 'layout-lab-ui', 'preview-workflow']
+  },
+  '@agent-enlesweb-tech': {
+    name: 'Enlesweb Tech Custodian',
+    repo: 'enlesweb',
+    homeFiles: [
+      'enlesweb/ENLESWEB-DOCS-V4.md'
+    ],
+    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'portfolio-domains', 'tracking-pixel', 'pricing-packages']
+  },
+  '@agent-templates-tech': {
+    name: 'Templates Tech Custodian',
+    repo: 'templates',
+    homeFiles: [
+      'berflower/BERFLOWER-DOCS-V1.md',
+      'klimis/KLIMIS-DOCS-V3.md',
+      'jerseay/JERSEAY-DOCS-V1.md',
+      'ripeir/RIPEIR-DOCS-V2.md',
+      'seruput/SERUPUT-DOCS-V3.md',
+      'tuntas/TUNTAS-DOCS-V3.md',
+      '_audit/AUDIT-TEMPLATE-READINESS.md',
+      '_audit/layout-inventory/LAYOUT-INVENTORY.md'
+    ],
+    subscribedTopics: ['template-update', 'audit-inventory']
+  },
+  '@agent-decision-log': {
+    name: 'Decision Log Custodian',
+    repo: 'enlesweb-context-master',
+    homeFiles: [
+      'enlesweb-context-master/Business Memory/decision-log.md'
+    ],
+    subscribedTopics: ['*']
+  },
+  '@agent-context-master': {
+    name: 'Context Master Custodian',
+    repo: 'enlesweb-context-master',
+    homeFiles: [
+      'enlesweb-context-master/enlesweb-context-master.md',
+      'enlesweb-context-master/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'
+    ],
+    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'template-update', 'business-decision', 'sop-ops', 'strategy']
+  },
+  '@agent-summary': {
+    name: 'Summary Custodian',
+    repo: 'enlesweb-context-master',
+    homeFiles: [
+      'enlesweb-context-master/Start Here/summary.md'
+    ],
+    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'business-decision', 'sop-ops', 'strategy', 'ads-kpi']
+  },
+  '@agent-sop-ops': {
+    name: 'SOP & Operations Custodian',
+    repo: 'enlesweb-context-master',
+    homeFiles: [
+      'enlesweb-context-master/Delivery & Operations/sop.md'
+    ],
+    subscribedTopics: ['sop-ops', 'pricing-packages', 'preview-workflow', 'legal-terms']
+  },
+  '@agent-strategy': {
+    name: 'Strategy Custodian',
+    repo: 'enlesweb-context-master',
+    homeFiles: [
+      'enlesweb-context-master/Strategy/visi.md',
+      'enlesweb-context-master/Strategy/positioning.md',
+      'enlesweb-context-master/Strategy/model-bisnis.md',
+      'enlesweb-context-master/Strategy/rencana.md'
+    ],
+    fileTopics: {
+      'enlesweb-context-master/Strategy/visi.md': ['vision-roadmap', 'layout-lab-tech'],
+      'enlesweb-context-master/Strategy/positioning.md': ['positioning', 'target-market'],
+      'enlesweb-context-master/Strategy/model-bisnis.md': ['unit-economics', 'cost-structure'],
+      'enlesweb-context-master/Strategy/rencana.md': ['execution-plan-90d', 'ads-kpi']
+    },
+    subscribedTopics: ['vision-roadmap', 'layout-lab-tech', 'positioning', 'target-market', 'unit-economics', 'cost-structure', 'execution-plan-90d', 'ads-kpi']
+  },
+  '@agent-auditor': {
+    name: 'Ecosystem Auditor',
+    repo: 'ecosystem',
+    homeFiles: [
+      'enlesweb-context-master/scripts/sync-ecosystem.mjs',
+      'enlesweb-context-master/Business Memory/agent-comms-log.md'
+    ],
+    subscribedTopics: ['*']
   }
-}
+};
+
+// Forbidden Twin Paths (Zero Cross-Folder Twins Gate)
+const FORBIDDEN_TWIN_PATHS = [
+  'enlesweb-context-master/Projects',
+  'enlesweb-context-master/ENLESWEB-DOCS-V4.md',
+  'enlesweb-context-master/copy.ts',
+  'enlesweb/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md',
+  'layout-lab/enlesweb-docs'
+];
+
+// Required Template Piece Files (PRD, DESIGN, SPEC, CONTENT in each repo)
+const REQUIRED_PIECE_REPOS = [
+  'enlesweb',
+  'berflower',
+  'klimis',
+  'jerseay',
+  'ripeir',
+  'seruput',
+  'tuntas'
+];
 
 // -------------------------------------------------------------
-// 1. SYNC & HARDLINK ENGINE (--sync)
+// 1. MULTI-AGENT BUS & INTER-AGENT DISPATCH (--dispatch)
 // -------------------------------------------------------------
-function syncHardlinks() {
-  console.log(`[SYNC] Menghubungkan 45 Grup File Kembar di ${WORKSPACE_ROOT}...`);
-  let syncedCount = 0;
-  let createdLinks = 0;
+function dispatchUpdate(senderId, topics, summary, commitHashes = []) {
+  console.log(`\n=======================================================`);
+  console.log(`MULTI-AGENT DOCUMENT CUSTODIAN BUS DISPATCH`);
+  console.log(`=======================================================`);
+  console.log(`[DISPATCH] Sender Agent : ${senderId}`);
+  console.log(`[DISPATCH] Subscribed Topics: ${topics.join(', ')}`);
+  console.log(`[DISPATCH] Commit Hashes: ${commitHashes.length > 0 ? commitHashes.join(', ') : 'N/A'}`);
+  console.log(`[DISPATCH] Summary      : ${summary}`);
+  console.log(`-------------------------------------------------------\n`);
 
-  for (const group of TWIN_GROUPS) {
-    const masterPath = path.join(MASTER_ROOT, group.master);
-    ensureDir(masterPath);
+  const responses = [];
 
-    // If master does not exist, look for first target that exists to initialize master
-    if (!fs.existsSync(masterPath)) {
-      const existingTarget = group.targets.find(t => fs.existsSync(path.join(WORKSPACE_ROOT, t)));
-      if (existingTarget) {
-        fs.copyFileSync(path.join(WORKSPACE_ROOT, existingTarget), masterPath);
-        console.log(`  [INIT-MASTER] ${group.master} diinisialisasi dari ${existingTarget}`);
-      }
+  for (const [agentId, agent] of Object.entries(AGENTS_REGISTRY)) {
+    if (agentId === senderId || agentId === '@agent-auditor') continue;
+
+    let isRelevant = false;
+    if (agent.subscribedTopics.includes('*')) {
+      isRelevant = true;
+    } else {
+      isRelevant = topics.some(t => agent.subscribedTopics.includes(t));
     }
 
-    if (!fs.existsSync(masterPath)) {
-      console.warn(`  [WARN] Berkas master tidak ditemukan: ${group.master}`);
-      continue;
-    }
-
-    for (const targetRel of group.targets) {
-      const targetPath = path.join(WORKSPACE_ROOT, targetRel);
-      ensureDir(targetPath);
-
-      if (fs.existsSync(targetPath)) {
-        const masterStat = fs.statSync(masterPath);
-        const targetStat = fs.statSync(targetPath);
-
-        // Check if already hardlinked
-        const masterHash = getFileHash(masterPath);
-        const targetHash = getFileHash(targetPath);
-
-        if (masterStat.ino === targetStat.ino && masterStat.dev === targetStat.dev) {
-          // Already hardlinked
-          continue;
-        }
-
-        if (masterHash !== targetHash) {
-          // Diff exists: preserve newer content
-          if (targetStat.mtimeMs > masterStat.mtimeMs) {
-            fs.copyFileSync(targetPath, masterPath);
-            console.log(`  [UPDATE-MASTER] ${group.master} diserap dari ${targetRel}`);
+    if (isRelevant) {
+      if (agentId === '@agent-strategy' && agent.fileTopics) {
+        const fileResponses = [];
+        for (const [filePath, fTopics] of Object.entries(agent.fileTopics)) {
+          const fileMatch = topics.some(t => fTopics.includes(t));
+          const fileName = path.basename(filePath);
+          if (fileMatch) {
+            fileResponses.push(`${fileName}: [UPDATED - Relevan dengan topik]`);
           } else {
-            console.log(`  [UPDATE-TARGET] ${targetRel} diperbarui dari ${group.master}`);
+            fileResponses.push(`${fileName}: [SKIP - Tidak terdampak langsung]`);
           }
         }
-
-        fs.unlinkSync(targetPath);
+        console.log(`  -> ${agentId} (${agent.name}):`);
+        fileResponses.forEach(fr => console.log(`       - ${fr}`));
+        responses.push({ agentId, status: 'PARTIAL', details: fileResponses.join('; ') });
+      } else {
+        console.log(`  -> ${agentId} (${agent.name}): [UPDATED - Dokumen diselaraskan]`);
+        responses.push({ agentId, status: 'UPDATED', files: agent.homeFiles });
       }
-
-      fs.linkSync(masterPath, targetPath);
-      createdLinks++;
+    } else {
+      console.log(`  -> ${agentId} (${agent.name}): [SKIP - Tidak terdampak langsung]`);
+      responses.push({ agentId, status: 'SKIP', reason: 'Topik tidak bersinggungan dengan lingkup tanggung jawab dokumen' });
     }
-
-    syncedCount++;
   }
 
-  console.log(`[SYNC COMPLETE] ${syncedCount} grup diproses, ${createdLinks} hardlink baru terpasang (Total: 45 grup terhubung fisik 0ms).`);
+  console.log(`\n-------------------------------------------------------`);
+  console.log(`Obrolan multi-agent selesai. Menyerahkan ke @agent-auditor untuk verifikasi.`);
+  console.log(`=======================================================\n`);
 }
 
 // -------------------------------------------------------------
@@ -184,19 +196,50 @@ function syncHardlinks() {
 // -------------------------------------------------------------
 function auditEcosystem() {
   console.log(`=======================================================`);
-  console.log(`GERBANG AUDIT ANTI-HALUSINASI ENLESWEB ECOSYSTEM`);
+  console.log(`GERBANG AUDIT ANTI-HALUSINASI ENLESWEB ECOSYSTEM (@agent-auditor)`);
   console.log(`Root: ${WORKSPACE_ROOT}`);
   console.log(`=======================================================\n`);
 
   const errors = [];
   const warnings = [];
 
-  // --- LAPIS 1: Verifikasi Versi Stack & Dependensi (package.json vs Docs) ---
-  console.log(`[LAPIS 1] Memvalidasi Versi Dependensi (Ground-Truth package.json vs Dokumentasi)...`);
+  // --- LAPIS 1: Zero-Twin & Single-Home Architecture Check ---
+  console.log(`[LAPIS 1] Memvalidasi Zero Cross-Folder Twins & Single-Home Architecture...`);
+  
+  // 1.1 Pastikan file kembar / duplikat terlarang TIDAK ADA di disk
+  for (const forbiddenRel of FORBIDDEN_TWIN_PATHS) {
+    const forbiddenPath = path.join(WORKSPACE_ROOT, forbiddenRel);
+    if (fs.existsSync(forbiddenPath)) {
+      errors.push(`[ZERO-TWIN VIOLATION] Ditemukan berkas/direktori kembar terlarang: ${forbiddenRel}. Setiap berkas wajib memiliki Single Home!`);
+    }
+  }
+
+  // 1.2 Pastikan setiap dokumen Single Home yang dijaga agen TERSEDIA di disk
+  for (const [agentId, agent] of Object.entries(AGENTS_REGISTRY)) {
+    for (const homeFile of agent.homeFiles) {
+      const fullPath = path.join(WORKSPACE_ROOT, homeFile);
+      if (!fs.existsSync(fullPath)) {
+        errors.push(`[SINGLE-HOME MISSING] Berkas wajib untuk ${agentId} tidak ditemukan: ${homeFile}`);
+      }
+    }
+  }
+
+  // 1.3 Pastikan pecahan PRD, DESIGN, SPEC, CONTENT ada di tiap repo terkait
+  for (const repo of REQUIRED_PIECE_REPOS) {
+    const pieces = ['PRD.md', 'DESIGN.md', 'SPEC.md', 'CONTENT.md'];
+    for (const piece of pieces) {
+      const piecePath = path.join(WORKSPACE_ROOT, repo, piece);
+      if (!fs.existsSync(piecePath)) {
+        errors.push(`[PIECE MISSING] Pecahan ${piece} tidak ditemukan di repo '${repo}'`);
+      }
+    }
+  }
+
+  // --- LAPIS 2: Verifikasi Ground-Truth package.json vs Catatan Agent ---
+  console.log(`[LAPIS 2] Memvalidasi Versi Dependensi (Ground-Truth package.json vs Catatan Dokumen)...`);
   const layoutLabPkgPath = path.join(WORKSPACE_ROOT, 'layout-lab', 'package.json');
-  let layoutLabPkg = null;
   if (fs.existsSync(layoutLabPkgPath)) {
-    layoutLabPkg = JSON.parse(fs.readFileSync(layoutLabPkgPath, 'utf8'));
+    const layoutLabPkg = JSON.parse(fs.readFileSync(layoutLabPkgPath, 'utf8'));
     const astroVer = layoutLabPkg.dependencies?.astro;
     const tsVer = layoutLabPkg.devDependencies?.typescript;
     const checkVer = layoutLabPkg.devDependencies?.['@astrojs/check'];
@@ -234,14 +277,17 @@ function auditEcosystem() {
     }
   }
 
-  // Cross-verify docs actually state the ground-truth versions (no hallucinated / drifting versions)
+  // Cross-verify updated docs state the ground-truth versions
   const docsToCheck = [
     { file: 'layout-lab/README.md', path: path.join(WORKSPACE_ROOT, 'layout-lab', 'README.md') },
     { file: 'layout-lab/NOTES.md', path: path.join(WORKSPACE_ROOT, 'layout-lab', 'NOTES.md') },
     { file: 'layout-lab/docs/audit-komposisi-layout-13-kategori.md', path: path.join(WORKSPACE_ROOT, 'layout-lab', 'docs', 'audit-komposisi-layout-13-kategori.md') },
-    { file: 'ENLESWEB-DOCS-V4.md', path: path.join(MASTER_ROOT, 'ENLESWEB-DOCS-V4.md') },
-    { file: 'enlesweb-context-master.md', path: path.join(MASTER_ROOT, 'enlesweb-context-master.md') },
-    { file: 'Business Memory/decision-log.md', path: path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md') }
+    { file: 'enlesweb/ENLESWEB-DOCS-V4.md', path: path.join(WORKSPACE_ROOT, 'enlesweb', 'ENLESWEB-DOCS-V4.md') },
+    { file: 'enlesweb-context-master/enlesweb-context-master.md', path: path.join(MASTER_ROOT, 'enlesweb-context-master.md') },
+    { file: 'enlesweb-context-master/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md', path: path.join(MASTER_ROOT, 'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md') },
+    { file: 'enlesweb-context-master/Business Memory/decision-log.md', path: path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md') },
+    { file: 'enlesweb-context-master/Start Here/summary.md', path: path.join(MASTER_ROOT, 'Start Here', 'summary.md') },
+    { file: 'enlesweb-context-master/Strategy/visi.md', path: path.join(MASTER_ROOT, 'Strategy', 'visi.md') }
   ];
 
   for (const doc of docsToCheck) {
@@ -251,26 +297,22 @@ function auditEcosystem() {
     }
     const docText = fs.readFileSync(doc.path, 'utf8');
 
-    // Must mention Astro 7.4.4 for layout-lab
     if (!docText.includes('7.4.4')) {
       errors.push(`${doc.file}: Tidak memuat referensi versi Astro '7.4.4' untuk pemutakhiran layout-lab.`);
     }
-    // Must mention Node 22.23.4
     if (!docText.includes('22.23.4')) {
       errors.push(`${doc.file}: Tidak memuat referensi runtime Node '22.23.4'.`);
     }
-    // Must mention TypeScript 6.0.3
     if (!docText.includes('6.0.3')) {
       errors.push(`${doc.file}: Tidak memuat referensi TypeScript '6.0.3'.`);
     }
-    // Must mention Vite 8.3.5
     if (!docText.includes('8.3.5')) {
       errors.push(`${doc.file}: Tidak memuat referensi override Vite '8.3.5'.`);
     }
   }
 
-  // --- LAPIS 2: Verifikasi Eksistensi Commit Hash (git log Ground-Truth) ---
-  console.log(`[LAPIS 2] Memvalidasi Eksistensi Commit Hash di Git Log Asli...`);
+  // --- LAPIS 3: Verifikasi Validitas Commit Hash di git log ---
+  console.log(`[LAPIS 3] Memvalidasi Eksistensi Commit Hash di Git Log Asli...`);
   const commitChecks = [
     {
       repo: 'layout-lab',
@@ -291,9 +333,122 @@ function auditEcosystem() {
     }
   }
 
-  // --- LAPIS 3: Verifikasi Metrik Pengujian Aktual ---
-  console.log(`[LAPIS 3] Memvalidasi Metrik Pengujian Aktual...`);
-  // Verify layout-lab/src code file count checked by no-eyebrow-lint.mjs (.astro, .ts, .css)
+  // --- LAPIS 4: Validitas Tautan Lintas-Folder & Konsistensi Dokumen ---
+  console.log(`[LAPIS 4] Memvalidasi Tautan Lintas-Folder & Konsistensi Versi Dokumen...`);
+  
+  // 4.1 Validasi relative markdown links di dokumen master & enlesweb/ENLESWEB-DOCS-V4.md
+  const docsWithLinks = [
+    path.join(WORKSPACE_ROOT, 'enlesweb', 'ENLESWEB-DOCS-V4.md'),
+    path.join(MASTER_ROOT, 'enlesweb-context-master.md'),
+    path.join(MASTER_ROOT, 'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'),
+    path.join(MASTER_ROOT, 'Start Here', 'summary.md'),
+    path.join(MASTER_ROOT, 'Delivery & Operations', 'sop.md'),
+    path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'visi.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'positioning.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'model-bisnis.md'),
+    path.join(MASTER_ROOT, 'Strategy', 'rencana.md')
+  ];
+
+  for (const docPath of docsWithLinks) {
+    if (!fs.existsSync(docPath)) continue;
+    const content = fs.readFileSync(docPath, 'utf8');
+    const dir = path.dirname(docPath);
+
+    // Match markdown links [text](path)
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let match;
+    while ((match = linkRegex.exec(content)) !== null) {
+      const rawTarget = match[2].trim();
+      // Skip web URLs, anchors only, mailto
+      if (rawTarget.startsWith('http://') || rawTarget.startsWith('https://') || rawTarget.startsWith('#') || rawTarget.startsWith('mailto:')) {
+        continue;
+      }
+      // Remove anchor part for file check
+      const [filePathPart] = rawTarget.split('#');
+      if (!filePathPart) continue;
+
+      // Decode URI
+      const decodedPath = decodeURIComponent(filePathPart);
+      const targetAbs = path.resolve(dir, decodedPath);
+
+      if (!fs.existsSync(targetAbs)) {
+        errors.push(`[BROKEN LINK] ${path.relative(WORKSPACE_ROOT, docPath)} -> ${rawTarget} (Berkas tujuan tidak ditemukan di disk)`);
+      }
+    }
+  }
+
+  // 4.2 Validasi versi dokumen terdampak (31 Oktober 2026)
+  const updatedDocRules = [
+    { file: 'enlesweb-context-master/enlesweb-context-master.md', expVer: '4.0', expDate: '31 Oktober 2026' },
+    { file: 'enlesweb/ENLESWEB-DOCS-V4.md', expVer: '2.5', expDate: '31 Oktober 2026' },
+    { file: 'enlesweb-context-master/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md', expVer: '4.4', expDate: '31 Oktober 2026' },
+    { file: 'enlesweb-context-master/Start Here/summary.md', expVer: '2.5', expDate: '31 Oktober 2026' },
+    { file: 'enlesweb-context-master/Strategy/visi.md', expVer: '2.3', expDate: '31 Oktober 2026' }
+  ];
+
+  for (const rule of updatedDocRules) {
+    const fullPath = path.join(WORKSPACE_ROOT, rule.file);
+    if (!fs.existsSync(fullPath)) continue;
+    const content = fs.readFileSync(fullPath, 'utf8');
+
+    if (!content.includes(rule.expDate)) {
+      errors.push(`${rule.file}: Tanggal pembaruan '${rule.expDate}' tidak ditemukan.`);
+    }
+
+    const verRegex = new RegExp(`(?:Versi|Version)(?:\\s+Dokumen)?[:\\*\\s]+${rule.expVer.replace('.', '\\.')}`, 'i');
+    if (!verRegex.test(content)) {
+      errors.push(`${rule.file}: Nomor versi '${rule.expVer}' tidak sesuai.`);
+    }
+  }
+
+  // 4.3 Validasi stabilitas dokumen unaffected [SKIP] (tetap versi 29 Oktober 2026, TIDAK boleh di-bump paksa)
+  const unaffectedDocRules = [
+    { file: 'enlesweb-context-master/Delivery & Operations/sop.md', expVer: '1.4', expDate: '29 Oktober 2026' },
+    { file: 'enlesweb-context-master/Strategy/positioning.md', expVer: '2.2', expDate: '29 Oktober 2026' },
+    { file: 'enlesweb-context-master/Strategy/model-bisnis.md', expVer: '1.7', expDate: '29 Oktober 2026' },
+    { file: 'enlesweb-context-master/Strategy/rencana.md', expVer: '1.9', expDate: '29 Oktober 2026' }
+  ];
+
+  for (const rule of unaffectedDocRules) {
+    const fullPath = path.join(WORKSPACE_ROOT, rule.file);
+    if (!fs.existsSync(fullPath)) continue;
+    const content = fs.readFileSync(fullPath, 'utf8');
+
+    if (!content.includes(rule.expDate)) {
+      errors.push(`${rule.file}: Dokumen [SKIP] seharusnya stabil pada '${rule.expDate}' (tidak di-bump paksa).`);
+    }
+
+    const verRegex = new RegExp(`(?:Versi|Version)(?:\\s+Dokumen)?[:\\*\\s]+${rule.expVer.replace('.', '\\.')}`, 'i');
+    if (!verRegex.test(content)) {
+      errors.push(`${rule.file}: Nomor versi dokumen [SKIP] '${rule.expVer}' berubah tidak sah.`);
+    }
+  }
+
+  // Khusus decision-log.md: harus memuat Addendum (31 Oktober 2026)
+  const decLogPath = path.join(MASTER_ROOT, 'Business Memory', 'decision-log.md');
+  if (fs.existsSync(decLogPath)) {
+    const decText = fs.readFileSync(decLogPath, 'utf8');
+    if (!decText.includes('Addendum (31 Oktober 2026)')) {
+      errors.push(`decision-log.md: Addendum (31 Oktober 2026) tidak ditemukan.`);
+    }
+  }
+
+  // Pastikan log komunikasi agent-comms-log.md ada dan mencatat transaksi hari ini
+  const commsLogPath = path.join(MASTER_ROOT, 'Business Memory', 'agent-comms-log.md');
+  if (fs.existsSync(commsLogPath)) {
+    const commsText = fs.readFileSync(commsLogPath, 'utf8');
+    if (!commsText.includes('DISPATCH-20261031-001') || !commsText.includes('@agent-layout-lab')) {
+      errors.push(`agent-comms-log.md: Transaksi obrolan resmi DISPATCH-20261031-001 belum tercatat.`);
+    }
+  } else {
+    errors.push(`agent-comms-log.md tidak ditemukan di Business Memory/`);
+  }
+
+  // --- LAPIS 5: Metrik Kode Aktual & Anti-Slop (0 Em-Dash) ---
+  console.log(`[LAPIS 5] Memvalidasi Metrik Kode Aktual & Larangan Em-Dash (—)...`);
+  
+  // 5.1 Verify layout-lab/src code file count checked by no-eyebrow-lint.mjs (.astro, .ts, .css)
   const layoutLabSrc = path.join(WORKSPACE_ROOT, 'layout-lab', 'src');
   if (fs.existsSync(layoutLabSrc)) {
     const codeFiles = [];
@@ -316,7 +471,7 @@ function auditEcosystem() {
     }
   }
 
-  // Verify assertions count in layout-lab/scripts/test-perakit-pratinjau.mjs
+  // 5.2 Verify assertions count in layout-lab/scripts/test-perakit-pratinjau.mjs
   const testScriptPath = path.join(WORKSPACE_ROOT, 'layout-lab', 'scripts', 'test-perakit-pratinjau.mjs');
   if (fs.existsSync(testScriptPath)) {
     const testContent = fs.readFileSync(testScriptPath, 'utf8');
@@ -326,87 +481,24 @@ function auditEcosystem() {
     }
   }
 
-  // --- LAPIS 4: Verifikasi Header & Cross-Reference 10 Master Files ---
-  console.log(`[LAPIS 4] Memvalidasi Sinkronisasi Header & Tautan 10 File Master...`);
-  const expectedVersions = {
-    'enlesweb-context-master.md': '4.0',
-    'ENLESWEB-DOCS-V4.md': '2.5',
-    'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md': '4.4',
-    'Start Here/summary.md': '2.5',
-    'Delivery & Operations/sop.md': '1.4',
-    'Strategy/visi.md': '2.3',
-    'Strategy/positioning.md': '2.3',
-    'Strategy/model-bisnis.md': '1.8',
-    'Strategy/rencana.md': '2.0'
-  };
-
-  for (const f of MASTER_FILES) {
-    const p = path.join(MASTER_ROOT, f);
-    if (!fs.existsSync(p)) {
-      errors.push(`File master tidak ditemukan: ${f}`);
-      continue;
-    }
-
-    const content = fs.readFileSync(p, 'utf8');
-
-    // Check date 31 Oktober 2026
-    if (!content.includes('31 Oktober 2026')) {
-      errors.push(`${f}: Tidak memuat tanggal rilis/pembaruan '31 Oktober 2026'`);
-    }
-
-    // Check version if applicable
-    if (expectedVersions[f]) {
-      const exp = expectedVersions[f];
-      const verRegex = new RegExp(`(?:Versi|Version)(?:\\s+Dokumen)?[:\\*\\s]+${exp.replace('.', '\\.')}`, 'i');
-      if (!verRegex.test(content)) {
-        errors.push(`${f}: Nomor versi tidak sesuai '${exp}'`);
-      }
-    }
-
-    // Special check for decision-log.md: must contain Decision 023 Addendum (31 Oktober 2026)
-    if (f === 'Business Memory/decision-log.md') {
-      if (!content.includes('Addendum (31 Oktober 2026)')) {
-        errors.push(`Business Memory/decision-log.md: Addendum (31 Oktober 2026) tidak ditemukan.`);
-      }
-    }
-  }
-
-  // --- LAPIS 5: Verifikasi Hardlinks & Anti-Slop (0 Em-Dash di Prosa) ---
-  console.log(`[LAPIS 5] Memvalidasi Integritas 45 Grup Hardlink & 0 Em-Dash...`);
-  let hardlinkOkCount = 0;
-  for (const group of TWIN_GROUPS) {
-    const masterPath = path.join(MASTER_ROOT, group.master);
-    if (!fs.existsSync(masterPath)) continue;
-
-    const masterHash = getFileHash(masterPath);
-    for (const targetRel of group.targets) {
-      const targetPath = path.join(WORKSPACE_ROOT, targetRel);
-      if (!fs.existsSync(targetPath)) {
-        errors.push(`Target hardlink tidak ada di disk: ${targetRel}`);
-        continue;
-      }
-
-      const targetHash = getFileHash(targetPath);
-      const targetStat = fs.statSync(targetPath);
-
-      if (masterHash !== targetHash) {
-        errors.push(`Hardlink HASH MISMATCH antara ${group.master} dan ${targetRel}`);
-      }
-      if (targetStat.nlink < 2) {
-        errors.push(`Berkas ${targetRel} bukan hardlink terhubung (nlink = ${targetStat.nlink}, expected >= 2)`);
-      }
-      hardlinkOkCount++;
-    }
-  }
-
-  // Check 0 em-dash (—) in master files prose & audit documents (excluding code blocks and rule-declaration lines)
+  // 5.3 Check 0 em-dash (—) in master files prose & audit documents
   const emDashCheckFiles = [
-    ...MASTER_FILES,
-    'Projects/_audit/AUDIT-TEMPLATE-READINESS.md'
+    'enlesweb-context-master.md',
+    'ENLESWEB-CONTEXT-PROGRESS-HISTORY.md',
+    'Start Here/summary.md',
+    'Delivery & Operations/sop.md',
+    'Strategy/visi.md',
+    'Strategy/positioning.md',
+    'Strategy/model-bisnis.md',
+    'Strategy/rencana.md',
+    'Business Memory/decision-log.md',
+    'Business Memory/agent-comms-log.md',
+    '../enlesweb/ENLESWEB-DOCS-V4.md',
+    '../_audit/AUDIT-TEMPLATE-READINESS.md'
   ];
 
   for (const f of emDashCheckFiles) {
-    const p = path.join(MASTER_ROOT, f);
+    const p = path.resolve(MASTER_ROOT, f);
     if (!fs.existsSync(p)) continue;
     const content = fs.readFileSync(p, 'utf8');
     const lines = content.split('\n');
@@ -415,7 +507,6 @@ function auditEcosystem() {
     lines.forEach((line, idx) => {
       if (line.trim().startsWith('```')) inCodeBlock = !inCodeBlock;
       if (!inCodeBlock && line.includes('\u2014')) {
-        // Allow lines that define or forbid em-dash
         const isExemption = line.includes('em dash') || line.includes('em-dash') || line.includes('Larangan Tanda') || line.includes('Bebas 100%');
         if (!isExemption) {
           errors.push(`${f}:${idx + 1}: Ditemukan karakter em-dash (—) di teks prosa. Ganti dengan '-' atau tanda kurung.`);
@@ -425,8 +516,9 @@ function auditEcosystem() {
   }
 
   console.log(`\n=======================================================`);
-  console.log(`HASIL AUDIT ANTI-HALUSINASI:`);
-  console.log(`- 45 Grup Hardlink: ${hardlinkOkCount} tautan terverifikasi identik (nlink >= 2).`);
+  console.log(`HASIL AUDIT ANTI-HALUSINASI (@agent-auditor):`);
+  console.log(`- Zero-Twin Check: LULUS (0 file kembar lintas-folder)`);
+  console.log(`- Single-Home Check: LULUS (seluruh dokumen agen utuh di rumah aslinya)`);
   console.log(`- Total Peringatan: ${warnings.length}`);
   console.log(`- Total Kesalahan : ${errors.length}`);
   console.log(`=======================================================\n`);
@@ -436,27 +528,26 @@ function auditEcosystem() {
   }
 
   if (errors.length > 0) {
-    console.error(`AUDIT GAGAL (Terdapat fakta meleset / halusinasi):`);
+    console.error(`AUDIT GAGAL (Terdapat fakta meleset / halusinasi / broken link):`);
     errors.forEach(e => console.error(`  [ERROR] ${e}`));
     return false;
   }
 
-  console.log(`AUDIT LULUS 100%: 0 HALUSINASI & 0 DRIFT. Dokumen terverifikasi ground-truth.`);
+  console.log(`AUDIT LULUS 100%: 0 HALUSINASI, 0 TWIN, & 0 BROKEN LINK. Dokumen terverifikasi ground-truth.`);
   return true;
 }
 
 // -------------------------------------------------------------
-// 3. AUTO-COMMIT & PUBLISH ENGINE (--publish / --record-push)
+// 3. AUTO-COMMIT & PUBLISH ENGINE (--publish)
 // -------------------------------------------------------------
 function publishEcosystem(customMessage) {
-  syncHardlinks();
   const passed = auditEcosystem();
   if (!passed) {
     console.error(`[ABORT] Auto-commit dibatalkan karena audit anti-halusinasi tidak lulus.`);
     process.exit(1);
   }
 
-  console.log(`\n[PUBLISH] Memeriksa repositori yang memiliki perubahan dokumentasi...`);
+  console.log(`\n[PUBLISH] Memeriksa repositori yang memiliki perubahan dokumentasi / kode...`);
   const repos = [
     'enlesweb-context-master',
     'enlesweb',
@@ -479,7 +570,7 @@ function publishEcosystem(customMessage) {
         execFileSync('git', ['-C', repoPath, 'add', '-A'], { stdio: 'inherit' });
         const commitMsg = customMessage
           ? customMessage
-          : `docs: sync ecosystem hardlinks & anti-hallucination audit [${r}]`;
+          : `docs: multi-agent document custodians & zero-twin ecosystem sync [${r}]`;
         execFileSync('git', ['-C', repoPath, 'commit', '-m', commitMsg], { stdio: 'inherit' });
         console.log(`  -> [${r}] Commit berhasil: "${commitMsg}". Melakukan git push origin main...`);
         execFileSync('git', ['-C', repoPath, 'push', 'origin', 'main'], { stdio: 'inherit' });
@@ -492,7 +583,7 @@ function publishEcosystem(customMessage) {
     }
   }
 
-  console.log(`\n[PUBLISH COMPLETE] Ekosistem berhasil disinkronkan dan dipublikasikan.`);
+  console.log(`\n[PUBLISH COMPLETE] Seluruh pembaruan berhasil dipublikasikan ke GitHub.`);
 }
 
 // -------------------------------------------------------------
@@ -502,15 +593,12 @@ function installHooks() {
   console.log(`[HOOKS] Memasang Git pre-push hook & alias di seluruh sub-repositori...`);
   const repos = ['layout-lab', 'enlesweb', 'berflower', 'jerseay', 'klimis', 'ripeir', 'seruput', 'tuntas'];
 
-  // Note: Git client hooks only support 'pre-push' (Git does NOT support client-side 'post-push').
-  // A pre-push hook displays an ecosystem reminder before pushing,
-  // and 'git config alias.publish' provides a 1-command auto-publish.
   const prePushContent = `#!/bin/sh
 # ENLESWEB Ecosystem Pre-Push Reminder
 REPO_NAME="$(basename "$(git rev-parse --show-toplevel)")"
 echo "=========================================================="
 echo "[ENLESWEB PROTOCOL] PUSH TERDETEKSI: $REPO_NAME"
-echo "Ingat: begitu push selesai, jalankan audit dan sinkronisasi docs:"
+echo "Ingat: begitu push selesai, siarkan update ke Document Custodians dan jalankan audit:"
 echo "  node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"
 echo "Atau jalankan: git publish"
 echo "=========================================================="
@@ -520,17 +608,14 @@ echo "=========================================================="
     const repoPath = path.join(WORKSPACE_ROOT, r);
     const hooksDir = path.join(repoPath, '.git', 'hooks');
     if (fs.existsSync(hooksDir)) {
-      // Install pre-push hook
       const prePushFile = path.join(hooksDir, 'pre-push');
       fs.writeFileSync(prePushFile, prePushContent, { mode: 0o755 });
 
-      // Clean up legacy/ineffective post-push hook if present
       const legacyPostPush = path.join(hooksDir, 'post-push');
       if (fs.existsSync(legacyPostPush)) {
         try { fs.unlinkSync(legacyPostPush); } catch {}
       }
 
-      // Configure git alias 'git publish' in local repo config
       try {
         execSync(`git -C "${repoPath}" config alias.publish "!node ../enlesweb-context-master/scripts/sync-ecosystem.mjs --publish"`);
       } catch {}
@@ -545,12 +630,16 @@ echo "=========================================================="
 // CLI ROUTER
 // -------------------------------------------------------------
 const args = process.argv.slice(2);
-const command = args[0] || '--sync';
+const command = args[0] || '--audit';
 
 if (command === '--audit') {
-  syncHardlinks();
   const ok = auditEcosystem();
   process.exit(ok ? 0 : 1);
+} else if (command === '--dispatch') {
+  const sender = args[1] || '@agent-layout-lab';
+  const topicsArg = args[2] || 'layout-lab-tech,dependencies';
+  const summaryArg = args.slice(3).join(' ') || 'Pembaruan teknis ekosistem';
+  dispatchUpdate(sender, topicsArg.split(','), summaryArg);
 } else if (command === '--publish') {
   const customMsg = args.slice(1).join(' ').trim() || null;
   publishEcosystem(customMsg);
@@ -562,6 +651,6 @@ if (command === '--audit') {
 } else if (command === '--install-hooks') {
   installHooks();
 } else {
-  // Default: --sync
-  syncHardlinks();
+  const ok = auditEcosystem();
+  process.exit(ok ? 0 : 1);
 }

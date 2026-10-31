@@ -1,10 +1,10 @@
 # ENLESWEB CONTEXT MASTER: DOKUMENTASI TERPADU PLATFORM & 6 TEMPLATE KONSEP
 
-**Versi:** 4.0 (Unifikasi Workspace enlesweb-workspace, Hardlink Ekosistem 45 Grup, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di layout-lab - Decision 023 Addendum & Decision 022 CLOSED)  
+**Versi:** 4.0 (Arsitektur Multi-Agent Document Custodians, Zero File Kembar Lintas-Folder, Audit Anti-Halusinasi, & Upgrade Astro 7.4.4 di layout-lab - Decision 023 Addendum & Decision 022 CLOSED)  
 **Tanggal Rilis:** 31 Oktober 2026  
 **Status Sistem:** Production & Launch-Ready As-Is Website Ecosystem (Tersinkronisasi Penuh Decision 001–023 Addendum 31 Okt, SOP v1.4, workspace tunggal D:\myself\web\enlesweb-workspace, layout-lab Astro 7.4.4 di preview.enlesweb.com)  
 **Target Pengguna Dokumen:** Dokumentasi Teknis Standar, Panduan Arsitektur Sistem, dan Wiki Pengembang  
-**Ringkasan Pembaruan:** Unifikasi tunggal ruang kerja ke D:\myself\web\enlesweb-workspace dengan 45 grup berkas kembar terhubung NTFS Hardlink (0ms latency), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (package.json ground truth, git log hash valid, 10 file master sinkron, 0 em-dash), serta penyerapan pemeliharaan teknis layout-lab hari ini: upgrade ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).  
+**Ringkasan Pembaruan:** Penerapan arsitektur Multi-Agent Document Custodians & Zero File Kembar Lintas-Folder (1 Dokumen = 1 Rumah Asli), ruang obrolan resmi agent-comms-log.md, selektivitas pembaruan dokumen ([UPDATED] vs [SKIP]), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (@agent-auditor), serta penyerapan pemeliharaan teknis layout-lab hari ini: upgrade ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).  
 
 ---
 

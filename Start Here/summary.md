@@ -1,8 +1,8 @@
 # BUSINESS CONTEXT
 **Versi:** 2.5
 **Terakhir diperbarui:** 31 Oktober 2026
-**Sumber:** `enlesweb-context-master.md` (v4.0), `ENLESWEB-DOCS-V4.md` (v2.5), `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md` (v4.4), `Delivery & Operations/sop.md` (aturan transaksi v1.4 CLOSED, Decision 022, Decision 023, & Addendum 31 Oktober 2026), `Strategy/positioning.md` (v2.3), `Strategy/rencana.md` (v2.0), `Strategy/model-bisnis.md` (v1.8), dan `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
-**Ringkasan Pembaruan:** Pada 31 Oktober 2026, unifikasi tunggal workspace lokal `enlesweb-workspace` (D:\myself\web\enlesweb-workspace), 45 grup file kembar terhubung fisik NTFS Hardlink 0ms, otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi, serta pemutakhiran teknis layout-lab ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).
+**Sumber:** `enlesweb-context-master.md` (v4.0), `../enlesweb/ENLESWEB-DOCS-V4.md` (v2.5), `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md` (v4.4), `Delivery & Operations/sop.md` (aturan transaksi v1.4 CLOSED, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Strategy/positioning.md` (v2.2), `Strategy/rencana.md` (v1.9), `Strategy/model-bisnis.md` (v1.7), `Strategy/visi.md` (v2.3), dan `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
+**Ringkasan Pembaruan:** Pada 31 Oktober 2026, unifikasi tunggal workspace lokal `enlesweb-workspace` (D:\myself\web\enlesweb-workspace), penerapan arsitektur Multi-Agent Document Custodians & Zero File Kembar Lintas-Folder (1 Dokumen = 1 Rumah Asli), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (@agent-auditor), serta pemutakhiran teknis layout-lab ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] sudah dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Bisnis
