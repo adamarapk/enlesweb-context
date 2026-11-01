@@ -3,7 +3,7 @@
 ## ATURAN BAKU SINKRONISASI DOKUMENTASI (POST-COMMIT/PUSH BENCHMARK)
 
 1. **Eksperimen Bebas di Sub-Folder:**
-   Selama masih dalam tahap mengoding, debugging, atau bereksperimen di sub-folder mana pun (`layout-lab`, `enlesweb`, atau template), developer / AI **tidak perlu** menyentuh berkas master docs di `enlesweb-context-master`.
+   Selama masih dalam tahap mengoding, debugging, atau bereksperimen di sub-folder mana pun (`layout-lab`, `enlesweb`, `content-machine`, atau template), developer / AI **tidak perlu** menyentuh berkas master docs di `enlesweb-context-master`.
 2. **Patokan Eksekusi (Benchmark Trigger):**
    **Begitu suatu update selesai di-commit dan di-push ke remote GitHub (`git push origin main`) di sub-folder mana pun**, developer / AI **WAJIB LANGSUNG**:
    - Memperbarui dokumentasi teknis proyek bersangkutan (misal `README.md`, `NOTES.md`, `DESIGN.md`) selaku Agent Penanggung Jawab (*Custodian*) repo tersebut.

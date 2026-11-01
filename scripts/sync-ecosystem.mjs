@@ -111,6 +111,15 @@ const AGENTS_REGISTRY = {
     },
     subscribedTopics: ['vision-roadmap', 'layout-lab-tech', 'positioning', 'target-market', 'unit-economics', 'cost-structure', 'execution-plan-90d', 'ads-kpi']
   },
+  '@agent-content-machine': {
+    name: 'Content Machine Custodian',
+    repo: 'content-machine',
+    homeFiles: [
+      'content-machine/CONTENT-MACHINE-DOCS-V1.md',
+      'content-machine/README.md'
+    ],
+    subscribedTopics: ['content-machine', 'marketing-campaign', 'branding-assets']
+  },
   '@agent-auditor': {
     name: 'Ecosystem Auditor',
     repo: 'ecosystem',
@@ -739,7 +748,8 @@ function publishEcosystem(customMessage) {
     'klimis',
     'ripeir',
     'seruput',
-    'tuntas'
+    'tuntas',
+    'content-machine'
   ];
 
   for (const r of repos) {
@@ -782,7 +792,8 @@ function installHooks() {
     'klimis',
     'ripeir',
     'seruput',
-    'tuntas'
+    'tuntas',
+    'content-machine'
   ];
 
   const prePushContent = `#!/bin/sh
