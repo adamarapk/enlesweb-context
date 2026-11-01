@@ -72,7 +72,7 @@ const AGENTS_REGISTRY = {
       'enlesweb-context-master/enlesweb-context-master.md',
       'enlesweb-context-master/ENLESWEB-CONTEXT-PROGRESS-HISTORY.md'
     ],
-    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'template-update', 'business-decision', 'sop-ops', 'strategy']
+    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'template-update', 'business-decision', 'sop-ops', 'strategy', 'content-machine']
   },
   '@agent-summary': {
     name: 'Summary Custodian',
@@ -80,7 +80,7 @@ const AGENTS_REGISTRY = {
     homeFiles: [
       'enlesweb-context-master/Start Here/summary.md'
     ],
-    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'business-decision', 'sop-ops', 'strategy', 'ads-kpi']
+    subscribedTopics: ['enlesweb-tech', 'layout-lab-tech', 'business-decision', 'sop-ops', 'strategy', 'ads-kpi', 'content-machine']
   },
   '@agent-sop-ops': {
     name: 'SOP & Operations Custodian',
@@ -107,9 +107,9 @@ const AGENTS_REGISTRY = {
       'enlesweb-context-master/Strategy/visi.md': ['vision-roadmap', 'layout-lab-tech'],
       'enlesweb-context-master/Strategy/positioning.md': ['positioning', 'target-market'],
       'enlesweb-context-master/Strategy/model-bisnis.md': ['unit-economics', 'cost-structure'],
-      'enlesweb-context-master/Strategy/rencana.md': ['execution-plan-90d', 'ads-kpi']
+      'enlesweb-context-master/Strategy/rencana.md': ['execution-plan-90d', 'ads-kpi', 'content-machine']
     },
-    subscribedTopics: ['vision-roadmap', 'layout-lab-tech', 'positioning', 'target-market', 'unit-economics', 'cost-structure', 'execution-plan-90d', 'ads-kpi']
+    subscribedTopics: ['vision-roadmap', 'layout-lab-tech', 'positioning', 'target-market', 'unit-economics', 'cost-structure', 'execution-plan-90d', 'ads-kpi', 'content-machine']
   },
   '@agent-content-machine': {
     name: 'Content Machine Custodian',

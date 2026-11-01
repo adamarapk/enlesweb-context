@@ -567,5 +567,36 @@ Sebelumnya, analisis kompetitor dan daftar pertanyaan nyata pemilik usaha UMKM b
 ### 3. Alasan
 Menyediakan bank data nyata kebutuhan pasar dan argumen penolak keberatan klien (*objection handling*) bagi tim pemasaran, serta menyediakan studio koding terisolasi untuk pembuatan aset dan generator konten media sosial ENLESWEB.
 
+---
+
+## Decision 025
+- **Tanggal:** 2 November 2026
+- **Topik:** Penyelesaian Fase 1 Asset Factory `content-machine` (Fondasi Desain, 35 Vektor SVG, 5 Render 3D Tactile, 19 Slot Layout, 3 Pilot Post, Linter Otomatis, & Eksepsi Tipografi/Platform)
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Produksi materi iklan berbayar (Meta Ads) dan konten organik Instagram selama ini terkendala ketiadaan standarisasi visual, dependensi pada perakitan manual yang lambat, serta risiko inkonsistensi tipografi dan copy. Ekosistem membutuhkan pabrik aset (*asset factory*) otomatis dengan guardrail ketat agar produksi konten dapat di-batch cepat tanpa melanggar prinsip anti-slop ENLESWEB.
+
+### 2. Keputusan
+1. **Penyelesaian Fondasi Fase 1 `content-machine`:**
+   Mengesahkan selesainya milestone Fase 1 pada repositori `content-machine` (commit `0a81887`), mencakup:
+   - Fondasi Brand: `DESIGN.md`, `src/brand/tokens.css`, `src/brand/motion.css`, dan tipografi lokal Poppins + Kalam OFL.
+   - Pustaka Aset: 35 berkas vektor SVG murni (`src/brand/svg/`) dan 5 render 3D tactile Three.js 2048px berlatar transparan (`puzzle.png`, `phone-slab.png`, `browser-slab.png`, `domain-card.png`, `document-sheet.png`).
+   - 19 Template Layout: 12 Carousel rasio 4:5 (`c01` sampai `c12`) dan 7 Reels rasio 9:16 (`r01` sampai `r07`) berbasis arsitektur `data-slot`.
+   - 3 Pilot Posts: Pilot 1 (Ide 1 Carousel 4-slide), Pilot 2 (Ide 5 Tabel Perbandingan 4:5), Pilot 3 (Ide 7 Reels 15s keyframes).
+   - Tooling & Otomasi: `scripts/audit-svgs.mjs` (35/35 lolos uji XML), `scripts/lint-content.mjs` (linter computed font size, color token whitelist, forbidden words, dan safe-zones), serta `scripts/serve-gallery.mjs` (server pratinjau galeri lokal port 3456).
+2. **Arsitektur Pemisahan Layout & Payload (`data-slot`):**
+   Seluruh template layout tidak meng-hardcode salinan teks kampanye, melainkan menggunakan atribut `data-slot="..."` agar pada Fase 2 siap diinjeksi secara terotomasi oleh mesin JSON compiler (`drafts/*.json`).
+3. **Eksepsi Tipografi E1 & E2 (Terkunci):**
+   - *Exception E1 (Font Tulisan Tangan Kalam):* Diizinkan secara ketat HANYA untuk elemen catatan tempel (*sticky note*), stiker anotasi, atau panah coret tangan, menggunakan lisensi OFL lokal di `src/brand/fonts/kalam/`.
+   - *Exception E2 (Simulasi Chat WhatsApp iOS):* Diizinkan menggunakan font fallback Inter/system-ui dengan warna gelembung khas iOS (`#E9E9EB` incoming, `#DCF7C5` outgoing) untuk menciptakan konteks obrolan yang familiar dan relatable bagi audiens UMKM Indonesia.
+4. **Standarisasi Safe Zone Instagram:**
+   - Carousel 4:5: Mematuhi safe-zone Instagram Profile Grid 3:4 (memotong ~34px di sisi kiri dan kanan saat dilihat di kisi profil 3:4).
+   - Reels 9:16: Mematuhi area aman simetris (margin atas 216px, bawah 280px, kiri-kanan 48px) agar tidak tertutup antarmuka pemutar Instagram/TikTok.
+
+### 3. Alasan
+Membangun fondasi infrastruktur pemasaran yang skalabel dan anti-slop, mengamankan efisiensi waktu kerja pendiri bisnis (maksimal 2 jam per minggu untuk konten organik sesuai `Strategy/rencana.md`), serta memastikan integritas visual dan klaim harga/paket 100% sinkron dengan fakta `enlesweb-context-master.md`.
+
+
 
 
