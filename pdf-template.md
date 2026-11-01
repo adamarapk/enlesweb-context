@@ -9,11 +9,11 @@ Dokumen ini berfungsi sebagai panduan pemilihan template Bukti Pemesanan formal 
 Untuk mempercepat penerbitan dokumen di bawah 2 menit tanpa risiko salah hapus, gunakan template mandiri yang sudah terisi otomatis sesuai paket yang disepakati:
 
 1. **Paket Starter (Rp450.000, 1 halaman):**  
-   Gunakan berkas [`pdf-template-starter.md`](file:///d:/myself/experiments/enlesweb-context-master/pdf-template-starter.md) (DP Rp225.000, Pelunasan Rp225.000, 3 hari kerja, 2x revisi, 2 putaran update konten ringan).
+   Gunakan berkas [`pdf-template-starter.md`](file:///d:/myself/web/enlesweb-workspace/enlesweb-context-master/pdf-template-starter.md) (DP Rp225.000, Pelunasan Rp225.000, 3 hari kerja, 2x revisi, 2 putaran update konten ringan).
 2. **Paket Business (Rp750.000, hingga 6 halaman):**  
-   Gunakan berkas [`pdf-template-business.md`](file:///d:/myself/experiments/enlesweb-context-master/pdf-template-business.md) (DP Rp375.000, Pelunasan Rp375.000, 7 hari kerja, 2x revisi, 4 putaran update konten ringan).
+   Gunakan berkas [`pdf-template-business.md`](file:///d:/myself/web/enlesweb-workspace/enlesweb-context-master/pdf-template-business.md) (DP Rp375.000, Pelunasan Rp375.000, 7 hari kerja, 2x revisi, 4 putaran update konten ringan).
 3. **Paket Growth (Rp1.200.000, hingga 10 halaman + fitur interaktif):**  
-   Gunakan berkas [`pdf-template-growth.md`](file:///d:/myself/experiments/enlesweb-context-master/pdf-template-growth.md) (DP Rp600.000, Pelunasan Rp600.000, 14 hari kerja, 4x revisi, 6 putaran update konten ringan).
+   Gunakan berkas [`pdf-template-growth.md`](file:///d:/myself/web/enlesweb-workspace/enlesweb-context-master/pdf-template-growth.md) (DP Rp600.000, Pelunasan Rp600.000, 14 hari kerja, 4x revisi, 6 putaran update konten ringan).
 4. **Paket Custom (Mulai Rp2.000.000 / Kebutuhan Khusus):**  
    Gunakan naskah template di bawah ini.
 
