@@ -810,7 +810,7 @@ if [ "$REPO_NAME" != "enlesweb-context-master" ]; then
     echo "[ENLESWEB AUTO-CUSTODIAN] Push terdeteksi di $REPO_NAME"
     echo "[ENLESWEB AUTO-CUSTODIAN] Otomatisasi sinkronisasi, audit 5 lapis, & auto-push master docs disiapkan di latar belakang..."
     echo "=========================================================="
-    nohup node "$WATCHER_SCRIPT" "$REPO_NAME" "$PPID" >/dev/null 2>&1 &
+    cmd.exe //c start "" /b node "$WATCHER_SCRIPT" "$REPO_NAME" >/dev/null 2>&1
   fi
 fi
 
