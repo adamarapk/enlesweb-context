@@ -20,6 +20,8 @@ ENLESWEB menyajikan penawaran komersial yang terbagi menjadi 3 tingkatan paket i
 
 Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Cloudflare Workers dengan subdomain kanonikal *.enlesweb.com, Vercel dinonaktifkan per Decision 023), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA. Ekosistem juga dilengkapi internal composer `layout-lab` (live di `preview.enlesweb.com` dengan Dual-Layer Token, chassis iPhone 15, scaled 1280px artboard, dan 5 preset skenario klien) untuk menyusun preview tata letak dummy pra-DP (SOP v1.4 Langkah 3b).
 
+Sebagai landasan operasional dan penajaman materi pemasaran, ekosistem memiliki berkas referensi riset lapangan komprehensif pada [`riset_kompetitor_enlesweb.md`](riset_kompetitor_enlesweb.md) yang mengompilasi 30 pertanyaan nyata pemilik UMKM, analisis perbandingan 15 kompetitor web lokal, dan 30 pilar rencana konten edukasi strategis.
+
 ---
 
 ## DAFTAR ISI (TABLE OF CONTENTS)

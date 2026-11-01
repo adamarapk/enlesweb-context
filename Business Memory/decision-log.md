@@ -543,4 +543,29 @@ Menindaklanjuti hasil evaluasi tata kelola dokumentasi ekosistem ENLESWEB, disep
    - Upgrade Astro ke versi `^7.4.4` di atas runtime Node `22.23.4`, TypeScript `^6.0.3`, `@astrojs/check ^0.9.12`, `playwright-core ^1.64.1`, `puppeteer-core ^25.16.0`, dan override `vite ^8.3.5` untuk memitigasi seluruh CVE keamanan (commit `9a1de77` dan `19671bf`).
    - Hasil audit terverifikasi: `npm run build` lulus (65 berkas no-eyebrow lint, 70 berkas `astro check` dengan 0 error/0 warning/0 hint, 5 rute HTML statis terbangun), `npm test` lulus 100% (46 assertion otomatis composer & fuzzing + 86 skenario visual Playwright).
 
+---
+
+## Decision 024
+- **Tanggal:** 1 November 2026
+- **Topik:** Penambahan Berkas Riset Lapangan & Analisis 15 Kompetitor (`riset_kompetitor_enlesweb.md`), Inisialisasi Studio `content-machine`, dan Registrasi `@agent-content-machine`
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Sebelumnya, analisis kompetitor dan daftar pertanyaan nyata pemilik usaha UMKM belum terdokumentasikan dalam format terstruktur yang siap dipakai sebagai bahan konten edukasi dan materi pemasaran studio. Selain itu, ekosistem membutuhkan repositori mandiri untuk memproduksi konten visual dan motion graphics tanpa mengotori repositori website utama.
+
+### 2. Keputusan
+1. **Penyerapan Berkas Riset Lapangan & 15 Kompetitor (`riset_kompetitor_enlesweb.md`):**
+   Mengesahkan berkas `riset_kompetitor_enlesweb.md` di root master docs sebagai rujukan utama 4 pilar:
+   - Sheet 1: 30 Pertanyaan Nyata Pemilik Bisnis/UMKM tentang Website & Solusi Sesuai SOP v1.4 ENLESWEB.
+   - Sheet 2: Analisis Topik, Hook, & Gap Konten Jasa Website UMKM (Evaluasi 8 Topik Populer Kompetitor).
+   - Sheet 3: Profil Mendalam 15 Kompetitor Jasa Pembuatan Website di Indonesia (Rentang Harga & Celah Pasar).
+   - Sheet 4: 30 Rencana Konten Edukasi Strategis untuk Media Sosial & Pemasaran ENLESWEB.
+   Berkas `Market Research/kompetitor.md` resmi ditautkan ke dokumen utama ini.
+2. **Inisialisasi Repositori `content-machine` & Registrasi `@agent-content-machine`:**
+   Membentuk repositori `content-machine` (remote `https://github.com/adamarapk/enlesweb-content-machine.git`), mendaftarkannya pada entri 10 di `enlesweb.code-workspace`, memasang hook otomasi `.git/hooks/pre-push`, serta mendaftarkan `@agent-content-machine` ke dalam `scripts/sync-ecosystem.mjs` dan `AGENTS.md`.
+
+### 3. Alasan
+Menyediakan bank data nyata kebutuhan pasar dan argumen penolak keberatan klien (*objection handling*) bagi tim pemasaran, serta menyediakan studio koding terisolasi untuk pembuatan aset dan generator konten media sosial ENLESWEB.
+
+
 
