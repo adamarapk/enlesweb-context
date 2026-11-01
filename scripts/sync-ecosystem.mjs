@@ -901,6 +901,9 @@ if (command === '--audit') {
   } else if (['berflower', 'klimis', 'jerseay', 'ripeir', 'seruput', 'tuntas', '_audit'].includes(repoName)) {
     senderId = '@agent-templates-tech';
     defaultTopics = ['template-update'];
+  } else if (repoName === 'content-machine') {
+    senderId = '@agent-content-machine';
+    defaultTopics = ['content-machine'];
   }
 
   const summary = args.slice(2).join(' ').trim() || `Pembaruan pasca-push dari repositori ${repoName}`;
