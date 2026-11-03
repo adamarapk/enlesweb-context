@@ -4,15 +4,15 @@
 > 
 > **Daftar 5 Berkas Bersambung:**
 > 1. enlesweb-part-01-of-05.md: Start Here (summary.md) & Visi Strategis (visi.md)
-> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md) & Rencana Strategis (rencana.md)
-> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md) & Standar Operasional Prosedur (sop.md)
+> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md), Rencana Strategis (rencana.md), Matriks KPI (kpi.md), & Register Mingguan (weekly-review.md)
+> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md), Standar Operasional Prosedur (sop.md), & Register Leads (leads.md)
 > 4. enlesweb-part-04-of-05.md: Decision Log (decision-log.md) & Context Master (enlesweb-context-master.md)
 > 5. enlesweb-part-05-of-05.md: Riset Kompetitor (riset_kompetitor_enlesweb.md) & Dokumentasi Teknis Web V4 (ENLESWEB-DOCS-V4.md)
 
 ---
 
 <!-- ===================================================================== -->
-<!-- DOKUMEN 1 DARI 2 DI PART 2: Strategy/model-bisnis.md -->
+<!-- DOKUMEN 1 DARI 4 DI PART 2: Strategy/model-bisnis.md -->
 <!-- ===================================================================== -->
 
 # MODEL BISNIS ENLESWEB
@@ -276,19 +276,16 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | 28 Oktober 2026 | 1.6 | Penyelarasan unifikasi hosting seluruh ekosistem (*.enlesweb.com) ke Cloudflare Workers, penonaktifan hosting Vercel (Decision 023), dan pemutakhiran acuan ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | 1.7 | Sinkronisasi rujukan operasional SOP v1.4, Addendum Decision 023, dan konfirmasi stabilitas unit economics dengan kesiapan instrumen pra-DP layout-lab. | SOP v1.4, Addendum Decision 023 |
 
-
-
-
 ---
 
 <!-- ===================================================================== -->
-<!-- DOKUMEN 2 DARI 2 DI PART 2: Strategy/rencana.md -->
+<!-- DOKUMEN 2 DARI 4 DI PART 2: Strategy/rencana.md -->
 <!-- ===================================================================== -->
 
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.9
-**Terakhir diperbarui:** 29 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
+**Versi:** 2.0
+**Terakhir diperbarui:** 3 November 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.6), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 027), dan laporan pemilik tentang evaluasi hasil uji coba Meta Ads Minggu 1 per 3 November 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -300,8 +297,8 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 | Tahap | Patokan tanggal | Hasil yang harus ada |
 |---|---|---|
 | Minggu 0: Persiapan (100% CLOSED) | 14 - 20 Okt 2026 | (1) Domain `enlesweb.com` aktif (**CLOSED/SUDAH DIBELI**, Decision 018), (2) Materi iklan Meta 1 Video 15s & 1 Gambar Statis v3 di `campaign-1/` (**CLOSED / SIAP TAYANG**, Decision 016, 020, & 021), (3) Template PDF Bukti Pemesanan selesai dibuat oleh pendiri (**CLOSED**, Decision 020) |
-| Minggu 1: Tes Meta Ads Rp100.000 + Micro-Warm DM IG | 21 - 27 Okt 2026 | Data iklan 7 hari (terpisah dari data Micro-Warm DM IG), lalu kampanye iklan dijeda untuk evaluasi |
-| Keputusan akhir minggu 1 | 28 Okt 2026 | Jalur A, B, atau C (bagian 5) |
+| Minggu 1: Tes Meta Ads Rp100.000 + Micro-Warm DM IG | 21 - 27 Okt 2026 | Uji tayang aktif 21-22 Okt, kendala delivery 23 Okt, dinonaktifkan manual 24 Okt. Belanja Rp42.048 dari deposit Rp130.000 (sisa saldo kas dashboard Rp87.952). Masuk Jalur C. |
+| Keputusan evaluasi minggu 1 | 28 Okt / 3 Nov 2026 | Penetapan Jalur C (iklan dijeda per 24 Okt s.d. 3 Nov, sisa saldo ditahan untuk materi baru content-machine) |
 | Checkpoint hari ke-30 | sekitar 19 Nov 2026 | Hard stop jika 0 DP (bagian 6) |
 | Checkpoint hari ke-60 | sekitar 19 Des 2026 | Review asumsi inti jika DP kurang dari 3 |
 | Evaluasi hari ke-90 | sekitar 18 Jan 2027 | Hitung DP final vs target 10 |
@@ -333,7 +330,18 @@ Untuk memastikan bisnis tidak berjalan berdasarkan ilusi atau pembakaran modal t
 - [KEPUTUSAN] Prospek dari **Micro-Warm Outreach DM IG manual** (2-3 usaha/hari, Decision 013) dicatat secara terpisah agar evaluasi performa iklan Rp100.000 pada tabel di bawah tetap murni dan tidak bias.
 - [KEPUTUSAN] Niche atau demo yang paling banyak diklik dan ditanyakan menjadi sinyal fokus iklan berikutnya.
 
-**Checkpoint awal, 21 Oktober 2026 (setelah 12 jam tayang):** Iklan mulai tayang pukul 09.00. Total belanja dua iklan Rp16.000; sekitar 70% terserap iklan video. Tercatat satu percakapan pesan, tetapi kualifikasinya belum diketahui. Micro-Warm Outreach belum dimulai, DP belum masuk, dan belum ada proyek. Checkpoint ini belum menentukan Jalur A/B/C; tunggu data sampai akhir tes 27 Oktober dan evaluasi pada 28 Oktober.
+**Hasil Evaluasi Akhir Minggu 1 (Data Dashboard 21-22 Oktober 2026 & Status per 3 November 2026):**
+- Iklan tayang mulai 21 Oktober pukul 09.00 WIB dan berjalan normal hingga 22 Oktober 2026.
+- Penyerapan iklan terhenti secara aneh pada 23 Oktober (saldo tidak berkurang dan angka metrik dashboard tidak bertambah).
+- Pada 24 Oktober 2026, iklan dinonaktifkan secara manual oleh pemilik dan tetap berstatus nonaktif (inactive) hingga saat ini (3 November 2026).
+- Realisasi belanja: **Rp42.048** (Video Ad Rp36.167 + Image Ad Rp5.881) dari total modal deposit **Rp130.000**, menyisakan saldo kas dashboard **Rp87.952** yang masih utuh dan aman.
+- Hasil corong iklan: 567 impresi, 471 jangkauan, 2 klik tautan (1 Video CPC Rp36.167, 1 Image CPC Rp5.881), 85 video plays 3 detik, 12 ThruPlays 15 detik, dan 1 pesan WhatsApp masuk via Video Ad.
+- Kualifikasi lead: 1 pesan masuk di hari pertama (21 Oktober) hanya menanyakan info atau harga umum / pesan bawaan template iklan, lalu tidak merespons kembali saat dibalas (ghosting/batal), tidak terjadi kesepakatan (tidak deal), dan tidak di-followup lanjutan. Kanal Micro-Warm Outreach IG belum dijalankan (0 akun). DP masuk: 0 klien.
+
+**Penetapan Keputusan Evaluasi:**
+- Realisasi metrik: Menghasilkan 1 pesan masuk (kurang dari ambang sinyal 2-3 chat valid) dan 0 DP.
+- Status resmi: **Jalur C** (Kurang dari 2 chat -> Iklan dijeda. Ganti satu variabel kreatif sebelum pengujian lanjutan).
+- Tindak lanjut: Iklan tetap dinonaktifkan. Sisa saldo kas Rp87.952 diamankan untuk re-launch menggunakan materi kreatif baru yang diproduksi melalui pabrik aset dan studio editorial `content-machine` (Fase 1 sampai 3, Decision 025 & Decision 026).
 
 **Aturan keputusan pada hari ke-7 (28 Okt 2026):**
 | Jalur | Kondisi (Metrik Iklan Meta Ads) | Tindakan |
@@ -380,6 +388,7 @@ Dihitung sejak iklan tayang.
   2. **Konten Organik Instagram `@enlesweb` (Kanal Kedua Gratis - Decision 008):**
      - Memakai ulang aset kreatif yang ada (tangkapan layar demo dan klip video dari `campaign-1/`).
      - Maksimal 2-3 post per minggu, dibatch sekali seminggu, maksimal sekitar 2 jam.
+     - [FAKTA/KEPUTUSAN 025 & 026] Penguatan Produksi via `content-machine`: Untuk menjaga batas waktu maksimal 2 jam per minggu, studio mengoperasikan pabrik aset dan studio editorial `content-machine` (v1.4, Astro 7.4.5 + React 19.3.1 TSX, 8 UI Primitives, 19 arketipe layout bertipe ketat, Studio Workspace full light theme di port 3456 dengan dynamic auto-fit canvas, safe zone overlays, registri klaim resmi, dan pipeline kompilasi batch instan `compile-post.mjs` berbundel ZIP) guna memproduksi Instagram Carousel 4:5 dan video Reels 9:16 secara terstandarisasi.
      - Prioritas: chat WA, lalu pengerjaan klien, lalu konten.
      - Jika proyek aktif sudah 3, konten organik dijeda otomatis.
   3. **Eksperimen Micro-Warm Outreach Manual (Kanal Ketiga Gratis Rp0 - Decision 013):**
@@ -433,10 +442,216 @@ Dihitung sejak iklan tayang.
 | 21 Oktober 2026 | Versi 1.7: Pencatatan checkpoint 12 jam pertama kampanye Meta Ads dan penegasan bahwa evaluasi akhir Minggu 1 tetap pada 28 Oktober. | Laporan pemilik, `Business Memory/weekly-review.md` |
 | 28 Oktober 2026 | Versi 1.8: Unifikasi hosting seluruh aset digital (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta penyelarasan acuan operasional ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | Versi 1.9: Sinkronisasi kesiapan operasional layout-lab (5 preset skenario klien, chassis fisik iPhone 15 pada live iframe, virtual artboard 1280px), SOP v1.4, dan Addendum Decision 023. | SOP v1.4, Addendum Decision 023 |
+| 3 November 2026 | Versi 2.0: Pencatatan hasil aktual uji tayang Meta Ads Minggu 1 (Jalur C, belanja Rp42.048 dari deposit Rp130.000, 1 chat non-closing, sisa saldo kas dashboard Rp87.952 aman), penonaktifan manual sejak 24 Oktober, dan penahanan saldo untuk re-launch materi content-machine. | Laporan pemilik, `Business Memory/weekly-review.md`, Decision 027 |
 
+---
 
+<!-- ===================================================================== -->
+<!-- DOKUMEN 3 DARI 4 DI PART 2: Business Memory/kpi.md -->
+<!-- ===================================================================== -->
 
+# Matriks Metrik Kumulatif & KPI Bisnis ENLESWEB
 
+Checkpoint terakhir: 3 November 2026, pasca-uji coba Meta Ads Minggu 1 (Jalur C) dan konsolidasi content-machine.
+
+Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala dari kompilasi mingguan `Business Memory/weekly-review.md` sesuai mandat `Strategy/rencana.md` (Bagian 10) dan pemodelan `Strategy/model-bisnis.md`.
+
+---
+
+## 1. Dasbor Utama Fase Peluncuran (Target 10 Klien Pertama)
+
+| Indikator Kunci | Target Ambang Batas | Kondisi Aktual | Status |
+|---|---|---|---|
+| **Jumlah Klien Selesai & Lunas** | 10 klien | 0 klien | 🟡 Belum Dimulai |
+| **Blended Gross Margin Kas** | Minimal **≥ 60,0%** | - % | ⚪ Menunggu Data |
+| **Portofolio Domain (.com : .id)** | Dominan `.com` (> 60% porsi) | 0 : 0 | ⚪ Menunggu Data |
+| **Konversi PDF Bukti Pemesanan ke DP** | Target **≥ 80,0%** (Decision 012) | - % | ⚪ Menunggu Data |
+| **Rata-rata Jam Kerja Starter** | **5 - 12 jam / klien** (Max 15 jam) | - jam | ⚪ Menunggu Data |
+| **Rata-rata Imbalan Kerja Pendiri** | **≥ Rp35.000 / jam** | - Rp/jam | ⚪ Menunggu Data |
+| **Plafon Pengeluaran Iklan 90 Hari** | Maksimal Rp500.000 - Rp1.000.000 | Rp42.048 terpakai (deposit Rp130.000, sisa saldo dashboard Rp87.952) | 🟢 Dalam batas |
+
+---
+
+## 2. Metrik Finansial Kumulatif (Kas Nyata)
+
+### A. Pengeluaran Modal & Operasional Tetap
+- **Biaya Domain Resmi Studio (`enlesweb.com`):** Rp152.070 (Domainesia 1 thn - TEREALISASI, Decision 018).
+- **Akumulasi Belanja Iklan Meta Ads:** Rp42.048 (Realisasi 21-22 Oktober 2026, terhenti 23 Oktober, nonaktif 24 Oktober - 3 November 2026; sisa saldo kas dashboard Rp87.952 dari deposit modal Rp130.000, Decision 027).
+- **Akumulasi Langganan AI Tools:** Rp0 (Terkunci flat Rp100.000/bln sampai 5 klien lunas, Decision 014).
+- **Pengeluaran Operasional Lainnya:** Rp0
+
+### B. Pendapatan & Margin Kotor Kas
+- **Total DP Masuk (50%):** Rp0
+- **Total Pelunasan Masuk (50%):** Rp0
+- **Total Pendapatan Kotor Diterima:** Rp0
+- **Total Belanja Domain Klien (Domainesia):** Rp0
+  - *Subtotal Belanja Domain `.com` (@Rp152.070):* Rp0
+  - *Subtotal Belanja Domain `.id` (@Rp243.090):* Rp0
+- **Laba Kotor Kas Kumulatif:** Rp0
+- **Realisasi Blended Gross Margin:** **- %** (Belum ada transaksi / Menunggu Data; Target: ≥ 60%)
+
+---
+
+## 3. Metrik Corong Penjualan & Efisiensi Akuisisi (Funnel)
+
+| Tahap Corong Penjualan | Kumulatif Meta Ads | Kumulatif Micro-Warm IG | Total Gabungan | Rasio Konversi |
+|---|---|---|---|---|
+| **Tayangan (Impressions)** | 567 tayangan (502 Video + 65 Image) | 0 | 567 tayangan | - |
+| **Jangkauan (Reach)** | 471 akun (415 Video + 56 Image) | 0 | 471 akun | - |
+| **Klik Tautan Iklan / Profil** | 2 klik (1 Video + 1 Image) | 0 | 2 klik | CTR Video 0,20%, Image 1,54% |
+| **Percakapan Pesan Masuk** | 1 percakapan (Video Ad) | 0 | 1 percakapan | Biaya/chat Rp36.167 (tanya info umum, ghosting) |
+| **Konsultasi / Rekomendasi Paket** | 0 prospek | 0 | 0 prospek | Belum berlanjut ke konsultasi |
+| **Dokumen Bukti Pemesanan Terkirim** | 0 berkas | 0 berkas | 0 berkas | - |
+| **DP 50% Masuk (Klien Terakuisisi)** | 0 klien | 0 klien | 0 klien | 0% (Jalur C) |
+| **Biaya Akuisisi Kas (CAC Nyata)** | Belum terealisasi | Rp0 / klien | Belum terealisasi | - |
+
+Catatan evaluasi iklan Minggu 1: total belanja Rp42.048 (dari modal deposit Rp130.000) menghasilkan 1 percakapan pesan WhatsApp via Video Ad yang tidak berlanjut (ghosting/batal). Iklan terhenti delivery pada 23 Oktober, dinonaktifkan manual pada 24 Oktober 2026, dan resmi masuk status Jalur C. Sisa saldo Rp87.952 tersimpan aman di akun Meta Ads untuk persiapan re-launch materi baru dari content-machine.
+
+---
+
+## 4. Distribusi Proyek & Beban Operasional
+
+### A. Distribusi Paket & Ekstensi Domain
+- **Paket Starter (Rp450.000):** 0 proyek (Domain: 0 `.com` / 0 `.id`)
+- **Paket Business (Rp750.000):** 0 proyek (Domain: 0 `.com` / 0 `.id`)
+- **Paket Growth (Rp1.200.000):** 0 proyek (Domain: 0 `.com` / 0 `.id`)
+- **Paket Custom:** 0 proyek (Hanya jika prospek meminta sendiri)
+
+### B. Alokasi Waktu Kerja Pendiri & SLA
+- **Total Jam Kerja Pengerjaan Klien:** 0 jam
+- **Rata-rata Durasi Pengerjaan Kalender:** 0 hari (SLA Starter 3-5 hari, Business 5-7 hari, Growth 7-10 hari)
+- **Proyek On-Hold 60 Hari (Decision 017):** 0 proyek
+- **Klaim Putaran Update Ringan Tahunan Terpakai (Decision 015):** 0 kali putaran
+- **Pendapatan Kelebihan Kuota Update (@Rp50.000):** Rp0
+
+---
+
+## 5. Gerbang Keputusan & Evaluasi Milestone Strategis
+
+### 🚪 Gerbang 1: Evaluasi 3 Klien Pertama
+- **Pemicu:** 3 proyek pertama selesai, tayang, dan lunas 100%.
+- **Objektif Evaluasi:**
+  1. Mengukur *blended gross margin* aktual: apakah bertahan di atas ambang batas minimal 60%?
+  2. Jika seluruh 3 klien memilih `.id` dan margin tertekan < 60%, percepat evaluasi pembatasan kuota domain `.id` atau penyesuaian harga Starter (Decision 010).
+  3. Memvalidasi kelayakan operasional Starter: apakah jam kerja pengerjaan berada di koridor 5-12 jam dengan nilai imbalan yang rasional? (Decision 012 & `model-bisnis.md` Bagian 3.C).
+
+### 🚪 Gerbang 2: Evaluasi 5 Klien Selesai Lunas
+- **Pemicu:** Klien ke-5 selesai dan lunas 100% ATAU menangani 2 proyek Growth/Custom secara simultan.
+- **Objektif Evaluasi:**
+  - Prasyarat pembukaan izin peningkatan langganan AI tools dari Rp100.000/bulan menjadi Rp300.000 - Rp400.000/bulan (Decision 014).
+
+### 🚪 Gerbang 3: Gerbang 10 Klien & Pembukaan Sistem Jangka Panjang
+- **Pemicu:** 10 klien pertama selesai, tayang di domain asli, serah terima tuntas, pelunasan 100% diterima, dan jam kerja tercatat rapi di register.
+- **Objektif Evaluasi:**
+  1. Peninjauan harga dasar paket Starter peluncuran (Rp450.000) menuju harga normal berkelanjutan (Rp600.000 - Rp650.000) untuk menjamin margin > 60% sekalipun klien memilih `.id` (Decision 010).
+  2. Pembukaan gerbang perancangan dokumen spesifikasi teknis blueprint JSON Website Builder internal dan pengembangan Productized System (Fase 1 dan 2) sesuai amanat `Strategy/visi.md` Bagian 5 dan Decision 011.
+
+---
+
+<!-- ===================================================================== -->
+<!-- DOKUMEN 4 DARI 4 DI PART 2: Business Memory/weekly-review.md -->
+<!-- ===================================================================== -->
+
+# Register Pengerjaan & Review Mingguan ENLESWEB
+
+Dokumen operasional pencatatan mingguan solo founder ENLESWEB. Diisi setiap **Minggu malam** sesuai mandat `Strategy/rencana.md` (Bagian 10) dan `Strategy/model-bisnis.md` (Bagian 3.C).
+
+Data dari dokumen ini berfungsi sebagai:
+1. Validasi empiris efektivitas kanal pemasaran (Meta Ads vs Micro-Warm Outreach DM IG).
+2. Register pelacakan waktu kerja nyata per klien untuk mengukur metrik **Rp per jam kerja pendiri**.
+3. Bukti data empiris untuk pembukaan gerbang sistem `Strategy/visi.md` Bagian 5 (setelah 10 klien selesai).
+
+---
+
+## Panduan Pengisian & Kebijakan Operasional
+
+- **Waktu Pencatatan:** Setiap hari Minggu pukul 20:00–22:00 WIB.
+- **Kanal Pemasaran:** Catat metrik Meta Ads dan Micro-Warm Outreach IG secara terpisah (Decision 006 & Decision 013).
+- **Pembelian Domain:** Pembelian domain di registrar Domainesia HANYA dieksekusi setelah DP 50% diterima DAN materi dasar klien dinyatakan lengkap (Decision 017).
+- **Target Jam Kerja Starter:** Patokan pengerjaan 1 klien paket Starter adalah **5 – 12 jam kerja nyata** (ambang batas evaluasi maksimal 15 jam, Decision 012).
+- **Kuota Update Ringan Tahunan:** Pantau jatah gratis tahun pertama (Starter: 2x, Business: 4x, Growth: 6x; SLA 1–2 hari kerja, kelebihan kuota Rp50.000/putaran, Decision 015).
+
+---
+
+## Log Riwayat Mingguan
+
+<!-- Salin blok template di bawah ini untuk setiap minggu baru. Susun urutan terbalik (minggu terbaru di atas). -->
+
+### [TEMPLATE] Minggu Ke-X (DD/MM/YYYY - DD/MM/YYYY)
+
+#### 1. Akuisisi & Pemasaran
+| Parameter | Target / Batas | Realisasi Aktual | Catatan / Temuan |
+|---|---|---|---|
+| **Pengeluaran Meta Ads** | Rp100.000 (M1) / max Rp500rb | Rp... | Sesuai anggaran tes |
+| **Klik Tautan Iklan** | - | ... klik | CPC: Rp... |
+| **Chat Masuk via Iklan** | 2–3 chat (M1) | ... chat | Biaya per chat iklan: Rp... |
+| **Outreach DM IG Manual** | Max 2–3 usaha/hari | ... akun disapa | Warm interaction story/feed |
+| **Balasan / Obrolan DM IG** | - | ... akun | Rasio respons DM: ...% |
+| **Konversi DM IG ke WA** | - | ... chat WA | Jalur terpisah dari iklan |
+| **Waktu Konten Organik IG** | Mandiri / terukur | ... jam | Memastikan tidak ganggu pengerjaan |
+
+#### 2. Pipeline Penjualan & Chat Prospek
+- **Niche & Demo Disebut:** (misal: Bimbel `tuntas`, Servis HP `ripeir`, Toko Bunga `berflower`)
+- **Pilihan Paket Ditanyakan:** Starter / Business / Growth
+- **Dokumen PDF Bukti Pemesanan Terkirim:** ... berkas (TTD digital + Nama Lengkap Pendiri, Decision 017)
+- **DP 50% Masuk:** ... transaksi (Target konversi PDF ke DP: 80%, Decision 012)
+- **Preferensi Domain Klien:** ... `.com` vs ... `.id` (Catatan kepatuhan framing default `.com` Template SOP 5.2)
+- **Alasan Ragu / Keberatan Prospek:**
+  - *Contoh: Belum siap foto produk, tanya integrasi sistem kasir/toko online, ingin nego harga.*
+
+#### 3. Register Pengerjaan Klien & Jam Kerja Pendiri
+| No | ID Klien / Nama Usaha | Paket & Harga | Domain | Tgl DP Masuk | Tgl Materi Lengkap | Tgl Tayang (Live) | Jam Kerja Riset/Copy | Jam Kerja Desain/Kode | Total Jam Kerja | Kuota Update Terpakai |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Usaha Contoh 1 | Starter (Rp450rb) | `.com` | DD/MM | DD/MM | DD/MM | ... jam | ... jam | ... jam | 0/2 |
+| 2 | Usaha Contoh 2 | Business (Rp750rb) | `.id` | DD/MM | DD/MM | DD/MM | ... jam | ... jam | ... jam | 0/4 |
+
+#### 4. Kalkulasi Efektivitas Jam Kerja Pendiri
+- **Proyek Selesai Minggu Ini:** ... klien
+- **Pendapatan Bersih Kas:** `Total Nilai Paket - Biaya Registrar Domain` = Rp...
+- **Total Jam Kerja Aktual:** ... jam
+- **Imbalan per Jam Kerja Pendiri:** `Pendapatan Bersih Kas / Total Jam Kerja` = **Rp... / jam**
+  - *Benchmarking Starter (.com): Target Rp24.800 – Rp59.500 / jam (5–12 jam kerja).*
+
+#### 5. Hambatan, Evaluasi, & Tindakan Minggu Depan
+- **Hambatan Operasional:** ...
+- **Pelajaran dari Percakapan WhatsApp:** ...
+- **Rencana / Penyesuaian Taktik Minggu Depan:** ...
+
+---
+
+### Minggu 2 (Konsolidasi Sistem & Studio Content-Machine: 28 Oktober - 3 November 2026)
+- **Status:** CLOSED / SELESAI (100%)
+- **Meta Ads:** Iklan tetap dalam status **nonaktif (inactive)** sejak 24 Oktober 2026 (Jalur C). Pengeluaran minggu ini **Rp0**. Sisa saldo deposit di dashboard Meta Ads sebesar **Rp87.952** tetap aman dan tersimpan untuk pengujian berikutnya.
+- **Micro-Warm Outreach DM IG:** Belum dijalankan (0 akun disapa, 0 DM).
+- **Fokus Studio & Pengerjaan:** Konsolidasi infrastruktur ekosistem. Pemutakhiran teknis `layout-lab` ke Astro 7.4.4 (Decision 023 Addendum, 31 Oktober 2026) dan penyelesaian pabrik aset serta studio konten editorial `content-machine` Fase 1 sampai 3 (v1.4, Astro 7.4.5 + React 19.3.1 TSX, 19 arketipe layout, Dynamic Auto-Fit Canvas, safe zones, dan pipeline ekspor ZIP, Decision 025 & Decision 026). Studio kini siap merakit materi iklan varian baru untuk persiapan re-launch Meta Ads menggunakan sisa saldo yang ada.
+- **Pipeline:** Belum ada klien aktif baru / 0 DP.
+
+### Minggu 1 (Tes Meta Ads & Micro-Warm Outreach: 21 - 27 Oktober 2026)
+- **Status:** CLOSED / SELESAI (Uji coba aktif 21-22 Okt, kendala delivery 23 Okt, dinonaktifkan manual 24 Okt).
+- **Meta Ads (Data Dashboard 21-22 Oktober 2026):**
+  - **Total Belanja:** **Rp42.048** dari modal deposit **Rp130.000** (sisa saldo kas di dashboard: **Rp87.952**).
+  - **Rincian Materi Iklan:**
+    - *Video Ad (Iklan A 15s):* Belanja Rp36.167 | Impresi: 502 | Jangkauan: 415 | Frekuensi: 1,21 | CPM: Rp72.045,82 | 3-sec video plays: 85 (Rp425,49/play) | 15-sec ThruPlays: 12 | Klik tautan: 1 (CTR: 0,20%, CPC: Rp36.167) | Pesan masuk: 1 (Cost/chat: Rp36.167).
+    - *Image Ad (Iklan B Statis v3):* Belanja Rp5.881 | Impresi: 65 | Jangkauan: 56 | Frekuensi: 1,16 | CPM: Rp90.476,92 | Klik tautan: 1 (CTR: 1,54%, CPC: Rp5.881) | Pesan masuk: 0.
+  - **Total Gabungan:** 567 impresi, 471 jangkauan, 2 klik tautan, 1 percakapan pesan masuk.
+- **Kendala Penayangan & Penghentian:**
+  - Iklan tayang mulai 21 Oktober pukul 09.00 WIB dan berjalan normal hingga 22 Oktober.
+  - Pada 23 Oktober, penyerapan iklan terhenti secara aneh (tidak ada pengurangan saldo dan angka metrik dashboard tidak bertambah).
+  - Pada 24 Oktober, pendiri memutuskan menonaktifkan kampanye secara manual hingga saat ini (3 November 2026) untuk menghindari ketidakpastian delivery.
+- **Pipeline & Penjualan (WhatsApp Lead #001):**
+  - Beberapa jam setelah peluncuran di hari pertama (21 Oktober), tercatat 1 pesan masuk ke WhatsApp via Video Ad.
+  - Isi percakapan hanya menanyakan info atau harga umum / pesan pembuka template iklan. Setelah dibalas, prospek tidak merespons kembali (ghosting/batal).
+  - Tidak terjadi kesepakatan (tidak deal), dan pendiri tidak melakukan follow-up lanjutan.
+  - DP 50% masuk: 0 transaksi. Dokumen PDF Bukti Pemesanan terkirim: 0 berkas.
+- **Micro-Warm Outreach DM IG:** Belum dijalankan (0 akun disapa, 0 DM).
+- **Evaluasi & Keputusan Jalur (Sesuai `Strategy/rencana.md` Bagian 5):**
+  - Realisasi: Menghasilkan 1 pesan masuk (< ambang 2-3 chat valid) dan 0 DP.
+  - Status resmi: **Jalur C** (Iklan dijeda, ganti satu variabel kreatif sebelum tes berikutnya).
+  - Kampanye resmi dijeda/dinonaktifkan. Sisa saldo kas Rp87.952 diamankan untuk re-launch menggunakan materi kreatif baru dari `content-machine`.
+
+### Minggu 0 (Persiapan Pra-Peluncuran: 14 – 18 Oktober 2026)
+- **Status:** CLOSED / SELESAI (100%)
+- **Fokus & Realisasi:** Setup infrastruktur kanonikal studio, penguncian dokumentasi master V4 (`ENLESWEB-DOCS-V4.md`), pembelian domain resmi `enlesweb.com` di Domainesia (Rp152.070, Decision 018), optimasi PageSpeed Insights 100/100 (Decision 019), pembuatan materi iklan Meta di `campaign-1/` berupa 1 Video (Iklan A 15s) dan 1 Gambar Statis (Iklan B v3 Whole ENLESWEB) rasio 4:5 dan 9:16 (format Carousel 4 slide dibatalkan, Decision 016, 020, & 021), dan penyelesaian dokumen template PDF Bukti Pemesanan ber-TTD digital oleh pendiri bisnis (Decision 017 & Decision 020). Seluruh prasyarat Minggu 0 selesai 100%, siap eksekusi Minggu 1.
 
 ---
 <!-- AKHIR DARI PART 02 (BERSAMBUNG KE PART 03: enlesweb-part-03-of-05.md) -->

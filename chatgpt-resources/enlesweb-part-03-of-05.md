@@ -4,15 +4,15 @@
 > 
 > **Daftar 5 Berkas Bersambung:**
 > 1. enlesweb-part-01-of-05.md: Start Here (summary.md) & Visi Strategis (visi.md)
-> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md) & Rencana Strategis (rencana.md)
-> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md) & Standar Operasional Prosedur (sop.md)
+> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md), Rencana Strategis (rencana.md), Matriks KPI (kpi.md), & Register Mingguan (weekly-review.md)
+> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md), Standar Operasional Prosedur (sop.md), & Register Leads (leads.md)
 > 4. enlesweb-part-04-of-05.md: Decision Log (decision-log.md) & Context Master (enlesweb-context-master.md)
 > 5. enlesweb-part-05-of-05.md: Riset Kompetitor (riset_kompetitor_enlesweb.md) & Dokumentasi Teknis Web V4 (ENLESWEB-DOCS-V4.md)
 
 ---
 
 <!-- ===================================================================== -->
-<!-- DOKUMEN 1 DARI 2 DI PART 3: Strategy/positioning.md -->
+<!-- DOKUMEN 1 DARI 3 DI PART 3: Strategy/positioning.md -->
 <!-- ===================================================================== -->
 
 # POSITIONING ENLESWEB
@@ -164,14 +164,10 @@ Catatan transaksi:
 | 28 Oktober 2026 | Versi 2.1: Unifikasi hosting 6 demo portofolio (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta pengaktifan operasional preview data dummy pra-DP via Stateless Compact ID (/p/<id>) di SOP v1.3 (Decision 022 CLOSED). | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | Versi 2.2: Pemutakhiran alur preview pra-DP dengan 5 preset skenario klien, wireframe monokrom IBM Plex Sans bebas bias estetika, chassis iPhone 15 pada sandboxed iframe, penyelarasan SOP v1.4, dan Addendum Decision 023. | Addendum Decision 023, SOP v1.4, DESIGN.md |
 
-
-
-
-
 ---
 
 <!-- ===================================================================== -->
-<!-- DOKUMEN 2 DARI 2 DI PART 3: Delivery & Operations/sop.md -->
+<!-- DOKUMEN 2 DARI 3 DI PART 3: Delivery & Operations/sop.md -->
 <!-- ===================================================================== -->
 
 # SOP Chat WhatsApp dan Transaksi Klien ENLESWEB
@@ -489,7 +485,42 @@ Pengembalian dana (untuk kondisi refund 50% DP) dilakukan dalam **maksimal 3 har
 12. Biaya reaktivasi setelah website dinonaktifkan: TELAH FINAL (LOCKED) - Bebas biaya tambahan/penalti (Rp0) selama domain belum kedaluwarsa permanen (Decision 005).
 13. Dokumen kesepakatan: TELAH FINAL (LOCKED) - Chat WhatsApp wajib dilengkapi pengiriman dokumen Bukti Pemesanan formal format PDF dengan tanda tangan digital (TTD digital) (Decision 003 & Decision 017).
 
+---
 
+<!-- ===================================================================== -->
+<!-- DOKUMEN 3 DARI 3 DI PART 3: Offers & Sales/leads.md -->
+<!-- ===================================================================== -->
+
+# REGISTER PROSPEK & PIPELINE LEADS (OFFERS & SALES)
+
+Register pelacakan prospek (leads) yang masuk ke saluran penjualan ENLESWEB (WhatsApp, DM Instagram, dsb.).
+Diperbarui setiap kali ada pesan masuk yang memenuhi kriteria prospek atau respons kampanye.
+
+---
+
+## 1. Ringkasan Pipeline Prospek
+
+| Metrik | Total Kumulatif | Catatan |
+|---|---|---|
+| **Total Prospek Masuk (Semua Kanal)** | 1 prospek | 1 dari Meta Ads (Video Ad) |
+| **Prospek Lolos Kualifikasi Kebutuhan** | 0 prospek | Tidak merespons kembali pasca-balasan awal |
+| **Dokumen Bukti Pemesanan Terkirim** | 0 berkas | Target PDF ke DP: 80% (Decision 012) |
+| **Klien Terakuisisi (DP 50% Masuk)** | 0 klien | 0 deal |
+| **Tingkat Konversi Chat ke DP** | 0,0% | Status kampanye saat ini: Jalur C |
+
+---
+
+## 2. Register Detail Prospek Masuk
+
+| No | ID Prospek | Tanggal Masuk | Kanal Sumber | Detail / Niche Ditanyakan | Status Respons & Alur Chat | Hasil Akhir |
+|---|---|---|---|---|---|---|
+| 1 | `LEAD-20261021-001` | 21/10/2026 (Hari ke-1 iklan) | Meta Ads (Video Ad 15s) | Pesan pembuka template iklan / tanya info & harga umum | Prospek mengirimkan pesan masuk beberapa jam pasca-peluncuran iklan. Setelah dibalas oleh studio, prospek tidak merespons kembali (ghosting/batal). Studio tidak melakukan follow-up lanjutan. | **Closed Lost / Tidak Deal (0 DP)** |
+
+---
+
+## 3. Catatan Pembelajaran Penjualan
+- **Pelajaran Lead #001:** Prospek cold-traffic dari iklan video membutuhkan kalimat tanggapan yang langsung mereduksi keraguan atau mengarahkan ke solusi konkret satu sentuhan (misal penawaran preview interaktif via `layout-lab` sebelum prospek kehilangan minat).
+- **Kebijakan Follow-up:** Mengingat kapasitas solo founder dan orientasi anti-spam, ketiadaan respon dari prospek template cold-traffic tidak dikejar agresif, namun alur SOP WhatsApp tetap menjadi panduan standar jika prospek kembali merespons.
 
 ---
 <!-- AKHIR DARI PART 03 (BERSAMBUNG KE PART 04: enlesweb-part-04-of-05.md) -->

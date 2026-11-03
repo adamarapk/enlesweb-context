@@ -4,8 +4,8 @@
 > 
 > **Daftar 5 Berkas Bersambung:**
 > 1. enlesweb-part-01-of-05.md: Start Here (summary.md) & Visi Strategis (visi.md)
-> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md) & Rencana Strategis (rencana.md)
-> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md) & Standar Operasional Prosedur (sop.md)
+> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md), Rencana Strategis (rencana.md), Matriks KPI (kpi.md), & Register Mingguan (weekly-review.md)
+> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md), Standar Operasional Prosedur (sop.md), & Register Leads (leads.md)
 > 4. enlesweb-part-04-of-05.md: Decision Log (decision-log.md) & Context Master (enlesweb-context-master.md)
 > 5. enlesweb-part-05-of-05.md: Riset Kompetitor (riset_kompetitor_enlesweb.md) & Dokumentasi Teknis Web V4 (ENLESWEB-DOCS-V4.md)
 
@@ -560,8 +560,124 @@ Menindaklanjuti hasil evaluasi tata kelola dokumentasi ekosistem ENLESWEB, disep
    - Upgrade Astro ke versi `^7.4.4` di atas runtime Node `22.23.4`, TypeScript `^6.0.3`, `@astrojs/check ^0.9.12`, `playwright-core ^1.64.1`, `puppeteer-core ^25.16.0`, dan override `vite ^8.3.5` untuk memitigasi seluruh CVE keamanan (commit `9a1de77` dan `19671bf`).
    - Hasil audit terverifikasi: `npm run build` lulus (65 berkas no-eyebrow lint, 70 berkas `astro check` dengan 0 error/0 warning/0 hint, 5 rute HTML statis terbangun), `npm test` lulus 100% (46 assertion otomatis composer & fuzzing + 86 skenario visual Playwright).
 
+---
 
+## Decision 024
+- **Tanggal:** 1 November 2026
+- **Topik:** Penambahan Berkas Riset Lapangan & Analisis 15 Kompetitor (`riset_kompetitor_enlesweb.md`), Inisialisasi Studio `content-machine`, dan Registrasi `@agent-content-machine`
+- **Status:** Diputuskan & Terealisasi (CLOSED)
 
+### 1. Masalah yang ingin diselesaikan
+Sebelumnya, analisis kompetitor dan daftar pertanyaan nyata pemilik usaha UMKM belum terdokumentasikan dalam format terstruktur yang siap dipakai sebagai bahan konten edukasi dan materi pemasaran studio. Selain itu, ekosistem membutuhkan repositori mandiri untuk memproduksi konten visual dan motion graphics tanpa mengotori repositori website utama.
+
+### 2. Keputusan
+1. **Penyerapan Berkas Riset Lapangan & 15 Kompetitor (`riset_kompetitor_enlesweb.md`):**
+   Mengesahkan berkas `riset_kompetitor_enlesweb.md` di root master docs sebagai rujukan utama 4 pilar:
+   - Sheet 1: 30 Pertanyaan Nyata Pemilik Bisnis/UMKM tentang Website & Solusi Sesuai SOP v1.4 ENLESWEB.
+   - Sheet 2: Analisis Topik, Hook, & Gap Konten Jasa Website UMKM (Evaluasi 8 Topik Populer Kompetitor).
+   - Sheet 3: Profil Mendalam 15 Kompetitor Jasa Pembuatan Website di Indonesia (Rentang Harga & Celah Pasar).
+   - Sheet 4: 30 Rencana Konten Edukasi Strategis untuk Media Sosial & Pemasaran ENLESWEB.
+   Berkas `Market Research/kompetitor.md` resmi ditautkan ke dokumen utama ini.
+2. **Inisialisasi Repositori `content-machine` & Registrasi `@agent-content-machine`:**
+   Membentuk repositori `content-machine` (remote `https://github.com/adamarapk/enlesweb-content-machine.git`), mendaftarkannya pada entri 10 di `enlesweb.code-workspace`, memasang hook otomasi `.git/hooks/pre-push`, serta mendaftarkan `@agent-content-machine` ke dalam `scripts/sync-ecosystem.mjs` dan `AGENTS.md`.
+
+### 3. Alasan
+Menyediakan bank data nyata kebutuhan pasar dan argumen penolak keberatan klien (*objection handling*) bagi tim pemasaran, serta menyediakan studio koding terisolasi untuk pembuatan aset dan generator konten media sosial ENLESWEB.
+
+---
+
+## Decision 025
+- **Tanggal:** 2 November 2026
+- **Topik:** Penyelesaian Fase 1 Asset Factory `content-machine` (Fondasi Desain, 35 Vektor SVG, 5 Render 3D Tactile, 19 Slot Layout, 3 Pilot Post, Linter Otomatis, & Eksepsi Tipografi/Platform)
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Produksi materi iklan berbayar (Meta Ads) dan konten organik Instagram selama ini terkendala ketiadaan standarisasi visual, dependensi pada perakitan manual yang lambat, serta risiko inkonsistensi tipografi dan copy. Ekosistem membutuhkan pabrik aset (*asset factory*) otomatis dengan guardrail ketat agar produksi konten dapat di-batch cepat tanpa melanggar prinsip anti-slop ENLESWEB.
+
+### 2. Keputusan
+1. **Penyelesaian Fondasi Fase 1 `content-machine`:**
+   Mengesahkan selesainya milestone Fase 1 pada repositori `content-machine` (commit `0a81887`), mencakup:
+   - Fondasi Brand: `DESIGN.md`, `src/brand/tokens.css`, `src/brand/motion.css`, dan tipografi lokal Poppins + Kalam OFL.
+   - Pustaka Aset: 35 berkas vektor SVG murni (`src/brand/svg/`) dan 5 render 3D tactile Three.js 2048px berlatar transparan (`puzzle.png`, `phone-slab.png`, `browser-slab.png`, `domain-card.png`, `document-sheet.png`).
+   - 19 Template Layout: 12 Carousel rasio 4:5 (`c01` sampai `c12`) dan 7 Reels rasio 9:16 (`r01` sampai `r07`) berbasis arsitektur `data-slot`.
+   - 3 Pilot Posts: Pilot 1 (Ide 1 Carousel 4-slide), Pilot 2 (Ide 5 Tabel Perbandingan 4:5), Pilot 3 (Ide 7 Reels 15s keyframes).
+   - Tooling & Otomasi: `scripts/audit-svgs.mjs` (35/35 lolos uji XML), `scripts/lint-content.mjs` (linter computed font size, color token whitelist, forbidden words, dan safe-zones), serta `scripts/serve-gallery.mjs` (server pratinjau galeri lokal port 3456).
+2. **Arsitektur Pemisahan Layout & Payload (`data-slot`):**
+   Seluruh template layout tidak meng-hardcode salinan teks kampanye, melainkan menggunakan atribut `data-slot="..."` agar pada Fase 2 siap diinjeksi secara terotomasi oleh mesin JSON compiler (`drafts/*.json`).
+3. **Eksepsi Tipografi E1 & E2 (Terkunci):**
+   - *Exception E1 (Font Tulisan Tangan Kalam):* Diizinkan secara ketat HANYA untuk elemen catatan tempel (*sticky note*), stiker anotasi, atau panah coret tangan, menggunakan lisensi OFL lokal di `src/brand/fonts/kalam/`.
+   - *Exception E2 (Simulasi Chat WhatsApp iOS):* Diizinkan menggunakan font fallback Inter/system-ui dengan warna gelembung khas iOS (`#E9E9EB` incoming, `#DCF7C5` outgoing) untuk menciptakan konteks obrolan yang familiar dan relatable bagi audiens UMKM Indonesia.
+4. **Standarisasi Safe Zone Instagram:**
+   - Carousel 4:5: Mematuhi safe-zone Instagram Profile Grid 3:4 (memotong ~34px di sisi kiri dan kanan saat dilihat di kisi profil 3:4).
+   - Reels 9:16: Mematuhi area aman simetris (margin atas 216px, bawah 280px, kiri-kanan 48px) agar tidak tertutup antarmuka pemutar Instagram/TikTok.
+
+### 3. Alasan
+Membangun fondasi infrastruktur pemasaran yang skalabel dan anti-slop, mengamankan efisiensi waktu kerja pendiri bisnis (maksimal 2 jam per minggu untuk konten organik sesuai `Strategy/rencana.md`), serta memastikan integritas visual dan klaim harga/paket 100% sinkron dengan fakta `enlesweb-context-master.md`.
+
+---
+
+## Decision 026
+- **Tanggal:** 3 November 2026
+- **Topik:** Penyelesaian Fase 2 & Fase 3 `content-machine` (v1.4 Spec, Modernisasi Komponen Astro + React 19 TSX, Transformasi Full Light Studio Workspace, Dynamic Auto-Fit Canvas, Safe Zone Overlays, Registri Klaim, dan Pipeline Ekspor ZIP Mandiri)
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Template statis HTML warisan (`src/layouts/*.html`) pada `content-machine` membatasi komposisi layout interaktif, menyulitkan pengetikan tipe data, dan memisahkan proses pratinjau editorial dari mesin kompilasi. Selain itu, rasio aspek vertikal 9:16 dan 4:5 rentan terpotong vertikal (*vertical clipping*) di layar monitor laptop standar tanpa mekanisme auto-fit kanvas responsif, serta tidak adanya overlay panduan area aman (*safe zones*) antarmuka Instagram.
+
+### 2. Keputusan
+1. **Penyelesaian Fase 2 & Penutupan Resmi Fase 3 `content-machine`:**
+   Mengesahkan penutupan milestone Fase 2 dan Fase 3 pada repositori `content-machine` (commit `d6189f1` s.d. `2a21a3c`), memvalidasi dokumen spesifikasi teknis `CONTENT-MACHINE-DOCS-V1.md` versi 1.4.
+2. **Modernisasi Stack ke Komponen Astro + React 19 (`.tsx`):**
+   - Mengganti seluruh template statis HTML mentah dengan arsitektur modular Astro 7.4.5 + React 19.3.1 dan TypeScript 6.0.3 yang lolos verifikasi `astro check` (0 error, 0 warning).
+   - Menetapkan 4 Layer Arsitektur:
+     - *Layer 1 (Primitives):* `SlideCanvas`, `WaChat`, `PhoneMockup`, `ConceptCard`, `PriceTable`, `PointList`, `CtaBar`, `Badges`.
+     - *Layer 2 (19 Archetype Layouts):* Carousel C01 s.d. C12 dan Reels R01 s.d. R07 terdaftar di `src/components/archetypes/index.ts`.
+     - *Layer 3 (Post & Claims Registry):* Registri ketat `claims.ts` (14 klaim resmi dan harga paket Rupiah sinkron dengan master context) serta postingan produksi K1 (`k1-link-wa-vs-website.tsx`) dan contoh P1, P2, P3.
+     - *Layer 4 (Studio Workspace & Catalog):* Studio interaktif `/` dan Catalog Explorer `/katalog`.
+3. **Standarisasi Antarmuka Studio Workspace (Full Light Theme):**
+   - Menetapkan tema kerja *Full Light*: dot-grid abu-abu dingin (`#EFF2F7` dengan radial dots `#D5DAE2`), panel putih bersih (`#FFFFFF`), border hairline (`#E5E5DF`), dan aksen taktil signature ENLESWEB (`#E4FF30` / `#A3C400`).
+   - Implementasi *Dynamic Responsive Auto-Fit Canvas* berbasis `ResizeObserver` yang menjamin kanvas 4:5 dan 9:16 tampil 100% utuh tanpa scrollbar atau pemotongan vertikal di semua resolusi.
+   - Fitur interaktif *Instagram Safe Zone Guides Overlay* (shortcut `G`) yang menampilkan garis batas crop Feed 1:1, margin teks, dan area tertutup antarmuka Reels.
+   - Kontrol pemutar video Reels deterministik dengan tombol `Play Live (Space)`, range scrubber 0-450 frame, dan HTTP 206 range streaming.
+4. **Pipeline Ekspor Mandiri Bebas Dependensi Eksternal:**
+   - Kompilasi pos menghasilkan bundel arsip `.zip` di `exports/posts/<id>.zip` yang dirakit murni dengan Node.js Buffer (Store Method 0 + tabel CRC32 lookup) berisi slide PNG resolusi tinggi, video Reels MP4 (jika tersedia), frame cover, caption tervalidasi guardrail, dan `manifest.json`.
+5. **Jembatan Menuju Fase 4 (Art Direction & Material Editorial Taktil):**
+   - Menyepakati arahan `docs/art-direction-fase4.md` untuk meninggalkan rounded card umum SaaS dan mengadopsi metafora fisik nyata (garis buku SiDU untuk tuntas, roster tenun untuk Jerseay, faktur stempel fisik paket Starter).
+
+### 3. Alasan
+Memberikan studio produksi konten mandiri yang tangguh, modular, dan terverifikasi secara visual, sehingga pendiri dapat memproduksi materi Instagram berkualitas tinggi secara konsisten dalam batas waktu 2 jam per minggu tanpa risiko ketidaksesuaian klaim harga atau pelanggaran pedoman desain.
+
+---
+
+## Decision 027
+- **Tanggal:** 3 November 2026
+- **Topik:** Evaluasi Hasil Uji Coba Meta Ads Minggu 1, Penetapan Status Jalur C (Jeda Iklan), Pengamanan Sisa Saldo Rp87.952, dan Penyiapan Materi Re-launch via `content-machine`
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Kampanye Meta Ads perdana (Minggu 1) yang diluncurkan pada 21 Oktober 2026 mengalami kendala teknis penyerapan delivery pada 23 Oktober 2026 (saldo tidak terpotong dan metrik dashboard berhenti bertambah). Untuk menghindari ketidakpastian pengiriman impresi, iklan telah dinonaktifkan manual oleh pemilik pada 24 Oktober 2026. Data aktual performa iklan dan status 1 prospek chat WhatsApp yang masuk perlu dievaluasi secara formal untuk menentukan kelanjutan anggaran serta arah strategis akuisisi studio.
+
+### 2. Keputusan
+1. **Pengesahan Metrik Finansial & Kinerja Kampanye Minggu 1:**
+   Mengesahkan data ground-truth dari dashboard Meta Ads (periode 21 - 22 Oktober 2026):
+   - Modal deposit awal: **Rp130.000**.
+   - Realisasi belanja: **Rp42.048** (terserap pada Video Ad Rp36.167 dan Image Ad Rp5.881).
+   - Sisa saldo kas tersimpan di akun Meta Ads: **Rp87.952** (aman dan utuh).
+   - Metrik jangkauan: 567 impresi, 471 reach, 2 klik tautan (Video CPC Rp36.167, Image CPC Rp5.881), 85x 3-second video plays, 12x 15-second ThruPlays, dan 1 percakapan pesan masuk.
+2. **Kualifikasi Prospek & Status Pipeline:**
+   - 1 pesan masuk tercatat di hari pertama (21 Oktober) via Video Ad beberapa jam setelah tayang.
+   - Isi percakapan hanya menanyakan info atau harga umum / template pembuka pesan iklan. Setelah dibalas, prospek tidak merespons kembali (ghosting/batal).
+   - Tidak terjadi kesepakatan (tidak deal), tidak ada transaksi DP 50%, dan diputuskan tidak dilakukan follow-up lanjutan.
+   - Kanal Micro-Warm Outreach DM IG belum dijalankan (0 akun disapa, 0 DM).
+3. **Penetapan Status Resmi Jalur C (Sesuai `Strategy/rencana.md` Bagian 5):**
+   - Berdasarkan aturan keputusan rencana 90 hari, hasil < 2 chat valid dan 0 DP secara resmi menetapkan kampanye masuk **Jalur C** (iklan dijeda untuk evaluasi variabel kreatif).
+   - Status iklan tetap **nonaktif (inactive)** sejak 24 Oktober hingga saat ini (3 November 2026).
+4. **Pengamanan Saldo Kas & Rencana Re-launch:**
+   - Sisa saldo deposit sebesar **Rp87.952** tidak ditarik atau dibakar secara sia-sia, melainkan ditahan di dalam akun Meta Ads.
+   - Re-launch kampanye iklan berikutnya akan memanfaatkan materi kreatif baru hasil produksi studio `content-machine` (Fase 1 sampai 3) setelah varian layout dan aset baru siap tayang.
+
+### 3. Alasan
+Menjaga disiplin kas pendiri agar tidak terjadi pembakaran modal (*no cash burn*) di tengah delivery iklan yang tidak stabil, serta memastikan pengeluaran sisa saldo berikutnya didukung oleh materi iklan yang lebih matang dari pipeline terstandarisasi `content-machine`.
 
 ---
 
@@ -589,7 +705,9 @@ ENLESWEB menyajikan penawaran komersial yang terbagi menjadi 3 tingkatan paket i
 3. **Paket Growth (Rp1.200.000)**: Website hingga 10 halaman dengan desain khusus, pengalaman pengunjung/frontend interaktif khusus (*custom client islands*), sudah termasuk domain & hosting 1 tahun, 4 kali revisi saat pengerjaan, serta gratis 6 kali putaran update konten ringan di tahun pertama.
 4. **Paket Custom (Mulai Rp2.000.000)**: Jalur terpisah di luar paket Growth untuk kebutuhan lebih dari 10 halaman atau integrasi sistem khusus (tombol aksi: `[Diskusikan Kebutuhan Custom]`, topik: `paket Custom`).
 
-Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Cloudflare Workers dengan subdomain kanonikal *.enlesweb.com, Vercel dinonaktifkan per Decision 023), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA. Ekosistem juga dilengkapi internal composer `layout-lab` (live di `preview.enlesweb.com` dengan Dual-Layer Token, chassis iPhone 15, scaled 1280px artboard, dan 5 preset skenario klien) untuk menyusun preview tata letak dummy pra-DP (SOP v1.4 Langkah 3b).
+Seluruh paket dibuktikan secara nyata melalui **6 Proyek Portofolio Konsep** aktif (live di Cloudflare Workers dengan subdomain kanonikal *.enlesweb.com, Vercel dinonaktifkan per Decision 023), yang mendemonstrasikan bahwa setiap website memiliki identitas visual unik (*signature physical metaphor*), kepatuhan ketat terhadap protokol anti-slop, dan rasio kontras visual WCAG AA. Ekosistem juga dilengkapi internal composer `layout-lab` (live di `preview.enlesweb.com` dengan Dual-Layer Token, chassis iPhone 15, scaled 1280px artboard, dan 5 preset skenario klien) untuk menyusun preview tata letak dummy pra-DP (SOP v1.4 Langkah 3b), serta pabrik aset pemasaran dan studio editorial `content-machine` (Fase 1 s.d. Fase 3 CLOSED: v1.4 Astro + React 19, Full Light Studio Workspace di port 3456, Dynamic Auto-Fit Canvas, Safe Zone Overlays, & ZIP Export Pipeline) untuk memproduksi materi visual dan video reels/carousel secara terstandarisasi.
+
+Sebagai landasan operasional dan penajaman materi pemasaran, ekosistem memiliki berkas referensi riset lapangan komprehensif pada [`riset_kompetitor_enlesweb.md`](riset_kompetitor_enlesweb.md) yang mengompilasi 30 pertanyaan nyata pemilik UMKM, analisis perbandingan 15 kompetitor web lokal, dan 30 pilar rencana konten edukasi strategis.
 
 ---
 
@@ -749,6 +867,7 @@ Setiap titik kontak konversi dihubungkan ke WhatsApp dengan standar implementasi
 - **Hosting Produksi Platform Induk:** Cloudflare Workers (dengan adapter static `@astrojs/cloudflare` dan domain kanonikal `https://enlesweb.com`).
 - **Hosting Showcase Portofolio & Internal Composer:** Seluruh 6 template konsep (`*.enlesweb.com`) dan composer internal `layout-lab` (`preview.enlesweb.com`) dihosting terpusat di Cloudflare Workers; hosting lama Vercel telah resmi dinonaktifkan (Decision 023).
   - `layout-lab` (`https://preview.enlesweb.com/`): format Stateless Compact ID `/p/<id>`, rute internal `/studio-admin/*` terproteksi, Cloudflare Worker allowlist (`/` & `/pratinjau` sengaja merespons 404), Dual-Layer Token System (`--ew-*` vs `--wf-*`), Scaled 1280px Virtual Artboard, sandboxed live iframe dalam chassis fisik iPhone 15 (390x796px kanvas dalam, 414x844px chassis luar), 5 Preset Skenario Klien, 46 assertion otomatis di `scripts/test-perakit-pratinjau.mjs`, dan 86 skenario visual snapshot Playwright.
+- **Asset Factory & Studio Editorial Konten (`content-machine`):** Repositori mandiri pembuat aset visual, Instagram Carousel (rasio 4:5), dan video Reels (rasio 9:16) berbasis Astro 7.4.5 + React 19.3.1 TSX (Fase 1 s.d. 3 CLOSED, v1.4, Decision 025 & Decision 026). Dilengkapi 8 Layer 1 UI Primitives, 19 arketipe layout berpengetikan ketat, 35 pustaka vektor SVG, 5 render 3D tactile Three.js 2048px, registri klaim resmi (14 klaim & harga paket), Content Studio Workspace split-screen bertema Full Light dengan Dynamic Auto-Fit Canvas (ResizeObserver bebas vertical clipping) dan Instagram Safe Zone Guides overlay, Thematic Shelves Catalog (`/katalog`), automated content linter, serta pipeline ekspor arsip ZIP mandiri.
 - **Continuous Integration (CI/CD):**
   - Linting & tipe data: `npm run lint` / `astro check` (70 berkas terverifikasi 0 error/warning/hint).
   - Automated testing: Vitest atau unit test internal, serta 46 assertion fungsional `layout-lab`.
@@ -1282,7 +1401,6 @@ Seluruh ekosistem ENLESWEB (website induk `enlesweb.com`, 6 subdomain showcase p
 4. Hubungkan domain kanonikal utama (`enlesweb.com`) dan seluruh DNS subdomain terkait (`jerseay`, `dipotongin`, `tuntas`, `seruput`, `ripeir`, `berflower`, dan `preview`) melalui panel DNS Cloudflare dengan status *Proxied*.
 5. Verifikasi pengamanan rute pada `preview.enlesweb.com`: rute publik hanya mengizinkan `/p/<id>` dan aset statis `/_astro/*`, rute editor internal terlindungi di bawah `/studio-admin/*` (dengan redirect 301 otomatis dari `/studio-admin` ke `/studio-admin/`), serta rute `/` dan `/pratinjau` sengaja merespons `404 Not Found` (non-GET/HEAD ditolak). Rangkaian 46 automated assertions memvalidasi integritas rute dan codec Base62 salt 16-bit.
 6. Uji coba seluruh tautan demo dari switcher panggung ENLESWEB (`https://enlesweb.com/#proyek`) ke masing-masing subdomain kanonikal Cloudflare Workers yang telah diverifikasi aktif.
-
 
 ---
 <!-- AKHIR DARI PART 04 (BERSAMBUNG KE PART 05: enlesweb-part-05-of-05.md) -->

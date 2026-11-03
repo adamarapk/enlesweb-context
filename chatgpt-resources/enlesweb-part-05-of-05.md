@@ -4,8 +4,8 @@
 > 
 > **Daftar 5 Berkas Bersambung:**
 > 1. enlesweb-part-01-of-05.md: Start Here (summary.md) & Visi Strategis (visi.md)
-> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md) & Rencana Strategis (rencana.md)
-> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md) & Standar Operasional Prosedur (sop.md)
+> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md), Rencana Strategis (rencana.md), Matriks KPI (kpi.md), & Register Mingguan (weekly-review.md)
+> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md), Standar Operasional Prosedur (sop.md), & Register Leads (leads.md)
 > 4. enlesweb-part-04-of-05.md: Decision Log (decision-log.md) & Context Master (enlesweb-context-master.md)
 > 5. enlesweb-part-05-of-05.md: Riset Kompetitor (riset_kompetitor_enlesweb.md) & Dokumentasi Teknis Web V4 (ENLESWEB-DOCS-V4.md)
 
@@ -161,11 +161,10 @@
 | 29 | Kapan Usaha Kecil Belum Butuh Website (Dan Kapan Sudah Wajib Punya)? | Tunjukkan kejujuran: jika produk belum jelas atau belum ada foto sama sekali, rapikan dulu di WA/IG; tapi jika sudah lelah balas pertanyaan berulang di chat, saatnya punya website | Jujur saja, tidak semua usaha baru langsung butuh bikin website hari ini. Cek 3 tanda ini dulu. | Carousel Edukasi 3 Slide | Prioritas 3 (Pendukung) | Kualifikasi Pembeli Utama | Pertanyaan #13 & Filter Kesiapan Materi |
 | 30 | Bedah Anatomi Halaman Website Usaha Jasa yang Langsung Mengarahkan ke WA | Tunjukkan urutan informasi yang membuat pengunjung paham dalam 3 menit (apa yang dijual, daftar layanan/harga, lokasi Maps, dan tombol WA terisi otomatis) | Apa saja isi halaman website usaha jasa supaya pengunjung tidak bingung dan langsung klik tombol WhatsApp? | Carousel Bedah Layout 4 Slide | Prioritas 3 (Pendukung) | Demo tuntas & ripeir (https://enlesweb.com/#proyek) | Pertanyaan #28 & Struktur Konversi WA |
 
-
 ---
 
 <!-- ===================================================================== -->
-<!-- DOKUMEN 2 DARI 2 DI PART 5: enlesweb/ENLESWEB-DOCS-V4.md -->
+<!-- DOKUMEN 2 DARI 2 DI PART 5: ENLESWEB-DOCS-V4.md -->
 <!-- ===================================================================== -->
 
 # ENLESWEB DOKUMENTASI UTAMA V4 (ENLESWEB-DOCS-V4)
@@ -1955,9 +1954,6 @@ Sebelum rilis atau deploy, verifikasi daftar berikut:
 Rujukan dokumen terkait:
 - [Decision Log: Decision 022](../enlesweb-context-master/Business%20Memory/decision-log.md#decision-022) & [Decision 023 Addendum](../enlesweb-context-master/Business%20Memory/decision-log.md#decision-023-addendum)
 - [SOP Operasional WhatsApp: Langkah 3b](../enlesweb-context-master/Delivery%20&%20Operations/sop.md#langkah-3b)
-
-
-
 
 ---
 <!-- AKHIR DARI PART 05 (SELESAI - SELURUH DOKUMEN MASTER TELAH TERMUAT SECARA LENGKAP) -->

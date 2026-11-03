@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 1.9
-**Terakhir diperbarui:** 29 Oktober 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.4), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum), dan laporan pemilik tentang checkpoint awal Meta Ads 21 Oktober 2026.
+**Versi:** 2.0
+**Terakhir diperbarui:** 3 November 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.6), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 027), dan laporan pemilik tentang evaluasi hasil uji coba Meta Ads Minggu 1 per 3 November 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -13,8 +13,8 @@
 | Tahap | Patokan tanggal | Hasil yang harus ada |
 |---|---|---|
 | Minggu 0: Persiapan (100% CLOSED) | 14 - 20 Okt 2026 | (1) Domain `enlesweb.com` aktif (**CLOSED/SUDAH DIBELI**, Decision 018), (2) Materi iklan Meta 1 Video 15s & 1 Gambar Statis v3 di `campaign-1/` (**CLOSED / SIAP TAYANG**, Decision 016, 020, & 021), (3) Template PDF Bukti Pemesanan selesai dibuat oleh pendiri (**CLOSED**, Decision 020) |
-| Minggu 1: Tes Meta Ads Rp100.000 + Micro-Warm DM IG | 21 - 27 Okt 2026 | Data iklan 7 hari (terpisah dari data Micro-Warm DM IG), lalu kampanye iklan dijeda untuk evaluasi |
-| Keputusan akhir minggu 1 | 28 Okt 2026 | Jalur A, B, atau C (bagian 5) |
+| Minggu 1: Tes Meta Ads Rp100.000 + Micro-Warm DM IG | 21 - 27 Okt 2026 | Uji tayang aktif 21-22 Okt, kendala delivery 23 Okt, dinonaktifkan manual 24 Okt. Belanja Rp42.048 dari deposit Rp130.000 (sisa saldo kas dashboard Rp87.952). Masuk Jalur C. |
+| Keputusan evaluasi minggu 1 | 28 Okt / 3 Nov 2026 | Penetapan Jalur C (iklan dijeda per 24 Okt s.d. 3 Nov, sisa saldo ditahan untuk materi baru content-machine) |
 | Checkpoint hari ke-30 | sekitar 19 Nov 2026 | Hard stop jika 0 DP (bagian 6) |
 | Checkpoint hari ke-60 | sekitar 19 Des 2026 | Review asumsi inti jika DP kurang dari 3 |
 | Evaluasi hari ke-90 | sekitar 18 Jan 2027 | Hitung DP final vs target 10 |
@@ -46,7 +46,18 @@
 - [KEPUTUSAN] Prospek dari **Micro-Warm Outreach DM IG manual** (2-3 usaha/hari, Decision 013) dicatat secara terpisah agar evaluasi performa iklan Rp100.000 pada tabel di bawah tetap murni dan tidak bias.
 - [KEPUTUSAN] Niche atau demo yang paling banyak diklik dan ditanyakan menjadi sinyal fokus iklan berikutnya.
 
-**Checkpoint awal, 21 Oktober 2026 (setelah 12 jam tayang):** Iklan mulai tayang pukul 09.00. Total belanja dua iklan Rp16.000; sekitar 70% terserap iklan video. Tercatat satu percakapan pesan, tetapi kualifikasinya belum diketahui. Micro-Warm Outreach belum dimulai, DP belum masuk, dan belum ada proyek. Checkpoint ini belum menentukan Jalur A/B/C; tunggu data sampai akhir tes 27 Oktober dan evaluasi pada 28 Oktober.
+**Hasil Evaluasi Akhir Minggu 1 (Data Dashboard 21-22 Oktober 2026 & Status per 3 November 2026):**
+- Iklan tayang mulai 21 Oktober pukul 09.00 WIB dan berjalan normal hingga 22 Oktober 2026.
+- Penyerapan iklan terhenti secara aneh pada 23 Oktober (saldo tidak berkurang dan angka metrik dashboard tidak bertambah).
+- Pada 24 Oktober 2026, iklan dinonaktifkan secara manual oleh pemilik dan tetap berstatus nonaktif (inactive) hingga saat ini (3 November 2026).
+- Realisasi belanja: **Rp42.048** (Video Ad Rp36.167 + Image Ad Rp5.881) dari total modal deposit **Rp130.000**, menyisakan saldo kas dashboard **Rp87.952** yang masih utuh dan aman.
+- Hasil corong iklan: 567 impresi, 471 jangkauan, 2 klik tautan (1 Video CPC Rp36.167, 1 Image CPC Rp5.881), 85 video plays 3 detik, 12 ThruPlays 15 detik, dan 1 pesan WhatsApp masuk via Video Ad.
+- Kualifikasi lead: 1 pesan masuk di hari pertama (21 Oktober) hanya menanyakan info atau harga umum / pesan bawaan template iklan, lalu tidak merespons kembali saat dibalas (ghosting/batal), tidak terjadi kesepakatan (tidak deal), dan tidak di-followup lanjutan. Kanal Micro-Warm Outreach IG belum dijalankan (0 akun). DP masuk: 0 klien.
+
+**Penetapan Keputusan Evaluasi:**
+- Realisasi metrik: Menghasilkan 1 pesan masuk (kurang dari ambang sinyal 2-3 chat valid) dan 0 DP.
+- Status resmi: **Jalur C** (Kurang dari 2 chat -> Iklan dijeda. Ganti satu variabel kreatif sebelum pengujian lanjutan).
+- Tindak lanjut: Iklan tetap dinonaktifkan. Sisa saldo kas Rp87.952 diamankan untuk re-launch menggunakan materi kreatif baru yang diproduksi melalui pabrik aset dan studio editorial `content-machine` (Fase 1 sampai 3, Decision 025 & Decision 026).
 
 **Aturan keputusan pada hari ke-7 (28 Okt 2026):**
 | Jalur | Kondisi (Metrik Iklan Meta Ads) | Tindakan |
@@ -147,6 +158,7 @@ Dihitung sejak iklan tayang.
 | 21 Oktober 2026 | Versi 1.7: Pencatatan checkpoint 12 jam pertama kampanye Meta Ads dan penegasan bahwa evaluasi akhir Minggu 1 tetap pada 28 Oktober. | Laporan pemilik, `Business Memory/weekly-review.md` |
 | 28 Oktober 2026 | Versi 1.8: Unifikasi hosting seluruh aset digital (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta penyelarasan acuan operasional ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | Versi 1.9: Sinkronisasi kesiapan operasional layout-lab (5 preset skenario klien, chassis fisik iPhone 15 pada live iframe, virtual artboard 1280px), SOP v1.4, dan Addendum Decision 023. | SOP v1.4, Addendum Decision 023 |
+| 3 November 2026 | Versi 2.0: Pencatatan hasil aktual uji tayang Meta Ads Minggu 1 (Jalur C, belanja Rp42.048 dari deposit Rp130.000, 1 chat non-closing, sisa saldo kas dashboard Rp87.952 aman), penonaktifan manual sejak 24 Oktober, dan penahanan saldo untuk re-launch materi content-machine. | Laporan pemilik, `Business Memory/weekly-review.md`, Decision 027 |
 
 
 

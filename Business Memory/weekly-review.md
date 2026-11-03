@@ -65,12 +65,35 @@ Data dari dokumen ini berfungsi sebagai:
 
 ---
 
-### Minggu 1 (Tes Meta Ads & Micro-Warm Outreach: 21 – 27 Oktober 2026)
-- **Status:** BERJALAN; checkpoint awal setelah 12 jam tayang pada 21 Oktober.
-- **Meta Ads:** Mulai tayang 21 Oktober pukul 09.00. Dua iklan menghabiskan total **Rp16.000** pada checkpoint 12 jam. Sekitar **70% belanja terserap iklan video**. Tercatat **1 percakapan pesan** dari iklan; isi dan kualifikasinya belum diketahui. Biaya per percakapan sementara Rp16.000, bukan CAC per klien.
-- **Micro-Warm Outreach DM IG:** Belum dimulai; 0 usaha disapa, 0 balasan, 0 percakapan pindah ke WhatsApp.
-- **Pipeline:** Belum ada DP atau proyek nyata. Jumlah PDF Bukti Pemesanan yang dikirim dan pilihan domain belum dicatat.
-- **Catatan evaluasi:** Satu percakapan pesan belum memenuhi ambang sinyal 2-3 chat valid yang menanyakan paket atau kebutuhan website. Lanjutkan pencatatan sampai 27 Oktober; evaluasi Jalur A/B/C pada 28 Oktober. Jangan pilih jalur lebih awal.
+### Minggu 2 (Konsolidasi Sistem & Studio Content-Machine: 28 Oktober - 3 November 2026)
+- **Status:** CLOSED / SELESAI (100%)
+- **Meta Ads:** Iklan tetap dalam status **nonaktif (inactive)** sejak 24 Oktober 2026 (Jalur C). Pengeluaran minggu ini **Rp0**. Sisa saldo deposit di dashboard Meta Ads sebesar **Rp87.952** tetap aman dan tersimpan untuk pengujian berikutnya.
+- **Micro-Warm Outreach DM IG:** Belum dijalankan (0 akun disapa, 0 DM).
+- **Fokus Studio & Pengerjaan:** Konsolidasi infrastruktur ekosistem. Pemutakhiran teknis `layout-lab` ke Astro 7.4.4 (Decision 023 Addendum, 31 Oktober 2026) dan penyelesaian pabrik aset serta studio konten editorial `content-machine` Fase 1 sampai 3 (v1.4, Astro 7.4.5 + React 19.3.1 TSX, 19 arketipe layout, Dynamic Auto-Fit Canvas, safe zones, dan pipeline ekspor ZIP, Decision 025 & Decision 026). Studio kini siap merakit materi iklan varian baru untuk persiapan re-launch Meta Ads menggunakan sisa saldo yang ada.
+- **Pipeline:** Belum ada klien aktif baru / 0 DP.
+
+### Minggu 1 (Tes Meta Ads & Micro-Warm Outreach: 21 - 27 Oktober 2026)
+- **Status:** CLOSED / SELESAI (Uji coba aktif 21-22 Okt, kendala delivery 23 Okt, dinonaktifkan manual 24 Okt).
+- **Meta Ads (Data Dashboard 21-22 Oktober 2026):**
+  - **Total Belanja:** **Rp42.048** dari modal deposit **Rp130.000** (sisa saldo kas di dashboard: **Rp87.952**).
+  - **Rincian Materi Iklan:**
+    - *Video Ad (Iklan A 15s):* Belanja Rp36.167 | Impresi: 502 | Jangkauan: 415 | Frekuensi: 1,21 | CPM: Rp72.045,82 | 3-sec video plays: 85 (Rp425,49/play) | 15-sec ThruPlays: 12 | Klik tautan: 1 (CTR: 0,20%, CPC: Rp36.167) | Pesan masuk: 1 (Cost/chat: Rp36.167).
+    - *Image Ad (Iklan B Statis v3):* Belanja Rp5.881 | Impresi: 65 | Jangkauan: 56 | Frekuensi: 1,16 | CPM: Rp90.476,92 | Klik tautan: 1 (CTR: 1,54%, CPC: Rp5.881) | Pesan masuk: 0.
+  - **Total Gabungan:** 567 impresi, 471 jangkauan, 2 klik tautan, 1 percakapan pesan masuk.
+- **Kendala Penayangan & Penghentian:**
+  - Iklan tayang mulai 21 Oktober pukul 09.00 WIB dan berjalan normal hingga 22 Oktober.
+  - Pada 23 Oktober, penyerapan iklan terhenti secara aneh (tidak ada pengurangan saldo dan angka metrik dashboard tidak bertambah).
+  - Pada 24 Oktober, pendiri memutuskan menonaktifkan kampanye secara manual hingga saat ini (3 November 2026) untuk menghindari ketidakpastian delivery.
+- **Pipeline & Penjualan (WhatsApp Lead #001):**
+  - Beberapa jam setelah peluncuran di hari pertama (21 Oktober), tercatat 1 pesan masuk ke WhatsApp via Video Ad.
+  - Isi percakapan hanya menanyakan info atau harga umum / pesan pembuka template iklan. Setelah dibalas, prospek tidak merespons kembali (ghosting/batal).
+  - Tidak terjadi kesepakatan (tidak deal), dan pendiri tidak melakukan follow-up lanjutan.
+  - DP 50% masuk: 0 transaksi. Dokumen PDF Bukti Pemesanan terkirim: 0 berkas.
+- **Micro-Warm Outreach DM IG:** Belum dijalankan (0 akun disapa, 0 DM).
+- **Evaluasi & Keputusan Jalur (Sesuai `Strategy/rencana.md` Bagian 5):**
+  - Realisasi: Menghasilkan 1 pesan masuk (< ambang 2-3 chat valid) dan 0 DP.
+  - Status resmi: **Jalur C** (Iklan dijeda, ganti satu variabel kreatif sebelum tes berikutnya).
+  - Kampanye resmi dijeda/dinonaktifkan. Sisa saldo kas Rp87.952 diamankan untuk re-launch menggunakan materi kreatif baru dari `content-machine`.
 
 ### Minggu 0 (Persiapan Pra-Peluncuran: 14 – 18 Oktober 2026)
 - **Status:** CLOSED / SELESAI (100%)

@@ -4,8 +4,8 @@
 > 
 > **Daftar 5 Berkas Bersambung:**
 > 1. enlesweb-part-01-of-05.md: Start Here (summary.md) & Visi Strategis (visi.md)
-> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md) & Rencana Strategis (rencana.md)
-> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md) & Standar Operasional Prosedur (sop.md)
+> 2. enlesweb-part-02-of-05.md: Model Bisnis (model-bisnis.md), Rencana Strategis (rencana.md), Matriks KPI (kpi.md), & Register Mingguan (weekly-review.md)
+> 3. enlesweb-part-03-of-05.md: Positioning Pasar (positioning.md), Standar Operasional Prosedur (sop.md), & Register Leads (leads.md)
 > 4. enlesweb-part-04-of-05.md: Decision Log (decision-log.md) & Context Master (enlesweb-context-master.md)
 > 5. enlesweb-part-05-of-05.md: Riset Kompetitor (riset_kompetitor_enlesweb.md) & Dokumentasi Teknis Web V4 (ENLESWEB-DOCS-V4.md)
 
@@ -17,9 +17,9 @@
 
 # BUSINESS CONTEXT
 **Versi:** 2.5
-**Terakhir diperbarui:** 31 Oktober 2026
-**Sumber:** `enlesweb-context-master.md` (v4.0), `../enlesweb/ENLESWEB-DOCS-V4.md` (v2.5), `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md` (v4.4), `Delivery & Operations/sop.md` (aturan transaksi v1.4 CLOSED, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Strategy/positioning.md` (v2.2), `Strategy/rencana.md` (v1.9), `Strategy/model-bisnis.md` (v1.7), `Strategy/visi.md` (v2.3), dan `Business Memory/decision-log.md` (Decision 001 - 023 + Addendum 31 Oktober 2026).
-**Ringkasan Pembaruan:** Pada 31 Oktober 2026, unifikasi tunggal workspace lokal `enlesweb-workspace` (D:\myself\web\enlesweb-workspace), penerapan arsitektur Multi-Agent Document Custodians & Zero File Kembar Lintas-Folder (1 Dokumen = 1 Rumah Asli), otomatisasi pasca-push dengan Gerbang Audit Anti-Halusinasi 5 lapis (@agent-auditor), serta pemutakhiran teknis layout-lab ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi seluruh CVE keamanan (commit 9a1de77 & 19671bf).
+**Terakhir diperbarui:** 31 Oktober 2026 (Sinkronisasi Catatan Uji Coba Meta Ads Minggu 1 & Decision 027 per 3 November 2026)
+**Sumber:** `enlesweb-context-master.md` (v4.0), `../enlesweb/ENLESWEB-DOCS-V4.md` (v2.5), `ENLESWEB-CONTEXT-PROGRESS-HISTORY.md` (v4.4), `Delivery & Operations/sop.md` (aturan transaksi v1.4 CLOSED, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Strategy/positioning.md` (v2.2), `Strategy/rencana.md` (v2.0), `Strategy/model-bisnis.md` (v1.7), `Strategy/visi.md` (v2.3), dan `Business Memory/decision-log.md` (Decision 001 - 027).
+**Ringkasan Pembaruan:** Pada 3 November 2026, evaluasi hasil aktual pengujian Meta Ads Minggu 1 (Jalur C, belanja Rp42.048 dari deposit Rp130.000, 1 chat non-closing, sisa saldo kas dashboard Rp87.952 aman), penonaktifan manual sejak 24 Oktober 2026, penahanan sisa saldo untuk re-launch materi baru `content-machine` (Decision 027), serta kelulusan Fase 1 sampai 3 studio editorial `content-machine` (Decision 025 & Decision 026).
 **Label:** [FAKTA] terverifikasi di dokumen/repo, [KEPUTUSAN] sudah dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Ringkasan Bisnis
@@ -31,8 +31,8 @@
   - [FAKTA] Launch-ready, siap go-live komersial. Domain resmi `enlesweb.com` telah dibeli (pendaftaran registrar Domainesia terealisasi Rp152.070, Decision 018). Homepage selesai (0 error, 0 warning) dan disiapkan untuk penayangan produksi Cloudflare Workers pada domain kanonikal `enlesweb.com`.
   - [FAKTA] 6 website konsep live di Cloudflare Workers dengan subdomain resmi: Seruput Kopi (`seruput.enlesweb.com`), ripeir (`ripeir.enlesweb.com`), tuntas (`tuntas.enlesweb.com`), Jerseay (`jerseay.enlesweb.com`), dipotongin (`dipotongin.enlesweb.com`), berflower (`berflower.enlesweb.com`). Vercel telah dinonaktifkan (Decision 023).
   - [FAKTA] WhatsApp `6285156801570`, Meta Pixel `1099411523003859`, Instagram `@enlesweb`, halaman `/kebijakan-privasi`, OG image, sitemap, CI/CD, dan SOP operasional WhatsApp (`sop.md` v1.4) sudah terpasang dan berstatus **CLOSED**.
-  - [FAKTA per 21 Oktober 2026, checkpoint awal Minggu 1] Iklan tayang pukul 09.00. Setelah 12 jam, total belanja dua iklan Rp16.000; sekitar 70% belanja terserap iklan video. Tercatat satu percakapan pesan dari iklan, tetapi kualifikasinya belum diketahui. Belum ada outreach Micro-Warm, DP, atau proyek nyata. Pilihan domain belum diketahui.
-- Pendiri dan sumber daya yang tersedia: [FAKTA] Solo founder, dibantu AI coding/design assistant (Antigravity). [KEPUTUSAN] Komunikasi publik menggunakan kata "kami" dan "tim" (Decision 001). Aset reusable: 6 template konsep, materi iklan kampanye 1 di `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3), template PDF Bukti Pemesanan formal, SOP chat WhatsApp (v1.4 CLOSED), dan composer internal `layout-lab` (aktif di `preview.enlesweb.com`).
+  - [FAKTA per 3 November 2026, hasil uji coba Minggu 1] Iklan tayang 21 Oktober pukul 09.00 WIB dan berjalan aktif hingga 22 Oktober; penyerapan delivery terhenti pada 23 Oktober dan dinonaktifkan manual pada 24 Oktober 2026 (status inactive per 3 November 2026). Total belanja dua iklan Rp42.048 (Video Ad Rp36.167 + Image Ad Rp5.881) dari total deposit modal Rp130.000, menyisakan saldo kas dashboard Rp87.952 yang aman. Menghasilkan 567 impresi, 471 reach, 2 klik tautan, dan 1 percakapan pesan WhatsApp via Video Ad di hari pertama yang tidak berlanjut (ghosting/batal, 0 DP). Kampanye resmi masuk Jalur C (dijeda), dan sisa saldo ditahan untuk persiapan re-launch materi baru dari content-machine (Decision 027).
+- Pendiri dan sumber daya yang tersedia: [FAKTA] Solo founder, dibantu AI coding/design assistant (Antigravity). [KEPUTUSAN] Komunikasi publik menggunakan kata "kami" dan "tim" (Decision 001). Aset reusable: 6 template konsep, materi iklan kampanye 1 di `campaign-1/` (Iklan A video 15s dan Iklan B gambar statis v3), template PDF Bukti Pemesanan formal, SOP chat WhatsApp (v1.4 CLOSED), composer internal `layout-lab` (aktif di `preview.enlesweb.com`), serta asset factory & studio editorial konten `content-machine` (Fase 1-3 CLOSED: v1.4, Astro 7.4.5 + React 19.3.1 TSX, 8 Layer 1 UI Primitives, 19 arketipe layout berpengetikan ketat, 35 vektor SVG, 5 render 3D tactile, Studio Workspace bertema Full Light dengan Dynamic Auto-Fit Canvas dan Safe Zone Overlays, Thematic Shelves Catalog, linter otomatis, serta pipeline ekspor ZIP mandiri, Decision 025 & Decision 026).
   - [FAKTA per 31 Oktober 2026] layout-lab memiliki 43 varian dalam 13 kategori dengan contoh bisnis umum dan data dummy, berjalan di Cloudflare Workers pada `preview.enlesweb.com` dengan Stateless Compact ID (`/p/<id>`), rute internal terisolasi (`/studio-admin/*`), arsitektur dual-layer token (`--ew-*` vs `--wf-*`), Scaled 1280px Artboard, chassis iPhone 15 pada sandboxed iframe, 5 preset skenario klien, 46 assertion otomatis, serta 86 Playwright visual snapshot tests. Stack dependensi diperbarui ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, dan override Vite 8.3.5 untuk memitigasi seluruh CVE keamanan (commit `9a1de77` & `19671bf`).
   - [KEPUTUSAN 022 & 023 Addendum] Setelah deployment publik aktif dan URL preview diverifikasi di `preview.enlesweb.com`, ENLESWEB mengirim satu preview layout (`https://preview.enlesweb.com/p/<id>`) yang sesuai kebutuhan prospek (dipilih bebas dari 5 preset atau dirakit manual) sebelum ringkasan kesepakatan dan permintaan DP. Preview data dummy ini bukan draf proyek dan tidak memulai pengerjaan.
 
@@ -40,8 +40,8 @@
 - Visi jangka panjang: [KEPUTUSAN] "Build the website system once, then configure and compose it repeatedly." Dari jasa website menuju sistem produksi internal (Website Builder berbasis blueprint JSON). Roadmap: Internal Generator, Internal Production System, Productized System (fokus jangka panjang utama), dan SaaS mandiri (ditunda/opsional pasca-Productized System).
 - Target 12 bulan: [KEPUTUSAN] Target pendapatan Rp4.500.000 (konservatif berbasis 10 klien Starter pertama @ Rp450.000). Dari 10 klien pertama menuju pipeline yang stabil, evaluasi harga setelah 10 klien, mulai merancang blueprint JSON dan membangun Website Builder internal (fase 1 sampai 2) persis setelah klien ke-10 go live (selesai, tayang, dan lunas), dan menjajaki kanal outbound leads berbayar (tools seperti Apollo.io dkk. ~Rp400-500rb/bln).
 - Target 90 hari: [KEPUTUSAN] 10 klien pertama berbayar (DP masuk) dalam 90 hari setelah iklan Meta Ads tayang.
-- Tujuan utama bulan ini (Minggu 1, 21-27 Oktober): Tes Meta Ads Rp100.000 selama 7 hari dan eksperimen Micro-Warm Outreach DM IG manual 2-3 usaha/hari, dicatat terpisah. Iklan mulai tayang 21 Oktober pukul 09.00. Pada checkpoint 12 jam, dua iklan menghabiskan Rp16.000; sekitar 70% belanja terserap iklan video; satu percakapan pesan tercatat. Belum ada outreach atau DP. Percakapan itu belum dikualifikasi, sehingga belum dihitung sebagai sinyal valid 2-3 chat yang menanyakan paket atau kebutuhan website.
-- Definisi keberhasilan & Ambang Sinyal: [KEPUTUSAN] Tes minggu pertama (Rp100.000) sukses jika menghasilkan minimal 1 klien berbayar. Ambang sinyal antara (*intermediate signal*): minimal **2–3 chat masuk ke WhatsApp dari iklan** yang menanyakan rincian paket atau kebutuhan website (terpisah dari chat hasil Micro-Warm Outreach DM IG). [KEPUTUSAN EVALUASI] Setelah 1 minggu berjalan, kampanye dijeda untuk evaluasi menyeluruh sebelum menentukan kelanjutan kampanye.
+- Hasil Uji Coba Minggu 1 & Status Kampanye (Jalur C): Tes Meta Ads terlaksana pada 21-22 Oktober 2026 dengan total pengeluaran kas Rp42.048 dari deposit Rp130.000 (sisa saldo kas Rp87.952). Tercatat 1 pesan masuk via WhatsApp (kurang dari ambang 2-3 chat valid) dan 0 DP. Iklan dinonaktifkan manual sejak 24 Oktober 2026 dan resmi masuk Jalur C (dijeda untuk evaluasi variabel materi kreatif). Sisa saldo Rp87.952 diamankan untuk re-launch menggunakan materi terstandarisasi dari content-machine (Fase 1 sampai 3). Micro-Warm Outreach IG belum dijalankan (0 DM).
+- Definisi keberhasilan & Ambang Sinyal: [KEPUTUSAN] Tes minggu pertama (Rp100.000) sukses jika menghasilkan minimal 1 klien berbayar. Ambang sinyal antara (*intermediate signal*): minimal **2-3 chat masuk ke WhatsApp dari iklan** yang menanyakan rincian paket atau kebutuhan website (terpisah dari chat hasil Micro-Warm Outreach DM IG). [KEPUTUSAN EVALUASI] Setelah 1 minggu berjalan, kampanye dijeda untuk evaluasi menyeluruh sebelum menentukan kelanjutan kampanye.
 
 ## 3. Target Pelanggan
 - Segmen pelanggan yang ingin dilayani: [KEPUTUSAN] Pebisnis kecil-menengah, UMKM, bisnis lokal, dan jasa profesional di Indonesia.
@@ -213,7 +213,6 @@ Detail jadwal ada di `Strategy/rencana.md` (SOP operasional WhatsApp telah **CLO
 | 29 Oktober 2026 | 2.4 | Penyerapan mendalam arsitektur teknis & desain layout-lab (Dual-Layer Token --ew-* vs --wf-*, Scaled 1280px Virtual Artboard, chassis iPhone 15 pada live iframe, 5 preset skenario klien, 46 assertion otomatis, 86 Playwright visual snapshots, SOP v1.4, dan Addendum Decision 023). | Addendum Decision 023, SOP v1.4, audit arsitektur |
 **Aturan:** Bedakan fakta, estimasi, hipotesis, dan keputusan. Jangan menganggap data yang belum tersedia sebagai nol. Jika informasi berubah, catat tanggal dan sumber perubahannya.
 
-
 ---
 
 <!-- ===================================================================== -->
@@ -337,9 +336,6 @@ Composer layout-lab (live di `preview.enlesweb.com`) dipakai untuk membantu pros
 | 28 Oktober 2026 | Versi 2.1: Unifikasi hosting 6 demo portofolio (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta pengaktifan penuh SOP v1.3 pra-DP berbasis Stateless Compact ID (/p/<id>) (Decision 022 CLOSED). | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | Versi 2.2: Penegasan prinsip wireframe monokrom ENERGY 1 / RHYTHM 2 / MOTION 1 bebas bias estetika, pemutakhiran kapabilitas layout-lab (5 preset klien, chassis iPhone 15 pada live iframe, virtual artboard 1280px), dan SOP v1.4. | Addendum Decision 023, SOP v1.4, DESIGN.md |
 | 31 Oktober 2026 | Versi 2.3: Pemutakhiran spesifikasi teknis layout-lab ke Astro 7.4.4 di atas Node 22.23.4, TypeScript 6.0.3, Vite 8.3.5 overrides, dan mitigasi CVE (commit 9a1de77 & 19671bf). | Addendum Decision 023 (31 Oktober 2026) |
-
-
-
 
 ---
 <!-- AKHIR DARI PART 01 (BERSAMBUNG KE PART 02: enlesweb-part-02-of-05.md) -->

@@ -630,6 +630,38 @@ Template statis HTML warisan (`src/layouts/*.html`) pada `content-machine` memba
 ### 3. Alasan
 Memberikan studio produksi konten mandiri yang tangguh, modular, dan terverifikasi secara visual, sehingga pendiri dapat memproduksi materi Instagram berkualitas tinggi secara konsisten dalam batas waktu 2 jam per minggu tanpa risiko ketidaksesuaian klaim harga atau pelanggaran pedoman desain.
 
+---
+
+## Decision 027
+- **Tanggal:** 3 November 2026
+- **Topik:** Evaluasi Hasil Uji Coba Meta Ads Minggu 1, Penetapan Status Jalur C (Jeda Iklan), Pengamanan Sisa Saldo Rp87.952, dan Penyiapan Materi Re-launch via `content-machine`
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Kampanye Meta Ads perdana (Minggu 1) yang diluncurkan pada 21 Oktober 2026 mengalami kendala teknis penyerapan delivery pada 23 Oktober 2026 (saldo tidak terpotong dan metrik dashboard berhenti bertambah). Untuk menghindari ketidakpastian pengiriman impresi, iklan telah dinonaktifkan manual oleh pemilik pada 24 Oktober 2026. Data aktual performa iklan dan status 1 prospek chat WhatsApp yang masuk perlu dievaluasi secara formal untuk menentukan kelanjutan anggaran serta arah strategis akuisisi studio.
+
+### 2. Keputusan
+1. **Pengesahan Metrik Finansial & Kinerja Kampanye Minggu 1:**
+   Mengesahkan data ground-truth dari dashboard Meta Ads (periode 21 - 22 Oktober 2026):
+   - Modal deposit awal: **Rp130.000**.
+   - Realisasi belanja: **Rp42.048** (terserap pada Video Ad Rp36.167 dan Image Ad Rp5.881).
+   - Sisa saldo kas tersimpan di akun Meta Ads: **Rp87.952** (aman dan utuh).
+   - Metrik jangkauan: 567 impresi, 471 reach, 2 klik tautan (Video CPC Rp36.167, Image CPC Rp5.881), 85x 3-second video plays, 12x 15-second ThruPlays, dan 1 percakapan pesan masuk.
+2. **Kualifikasi Prospek & Status Pipeline:**
+   - 1 pesan masuk tercatat di hari pertama (21 Oktober) via Video Ad beberapa jam setelah tayang.
+   - Isi percakapan hanya menanyakan info atau harga umum / template pembuka pesan iklan. Setelah dibalas, prospek tidak merespons kembali (ghosting/batal).
+   - Tidak terjadi kesepakatan (tidak deal), tidak ada transaksi DP 50%, dan diputuskan tidak dilakukan follow-up lanjutan.
+   - Kanal Micro-Warm Outreach DM IG belum dijalankan (0 akun disapa, 0 DM).
+3. **Penetapan Status Resmi Jalur C (Sesuai `Strategy/rencana.md` Bagian 5):**
+   - Berdasarkan aturan keputusan rencana 90 hari, hasil < 2 chat valid dan 0 DP secara resmi menetapkan kampanye masuk **Jalur C** (iklan dijeda untuk evaluasi variabel kreatif).
+   - Status iklan tetap **nonaktif (inactive)** sejak 24 Oktober hingga saat ini (3 November 2026).
+4. **Pengamanan Saldo Kas & Rencana Re-launch:**
+   - Sisa saldo deposit sebesar **Rp87.952** tidak ditarik atau dibakar secara sia-sia, melainkan ditahan di dalam akun Meta Ads.
+   - Re-launch kampanye iklan berikutnya akan memanfaatkan materi kreatif baru hasil produksi studio `content-machine` (Fase 1 sampai 3) setelah varian layout dan aset baru siap tayang.
+
+### 3. Alasan
+Menjaga disiplin kas pendiri agar tidak terjadi pembakaran modal (*no cash burn*) di tengah delivery iklan yang tidak stabil, serta memastikan pengeluaran sisa saldo berikutnya didukung oleh materi iklan yang lebih matang dari pipeline terstandarisasi `content-machine`.
+
 
 
 
