@@ -597,6 +597,40 @@ Produksi materi iklan berbayar (Meta Ads) dan konten organik Instagram selama in
 ### 3. Alasan
 Membangun fondasi infrastruktur pemasaran yang skalabel dan anti-slop, mengamankan efisiensi waktu kerja pendiri bisnis (maksimal 2 jam per minggu untuk konten organik sesuai `Strategy/rencana.md`), serta memastikan integritas visual dan klaim harga/paket 100% sinkron dengan fakta `enlesweb-context-master.md`.
 
+---
+
+## Decision 026
+- **Tanggal:** 3 November 2026
+- **Topik:** Penyelesaian Fase 2 & Fase 3 `content-machine` (v1.4 Spec, Modernisasi Komponen Astro + React 19 TSX, Transformasi Full Light Studio Workspace, Dynamic Auto-Fit Canvas, Safe Zone Overlays, Registri Klaim, dan Pipeline Ekspor ZIP Mandiri)
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Template statis HTML warisan (`src/layouts/*.html`) pada `content-machine` membatasi komposisi layout interaktif, menyulitkan pengetikan tipe data, dan memisahkan proses pratinjau editorial dari mesin kompilasi. Selain itu, rasio aspek vertikal 9:16 dan 4:5 rentan terpotong vertikal (*vertical clipping*) di layar monitor laptop standar tanpa mekanisme auto-fit kanvas responsif, serta tidak adanya overlay panduan area aman (*safe zones*) antarmuka Instagram.
+
+### 2. Keputusan
+1. **Penyelesaian Fase 2 & Penutupan Resmi Fase 3 `content-machine`:**
+   Mengesahkan penutupan milestone Fase 2 dan Fase 3 pada repositori `content-machine` (commit `d6189f1` s.d. `2a21a3c`), memvalidasi dokumen spesifikasi teknis `CONTENT-MACHINE-DOCS-V1.md` versi 1.4.
+2. **Modernisasi Stack ke Komponen Astro + React 19 (`.tsx`):**
+   - Mengganti seluruh template statis HTML mentah dengan arsitektur modular Astro 7.4.5 + React 19.3.1 dan TypeScript 6.0.3 yang lolos verifikasi `astro check` (0 error, 0 warning).
+   - Menetapkan 4 Layer Arsitektur:
+     - *Layer 1 (Primitives):* `SlideCanvas`, `WaChat`, `PhoneMockup`, `ConceptCard`, `PriceTable`, `PointList`, `CtaBar`, `Badges`.
+     - *Layer 2 (19 Archetype Layouts):* Carousel C01 s.d. C12 dan Reels R01 s.d. R07 terdaftar di `src/components/archetypes/index.ts`.
+     - *Layer 3 (Post & Claims Registry):* Registri ketat `claims.ts` (14 klaim resmi dan harga paket Rupiah sinkron dengan master context) serta postingan produksi K1 (`k1-link-wa-vs-website.tsx`) dan contoh P1, P2, P3.
+     - *Layer 4 (Studio Workspace & Catalog):* Studio interaktif `/` dan Catalog Explorer `/katalog`.
+3. **Standarisasi Antarmuka Studio Workspace (Full Light Theme):**
+   - Menetapkan tema kerja *Full Light*: dot-grid abu-abu dingin (`#EFF2F7` dengan radial dots `#D5DAE2`), panel putih bersih (`#FFFFFF`), border hairline (`#E5E5DF`), dan aksen taktil signature ENLESWEB (`#E4FF30` / `#A3C400`).
+   - Implementasi *Dynamic Responsive Auto-Fit Canvas* berbasis `ResizeObserver` yang menjamin kanvas 4:5 dan 9:16 tampil 100% utuh tanpa scrollbar atau pemotongan vertikal di semua resolusi.
+   - Fitur interaktif *Instagram Safe Zone Guides Overlay* (shortcut `G`) yang menampilkan garis batas crop Feed 1:1, margin teks, dan area tertutup antarmuka Reels.
+   - Kontrol pemutar video Reels deterministik dengan tombol `Play Live (Space)`, range scrubber 0-450 frame, dan HTTP 206 range streaming.
+4. **Pipeline Ekspor Mandiri Bebas Dependensi Eksternal:**
+   - Kompilasi pos menghasilkan bundel arsip `.zip` di `exports/posts/<id>.zip` yang dirakit murni dengan Node.js Buffer (Store Method 0 + tabel CRC32 lookup) berisi slide PNG resolusi tinggi, video Reels MP4 (jika tersedia), frame cover, caption tervalidasi guardrail, dan `manifest.json`.
+5. **Jembatan Menuju Fase 4 (Art Direction & Material Editorial Taktil):**
+   - Menyepakati arahan `docs/art-direction-fase4.md` untuk meninggalkan rounded card umum SaaS dan mengadopsi metafora fisik nyata (garis buku SiDU untuk tuntas, roster tenun untuk Jerseay, faktur stempel fisik paket Starter).
+
+### 3. Alasan
+Memberikan studio produksi konten mandiri yang tangguh, modular, dan terverifikasi secara visual, sehingga pendiri dapat memproduksi materi Instagram berkualitas tinggi secara konsisten dalam batas waktu 2 jam per minggu tanpa risiko ketidaksesuaian klaim harga atau pelanggaran pedoman desain.
+
+
 
 
 

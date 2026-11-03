@@ -93,7 +93,7 @@ Dihitung sejak iklan tayang.
   2. **Konten Organik Instagram `@enlesweb` (Kanal Kedua Gratis - Decision 008):**
      - Memakai ulang aset kreatif yang ada (tangkapan layar demo dan klip video dari `campaign-1/`).
      - Maksimal 2-3 post per minggu, dibatch sekali seminggu, maksimal sekitar 2 jam.
-     - [FAKTA/KEPUTUSAN 025] Penguatan Produksi via `content-machine`: Untuk menjaga batas waktu maksimal 2 jam per minggu, studio mengoperasikan pabrik aset `content-machine` (19 template slot-driven, 35 aset vektor SVG, 5 render 3D tactile, linter otomatis, dan server galeri lokal) guna memproduksi carousels edukasi 4:5 dan video reels 9:16 secara terstandarisasi.
+     - [FAKTA/KEPUTUSAN 025 & 026] Penguatan Produksi via `content-machine`: Untuk menjaga batas waktu maksimal 2 jam per minggu, studio mengoperasikan pabrik aset dan studio editorial `content-machine` (v1.4, Astro 7.4.5 + React 19.3.1 TSX, 8 UI Primitives, 19 arketipe layout bertipe ketat, Studio Workspace full light theme di port 3456 dengan dynamic auto-fit canvas, safe zone overlays, registri klaim resmi, dan pipeline kompilasi batch instan `compile-post.mjs` berbundel ZIP) guna memproduksi Instagram Carousel 4:5 dan video Reels 9:16 secara terstandarisasi.
      - Prioritas: chat WA, lalu pengerjaan klien, lalu konten.
      - Jika proyek aktif sudah 3, konten organik dijeda otomatis.
   3. **Eksperimen Micro-Warm Outreach Manual (Kanal Ketiga Gratis Rp0 - Decision 013):**
