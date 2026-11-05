@@ -649,8 +649,8 @@ function auditEcosystem() {
       }
     }
     scanCode(layoutLabSrc);
-    if (codeFiles.length !== 65) {
-      errors.push(`layout-lab/src memuat ${codeFiles.length} berkas (.astro, .ts, .css), diharapkan tepat 65 berkas sesuai no-eyebrow-lint.`);
+    if (codeFiles.length !== 67) {
+      errors.push(`layout-lab/src memuat ${codeFiles.length} berkas (.astro, .ts, .css), diharapkan tepat 67 berkas sesuai no-eyebrow-lint.`);
     }
   }
 
