@@ -65,6 +65,47 @@ Data dari dokumen ini berfungsi sebagai:
 
 ---
 
+### Minggu 3 (Eksperimen Meta Ads #2: 4 - 10 November 2026)
+- **Status:** CLOSED / SELESAI (Eksperimen Meta Ads #2 aktif 5-7 November 2026, 48 jam; kampanye selesai Recently Completed; Mode Jeda Total).
+- **Meta Ads (Data Ground-Truth Dashboard 5-7 November 2026):**
+  - **Saldo Modal Awal:** Saldo deposit kas di dashboard sebesar **Rp83.327**.
+  - **Materi Iklan:** Single Image rasio 4:5 bertema servis laptop/HP (`ripeir`) dengan headline *"Capek ketik ulang harga & alamat di WA setiap hari? Biar website yang jawab. Mulai Rp450.000, Siap Online!"* + Risk Reversal *"Lihat Contohnya Gratis! Kalo cocok bayar"* (dirakit langsung di editor grafis/Canva/Ads Manager tanpa menambah berkas baru di repositori).
+  - **Tabel Komparasi Strategi (Hari 1 vs Hari 2):**
+    | Parameter | Hari 1: Single Post Ad Set (5-6 Nov 2026) | Hari 2: Single Post Revisi Ad Set (6-7 Nov 2026) | Total Eksperimen #2 (48 Jam) |
+    |---|---|---|---|
+    | **Target Optimasi** | Maximize Conversations (WhatsApp) | Maximize Link Clicks | 2 Strategi Ad Set |
+    | **Area Geografis** | Hyper-local Kota Bandung (+15 km) | Broad (Jabodetabek + Bandung) | Skala Regional Luas |
+    | **Targeting Audiens** | Detailed (Page Admins + Small Business) | Zero Targeting (Pure Broad) | Tanpa Filter Minat |
+    | **Penempatan Iklan** | Manual (Feed & Stories Mobile) | Advantage+ Placements | Otomatis Algoritma |
+    | **Belanja Iklan** | Rp40.132 | Rp30.909 | **Rp71.041** (+ PPN 11% = Rp78.856) |
+    | **Tayangan (Impressions)** | 471 | 7.409 (naik 15,7x) | 7.880 impresi |
+    | **Jangkauan (Reach)** | 331 | 5.833 (naik 17,6x) | 6.164 akun unik |
+    | **CPM (Biaya per 1.000 Impresi)** | Rp85.200 (lelang tercekik sempit) | Rp4.171 (anjlok 95% / super murah) | Rp9.015 rata-rata |
+    | **Klik Tautan (Link Clicks)** | 3 | 232 (naik 77x) | 235 klik tautan |
+    | **Rasio Klik (CTR)** | 0,64% | **3,13%** (sangat tinggi untuk cold traffic) | 2,98% kumulatif |
+    | **Biaya per Klik (CPC)** | Rp13.377 | **Rp133** (super murah & efisien) | Rp302 rata-rata |
+    | **Interaksi Masuk (WA)** | 0 interaksi | 1 panggilan telepon langsung ke WA Business | 1 panggilan telepon |
+    | **Hasil Deal (DP 50%)** | 0 deal | 0 deal (lead expired) | **0 DP** |
+  - **Status Kas & Dashboard:** Pemotongan belanja iklan Rp71.041 beserta pajak PPN 11% (total pemotongan deposit Rp78.856) dari saldo deposit awal Rp83.327 menyisakan saldo kas akhir sebesar **Rp4.471** (terserap 94,6%). Kampanye berstatus selesai (*Recently Completed*).
+- **Evaluasi Corong & The Trust Gap (Kebocoran 99,56% di WhatsApp):**
+  - *Validasi Kreatif Sukses Besar (Creative Validation 9.5/10):* Perubahan ke strategi broad tanpa minat (Zero Targeting) dan Advantage+ Placements berhasil membuka lelang algoritma Meta. CTR Hari 2 melonjak ke 3,13% dengan CPC Rp133 per klik. Sudut pandang repot ketik ulang di WA dan penawaran Rp450.000 terbukti sangat relevan dan menarik bagi pebisnis lokal.
+  - *Konversi Penjualan Gagal (Closing Deal 0/10):* Dari 235 klik tautan berbayar, hanya terjadi 1 interaksi masuk (panggilan telepon) dan 0 chat teks lanjutan. Tingkat kebocoran di gerbang WhatsApp mencapai 99,56%.
+  - *Akar Masalah (The Trust Gap):*
+    1. **Profil WhatsApp Anonim:** Profil WhatsApp Business studio belum terverifikasi secara meyakinkan (belum ada katalog lengkap, logo profil belum tertata, dan ketiadaan tautan portofolio langsung).
+    2. **Ketiadaan Bukti Sosial:** Belum ada ulasan pihak ketiga, testimoni pelanggan, atau reputasi publik yang meyakinkan calon klien dingin untuk mentransfer uang.
+    3. **Latensi Respon Telepon:** Panggilan suara langsung dari calon klien wanita/ibu-ibu di Hari 2 tidak langsung terangkat secara live. Chat konfirmasi yang dikirimkan studio keesokan harinya sudah dingin dan tidak direspons kembali (*lead expired / lost momentum*).
+- **Status Strategis Studio (Decision 028):**
+  - Studio resmi masuk **Mode Jeda Total (Hard Stop Kas / No Cash Burn)**.
+  - Sisa saldo deposit sebesar **Rp4.471** diamankan di akun Meta Ads tanpa top-up baru saat ini.
+  - Fokus operasional dialihkan 100% untuk membenahi *The Trust Gap* di ruang WhatsApp (merapikan profil WhatsApp Business, katalog produk, portofolio resmi, dan materi edukasi) sebelum mengaktifkan eksperimen berbayar berikutnya.
+- **Pipeline & Penjualan (WhatsApp Lead #002):**
+  - Pada Hari 2 (6 November 2026), tercatat 1 prospek masuk via panggilan telepon suara langsung ke nomor WhatsApp Business studio dari calon klien wanita/ibu-ibu (Single Image 4:5 ripeir - Ad Set Broad Revisi).
+  - Panggilan tidak langsung terangkat secara live karena adanya jeda latensi respon. Chat konfirmasi dan penawaran bantuan yang dikirimkan oleh studio keesokan harinya tidak dibalas kembali (lead expired / kehilangan momentum).
+  - Tidak terjadi kesepakatan (tidak deal / Closed Lost), DP 50% masuk: 0 transaksi, Dokumen PDF Bukti Pemesanan terkirim: 0 berkas (tercatat di [Offers & Sales/leads.md](../Offers%20&%20Sales/leads.md#2-register-detail-prospek-masuk) sebagai `LEAD-20261106-002`). Belum ada klien aktif baru.
+- **Micro-Warm Outreach DM IG:** Belum dijalankan (0 akun disapa, 0 DM).
+
+---
+
 ### Minggu 2 (Konsolidasi Sistem & Studio Content-Machine: 28 Oktober - 3 November 2026)
 - **Status:** CLOSED / SELESAI (100%)
 - **Meta Ads:** Iklan tetap dalam status **nonaktif (inactive)** sejak 24 Oktober 2026 (Jalur C). Pengeluaran minggu ini **Rp0**. Sisa saldo deposit di dashboard Meta Ads sebesar **Rp87.952** tetap aman dan tersimpan untuk pengujian berikutnya.

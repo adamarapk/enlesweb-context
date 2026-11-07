@@ -681,6 +681,37 @@ Menjaga disiplin kas pendiri agar tidak terjadi pembakaran modal (*no cash burn*
 
 ---
 
+## Decision 028
+- **Tanggal:** 7 November 2026
+- **Topik:** Evaluasi Eksperimen Meta Ads #2 (5-7 November 2026), Sukses Validasi Kreatif (CTR 3,13%, CPC Rp133) vs Kebocoran WhatsApp (Trust Gap 99,56%), Mode Jeda Total (Hard Stop Kas), dan Pengamanan Sisa Saldo Rp4.471
+- **Status:** Diputuskan & Terealisasi (CLOSED)
+
+### 1. Masalah yang ingin diselesaikan
+Kampanye pengujian Meta Ads kedua (5-7 November 2026, total 48 jam) dijalankan menggunakan materi Single Image rasio 4:5 bertema servis laptop/HP (ripeir) dengan hook "Capek ketik ulang harga & alamat di WA setiap hari? Biar website yang jawab. Mulai Rp450.000, Siap Online!" serta risk-reversal "Lihat Contohnya Gratis! Kalo cocok bayar". Eksperimen ini membandingkan strategi penargetan sempit/hyper-local pada Hari 1 melawan strategi penargetan luas (broad/zero targeting) pada Hari 2. Studio memerlukan evaluasi formal atas performa biaya iklan, lonjakan lalu lintas klik tautan, kebocoran konversi di pintu gerbang WhatsApp, serta penguncian arah strategis modal kas.
+
+### 2. Keputusan
+1. **Pengesahan Metrik Finansial & Komparasi Strategi Eksperimen #2:**
+   Mengesahkan data riil dashboard Meta Ads (periode 5-7 November 2026):
+   - *Modal Saldo Deposit Awal:* **Rp83.327**.
+   - *Hari 1 (5-6 Nov 2026):* Ad Set 'Single Post Ad Set', optimasi Maximize Conversations (WhatsApp), penargetan hyper-local Kota Bandung (+15 km) dengan detailed targeting (Page Admins + Small Business), manual placements (Feed & Stories Mobile). Belanja Rp40.132, 471 impresi, 331 reach, CPM Rp85.200 (lelang tercekik di pasar sempit), 3 klik tautan (CTR 0,64%, CPC Rp13.377), 0 interaksi masuk.
+   - *Hari 2 / Revisi (6-7 Nov 2026):* Ad Set 'Single Post Revisi Ad Set', optimasi Maximize Link Clicks, penargetan Broad (Jabodetabek + Bandung) tanpa filter minat (Pure Broad / Zero Targeting), Advantage+ Placements. Belanja Rp30.909, 7.409 impresi (melonjak 15,7x), 5.833 reach (melonjak 17,6x), CPM Rp4.171 (turun 95% / sangat murah), 232 klik tautan (melonjak 77x), CTR 3,13% (sangat tinggi untuk cold traffic), CPC Rp133/klik (super murah & efisien), 1 interaksi masuk (panggilan telepon suara langsung ke WhatsApp Business dari calon klien wanita/ibu-ibu).
+   - *Total Eksperimen #2:* Belanja iklan Rp71.041 (total pemotongan kas deposit dengan PPN 11% adalah Rp78.856), 7.880 impresi, 6.164 reach, 235 klik tautan, 1 interaksi panggilan telepon, 0 deal/closing (0 DP).
+2. **Penegasan Sukses Validasi Kreatif vs Kebocoran WhatsApp (The Trust Gap):**
+   - *Validasi Kreatif Sukses (Creative Validation 9.5/10):* Sudut pandang masalah repot ketik ulang format di WhatsApp dan penawaran transparan mulai Rp450.000 terbukti sangat diminati audiens (CTR Hari 2 mencapai 3,13% dan CPC Rp133).
+   - *Konversi Penjualan Gagal (Closing Deal 0/10):* Dari 235 klik tautan iklan, hanya 1 interaksi panggilan telepon yang masuk dan tidak menghasilkan pembayaran DP (kebocoran corong 99,56% di gerbang WhatsApp).
+   - *Akar Masalah The Trust Gap:* Kebocoran diakibatkan profil WhatsApp Business yang masih anonim / minim identitas resmi, ketiadaan tautan portofolio langsung dan bukti sosial pihak ketiga (ulasan/testimoni), serta jeda latensi respon terhadap panggilan masuk (panggilan tidak terjawab langsung secara live, dan chat konfirmasi keesokan harinya sudah dingin / lead expired).
+3. **Penetapan Status Kampanye Selesai & Mode Jeda Total (Hard Stop Kas):**
+   - Kampanye Meta Ads dihentikan penuh (status dashboard: Recently Completed).
+   - Studio resmi memberlakukan **Mode Jeda Total (Hard Stop Kas / No Cash Burn)**: tidak ada penambahan deposit modal (top-up baru) ke Meta Ads saat ini.
+4. **Pengamanan Sisa Saldo Kas & Prioritas Pembenahan Profil WhatsApp:**
+   - Sisa saldo deposit sebesar **Rp4.471** (terserap 94,6%) diamankan di dashboard Meta Ads.
+   - Fokus operasional dialihkan 100% untuk membenahi *The Trust Gap* di ranah WhatsApp (merapikan profil WhatsApp Business, menyusun katalog produk terperinci, memasang tautan portofolio resmi, dan mengumpulkan materi bukti sosial) sebelum merancang eksperimen berbayar berikutnya.
+
+### 3. Alasan
+Mencegah pemborosan modal kas pada akuisisi berbayar ketika saluran hilir penerima (WhatsApp) belum memiliki daya konversi dan kredibilitas yang memadai. Validasi kreatif dan efisiensi lelang broad telah terbukti secara empiris, sehingga prioritas pertumbuhan kini bergeser dari pengujian materi iklan ke peningkatan tingkat kepercayaan dan kesiapan konversi di WhatsApp.
+
+---
+
 <!-- ===================================================================== -->
 <!-- DOKUMEN 2 DARI 2 DI PART 4: enlesweb-context-master.md -->
 <!-- ===================================================================== -->

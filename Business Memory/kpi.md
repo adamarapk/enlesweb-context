@@ -1,6 +1,6 @@
 # Matriks Metrik Kumulatif & KPI Bisnis ENLESWEB
 
-Checkpoint terakhir: 3 November 2026, pasca-uji coba Meta Ads Minggu 1 (Jalur C) dan konsolidasi content-machine.
+Checkpoint terakhir: 7 November 2026, pasca-eksperimen Meta Ads #2 (5-7 November 2026), evaluasi The Trust Gap, dan penetapan Mode Jeda Total (Decision 028).
 
 Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala dari kompilasi mingguan `Business Memory/weekly-review.md` sesuai mandat `Strategy/rencana.md` (Bagian 10) dan pemodelan `Strategy/model-bisnis.md`.
 
@@ -16,7 +16,7 @@ Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala 
 | **Konversi PDF Bukti Pemesanan ke DP** | Target **≥ 80,0%** (Decision 012) | - % | ⚪ Menunggu Data |
 | **Rata-rata Jam Kerja Starter** | **5 - 12 jam / klien** (Max 15 jam) | - jam | ⚪ Menunggu Data |
 | **Rata-rata Imbalan Kerja Pendiri** | **≥ Rp35.000 / jam** | - Rp/jam | ⚪ Menunggu Data |
-| **Plafon Pengeluaran Iklan 90 Hari** | Maksimal Rp500.000 - Rp1.000.000 | Rp42.048 terpakai (deposit Rp130.000, sisa saldo dashboard Rp87.952) | 🟢 Dalam batas |
+| **Plafon Pengeluaran Iklan 90 Hari** | Maksimal Rp500.000 - Rp1.000.000 | Rp113.089 terpakai dari plafon dasar Rp500.000 (sisa saldo deposit di dashboard Rp4.471) | 🟢 Dalam batas aman |
 
 ---
 
@@ -24,7 +24,7 @@ Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala 
 
 ### A. Pengeluaran Modal & Operasional Tetap
 - **Biaya Domain Resmi Studio (`enlesweb.com`):** Rp152.070 (Domainesia 1 thn - TEREALISASI, Decision 018).
-- **Akumulasi Belanja Iklan Meta Ads:** Rp42.048 (Realisasi 21-22 Oktober 2026, terhenti 23 Oktober, nonaktif 24 Oktober - 3 November 2026; sisa saldo kas dashboard Rp87.952 dari deposit modal Rp130.000, Decision 027).
+- **Akumulasi Belanja Iklan Meta Ads:** Rp113.089 (Eksperimen #1 Rp42.048 + Eksperimen #2 Rp71.041). Total pemotongan kas deposit dengan PPN 11% dari modal deposit awal Rp130.000 menyisakan saldo kas akhir di dashboard Meta Ads sebesar Rp4.471. Kampanye berstatus selesai (Recently Completed) dan studio masuk Mode Jeda Total (Hard Stop Kas, Decision 028).
 - **Akumulasi Langganan AI Tools:** Rp0 (Terkunci flat Rp100.000/bln sampai 5 klien lunas, Decision 014).
 - **Pengeluaran Operasional Lainnya:** Rp0
 
@@ -44,16 +44,16 @@ Dokumen pelacakan performa bisnis kumulatif ENLESWEB. Diperbarui secara berkala 
 
 | Tahap Corong Penjualan | Kumulatif Meta Ads | Kumulatif Micro-Warm IG | Total Gabungan | Rasio Konversi |
 |---|---|---|---|---|
-| **Tayangan (Impressions)** | 567 tayangan (502 Video + 65 Image) | 0 | 567 tayangan | - |
-| **Jangkauan (Reach)** | 471 akun (415 Video + 56 Image) | 0 | 471 akun | - |
-| **Klik Tautan Iklan / Profil** | 2 klik (1 Video + 1 Image) | 0 | 2 klik | CTR Video 0,20%, Image 1,54% |
-| **Percakapan Pesan Masuk** | 1 percakapan (Video Ad) | 0 | 1 percakapan | Biaya/chat Rp36.167 (tanya info umum, ghosting) |
+| **Tayangan (Impressions)** | 8.447 tayangan (567 E#1 + 7.880 E#2) | 0 | 8.447 tayangan | - |
+| **Jangkauan (Reach)** | 6.635 akun unik (471 E#1 + 6.164 E#2) | 0 | 6.635 akun unik | - |
+| **Klik Tautan Iklan / Profil** | 237 klik (2 E#1 + 235 E#2) | 0 | 237 klik | CTR E#1 0,35%, E#2 2,98% (E#2 Hari 2 mencapai 3,13%) |
+| **Interaksi Masuk (Pesan / Telepon)** | 2 interaksi (1 chat WA E#1 + 1 telepon WA E#2) | 0 | 2 interaksi | Biaya per interaksi rata-rata Rp56.545 |
 | **Konsultasi / Rekomendasi Paket** | 0 prospek | 0 | 0 prospek | Belum berlanjut ke konsultasi |
 | **Dokumen Bukti Pemesanan Terkirim** | 0 berkas | 0 berkas | 0 berkas | - |
-| **DP 50% Masuk (Klien Terakuisisi)** | 0 klien | 0 klien | 0 klien | 0% (Jalur C) |
+| **DP 50% Masuk (Klien Terakuisisi)** | 0 klien | 0 klien | 0 klien | 0% (Mode Jeda Total) |
 | **Biaya Akuisisi Kas (CAC Nyata)** | Belum terealisasi | Rp0 / klien | Belum terealisasi | - |
 
-Catatan evaluasi iklan Minggu 1: total belanja Rp42.048 (dari modal deposit Rp130.000) menghasilkan 1 percakapan pesan WhatsApp via Video Ad yang tidak berlanjut (ghosting/batal). Iklan terhenti delivery pada 23 Oktober, dinonaktifkan manual pada 24 Oktober 2026, dan resmi masuk status Jalur C. Sisa saldo Rp87.952 tersimpan aman di akun Meta Ads untuk persiapan re-launch materi baru dari content-machine.
+Catatan evaluasi per 7 November 2026: Total akumulasi belanja Meta Ads mencapai Rp113.089 (Rp42.048 Eksperimen #1 + Rp71.041 Eksperimen #2). Eksperimen #2 membuktikan validasi materi kreatif yang sangat kuat pada strategi broad lelang (7.880 impresi, 235 klik tautan, CTR Hari 2 sebesar 3,13%, CPC Rp133), namun terjadi kebocoran 99,56% di gerbang WhatsApp akibat The Trust Gap (profil WA anonim, tanpa portofolio resmi dan bukti sosial, serta latensi respon panggilan telepon sehingga lead expired tanpa DP). Sisa saldo kas deposit Rp4.471 diamankan dan studio masuk Mode Jeda Total (Hard Stop Kas, Decision 028) untuk membenahi The Trust Gap sebelum tes berbayar lanjutan.
 
 ---
 

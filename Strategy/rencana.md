@@ -1,7 +1,7 @@
 # RENCANA EKSEKUSI 90 HARI ENLESWEB
-**Versi:** 2.0
-**Terakhir diperbarui:** 3 November 2026
-**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.6), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 027), dan laporan pemilik tentang evaluasi hasil uji coba Meta Ads Minggu 1 per 3 November 2026.
+**Versi:** 2.1
+**Terakhir diperbarui:** 7 November 2026
+**Sumber:** `Start Here/summary.md` (sumber kebenaran v2.5), `Strategy/visi.md`, `Strategy/positioning.md`, `Strategy/model-bisnis.md`, `Delivery & Operations/sop.md` (v1.4, Decision 022, Decision 023, & Addendum 29 Oktober 2026), `Business Memory/decision-log.md` (Decision 001 - 028), dan laporan pemilik tentang evaluasi hasil Eksperimen Meta Ads #2 per 7 November 2026.
 **Label:** [FAKTA] terverifikasi, [KEPUTUSAN] dikunci pemilik, [ESTIMASI] perkiraan, [HIPOTESIS] belum terbukti, [BELUM DIKETAHUI] data belum tersedia (bukan nol).
 
 ## 1. Tujuan dan Cakupan
@@ -15,6 +15,8 @@
 | Minggu 0: Persiapan (100% CLOSED) | 14 - 20 Okt 2026 | (1) Domain `enlesweb.com` aktif (**CLOSED/SUDAH DIBELI**, Decision 018), (2) Materi iklan Meta 1 Video 15s & 1 Gambar Statis v3 di `campaign-1/` (**CLOSED / SIAP TAYANG**, Decision 016, 020, & 021), (3) Template PDF Bukti Pemesanan selesai dibuat oleh pendiri (**CLOSED**, Decision 020) |
 | Minggu 1: Tes Meta Ads Rp100.000 + Micro-Warm DM IG | 21 - 27 Okt 2026 | Uji tayang aktif 21-22 Okt, kendala delivery 23 Okt, dinonaktifkan manual 24 Okt. Belanja Rp42.048 dari deposit Rp130.000 (sisa saldo kas dashboard Rp87.952). Masuk Jalur C. |
 | Keputusan evaluasi minggu 1 | 28 Okt / 3 Nov 2026 | Penetapan Jalur C (iklan dijeda per 24 Okt s.d. 3 Nov, sisa saldo ditahan untuk materi baru content-machine) |
+| Minggu 2: Konsolidasi & Content-Machine | 28 Okt - 3 Nov 2026 | Pemeliharaan layout-lab (Astro 7.4.4) dan penyelesaian Fase 1-3 content-machine (v1.4) untuk produksi aset terstandarisasi. |
+| Minggu 3: Eksperimen Meta Ads #2 (48 Jam) | 5 - 7 Nov 2026 | Uji materi Single Image 4:5 ripeir. Belanja Rp71.041 (+ PPN = Rp78.856), 7.880 impresi, 235 klik (Hari 2: CTR 3,13%, CPC Rp133), 1 panggilan telepon, 0 DP. Mode Jeda Total (Hard Stop Kas) per 7 Nov 2026, sisa saldo deposit Rp4.471 diamankan. |
 | Checkpoint hari ke-30 | sekitar 19 Nov 2026 | Hard stop jika 0 DP (bagian 6) |
 | Checkpoint hari ke-60 | sekitar 19 Des 2026 | Review asumsi inti jika DP kurang dari 3 |
 | Evaluasi hari ke-90 | sekitar 18 Jan 2027 | Hitung DP final vs target 10 |
@@ -58,6 +60,17 @@
 - Realisasi metrik: Menghasilkan 1 pesan masuk (kurang dari ambang sinyal 2-3 chat valid) dan 0 DP.
 - Status resmi: **Jalur C** (Kurang dari 2 chat -> Iklan dijeda. Ganti satu variabel kreatif sebelum pengujian lanjutan).
 - Tindak lanjut: Iklan tetap dinonaktifkan. Sisa saldo kas Rp87.952 diamankan untuk re-launch menggunakan materi kreatif baru yang diproduksi melalui pabrik aset dan studio editorial `content-machine` (Fase 1 sampai 3, Decision 025 & Decision 026).
+
+**Hasil Evaluasi Eksperimen Meta Ads #2 (Data Dashboard 5-7 November 2026, Total 48 Jam):**
+- Materi iklan: Single Image rasio 4:5 bertema servis laptop/HP (`ripeir`) dengan headline *"Capek ketik ulang harga & alamat di WA setiap hari? Biar website yang jawab. Mulai Rp450.000, Siap Online!"* + Risk Reversal *"Lihat Contohnya Gratis! Kalo cocok bayar"*.
+- Modal saldo awal: Saldo deposit kas dashboard sebesar **Rp83.327**.
+- Komparasi strategi Hari 1 vs Hari 2:
+  - *Hari 1 (5-6 Nov 2026):* Ad Set 'Single Post Ad Set', optimasi Maximize Conversations, hyper-local Bandung (+15 km) dengan detailed targeting (Page Admins + Small Business), manual placements. Belanja Rp40.132, 471 impresi, 331 reach, CPM Rp85.200 (lelang tercekik sempit), 3 klik link (CTR 0,64%, CPC Rp13.377), 0 interaksi masuk.
+  - *Hari 2 / Revisi (6-7 Nov 2026):* Ad Set 'Single Post Revisi Ad Set', optimasi Maximize Link Clicks, penargetan Broad (Jabodetabek + Bandung) tanpa filter minat (Pure Broad), Advantage+ Placements. Belanja Rp30.909, 7.409 impresi (naik 15,7x), 5.833 reach (naik 17,6x), CPM Rp4.171 (anjlok 95%), 232 klik link (naik 77x), CTR 3,13% (sangat tinggi), CPC Rp133 (super murah), 1 panggilan telepon masuk ke WhatsApp Business (calon klien wanita/ibu-ibu, chat konfirmasi esok hari tidak berbalas / lead expired).
+- Total realisasi belanja: **Rp71.041** (+ PPN 11% = Rp78.856) dari deposit Rp83.327, menyisakan saldo kas deposit dashboard sebesar **Rp4.471** (terserap 94,6%). Akumulasi belanja iklan total studio: Rp113.089 (Eksperimen #1 Rp42.048 + Eksperimen #2 Rp71.041).
+- Total corong: 7.880 impresi, 6.164 reach, 235 klik tautan, 1 interaksi panggilan telepon, 0 deal DP.
+- Evaluasi & Tindak Lanjut: Validasi materi kreatif sukses besar (Creative Validation 9.5/10 dengan CTR 3,13% dan CPC Rp133). Namun, closing deal gagal (0 DP) akibat kebocoran 99,56% di gerbang WhatsApp (*The Trust Gap*: profil WA Business belum meyakinkan, ketiadaan portofolio resmi dan bukti sosial pihak ketiga, serta latensi respon panggilan telepon).
+- Status resmi (Decision 028): Kampanye selesai (*Recently Completed*). Studio menetapkan **Mode Jeda Total (Hard Stop Kas / No Cash Burn)**. Sisa saldo kas Rp4.471 diamankan, tidak ada top-up baru saat ini. Fokus dialihkan 100% membenahi *The Trust Gap* di ruang WhatsApp sebelum uji coba berbayar lanjutan.
 
 **Aturan keputusan pada hari ke-7 (28 Okt 2026):**
 | Jalur | Kondisi (Metrik Iklan Meta Ads) | Tindakan |
@@ -159,6 +172,4 @@ Dihitung sejak iklan tayang.
 | 28 Oktober 2026 | Versi 1.8: Unifikasi hosting seluruh aset digital (*.enlesweb.com) dan layout-lab (preview.enlesweb.com) ke Cloudflare Workers, penonaktifan Vercel (Decision 023), serta penyelarasan acuan operasional ke SOP v1.3. | Arahan pemilik, rilis Workers, Decision 023 |
 | 29 Oktober 2026 | Versi 1.9: Sinkronisasi kesiapan operasional layout-lab (5 preset skenario klien, chassis fisik iPhone 15 pada live iframe, virtual artboard 1280px), SOP v1.4, dan Addendum Decision 023. | SOP v1.4, Addendum Decision 023 |
 | 3 November 2026 | Versi 2.0: Pencatatan hasil aktual uji tayang Meta Ads Minggu 1 (Jalur C, belanja Rp42.048 dari deposit Rp130.000, 1 chat non-closing, sisa saldo kas dashboard Rp87.952 aman), penonaktifan manual sejak 24 Oktober, dan penahanan saldo untuk re-launch materi content-machine. | Laporan pemilik, `Business Memory/weekly-review.md`, Decision 027 |
-
-
-
+| 7 November 2026 | Versi 2.1: Pencatatan hasil empiris Eksperimen Meta Ads #2 (5-7 November 2026: belanja Rp71.041, 7.880 impresi, 235 klik, CTR Hari 2 sebesar 3,13%, CPC Rp133, 1 panggilan telepon, 0 DP), evaluasi The Trust Gap (kebocoran WA 99,56%), penetapan Mode Jeda Total (Hard Stop Kas), dan pengamanan sisa saldo deposit Rp4.471. | Laporan pemilik, `Business Memory/weekly-review.md`, Decision 028 |
